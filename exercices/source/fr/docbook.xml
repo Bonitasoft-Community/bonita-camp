@@ -2,9 +2,9 @@
 <book xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
 	<title>Initiation technique à Bonita BPM</title>
-
+	<subtitle>Exercices</subtitle>
 	<toc></toc>
-
+	
 	<xi:include href="chapters/preface.xml" />
 	<xi:include href="chapters/ex1.xml" />
 	<xi:include href="chapters/ex2.xml" />
