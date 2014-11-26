@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
+	<title>Exercice: Gestion d'acteurs</title>
+	
+	<section>
+		<title>Objectif</title>
+		<para>L'objectif de cet exercice est d'apporter une notion de collaboration au processus existant en distribuant les formulaires entre deux acteurs: le demandeur et le validateur.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</para>
+		<para>Ajouter une lane "Validateur" au diagramme et y déplacer la tâche "Valider demande".</para>
+		<para>Configurer un filtre d'acteur de type "Manager de l'initiateur du processus" sur la lane "Validateur".</para>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter une lane "Validateur" au diagramme</emphasis></para>
+				<para>Sélectionner une lane à partir de la palette d'éléments BPMN présente sur le côté gauche du Studio puis cliquer dans le pool du processus.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Sélectionner la lane, naviguer dans l'onglet "Général / Lane" puis modifier le nom en "Validateur".</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Renommer l'autre lane en "Demandeur".</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Faire glisser la tâche "Valider demande" dans la lane "Validateur".</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Configurer un filtre d'acteur de type "Manager de l'initiateur du processus" sur la lane "Validateur".</emphasis></para>
+				<para>Sélectionner la lane "Validateur", naviguer dans l'onglet "Général / Acteur".</para>
+				<para>Sélectionner l'acteur "Employee actor" à partir du menu déroulant.</para>
+				<para>Cliquer sur le bouton "Définir" associé au filtre.</para>
+				<para>Sélectionner un filtre de type "Manager de l'initiateur du processus" puis cliquer sur suivant.</para>
+				<para>Nommer le filtre "managerInitiateur" et sauvegarder.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Exécuter le processus avec les deux acteurs</emphasis></para>
+				<para>Lancer le processus à partir du Studio (l'utilisateur Walter Bates sera utilisé).</para>
+				<para>Soumettre le formulaire de "Saisie demande congés". Si les acteurs sont correctement configurés, la tâche "Valider demande de congés" ne devrait pas être proposée.</para>
+				<para>Se déconnecter du portail en naviguant sur le nom d'utilisateur dans le coin supérieur droit puis "Déconnexion".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Se connecter avec l'utilisateur "helen.kelly" et le mot de passe "bpm".</para>
+				<para>Si le filtre d'acteur s'est bien exécuté, la tâche "Valider demande de congés" devrait être disponible dans la liste des tâches à faire.</para>
+			</listitem>
+		</orderedlist>
+	</section>
+</chapter>

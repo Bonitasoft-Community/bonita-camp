@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
+	<title>Exercice: Données et formulaires génériques</title>
+	
+	<section>
+		<title>Objectif</title>
+		<para>L'objectif de cet exercice est de continuer l'implémentation du processus de demande de congés en y ajoutant des données.</para>
+		<para>Une fois complété, le processus sera exécutable avec des formulaires générés automatiquement.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.0.</para>
+		<para>Ajouter les données suivantes au niveau du processus:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>debutConges (Date)</para></listitem>
+			<listitem><para>nombreJours (Entier)</para></listitem>
+			<listitem><para>estApprouvee (Booléen)</para></listitem>
+		</itemizedlist>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem>
+				<para><emphasis role="bold">Dupliquer le diagramme de processus existant pour créer une version 2.0</emphasis></para>
+				<para>Dans le menu supérieur du Studio, cliquer "Diagramme / Dupliquer"</para>
+				<para>Mettre à jour les numéros de version du diagramme ET du processus.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter une donnée de processus.</emphasis></para>
+				<para>Sélectionner le Pool du processus</para>
+				<para>Naviguer dans l'onglet "Général / Données" puis cliquer sur ajouter.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Spécifier "debutConges" comme nom (il s'agit d'un nom technique, il faut donc omettre les espaces, les accents et autres caractères spéciaux).</para>
+				<para>Sélectionner le type "Date".</para>
+				<para>Cliquer sur "Terminer &amp; Ajouter".</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Ajouter la donnée "nombreJours" de type "Entier".</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Ajouter la donnée "estApprouvee" de type "Booléen".</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Vérifier que les données définies au niveau du processus ressemblent à ceci:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Exécuter le processus.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>

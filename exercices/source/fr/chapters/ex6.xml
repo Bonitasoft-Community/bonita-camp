@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
+	<title>Exercice: Ajout de connecteur</title>
+	
+	<section>
+		<title>Objectif</title>
+		<para>L'objectif de cet exercice est de traiter une interaction entre le processus et un système externe par le biais d'un connecteur.
+		Nous nous intéresserons ici à la notification du résultat de la demande de congés par le biais d'un connecteur d'envoi d'email.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 6.0.</para>
+		<para>Ajouter un connecteur d'envoi d'email sur les tâches automatiques "Notifier acceptation" et "Notifier refus".
+		Ceux-ci enverront un email au demandeur avec le statut de validation de sa demande.</para>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 6.0.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Tester le connecteur d'envoi d'email pour obtenir la bonne configuration SMTP.</emphasis></para>
+				<para>Naviguer dans le menu "Développement / Connecteurs / Tester un connecteur" de la barre supérieur du Studio.</para>
+				<para>Sélectionner un connecteur de type "Courriel" à partir du filtre ou depuis la catégorie "Communications".</para>
+				<para>Remplir les paramètres de connexion de votre compte email et passer à la page suivante.</para>
+				<para>Entrer votre email en tant que destinataire et expéditeur et passer à la page suivante.</para>
+				<para>Entrer "Bonita test" en sujet, cliquer le bouton "Test" et confirmer sans cocher de dépendance.</para>
+				<para>S'assurer que l'email est bien reçu (cela peut prendre quelques minutes). Si ce n'est pas le cas, mettre à jour la configuration puis re-tester.</para>
+				<para>Une fois la configuration validée, cliquer sur "Enregistrer".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Nommer la configuration "configEmail" et la sauvegarder.</para>
+				<para>Fermer l'interface de test du connecteur.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un connecteur d'envoi d'email sur la tâche "Notifier acceptation".</emphasis></para>
+				<para>Sélectionner la tâche "Notifier acceptation", naviguer dans l'onglet "Général / Connecteurs" puis cliquer sur "Ajouter".</para>
+				<para>Sélectionner un connecteur de type "Courriel".</para>
+				<para>Spécifier "envoiEmailAcceptation" comme nom et passer à la page suivante.</para>
+				<para>Ne pas remplir les paramètres de la page mais cliquer sur le bouton "Charger".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Sélectionner la configuration "configEmail" et passer à la page de configuration du destinataire.</para>
+				<para>Entrer votre adresse email dans le champ expéditeur "De".</para>
+				<para>Utiliser l'icône "crayon" pour éditer l'expression sur le champ destinataire "A".</para>
+				<para>Changer le type d'expression à "Script", nommer le script "recupEmailDemandeur" et coller le code ci-dessous dans la zone d'édition du script:</para>
+				<para>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_recupEmailDemandeur.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+				<para>Passer à la page suivante et spécifier "Demande de congés acceptée" comme sujet.</para>
+				<para>Cliquer sur "Terminer".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un connecteur d'envoi d'email sur la tâche "Notifier refus".</emphasis></para>
+				<para>Répéter l'étape précédente en nommant le connecteur "envoiEmailRefus" et en spécifiant "Demande de congés refusée" comme sujet.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Mettre à jour l'email de l'utilisateur de test "Walter Bates"</emphasis></para>
+				<para>Ouvrir le Portail depuis le Studio grâce au bouton de la barre d'outils.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Passer en profil "Administrateur" puis naviguer dans le menu "Organisation / Utilisateurs".</para>
+				<para>Sélectionner l'utilisateur "Walter Bates" et cliquer sur le bouton "Détails".</para>
+				<para>Cliquer sur le bouton "Mise à jour de l'utilisateur".</para>
+				<para>Sélectionner l'onglet "Carte de visite"</para>
+				<para>Entrer votre email dans le champ "Email".</para>
+				<para>Sauvegarder le changement et fermer le Portail.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins et s'assurer que les emails sont bien envoyés.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>
