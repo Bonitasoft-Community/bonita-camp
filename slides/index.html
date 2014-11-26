@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Initiation technique à Bonita BPM</title>
+
+		<meta name="description" content="Présentation de Bonita BPM permettant de rapidement réaliser un premier processus">
+		<meta name="author" content="Antoine Mottier - Philippe Ozil">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/bonita.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<section>
+					<h1>Initiation technique à Bonita BPM</h1>
+					<aside class="notes">
+					Cette présentation va vous guider dans la découverte de Bonita BPM pour vous permettre de créer votre premier processus.<br />
+					Nous allons alterner les phases de présentation théorique et les phases de mise en pratique en s'appuyant sur le support pour les exercices que nous vous avons partagé.<br />
+					N'hésitez pas à intervenir en posant vos questions.
+					</aside>
+				</section>
+				
+				<section>
+					<h2>Objectifs du BPM</h2>
+					<p>Collaborer à la définition et l'exécution des processus de l'entreprise</p>
+					<p>Suivre le bon déroulement des processus</p>
+					<p>Optimiser les processus</p>
+
+					<aside class="notes">
+					Les objectifs du BPM, Business Process Modeling, sont multiples. La principale idée est de s'assurer que les actions sont réalisées dans le bon ordre par les bonnes personnes en temps et en heure. Le but est de garantir la reproductibilité des processus qui sont identifiés comme efficaces.<br />
+					Le BPM apporte également des solutions pour rentrer dans une démarche d'amélioration continue grâce aux solutions comme Bonita qui vont permettre de suivre l'exécution des processus et finalement de les améliorer.
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Les composants de Bonita BPM</h2>
+						
+						<p>Bonita Studio</p>
+						<p>Bonita Platform = Bonita Engine + Bonita Portal</p>						
+					
+						<aside class="notes">
+						La solution Bonita BPM se compose de 3 composants : Bonita Studio, Bonita Engine et Bonita Portal.<br />
+						Le Studio correspond à l'environnement de développement.<br />
+						Les composants Engine et Portal représentent le côté serveur de la solution et se regroupent sous le nom "Bonita Platform". Une Platform est embarquée dans le Studio a des fin de tests. Pour la mise en production il faut déployer une Platform sur un serveur.<br />
+						Nous allons détailler les différents composants dans les diapositives suivantes. 
+						</aside>
+					</section>
+
+					<section>
+						<h2>Bonita BPM Studio : édition de diagrammes</h2>
+						<img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
+						<aside class="notes">
+						Une première chose à savoir c'est que le Studio est une application Java basée sur Eclipse. Le Studio nécessite donc l'utilisation d'une JVM pour être exécuté. La version courante de Bonita Studio nécessite Java 7. Pour le moment le Studio n'est pas compatible avec Java 8.<br />
+						Une des principale activité réalisée dans le Studio est la création de définition de processus. On va pour cela créer un ou plusieurs diagrammes. Chaque diagrammes peut contenir un ou plusieurs processus (définition de processus != instance de processus).<br />
+						Nous verrons qu'il y a différents aspects à la création d'un processus : la modélisation, la déclaration des données, la définition de formulaires, l'ajout de connecteurs... 
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Studio : édition de formulaires</h2>
+						<img src="images/screenshot_studio_form_editor.png" alt="Bonita BPM Studio : edition de formulaires">
+						<aside class="notes">
+						Ici nous avons une capture d'écran de l'édition de formulaires. La définition d'un formulaire fonctionne par glisser-déposer de widget qu'on trouve dans la palette de gauche sur la grille se trouvant à droite.<br />
+						Nous reviendrons en détail sur la création d'un formulaire et la configuration des widgets sur une prochaine diapositive et dans un exercice.
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Engine</h2>
+						<p>Le moteur responsable de l'exécution des processus</p>
+						<p>Basé sur un ensemble de technologies du monde Java :</p>
+						<ul>
+							<li>Java SE 7</li>
+							<li>JDBC (via Hibernate et data source)</li>
+							<li>Java EE 6 : JSP, Servlet, JTA</li>
+							<li>Spring</li>
+							<li>Quartz</li>
+						</ul>
+						<p>Packagé avec le Portal dans une application web (WAR ou EAR)</p>
+						<aside class="notes">
+						C'est le moteur qui est en charge de dérouler la définition d'un processus en fonction des appels qui sont réalisés sur ses API. En général, c'est l'utilisateur final, via l'utilisation du Portal qui déclenche ces appels. Par exemple démarrer une nouvelle instance de processus.<br />
+						Le moteur, comme le Studio, nécessite l'utilisation de Java 7. De plus, le moteur (ainsi que le Portal) s'appuie sur un ensemble de services JEE. Il est donc nécessaire de disposer d'un serveur Java EE 6 tel que JBoss 7, Tomcat 7, WebLogic 12c (12.1).<br />
+						Parmi les services utilisés il y a JTA (Java Transaction API) qui n'est pas disponible dans un Tomcat standard. C'est pour cela qu'on ajoute la librairie Bitronix.<br />
+						Le moteur est un composant modulaire constitué d'un ensemble de services dont les implémentations sont injectées via Spring. Il est déconseillé de modifier les implémentations des services à l'exception de celles qui font l'objet de documentation (e.g. changement de configuration des events handlers).
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Portal</h2>
+						<p>L'interface web pour l'utilisateur final et l'administrateur</p>
+						<p>Présente la liste des tâches à réaliser</p>
+						<p>Permet de déployer et configurer des processus</p>
+						<img src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400px" />
+						<aside class="notes">
+						Le portail web de Bonita permet à l'utilisateur final d'interagir avec les processus. Il peut par exemple démarrer le processus pour faire une demande de congés, voir les factures en attente de validation...<br />
+						C'est via la même interface que l'administrateur va venir déployer des processus, les configurer et les activer pour permettre aux utilisateurs finaux d'y accéder.<br />
+						Il y a donc une notion de "profil utilisateur" pour déterminer quelles actions sont disponibles à un utilisateur donné. Le fait d'être associé à un profil donne accès à un ensemble de pages du Portal.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Introduction au BPMN</h2>
+						<p>Une notation standard (OMG) pour la modélisation des processus</p>
+						<p>Les éléments essentiels :</p>
+						<ul>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_start_event.png" alt="start event" />Start event</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_human_task.png" alt="human task" />User task (<=> Human task)</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_service_task.png" alt="service task" />Service task</li>
+						</ul>
+						<aside class="notes">
+						Le "start event" est l'événement qui définit le point de démarrage d'un processus. Comme tous les événements il est représenté par un disque. Les "start event" on une bordure simple et fine (épaisse pour les end, double pour les intermediates). Note : il est possible d'avoir de plusieurs start events dans un processus mais ça n'est pas recommandé (le moteur de workflow ne sait pas lequel choisir sans indication complémentaire).<br />
+						On peut voir ensuite deux types de tâches :<br />
+						Les tâches humaines (user task dans la norme) nécessite l'intervention d'un utilisateur avant que l'exécution du processus puisse continuer.<br />
+						Les tâches automatique ont en général pour objectif l'interaction avec des systèmes tiers (base de données, serveur email, générateur de fichiers...). Le moteur va les exécuter et une fois terminées poursuit automatiquement avec les éléments suivants.
+						</aside>
+					</section>
+
+					<section data-state="exercise">
+						<h2>Exercice 1</h2>
+						<p>Première étape de la modélisation d'un processus</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Gestion des données : scope</h2>
+						<p>3 niveaux de visibilité sont disponibles :</p>
+						<ul>
+							<li>Processus</li>
+							<li>Étape</li>
+							<li>Formulaire</li>
+						</ul>
+						<aside class="notes">
+						Dans l'édition communautaire de Bonita BPM trois niveaux de visibilité sont disponible. Le niveau de visibilité détermine quels éléments du processus ont accès aux données. Il détermine également à quel moment dans le cycle de vie du processus les données sont initialisées. Il faut noter que quelques soit le scope, le cycle de vie des données est lié au cycle de vie du processus (BDM en Souscription).<br />
+						Les données de processus sont initialisées à la création de l'instance du processus. Elles peuvent ensuite être mise à jour tout au long de la vie du processus. Il deviens impossible de les modifier une fois le processus terminé. Elles sont accessible depuis tous les éléments rattachés à la définition du processus.<br />
+						Les données d'étapes sont initialisées à la création de l'instance de l'étape et disponible jusqu'à la fin de l'étape. Elles sont utiles notamment pour échanger des données entre une suite de connecteurs qui seraient chaînés. Elles peuvent aussi être utilisé pour différenciés les multiples instances d'une même définition d'étape.<br />
+						Les données de formulaire sont initialisées au chargement d'un formulaire. Elles sont donc rechargées à chaque fois que le formulaire est actualisé dans le navigateur web. Elles sont seulement accessible dans la définition des formulaires. Elles sont souvent utilisées, par exemple, pour alimenter les listes déroulantes avec des données provenant d'un système externe.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Gestion des données : persitence et types</h2>
+						<p>Les données sont sauvegardées dans la base de données associée au moteur à l'exception des données transientes d'étapes et des données de formulaire</p>
+						<p>Tout type d'objet Java sérialisable peut être utilisé</p>
+						<p>Les types autres que les types primitifs et String sont sérialisés pour être persistés</p>
+						<aside class="notes">
+						Le moteur s'appuie sur la base de données à laquelle il est lié pour sauvegarder les données de processus (sans exception) et les données d'étape (sauf si l'option transient est activée). Il est important de garder à l'esprit que, en cas de redémarrage du serveur, les données non stockées en base seront perdues. Cela ne pose pas de problème pour les données de formulaire qui sont initialisées à chaque chargement du formulaire. Par contre cela peut poser problème sur les données transientes d'étape qui seront réinitialisées avec la valeur par défaut.<br />
+						Tous type de données Java peut être utilisé. Les données de type primitifs (+ String) sont stockées de manière lisible en base de données. Les autres types sont stockées sous forme sérialisés. Dans tous les cas il est recommandé d'accès au valeur des données non pas via des requêtes SQL mais via des appels aux API.
+						</aside>
+					</section>
+				
+					<section data-state="exercise">
+						<h2>Exercice 2</h2>
+						<p>Ajout de données et utilisation des formulaires auto-générés</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Introduction au BPMN (suite)</h2>
+						<p>Trois type de portes logiques :</p>
+						<ul>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_exclusive.png" alt="gateway exclusive" />Exclusive</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_inclusive.png" alt="gateway inclusive" />Parallèle</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_inclusive.png" alt="gateway inclusive" />Inclusive</li>
+						</ul>
+						<p>Une bonne pratique consiste à utiliser les gateways de manière symétrique</p>
+						<aside class="notes">
+						La porte logique "exclusive" permet d'orienter le flux d'exécution du processus de manière conditionnelle : une seule des transitions en sortie sera suivie. La gateway "exclusive" ne comporte aucune logique pour les transitions entrantes. Il faut donc s'assurer par design que seule une des transitions entrantes sera active. Si ça n'est pas le cas on peut arriver à un scénario ou de multiples instances d'une étape sont crées.<br />
+						La gateway parallèle permet de déclencher l'exécution de plusieurs branches en parallèle. Pour les transitions entrante, la gateway attend quelles soit toutes actives avant de poursuivre l'exécution du processus.</br>
+						La gateway inclusive fonctionne de la même manière que l'exclusive à la différence que plus d'une transition peut être activée. Pour les transitions entrantes, seules celles actives sont attendues.<br />
+						Il faut veiller à éviter les cas où le processus pourrait être bloqué dans une gateway "pour toujours". Pour cela il est recommandé d'utiliser un design symétrique (notamment pour les parallèles) et également de toujours positionner une transition par défaut pour les gateway exclusive et inclusive.
+						</aside>
+					</section>
+
+					<section data-state="exercise">
+						<h2>Exercice 3</h2>
+						<p>Porte logique exclusive pour orienté le flux du processus en fonction des données</p>
+					</section>
+				</section>
+				
+				
+
+				<section>
+					<section>
+						<h2>Formulaires</h2>
+						<p>Deux types :</p>
+						<ul>
+							<li>Démarrage de cas</li>
+							<li>Étape</li>
+						</ul>
+						<p>Ensemble de widgets placés sur une grille</p>
+						<aside class="notes">
+						Il existe deux types de formulaires qui sont présentés à l'utilisateur final à différent instant du cycle de vie d'un processus.<br />
+						Le formulaire de "démarrage de cas" (case start), est accessible par l'utilisateur avant que l'instance de processus soit créée. Il permet d'obtenir de l'utilisateur les données obligatoire au démarrage d'une instance. Par exemple une demande de congés n'a pas de sens si il n'y a pas une date de départ et une date de retour.<br />
+						Les formulaires placés sur les étapes sont accessible à l'utilisateur dès que le tâche est prête à être réalisée. C'est le clic sur le bouton "soumettre" qui déclenche l'exécution de l'étape<br />
+						Il est possible de créer des formulaires constitués de plusieurs page, on parle de "pageflow".
+						</aside>
+					</section>
+					<section>
+						<h2>Widgets</h2>
+						<p>Les widgets dispose d'un ensemble de paramètres de configuration :<p>
+						<ul>
+							<li>Nom (id) et libellé</li>
+							<li>Aide, info-bulle, exemple</li>
+							<li>Valeur disponibles, valeur initiale</li>
+							<li>Opération de sortie</li>
+							<li>Insertion conditionnelle, obligatoire, lecture seule...</li>
+							<li>Validation des données saisies</li>
+						</ul>
+						<aside class="notes">
+						Les formulaires sont constitués par un ensemble de widgets.
+						</aside>
+					</section>
+
+					<section data-state="exercise">
+						<h2>Exercice 4</h2>
+						<p>Création de formulaires : démarrage de cas et étape</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Acteurs</h2>
+						<p>Deux grandes options :</p>
+						<ul>
+							<li>Acteur : association entre la définition du processus et l'organisation</li>
+							<li>Filtre d'acteur : logique exécutée au moment où la tâche deviens disponible</li>						
+						</ul>
+						<aside class="notes">
+						Le mécanisme d'acteur permet de sortir l'association entre étape et utilisateurs pouvant la réaliser de la définition du processus. Ainsi les changements dans l'organisation de la société ne nécessite pas le déploiement d'une nouvelle version de processus. La principale limitation de ce mécanisme est qu'il ne peut pas exploiter les données ou les informations de processus.<br />
+						Le mécanisme de filtre d'acteurs fourni une solution qui permet d'exploiter les données et informations du processus pour construire une liste des identifiants des utilisateurs qui peuvent réaliser la tâche. L'exécution du filtre à lieu au moment où la tâche est instanciée.
+						</aside>
+					</section>
+					
+					<section data-state="exercise">
+						<h2>Exercice 5</h2>
+						<p>Utilisation de l'acteur par défaut et d'un filtre d'acteur</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Connecteurs</h2>
+						<p>Connecter une definition de processus vers le SI</p>
+						<p>A l'opposer les API (REST / Java) permettent au SI d'intéragir avec les processus</p>
+						<p>Un catalogue standard de connecteur est disponible. Il est possible de créer ses propres connecteurs</p>
+						<ul>
+							<li>Un connecteur est composé d'une définition (interface Java) et d'une implémentation (classe Java)</li>
+							<li>Interface définie les paramètres d'entrée et de sortie</li>
+							<li>Implémentation définie la logique métier</li>
+						</ul>
+						<aside class="notes">
+						Un connecteur peut être placé en début ou fin de processus ou sur le début ou la fin d'une étape.<br />
+						Il est possible d'utiliser tous type de données en entrée et en sortie de connecteur. Il est également possible de placer des scripts Groovy pour éventuellement transformer/adapter les données.<br />
+						Il faut noter que, dès que possible, il est préférable d'utiliser des connecteurs plutôt que des scripts Groovy pour des raisons de performance d'exécution.
+						</aside>
+					</section>
+					
+					<section data-state="exercise">
+						<h2>Exercice 6</h2>
+						<p>Utiliser un connecteur pour envoyer un email</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Déploiement</h2>
+					<p>Étapes principales du déploiement d'un processus :</p>
+					<ul>
+						<li>Configuration du processus dans le Studio</li>
+						<li>Génération du fichier .bar</li>
+						<li>Déploiement du .bar en utilisant le Portal</li>
+						<li>Configuration du processus après déploiement</li>
+						<li>Activation du processus</li>
+					</ul>
+					<aside class="notes">
+					Dans les exercices, le déploiement du processus à pour le moment était transparent par l'utilisation du bouton ""
+					</aside>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+				width: '65%',
+ 				height: '90%',
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
