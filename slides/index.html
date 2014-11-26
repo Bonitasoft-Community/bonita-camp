@@ -45,6 +45,15 @@
 			
 				<section>
 					<h1>Initiation technique à Bonita BPM</h1>
+					<div style="margin:4em auto 4em auto;">
+						<a href="http://bit.ly/11uXTca" target="_blank" style="font-size:200%;">http://bit.ly/11uXTca</a>
+					</div>
+					<div>
+						<div style="float:left; text-align:left;">Antoine Mottier<br/>
+						Philippe Ozil</div>
+						<div style="float:right; text-align:right;">27 Novembre 2014</div>
+					</div>
+					
 					<aside class="notes">
 					Cette présentation va vous guider dans la découverte de Bonita BPM pour vous permettre de créer votre premier processus.<br />
 					Nous allons alterner les phases de présentation théorique et les phases de mise en pratique en s'appuyant sur le support pour les exercices que nous vous avons partagé.<br />
@@ -54,7 +63,7 @@
 				
 				<section>
 					<h2>Objectifs du BPM</h2>
-					<p>Collaborer à la définition et l'exécution des processus de l'entreprise</p>
+					<p>Collaborer à la définition et à l'exécution des processus de l'entreprise</p>
 					<p>Suivre le bon déroulement des processus</p>
 					<p>Optimiser les processus</p>
 
@@ -138,9 +147,9 @@
 						<p>Une notation standard (OMG) pour la modélisation des processus</p>
 						<p>Les éléments essentiels :</p>
 						<ul>
-							<li><img class="only_right_margin" src="images/screenshot_bpmn_start_event.png" alt="start event" />Start event</li>
-							<li><img class="only_right_margin" src="images/screenshot_bpmn_human_task.png" alt="human task" />User task (<=> Human task)</li>
-							<li><img class="only_right_margin" src="images/screenshot_bpmn_service_task.png" alt="service task" />Service task</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_start_event.png" alt="start event" />Evénement de début</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_human_task.png" alt="human task" />Tâche humaine</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_service_task.png" alt="service task" />Tâche automatique</li>
 						</ul>
 						<aside class="notes">
 						Le "start event" est l'événement qui définit le point de démarrage d'un processus. Comme tous les événements il est représenté par un disque. Les "start event" on une bordure simple et fine (épaisse pour les end, double pour les intermediates). Note : il est possible d'avoir de plusieurs start events dans un processus mais ça n'est pas recommandé (le moteur de workflow ne sait pas lequel choisir sans indication complémentaire).<br />
@@ -153,6 +162,10 @@
 					<section data-state="exercise">
 						<h2>Exercice 1</h2>
 						<p>Première étape de la modélisation d'un processus</p>
+						<p>Téléchargez les instructions et les corrections à partir de ce lien:</p>
+						<div style="margin:3em auto 3em auto;">
+							<a href="http://bit.ly/11uXTca" target="_blank" style="font-size:200%;">http://bit.ly/11uXTca</a>
+						</div>
 					</section>
 				</section>
 
@@ -234,7 +247,7 @@
 					</section>
 					<section>
 						<h2>Widgets</h2>
-						<p>Les widgets dispose d'un ensemble de paramètres de configuration :<p>
+						<p>Les widgets disposent d'un ensemble de paramètres de configuration :<p>
 						<ul>
 							<li>Nom (id) et libellé</li>
 							<li>Aide, info-bulle, exemple</li>
@@ -250,7 +263,7 @@
 
 					<section data-state="exercise">
 						<h2>Exercice 4</h2>
-						<p>Création de formulaires : démarrage de cas et étape</p>
+						<p>Création de formulaires</p>
 					</section>
 				</section>
 				
@@ -277,13 +290,14 @@
 				<section>
 					<section>
 						<h2>Connecteurs</h2>
-						<p>Connecter une definition de processus vers le SI</p>
-						<p>A l'opposer les API (REST / Java) permettent au SI d'intéragir avec les processus</p>
-						<p>Un catalogue standard de connecteur est disponible. Il est possible de créer ses propres connecteurs</p>
+						
+						<p>Permet à un processus d'intéragir avec le SI (à l'opposé des API qui permettent de piloter le moteur)</p>
+						<p>Un catalogue de connecteurs standard est fournit dans le Studio.</p>
+						<p>Il est possible de créer ses propres connecteurs</p>
+						<p>Un connecteur est composé de:</p>
 						<ul>
-							<li>Un connecteur est composé d'une définition (interface Java) et d'une implémentation (classe Java)</li>
-							<li>Interface définie les paramètres d'entrée et de sortie</li>
-							<li>Implémentation définie la logique métier</li>
+							<li>une définition (interface Java) qui définit les entrées/sorties</li>
+							<li>une implémentation (classe Java) qui définit la logique métier</li>
 						</ul>
 						<aside class="notes">
 						Un connecteur peut être placé en début ou fin de processus ou sur le début ou la fin d'une étape.<br />
@@ -309,9 +323,21 @@
 						<li>Activation du processus</li>
 					</ul>
 					<aside class="notes">
-					Dans les exercices, le déploiement du processus à pour le moment était transparent par l'utilisation du bouton ""
+					Dans les exercices et en développement depuis le Studio, le déploiement du processus est transparent par l'utilisation du bouton "Lancer".
 					</aside>
 				</section>
+				
+				<section>
+					<h2>Merci pour votre attention</h2>
+					<p style="margin:3em 0;">Des questions ? N'hésitez pas.</p>
+					<p>Resources complémentaires:</p>
+					<ul>
+						<li>Documentation - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
+						<li>Site corporate - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
+						<li>Communauté - <a href="http://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+					</ul>
+				</section>
+				
 			</div>
 
 		</div>
