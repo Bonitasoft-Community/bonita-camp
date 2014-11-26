@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
-	<title>Exercice: Formulaires personnalisés</title>
+	<title>Exercice : Formulaires personnalisés</title>
 	
 	<section>
 		<title>Objectif</title>
@@ -11,10 +11,10 @@
 	<section>
 		<title>Instructions</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 4.0.</para>
-		<para>Créer les formulaires suivants:</para>
+		<para>Créer les formulaires suivants :</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>"Saisie demande de congés" permettant d'alimenter les données "debutConges" et "nombreJours".</para></listitem>
-			<listitem><para>"Validation demande de congés" permettant d'afficher les données "debutConges" et "nombreJours" en lecture seule puis d'alimenter la donnée "estApprouvee".</para></listitem>
+			<listitem><para>Formulaire de démarrage : "Saisie demande de congés" permettant d'alimenter les données "debutConges" et "nombreJours".</para></listitem>
+			<listitem><para>Formulaire d'étape : "Validation demande de congés" permettant d'afficher les données "debutConges" et "nombreJours" en lecture seule puis d'alimenter la donnée "estApprouvee".</para></listitem>
 		</itemizedlist>
 	</section>
 	
@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire de démarrage intitulé "Saisie demande de congés".</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Application / Formulaire" puis cliquer sur "Ajouter".</para>
-				<para>Entrer le nom du formulaire, cocher les champs correspondant aux variables "debutConges" et "nombreJours" et cocher aussi les cases "Obligatoire" associées.</para>
+				<para>Entrer le nom du formulaire, cocher les champs correspondant aux variables "debutConges" et "nombreJours". Cocher également les cases "Obligatoire" associées. Cliquer sur "Terminer".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -36,13 +36,14 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Modifier les libellés des champs et du bouton pour les rendre plus lisibles.</emphasis></para>
-				<para>Sélectionner le champ "Debut Conge" et naviguer dans l'onglet "Général / Général" puis remplacer le libellé par "Début des congés".</para>
+				<para>Sélectionner le champ "Debut Conges" et naviguer dans l'onglet "Général / Général" puis remplacer le libellé par "Début des congés".</para>
 				<para>De la même manière changer les libellés des autres widgets en "Nombre de jours" et "Soumettre".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire intitulé "Validation demande de congés" sur la tâche humaine "Valider demande".</emphasis></para>
 				<para>Sélectionner la tâche et naviguer dans l'onglet "Application / Formulaire" puis cliquer sur "Ajouter".</para>
-				<para>Entrer le nom du formulaire, cocher les champs correspondant aux variables "debutConges" et "nombreJours" et cette fois-ci, cocher les cases "Lecture seule" associées.</para>
+				<para>Entrer le nom du formulaire, cocher les champs correspondant aux variables "debutConges" et "nombreJours" et cette fois-ci, cocher les cases "Lecture seule" associées.
+				Cliquer sur "Terminer".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer une seconde colonne dans le formulaire et étendre champs "Debut Conges" et "Nombre Jours" sur les deux colonnes.</emphasis></para>

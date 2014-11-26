@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
-	<title>Exercice: Données et formulaires génériques</title>
+	<title>Exercice : Données et formulaires génériques</title>
 	
 	<section>
 		<title>Objectif</title>
@@ -12,7 +12,7 @@
 	<section>
 		<title>Instructions</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.0.</para>
-		<para>Ajouter les données suivantes au niveau du processus:</para>
+		<para>Ajouter les données suivantes au niveau du processus :</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>debutConges (Date)</para></listitem>
 			<listitem><para>nombreJours (Entier)</para></listitem>
@@ -43,10 +43,16 @@
 				<para>Sélectionner le type "Date".</para>
 				<para>Cliquer sur "Terminer &amp; Ajouter".</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Ajouter la donnée "nombreJours" de type "Entier".</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Ajouter la donnée "estApprouvee" de type "Booléen".</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Vérifier que les données définies au niveau du processus ressemblent à ceci:</emphasis></para>
+				<para><emphasis role="bold">Ajouter la donnée "nombreJours" de type "Entier".</emphasis></para>
+				<para>Cliquer sur "Terminer &amp; Ajouter".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter la donnée "estApprouvee" de type "Booléen".</emphasis></para>
+				<para>Cliquer sur "Terminer".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Vérifier que les données définies au niveau du processus ressemblent à ceci :</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -54,6 +60,10 @@
 						</imageobject>
 					</mediaobject>
 				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Enregistrer le processus.</emphasis></para>
+				<para>Cliquer sur le bouton "Enregistrer" de la barre de menu supérieur du Studio.</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Exécuter le processus.</emphasis></para></listitem>
 		</orderedlist>

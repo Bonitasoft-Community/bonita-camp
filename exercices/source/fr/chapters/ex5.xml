@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
-	<title>Exercice: Gestion d'acteurs</title>
+	<title>Exercice : Gestion d'acteurs</title>
 	
 	<section>
 		<title>Objectif</title>
-		<para>L'objectif de cet exercice est d'apporter une notion de collaboration au processus existant en distribuant les formulaires entre deux acteurs: le demandeur et le validateur.</para>
+		<para>L'objectif de cet exercice est d'apporter une notion de collaboration au processus existant en distribuant les formulaires entre deux acteurs : le demandeur et le validateur.</para>
 	</section>
 	
 	<section>
@@ -39,10 +39,10 @@
 				<para>Sélectionner l'acteur "Employee actor" à partir du menu déroulant.</para>
 				<para>Cliquer sur le bouton "Définir" associé au filtre.</para>
 				<para>Sélectionner un filtre de type "Manager de l'initiateur du processus" puis cliquer sur suivant.</para>
-				<para>Nommer le filtre "managerInitiateur" et sauvegarder.</para>
+				<para>Nommer le filtre "managerInitiateur" et cliquer sur "Terminer".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci:</emphasis></para>
+				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>

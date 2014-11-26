@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
-	<title>Exercice: Processus avec porte exclusive</title>
+	<title>Exercice : Processus avec porte exclusive</title>
 	
 	<section>
 		<title>Objectif</title>
@@ -12,13 +12,13 @@
 	<section>
 		<title>Instructions</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</para>
-		<para>Modifier le diagramme pour placer les éléments suivants à la suite de l'étape "Valider demande":</para>
+		<para>Modifier le diagramme pour placer les éléments suivants à la suite de l'étape "Valider demande" :</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>une porte exclusive "Demande acceptée?"</para></listitem>
+			<listitem><para>une porte exclusive "Demande acceptée ?"</para></listitem>
 			<listitem><para>une tâche automatique "Notifier acceptation"</para></listitem>
-			<listitem><para>Un événement de terminaison "Fin - Demande acceptée"</para></listitem>
+			<listitem><para>un événement de terminaison "Fin - Demande acceptée"</para></listitem>
 			<listitem><para>une tâche automatique "Notifier refus"</para></listitem>
-			<listitem><para>Un événement de terminaison "Fin - Demande refusée"</para></listitem>
+			<listitem><para>un événement de terminaison "Fin - Demande refusée"</para></listitem>
 		</itemizedlist>
 		<para>Configurer les transitions en sortie de la porte exclusive pour diriger dynamiquement le flux d'exécution du processus en fonction des données du processus.</para>
 	</section>
@@ -32,7 +32,7 @@
 				<para>Sélectionner l'évènement dans le diagramme et appuyer sur la touche "Suppr" du clavier.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter une porte exclusive "Demande acceptée?" à la suite de la tâche "Valider demande".</emphasis></para>
+				<para><emphasis role="bold">Ajouter une porte exclusive "Demande acceptée ?" à la suite de la tâche "Valider demande".</emphasis></para>
 				<para>Sélectionner la tâche "Valider demande", effectuer un glisser-déplacer à partir de l'icône contextuel de porte logique.</para>
 				<para>
 					<mediaobject>
@@ -41,7 +41,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Une fois la porte créée changer son type pour le passer à "Exclusif" grâce à l'icône contextuel.</para>
+				<para>Une fois la porte créée changer son type pour le passer à "Exclusif" grâce à l'icône contextuel (type "boîte à outils").</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -49,7 +49,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Renommer la porte en "Demande acceptée?".</para>
+				<para>Renommer la porte en "Demande acceptée ?".</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier acceptation" à partir de la porte logique.</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande acceptée" à la suite de la tâche automatique "Notifier acceptation".</emphasis></para></listitem>
@@ -68,7 +68,12 @@
 				<para>Sélectionner la transition et cocher la case "Flux par défaut".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci:</emphasis></para>
+				<para><emphasis role="bold">Déclencher la validation du diagramme.</emphasis></para>
+				<para>Maintenant que les conditions sont correctement configurées sur les transitions il est possible de relancer la validation.
+				Dans le menu supérieur du Studio, cliquer "Diagramme / Valider".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -77,11 +82,11 @@
 					</mediaobject>
 				</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins.</emphasis></para></listitem>
-			
 			<listitem>
-				<para><emphasis role="bold">Vérifier le bon déroulement du processus dans l'interface d'administration du portail</emphasis></para>
-				<para>Ouvrir le portail à l'aide de l'icône dans la barre d'outils supérieure du Studio ou à l'aide du lien dans l'interface web:</para>
+				<para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins.</emphasis></para>
+				<para>Attention : ne pas cliquer une deuxième fois sur le bouton "Lancer", cela aurait pour effet de redéployer le processus
+				et donc de supprimer les instances existantes. Pour créer la seconde instance, il faut donc naviguer dans le portail.</para>
+				<para>Ouvrir le portail à l'aide de l'icône dans la barre d'outils supérieure du Studio ou à l'aide du lien dans l'interface web :</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -89,6 +94,11 @@
 						</imageobject>
 					</mediaobject>
 				</para>
+				<para>Ensuite, naviguer dans le menu "Apps" puis sélectionner la définition de processus "Demande de congés" en version 3.0
+				et cliquez sur "démarrer".</para>
+			</listitem>			
+			<listitem>
+				<para><emphasis role="bold">Vérifier le bon déroulement du processus dans l'interface d'administration du portail</emphasis></para>
 				<para>Une fois dans le portail, changer de profil dans le coin supérieur droit pour passer en "Administrateur".</para>
 				<para>
 					<mediaobject>
