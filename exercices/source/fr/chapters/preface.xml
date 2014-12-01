@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
+<preface xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
 	<title>Préface</title>
 	<para>L'objectif des exercices de la session est de parvenir à produire un processus basique de demande de congés.</para>
@@ -19,4 +19,4 @@
 		<listitem><para><emphasis role="bold">Instructions</emphasis> - Contient les grandes étapes de la réalisation de l'exercice.</para></listitem>
 		<listitem><para><emphasis role="bold">Correction</emphasis> - Fournit une description détaillée pas à pas des étapes permettant de réaliser l'exercice.</para></listitem>
 	</itemizedlist>
-</chapter>
+</preface>
