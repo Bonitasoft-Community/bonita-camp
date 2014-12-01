@@ -77,8 +77,19 @@
 					<section>
 						<h2>Les composants de Bonita BPM</h2>
 						
-						<p>Bonita Studio</p>
-						<p>Bonita Platform = Bonita Engine + Bonita Portal</p>						
+						<table>
+							<tr>
+								<td colspan="3" style="padding: 10px 0;">Bonita Studio</td>
+							</tr>
+							<tr>
+								<td style="padding: 10px 0;">Bonita Engine</td>
+								<td rowspan="2" style="vertical-align:middle; padding:0 20px; font-size:250%;">}</td>
+								<td rowspan="2" style="vertical-align:middle; padding:0;">Bonita Platform</td>
+							</tr>
+							<tr>
+								<td style="padding: 10px 0;">Bonita Portal</td>
+							</tr>
+						</table>
 					
 						<aside class="notes">
 						La solution Bonita BPM se compose de 3 composants : Bonita Studio, Bonita Engine et Bonita Portal.<br />
@@ -146,10 +157,11 @@
 						<h2>Introduction au BPMN</h2>
 						<p>Une notation standard (OMG) pour la modélisation des processus</p>
 						<p>Les éléments essentiels :</p>
-						<ul>
+						<ul class="no-bullet">
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_start_event.png" alt="start event" />Evénement de début</li>
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_human_task.png" alt="human task" />Tâche humaine</li>
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_service_task.png" alt="service task" />Tâche automatique</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_end_event.png" alt="end event" />Evénement de fin</li>
 						</ul>
 						<aside class="notes">
 						Le "start event" est l'événement qui définit le point de démarrage d'un processus. Comme tous les événements il est représenté par un disque. Les "start event" on une bordure simple et fine (épaisse pour les end, double pour les intermediates). Note : il est possible d'avoir de plusieurs start events dans un processus mais ça n'est pas recommandé (le moteur de workflow ne sait pas lequel choisir sans indication complémentaire).<br />
@@ -172,7 +184,7 @@
 				<section>
 					<section>
 						<h2>Gestion des données : scope</h2>
-						<p>3 niveaux de visibilité sont disponibles :</p>
+						<p>Trois niveaux de visibilité imbriqués sont disponibles :</p>
 						<ul>
 							<li>Processus</li>
 							<li>Étape</li>
@@ -206,10 +218,10 @@
 				<section>
 					<section>
 						<h2>Introduction au BPMN (suite)</h2>
-						<p>Trois type de portes logiques :</p>
-						<ul>
+						<p>Trois types de portes logiques :</p>
+						<ul class="no-bullet">
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_exclusive.png" alt="gateway exclusive" />Exclusive</li>
-							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_inclusive.png" alt="gateway inclusive" />Parallèle</li>
+							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_parallel.png" alt="gateway inclusive" />Parallèle</li>
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_inclusive.png" alt="gateway inclusive" />Inclusive</li>
 						</ul>
 						<p>Une bonne pratique consiste à utiliser les gateways de manière symétrique</p>
@@ -330,7 +342,7 @@
 				<section>
 					<h2>Merci pour votre attention</h2>
 					<p style="margin:3em 0;">Des questions ? N'hésitez pas.</p>
-					<p>Resources complémentaires:</p>
+					<p>Resources complémentaires :</p>
 					<ul>
 						<li>Documentation - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
 						<li>Site corporate - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
