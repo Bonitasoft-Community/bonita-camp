@@ -62,6 +62,21 @@
 				</section>
 				
 				<section>
+					<h2>Agenda</h2>
+					<ul class="no-bullet">
+						<li>Objectifs du BPM</li>
+						<li>Composants de Bonita BPM</li>
+						<li>Introduction au BPMN</li>
+						<li>Gestion des données</li>
+						<li>Introduction au BPMN (suite)</li>
+						<li>Formulaires</li>
+						<li>Acteurs</li>
+						<li>Connecteurs</li>
+						<li>Déploiement</li>
+					</ul>
+				</section>
+				
+				<section>
 					<h2>Objectifs du BPM</h2>
 					<p>Collaborer à la définition et à l'exécution des processus de l'entreprise</p>
 					<p>Suivre le bon déroulement des processus</p>
@@ -75,7 +90,7 @@
 
 				<section>
 					<section>
-						<h2>Les composants de Bonita BPM</h2>
+						<h2>Composants de Bonita BPM</h2>
 						
 						<table>
 							<tr>
@@ -156,6 +171,7 @@
 					<section>
 						<h2>Introduction au BPMN</h2>
 						<p>Une notation standard (OMG) pour la modélisation des processus</p>
+						<p>Un processus est représenté par un Pool</p>
 						<p>Les éléments essentiels :</p>
 						<ul class="no-bullet">
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_start_event.png" alt="start event" />Evénement de début</li>
@@ -224,7 +240,7 @@
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_parallel.png" alt="gateway inclusive" />Parallèle</li>
 							<li><img class="only_right_margin" src="images/screenshot_bpmn_gateway_inclusive.png" alt="gateway inclusive" />Inclusive</li>
 						</ul>
-						<p>Une bonne pratique consiste à utiliser les gateways de manière symétrique</p>
+						<p>Une bonne pratique consiste à utiliser les portes de manière symétrique</p>
 						<aside class="notes">
 						La porte logique "exclusive" permet d'orienter le flux d'exécution du processus de manière conditionnelle : une seule des transitions en sortie sera suivie. La gateway "exclusive" ne comporte aucune logique pour les transitions entrantes. Il faut donc s'assurer par design que seule une des transitions entrantes sera active. Si ça n'est pas le cas on peut arriver à un scénario ou de multiples instances d'une étape sont crées.<br />
 						La gateway parallèle permet de déclencher l'exécution de plusieurs branches en parallèle. Pour les transitions entrante, la gateway attend quelles soit toutes actives avant de poursuivre l'exécution du processus.</br>
