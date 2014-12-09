@@ -450,6 +450,10 @@ xmlns:exsl="http://exslt.org/common" version="1.0" exclude-result-prefixes="exsl
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:author"/>
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:itermset"/>
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:itermset"/>
+  
+  <!-- CUSTOM: added copyright to title page -->
+  <xsl:apply-templates mode="book.titlepage.verso.auto.mode" select="d:info/d:copyright"/>
+  
 </xsl:template>
 
 <xsl:template name="book.titlepage.verso">
@@ -629,7 +633,7 @@ xmlns:exsl="http://exslt.org/common" version="1.0" exclude-result-prefixes="exsl
 </xsl:template>
 
 <xsl:template match="d:copyright" mode="book.titlepage.verso.auto.mode">
-<fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="book.titlepage.verso.style">
+<fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="book.titlepage.verso.style" space-before="60em" text-align="center"><!-- CUSTOM: added space before and centered -->
 <xsl:apply-templates select="." mode="book.titlepage.verso.mode"/>
 </fo:block>
 </xsl:template>
