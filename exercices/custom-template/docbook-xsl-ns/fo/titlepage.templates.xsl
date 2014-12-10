@@ -418,6 +418,11 @@ xmlns:exsl="http://exslt.org/common" version="1.0" exclude-result-prefixes="exsl
 </xsl:template>
 
 <xsl:template name="book.titlepage.recto">
+  
+  <!-- CUSTOM: call book logo -->
+  <xsl:call-template name="book.logo"/>
+  
+  <!-- CUSTOM: hide title (replaced by logo)
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:title">
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:title"/>
@@ -429,7 +434,7 @@ xmlns:exsl="http://exslt.org/common" version="1.0" exclude-result-prefixes="exsl
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:title"/>
     </xsl:when>
   </xsl:choose>
-
+  -->
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:subtitle">
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:subtitle"/>
@@ -441,7 +446,7 @@ xmlns:exsl="http://exslt.org/common" version="1.0" exclude-result-prefixes="exsl
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:subtitle"/>
     </xsl:when>
   </xsl:choose>
-
+  
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:corpauthor"/>
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:corpauthor"/>
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:authorgroup"/>
@@ -633,7 +638,7 @@ xmlns:exsl="http://exslt.org/common" version="1.0" exclude-result-prefixes="exsl
 </xsl:template>
 
 <xsl:template match="d:copyright" mode="book.titlepage.verso.auto.mode">
-<fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="book.titlepage.verso.style" space-before="60em" text-align="center"><!-- CUSTOM: added space before and centered -->
+<fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="book.titlepage.verso.style" space-before="42em" text-align="center"><!-- CUSTOM: added space before and centered -->
 <xsl:apply-templates select="." mode="book.titlepage.verso.mode"/>
 </fo:block>
 </xsl:template>
