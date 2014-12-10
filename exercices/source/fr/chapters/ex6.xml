@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
-	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
+	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Exercice: Ajout de connecteur</title>
 	
 	<section>
@@ -14,6 +14,10 @@
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 6.0.</para>
 		<para>Ajouter un connecteur d'envoi d'email sur les tâches automatiques "Notifier acceptation" et "Notifier refus".
 		Ceux-ci enverront un email au demandeur avec le statut de validation de sa demande.</para>
+		<para>Le code ci-dessous sera utilisé pour récupérer l'email du demandeur dans le connecteur:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_recupEmailDemandeur.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
 	</section>
 	
 	<section>
