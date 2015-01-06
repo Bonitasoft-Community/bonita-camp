@@ -1,7 +1,10 @@
-initiation-technique
+BPMN Camp
 ====================
 
-Présentation et exercices de la demi-journée de découverte de Bonita BPM Community edition.
+Slides and exercises for the BPMN Camp events.
+
+Content is available in:
+- French
 
 ##Build instructions for slides
 1. Download [reveal.js](https://github.com/hakimel/reveal.js/)
