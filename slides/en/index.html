@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 	<head>
 		<meta charset="utf-8">
 
@@ -37,7 +36,6 @@
 	</head>
 
 	<body>
-
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
@@ -57,9 +55,9 @@
 					</div>
 					
 					<aside class="notes">
-					Cette présentation va vous guider dans la découverte de Bonita BPM pour vous permettre de créer votre premier processus.<br />
-					Nous allons alterner les phases de présentation théorique et les phases de mise en pratique en s'appuyant sur le support pour les exercices que nous vous avons partagé.<br />
-					N'hésitez pas à intervenir en posant vos questions.
+					Presentation of Bonita BPM<br/>
+					Creation of 1st process<br/>
+					Mix of theoretical presentation and practical exercises
 					</aside>
 				</section>
 				
@@ -85,15 +83,15 @@
 					<p>Optimise processes</p>
 
 					<aside class="notes">
-					Les objectifs du BPM, Business Process Modeling, sont multiples. La principale idée est de s'assurer que les actions sont réalisées dans le bon ordre par les bonnes personnes en temps et en heure. Le but est de garantir la reproductibilité des processus qui sont identifiés comme efficaces.<br />
-					Le BPM apporte également des solutions pour rentrer dans une démarche d'amélioration continue grâce aux solutions comme Bonita qui vont permettre de suivre l'exécution des processus et finalement de les améliorer.
+					Ensure tasks are performed in the right order, by the good persons and timely<br/>
+					Guarantee that process can be reproduced efficiently<br/>
+					Tracking and continuous improvement with software such as Bonita BPM
 					</aside>
 				</section>
 
 				<section>
 					<section>
 						<h2>Bonita BPM Components</h2>
-						
 						<table>
 							<tr>
 								<td colspan="3" style="padding: 10px 0;">Bonita Studio</td>
@@ -109,10 +107,9 @@
 						</table>
 					
 						<aside class="notes">
-						La solution Bonita BPM se compose de 3 composants : Bonita Studio, Bonita Engine et Bonita Portal.<br />
-						Le Studio correspond à l'environnement de développement.<br />
-						Les composants Engine et Portal représentent le côté serveur de la solution et se regroupent sous le nom "Bonita Platform". Une Platform est embarquée dans le Studio a des fin de tests. Pour la mise en production il faut déployer une Platform sur un serveur.<br />
-						Nous allons détailler les différents composants dans les diapositives suivantes. 
+						Studio is a standalone IDE for developers.<br/>
+						Studio contains an embedded Platform used for single developer testing.<br/>
+						Production-ready platforms are deployed on dedicated servers.
 						</aside>
 					</section>
 
@@ -121,9 +118,10 @@
 						<img src="images/screenshot_studio_diagram.png" class="no-border" alt="Bonita BPM Studio : Diagram Editor">
 						
 						<aside class="notes">
-						Une première chose à savoir c'est que le Studio est une application Java basée sur Eclipse. Le Studio nécessite donc l'utilisation d'une JVM pour être exécuté. La version courante de Bonita Studio nécessite Java 7. Pour le moment le Studio n'est pas compatible avec Java 8.<br />
-						Une des principale activité réalisée dans le Studio est la création de définition de processus. On va pour cela créer un ou plusieurs diagrammes. Chaque diagrammes peut contenir un ou plusieurs processus (définition de processus != instance de processus).<br />
-						Nous verrons qu'il y a différents aspects à la création d'un processus : la modélisation, la déclaration des données, la définition de formulaires, l'ajout de connecteurs... 
+						Studio is an Eclipse based IDE. Requires a JVM 7 (not compatible with 8).<br/>
+						Allows creation of process diagrams which contain one or several processes.<br/>
+						Different steps: process modelling, data setup, form design, connector setup...<br/>
+						Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.
 						</aside>
 					</section>
 					
@@ -132,29 +130,30 @@
 						<img src="images/screenshot_studio_form_editor.png" class="no-border" alt="Bonita BPM Studio : Form Editor">
 						
 						<aside class="notes">
-						Ici nous avons une capture d'écran de l'édition de formulaires. La définition d'un formulaire fonctionne par glisser-déposer de widget qu'on trouve dans la palette de gauche sur la grille se trouvant à droite.<br />
-						Nous reviendrons en détail sur la création d'un formulaire et la configuration des widgets sur une prochaine diapositive et dans un exercice.
+						Form editor perspective: form grid on which you drag and drop widgets from a palette
 						</aside>
 					</section>
 					
 					<section>
 						<h2>Bonita BPM Engine</h2>
-						<p>In charge of the execution of processes</p>
-						<p>Based on Java related technologies :</p>
+						<p>In charge process execution</p>
+						<p>Based on Java 7 related technologies :</p>
 						<ul>
-							<li>Java SE 7</li>
 							<li>JDBC (via Hibernate and data sources)</li>
-							<li>Java EE 6 : JSP, Servlet, JTA</li>
+							<li>Java EE 6 : JSP, Servlet, JTA ...</li>
 							<li>Spring</li>
 							<li>Quartz</li>
 						</ul>
-						<p>Packaged with the Bonita Portal in a web application (WAR or EAR)</p>
-						
+						<p>Packaged with the Bonita Portal in a Java web application</p>
+						<p>Requires :</p>
+						<ul>
+							<li>A Java application server</li>
+							<li>A JDBC compliant transactional database</li>
+						</ul>
+												
 						<aside class="notes">
-						C'est le moteur qui est en charge de dérouler la définition d'un processus en fonction des appels qui sont réalisés sur ses API. En général, c'est l'utilisateur final, via l'utilisation du Portal qui déclenche ces appels. Par exemple démarrer une nouvelle instance de processus.<br />
-						Le moteur, comme le Studio, nécessite l'utilisation de Java 7. De plus, le moteur (ainsi que le Portal) s'appuie sur un ensemble de services JEE. Il est donc nécessaire de disposer d'un serveur Java EE 6 tel que JBoss 7, Tomcat 7, WebLogic 12c (12.1).<br />
-						Parmi les services utilisés il y a JTA (Java Transaction API) qui n'est pas disponible dans un Tomcat standard. C'est pour cela qu'on ajoute la librairie Bitronix.<br />
-						Le moteur est un composant modulaire constitué d'un ensemble de services dont les implémentations sont injectées via Spring. Il est déconseillé de modifier les implémentations des services à l'exception de celles qui font l'objet de documentation (e.g. changement de configuration des events handlers).
+						No built-in UI<br/>
+						All interactions with the Engine from other components (Portal or other) are managed with Bonita APIs.
 						</aside>
 					</section>
 					
@@ -166,9 +165,9 @@
 						<img src="images/screenshot_portal_inbox.png" class="no-border" alt="Bonita BPM Portal : Task Inbox" height="400px" />
 						
 						<aside class="notes">
-						Le portail web de Bonita permet à l'utilisateur final d'interagir avec les processus. Il peut par exemple démarrer le processus pour faire une demande de congés, voir les factures en attente de validation...<br />
-						C'est via la même interface que l'administrateur va venir déployer des processus, les configurer et les activer pour permettre aux utilisateurs finaux d'y accéder.<br />
-						Il y a donc une notion de "profil utilisateur" pour déterminer quelles actions sont disponibles à un utilisateur donné. Le fait d'être associé à un profil donne accès à un ensemble de pages du Portal.
+						Users: start new cases, execute tasks<br/>
+						Administrators: deploy and configure process, manage access rights, track process execution<br/>
+						Portal uses the Bonita APIs as any client of the Engine
 						</aside>
 					</section>
 				</section>
@@ -187,10 +186,9 @@
 						</ul>
 						
 						<aside class="notes">
-						Le "start event" est l'événement qui définit le point de démarrage d'un processus. Comme tous les événements il est représenté par un disque. Les "start event" on une bordure simple et fine (épaisse pour les end, double pour les intermediates). Note : il est possible d'avoir de plusieurs start events dans un processus mais ça n'est pas recommandé (le moteur de workflow ne sait pas lequel choisir sans indication complémentaire).<br />
-						On peut voir ensuite deux types de tâches :<br />
-						Les tâches humaines (user task dans la norme) nécessite l'intervention d'un utilisateur avant que l'exécution du processus puisse continuer.<br />
-						Les tâches automatique ont en général pour objectif l'interaction avec des systèmes tiers (base de données, serveur email, générateur de fichiers...). Le moteur va les exécuter et une fois terminées poursuit automatiquement avec les éléments suivants.
+						OMG = Object Management Group, founded several standards such as UML<br/>
+						Shapes (BPMN standard): circle = event, rectangle = activity<br/>
+						Colors (Bonita specific): green = start, blue = intermediate, red = end
 						</aside>
 					</section>
 
@@ -207,7 +205,7 @@
 				<section>
 					<section>
 						<h2>Data Management : Scope</h2>
-						<p>3 encapsulated levels of visibilities :</p>
+						<p>3 encapsulated levels of visibilities for data:</p>
 						<ul>
 							<li>Process</li>
 							<li>Step</li>
@@ -215,10 +213,10 @@
 						</ul>
 						
 						<aside class="notes">
-						Dans l'édition communautaire de Bonita BPM trois niveaux de visibilité sont disponible. Le niveau de visibilité détermine quels éléments du processus ont accès aux données. Il détermine également à quel moment dans le cycle de vie du processus les données sont initialisées. Il faut noter que quelques soit le scope, le cycle de vie des données est lié au cycle de vie du processus (BDM en Souscription).<br />
-						Les données de processus sont initialisées à la création de l'instance du processus. Elles peuvent ensuite être mise à jour tout au long de la vie du processus. Il deviens impossible de les modifier une fois le processus terminé. Elles sont accessible depuis tous les éléments rattachés à la définition du processus.<br />
-						Les données d'étapes sont initialisées à la création de l'instance de l'étape et disponible jusqu'à la fin de l'étape. Elles sont utiles notamment pour échanger des données entre une suite de connecteurs qui seraient chaînés. Elles peuvent aussi être utilisé pour différenciés les multiples instances d'une même définition d'étape.<br />
-						Les données de formulaire sont initialisées au chargement d'un formulaire. Elles sont donc rechargées à chaque fois que le formulaire est actualisé dans le navigateur web. Elles sont seulement accessible dans la définition des formulaires. Elles sont souvent utilisées, par exemple, pour alimenter les listes déroulantes avec des données provenant d'un système externe.
+						- Data from upper scopes can be accessed (reverse is not possible).<br/>
+						- Data is always attached to a single process instance.<br/>
+						- Data life cycle is linked to its scope: once the scope is left (process, step...), data can no longer be modified.<br/>
+						- If business data must be shared between several processes: use an external DB or BDM (SP).
 						</aside>
 					</section>
 
@@ -229,8 +227,8 @@
 						<p>Types such as primitives and Strings are serialized in order to be persisted</p>
 						
 						<aside class="notes">
-						Le moteur s'appuie sur la base de données à laquelle il est lié pour sauvegarder les données de processus (sans exception) et les données d'étape (sauf si l'option transient est activée). Il est important de garder à l'esprit que, en cas de redémarrage du serveur, les données non stockées en base seront perdues. Cela ne pose pas de problème pour les données de formulaire qui sont initialisées à chaque chargement du formulaire. Par contre cela peut poser problème sur les données transientes d'étape qui seront réinitialisées avec la valeur par défaut.<br />
-						Tous type de données Java peut être utilisé. Les données de type primitifs (+ String) sont stockées de manière lisible en base de données. Les autres types sont stockées sous forme sérialisés. Dans tous les cas il est recommandé d'accès au valeur des données non pas via des requêtes SQL mais via des appels aux API.
+						DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
+						Never try to R/W data directly from Bonita DB, use the APIs to do so.
 						</aside>
 					</section>
 				
@@ -252,10 +250,11 @@
 						<p>Best practice: gateways should be placed in a symmetrical manner when possible</p>
 						
 						<aside class="notes">
-						La porte logique "exclusive" permet d'orienter le flux d'exécution du processus de manière conditionnelle : une seule des transitions en sortie sera suivie. La gateway "exclusive" ne comporte aucune logique pour les transitions entrantes. Il faut donc s'assurer par design que seule une des transitions entrantes sera active. Si ça n'est pas le cas on peut arriver à un scénario ou de multiples instances d'une étape sont crées.<br />
-						La gateway parallèle permet de déclencher l'exécution de plusieurs branches en parallèle. Pour les transitions entrante, la gateway attend quelles soit toutes actives avant de poursuivre l'exécution du processus.</br>
-						La gateway inclusive fonctionne de la même manière que l'exclusive à la différence que plus d'une transition peut être activée. Pour les transitions entrantes, seules celles actives sont attendues.<br />
-						Il faut veiller à éviter les cas où le processus pourrait être bloqué dans une gateway "pour toujours". Pour cela il est recommandé d'utiliser un design symétrique (notamment pour les parallèles) et également de toujours positionner une transition par défaut pour les gateway exclusive et inclusive.
+						- Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
+						- Exclusive: only one incoming TR should reach the gateway.<br/>
+						- Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
+						- Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
+						- Inclusive: used when dealing with parallel gateways with conditions
 						</aside>
 					</section>
 
@@ -270,16 +269,16 @@
 						<h2>Forms</h2>
 						<p>2 types of forms:</p>
 						<ul>
-							<li>Case start form</li>
-							<li>Step form</li>
+							<li>Case start form and step forms</li>
+							<li>Overview form</li>
 						</ul>
 						<p>A form is a set of widgets placed on a grid</p>
 						
 						<aside class="notes">
-						Il existe deux types de formulaires qui sont présentés à l'utilisateur final à différent instant du cycle de vie d'un processus.<br />
-						Le formulaire de "démarrage de cas" (case start), est accessible par l'utilisateur avant que l'instance de processus soit créée. Il permet d'obtenir de l'utilisateur les données obligatoire au démarrage d'une instance. Par exemple une demande de congés n'a pas de sens si il n'y a pas une date de départ et une date de retour.<br />
-						Les formulaires placés sur les étapes sont accessible à l'utilisateur dès que le tâche est prête à être réalisée. C'est le clic sur le bouton "soumettre" qui déclenche l'exécution de l'étape<br />
-						Il est possible de créer des formulaires constitués de plusieurs page, on parle de "pageflow".
+						Case start and overview form are defined at pool level.<br/>
+						Click on submit button in forms triggers the completion of human tasks or the start of a process.<br/>
+						Overview form is always available: whether the process is running or completed.<br/>
+						Multiple page forms: pageflows
 						</aside>
 					</section>
 					
@@ -296,7 +295,6 @@
 						</ul>
 						
 						<aside class="notes">
-						Les formulaires sont constitués par un ensemble de widgets.
 						</aside>
 					</section>
 
@@ -316,8 +314,9 @@
 						</ul>
 						
 						<aside class="notes">
-						Le mécanisme d'acteur permet de sortir l'association entre étape et utilisateurs pouvant la réaliser de la définition du processus. Ainsi les changements dans l'organisation de la société ne nécessite pas le déploiement d'une nouvelle version de processus. La principale limitation de ce mécanisme est qu'il ne peut pas exploiter les données ou les informations de processus.<br />
-						Le mécanisme de filtre d'acteurs fourni une solution qui permet d'exploiter les données et informations du processus pour construire une liste des identifiants des utilisateurs qui peuvent réaliser la tâche. L'exécution du filtre à lieu au moment où la tâche est instanciée.
+						Actors allow to automatically update task visibility when organization changes.<br/>
+						Actors cannot use process data whereas filters can.<br/>
+						Filters are executed only once when task starts.
 						</aside>
 					</section>
 					
@@ -332,7 +331,7 @@
 						<h2>Connectors</h2>
 						<p>Allows processes to interact with the IS (opposite of the APIs that allow to pilot the Engine)</p>
 						<p>A set of standard connectors is shipped in the Studio</p>
-						<p>One can create additional custom connectors</p>
+						<p>Custom connectors can be implemented using the Studio or other Java IDEs</p>
 						<p>A connector is composed of:</p>
 						<ul>
 							<li>a definition (Java interface) which specifies inputs/outputs</li>
@@ -340,9 +339,9 @@
 						</ul>
 						
 						<aside class="notes">
-						Un connecteur peut être placé en début ou fin de processus ou sur le début ou la fin d'une étape.<br />
-						Il est possible d'utiliser tous type de données en entrée et en sortie de connecteur. Il est également possible de placer des scripts Groovy pour éventuellement transformer/adapter les données.<br />
-						Il faut noter que, dès que possible, il est préférable d'utiliser des connecteurs plutôt que des scripts Groovy pour des raisons de performance d'exécution.
+						Connectors can be placed at the start or the end of a process or a task.<br/>
+						Any data type or groovy script can be used as I/O.<br/>
+						When possible prefer connectors over scripts for increased performance, error handling (SP).
 						</aside>
 					</section>
 					
@@ -364,7 +363,7 @@
 					</ul>
 					
 					<aside class="notes">
-					Dans les exercices et en développement depuis le Studio, le déploiement du processus est transparent par l'utilisation du bouton "Lancer".
+					When running processes from the Studio the deploy procedure is automated.
 					</aside>
 				</section>
 				
@@ -387,7 +386,6 @@
 		<script src="js/reveal.min.js"></script>
 
 		<script>
-
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -415,8 +413,6 @@
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-
 		</script>
-
 	</body>
 </html>
