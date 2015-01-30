@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Exercise : Data and auto-generated forms</title>
+	
+	<section>
+		<title>Goal</title>
+		<para>The goal of this exercise is to continue the leave request process implementation by adding data to it.</para>
+		<para>Once completed, the process will be executable and will display automatically generated forms.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Duplicate the process diagram from the previous exercise to create a v2.0 version.</para>
+		<para>Add the following data at pool level:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>leaveStart (Date)</para></listitem>
+			<listitem><para>dayCount (Integer)</para></listitem>
+			<listitem><para>isApproved (Boolean)</para></listitem>
+		</itemizedlist>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem>
+				<para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a v2.0 version.</emphasis></para>
+				<para>In the Studio's top menu, click on "Diagram / Duplicate".</para>
+				<para>Update the process diagram AND pool version numbers.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a process data.</emphasis></para>
+				<para>Select the process pool.</para>
+				<para>Navigate to the "General / Data" and click on "Add".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Enter "leaveStart" as the data name (this is a technical name so it should not contain spaces or special characters).</para>
+				<para>Select the "Date" type.</para>
+				<para>Click on "Finish &amp; Add".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a data named "dayCount" with the "Integer" type.</emphasis></para>
+				<para>Click on "Finish &amp; Add".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a data named "isApproved" with the "Boolean" type.</emphasis></para>
+				<para>Click on "Finish".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Make sure that the pool data are defined as following:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Save the process.</emphasis></para>
+				<para>Click on the "Save" button from the Studio's top menu bar.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Execute the process.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>

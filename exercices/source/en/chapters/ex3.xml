@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Exercise : Process with an exclusive gateway</title>
+	
+	<section>
+		<title>Goal</title>
+		<para>The goal of this exercise is to extend the existing process by adding a dynamic validation of the leave request.
+		This will be achieved with the use of an exclusive gateway which will lead to two execution paths: one for the accepted request and one for the rejected request.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Duplicate the process diagram from the previous exercise to create a v3.0 version.</para>
+		<para>Modify the diagram to add the following elements after the "Validate request" task:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>an exclusive gateway named "Is accepted?"</para></listitem>
+			<listitem><para>a service task named "Notify request accepted"</para></listitem>
+			<listitem><para>a terminate end event named "End - Request rejected"</para></listitem>
+			<listitem><para>a service task named "Notify request rejected"</para></listitem>
+			<listitem><para>a terminate end event named "End - Request accepted"</para></listitem>
+		</itemizedlist>
+		<para>Configure the transitions going out the exclusive gateway so that they control dynamically the process flow based on process data.</para>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a v3.0 version.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Remove the terminate end event.</emphasis></para>
+				<para>Select the event from the diagram and hit "delete" on your keyboard.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an exclusive gateway named "Is accepted?" next to the human task "Validate request".</emphasis></para>
+				<para>Select the "Validate request" task, perform a drag and drop from the gateway contextual icon.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Once you have created the gateway, use the context "tool" icon (1) to change its type to "Exclusive" (2).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Rename the gateway into "Is accepted?".</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Create a service task named "Notify request accepted" after the gateway.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Add a terminate end event named "End - Request accepted" next to the newly added service task.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Create a service task named "Notify request rejected" after the gateway.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Add a terminate end event named "End - Request rejected" next to the newly added service task.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Name the two transitions going out of the gateway</emphasis></para>
+				<para>The transition leading to the "Notify request accepted" task should be named "Yes" and the other "No".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Configure condition on the "Yes" transition to use the "isApproved" data.</emphasis></para>
+				<para>Select the transition and select the "isApproved" data from the condition dropdown.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Set the "No" transition as the default flow.</emphasis></para>
+				<para>Select the transition and check the "Default flow" property.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Validate the diagram.</emphasis></para>
+				<para>Once the transition conditions are properly set, you can validate the process diagram.
+				To do so, click on "Diagram / Validate" from the Studio's top menu.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Make sure that your diagram matches this:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Execute twice the process to test the different paths.</emphasis></para>
+				<para>Warning : do not hit twice the "Run" button, this would redeploy the process and clear the history.
+				In order to create the second process instance, you will need to navigate in the Bonita Portal.</para>
+				<para>Open the Portal with the dedicated button in the Studio's top toolbar or from the top right link in the web user interface:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Then, navigate to the "Processes" menu and select the "Leave request" process definition with version 3.0 and click on "Start".</para>
+			</listitem>			
+			<listitem>
+				<para><emphasis role="bold">Check that the process is correctly exectuted in the Portal administration interface.</emphasis></para>
+				<para>In the Portal, swicth to the "Administrator" profile with the top right dropdown.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Navigate to the "Process management / Cases" menu (1) then, switch to the "Archived cases" tab (2) and click on the eye icon (3) to view the case details.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Check the "Done tasks" section to validate the process execution:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_08.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+		</orderedlist>
+	</section>
+</chapter>

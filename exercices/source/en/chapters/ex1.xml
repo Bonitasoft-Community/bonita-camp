@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Exercise : Basic process model</title>	
+	
+	<section>
+		<title>Goal</title>
+		<para>The goal of this exercise is to create a first basic version the leave request process diagram..</para>
+		<para>At this stage the process is executable but has limited value from the business point of view as it does not yet contain forms or data.
+		We will extend it in the upcoming exercises.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>In order to do the exercise, create a "Leave request diagram" diagram in version 1.0 contain a "Leave request" process in version 1.0.</para>
+		<para>The process should contain the following BPMN elements :</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>A start event named "Fill request"</para></listitem>
+			<listitem><para>A human task named "Validate request"</para></listitem>
+			<listitem><para>A terminate end event named "End - Request processed"</para></listitem>
+		</itemizedlist>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Start the Bonita Studio.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Create a new process diagram.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Set the diagram and process names.</emphasis></para>
+				<para>Click anywhere on the background of the diagram design area but outside of the process pool (this will select the diagram).</para>
+				<para>Navigate to the "General / Diagram" tab and click on "Edit".</para>
+				<para>Enter "Leave request diagram" as the diagram name and "Leave request" for the pool name.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Rename the start event into "Fill request".</emphasis></para>
+				<para>Select the start event from the diagram.</para>
+				<para>Navigate to the "General / General" tab and enter the new name.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Rename the human task into "Validate request".</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a terminate end event named "End - Request processed".</emphasis></para>
+				<para>Select the human task, perform drag and drop from the contextual event icon (A) and select the terminate end event (B).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Once the event is created, rename it.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Make sure that your diagram matches this:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Save the process.</emphasis></para>
+				<para>Click on the "Save" button from the Studio's top menu bar.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Run the process.</emphasis></para>
+				<para>Click on the "Run" button from the Studio's top menu bar and go throungh the different forms.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+		</orderedlist>
+	</section>
+</chapter>
