@@ -46,7 +46,7 @@
 				Cliquer sur "Terminer".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Créer une seconde colonne dans le formulaire et étendre champs "Debut Conges" et "Nombre Jours" sur les deux colonnes.</emphasis></para>
+				<para><emphasis role="bold">Créer une seconde colonne dans le formulaire et étendre les champs "Début Conges" et "Nombre Jours" sur les deux colonnes.</emphasis></para>
 				<para>Cliquer sur le symbole "+" vert dans le coin supérieur droit de la grille du formulaire pour créer une colonne supplémentaire.</para>
 				<para>
 					<mediaobject>
@@ -55,7 +55,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Sélectionner puis étendre le champ "Debut Conges" sur les deux colonnes à l'aide de la flèche noire apparaissant sur le côté droit du widget.</para>
+				<para>Sélectionner puis étendre le champ "Début Conges" sur les deux colonnes à l'aide de la flèche noire apparaissant sur le côté droit du widget.</para>
 				<para>Répéter l'opération pour le champ "Nombre Jours".</para>
 			</listitem>
 			<listitem>
@@ -74,11 +74,21 @@
 				<para><emphasis role="bold">Associer une action au bouton "Accepter" pour accepter la demande.</emphasis></para>
 				<para>Avec le bouton sélectionné, naviguer dans l'onglet "Général / Actions" puis cliquer sur "Ajouter".</para>
 				<para>Sélectionner la variable "estApprouvee" dans le champ "cible" à gauche.</para>
-				<para>Entrer le texte "true" dans le champ "valeur" à droite.</para>
+				
+				<para>Cliquer sur l'icône "crayon" à côté du champ valeur. Vérifier que le "Type d'expression" sélectionné est "Constante".
+				Entrer "true" comme "Valeur" et sélectionner "java.lang.Boolean" comme "Type de retour". Cliquer sur "Ok"</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04a.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Une fois l'action paramétrée, le résultat doit être ceci :</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04b.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
