@@ -69,7 +69,7 @@
 				<para>Utiliser l'icône "crayon" pour éditer l'expression sur le champ destinataire "A".</para>
 				<para>Changer le type d'expression à "Script", nommer le script "recupEmailDemandeur" et coller le code ci-dessous dans la zone d'édition du script:</para>
 				<para>
-					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_recupEmailDemandeur.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 				<para>Passer à la page suivante et spécifier "Demande de congés acceptée" comme sujet.</para>
 				<para>Cliquer sur "Terminer".</para>
