@@ -107,11 +107,19 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Naviguer dans le menu "Gestion d'apps / Cas" puis sélectionner le filtre "Archivés" et vérifier les étapes exécutées.</para>
+				<para>Naviguer dans le menu "Gestion des processus / Cas" (1) puis sélectionner l'onglet "Cas archivés" (2) et cliquer sur l'icône de visualisation du détail des cas (3).</para>
 				<para>
 					<mediaobject>
 						<imageobject>
 							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Vérifier les "Tâches terminées" pour valider le bon déroulement du processus :</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
