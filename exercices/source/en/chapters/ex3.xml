@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise : Process with an exclusive gateway</title>
+	<title>Exercise: Process with an exclusive gateway</title>
 	
 	<section>
 		<title>Goal</title>
@@ -84,7 +84,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Execute twice the process to test the different paths.</emphasis></para>
-				<para>Warning : do not hit twice the "Run" button, this would redeploy the process and clear the history.
+				<para>Warning: do not hit twice the "Run" button, this would redeploy the process and clear the history.
 				In order to create the second process instance, you will need to navigate in the Bonita Portal.</para>
 				<para>Open the Portal with the dedicated button in the Studio's top toolbar or from the top right link in the web user interface:</para>
 				<para>
@@ -97,8 +97,8 @@
 				<para>Then, navigate to the "Processes" menu and select the "Leave request" process definition with version 3.0 and click on "Start".</para>
 			</listitem>			
 			<listitem>
-				<para><emphasis role="bold">Check that the process is correctly exectuted in the Portal administration interface.</emphasis></para>
-				<para>In the Portal, swicth to the "Administrator" profile with the top right dropdown.</para>
+				<para><emphasis role="bold">Check that the process is correctly executed in the Portal administration interface.</emphasis></para>
+				<para>In the Portal, switch to the "Administrator" profile with the top right dropdown.</para>
 				<para>
 					<mediaobject>
 						<imageobject>

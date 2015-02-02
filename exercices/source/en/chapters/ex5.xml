@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise : Actor management</title>
+	<title>Exercise: Actor management</title>
 	
 	<section>
 		<title>Goal</title>
@@ -42,7 +42,7 @@
 				<para>Name the filter "requestorManager" and click on "Finish".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Make sure your diagram looks like this :</emphasis></para>
+				<para><emphasis role="bold">Make sure your diagram looks like this:</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>

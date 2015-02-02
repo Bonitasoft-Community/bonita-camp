@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise : Basic process model</title>	
+	<title>Exercise: Basic process model</title>	
 	
 	<section>
 		<title>Goal</title>
-		<para>The goal of this exercise is to create a first basic version the leave request process diagram..</para>
+		<para>The goal of this exercise is to create a first basic version the leave request process diagram.</para>
 		<para>At this stage the process is executable but has limited value from the business point of view as it does not yet contain forms or data.
 		We will extend it in the upcoming exercises.</para>
 	</section>
@@ -13,7 +13,7 @@
 	<section>
 		<title>Instructions</title>
 		<para>In order to do the exercise, create a "Leave request diagram" diagram in version 1.0 contain a "Leave request" process in version 1.0.</para>
-		<para>The process should contain the following BPMN elements :</para>
+		<para>The process should contain the following BPMN elements:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A start event named "Fill request"</para></listitem>
 			<listitem><para>A human task named "Validate request"</para></listitem>
@@ -73,7 +73,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Run the process.</emphasis></para>
-				<para>Click on the "Run" button from the Studio's top menu bar and go throungh the different forms.</para>
+				<para>Click on the "Run" button from the Studio's top menu bar and go through the different forms.</para>
 				<para>
 					<mediaobject>
 						<imageobject>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise : Custom forms</title>
+	<title>Exercise: Custom forms</title>
 	
 	<section>
 		<title>Goal</title>
@@ -11,7 +11,7 @@
 	<section>
 		<title>Instructions</title>
 		<para>Duplicate the process diagram from the previous exercise to create a 4.0 version.</para>
-		<para>Create the following forms :</para>
+		<para>Create the following forms:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A "Fill leave request" start form that sets the "leaveStart" and "dayCount" data.</para></listitem>
 			<listitem><para>A "Validate leave request" task form that displays the "leaveStart" and "dayCount" data in read-only mode and that sets the "isApproved" data.</para></listitem>
@@ -95,7 +95,7 @@
 				<para>Proceed in the same was as for the "Accept" button: add an action that will set the value "false" to the "isApproved" data.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Execute the process twice to test the different paths and make sure the data are correcty saved from one form to the other.</emphasis></para>
+				<para><emphasis role="bold">Execute the process twice to test the different paths and make sure the data are correctly saved from one form to the other.</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
