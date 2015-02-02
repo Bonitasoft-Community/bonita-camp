@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Exercise : Custom forms</title>
+	
+	<section>
+		<title>Goal</title>
+		<para>The goal of this exercise is provide a user friendly interface for the execution of the process.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Duplicate the process diagram from the previous exercise to create a v4.0 version.</para>
+		<para>Create the following forms :</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>A "Fill leave request" start form that sets the "leaveStart" and "dayCount" data.</para></listitem>
+			<listitem><para>A "Validate leave request" task form that displays the "leaveStart" and "dayCount" data in read-only mode and that sets the "isApproved" data.</para></listitem>
+		</itemizedlist>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a v4.0 version.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a start from named "Fill leave request".</emphasis></para>
+				<para>Select the process pool and navigate to the "Application / Pageflow" tab and click on "Add".</para>
+				<para>Enter the form's name. Check the lines matching the "leaveStart" and "dayCount" data and check the "Mandatory" checkboxes. Click on "Finish".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Update the submit button label to make more it user friendly.</emphasis></para>
+				<para>Select the "Submit1" widget and navigate to the "General / General" tab and change the label to "Submit".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a "Validate leave request" form on the "Validate request" human task.</emphasis></para>
+				<para>Select the human task and navigate to the "Application / Pageflow" tab and click on "Add".</para>
+				<para>Enter the form name. Check the lines matching the "leaveStart" and "dayCount" data and check the "Read only" checkboxes. Click on "Finish".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a new column on the form and extend the two fields on the two columns.</emphasis></para>
+				<para>Click on the green "+" icon in the top right corner of the form grid to create a new column.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Select the "Leave Start" field then extend it on two columns with the black arrow displayed on the right side of the widget.</para>
+				<para>Repeat the same operation with the "Day Count" field.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an "Accept" button in the lower right corner of the form.</emphasis></para>
+				<para>Select a "Submit" widget from the palette on the left side of the form editor and click on the last empty cell of the form grid.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Select the newly added widget, navigate to the "General / General" tab, set the button's name to "btnAccept" and change its label to "Accept".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an action to the "Accept" button to grant the request.</emphasis></para>
+				<para>With the button selected, navigate to the "General / Actions" tab and click on "Add".</para>
+				<para>Select the "isApproved" data in the "target" field.</para>
+				<para>Click on the "Pencil" icon next to the "value" field. Make sure the "Expression type" is set to "Constant". Set the "Value" to "true" and set the "Return type" to "java.lang.Boolean". Click on "Ok".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04a.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>After setting the action, the result should look like this:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04b.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Select the "Submit1" button and update its name to "btnRefuse" and its label to "Refuse".</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an action to the "Refuse" button to reject the request.</emphasis></para>
+				<para>Proceed in the same was as for the "Accept" button: add an action that will set the value "false" to the "isApproved" data.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Execute the process twice to test the different paths and make sure the data are correcty saved from one form to the other.</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_05.png" />
+						</imageobject>
+					</mediaobject>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Check the archived cases detail to make sure that the right paths were taken.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>

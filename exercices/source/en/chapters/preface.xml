@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preface xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Preface</title>
+	<para>The goal of the exercises it to create a basic leave request process.</para>
+	
+	<para>The process will execute in the following way :</para>
+	<orderedlist>
+		<listitem><para>An employee requests a leave</para></listitem>
+		<listitem><para>The employee's manager validates the request</para></listitem>
+	</orderedlist>
+	
+	<para>In order to implement this process we are going to follow an iterative approach mixing theoretical content and practical exercises.
+	Each exercise will allow you to build an executable and more complete version of the process.</para>
+	
+	<para>Each exercise is divided in 3 sections :</para>
+	<itemizedlist mark='bullet'>
+		<listitem><para><emphasis role="bold">Goal</emphasis> - Presents the objectives of the exercise.</para></listitem>
+		<listitem><para><emphasis role="bold">Instructions</emphasis> - Contains an overview of the main steps required for completing the exercise.</para></listitem>
+		<listitem><para><emphasis role="bold">Correction</emphasis> - Contains a detailed description of the steps required for completing the exercise.</para></listitem>
+	</itemizedlist>
+</preface>
