@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Exercise: Notification connector</title>
+	
+	<section>
+		<title>Goal</title>
+		<para>The goal of this exercise is to demonstrate an interaction between Bonita BPM and an external system with the use of a connector.
+		In this context, we will notify the leave request initiator about his request's status with an email connector.</para>
+	</section>
+	
+	<section>
+		<title>Instructions</title>
+		<para>Duplicate the process diagram from the previous exercise to create a 6.0 version.</para>
+		<para>Add an email connector on the "Notify request accepted" and "Notify request rejected" service tasks.
+		These will send an email to the requestor with the request's validation status.</para>
+		<para>The following code will be used to retrieve the requestor's email in the connector:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
+	</section>
+	
+	<section>
+		<title>Correction</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 6.0 version.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
+				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
+				<para>Select the "Email (SMTP)" connector by using either the text filter or the "Messaging" category and click on "Next".</para>
+				<para>Fill the connection parameters based on your email account settings and click on "Next".</para>
+				<para>Enter your email in the "From" and "To" fields and click on "Next".</para>
+				<para>Enter "Bonita test" as the subject, click on the "Test" button and confirm the test without checking any dependency.</para>
+				<para>At this stage, you should get a message similar to this one:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_00.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Make sure that you receive the email (this may take a couple of minutes). If you do not receive it, update the connector configuration and re-test it.</para>
+				<para>Once the configuration is valid, click on "Save".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Name the configuration "emailConfig" and save it.</para>
+				<para>Close the connector test interface.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an email connector on the "Notify request accepted" task.</emphasis></para>
+				<para>Select the task, navigate to the "General / Connectors" tab and click on "Add".</para>
+				<para>Select the "Email (SMTP)" connector.</para>
+				<para>Name it "sendRequestAcceptedEmail" and click on "Next".</para>
+				<para>Do not fill in the parameters but click on the "Load" button:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>
+				<para>Enter your email address in the "From" field.</para>
+				<para>Use the "pencil" icon to edit the expression of the "To" field.</para>
+				<para>Set the "Expression type" to "Script", name the script "getRequestorEmail" and paste the following in the code edition zone:</para>
+				<para>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+				<para>Move to the next page and set "Leave request accepted" as the subject.</para>
+				<para>Click on "Finish".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an email connector on the "Notify request rejected" task.</emphasis></para>
+				<para>Repeat the previous steps by naming the connector "sendRequestRejectedEmail" and setting "Leave request rejected" as the subject.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Update the email of the test user "Walter Bates".</emphasis></para>
+				<para>Open the Portal from the Studio by using this button from the toolbar:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Switch to the "Administrator" profile then navigate to the "Organization / Users" menu.</para>
+				<para>Select the user "Walter Bates" and click on the "More" button.</para>
+				<para>Click on "Edit user".</para>
+				<para>Select the "Business card" tab</para>
+				<para>Enter your email in the "Email" field.</para>
+				<para>Save the change and close the Portal.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Execute twice the process to test the different paths and check that you receive the right emails.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>
