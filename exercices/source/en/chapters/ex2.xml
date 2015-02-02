@@ -11,7 +11,7 @@
 	
 	<section>
 		<title>Instructions</title>
-		<para>Duplicate the process diagram from the previous exercise to create a v2.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 2.0 version.</para>
 		<para>Add the following data at pool level:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>leaveStart (Date)</para></listitem>
@@ -24,7 +24,7 @@
 		<title>Correction</title>
 		<orderedlist>
 			<listitem>
-				<para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a v2.0 version.</emphasis></para>
+				<para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 2.0 version.</emphasis></para>
 				<para>In the Studio's top menu, click on "Diagram / Duplicate".</para>
 				<para>Update the process diagram AND pool version numbers.</para>
 			</listitem>

@@ -11,7 +11,7 @@
 	
 	<section>
 		<title>Instructions</title>
-		<para>Duplicate the process diagram from the previous exercise to create a v3.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 3.0 version.</para>
 		<para>Modify the diagram to add the following elements after the "Validate request" task:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>an exclusive gateway named "Is accepted?"</para></listitem>
@@ -26,7 +26,7 @@
 	<section>
 		<title>Correction</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a v3.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Remove the terminate end event.</emphasis></para>
 				<para>Select the event from the diagram and hit "delete" on your keyboard.</para>

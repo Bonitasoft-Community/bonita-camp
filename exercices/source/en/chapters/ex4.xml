@@ -10,7 +10,7 @@
 	
 	<section>
 		<title>Instructions</title>
-		<para>Duplicate the process diagram from the previous exercise to create a v4.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 4.0 version.</para>
 		<para>Create the following forms :</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A "Fill leave request" start form that sets the "leaveStart" and "dayCount" data.</para></listitem>
@@ -21,7 +21,7 @@
 	<section>
 		<title>Correction</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a v4.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 4.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Create a start from named "Fill leave request".</emphasis></para>
 				<para>Select the process pool and navigate to the "Application / Pageflow" tab and click on "Add".</para>
