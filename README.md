@@ -4,6 +4,7 @@ BPMN Camp
 Slides and exercises for the BPMN Camp events.
 
 Content is available in:
+- English
 - French
 
 ##Build instructions for slides
