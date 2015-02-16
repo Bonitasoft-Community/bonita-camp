@@ -9,6 +9,7 @@ Content is available in:
 
 ##Build instructions for slides
 1. Download [reveal.js](https://github.com/hakimel/reveal.js/)
+2. Install the [Bonita theme](https://github.com/amottier/bonitasoft-adoption/tree/master/templates/reveal.js)
 2. Paste the content of the "slides" folder into your reveal install directory
 3. Download and install the [Bonita reveal.js template](https://github.com/amottier/bonitasoft-adoption)
 
