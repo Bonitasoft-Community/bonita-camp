@@ -6,6 +6,7 @@ Slides and exercises for the BPMN Camp events.
 Content is available in:
 - English
 - French
+- Spanish
 
 ##Build instructions for slides
 1. Download [reveal.js](https://github.com/hakimel/reveal.js/) version 2.6.2
