@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Ejercicio: Datos y formularios auto-generados</title>
+	
+	<section>
+		<title>Objetivo</title>
+		<para>El objetivo de este ejercicio es continuar con la implementación del proceso de solicitud de vacaciones añadiéndole datos.</para>
+		<para>Una vez completado, el proceso será ejecutable y mostrará los formularios generados automáticamente.</para>
+	</section>
+	
+	<section>
+		<title>Instrucciones</title>
+		<para>Duplica el diagrama de proceso del ejericio anterior para crear la versión 2.0.</para>
+		<para>Añade los siguientes datos a nivel de proceso:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>diaInicio (Fecha)</para></listitem>
+			<listitem><para>numDias (Entero)</para></listitem>
+			<listitem><para>aprobado (Booleano)</para></listitem>
+		</itemizedlist>
+	</section>
+	
+	<section>
+		<title>Corrección</title>
+		<orderedlist>
+			<listitem>
+				<para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 2.0.</emphasis></para>
+				<para>En el menú superior del Studio, Haz click en "Proceso / Duplicar".</para>
+				<para>Modifica los números de versión del diagrama y del proceso.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añadir datos de proceso.</emphasis></para>
+				<para>Selecciona el proceso.</para>
+				<para>Navega hasta la pestaña "General / Data" y Haz click en "Añadir".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_01.png" />
+						</imageobject>
+					</mediaobject>
+					
+				</para>
+				<para>Nombra a la variable como "diaInicio" (como es un nombre técnico no debe contener espacios en blanco ni caracteres especiales).</para>
+				<para>Selecciona como tipo "Fecha".</para>
+				<para>Haz click "Acabar &amp; Añadir".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade una variable "numDias" de tipo "Entero".</emphasis></para>
+				<para>Haz click "Acabar &amp; Añadir".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade una variable "aprobado" de tipo "Booleano".</emphasis></para>
+				<para>Haz click "Finalizar".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Asegúrese que los datos del proceso están definidos como en la siguiente imagen:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Guarda el proceso.</emphasis></para>
+				<para>Haz click en el botón "Guardar" del menú superior del Studio.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Ejecuta el proceso.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>

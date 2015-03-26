@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Ejercicio: Conector de notificación</title>
+	
+	<section>
+		<title>Objetivo</title>
+		<para>El objetivo de este ejercicio es de demostrar la interación de Bonita BPM con un sistema externo mediante el uso de un conector.
+		En este contexto, vamos a notificar al solicitante de vacaciones sobre el estado de su solicitud con un conector de email.</para>
+	</section>
+	
+	<section>
+		<title>Instrucciones</title>
+		<para>Duplica el diagrama de proceso del ejercicio anterior para crear la versión 6.0.</para>
+		<para>Añade un conector de email en las tareas automáticas "Notificar aceptación solicitud" y "Noficar rechazo de solicitud".
+		Estas tareas enviarán un correo electrónico al solicitante con el estado de la solicitud.</para>
+		<para>El siguiente código será utilizado para obtener el email del solicitante en el conector:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
+	</section>
+	
+	<section>
+		<title>Corrección</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 6.0.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Prueba el conector de email para obtener la configuración SMTP correcta.</emphasis></para>
+				<para>Navega a "Desarrollo / Conectores / Probar Conector" en el menú superior.</para>
+				<para>Selecciona el conector "Correo electrónico (SMTP)" bien haciendo una búsqueda en el filtro, o seleccionando la categoria "Mensajería", despues haz clic en "Siguiente".</para>
+				<para>Rellena los parámetros de conexión basados en su cuenta de correo electrónico y pulse en "Siguiente".</para>				
+				<para>Introduce tu email en los campos "De" y "A" y pulsa en "Siguiente".</para>
+				<para>Introduce "Bonita Test" como asunto y pulse en el botón "Prueba", confirma la siguiente ventana si añadir ninguna dependencia.</para>
+				<para>En este punto, deberá recibir un mensaje similar al siguiente:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_00.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Asegúrate que se recibe el email, (puede tomar unos minutos). Si no se recibe, modifica la configuración del conector y re-ejecútalo.</para>
+				<para>Una vez la configuración es válida, haga click en "Guardar".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Nombra la configuración del conector "emailConfig" y guárdela.</para>
+				<para>Cierra la pantalla de test de conector.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade un conector de email en la tarea "Notificar aceptación solicitud".</emphasis></para>
+				<para>Selecciona la tarea, navega hasta la pestaña "General / Conectores" y haga click en "Añadir"..</para>
+				<para>Selecciona el conector "Correo electrónico (SMTP)" .</para>
+				<para>Nómbralo "enviarEmailAceptacionSolicitud" y haga click en "Siguiente".</para>
+				<para>No rellenee los parámetros, selecciona el botón "Carga":</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Selecciona la configuración "emailConfig" y continue hasta la página "Dirección de email".</para>
+				<para>Introduce tu email en el campo "De".</para>
+				<para>Utiliza el icono de lápiz para editar la expresión en el campo "A".</para>
+				<para>Selecciona como tipo de expresion "Script", nombra el script como "obtenerEmailSolicitante" y pega el siguiente código en la zona de edición:</para>
+				<para>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+				<para>Avanza a la siguiente página y define como asunto "Solicitud de Vacaciones Aprobada".</para>
+				<para>Haz click en "Finalizar".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade un conector de email en la tarea "Noficar rechazo solicitud".</emphasis></para>
+				<para>Repite los pasos previos nombrando el conector como "enviarEmailRechazoSolicitud" y configurando "Solicitud de Vacaciones Rechazada" como asunto.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Modifica el email del usuario "Walter Bates" que usaremos para la prueba.</emphasis></para>
+				<para>Abre el Portal desde el Studio usando el botón en el menú superior:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Cambia al perfil "Administrador" y navega al menú "Organización / Usuarios".</para>
+				<para>Selecciona el usuario "Walter Bates" y haz click en botón "Más".</para>
+				<para>Haga click en "Actualizar Usuario".</para>
+				<para>Selecciona la pesataña "Tarjeta de Visita".</para>
+				<para>Introduce su email en el campo correspondiente.</para>
+				<para>Guarda los cambios y cierra el Portal.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Ejecuta varias veces el proceso para comprobar los distintos caminos, y comprobar que recibe el email correspondiente.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>

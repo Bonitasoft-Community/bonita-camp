@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Ejercicio: Manejo de Actores</title>
+	
+	<section>
+		<title>Objetivo</title>
+		<para>El objetivo de este ejercicio es añadir colaboración al proceso existente repartiendo los formularios (tareas) entre 2 actores: un solicitante y un validador.</para>
+	</section>
+	
+	<section>
+		<title>Instrucciones</title>
+		<para>Duplica el diagrama de proceso del ejercicio anterior para crear una versión 5.0.</para>
+		<para>Añade una senda "Validador" al diagrama y mueve la tarea "Validar solicitud" a ella.</para>
+		<para>Añade un filtro de actor de tipo "Gerente del iniciador" a la senda "Validador".</para>
+	</section>
+	
+	<section>
+		<title>Corrección</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear una versión 5.0.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade una senda "Validador" al proceso.</emphasis></para>
+				<para>Selecciona el elemento "Senda" de la paleta BPMN y pulsa sobre el proceso.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Con la senda seleccionada, navega a "General / Senda" y define su nombre como "Validador".</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Renombra la otra senda a "Solicitante".</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Pincha y arrastra la tarea "Validar Solicitud" a la senda "Validador".</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade un filtro de actor "Gerente Iniciador" a la senda "Validador".</emphasis></para>
+				<para>Selecciona la senda "Validador" y navega a la pestaña "General / Actores".</para>
+				<para>Selecciona el actor "Employee actor" del menú desplegable.</para>
+				<para>Haz click en el boton "Definir" del filtro de actor.</para>
+				<para>Selecciona el filtro de actor "Gerente Iniciador" de la lista y haz click en "Siguiente".</para>
+				<para>Nómbralo como "managerSolicitante" y haz click en "Finalizar".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Asegúrate que el diagrama es así:</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ejecuta el proceso con los dos actores.</emphasis></para>
+				<para>Ejecuta el proceso desde el Studio (se usará el usuario "Walter Bates").</para>
+				<para>Envia el formulario "Solicitar vacaciones". Si los actores están correctamente definidos, la tarea "Validar solicitud de vacaciones" ya no debería estar disponible.</para>
+				<para>Desconecta del portal pulsando en el nombre de usuario en la esquina superior derecha y haz click en "Cerrar Sesión".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Conecta con el usuario "helen.kelly" y contraseña "bpm".</para>
+				<para>Si el filtro de actor se ha ejecutado correctamente, la tarea "Validar solicitud de vacaciones" deberá estar disponible en la lista de tareas.</para>
+			</listitem>
+		</orderedlist>
+	</section>
+</chapter>

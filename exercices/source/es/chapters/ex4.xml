@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Ejercicio: Formularios personalizados</title>
+	
+	<section>
+		<title>Objetivo</title>
+		<para>El objetivo de este ejercicio es disponer de una interfaz amigable para la ejecución del proceso.</para>
+	</section>
+	
+	<section>
+		<title>Instrucciones</title>
+		<para>Duplica el diagrama de proceso del ejercicio anterior para crear la versión 4.0.</para>
+		<para>Crea los siguientes formularios:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>Un formulario de instanciación "Rellenar solicitud de vacaciones" donde agregar las variables "diaInicio" y "numDias".</para></listitem>
+			<listitem><para>Un formulario de tarea "Validar Solicitud de vacaciones" que muestre las variables "diaInicio" y "numDias" en solo lectura y permita definir la variable "aprobado".</para></listitem>
+		</itemizedlist>
+	</section>
+	
+	<section>
+		<title>Corrección</title>
+		<orderedlist>
+			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 4.0.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Crea un formulario de instanciación llamado "Rellenar solicitud de vacaciones".</emphasis></para>
+				<para>Selecciona el pool del proceso y navega a la pestaña "Aplicación / Formulario" y haz click en "Añadir"</para>
+				<para>Introduce el nombre del formulario. Marca los campos "diaInicio" y "numDias" y márcalos como "Mandatorios". Haz click en "Finalizar".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Modifica la etiqueta del botón "Enviar" para hacerlo más amigable.</emphasis></para>
+				<para>Selecciona el widget "Enviar1" y navega a la pestaña "General / General" y cambia el texto de la etiqueta a "Enviar".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Crea el formulario "Validar Solicitud de vacaciones" en la tarea humana "Validar Solicitud".</emphasis></para>
+				<para>Selecciona la tarea humana y navega a la pestaña "Aplicación / Formulario" y haz click en "Añadir".</para>
+				<para>Introduce el nombre del formulario. Marca los campos "diaInicio" y "numDias" y márcalos como "Solo lectura". Haz click en "Finalizar".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Crea una nueva columna en el formulario y reparte los dos campos en dos columnas.</emphasis></para>
+				<para>Haz clic en el símbolo "+" verde de la esquina superior derecha de la grilla del formulario para crear una nueva columna.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Selecciona el campo "Día inicio" y extiendelo a 2 columnuas con la flecha negra mostrada en el lado derecho del widget.</para>
+				<para>Repite la misma operación con el campo "Número de días".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade un botón "Aceptar" en la parte inferior derecha del formulario.</emphasis></para>
+				<para>Selecciona de la paleta a la izquierda del editor el widget "Enviar" y haz click en la última celda vacía.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Selecciona el widget recién añadido, navega a la pestaña "General / General", define el nombre del botón como "btnAceptar" y cambia la etiqueta a "Aceptar".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade una acción al botón "Aceptar" para aceptar la solicitud.</emphasis></para>
+				<para>Con el botón seleccionado, navega a la pestaña "General / Acciones" y haz click en Añadir.</para>
+				<para>Selecciona la variable "aprobado" en el campo "destino".</para>
+				<para>Haga click en el icono del lápiz a la derecha. Asegúrese que está seleccionada la opción "Constante". Defina el "Valor" a "true" (sin comillas) y defina el tipo de retorno como "java.lang.Boolean". Pulse Aceptar.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04a.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Después de configurar la acción, el resultado debería ser:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_04b.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Seleccione el botón "Enviar1" y modifique su nombre a "btnRechazar" y su etiqueta a "Rechazar".</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade una acción al botón "Rechazar" para rechazar la solicitud.</emphasis></para>
+				<para>Procede de la misma manera que para el botón "Aceptar": añade una acción que agregará el valor "false" (sin comillas) a la variable "aprobado".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ejecuta el proceso varias veces para testar los diferentes caminos y asegúrate de que los datos son guardados correctamente de un formulario al otro.</emphasis></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_05.png" />
+						</imageobject>
+					</mediaobject>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex4_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Comprueba el detalle de los casos archivados para comprobar que se han tomado los caminos correctos.</emphasis></para></listitem>
+		</orderedlist>
+	</section>
+</chapter>
