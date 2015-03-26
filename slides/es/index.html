@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>BPMN Camp - Sesión 2</title>
+
+		<meta name="description" content="Presentación de Bonita BPM permitiendo crear una primera aplicación basada en procesos">
+		<meta name="author" content="Pablo Alonso de Linaje - Antoine Mottier - Philippe Ozil">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/bonita.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {				
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}			
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<section>
+					<div style="width:900px; margin:auto;">
+						<img src="images/bpmn_camp_logo.png" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
+						<span style="float:right; color:rgb(209,35,42);">Sesión 2</span>
+					</div>
+					<div style="margin:4em auto 4em auto;">
+						<a href="http://bit.ly/bpmn_camp_pre" target="_blank" style="font-size:200%;">http://bit.ly/bpmn_camp_pre</a>
+					</div>
+					<div>
+						<div style="float:left; text-align:left;">Pablo Alonso de Linaje</div>
+						<div style="float:right; text-align:right;">17 de marzo de 2015</div>
+					</div>
+					
+					<aside class="notes">
+					Presentación de Bonita BPM<br/>
+					Creación de su primer proceso<br/>
+					Combinación de presentación tecnica y ejercicios prácticos
+					</aside>
+				</section>
+				
+				<section id="agenda">
+					<h2>Agenda</h2>
+					<ul class="no-bullet">
+						<li>Objetivos BPM</li>
+						<li>Componentes de Bonita BPM</li>
+						<li>Introducción a BPMN</li>
+						<li>Gestión de Datos</li>
+						<li>Introducción a BPMN(Continuación)</li>
+						<li>Formularios</li>
+						<li>Actores</li>
+						<li>Conectores</li>
+						<li>Despliegue</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Objetivos BPM</h2>
+					<p>Colaborar durante la definición y la ejecución de los procesos de negocio</p>
+					<p>Monitorizar la ejecución de los procesos</p>
+					<p>Optimizar procesos</p>
+
+					<aside class="notes">
+					Asegurarse de que las tareas se ejecutan en el orden correcto, por las personas adecuadas y en tiempo.<br/>					
+					Asegurar que el proceso se ejecuta eficientemente<br/>
+					Monitorizar y mejorar continuamente con un sofware como Bonita BPM					
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Componentes Bonita BPM</h2>
+						<table>
+							<tr>
+								<td colspan="3" style="padding: 10px 0;">Bonita Studio</td>
+							</tr>
+							<tr>
+								<td style="padding: 10px 0;">Bonita Engine</td>
+								<td rowspan="2" style="vertical-align:middle; padding:0 20px; font-size:250%;">}</td>
+								<td rowspan="2" style="vertical-align:middle; padding:0;">Bonita Platform</td>
+							</tr>
+							<tr>
+								<td style="padding: 10px 0;">Bonita Portal</td>
+							</tr>
+						</table>
+					
+						<aside class="notes">
+						Studio es un IDE independiente para desarrolladores<br/>						
+						El Studio contiene una Plataforma de desarrollo<br/>
+						Los bundles para produccion se despliegan en servidores dedicados			
+						</aside>
+					</section>
+
+					<section>
+						<h2>Bonita BPM Studio : Editor de Diagramas</h2>
+						<img src="images/screenshot_studio_diagram.png" class="no-border" alt="Bonita BPM Studio : Diagram Editor">
+						
+						<aside class="notes">
+						El Studio esta montado sobre Eclipse. Requiere JVM 7 trabajando en la compatibilidad con la 8<br/>
+						Permite la creación de diagramas de proceso que pueden contener 1 o varios procesos<br/>
+						Diferentes etapas: modelado del proceso, configuracion de datos, diseño de formularios, configuracion de conectores...<br/>
+						El editor de diagrama contiene el whiteboard donde podemos hacer drag and drop de los elementos de la paleta
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Studio : Editor de Formularios</h2>
+						<img src="images/screenshot_studio_form_editor.png" class="no-border" alt="Bonita BPM Studio : Form Editor">
+						
+						<aside class="notes">
+						La vista del editor de formularios permite hacer drag and frop de widgets de la paleta
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Engine</h2>
+						<p>Encargado de la ejecución de los procesos</p>
+						<p>Basado en tecnologias relacionadas con Java 7 :</p>
+						<ul>
+							<li>JDBC (via Hibernate y data sources)</li>
+							<li>Java EE 6 : JSP, Servlet, JTA ...</li>
+							<li>Spring</li>
+							<li>Quartz</li>
+						</ul>
+						<p>Empaquetado junto al Bonita Portal en una aplicación web Java</p>
+						<p>Necesita :</p>
+						<ul>
+							<li>Un servidor de aplicaciones Java</li>
+							<li>Una Base de datos transaccional JDBC</li>
+						</ul>
+												
+						<aside class="notes">
+						No dispone de UI<br/>
+						Todas las interacciones con el Engine desde otros componentes (Portal, otros) se gestionan con las Bonita APIs.
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Portal</h2>
+						<p>Interfaz web para el usuario final y administradores</p>
+						<p>Muestra la lista de tareas disponibles </p>
+						<p>Permite desplegar y configurar nuevos procesos</p>
+						<img src="images/screenshot_portal_inbox.png" class="no-border" alt="Bonita BPM Portal : Task Inbox" height="400px" />
+						
+						<aside class="notes">
+						Usuarios: Iniciar un proceso, ejecutar tareas<br/>
+						Administradores: desplegar y configurar procesos, gestionar permisos, monitorizar la ejecucion de los procesos<br/>
+						El Portal usa las Bonita APIs como cliente del Engine
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Introducción al BPMN</h2>
+						<p>Notación estandard (OMG) para el modelado de procesos</p>
+						<p>Un proceso se representa por un Pool</p>
+						<p>Elementos principales:</p>
+						<ul class="no-bullet">
+							<li><img class="only_right_margin" src="images/bpmn_start_event.png" alt="start event" />Evento Inicio</li>
+							<li><img class="only_right_margin" src="images/bpmn_human_task.png" alt="human task" />Tarea Humana</li>
+							<li><img class="only_right_margin" src="images/bpmn_service_task.png" alt="service task" />Tarea Automática</li>
+							<li><img class="only_right_margin" src="images/bpmn_end_event.png" alt="end event" />Evento de Fin</li>
+						</ul>
+						
+						<aside class="notes">
+						OMG = Object Management Group, creo diversos estandares como UML<br/>
+						Shapes (BPMN standard): circle = event, rectangle = activity<br/>
+						Colors (Bonita specific): green = start, blue = intermediate, red = end
+						</aside>
+					</section>
+
+					<section data-state="exercise">
+						<h2>Ejercicio 1</h2>
+						<p>Modelado de proceso básico</p>
+						<p>Descarga las instrucciones en el siguiente link:</p>
+						<div style="margin:3em auto 3em auto;">
+							<a href="http://bit.ly/bpmn_camp_ex" target="_blank" style="font-size:200%;">http://bit.ly/bpmn_camp_ex</a>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Gestión de Datos : Ámbito</h2>
+						<p>3 niveles de visibilidad para los datos:</p>
+						<ul>
+							<li>Proceso</li>
+							<li>Tarea</li>
+							<li>Formulario</li>
+						</ul>
+						
+						<aside class="notes">
+						- Los datos de un ámbito superior pueden ser accedidos, no al reves.<br/>
+						- Los datos se adjunta a cada instiancia de proceso.<br/>
+						- El ciclo de vidad de los datos esta relacionado con el ambioto, una vez se abandona el ambito, los datos no pueden modificarse<br/>
+						- Si se quieren compartir datos de negocio entre distintos procesos, se debe utilizar una BD externa o un BDM (SP).
+						</aside>
+					</section>
+
+					<section>
+						<h2>Gestión de Datos : Persistencia y Tipos</h2>
+						<p>Todos los datos están almacenados en Base de Datos por el Engine excepto los datos transitorios de tarea o de formulario</p>
+						<p>Se puede utilizar cualquier tipo Java Serializable</p>
+						<p>Los tipos primitivos o Strings se serializan para persisitirlos</p>
+						
+						<aside class="notes">
+						DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
+						Never try to R/W data directly from Bonita DB, use the APIs to do so.
+						</aside>
+					</section>
+				
+					<section data-state="exercise">
+						<h2>Ejercicio 2</h2>
+						<p>Datos y formularios auto-generados</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Introducción BPMN (Continuación)</h2>
+						<p>3 tipos de compuertas :</p>
+						<ul class="no-bullet">
+							<li><img class="only_right_margin" src="images/bpmn_gateway_exclusive.png" alt="gateway exclusive" />Exclusiva</li>
+							<li><img class="only_right_margin" src="images/bpmn_gateway_parallel.png" alt="gateway inclusive" />Paralela</li>
+							<li><img class="only_right_margin" src="images/bpmn_gateway_inclusive.png" alt="gateway inclusive" />Inclusiva</li>
+						</ul>
+						<p>Buenas prácticas: las compuertas deberían ser simetricas cuando sea posible</p>
+						
+						<aside class="notes">
+						- Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
+						- Exclusive: only one incoming TR should reach the gateway.<br/>
+						- Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
+						- Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
+						- Inclusive: used when dealing with parallel gateways with conditions
+						</aside>
+					</section>
+
+					<section data-state="exercise">
+						<h2>Ejercicio 3</h2>
+						<p>Proceso con una puerta exclusiva</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Formularios</h2>
+						<p>2 tipos de formularios:</p>
+						<ul>
+							<li>Formulario de instanciación y de tarea</li>
+							<li>Formulario de resumen</li>
+						</ul>
+						<p>Un formulario es un conjunto de widgets ubicados en una grilla</p>
+						
+						<aside class="notes">
+						Case start and overview form are defined at pool level.<br/>
+						Click on submit button in forms triggers the completion of human tasks or the start of a process.<br/>
+						Overview form is always available: whether the process is running or completed.<br/>
+						Multiple page forms: pageflows
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Widgets</h2>
+						<p>Los widgets tienen disponible una serie de opciones de configuración :<p>
+						<ul>
+							<li>Nombre (id) y etiqueta</li>
+							<li>Ayuda, tooltip, ejemplo</li>
+							<li>Valores iniciales, disponibles</li>
+							<li>Operación de salida</li>
+							<li>Inserción condicional, obligatorio, solo lectura...</li>
+							<li>Validaciones</li>
+						</ul>
+						
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-state="exercise">
+						<h2>Ejercicio 4</h2>
+						<p>Formularios personalizados</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Actores</h2>
+						<p>2 opciones de implementación :</p>
+						<ul>
+							<li>Actores : mapeo entre la definición del proceso y la organización</li>
+							<li>Filtros de Actor : lógica ejecutada cuando se prepara la tarea</li>						
+						</ul>
+						
+						<aside class="notes">
+						Actors allow to automatically update task visibility when organization changes.<br/>
+						Actors cannot use process data whereas filters can.<br/>
+						Filters are executed only once when task starts.
+						</aside>
+					</section>
+					
+					<section data-state="exercise">
+						<h2>Ejercicio 5</h2>
+						<p>Manejo de Actores</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Conectores</h2>
+						<p>Permite a los procesos interactuar con otros sistemas externos (lo contrario que las APIs que permiten gestionar el Engine)</p>
+						<p>El Studio dispone de un conjunto de conectores</p>
+						<p>Se pueden implementar conectores personalizados tanto desde el Studio como de otros Java IDEs</p>
+						<p>Un conector se compone de:</p>
+						<ul>
+							<li>una definición (Java interface) que especifica las entradas/salidas del conector</li>
+							<li>una implementación (Java class) que define la lógica de negocio</li>
+						</ul>
+						
+						<aside class="notes">
+						Connectors can be placed at the start or the end of a process or a task.<br/>
+						Any data type or groovy script can be used as I/O.<br/>
+						When possible prefer connectors over scripts for increased performance, error handling (SP).
+						</aside>
+					</section>
+					
+					<section data-state="exercise">
+						<h2>Ejercicio 6</h2>
+						<p>Conector de Notificación</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Despliegue</h2>
+					<p>Pasos principales para el despliegue de procesos:</p>
+					<ul>
+						<li>Configuración del proceso en el Studio</li>
+						<li>Generación de fichero .bar</li>
+						<li>Despliegue de fichero .bar usando el Portal</li>
+						<li>Configuración del proceso después del despliegue</li>
+						<li>Activación del proceso</li>
+					</ul>
+					
+					<aside class="notes">
+					When running processes from the Studio the deploy procedure is automated.
+					</aside>
+				</section>
+				
+				<section>
+					<h2>Gracias por su atención</h2>
+					<p style="margin:3em 0;">¿Alguna pregunta? ¡No lo dude!</p>
+					<p>Recursos Extra :</p>
+					<ul>
+						<li>Correcciones - <a href="http://bit.ly/bpmn_camp_sol" target="_blank">bit.ly/bpmn_camp_sol</a></li>
+						<li>Documentación - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
+						<li>Web corporativa - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
+						<li>Comunidad - <a href="http://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+					</ul>
+				</section>
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+				width: '65%',
+ 				height: '90%',
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
