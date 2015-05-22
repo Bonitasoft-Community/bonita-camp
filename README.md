@@ -1,7 +1,7 @@
-BPMN Camp
+BPM Camp
 ====================
 
-Slides and exercises for the BPMN Camp events.
+Slides and exercises for the BPM Camp events.
 
 Content is available in:
 - English
