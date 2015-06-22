@@ -4,9 +4,9 @@ BPM Camp - 7.x
 Slides and exercises for the BPM Camp events.
 
 Content is available in:
-- English
+- ~~English~~
 - French
-- Spanish
+- ~~Spanish~~
 
 ##Build instructions for slides
 1. Download [reveal.js](https://github.com/hakimel/reveal.js/) version 3.1.0
