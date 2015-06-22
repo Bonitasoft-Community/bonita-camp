@@ -1,6 +1,6 @@
 {
-  "requestContract" : {
-    "leaveStart" : null,
-    "dayCount" : null
+  "contratDemande" : {
+    "dateDebut" : null,
+    "nombreJours" : null
   }
 }
