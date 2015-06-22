@@ -342,7 +342,7 @@ set       toc,title
   </xsl:attribute>
 </xsl:attribute-set>
 <xsl:param name="header.rule" select="1"/>
-<xsl:param name="header.column.widths">1 1 1</xsl:param>
+<xsl:param name="header.column.widths">1 8 1</xsl:param><!-- CUSTOM: HEADER COLUMS (default: 1 1 1) -->
 <xsl:param name="header.table.height">14pt</xsl:param>
 <xsl:attribute-set name="header.table.properties">
   <xsl:attribute name="table-layout">fixed</xsl:attribute>
@@ -811,10 +811,10 @@ set       toc,title
 <xsl:attribute-set name="section.properties">
 </xsl:attribute-set>
 <xsl:param name="segmentedlist.as.table" select="0"/>
-<xsl:param name="shade.verbatim" select="0"/>
+<xsl:param name="shade.verbatim" select="1"/><!-- CUSTOM: adds background color for code listings (default: 0) -->
 
 <xsl:attribute-set name="shade.verbatim.style">
-  <xsl:attribute name="background-color">#E0E0E0</xsl:attribute>
+  <xsl:attribute name="background-color">#F4F4F4</xsl:attribute><!-- CUSTOM: light grey background for code listings (default: #E0E0E0) -->
 </xsl:attribute-set>
 <xsl:param name="show.comments" select="1"/>
 <xsl:attribute-set name="sidebar.properties" use-attribute-sets="formal.object.properties">
@@ -935,6 +935,7 @@ set       toc,title
 </xsl:attribute-set>
 <xsl:param name="variablelist.term.break.after">0</xsl:param>
 <xsl:attribute-set name="verbatim.properties">
+  <xsl:attribute name="font-size">9pt</xsl:attribute><!-- CUSTOM: reduced font size for code listings (default: no attribute specified) -->
   <xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
   <xsl:attribute name="space-before.optimum">1em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">1.2em</xsl:attribute>

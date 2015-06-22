@@ -794,7 +794,7 @@ xmlns:fo="http://www.w3.org/1999/XSL/Format"
 <!-- CUSTOM: book logo -->
 <xsl:template name="book.logo">
 	<fo:block text-align="center">
-		<fo:external-graphic src="url(resources/bpmn-camp-logo.png)" content-width="14cm"/>
+		<fo:external-graphic src="url(resources/bpm_camp_logo.png)" content-width="14cm"/>
 	</fo:block>
 </xsl:template>
 
