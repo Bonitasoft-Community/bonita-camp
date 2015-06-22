@@ -9,14 +9,14 @@
 	</section>
 	
 	<section>
-		<title>Instructions</title>
+		<title>Instructions résumées</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</para>
 		<para>Ajouter une lane "Validateur" au diagramme et y déplacer la tâche "Valider demande".</para>
 		<para>Configurer un filtre d'acteur de type "Manager de l'initiateur du processus" sur la lane "Validateur".</para>
 	</section>
 	
 	<section>
-		<title>Correction</title>
+		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</emphasis></para></listitem>
 			<listitem>

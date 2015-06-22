@@ -7,7 +7,7 @@
 	<para>Ce dernier se déroulera de la façon suivante :</para>
 	<orderedlist>
 		<listitem><para>Un employé dépose une demande de congés</para></listitem>
-		<listitem><para>Le responsable de l'employé décide ou non de valider la demande</para></listitem>
+		<listitem><para>Le responsable de l'employé décide ou non d'approuver la demande</para></listitem>
 	</orderedlist>
 	
 	<para>Afin de réaliser cela, nous allons emprunter une approche itérative alternant contenu théorique et exercices pratiques.
@@ -16,7 +16,7 @@
 	<para>Chaque exercice est découpé en 3 sections :</para>
 	<itemizedlist mark='bullet'>
 		<listitem><para><emphasis role="bold">Objectif</emphasis> - Présente les concepts clés visés par l'exercice.</para></listitem>
-		<listitem><para><emphasis role="bold">Instructions</emphasis> - Contient les grandes étapes de la réalisation de l'exercice.</para></listitem>
-		<listitem><para><emphasis role="bold">Correction</emphasis> - Fournit une description détaillée pas à pas des étapes permettant de réaliser l'exercice.</para></listitem>
+		<listitem><para><emphasis role="bold">Instructions résumées</emphasis> - Contient les grandes étapes de la réalisation de l'exercice.</para></listitem>
+		<listitem><para><emphasis role="bold">Instructions pas à pas</emphasis> - Fournit une description détaillée pas à pas des étapes permettant de réaliser l'exercice.</para></listitem>
 	</itemizedlist>
 </preface>

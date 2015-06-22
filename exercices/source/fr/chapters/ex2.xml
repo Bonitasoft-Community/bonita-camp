@@ -1,37 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercice : Données et formulaires génériques</title>
+	<title>Exercice : Ajout de données et spécification de contrats</title>
 	
 	<section>
 		<title>Objectif</title>
-		<para>L'objectif de cet exercice est de continuer l'implémentation du processus de demande de congés en y ajoutant des données.</para>
+		<para>L'objectif de cet exercice est de continuer l'implémentation du processus de demande de congés en:</para>
+		<orderedlist>
+			<listitem><para>configurant un modèle de données métier communément appelé BDM (Business Data Model)</para></listitem>
+			<listitem><para>spécifiant des contrats d'instanciation de processus et d'étape</para></listitem>
+		</orderedlist>		
 		<para>Une fois complété, le processus sera exécutable avec des formulaires générés automatiquement.</para>
 	</section>
 	
 	<section>
-		<title>Instructions</title>
+		<title>Instructions résumées</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.0.</para>
-		<para>Ajouter les données suivantes au niveau du processus :</para>
+		<para>Créer un objet BDM "DemandeConges" (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux) avec les attributs suivants :</para>
+		<informaltable frame="all">
+			<tgroup cols="3" align="left" colsep="1" rowsep="1">
+				<colspec colname='c1' colwidth="1*"/>
+				<colspec colname='c2' colwidth="1*"/>
+				<colspec colname='c3' colwidth="3*"/>
+				<thead>
+					<row>
+						<entry>Nom</entry>
+						<entry>Type</entry>
+						<entry>Obligatoire</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>idDemandeur</entry>
+						<entry>Long</entry>
+						<entry>Oui</entry>
+					</row>
+					<row>
+						<entry>dateDebut</entry>
+						<entry>Date</entry>
+						<entry>Oui</entry>
+					</row>
+					<row>
+						<entry>nombreJours</entry>
+						<entry>Entier</entry>
+						<entry>Oui</entry>
+					</row>
+					<row>
+						<entry>estApprouvee</entry>
+						<entry>Booléen</entry>
+						<entry>Non</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+		<para>Déclarer une instance "demande" de type "DemandeConges" sur le pool.</para>
+		<para>Ajouter un contrat d'instanciation avec une entrée "contratDemande" de type "complexe" qui contient les éléments suivants</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>debutConges (Date)</para></listitem>
+			<listitem><para>dateDebut (Date)</para></listitem>
 			<listitem><para>nombreJours (Entier)</para></listitem>
+		</itemizedlist>
+		<para>Ajouter les deux contraintes suivantes sur le contrat d'instanciation:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>"dateDebut" doit être dans le futur</para></listitem>
+			<listitem><para>"nombreJours" doit être strictement supérieur à 0</para></listitem>
+		</itemizedlist>
+		<para>Initialiser le BDM "demande" avec le code suivant:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
+		<para>Ajouter un contrat sur l'étape "Valider demande" avec les éléments suivants:</para>
+		<itemizedlist mark='bullet'>
 			<listitem><para>estApprouvee (Booléen)</para></listitem>
 		</itemizedlist>
+		<para>Ajouter une opération sur l'étape "Valider demande" pour affecter la valeur retournée par le contrat à l'attribut "estApprouvee" du BDM "demande".</para>
 	</section>
 	
 	<section>
-		<title>Correction</title>
+		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem>
-				<para><emphasis role="bold">Dupliquer le diagramme de processus existant pour créer une version 2.0</emphasis></para>
-				<para>Dans le menu supérieur du Studio, cliquer "Diagramme / Dupliquer"</para>
+				<para><emphasis role="bold">Dupliquer le diagramme de processus existant pour créer une version 2.0.</emphasis></para>
+				<para>Dans le menu supérieur du Studio, cliquer "Diagramme / Dupliquer".</para>
 				<para>Mettre à jour les numéros de version du diagramme ET du processus.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter une donnée de processus.</emphasis></para>
-				<para>Sélectionner le Pool du processus</para>
-				<para>Naviguer dans l'onglet "Général / Données" puis cliquer sur ajouter.</para>
+				<para><emphasis role="bold">Créer le BDM "DemandeConges".</emphasis></para>
+				<para>Naviguer dans le menu "Développement / Modèle de Données Métier / Gérer".</para>
+				<para>Cliquer sur "Ajouter" (A), dans la liste d'objets métiers et nommer l'objet "DemandeConges" (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
+				<para>Avec l'objet "DemandeConges" sélectionné, ajouter les attributs suivants (C):</para>
+				<informaltable frame="all">
+					<tgroup cols="3" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="1*"/>
+						<colspec colname='c3' colwidth="3*"/>
+						<thead>
+							<row>
+								<entry>Nom</entry>
+								<entry>Type</entry>
+								<entry>Obligatoire</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>idDemandeur</entry>
+								<entry>Long</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>dateDebut</entry>
+								<entry>Date</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>nombreJours</entry>
+								<entry>Entier</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>estApprouvee</entry>
+								<entry>Booléen</entry>
+								<entry>Non</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -39,20 +131,14 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Spécifier "debutConges" comme nom (il s'agit d'un nom technique, il faut donc omettre les espaces, les accents et autres caractères spéciaux).</para>
-				<para>Sélectionner le type "Date".</para>
-				<para>Cliquer sur "Terminer &amp; Ajouter".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Ajouter la donnée "nombreJours" de type "Entier".</emphasis></para>
-				<para>Cliquer sur "Terminer &amp; Ajouter".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Ajouter la donnée "estApprouvee" de type "Booléen".</emphasis></para>
 				<para>Cliquer sur "Terminer".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Vérifier que les données définies au niveau du processus ressemblent à ceci :</emphasis></para>
+				<para><emphasis role="bold">Déclarer une instance du BDM "DemandeConges" dans le processus.</emphasis></para>
+				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Données / Variables du pool".</para>
+				<para>Cliquer sur "Ajouter" dans la section "Variables métier".</para>
+				<para>Nommer la variable "demande" et sélectionner l'objet métier "DemandeConges".</para>
+				<para>Cliquer sur "Terminer".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -62,10 +148,101 @@
 				</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Configurer le contrat d'instanciation</emphasis></para>
+				<para>Sélectionner le pool de processus et naviguer dans l'onglet "Exécution / Contract / Inputs" (nos excuses pour l'absence temporaire de traduction de l'interface).</para>
+				<para>Cliquer sur "Add from data" (ajouter à partir de données).</para>
+				<para>Sélectionner le BDM "demande" et cliquer sur "Suivant".</para>
+				<para>Renommer l'élément en "contratDemande" et décocher les attributs "idDemandeur" et "estApprouvee".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Click on "Terminer".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Toujours dans l'onglet "Exécution / Contract", basculer dans l'onglet "Constraints".</para>
+				<para>Cliquer sur "Add" et ajouter la contrainte suivante:</para>
+				<itemizedlist>
+					<listitem><para>Nom : dateDebutDansFutur</para></listitem>
+					<listitem><para>Expression : <programlisting language="java">return contratDemande.dateDebut.compareTo(new Date()) &gt; 0;</programlisting></para></listitem>
+					<listitem><para>Message d'erreur : La date de début doit être dans le futur</para></listitem>
+				</itemizedlist>
+				<para>Ajouter une seconde contrainte:</para>
+				<itemizedlist>
+					<listitem><para>Nom : auMoinsUnJour</para></listitem>
+					<listitem><para>Expression : <programlisting language="java">return contratDemande.nombreJours &gt; 0;</programlisting></para></listitem>
+					<listitem><para>Message d'erreur : Le nombre de jours doit être supérieur à zéro</para></listitem>
+				</itemizedlist>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Initialiser le BDM de la demande à partir du contrat d'instanciation.</emphasis></para>
+				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Données / Variables du pool".</para>
+				<para>Sélectionner la variable "demande" et cliquer sur "Modifier".</para>
+				<para>Cliquer sur l'icône "crayon" associé au champ "Valeur par défaut" pour ouvrir l'éditeur d'expression.</para>
+				<para>S'assurer que le type d'expression sélectionné est "Script".</para>
+				<para>Nommer le script "initDemande".</para>
+				<para>Entrer le code suivant:</para>
+				<para>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
+				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contract / Inputs".</para>
+				<para>Cliquer sur "Add" et ajouter une entrée "estApprouvee" de type "BOOLEAN".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter une opération sur la tâche "Valider demande" pour mettre à jour la demande.</emphasis></para>
+				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Opérations".</para>
+				<para>Cliquer sur "Ajouter".</para>
+				<para>Sélectionne "demande" comme cible.</para>
+				<para>Cliquer sur le lien "Prend la valeur de" et changer l'opérateur en "Utiliser une méthode Java".</para>
+				<para>Sélectionner la méthode "setEstApprouvee" et cliquer sur "OK".</para>
+				<para>Sélectionner l'entrée de contrat "estApprouvee" dans le menu déroulant de droite.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Enregistrer le processus.</emphasis></para>
 				<para>Cliquer sur le bouton "Enregistrer" de la barre de menu supérieur du Studio.</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Exécuter le processus.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Exécuter le processus et tester les contraintes des contrats.</emphasis></para>
+				<para>Lancer le processus et remplir les formulaires automatiquement générés.</para>
+				<para><emphasis role="bold">Astuces:</emphasis></para>
+				<itemizedlist mark='bullet'>
+					<listitem><para>pour le champ "dateDebut", le format de date attendu est AAAA-MM-JJ.</para></listitem>
+					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue: soit "true" ou "false" (tout autre valeur sera évaluée comme "false").</para></listitem>
+				</itemizedlist>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				
+			</listitem>
 		</orderedlist>
 	</section>
 </chapter>

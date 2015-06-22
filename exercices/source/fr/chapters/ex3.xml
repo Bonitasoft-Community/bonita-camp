@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercice : Processus avec porte exclusive</title>
+	<title>Exercice : Contrôle dynamique du flux d'exécution grâce aux données</title>
 	
 	<section>
 		<title>Objectif</title>
 		<para>L'objectif de cet exercice est d'enrichir le processus existant en ajoutant la gestion dynamique de la validation de la demande de congés.
-		Ceci sera réalisé à l'aide d'une porte logique exclusive donnant accès à deux flux d'exécutions permettant de gérer le refus ou l'acceptation de la demande.</para>
+		Ceci sera réalisé à l'aide d'une porte logique exclusive donnant accès à deux flux d'exécutions permettant de gérer le refus ou l'approbation de la demande.</para>
 	</section>
 	
 	<section>
-		<title>Instructions</title>
+		<title>Instructions résumées</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</para>
 		<para>Modifier le diagramme pour placer les éléments suivants à la suite de l'étape "Valider demande" :</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>une porte exclusive "Demande acceptée ?"</para></listitem>
-			<listitem><para>une tâche automatique "Notifier acceptation"</para></listitem>
-			<listitem><para>un événement de terminaison "Fin - Demande acceptée"</para></listitem>
+			<listitem><para>une porte exclusive "Demande approuvée ?"</para></listitem>
+			<listitem><para>une tâche automatique "Notifier approbation"</para></listitem>
+			<listitem><para>un événement de terminaison "Fin - Demande approuvée"</para></listitem>
 			<listitem><para>une tâche automatique "Notifier refus"</para></listitem>
 			<listitem><para>un événement de terminaison "Fin - Demande refusée"</para></listitem>
 		</itemizedlist>
@@ -24,7 +24,7 @@
 	</section>
 	
 	<section>
-		<title>Correction</title>
+		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</emphasis></para></listitem>
 			<listitem>
@@ -32,7 +32,7 @@
 				<para>Sélectionner l'évènement dans le diagramme et appuyer sur la touche "Suppr" du clavier.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter une porte exclusive "Demande acceptée ?" à la suite de la tâche "Valider demande".</emphasis></para>
+				<para><emphasis role="bold">Ajouter une porte exclusive "Demande approuvée ?" à la suite de la tâche "Valider demande".</emphasis></para>
 				<para>Sélectionner la tâche "Valider demande", effectuer un glisser-déplacer à partir de l'icône contextuel de porte logique.</para>
 				<para>
 					<mediaobject>
@@ -49,23 +49,38 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Renommer la porte en "Demande acceptée ?".</para>
+				<para>Renommer la porte en "Demande approuvée ?".</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier acceptation" à partir de la porte logique.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande acceptée" à la suite de la tâche automatique "Notifier acceptation".</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier approbation" à partir de la porte logique.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande approuvée" à la suite de la tâche automatique "Notifier approbation".</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier refus" à partir de la porte logique.</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande refusée" à la suite de la tâche automatique "Notifier refus".</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Nommer les 2 transitions entre la porte logique et les étapes automatiques</emphasis></para>
-				<para>La transition menant à l'étape "Notifier acceptation" se nommera "Oui" et l'autre "Non".</para>
+				<para>La transition menant à l'étape "Notifier approbation" se nommera "Oui" et l'autre "Non".</para>
 			</listitem>
+			
 			<listitem>
 				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de la variable "estApprouvee".</emphasis></para>
-				<para>Sélectionner la transition et sélectionner la variable "estApprouvée" dans le menu déroulant de condition.</para>
+				<para>Sélectionner la transition et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
+				<para>Dans l'éditeur d'expression, sélectionner "Java" comme type d'expression, sélectionner la variable "demande" et la méthode "isEstAprouvee".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			
+			
+			<listitem>
+				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de la variable "estApprouvee".</emphasis></para>
+				<para>Sélectionner la variable "estApprouvée" dans le menu déroulant de condition.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer la transition "Non" en tant que flux par défaut.</emphasis></para>
-				<para>Sélectionner la transition et cocher la case "Flux par défaut".</para>
+				<para>Sélectionner la transition "Non" et cocher la case "Flux par défaut".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Déclencher la validation du diagramme.</emphasis></para>
@@ -107,7 +122,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Naviguer dans le menu "Gestion des processus / Cas" (1) puis sélectionner l'onglet "Cas archivés" (2) et cliquer sur l'icône de visualisation du détail des cas (3).</para>
+				<para>Naviguer dans le menu "BPM / Cas" (A) puis sélectionner l'onglet "Cas archivés" (B) et cliquer sur le lien "..." dans la colonne action (C) pour visualiser le détail d'un cas.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
