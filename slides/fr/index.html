@@ -3,7 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>BPMN Camp - Saison 2</title>
+		<title>BPM Camp</title>
+
+		<!-- EXERCICES LINK CONSTANT (auto injected in presentation) -->
+		<script>
+		var EXERCISES_LINK = 'http://bit.ly/TODO';
+		</script>
 
 		<meta name="description" content="Présentation de Bonita BPM permettant de rapidement réaliser un premier processus">
 		<meta name="author" content="Antoine Mottier - Philippe Ozil">
@@ -11,65 +16,92 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/bonita.css" id="theme">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/bonita/bonita.css" id="theme">
 
-		<!-- For syntax highlighting -->
+		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<!-- Printing and PDF exports -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
 				var link = document.createElement( 'link' );
 				link.rel = 'stylesheet';
 				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
 		</script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		
+		<!-- CUSTOM STYLE FOR THIS PRESENTATION -->
+		<style>
+			section .agenda li	{margin-bottom:0.4em;}
+
+			section .exercise-title	{margin:1em 0; font-size:larger;}
+			
+			section .bpmn-table		{border-collapse:separate; border-spacing:20px; margin-top:-20px;}
+			section .bpmn-table td	{vertical-align:middle; margin:0; padding:0;}
+			section .bpmn-table td:first-child	{text-align:right;}
+			section .bpmn-table img	{margin:0; vertical-align:middle;}
+
+			section .data-scopes		{width:100%; margin:0;}
+			section .data-scopes div	{width:90%; border:3px solid; padding:15px; margin:15px auto 0 auto; text-align:left; border-radius:10px;}
+			section .data-scopes p		{margin:0;}
+			section .data-scopes p:first-of-type	{font-weight:bold;}
+			section .data-scopes p:last-of-type		{font-size:70%;}
+			
+			section .data-types		{width:100%;}
+			section .data-types th	{text-align:center; font-weight:bold; padding:0 0 20px 0;}
+			section .data-types td	{padding:5px;}
+			section .data-types div	{margin-bottom:10px;}
+			section .data-types ul	{font-size:smaller;}
+			section .data-types li	{margin-top:10px;}
+			
+			section .compare th	{text-align:center; font-weight:bold;}
+			section .compare td:first-child	{font-weight:bold; vertical-align:middle;}
+			section .compare td, section .compare th	{border-right: 1px solid;}
+			section .compare td:last-child, section .compare th:last-child	{border-right-width:0;}
+			
+		</style>
 	</head>
 
 	<body>
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 			
 				<section>
 					<div style="width:900px; margin:auto;">
-						<img src="images/bpmn_camp_logo.png" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
-						<span style="float:right; color:rgb(209,35,42);">Saison 2</span>
+						<img src="presentation_images/bpm_camp_logo.png" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
 					</div>
-					<div style="margin:3em auto 3em auto;">
-						<a href="http://bit.ly/1EdbjWe" target="_blank" style="font-size:200%;">http://bit.ly/1EdbjWe</a>
+					<div style="margin:1em auto 1em auto;">
+						<a class="exerciseLink" href="#" target="_blank" style="font-size:200%;">auto</a>
 					</div>
 					<div>
 						<div style="float:left; text-align:left;">Philippe Ozil</div>
-						<div style="float:right; text-align:right;">6 Mai 2015</div>
+						<div style="float:right; text-align:right;">23 Juin 2015</div>
 					</div>
 					
 					<aside class="notes">
-					Cette présentation va vous guider dans la découverte de Bonita BPM pour vous permettre de créer votre premier processus.<br />
-					Nous allons alterner les phases de présentation théorique et les phases de mise en pratique en s'appuyant sur le support pour les exercices que nous vous avons partagé.<br />
-					N'hésitez pas à intervenir en posant vos questions.
+					Presentation of Bonita BPM<br/>
+					Creation of 1st process<br/>
+					Mix of theoretical presentation and practical exercises
 					</aside>
 				</section>
 				
-				<section id="agenda">
+				<section>
 					<h2>Programme</h2>
-					<ul class="no-bullet">
+					<ul class="no-bullet agenda">
 						<li>Objectifs du BPM</li>
 						<li>Composants de Bonita BPM</li>
 						<li>Introduction au BPMN</li>
-						<li>Gestion des données</li>
+						<li>Données &amp; Contrats</li>
 						<li>Introduction au BPMN (suite)</li>
-						<li>Formulaires</li>
+						<li>Formulaires et Pages</li>
 						<li>Acteurs</li>
 						<li>Connecteurs</li>
 						<li>Déploiement</li>
@@ -83,15 +115,16 @@
 					<p>Optimiser les processus</p>
 
 					<aside class="notes">
-					Les objectifs du BPM, Business Process Modeling, sont multiples. La principale idée est de s'assurer que les actions sont réalisées dans le bon ordre par les bonnes personnes en temps et en heure. Le but est de garantir la reproductibilité des processus qui sont identifiés comme efficaces.<br />
-					Le BPM apporte également des solutions pour rentrer dans une démarche d'amélioration continue grâce aux solutions comme Bonita qui vont permettre de suivre l'exécution des processus et finalement de les améliorer.
+					Ensure tasks are performed in the right order, by the good persons and timely<br/>
+					Guarantee that process can be reproduced efficiently<br/>
+					Tracking and continuous improvement with software such as Bonita BPM
 					</aside>
 				</section>
 
 				<section>
 					<section>
 						<h2>Composants de Bonita BPM</h2>
-						<table>
+						<table class="no-border">
 							<tr>
 								<td colspan="3" style="padding: 10px 0;">Bonita Studio</td>
 							</tr>
@@ -106,69 +139,74 @@
 						</table>
 					
 						<aside class="notes">
-						La solution Bonita BPM se compose de 3 composants : Bonita Studio, Bonita Engine et Bonita Portal.<br />
-						Le Studio correspond à l'environnement de développement.<br />
-						Les composants Engine et Portal représentent le côté serveur de la solution et se regroupent sous le nom "Bonita Platform". Une Platform est embarquée dans le Studio a des fin de tests. Pour la mise en production il faut déployer une Platform sur un serveur.<br />
-						Nous allons détailler les différents composants dans les diapositives suivantes. 
+						Studio is a standalone IDE for developers.<br/>
+						Studio contains an embedded Platform used for single developer testing.<br/>
+						Production-ready platforms are deployed on dedicated servers.
 						</aside>
 					</section>
 
 					<section>
-						<h2>Bonita BPM Studio : édition de diagrammes</h2>
-						<img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
+						<h2 style="font-size:1.4em;">Bonita BPM Studio : éditeur de diagrammes</h2>
+						<img src="presentation_images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
 						<aside class="notes">
-						Une première chose à savoir c'est que le Studio est une application Java basée sur Eclipse. Le Studio nécessite donc l'utilisation d'une JVM pour être exécuté. La version courante de Bonita Studio nécessite Java 7. Pour le moment le Studio n'est pas compatible avec Java 8.<br />
-						Une des principale activité réalisée dans le Studio est la création de définition de processus. On va pour cela créer un ou plusieurs diagrammes. Chaque diagrammes peut contenir un ou plusieurs processus (définition de processus != instance de processus).<br />
-						Nous verrons qu'il y a différents aspects à la création d'un processus : la modélisation, la déclaration des données, la définition de formulaires, l'ajout de connecteurs... 
+						Studio is an Eclipse based IDE. Requires a JVM 7 (not compatible with 8).<br/>
+						Allows creation of process diagrams which contain one or several processes.<br/>
+						Different steps: process modelling, data setup, form design, connector setup...<br/>
+						Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.
 						</aside>
 					</section>
 					
 					<section>
-						<h2>Bonita BPM Studio : édition de formulaires</h2>
-						<img src="images/screenshot_studio_form_editor.png" alt="Bonita BPM Studio : edition de formulaires">
+						<h2>Bonita BPM Studio : UI Designer</h2>
+						<img class="no-margin" src="presentation_images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
 						
 						<aside class="notes">
-						Ici nous avons une capture d'écran de l'édition de formulaires. La définition d'un formulaire fonctionne par glisser-déposer de widget qu'on trouve dans la palette de gauche sur la grille se trouvant à droite.<br />
-						Nous reviendrons en détail sur la création d'un formulaire et la configuration des widgets sur une prochaine diapositive et dans un exercice.
+						Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
 						</aside>
 					</section>
 					
 					<section>
 						<h2>Bonita BPM Engine</h2>
-						<p>Responsable de l'exécution des processus</p>
-						<p>Basé sur un ensemble de technologies du monde Java 7 :</p>
-						<ul>
-							<li>JDBC (via Hibernate et data source)</li>
-							<li>Java EE 6 : JSP, Servlet, JTA ...</li>
-							<li>Spring</li>
-							<li>Quartz</li>
-						</ul>
+						<p>Responsable de l'exécution des processus (pas d'interface graphique)</p>
+						<p>Basé sur un ensemble de technologies Java 7</p>
 						<p>Encapsulé avec le Portal dans une application web Java</p>
-						<p>Requiert</p>
+						<p>Requiert :</p>
 						<ul>
 							<li>Serveur d'application Java</li>
 							<li>Base de données transactionnelle compatible avec JDBC</li>
 						</ul>
 						
 						<aside class="notes">
-						C'est le moteur qui est en charge de dérouler la définition d'un processus en fonction des appels qui sont réalisés sur ses API. En général, c'est l'utilisateur final, via l'utilisation du Portal qui déclenche ces appels. Par exemple démarrer une nouvelle instance de processus.<br />
-						Le moteur, comme le Studio, nécessite l'utilisation de Java 7. De plus, le moteur (ainsi que le Portal) s'appuie sur un ensemble de services JEE. Il est donc nécessaire de disposer d'un serveur Java EE 6 tel que JBoss 7, Tomcat 7, WebLogic 12c (12.1).<br />
-						Parmi les services utilisés il y a JTA (Java Transaction API) qui n'est pas disponible dans un Tomcat standard. C'est pour cela qu'on ajoute la librairie Bitronix.<br />
-						Le moteur est un composant modulaire constitué d'un ensemble de services dont les implémentations sont injectées via Spring. Il est déconseillé de modifier les implémentations des services à l'exception de celles qui font l'objet de documentation (e.g. changement de configuration des events handlers).
+						All interactions (Portal and other) with the Engine are managed with Bonita APIs.<br/>
 						</aside>
 					</section>
 					
 					<section>
-						<h2 style="margin-bottom:50px;">Bonita BPM Portal</h2>
-						<p>L'interface web pour l'utilisateur final et l'administrateur</p>
+						<h2>Bonita BPM Portal</h2>
+						<p>Interface web pour l'utilisateur final et l'administrateur</p>
 						<p>Présente la liste des tâches à réaliser</p>
 						<p>Permet de déployer et configurer des processus</p>
-						<img src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400px" />
+						<img class="no-margin" src="presentation_images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400px" />
 						
 						<aside class="notes">
-						Le portail web de Bonita permet à l'utilisateur final d'interagir avec les processus. Il peut par exemple démarrer le processus pour faire une demande de congés, voir les factures en attente de validation...<br />
-						C'est via la même interface que l'administrateur va venir déployer des processus, les configurer et les activer pour permettre aux utilisateurs finaux d'y accéder.<br />
-						Il y a donc une notion de "profil utilisateur" pour déterminer quelles actions sont disponibles à un utilisateur donné. Le fait d'être associé à un profil donne accès à un ensemble de pages du Portal.
+						Portal uses the Bonita APIs as any client of the Engine
+						</aside>
+					</section>
+					<section>
+						<h2 style="font-size:1.4em;">Bonita BPM Portal : Forms</h2>
+						<p>Affiche les formulaires créés avec le UI Designer</p>
+						<p>Servis dans le Portal Bonita ou intégré dans une application</p>
+						<img class="no-margin" src="presentation_images/screenshot_form.png" alt="Bonita form" height="400px" />
+						
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h2 style="font-size:1.4em;">Bonita BPM Portal : Applications</h2>
+						<p>Permet le déploiement d'application métiers composées de pages personnalisées créées avec le UI Designer</p>
+						<img class="no-margin" src="presentation_images/screenshot_application.png" alt="Bonita application" height="400px" />
+						
+						<aside class="notes">
 						</aside>
 					</section>
 				</section>
@@ -177,27 +215,37 @@
 					<section>
 						<h2>Introduction au BPMN</h2>
 						<p>Une notation standard (OMG) pour la modélisation des processus</p>
-						<p>Un processus est représenté par un Pool</p>
+						<p>Un processus est représenté par un Pool <img src="presentation_images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
 						<p>Les éléments essentiels :</p>
-						<ul class="no-bullet">
-							<li><img class="only_right_margin" src="images/bpmn_start_event.png" alt="start event" />Evénement de début</li>
-							<li><img class="only_right_margin" src="images/bpmn_human_task.png" alt="human task" />Tâche humaine</li>
-							<li><img class="only_right_margin" src="images/bpmn_service_task.png" alt="service task" />Tâche automatique</li>
-							<li><img class="only_right_margin" src="images/bpmn_end_event.png" alt="end event" />Evénement de fin</li>
-						</ul>
+						
+						<table class="no-border bpmn-table">
+						<tr>
+							<td><img src="presentation_images/bpmn_start_event.png" alt="start event"/></td><td>Evénement de début</td>
+						</tr>
+						<tr>
+							<td><img src="presentation_images/bpmn_human_task.png" alt="human task"/></td><td>Tâche humaine</td>
+						</tr>
+						<tr>
+							<td><img src="presentation_images/bpmn_service_task.png" alt="service task"/></td><td>Tâche automatique/service</td>
+						</tr>
+						<tr>
+							<td><img src="presentation_images/bpmn_end_event.png" alt="end event"/></td><td>Evénement de fin</td>
+						</tr>
+						</table>
+						
+						<p>Les éléments sont reliés par des Transitions <span style="margin:0 0 0 20px;">&#8594;</span></p>
 						
 						<aside class="notes">
-						Le "start event" est l'événement qui définit le point de démarrage d'un processus. Comme tous les événements il est représenté par un disque. Les "start event" on une bordure simple et fine (épaisse pour les end, double pour les intermediates). Note : il est possible d'avoir de plusieurs start events dans un processus mais ça n'est pas recommandé (le moteur de workflow ne sait pas lequel choisir sans indication complémentaire).<br />
-						On peut voir ensuite deux types de tâches :<br />
-						Les tâches humaines (user task dans la norme) nécessite l'intervention d'un utilisateur avant que l'exécution du processus puisse continuer.<br />
-						Les tâches automatique ont en général pour objectif l'interaction avec des systèmes tiers (base de données, serveur email, générateur de fichiers...). Le moteur va les exécuter et une fois terminées poursuit automatiquement avec les éléments suivants.
+						OMG = Object Management Group, founded several standards such as UML<br/>
+						Shapes (BPMN standard): circle = event, rectangle = activity<br/>
+						Colors (Bonita specific): green = start, blue = intermediate, red = end
 						</aside>
 					</section>
 
-					<section data-state="exercise">
+					<section>
 						<h2>Exercice 1</h2>
-						<p>Première étape de la modélisation d'un processus</p>
-						<p>Téléchargez les instructions et les corrections à partir de ce lien:</p>
+						<p class="exercise-title">Modélisation basique de processus</p>
+						<p style="margin-top:2em;">Téléchargez les instructions et les corrections à partir de ce lien:</p>
 						<div style="margin:3em auto 3em auto;">
 							<a href="http://bit.ly/1EdbjWe" target="_blank" style="font-size:200%;">http://bit.ly/1EdbjWe</a>
 						</div>
@@ -207,113 +255,171 @@
 				<section>
 					<section>
 						<h2>Gestion des données : scope</h2>
-						<p>Trois niveaux de visibilité imbriqués sont disponibles :</p>
-						<ul>
-							<li>Processus</li>
-							<li>Étape</li>
-							<li>Formulaire</li>
-						</ul>
+						<div class="data-scopes">
+							<div style="border-color:red;">
+								<p style="color:red;">BDM (Business Data Model)</p>
+								<p>Accessible de partout, stocké dans une base métier, jamais archivé</p>
+								<div style="border-color:rgb(149, 158, 7);">
+									<p style="color:rgb(149, 158, 7);">Donnée de processus</p>
+									<p>Accessible depuis le processus, stocké dans la base moteur, archivé avec l'instance de processus</p>
+									<div style="border-color:green;">
+										<p style="color:green;">Donnée de tâche</p>
+										<p>Accessible depuis une tâche, transient ou persistent (stocké dans la base moteur, archivé avec l'instance de tâche)</p>
+										<div style="border-color:rgb(114,114,255);">
+											<p style="color:rgb(114,114,255);">Donnée de formulaire</p>
+											<p>Accessible depuis un formulaire, jamais persisté</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						
 						<aside class="notes">
-						Dans l'édition communautaire de Bonita BPM trois niveaux de visibilité sont disponible. Le niveau de visibilité détermine quels éléments du processus ont accès aux données. Il détermine également à quel moment dans le cycle de vie du processus les données sont initialisées. Il faut noter que quelques soit le scope, le cycle de vie des données est lié au cycle de vie du processus (BDM en Souscription).<br />
-						Les données de processus sont initialisées à la création de l'instance du processus. Elles peuvent ensuite être mise à jour tout au long de la vie du processus. Il deviens impossible de les modifier une fois le processus terminé. Elles sont accessible depuis tous les éléments rattachés à la définition du processus.<br />
-						Les données d'étapes sont initialisées à la création de l'instance de l'étape et disponible jusqu'à la fin de l'étape. Elles sont utiles notamment pour échanger des données entre une suite de connecteurs qui seraient chaînés. Elles peuvent aussi être utilisé pour différenciés les multiples instances d'une même définition d'étape.<br />
-						Les données de formulaire sont initialisées au chargement d'un formulaire. Elles sont donc rechargées à chaque fois que le formulaire est actualisé dans le navigateur web. Elles sont seulement accessible dans la définition des formulaires. Elles sont souvent utilisées, par exemple, pour alimenter les listes déroulantes avec des données provenant d'un système externe.
+						- Data from upper scopes can be accessed (reverse is not possible).
 						</aside>
 					</section>
 
 					<section>
 						<h2>Gestion des données : persistence et types</h2>
-						<p>Les données sont sauvegardées dans la base de données associée au moteur à l'exception des données transientes d'étapes et des données de formulaire</p>
-						<p>Tout type d'objet Java sérialisable peut être utilisé</p>
-						<p>Les types autres que les types primitifs et String sont sérialisés pour être persistés</p>
+						<table class="data-types no-border">
+						<tr>
+							<th style="width:33%;">BDM</th>
+							<th>Données de Processus &amp; Tâche</th>
+							<th style="width:33%;">Données de formulaire</th>
+						</tr>
+						<tr>
+							<td>
+								<div>Objets structurés composés de :</div>
+								<ul>
+									<li>Primitives Java (String, Integer, Boolean, Date...)</li>
+									<li>Autres BDMs</li>
+								</ul>
+							</td>
+							<td>Tout type Java Serializable (Primitives, Collections, types personnalisés...)</td>
+							<td style="text-align:center;">Tout type JavaScript</td>
+						</tr>
+						</table>
+						<p style="width:800px; margin:20px auto 0 auto; border-top:1px solid; padding-top:20px;">
+							<b>Type spécial :</b> Documents (fichiers) avec gestion des révisions, défini au niveau des processus
+						</p>
 						
 						<aside class="notes">
-						Le moteur s'appuie sur la base de données à laquelle il est lié pour sauvegarder les données de processus (sans exception) et les données d'étape (sauf si l'option transient est activée). Il est important de garder à l'esprit que, en cas de redémarrage du serveur, les données non stockées en base seront perdues. Cela ne pose pas de problème pour les données de formulaire qui sont initialisées à chaque chargement du formulaire. Par contre cela peut poser problème sur les données transientes d'étape qui seront réinitialisées avec la valeur par défaut.<br />
-						Tous type de données Java peut être utilisé. Les données de type primitifs (+ String) sont stockées de manière lisible en base de données. Les autres types sont stockées sous forme sérialisés. Dans tous les cas il est recommandé d'accès au valeur des données non pas via des requêtes SQL mais via des appels aux API.
+						DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
+						Never try to R/W data directly from Bonita DB, use the APIs to do so.
 						</aside>
 					</section>
-				
-					<section data-state="exercise">
+					
+					<section>
+						<h2>Contrats</h2>
+						<p>Ensemble de paramètres d'entrée requis avec des règles de validation.</p>
+						<p>Les données envoyées par les formulaires doivent remplir des contrats pour :</p>
+						<ul>
+							<li>instancier un processus</li>
+							<li>exécuter une tâche humaine</li>
+						</ul>
+						<p>Contribue au découplage entre la logique métier et les interfaces graphiques.</p>
+					</section>
+					
+					<section>
 						<h2>Exercice 2</h2>
-						<p>Ajout de données et utilisation des formulaires auto-générés</p>
+						<p class="exercise-title">Ajout de données et spécification de contrats</p>
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>Introduction au BPMN (suite)</h2>
-						<p>Trois types de portes logiques :</p>
-						<ul class="no-bullet">
-							<li><img class="only_right_margin" src="images/bpmn_gateway_exclusive.png" alt="gateway exclusive" />Exclusive</li>
-							<li><img class="only_right_margin" src="images/bpmn_gateway_parallel.png" alt="gateway inclusive" />Parallèle</li>
-							<li><img class="only_right_margin" src="images/bpmn_gateway_inclusive.png" alt="gateway inclusive" />Inclusive</li>
-						</ul>
-						<p>Une bonne pratique consiste à utiliser les portes de manière symétrique</p>
+						<p style="margin-bottom:0;">3 types de portes logiques :</p>
+						
+						<table class="no-border bpmn-table">
+						<tr>
+							<td><img src="presentation_images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
+						</tr>
+						<tr>
+							<td><img src="presentation_images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallèle</td>
+						</tr>
+						<tr>
+							<td><img src="presentation_images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
+						</tr>
+						</table>
+						
+						<p>Une bonne pratique consiste à utiliser les portes de manière symétrique si possible:</p>
+						<img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 						
 						<aside class="notes">
-						La porte logique "exclusive" permet d'orienter le flux d'exécution du processus de manière conditionnelle : une seule des transitions en sortie sera suivie. La gateway "exclusive" ne comporte aucune logique pour les transitions entrantes. Il faut donc s'assurer par design que seule une des transitions entrantes sera active. Si ça n'est pas le cas on peut arriver à un scénario ou de multiples instances d'une étape sont crées.<br />
-						La gateway parallèle permet de déclencher l'exécution de plusieurs branches en parallèle. Pour les transitions entrante, la gateway attend quelles soit toutes actives avant de poursuivre l'exécution du processus.</br>
-						La gateway inclusive fonctionne de la même manière que l'exclusive à la différence que plus d'une transition peut être activée. Pour les transitions entrantes, seules celles actives sont attendues.<br />
-						Il faut veiller à éviter les cas où le processus pourrait être bloqué dans une gateway "pour toujours". Pour cela il est recommandé d'utiliser un design symétrique (notamment pour les parallèles) et également de toujours positionner une transition par défaut pour les gateway exclusive et inclusive.
+						- Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
+						- Exclusive: only one incoming TR should reach the gateway.<br/>
+						- Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
+						- Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
+						- Inclusive: used when dealing with parallel gateways with conditions
 						</aside>
 					</section>
 
-					<section data-state="exercise">
+					<section>
 						<h2>Exercice 3</h2>
-						<p>Porte logique exclusive pour orienter le flux du processus en fonction des données</p>
+						<p class="exercise-title">Contrôle dynamique du flux d'exécution grâce aux données</p>
 					</section>
 				</section>
 				
 				<section>
 					<section>
-						<h2>Formulaires</h2>
-						<p>Deux types :</p>
+						<h2>Formulaires &amp; Pages</h2>
+						<p>Créé dans le UI Designer à base de conteneurs et de widgets</p>
+						<p>Basé sur AngularJS et Bootstrap.</p>
+						<p>2 types de formulaires:</p>
 						<ul>
-							<li>Démarrage de cas et étapes</li>
-							<li>Apperçu</li>
+							<li><b>Formulaires éditables</b> qui doivent remplir un contrat
+							<ul>
+								<li>instanciation de processus</li>
+								<li>tâches humaines</li>
+							</ul>
+							</li>
+							<li style="margin-top:10px;">
+								<b>Formulaire de synthèse</b> (lecture seule) défini au niveau du Pool
+							</li>
 						</ul>
-						<p>Ensemble de widgets placés sur une grille</p>
 						
 						<aside class="notes">
-						Il existe deux types de formulaires qui sont présentés à l'utilisateur final à différent instant du cycle de vie d'un processus.<br />
-						Le formulaire de "démarrage de cas" (case start), est accessible par l'utilisateur avant que l'instance de processus soit créée. Il permet d'obtenir de l'utilisateur les données obligatoire au démarrage d'une instance. Par exemple une demande de congés n'a pas de sens si il n'y a pas une date de départ et une date de retour.<br />
-						Les formulaires placés sur les étapes sont accessible à l'utilisateur dès que le tâche est prête à être réalisée. C'est le clic sur le bouton "soumettre" qui déclenche l'exécution de l'étape<br />
-						Il est possible de créer des formulaires constitués de plusieurs page, on parle de "pageflow".
 						</aside>
 					</section>
 					
 					<section>
 						<h2>Widgets</h2>
-						<p>Les widgets disposent d'un ensemble de paramètres de configuration :<p>
-						<ul>
-							<li>Nom (id) et libellé</li>
-							<li>Aide, info-bulle, exemple</li>
-							<li>Valeur disponibles, valeur initiale</li>
-							<li>Opération de sortie</li>
-							<li>Insertion conditionnelle, obligatoire, lecture seule...</li>
-							<li>Validation des données saisies</li>
-						</ul>
+						<p>Un ensemble de widget de base sont fourni par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
+						<p>Des widget personnalisés peuvent être créés avec le UI Designer</p>
 						
 						<aside class="notes">
-						Les formulaires sont constitués par un ensemble de widgets.
 						</aside>
 					</section>
 
-					<section data-state="exercise">
+					<section>
 						<h2>Exercice 4</h2>
-						<p>Création de formulaires</p>
+						<p class="exercise-title">Création de formulaires</p>
 					</section>
 				</section>
 				
 				<section>
 					<section>
 						<h2>Acteurs</h2>
-						<p>Deux grandes options :</p>
-						<ul>
-							<li>Acteur : association entre la définition du processus et l'organisation</li>
-							<li>Filtre d'acteur : logique exécutée au moment où la tâche deviens disponible</li>						
-						</ul>
+						<p>Défini au niveau des Lanes ou des tâches humaines dans le diagramme.</p>
+						<p>2 options d'implémentation :</p>
+						<table class="compare">
+						<tr>
+							<th></th>
+							<th>Avantages</th>
+							<th>Limitations</th>
+						</tr>
+						<tr>
+							<td>Acteur</td>
+							<td>toujours à jour par rapport à l'organisation</td>
+							<td>association statique qui ne peut inclure des données métier</td>
+						</tr>
+						<tr>
+							<td>Filtre d'acteur</td>
+							<td>association dynamique qui peut inclure des données métier</td>
+							<td>calculé seulement une fois au début d'une instance d'étape</td>
+						</tr>
+						</table>
 						
 						<aside class="notes">
 						Le mécanisme d'acteur permet de sortir l'association entre étape et utilisateurs pouvant la réaliser de la définition du processus. Ainsi les changements dans l'organisation de la société ne nécessite pas le déploiement d'une nouvelle version de processus. La principale limitation de ce mécanisme est qu'il ne peut pas exploiter les données ou les informations de processus.<br />
@@ -321,57 +427,64 @@
 						</aside>
 					</section>
 					
-					<section data-state="exercise">
+					<section>
 						<h2>Exercice 5</h2>
-						<p>Utilisation de l'acteur par défaut et d'un filtre d'acteur</p>
+						<p class="exercise-title">Gestion d'acteurs</p>
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>Connecteurs</h2>
-						<p>Permet à un processus d'intéragir avec le SI (à l'opposé des API qui permettent de piloter le moteur)</p>
-						<p>Un catalogue de connecteurs standard est fournit dans le Studio.</p>
-						<p>Il est possible de créer ses propres connecteurs</p>
-						<p>Un connecteur est composé de:</p>
+						<p>Permet à un processus d'interagir avec le SI (à l'opposé des API Bonita)</p>
+						<p>Un catalogue de connecteurs standard est fourni dans le Studio.</p>
+						<p>Des connecteurs personnalisés peuvent être :</p>
 						<ul>
-							<li>une définition (interface Java) qui définit les entrées/sorties</li>
-							<li>une implémentation (classe Java) qui définit la logique métier</li>
+							<li>implémentés dans le Studio ou un IDE Java</li>
+							<li>importés depuis notre site communautaire</li>
 						</ul>
 						
 						<aside class="notes">
-						Un connecteur peut être placé en début ou fin de processus ou sur le début ou la fin d'une étape.<br />
-						Il est possible d'utiliser tous type de données en entrée et en sortie de connecteur. Il est également possible de placer des scripts Groovy pour éventuellement transformer/adapter les données.<br />
-						Il faut noter que, dès que possible, il est préférable d'utiliser des connecteurs plutôt que des scripts Groovy pour des raisons de performance d'exécution.
+						Connectors can be placed at the start or the end of a process or a task.<br/>
+						Any data type or groovy script can be used as I/O.<br/>
+						When possible prefer connectors over scripts for increased performance, error handling (SP).
 						</aside>
 					</section>
 					
-					<section data-state="exercise">
+					<section>
 						<h2>Exercice 6</h2>
-						<p>Utiliser un connecteur pour envoyer un email</p>
+						<p class="exercise-title">Notification par le biais d'un connecteur</p>
 					</section>
 				</section>
 
 				<section>
 					<h2>Déploiement</h2>
 					<p>Étapes principales du déploiement d'un processus :</p>
-					<ul>
-						<li>Configuration du processus dans le Studio</li>
-						<li>Génération du fichier .bar</li>
-						<li>Déploiement du .bar en utilisant le Portal</li>
-						<li>Configuration du processus après déploiement</li>
-						<li>Activation du processus</li>
-					</ul>
+					<table>
+					<tr>
+						<td>1. Configuration du processus<br/>
+						2. Génération du fichier Bar
+						</td>
+						<td>Studio</td>
+					</tr>
+					<tr>
+						<td>3. Déploiement du fichier Bar<br/>
+						4. Configuration du processus<br/>
+						5. Activation du processus
+						</td>
+						<td>Portal</td>
+					</tr>
+					</table>
 					
 					<aside class="notes">
-					Dans les exercices et en développement depuis le Studio, le déploiement du processus est transparent par l'utilisation du bouton "Lancer".
+					When running processes from the Studio the deploy procedure is automated.
 					</aside>
 				</section>
 				
 				<section>
 					<h2>Merci pour votre attention</h2>
 					<p style="margin:3em 0;">Des questions ? N'hésitez pas.</p>
-					<p>Resources complémentaires :</p>
+					<p>Ressources complémentaires :</p>
 					<ul>
 						<li>Documentation - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
 						<li>Site corporate - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
@@ -383,36 +496,43 @@
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
-			// Full list of configuration options available here:
+			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
-				center: false,
-				width: '65%',
- 				height: '90%',
+				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional libraries used to extend on reveal.js
+				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+		</script>
+		
+		<!-- INJECTS EXERCISES LINKS -->
+		<script>
+			(function() {
+				var exLinks = document.querySelectorAll('a.exerciseLink');
+				for (var i=0; i<exLinks.length; i++)
+				{
+					exLinks[i].href = EXERCISES_LINK;
+					exLinks[i].innerHTML = EXERCISES_LINK;
+				}
+			})();
 		</script>
 	</body>
 </html>
