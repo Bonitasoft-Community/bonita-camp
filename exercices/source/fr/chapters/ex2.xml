@@ -11,6 +11,9 @@
 			<listitem><para>spécifiant des contrats d'instanciation de processus et d'étape</para></listitem>
 		</orderedlist>		
 		<para>Une fois complété, le processus sera exécutable avec des formulaires générés automatiquement.</para>
+		<warning>
+			<para>Il est obligatoire de respecter la casse des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
+		</warning>		
 	</section>
 	
 	<section>
