@@ -72,12 +72,6 @@
 					</mediaobject>
 				</para>
 			</listitem>
-			
-			
-			<listitem>
-				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de la variable "estApprouvee".</emphasis></para>
-				<para>Sélectionner la variable "estApprouvée" dans le menu déroulant de condition.</para>
-			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer la transition "Non" en tant que flux par défaut.</emphasis></para>
 				<para>Sélectionner la transition "Non" et cocher la case "Flux par défaut".</para>
@@ -85,7 +79,7 @@
 			<listitem>
 				<para><emphasis role="bold">Déclencher la validation du diagramme.</emphasis></para>
 				<para>Maintenant que les conditions sont correctement configurées sur les transitions il est possible de relancer la validation.
-				Dans le menu supérieur du Studio, cliquer "Diagramme / Valider".</para>
+				Naviguer dans l'onglet "Statut de validation" et cliquer sur "Rafraîchir".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
