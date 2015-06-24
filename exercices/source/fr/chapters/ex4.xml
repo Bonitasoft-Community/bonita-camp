@@ -232,7 +232,7 @@
 					</mediaobject>
 				</para>
 				<para>Cliquer sur le bouton "Aperçu" en haut à droite de l'écran.</para>
-				<para>Vérifier que l'aperçu ressemble à ceci (on notera que le widget présentant l'erreur n'est pas visible):</para>
+				<para>Vérifier que l'aperçu ressemble à ceci:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -240,9 +240,14 @@
 						</imageobject>
 					</mediaobject>
 				</para>
+				<para>On notera les points suivants dans l'aperçu:</para>
+				<itemizedlist>
+					<listitem><para>le widget présentant l'erreur n'est pas visible</para></listitem>
+					<listitem><para>le bouton "Soumettre" est désactivé par défaut (ceci est dû à la validation fournie par le conteneur de formulaire)</para></listitem>
+				</itemizedlist>
 				<para>Utiliser l'aperçu pour tester la validation des champs.</para>
-				<para><emphasis role="bold">Astuce :</emphasis> grâce au conteneur de formulaire, lorsque ce dernier n'est pas valide, le bouton "Soumettre" se grisera.
-				Il n'est toutefois pas possible de soumettre le formulaire depuis l'aperçu même lorsque ce dernier est valide.</para>
+				<para>Un fois le formulaire valide, le bouton "Soumettre" sera activé.</para>
+				<para><emphasis role="bold">Note :</emphasis> il n'est toutefois pas possible de soumettre le formulaire depuis l'aperçu même lorsque ce dernier est valide.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Enregistrer le formulaire</emphasis></para>
