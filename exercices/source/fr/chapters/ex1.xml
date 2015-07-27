@@ -67,12 +67,12 @@
 					</mediaobject>
 				</para>
 			</listitem>
-			<listitem><para>
-				<emphasis role="bold">Enregistrer le processus.</emphasis></para>
+			<listitem>
+				<para><emphasis role="bold">Enregistrer le processus.</emphasis></para>
 				<para>Cliquer sur le bouton "Enregistrer" de la barre de menu supérieur du Studio.</para>
 			</listitem>
-			<listitem><para>
-				<emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
+			<listitem>
+				<para><emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
 				<para>Cliquer sur le bouton <guiicon><inlinegraphic fileref="resources/ex1_04.png"/></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.

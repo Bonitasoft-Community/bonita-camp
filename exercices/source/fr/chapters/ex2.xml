@@ -8,12 +8,12 @@
 		<para>L'objectif de cet exercice est de continuer l'implémentation du processus de demande de congés en:</para>
 		<orderedlist>
 			<listitem><para>configurant un modèle de données métier communément appelé BDM (Business Data Model)</para></listitem>
-			<listitem><para>spécifiant des contrats d'instanciation de processus et d'étape</para></listitem>
+			<listitem><para>spécifiant des contrats pour l'instanciation du processus et les étapes humaines</para></listitem>
 		</orderedlist>		
 		<para>Une fois complété, le processus sera exécutable avec des formulaires générés automatiquement.</para>
 		<warning>
-			<para>Il est obligatoire de respecter la casse des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
-		</warning>		
+			<para>Il est obligatoire de strictement respecter la casse des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
+		</warning>
 	</section>
 	
 	<section>
@@ -65,7 +65,7 @@
 		<para>Ajouter les deux contraintes suivantes sur le contrat d'instanciation:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>"dateDebut" doit être dans le futur</para></listitem>
-			<listitem><para>"nombreJours" doit être strictement supérieur à 0</para></listitem>
+			<listitem><para>"nombreJours" doit être strictement supérieur à zéro</para></listitem>
 		</itemizedlist>
 		<para>Initialiser le BDM "demande" avec le code suivant:</para>
 		<para>
@@ -152,8 +152,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat d'instanciation</emphasis></para>
-				<para>Sélectionner le pool de processus et naviguer dans l'onglet "Exécution / Contract / Inputs" (nos excuses pour l'absence temporaire de traduction de l'interface).</para>
-				<para>Cliquer sur "Add from data" (ajouter à partir de données).</para>
+				<para>Sélectionner le pool de processus et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
+				<para>Cliquer sur "Ajouter à partir données".</para>
 				<para>Sélectionner le BDM "demande" et cliquer sur "Suivant".</para>
 				<para>Renommer l'élément en "contratDemande" et décocher les attributs "idDemandeur" et "estApprouvee".</para>
 				<para>
@@ -171,7 +171,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Toujours dans l'onglet "Exécution / Contract", basculer dans l'onglet "Constraints".</para>
+				<para>Toujours dans l'onglet "Exécution / Contrat", basculer dans l'onglet "Contraintes".</para>
 				<para>Cliquer sur "Add" et ajouter la contrainte suivante:</para>
 				<itemizedlist>
 					<listitem><para>Nom : dateDebutDansFutur</para></listitem>
@@ -206,7 +206,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
-				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contract / Inputs".</para>
+				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
 				<para>Cliquer sur "Add" et ajouter une entrée "estApprouvee" de type "BOOLEAN".</para>
 			</listitem>
 			<listitem>
