@@ -38,7 +38,7 @@
 				<para>Sélectionner la lane "Validateur", naviguer dans l'onglet "Général / Acteur".</para>
 				<para>Sélectionner l'acteur "Employee actor" à partir du menu déroulant.</para>
 				<para>Cliquer sur le bouton "Définir" associé au filtre.</para>
-				<para>Sélectionner un filtre de type "Manager de l'initiateur du processus" puis cliquer sur suivant.</para>
+				<para>Sélectionner un filtre de type "Manager de l'initiateur du processus" puis cliquer sur "Suivant".</para>
 				<para>Nommer le filtre "managerInitiateur" et cliquer sur "Terminer".</para>
 			</listitem>
 			<listitem>

@@ -41,7 +41,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Une fois la porte créée changer son type pour le passer à "Exclusif" grâce à l'icône contextuel (type "boîte à outils").</para>
+				<para>Une fois la porte créée, utiliser l'icône contextuel "boîte à outils" (1) pour changer son type en "Exclusif" (2).</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -61,7 +61,7 @@
 			</listitem>
 			
 			<listitem>
-				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de la variable "estApprouvee".</emphasis></para>
+				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
 				<para>Sélectionner la transition et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
 				<para>Dans l'éditeur d'expression, sélectionner "Java" comme type d'expression, sélectionner la variable "demande" et la méthode "isEstAprouvee".</para>
 				<para>
@@ -94,7 +94,7 @@
 			<listitem>
 				<para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins.</emphasis></para>
 				<para>Attention : ne pas cliquer une deuxième fois sur le bouton "Lancer", cela aurait pour effet de redéployer le processus
-				et donc de supprimer les instances existantes. Pour créer la seconde instance, il faut donc naviguer dans le portail.</para>
+				et donc de supprimer les instances existantes. Pour créer la seconde instance, il faut naviguer dans le portail.</para>
 				<para>Ouvrir le portail à l'aide de l'icône dans la barre d'outils supérieure du Studio ou à l'aide du lien dans l'interface web :</para>
 				<para>
 					<mediaobject>
@@ -103,7 +103,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Ensuite, naviguer dans le menu "Apps" puis sélectionner la définition de processus "Demande de congés" en version 3.0
+				<para>Ensuite, naviguer dans le menu "Processus" puis sélectionner la définition de processus "Demande de congés" en version 3.0
 				et cliquez sur "démarrer".</para>
 			</listitem>			
 			<listitem>

@@ -51,8 +51,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Le conteneur de formulaire permet de fournir une aide à la validation du contenu du formulaire (champs obligatoires et valeur des champs).
-				Il sera probablement généré automatiquement dans une prochaine version de Bonita BPM.</para>
+				<para>Le conteneur de formulaire permet de fournir une aide à la validation du contenu du formulaire (champs obligatoires et valeur des champs).</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Déplacer les widgets existants dans le conteneur de formulaire</emphasis></para>
@@ -169,7 +168,7 @@
 				<para>* à ne pas confondre avec la propriété "Longueur minimum de la valeur".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer les valeurs initiales des champs</emphasis> (cela permettra d'afficher les placeholder)</para>
+				<para><emphasis role="bold">Supprimer les valeurs initiales des champs</emphasis> (cela permettra d'afficher les placeholders)</para>
 				<para>Dans la partie inférieure de l'écran, sous l'onglet "variables", cliquer sur l'icône crayon situé à droite de la ligne contenant la variable "formInput".</para>
 				<para>Remplacer la valeur du JSON par ceci:</para>
 				<para>
@@ -231,7 +230,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Cliquer sur le bouton "Aperçu" en haut à droite de l'écran.</para>
+				<para>Cliquer sur le bouton "Aperçu" en haut de l'écran.</para>
 				<para>Vérifier que l'aperçu ressemble à ceci:</para>
 				<para>
 					<mediaobject>
@@ -251,7 +250,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Enregistrer le formulaire</emphasis></para>
-				<para>Utiliser le bouton "Enregistrer" en haut au centre de l'écran pour enregistrer le formulaire.</para>
+				<para>Utiliser le bouton "Enregistrer" en haut de l'écran pour enregistrer le formulaire.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire pour l'étape "Valider demande".</emphasis></para>
@@ -260,7 +259,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
-				<para>Renommer le formulaire en "validerDemandeConges" et l'enregistrer.</para>
+				<para>Depuis le UI Designer, renommer le formulaire en "validerDemandeConges" et l'enregistrer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Récupérer les données métier de la demande en cours</emphasis></para>
@@ -293,7 +292,7 @@
 					</tgroup>
 				</informaltable>
 				<para><emphasis role="bold">Note :</emphasis> nous utilisons ici, un appel aux APIs REST de Bonita BPM pour récupérer notre BDM "demande".
-				Nous bénéficions d'une variable "context" qui expose un lien vers les données du processus dont notre demande sous la forme "demande_ref".
+				Nous bénéficions d'une variable "context" qui expose des liens vers les données du processus dont notre demande sous la forme "demande_ref".
 				Nous pouvons ainsi charger la demande grâce à l'attribut "link" qui donne l'URL à appeler pour récupérer l'objet.</para>
 			</listitem>
 			<listitem>
@@ -499,7 +498,7 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Afficher dynamiquement l'erreur</emphasis></para>
+				<para><emphasis role="bold">Afficher dynamiquement les portentielles erreurs de soumission</emphasis></para>
 				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu:</para>

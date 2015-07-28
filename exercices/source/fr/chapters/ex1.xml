@@ -28,9 +28,8 @@
 			<listitem><para><emphasis role="bold">Créer un nouveau diagramme de processus.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Spécifier le nom du diagramme et celui du processus.</emphasis></para>
-				<para>Cliquer sur le fond de la du diagramme, en dehors du Pool de processus (cela sélectionne le diagramme).</para>
-				<para>Naviguer dans l'onglet "Général / Diagramme" puis cliquer sur le bouton "Modifier".</para>
-				<para>Entrer "Diagramme demande de congés" pour le nom du diagramme et "Demande de congés" pour celui du processus.</para>
+				<para>Clicker sur le menu "Diagramme / Renommer" en haut du Studio.</para>
+				<para>Entrer "Diagramme demande de congés" pour le nom du diagramme et "Demande de congés" pour celui du pool.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
