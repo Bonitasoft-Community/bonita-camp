@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Actor management</title>
+	<title>Exercise: Configuring actors</title>
 	
 	<section>
 		<title>Goal</title>
@@ -9,14 +9,14 @@
 	</section>
 	
 	<section>
-		<title>Instructions</title>
+		<title>Instructions overview</title>
 		<para>Duplicate the process diagram from the previous exercise to create a 5.0 version.</para>
 		<para>Add a "Validator" lane to the diagram and move the "Validate request" task in it.</para>
 		<para>Add an actor filter of type "Initiator manager" on the "Validator" lane.</para>
 	</section>
 	
 	<section>
-		<title>Correction</title>
+		<title>Step by step instructions</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 5.0 version.</emphasis></para></listitem>
 			<listitem>
@@ -42,7 +42,7 @@
 				<para>Name the filter "requestorManager" and click on "Finish".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Make sure your diagram looks like this:</emphasis></para>
+				<para><emphasis role="bold">Make sure that the diagram looks like this:</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -53,8 +53,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Execute the process with the two actors.</emphasis></para>
-				<para>Run the process from the Studio (the user "Walter Bates" will be used).</para>
-				<para>Submit the "Fill leave request" form. If the actors are properly set, the "Validate leave request" task should not be available anymore.</para>
+				<para>Run the process from the Studio (user "Walter Bates" will be used).</para>
+				<para>Submit the "Fill leave request" form. If the actors are properly set, the "Validate request" task should not be available anymore.</para>
 				<para>Disconnect from the Portal by clicking on the user name in upper right corner of the screen and clicking on "Logout".</para>
 				<para>
 					<mediaobject>
@@ -64,7 +64,7 @@
 					</mediaobject>
 				</para>
 				<para>Connect as user "helen.kelly" with "bpm" as password.</para>
-				<para>If the actor filter ran correctly, the "Validate leave request" tasks should now be available in the inbox.</para>
+				<para>If the actor filter ran correctly, the "Validate request" tasks should now be available in the inbox.</para>
 			</listitem>
 		</orderedlist>
 	</section>

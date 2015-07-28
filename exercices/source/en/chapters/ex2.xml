@@ -1,27 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Data and auto-generated forms</title>
+	<title>Exercise: Adding data and specifying contracts</title>
 	
 	<section>
 		<title>Goal</title>
-		<para>The goal of this exercise is to continue the leave request process implementation by adding data to it.</para>
-		<para>Once completed, the process will be executable and will display automatically generated forms.</para>
+		<para>The goal of this exercise is to continue the leave request process implementation by:</para>
+		<orderedlist>
+			<listitem><para>setting up a Business Data Model (BDM)</para></listitem>
+			<listitem><para>specifying contracts for the case instantiation and human tasks</para></listitem>
+		</orderedlist>
+		<para>Once completed, the process will be executable with automatically generated forms.</para>
+		<warning>
+			<para>It is mandatory to strictly observe the case and syntax of the technical names provided in the instructions. Failing to do so will result in errors.</para>
+		</warning>
 	</section>
 	
 	<section>
-		<title>Instructions</title>
+		<title>Instructions overview</title>
 		<para>Duplicate the process diagram from the previous exercise to create a 2.0 version.</para>
-		<para>Add the following data at pool level:</para>
+		<para>Create a "LeaveRequest" BDM with the following attributes:</para>
+		<informaltable frame="all">
+			<tgroup cols="3" align="left" colsep="1" rowsep="1">
+				<colspec colname='c1' colwidth="1*"/>
+				<colspec colname='c2' colwidth="1*"/>
+				<colspec colname='c3' colwidth="3*"/>
+				<thead>
+					<row>
+						<entry>Name</entry>
+						<entry>Type</entry>
+						<entry>Mandatory</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>requestorId</entry>
+						<entry>Long</entry>
+						<entry>Yes</entry>
+					</row>
+					<row>
+						<entry>leaveStart</entry>
+						<entry>Date</entry>
+						<entry>Yes</entry>
+					</row>
+					<row>
+						<entry>dayCount</entry>
+						<entry>Integer</entry>
+						<entry>Yes</entry>
+					</row>
+					<row>
+						<entry>isApproved</entry>
+						<entry>Boolean</entry>
+						<entry>No</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+		<para>Declare an instance "request" of type "LeaveRequest" on your pool.</para>
+		<para>Add a case instantiation contract with a "requestContract" input of type "complex" that contains the following items:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>leaveStart (Date)</para></listitem>
 			<listitem><para>dayCount (Integer)</para></listitem>
+		</itemizedlist>
+		<para>Add these two constraints on the case instantiation contract:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>"leaveStart" must be in the future</para></listitem>
+			<listitem><para>"dayCount" must be strictly greater than zero</para></listitem>
+		</itemizedlist>
+		<para>Initialize the "request" BDM with the following code:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
+		<para>Add a step contract on the "Validate request" task with the following item:</para>
+		<itemizedlist mark='bullet'>
 			<listitem><para>isApproved (Boolean)</para></listitem>
 		</itemizedlist>
+		<para>Add an operation on the "Validate request" task to set the "isApproved" field of the "request" BDM with the value returned by the contract.</para>
 	</section>
 	
 	<section>
-		<title>Correction</title>
+		<title>Step by step instructions</title>
 		<orderedlist>
 			<listitem>
 				<para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 2.0 version.</emphasis></para>
@@ -29,9 +87,46 @@
 				<para>Update the process diagram AND pool version numbers.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a process data.</emphasis></para>
-				<para>Select the process pool.</para>
-				<para>Navigate to the "General / Data" and click on "Add".</para>
+				<para><emphasis role="bold">Create the "LeaveRequest" BDM</emphasis></para>
+				<para>Navigate to the "Development / Business Data Model / Manage" top menu.</para>
+				<para>Click on "Add" (A) in the "List of Business Objects" and name the object "LeaveRequest" (B) (this is a technical name so it should not contain spaces or special characters).</para>
+				<para>With the "LeaveRequest" object selected, add the following attributes (C):</para>
+				<informaltable frame="all">
+					<tgroup cols="3" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="1*"/>
+						<colspec colname='c3' colwidth="3*"/>
+						<thead>
+							<row>
+								<entry>Nom</entry>
+								<entry>Type</entry>
+								<entry>Mandatory</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>requestorId</entry>
+								<entry>Long</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>leaveStart</entry>
+								<entry>Date</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>dayCount</entry>
+								<entry>Integer</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>isApproved</entry>
+								<entry>Boolean</entry>
+								<entry>No</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -39,20 +134,14 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Enter "leaveStart" as the data name (this is a technical name so it should not contain spaces or special characters).</para>
-				<para>Select the "Date" type.</para>
-				<para>Click on "Finish &amp; Add".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Add a data named "dayCount" with the "Integer" type.</emphasis></para>
-				<para>Click on "Finish &amp; Add".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Add a data named "isApproved" with the "Boolean" type.</emphasis></para>
 				<para>Click on "Finish".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Make sure that the pool data are defined as following:</emphasis></para>
+				<para><emphasis role="bold">Declare an instance of the "LeaveRequest" BDM on your process</emphasis></para>
+				<para>Select the process pool, and navigate to the "Data / Pool variables" tab.</para>
+				<para>In the "Business variables" section, click on "Add".</para>
+				<para>Name the variable "request" and select the "LeaveRequest" business object.</para>
+				<para>Click on "Finish".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -62,10 +151,142 @@
 				</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Set up the case instantiation contract</emphasis></para>
+				<para>Select the process pool, and navigate to the "Execution / Contract / Inputs" tab.</para>
+				<para>Click on "Add from data".</para>
+				<para>Select the "request" BDM and click on "Next".</para>
+				<para>Rename the input to "requestContract" then uncheck the "requestorId" and "isApproved" attributes.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Click on "Finish".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Still in the "Execution / Contract" tab, switch to the "Constraints" tab.</para>
+				<para>Cick on "Add" and add the following constraint:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Name</entry>
+								<entry>leaveStartIsFuture</entry>
+							</row>
+							<row>
+								<entry>Expression</entry>
+								<entry><programlisting language="java">return requestContract.leaveStart.compareTo(new Date()) &gt; 0;</programlisting></entry>
+							</row>
+							<row>
+								<entry>Error message</entry>
+								<entry>Leave start must be in the future</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Add a second constraint:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Name</entry>
+								<entry>atLeastOneDay</entry>
+							</row>
+							<row>
+								<entry>Expression</entry>
+								<entry><programlisting language="java">return requestContract.dayCount &gt; 0;</programlisting></entry>
+							</row>
+							<row>
+								<entry>Error message</entry>
+								<entry>Day count must be greater than zero</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Initalize the "request" BDM with your case instantiation contract</emphasis></para>
+				<para>Select the process pool, and navigate to the "Data / Pool variables" tab.</para>
+				<para>Select the "request" business variable and click on "Edit".</para>
+				<para>Click on the "Pencil" icon next to the "Default value" field to open the expression editor.</para>
+				<para>Make sure that the selected expression type is "Script".</para>
+				<para>Name the script "initRequest".</para>
+				<para>Enter the following code:</para>
+				<para>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Set up the "Validate request" step contract</emphasis></para>
+				<para>Select the "Validate request" task and navigate to the "Execution / Contract / Inputs" tab.</para>
+				<para>Click on "Add" then set the input name to "isApproved" and its type to "BOOLEAN".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an operation on "Validate request" to update the request</emphasis></para>
+				<para>With the "Validate request" task selected, navigate to the "Execution / Operations" tab.</para>
+				<para>Click on "Add"</para>
+				<para>Select "request" as the target.</para>
+				<para>Click on the "Takes value of" link and switch to the "Use a Java method" operator type.</para>
+				<para>Select the "setIsApproved" method and click on "OK".</para>
+				<para>In the rightmost dropdow, select the "isApproved" contract input.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Save the process.</emphasis></para>
 				<para>Click on the "Save" button from the Studio's top menu bar.</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Execute the process.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Run the process to test your contract constraints.</emphasis></para>
+				<para>Run the process and use the automatically generated forms to test your constraints.</para>
+				<para><emphasis role="bold">Tips:</emphasis></para>
+				<itemizedlist mark='bullet'>
+					<listitem><para>for the "leaveStart" input, enter a date in the YYYY-MM-DD format.</para></listitem>
+					<listitem><para>for the "isApproved" input, enter a boolean value: either "true" or "false" (any other value will be resolved to "false").</para></listitem>
+				</itemizedlist>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
 		</orderedlist>
 	</section>
 </chapter>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Basic process model</title>	
+	<title>Exercise: Modeling a basic process</title>	
 	
 	<section>
 		<title>Goal</title>
 		<para>The goal of this exercise is to create a first basic version the leave request process diagram.</para>
-		<para>At this stage the process is executable but has limited value from the business point of view as it does not yet contain forms or data.
+		<para>At this stage the process is executable but has very limited value from the business point of view as it does not yet contain forms or data.
 		We will extend it in the upcoming exercises.</para>
 	</section>
 	
 	<section>
-		<title>Instructions</title>
-		<para>In order to do the exercise, create a "Leave request diagram" diagram in version 1.0 contain a "Leave request" process in version 1.0.</para>
-		<para>The process should contain the following BPMN elements:</para>
+		<title>Instructions overview</title>
+		<para>In order to complete the exercise, create a "Leave request diagram" diagram in version 1.0 containing a "Leave request" process in version 1.0.</para>
+		<para>The process pool should contain the following BPMN elements:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A start event named "Fill request"</para></listitem>
 			<listitem><para>A human task named "Validate request"</para></listitem>
@@ -22,15 +22,14 @@
 	</section>
 	
 	<section>
-		<title>Correction</title>
+		<title>Step by step instructions</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Start the Bonita Studio.</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Create a new process diagram.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Set the diagram and process names.</emphasis></para>
-				<para>Click anywhere on the background of the diagram design area but outside of the process pool (this will select the diagram).</para>
-				<para>Navigate to the "General / Diagram" tab and click on "Edit".</para>
-				<para>Enter "Leave request diagram" as the diagram name and "Leave request" for the pool name.</para>
+				<para>Click on the "Diagram / Rename" top menu.</para>
+				<para>Enter "Leave request diagram" as the diagram name and "Leave request" as the pool name.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -72,15 +71,19 @@
 				<para>Click on the "Save" button from the Studio's top menu bar.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Run the process.</emphasis></para>
-				<para>Click on the "Run" button from the Studio's top menu bar and go through the different forms.</para>
+				<para><emphasis role="bold">Run the process to test it.</emphasis></para>
+				<para>Click on the <guiicon><inlinegraphic fileref="resources/ex1_04.png"/></guiicon> button of the Studio's top menu bar.</para>
+				<para>Your browser should open and display an automatically generated case start form. Submit the form.</para>
+				<para>You should be redirected to the task inbox of the Bonita Portal.
+				Select the "Validate request" task and click on the top right "Do it" button.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_04.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
+				<para>Submit the form of the "Validate request" task to complete your case.</para>
 			</listitem>
 		</orderedlist>
 	</section>

@@ -16,7 +16,7 @@
 	<para>Each exercise is divided in 3 sections:</para>
 	<itemizedlist mark='bullet'>
 		<listitem><para><emphasis role="bold">Goal</emphasis> - Presents the objectives of the exercise.</para></listitem>
-		<listitem><para><emphasis role="bold">Instructions</emphasis> - Contains an overview of the main steps required for completing the exercise.</para></listitem>
-		<listitem><para><emphasis role="bold">Correction</emphasis> - Contains a detailed description of the steps required for completing the exercise.</para></listitem>
+		<listitem><para><emphasis role="bold">Instructions overview</emphasis> - Contains an overview of the main steps required for completing the exercise.</para></listitem>
+		<listitem><para><emphasis role="bold">Step by step instructions</emphasis> - Contains a detailed description of the steps required for completing the exercise.</para></listitem>
 	</itemizedlist>
 </preface>
