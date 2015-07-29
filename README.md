@@ -23,8 +23,8 @@ Content is available in:
 7. Overwrite your configuration files with the content of "custom-template" (some files should be overwritten).
 
 ##Build instructions for exercises
-With the exercises project set up, you may build the instruction:
-- as a PDF with the Ant "PDF" target
-- as a ZIP file with corrections with the Ant "Package as ZIP" target
+With the exercises project set up, you may build the instructions in Eclipse:
+- as a PDF by running the Ant "PDF" target
+- as a ZIP file with corrections by running the Ant "Package as ZIP" target
 
 
