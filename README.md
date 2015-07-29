@@ -14,7 +14,10 @@ Content is available in:
 3. Paste the content of the "slides/theme" folder in your "reveal.js/css/theme" folder
 
 ##Build instructions for exercises
-1. Install the [DEP4E eclipse plugin](http://dep4e.sourceforge.net/)
-2. Create a project from the "exercices" folder
-3. Locate your eclipse plugin configuration path in the console output by performing a first build. The path should be something similar to this: eclipse/configuration/org.eclipse.osgi/433/0/.cp/resources/
-4. Overwrite your configuration files with the content of "custom-template" (some files should be overwritten).
+1. Download and install the [DEP4E eclipse plugin](http://dep4e.sourceforge.net/)
+2. Download [Ant-Contrib 1.0b2](http://sourceforge.net/project/showfiles.php?group_id=36177) 
+3. Open Eclipse preferences and navigating to "Ant / Runtime"
+4. Select the "Classpath" tab and add the Ant-Contrib JAR as an external JAR under "Global Entries"
+5. Create a docbook project from the "exercices" folder
+6. Locate your eclipse plugin configuration path in the console output by performing a first build. The path should be something similar to this: eclipse/configuration/org.eclipse.osgi/433/0/.cp/resources/
+7. Overwrite your configuration files with the content of "custom-template" (some files should be overwritten).
