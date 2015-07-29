@@ -3,15 +3,16 @@
 
 	<!-- Dockbook default build properties -->
 	<property name="docbook.xml.filename" value="docbook" />
-	<property name="docbook.xml.language" value="fr" />
+	<property name="docbook.xml.language" value="en" />
 	<import file="${net.sourceforge.dep4e.resources}/ant/docbook_5-0.xml" />
 
-	<!-- Packages all BPM Camp content (except slides) as a ZIP -->
+	<!-- Packages the BPM Camp content (except slides) as a ZIP -->
+	<!-- Requires Ant Contrib to be installed in Eclipse (add the Ant Contrib JAR in Eclipse Ant preferences) -->
 	<target name="Package as ZIP">
 		<!-- Generate excercises PDF -->
 		<antcall target="PDF"/>
 		
-		<!-- Adding ant contrib for custom build support (be sure to install ant contrib JAR in Eclipse Ant preferences) -->
+		<!-- Load ant contrib for custom build support -->
 		<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 		
 		<!-- Rename excercises PDF -->
