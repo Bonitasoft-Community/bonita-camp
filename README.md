@@ -4,14 +4,14 @@ BPM Camp - 7.x
 Slides and exercises for the BPM Camp events.
 
 Content is available in:
-- ~~English~~
+- English
 - French
 - ~~Spanish~~
 
 ##Build instructions for slides
 1. Download [reveal.js](https://github.com/hakimel/reveal.js/) version 3.1.0
-2. Paste the content of the "slides" folder into your reveal install directory
-3. Download and install the [Bonita reveal.js theme](https://github.com/amottier/bonitasoft-adoption) in your reveal.js "css\theme" folder
+2. Paste the content of the "slides/THE_LANGUAGE/" folder into your "reveal.js" directory
+3. Paste the content of the "slides/theme" folder in your "reveal.js/css/theme" folder
 
 ##Build instructions for exercises
 1. Install the [DEP4E eclipse plugin](http://dep4e.sourceforge.net/)
