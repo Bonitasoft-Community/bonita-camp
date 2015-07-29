@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="DocBook" default="All">
-	
+<project name="BPM Camp" default="All">
+
+	<!-- Dockbook default build properties -->
 	<property name="docbook.xml.filename" value="docbook" />
 	<property name="docbook.xml.language" value="fr" />
-	
 	<import file="${net.sourceforge.dep4e.resources}/ant/docbook_5-0.xml" />
-	
+
+	<!-- Packages all BPM Camp content (except slides) as a ZIP -->
+	<target name="Package as ZIP">
+		<!-- Generate excercises PDF -->
+		<antcall target="PDF"/>
+		
+		<!-- Adding ant contrib for custom build support (be sure to install ant contrib JAR in Eclipse Ant preferences) -->
+		<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+		
+		<!-- Rename excercises PDF -->
+		<property name="exercises.filename" value="" />
+		<switch value="${docbook.xml.language}">
+			<case value="fr">
+				<var name="exercises.filename" value="Excercices"/>
+			</case>
+			<case value="es">
+				<var name="exercises.filename" value="Ejercicios"/>
+			</case>
+			<default>
+				<var name="exercises.filename" value="Excercises"/>
+			</default>
+		</switch>
+		<var name="exercises.filename" value="${ant.project.name} - ${exercises.filename}.pdf"/>
+		<move file="${dir.target}/${docbook.xml.filename}.pdf" tofile="${dir.target}/${exercises.filename}" />
+		
+		<!-- Build ZIP with exercises and corrections -->
+		<zip destfile="${dir.target}/${ant.project.name}-${docbook.xml.language}.zip">
+			<zipfileset dir="${dir.target}" includes="*.pdf" prefix="${ant.project.name}"/>
+			<zipfileset dir="${basedir}/corrections/${docbook.xml.language}" includes="*.bos" prefix="${ant.project.name}/Corrections"/>
+		</zip>
+	</target>
 </project>
