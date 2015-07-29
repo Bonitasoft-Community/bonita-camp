@@ -28,7 +28,7 @@
 			<listitem><para><emphasis role="bold">Créer un nouveau diagramme de processus.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Spécifier le nom du diagramme et celui du processus.</emphasis></para>
-				<para>Clicker sur le menu "Diagramme / Renommer" en haut du Studio.</para>
+				<para>Cliquer sur le menu "Diagramme / Renommer" en haut du Studio.</para>
 				<para>Entrer "Diagramme demande de congés" pour le nom du diagramme et "Demande de congés" pour celui du pool.</para>
 				<para>
 					<mediaobject>

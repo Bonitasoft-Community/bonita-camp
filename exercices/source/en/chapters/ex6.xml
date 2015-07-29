@@ -28,7 +28,7 @@
 				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
 				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
 				<para>Select the "Email (SMTP)" connector by using either the text filter or the "Messaging" category and click on "Next".</para>
-				<para>Fill the connection parameters based on your email approvedount settings and click on "Next".</para>
+				<para>Fill the connection parameters based on your email account settings and click on "Next".</para>
 				<para>Enter your email in the "From" and "To" fields and click on "Next".</para>
 				<para>Enter "Bonita test" as the subject, click on the "Test" button and confirm the test without checking any dependency.</para>
 				<para>At this stage, you should get a message similar to this one:</para>

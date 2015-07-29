@@ -172,7 +172,7 @@
 					</mediaobject>
 				</para>
 				<para>Toujours dans l'onglet "Exécution / Contrat", basculer dans l'onglet "Contraintes".</para>
-				<para>Cliquer sur "Add" et ajouter la contrainte suivante:</para>
+				<para>Ajouter la contrainte suivante:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -249,7 +249,7 @@
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
 				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
-				<para>Cliquer sur "Add" et ajouter une entrée "estApprouvee" de type "BOOLEAN".</para>
+				<para>Ajouter une entrée "estApprouvee" de type "BOOLEAN".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter une opération sur la tâche "Valider demande" pour mettre à jour la demande.</emphasis></para>

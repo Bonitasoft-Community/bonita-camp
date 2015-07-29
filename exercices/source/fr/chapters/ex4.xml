@@ -498,7 +498,7 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Afficher dynamiquement les portentielles erreurs de soumission</emphasis></para>
+				<para><emphasis role="bold">Afficher dynamiquement les potentielles erreurs de soumission</emphasis></para>
 				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu:</para>
