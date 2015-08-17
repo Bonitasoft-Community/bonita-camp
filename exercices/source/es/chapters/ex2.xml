@@ -1,59 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Ejercicio: Datos y formularios auto-generados</title>
+	<title>Ejercicio: Añadiendo datos y especificando contratos</title>
 	
 	<section>
 		<title>Objetivo</title>
-		<para>El objetivo de este ejercicio es continuar con la implementación del proceso de solicitud de vacaciones añadiéndole datos.</para>
-		<para>Una vez completado, el proceso será ejecutable y mostrará los formularios generados automáticamente.</para>
+		<para>El objetivo de este ejercicio es continuar la implementación del proceso de Solicitud de Vacaciones:</para>
+		<orderedlist>
+			<listitem><para>estableciendo un Modelo de Datos de Negocio - Business Data Model (BDM)</para></listitem>
+			<listitem><para>especificando contratos para la instanciación del proceso y para las tareas humanas</para></listitem>
+		</orderedlist>
+		<para>Una vez completado, el proceso será ejecutado con formularios automáticamente generados.</para>
+		<warning>
+			<para>Es obligatorio poner atención en el caso y en la sintaxis de los nombres técnicos facilitados en las instrucciones. No hacerlo podría producir errores.</para>
+		</warning>
 	</section>
 	
 	<section>
-		<title>Instrucciones</title>
-		<para>Duplica el diagrama de proceso del ejericio anterior para crear la versión 2.0.</para>
-		<para>Añade los siguientes datos a nivel de proceso:</para>
+		<title>Instrucciones generales</title>
+		<para>Duplica el diagrama de procesos del ejercicio anterior para crear la versión 2.0.</para>
+		<para>Crea un BDM llamado "SolicitudVacaciones" con los siguientes atributos:</para>
+		<informaltable frame="all">
+			<tgroup cols="3" align="left" colsep="1" rowsep="1">
+				<colspec colname='c1' colwidth="1*"/>
+				<colspec colname='c2' colwidth="1*"/>
+				<colspec colname='c3' colwidth="3*"/>
+				<thead>
+					<row>
+						<entry>Nombre</entry>
+						<entry>Tipo</entry>
+						<entry>Requerido</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>solicitanteId</entry>
+						<entry>Long</entry>
+						<entry>Sí</entry>
+					</row>
+					<row>
+						<entry>diaInicio</entry>
+						<entry>Date</entry>
+						<entry>Sí</entry>
+					</row>
+					<row>
+						<entry>numDias</entry>
+						<entry>Integer</entry>
+						<entry>Sí</entry>
+					</row>
+					<row>
+						<entry>aprobado</entry>
+						<entry>Boolean</entry>
+						<entry>No</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+		<para>Declara una variable "solicitud" de tipo "SolicitudVacaciones" en tu pool.</para>
+		<para>Añade un contrato a la instanciación del proceso con una nueva entrada "solicitudContrato" de tipo "complex" que contenga los siguientes elementos:</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>diaInicio (Fecha)</para></listitem>
-			<listitem><para>numDias (Entero)</para></listitem>
-			<listitem><para>aprobado (Booleano)</para></listitem>
+			<listitem><para>diaInicio (Date)</para></listitem>
+			<listitem><para>numDias (Integer)</para></listitem>
 		</itemizedlist>
+		<para>Añade estas dos restricciones en el contrato:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>"diaInicio" debe ser una fecha futura</para></listitem>
+			<listitem><para>"numDias" debe ser estrictamente mayor que 0</para></listitem>
+		</itemizedlist>
+		<para>Inicializa el BDM "solicitud" con el siguiente código:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
+		<para>Añade un contrato a la tarea "Validar Solicitud" con el siguiente elemento:</para>
+		<itemizedlist mark='bullet'>
+			<listitem><para>aprobado (Boolean)</para></listitem>
+		</itemizedlist>
+		<para>Añade una operación en la tarea "Validar Solicitud" para enlazar el campo "aprobado" con la "solicitud" BDM con el valor devuelto por el contrato.</para>
 	</section>
 	
 	<section>
-		<title>Corrección</title>
+		<title>Instrucciones paso a paso</title>
 		<orderedlist>
 			<listitem>
-				<para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 2.0.</emphasis></para>
-				<para>En el menú superior del Studio, Haz click en "Proceso / Duplicar".</para>
-				<para>Modifica los números de versión del diagrama y del proceso.</para>
+				<para><emphasis role="bold">Duplica el diagrama de procesos del ejercicio anterior y crea una versión 2.0.</emphasis></para>
+				<para>En el menú superior del Studio, haz click en "Proceso / Duplicar".</para>
+				<para>Actualiza el diagrama de procesos y los números de la versión del Pool.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Añadir datos de proceso.</emphasis></para>
-				<para>Selecciona el proceso.</para>
-				<para>Navega hasta la pestaña "General / Data" y Haz click en "Añadir".</para>
+				<para><emphasis role="bold">Crea el BDM "SolicitudVacaciones"</emphasis></para>
+				<para>Navega hasta el menú superior "Desarrollo / Modelo de Datos de Negocio / Administrar".</para>
+				<para>Haz click en "Añadir" (A) en la "Lista de Objetos de Negocio" y nombra al objeto "SolicitudVacaciones" (B) (éste es un nombre técnico así que no debería contener espacios o caracteres especiales).</para>
+				<para>Con el objeto "SolicitudVacaciones" seleccionado, añade los siguientes atributos (C):</para>
+				<informaltable frame="all">
+					<tgroup cols="3" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="1*"/>
+						<colspec colname='c3' colwidth="3*"/>
+						<thead>
+							<row>
+								<entry>Nombre</entry>
+								<entry>Tipo</entry>
+								<entry>Requerido</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>solicitanteId</entry>
+								<entry>Long</entry>
+								<entry>Sí</entry>
+							</row>
+							<row>
+								<entry>diaInicio</entry>
+								<entry>Date</entry>
+								<entry>Sí</entry>
+							</row>
+							<row>
+								<entry>numDias</entry>
+								<entry>Integer</entry>
+								<entry>Sí</entry>
+							</row>
+							<row>
+								<entry>aprobado</entry>
+								<entry>Boolean</entry>
+								<entry>No</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 				<para>
 					<mediaobject>
 						<imageobject>
 							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_01.png" />
 						</imageobject>
 					</mediaobject>
-					
 				</para>
-				<para>Nombra a la variable como "diaInicio" (como es un nombre técnico no debe contener espacios en blanco ni caracteres especiales).</para>
-				<para>Selecciona como tipo "Fecha".</para>
-				<para>Haz click "Acabar &amp; Añadir".</para>
+				<para>Haz click en "Finalizar".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Añade una variable "numDias" de tipo "Entero".</emphasis></para>
-				<para>Haz click "Acabar &amp; Añadir".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Añade una variable "aprobado" de tipo "Booleano".</emphasis></para>
-				<para>Haz click "Finalizar".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Asegúrese que los datos del proceso están definidos como en la siguiente imagen:</emphasis></para>
+				<para><emphasis role="bold">Declara una instancia del BDM "SolicitudVacaciones" en tu proceso.</emphasis></para>
+				<para>Selecciona el Pool del proceso y navega hasta la pestaña "Datos / Variables de proceso".</para>
+				<para>En la sección de "Variables de negocio", haz click en "Agregar".</para>
+				<para>Nombra la variable "solicitud" y selecciona el objeto de negocio "SolicitudVacaciones".</para>
+				<para>Haz click en "Finalizar".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -63,10 +151,142 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Guarda el proceso.</emphasis></para>
-				<para>Haz click en el botón "Guardar" del menú superior del Studio.</para>
+				<para><emphasis role="bold">Establece el contrato de instanciación del proceso.</emphasis></para>
+				<para>Selecciona la Pool del proceso y navega hasta la pestaña "Ejecución / Contrato / Entradas".</para>
+				<para>Haz click en "Añadir desde datos...".</para>
+				<para>Selecciona el BDM "solicitud" y haz click en "Siguiente".</para>
+				<para>Renombra la entrada a "solicitudContrato", luego deselecciona los atributos "solicitanteId" y "aprobado".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Haz click en "Finalizar".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Aún en la pestaña "Ejecución / Contracto", cambia a la pestaña "Restricciones".</para>
+				<para>Añade las siguientes restricciones:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propiedad</entry>
+								<entry>Valor</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Nombre</entry>
+								<entry>comienzoSolicitudFuturo</entry>
+							</row>
+							<row>
+								<entry>Expresión</entry>
+								<entry><programlisting language="java">return solicitudContrato.diaInicio.compareTo(new Date()) > 0;</programlisting></entry>
+							</row>
+							<row>
+								<entry>Mensaje de error</entry>
+								<entry>La fecha de comienzo de las vacaciones debe comenzar en el futuro.</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Añade una segunda restricción:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propiedad</entry>
+								<entry>Valor</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Nombre</entry>
+								<entry>alMenosUnDia</entry>
+							</row>
+							<row>
+								<entry>Expresión</entry>
+								<entry><programlisting language="java">return solicitudContrato.numDias > 0;</programlisting></entry>
+							</row>
+							<row>
+								<entry>Mensaje de error</entry>
+								<entry>La cuenta de días debe ser mayor que cero.</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Ejecuta el proceso.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Inicializa el BDM "solicitud" con el contrato de instanciación de proceso</emphasis></para>
+				<para>Selecciona la Pool del proceso y navega hasta la pestaña "Datos / Variables de negocio".</para>
+				<para>Selecciona la variable de negocio "solicitud" y haz click en "Editar".</para>
+				<para>Haz click en el icono del "Lápiz" junto al campo "Valor predeterminado" para abrir el editor de expresiones.</para>
+				<para>Asegúrate de que el tipo seleccionado para la expresión es "Script".</para>
+				<para>Nombra al script "initSolicitud".</para>
+				<para>Introduce el siguiente código:</para>
+				<para>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Establece el contrato de la tarea "Validar solicitud"</emphasis></para>
+				<para>Selecciona la tarea "Validar solicitud" y navega hasta la pestaña "Ejecución / Contrato / Entradas".</para>
+				<para>Haz click en "Añadir" y cambia el nombre por "aprobado" y su tipo por "BOOLEAN".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade una operación a "Validar solicitud" para actualizar la petición</emphasis></para>
+				<para>Con la tarea "Validar solicitud" seleccionada, navega hasta la pestaña "Ejecución / Operaciones".</para>
+				<para>Haz click en "Añadir"</para>
+				<para>Selecciona "solicitud" como destino.</para>
+				<para>Haz click en el link "Toma valor de" y cambia al tipo de operador "Use un método Java".</para>
+				<para>Selecciona el método "setAprobado" y haz click en "Aceptar".</para>
+				<para>En el selector de la derecha, selecciona la entrada del contrato "aprobado".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Guarda el proceso.</emphasis></para>
+				<para>Haz click en el botón "Guardar" en la barra de menú superior desde el Studio.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ejecuta el proceso para probar las restricciones de tu contrato.</emphasis></para>
+				<para>Ejecuta el proceso y usa el formulario automáticamente generado para probar tus restricciones.</para>
+				<para><emphasis role="bold">Consejos:</emphasis></para>
+				<itemizedlist mark='bullet'>
+					<listitem><para>para la entrada "diaInicio", introduce una fecha en el formato YYYY-MM-DD.</para></listitem>
+					<listitem><para>para la entrada "aprobado", introduce un valor booleano: "true" ó "false" (cualquier otro valor será resuelto como "false").</para></listitem>
+				</itemizedlist>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
 		</orderedlist>
 	</section>
 </chapter>

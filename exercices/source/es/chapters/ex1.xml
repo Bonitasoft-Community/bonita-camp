@@ -22,7 +22,7 @@
 	</section>
 	
 	<section>
-		<title>Corrección</title>
+		<title>Instrucciones paso a paso</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Inicia Bonita Studio.</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Crea un nuevo diagrama de proceso.</emphasis></para></listitem>
@@ -73,14 +73,18 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ejecuta el proceso.</emphasis></para>				
-				<para>Haz click en "Ejecutar" en el menú superior del Studio y navegue por los distintos formularios.</para>
+				<para>Haz click en el icono <guiicon><inlinegraphic fileref="resources/ex1_04.png"/></guiicon> "Ejecutar" en el menú superior del Studio.</para>
+				<para>Tu navegador debería abrir y mostrar un formulario automáticamente generado que inicie el nuevo caso. Haz click en Inicio para enviar el formulario.</para>
+				<para>Serás redirigido al listado de tareas dentro del Bonita Portal.
+				Selecciona la tarea "Validar solicitud" y haz click en el botón "Hacer" de arriba a la derecha.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_04.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
+				<para>Envía el formulario de la tarea "Validar solicitud" para completar el caso.</para>
 			</listitem>
 		</orderedlist>
 	</section>

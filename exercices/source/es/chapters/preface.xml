@@ -16,6 +16,6 @@
 	<itemizedlist mark='bullet'>
 		<listitem><para><emphasis role="bold">Objetivo</emphasis> - Presenta los objetivos del ejercicio.</para></listitem>
 		<listitem><para><emphasis role="bold">Instrucciones</emphasis> - Contiene un resumen de los pasos principales requeridos para completar el ejercicio.</para></listitem>
-		<listitem><para><emphasis role="bold">Corrección</emphasis> - Contiene una descripción detallada de los pasos requeridos para completar el ejercicio.</para></listitem>
+		<listitem><para><emphasis role="bold">Instrucciones paso a paso</emphasis> - Contiene una descripción detallada de los pasos requeridos para completar el ejercicio.</para></listitem>
 	</itemizedlist>
 </preface>

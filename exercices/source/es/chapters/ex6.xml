@@ -21,14 +21,14 @@
 	</section>
 	
 	<section>
-		<title>Corrección</title>
+		<title>Instrucciones paso a paso</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 6.0.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Prueba el conector de email para obtener la configuración SMTP correcta.</emphasis></para>
 				<para>Navega a "Desarrollo / Conectores / Probar Conector" en el menú superior.</para>
 				<para>Selecciona el conector "Correo electrónico (SMTP)" bien haciendo una búsqueda en el filtro, o seleccionando la categoria "Mensajería", despues haz clic en "Siguiente".</para>
-				<para>Rellena los parámetros de conexión basados en su cuenta de correo electrónico y pulse en "Siguiente".</para>				
+				<para>Rellena los parámetros de conexión basados en tu cuenta de correo electrónico y pulse en "Siguiente".</para>				
 				<para>Introduce tu email en los campos "De" y "A" y pulsa en "Siguiente".</para>
 				<para>Introduce "Bonita Test" como asunto y pulse en el botón "Prueba", confirma la siguiente ventana si añadir ninguna dependencia.</para>
 				<para>En este punto, deberá recibir un mensaje similar al siguiente:</para>
@@ -40,7 +40,7 @@
 					</mediaobject>
 				</para>
 				<para>Asegúrate que se recibe el email, (puede tomar unos minutos). Si no se recibe, modifica la configuración del conector y re-ejecútalo.</para>
-				<para>Una vez la configuración es válida, haga click en "Guardar".</para>
+				<para>Una vez la configuración es válida,  click en "Guardar".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -53,9 +53,9 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Añade un conector de email en la tarea "Notificar aceptación solicitud".</emphasis></para>
-				<para>Selecciona la tarea, navega hasta la pestaña "General / Conectores" y haga click en "Añadir"..</para>
+				<para>Selecciona la tarea, navega hasta la pestaña "Ejecutar / Conectores entrada" y haz click en "Agregar...".</para>
 				<para>Selecciona el conector "Correo electrónico (SMTP)" .</para>
-				<para>Nómbralo "enviarEmailAceptacionSolicitud" y haga click en "Siguiente".</para>
+				<para>Nómbralo "enviarEmailAceptacionSolicitud" y haz click en "Siguiente".</para>
 				<para>No rellenee los parámetros, selecciona el botón "Carga":</para>
 				<para>
 					<mediaobject>
@@ -90,9 +90,9 @@
 				</para>
 				<para>Cambia al perfil "Administrador" y navega al menú "Organización / Usuarios".</para>
 				<para>Selecciona el usuario "Walter Bates" y haz click en botón "Más".</para>
-				<para>Haga click en "Actualizar Usuario".</para>
+				<para>Haz click en "Actualizar Usuario".</para>
 				<para>Selecciona la pesataña "Tarjeta de Visita".</para>
-				<para>Introduce su email en el campo correspondiente.</para>
+				<para>Introduce tu email en el campo correspondiente.</para>
 				<para>Guarda los cambios y cierra el Portal.</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Ejecuta varias veces el proceso para comprobar los distintos caminos, y comprobar que recibe el email correspondiente.</emphasis></para></listitem>

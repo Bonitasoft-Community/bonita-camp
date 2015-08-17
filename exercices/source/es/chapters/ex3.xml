@@ -24,12 +24,12 @@
 	</section>
 	
 	<section>
-		<title>Corrección</title>
+		<title>Instrucciones paso a paso</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 3.0.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Elimina el evento de terminación.</emphasis></para>
-				<para>Selecciona el evento en el diagrama y pulsa "Suprimir" en su teclado.</para>
+				<para>Selecciona el evento en el diagrama y pulsa "Suprimir" en tu teclado.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Añade una puerta exclusiva llamada "¿Aceptado?" seguida de la tarea humana "Validar Solicitud".</emphasis></para>
@@ -60,8 +60,9 @@
 				<para>La transición que conecta con "Notificar aceptación solicitud" deberá llamarse "Si" y la otra "No".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Configura la condicion en la transicion "Si" usando la variable "aprobado".</emphasis></para>
-				<para>Selecciona el flujo y selecciona la variable "aprobado" del desplegable.</para>
+				<para><emphasis role="bold">Configura la condicion en la transicion "Si" usando el atributo "aprobado" del BDM "solicitud".</emphasis></para>
+				<para>Selecciona el flujo y haz click en el icono del "lápiz" junto al selector de "Condición" para abrir el editor de expresiones.</para>
+				<para>En el editor de expresiones, selecciona "Java" como tipo de expresión, selecciona la variable "solicitud" y el método "isAprobado".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Define el flujo "No", como flujo por defecto.</emphasis></para>
@@ -70,10 +71,10 @@
 			<listitem>
 				<para><emphasis role="bold">Valida el diagrama.</emphasis></para>
 				<para>Cuando las condiciones de los flujos estén definidas, podrás validar el diagrama.
-				Para ello, haz click en "Proceso / Validar" del menú superior del Studio.</para>
+				Para ello, navega hasta la pestaña "Estado de validación" y haz click en "Refrescar".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Asegúrese que su diagrama coincide con:</emphasis></para>
+				<para><emphasis role="bold">Asegúrate de que el diagrama coincide con éste:</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -106,7 +107,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Navega hasta el menú "Gestión de Procesos / Casos"(1) luego, cambia a la pestaña "Casos Archivados"(2) y haz click en el icono del ojo(3) para ver los detalles del caso.</para>
+				<para>Navega hasta el menú "BPM / Casos"(A) luego, cambia a la pestaña "Casos Archivados"(B) y haz click en el link "..." en la columna de acciones (C) para ver los detalles del caso.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -114,7 +115,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Comprueba la sección "Tareas Hechas" para validar la ejecución del procesos:</para>
+				<para>Comprueba la sección "Tareas realizadas" para validar la ejecución del procesos:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
