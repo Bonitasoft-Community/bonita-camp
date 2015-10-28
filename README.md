@@ -15,7 +15,7 @@ Content is available in:
 
 ##Setup instructions for exercises
 1. Download and install the [DEP4E eclipse plugin](http://dep4e.sourceforge.net/)
-2. Download [Ant-Contrib 1.0b2](http://sourceforge.net/project/showfiles.php?group_id=36177) 
+2. Download [Ant-Contrib 1.0b2](http://sourceforge.net/projects/ant-contrib/files/ant-contrib/ant-contrib-1.0b2/ant-contrib-1.0b2-bin.zip/download) 
 3. Open Eclipse preferences and navigating to "Ant / Runtime"
 4. Select the "Classpath" tab and add the Ant-Contrib JAR as an external JAR under "Global Entries"
 5. Create a docbook project from the "exercices" folder
