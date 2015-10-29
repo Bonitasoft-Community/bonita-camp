@@ -9,6 +9,6 @@ ProcessInstance processInstance = processAPI.getProcessInstance(processInstanceI
 // Initiate new leave request
 LeaveRequest newRequest = new LeaveRequest();
 newRequest.setRequestorId(processInstance.getStartedBy());
-newRequest.setLeaveStart(requestContract.get("leaveStart"));
-newRequest.setDayCount(requestContract.get("dayCount"));
+newRequest.setLeaveStart(requestInput.get("leaveStart"));
+newRequest.setDayCount(requestInput.get("dayCount"));
 return newRequest;

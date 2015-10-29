@@ -14,7 +14,7 @@
 		<para>Create the following forms:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A case instantiation form at pool level that sets the "leaveStart" and "dayCount" data.</para></listitem>
-			<listitem><para>A form for the "Validate request" task that displays the "leaveStart" and "dayCount" data in read-only mode and that sets the "isApproved" data.</para></listitem>
+			<listitem><para>A form for the "Validate request" task that displays the "requestor" user details, the "leaveStart" and "dayCount" data in read-only mode and that sets the "isApproved" data.</para></listitem>
 		</itemizedlist>
 	</section>
 	
@@ -55,8 +55,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Move the existing widgets in the form container</emphasis></para>
-				<para>Select the "Start date" widget and drag and drop it inside the form container.</para>
-				<para>Repeat the operation for the "Day count" and "Submit" widgets while adding new rows.</para>
+				<para>Select the "Leave Start" widget and drag and drop it inside the form container.</para>
+				<para>Repeat the operation for the "Day Count" and "Submit" widgets while adding new rows.</para>
 				<para>Once the widgets are grouped under the form container, select and remove the empty rows.</para>
 				<para><emphasis role="bold">Tip:</emphasis> Hover on the grey bar located on left of a row (A) to display the actions including the removal (B).</para>
 				<para>
@@ -69,7 +69,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Update the form title</emphasis></para>
-				<para>Select the top most widget "Request contract" and edit the following properties:</para>
+				<para>Select the top most widget "Request Input" and edit the following properties:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -177,30 +177,18 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Update the "Submit" widget</emphasis></para>
-				<para>Select the "Submit" widget and edit the following properties:</para>
-				<informaltable frame="all">
-					<tgroup cols="2" align="left" colsep="1" rowsep="1">
-						<colspec colname='c1' colwidth="1*"/>
-						<colspec colname='c2' colwidth="4*"/>
-						<thead>
-							<row>
-								<entry>Property</entry>
-								<entry>Value</entry>
-							</row>
-						</thead>
-						<tbody>
-							<row>
-								<entry>Failed response value</entry>
-								<entry>error</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-				<para>Assigning the "failed response value" property to the "error" variable allows to retrieve the error details (if any).</para>
+				<para>Select the "Submit" widget.</para>
+				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> next to the "Disabled" property.</para>
+				<para>Enter the following content in the text field that just appeared (this will disable the button when the form cannot be validated):</para>
+				<para>
+					<programlisting language="javascript">$form.$invalid</programlisting>
+				</para>
+				<para>Set the "Failed response value" property to "error" (this allows to retrieve submission error details if any).</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Dynamically display the error</emphasis></para>
 				<para>Drag a "Text" widget from the palette and drop it under the "Submit" button.</para>
+				<para>Set the "CSS classes" property to "text-danger".</para>
 				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> next to the "Hidden" property.</para>
 				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>
 				<para>
@@ -232,11 +220,10 @@
 				</para>
 				<para>Check for following points:</para>
 				<itemizedlist>
-					<listitem><para>the widget presenting the error should not be visible</para></listitem>
-					<listitem><para>the "Submit" button should be disabled (this is due to the validation provided by the form container)</para></listitem>
+					<listitem><para>the widget presenting the error is not visible</para></listitem>
+					<listitem><para>the "Submit" button is disabled by default (this is due to the validation provided by the form container)</para></listitem>
+					<listitem><para>the "Submit" button is enabled when the form is valid</para></listitem>
 				</itemizedlist>
-				<para>Use the form preview to test the form's field validation.</para>
-				<para>Once the form is valid, the "Submit"  button should be enabled.</para>
 				<para><emphasis role="bold">Note:</emphasis> the form cannot be submitted from the preview mode even when it is valid.</para>
 			</listitem>
 			<listitem>
@@ -253,9 +240,16 @@
 				<para>In the UI Designer, rename the form into "validateLeaveRequest" and save it.</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Remove unneeded variables</emphasis></para>
+				<para>In the lower "variables" section of the screen, remove the following variables:</para>
+				<itemizedlist>
+					<listitem><para>formInput</para></listitem>
+					<listitem><para>formOutput</para></listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Retrieve business data from the ongoing request</emphasis></para>
-				<para>Click on the "Create a new variable" button in the lower "variables" section of the screen.</para>
-				<para>Configure the variable with the following properties:</para>
+				<para>Click on the "Create a new variable" button and configure the variable with the following properties:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -285,6 +279,36 @@
 				<para><emphasis role="bold">Note:</emphasis> here, we are calling the Bonita REST APIs to fetch our "request" BDM data. 
 				We are using the "context" variable that exposes links to the process instance data including our request in the form of "request_ref".
 				We can then retrieve the request thanks to the "link" attribute which provides the URL that needs to be called to retrieve the object.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Retrieve the requestor's user data</emphasis></para>
+				<para>Create a new variable with the following properties:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Name</entry>
+								<entry>requestor</entry>
+							</row>
+							<row>
+								<entry>Type</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>API URL</entry>
+								<entry>../API/identity/user/{{request.requestorId}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a variable for error handling</emphasis></para>
@@ -340,7 +364,7 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a widget to display the start date</emphasis></para>
+				<para><emphasis role="bold">Add a widget to display the requestor</emphasis></para>
 				<para>Drag an "Input" widget from the palette and drop it on a new row under the form title.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
@@ -360,7 +384,38 @@
 							</row>
 							<row>
 								<entry>Label</entry>
-								<entry>Start date</entry>
+								<entry>Requestor</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>requestor.firstname +" "+ requestor.lastname</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a widget to display the leave start date</emphasis></para>
+				<para>Drag an "Input" widget from the palette and drop it on a new row under the requestor widget.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Read-only</entry>
+								<entry>yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Leave start</entry>
 							</row>
 							<row>
 								<entry>Value</entry>
@@ -451,7 +506,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to approve the request</emphasis></para>
-				<para>Drag a "Button" widget from the palette and drop it on the zone located on the right of the "Reject" button.</para>
+				<para>Drag a "Button" widget from the palette and drop it on the "6 column" zone located on the right of the "Reject" button.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -490,7 +545,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Dynamically display potential submit errors</emphasis></para>
-				<para>Drag a "Text" widget from the palette and drop it on a new row at the bottom of the form.</para>
+				<para>Drag a "Text" widget from the palette and drop it under the "Submit" button.</para>
+				<para>Set the "CSS classes" property to "text-danger".</para>
 				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> next to the "Hidden" property.</para>
 				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>
 				<para>

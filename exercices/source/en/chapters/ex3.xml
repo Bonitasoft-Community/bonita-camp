@@ -78,7 +78,8 @@
 			<listitem>
 				<para><emphasis role="bold">Validate the diagram.</emphasis></para>
 				<para>Once the transition conditions are properly set, you can re-validate the process diagram.
-				To do so, navigate to the "Validation status" tab and click on "refresh".</para>
+				To do so, navigate to the "Validation status" tab and click on "refresh".
+				You may safely ignore the 3 warnings related to the UI Designer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Make sure that your diagram matches this:</emphasis></para>
@@ -94,15 +95,7 @@
 				<para><emphasis role="bold">Execute twice the process to test the different paths.</emphasis></para>
 				<para>Warning: do not hit twice the "Run" button as this would redeploy the process and clear the history.
 				In order to create the second process instance, you will need to navigate in the Bonita Portal.</para>
-				<para>Open the Portal with the dedicated button in the Studio's top toolbar or from the top right link in the web user interface:</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>Then, navigate to the "Processes" menu and select the "Leave request" process definition with version 3.0 and click on "Start".</para>
+				<para>To do so, navigate to the "Processes" menu and select the "Leave request" process definition with version 3.0 and click on "Start".</para>
 			</listitem>			
 			<listitem>
 				<para><emphasis role="bold">Check that the process is correctly executed in the Portal administration interface.</emphasis></para>

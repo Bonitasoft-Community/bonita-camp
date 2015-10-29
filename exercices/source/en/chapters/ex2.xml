@@ -36,7 +36,7 @@
 					<row>
 						<entry>requestorId</entry>
 						<entry>Long</entry>
-						<entry>Yes</entry>
+						<entry>No</entry>
 					</row>
 					<row>
 						<entry>leaveStart</entry>
@@ -57,10 +57,10 @@
 			</tgroup>
 		</informaltable>
 		<para>Declare an instance "request" of type "LeaveRequest" on your pool.</para>
-		<para>Add a case instantiation contract with a "requestContract" input of type "complex" that contains the following items:</para>
+		<para>Generate case instantiation contract from the "request" data and with the following mandatory items:</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>leaveStart (Date)</para></listitem>
-			<listitem><para>dayCount (Integer)</para></listitem>
+			<listitem><para>leaveStart</para></listitem>
+			<listitem><para>dayCount</para></listitem>
 		</itemizedlist>
 		<para>Add these two constraints on the case instantiation contract:</para>
 		<itemizedlist mark='bullet'>
@@ -98,7 +98,7 @@
 						<colspec colname='c3' colwidth="3*"/>
 						<thead>
 							<row>
-								<entry>Nom</entry>
+								<entry>Name</entry>
 								<entry>Type</entry>
 								<entry>Mandatory</entry>
 							</row>
@@ -107,7 +107,7 @@
 							<row>
 								<entry>requestorId</entry>
 								<entry>Long</entry>
-								<entry>Yes</entry>
+								<entry>No</entry>
 							</row>
 							<row>
 								<entry>leaveStart</entry>
@@ -155,7 +155,7 @@
 				<para>Select the process pool, and navigate to the "Execution / Contract / Inputs" tab.</para>
 				<para>Click on "Add from data".</para>
 				<para>Select the "request" BDM and click on "Next".</para>
-				<para>Rename the input to "requestContract" then uncheck the "requestorId" and "isApproved" attributes.</para>
+				<para>Uncheck the "requestorId" and "isApproved" attributes.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -163,7 +163,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on "Finish".</para>
+				<para>Click on "Finish" and dismiss the warning message about the incomplete initialization of the business variable.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -190,7 +190,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return requestContract.leaveStart.compareTo(new Date()) &gt; 0;</programlisting></entry>
+								<entry><programlisting language="java">return requestInput.leaveStart.compareTo(new Date()) &gt; 0;</programlisting></entry>
 							</row>
 							<row>
 								<entry>Error message</entry>
@@ -217,7 +217,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return requestContract.dayCount &gt; 0;</programlisting></entry>
+								<entry><programlisting language="java">return requestInput.dayCount &gt; 0;</programlisting></entry>
 							</row>
 							<row>
 								<entry>Error message</entry>
@@ -235,16 +235,15 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Initialize the "request" BDM with your case instantiation contract</emphasis></para>
+				<para><emphasis role="bold">Update the "request" BDM initialization</emphasis></para>
 				<para>Select the process pool, and navigate to the "Data / Pool variables" tab.</para>
 				<para>Select the "request" business variable and click on "Edit".</para>
 				<para>Click on the "Pencil" icon next to the "Default value" field to open the expression editor.</para>
-				<para>Make sure that the selected expression type is "Script".</para>
-				<para>Name the script "initRequest".</para>
-				<para>Enter the following code:</para>
+				<para>Clear all of the generated code and replace it by the following:</para>
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
+				<para>This will initialize the BDM from the contract data and set the process initiator as the request author.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Set up the "Validate request" step contract</emphasis></para>
@@ -277,7 +276,7 @@
 				<para><emphasis role="bold">Tips:</emphasis></para>
 				<itemizedlist mark='bullet'>
 					<listitem><para>for the "leaveStart" input, enter a date in the YYYY-MM-DD format.</para></listitem>
-					<listitem><para>for the "isApproved" input, enter a boolean value: either "true" or "false" (any other value will be resolved to "false").</para></listitem>
+					<listitem><para>for the "isApproved" input, enter a boolean value: either "true" or "false".</para></listitem>
 				</itemizedlist>
 				<para>
 					<mediaobject>

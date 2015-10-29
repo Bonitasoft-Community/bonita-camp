@@ -7,6 +7,9 @@
 		<title>Goal</title>
 		<para>The goal of this exercise is to demonstrate an interaction between Bonita BPM and an external system with the use of a connector.
 		In this context, we will notify the leave request initiator about his request's status with an email connector.</para>
+		<warning>
+			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita BPM.</para>
+		</warning>
 	</section>
 	
 	<section>
@@ -46,7 +49,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add an email connector on the "Notify request approved" task.</emphasis></para>
-				<para>Select the task, navigate to the "General / Connectors" tab and click on "Add".</para>
+				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add".</para>
 				<para>Select the "Email (SMTP)" connector.</para>
 				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
 				<para>Do not fill in the parameters but click on <guiicon><inlinegraphic fileref="resources/ex6_02.png"/></guiicon>.</para>
