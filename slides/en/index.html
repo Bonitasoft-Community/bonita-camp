@@ -83,7 +83,7 @@
 						<a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
 					</div>
 					<div>
-						<div style="float:left; text-align:left;">Philippe Ozil</div>
+						<div style="float:left; text-align:left;">John Doe</div>
 						<div style="float:right; text-align:right;">12<sup>th</sup> of February 2015</div>
 					</div>
 					
@@ -101,7 +101,7 @@
 						<li>Bonita BPM Components</li>
 						<li>BPMN Introduction</li>
 						<li>Data &amp; Contracts</li>
-						<li>BPMN Introduction (Continued)</li>
+						<li>More about BPMN</li>
 						<li>Forms &amp; Pages</li>
 						<li>Actors</li>
 						<li>Connectors</li>
@@ -140,7 +140,7 @@
 						</table>
 					
 						<aside class="notes">
-						Studio is a standalone IDE for developers.<br/>
+						Studio is a standalone IDE for developers (screenshot on next slide).<br/>
 						Studio contains an embedded Platform used for single developer testing.<br/>
 						Production-ready platforms are deployed on dedicated servers.
 						</aside>
@@ -170,7 +170,7 @@
 					<section>
 						<h2>Bonita BPM Engine</h2>
 						<p>In charge process execution (no built-in UI)</p>
-						<p>Based on Java 7 related technologies</p>
+						<p>Based on Java SE 7+ / Java EE 6</p>
 						<p>Packaged with the Bonita Portal in a Java web application</p>
 						<p>Requires :</p>
 						<ul>
@@ -260,29 +260,26 @@
 						<div class="data-scopes">
 							<div style="border-color:red;">
 								<p style="color:red;">BDM (Business Data Model)</p>
-								<p>Accessible from anywhere, stored in Business DB, never archived</p>
-								<div style="border-color:rgb(149, 158, 7);">
-									<p style="color:rgb(149, 158, 7);">Process data</p>
-									<p>Accessible whithin process, stored in Engine DB, archived with process instance</p>
-									<div style="border-color:green;">
-										<p style="color:green;">Step data</p>
-										<p>Accessible whithin task, transient or persistent (stored in Engine DB, archived with task instance)</p>
-										<div style="border-color:rgb(114,114,255);">
-											<p style="color:rgb(114,114,255);">Form data</p>
-											<p>Accessible within form, never persisted</p>
-										</div>
-									</div>
-								</div>
+								<p>Accessible from anywhere, stored in Business DB<br />+ Use case: store any kind of data manipulated by processes instances and/or applications.</p>
+							</div>
+							<div style="border-color:rgb(149, 158, 7);">
+								<p style="color:rgb(149, 158, 7);">Process &amp; Step data</p>
+								<p>Accessible whithin a single process or step instance, stored in Engine DB, archived with process instance<br />+ Use case: chain connectors execution. </p>
+							</div>
+							<div style="border-color:rgb(114,114,255);">
+								<p style="color:rgb(114,114,255);">Form data</p>
+								<p>Accessible within form, never persisted<br />+ Use case: process and store data displayed and updated in forms</p>
 							</div>
 						</div>
 						
 						<aside class="notes">
-						- Data from upper scopes can be accessed (reverse is not possible).
+						How to choose between BDM and process/step data: almost always use BDM.<br />
+						Forms data are for example used to store the result of a REST API call (to get BDM value) in order to display it in a form.
 						</aside>
 					</section>
 
 					<section>
-						<h2>Data : Types</h2>
+						<h2>Data</h2>
 						<table class="data-types no-border">
 						<tr>
 							<th style="width:33%;">BDM</th>
@@ -290,19 +287,30 @@
 							<th style="width:33%;">Form data</th>
 						</tr>
 						<tr>
-							<td>
-								<div>Structured objects composed of:</div>
+							<td style="vertical-align:top">
+								<ul><li>Structured objects composed of:
 								<ul>
 									<li>Java primitives (String, Integer, Boolean, Date...)</li>
 									<li>Other BDMs</li>
 								</ul>
+								</li>
+								</ul>
 							</td>
-							<td>Any Java Serializable type (Primitives, Collections, custom types...)</td>
-							<td style="text-align:center;">Any JavaScript type</td>
+							<td style="vertical-align:top">
+								<ul>
+									<li>Any Java Serializable type:
+									<ul>
+									      <li>Primitives, Collections...</li>
+									      <li>Custom types...</li>
+									</ul>
+								</ul>
+							</td>
+							<td style="text-align:center;"><ul><li>Any JavaScript type</li></ul></td>
 						</tr>
 						</table>
-						<p style="width:800px; margin:20px auto 0 auto; border-top:1px solid; padding-top:20px;">
-							<b>Special type:</b> Documents (files) with revisions can be declared at process level
+						<hr />
+						<p>
+							<b>Documents:</b> files with revisions can be declared at process level
 						</p>
 						
 						<aside class="notes">
@@ -316,8 +324,8 @@
 						<p>Set of required input parameters with validation rules.</p>
 						<p>Data sent by forms must satisfy a contract in order to</p>
 						<ul>
-							<li>start a process</li>
-							<li>execute a human task</li>
+							<li>Start a process</li>
+							<li>Execute a human task</li>
 						</ul>
 						<p>Contributes to the decoupling of process logic and user interface.</p>
 					</section>
@@ -330,8 +338,8 @@
 
 				<section>
 					<section>
-						<h2>BPMN Introduction (Continued)</h2>
-						<p style="margin-bottom:0;">3 types of gateways :</p>
+						<h2>More about BPMN</h2>
+						<p style="margin-bottom:0;">3 types of gateways:</p>
 						
 						<table class="no-border bpmn-table">
 						<tr>
@@ -372,8 +380,8 @@
 						<ul>
 							<li><b>Editable forms</b> that must satisfy a contract
 							<ul>
-								<li>process instantiation</li>
-								<li>human tasks</li>
+								<li>Process instantiation</li>
+								<li>Human tasks</li>
 							</ul>
 							</li>
 							<li style="margin-top:10px;">
@@ -387,7 +395,7 @@
 					
 					<section>
 						<h2>Widgets</h2>
-						<p>A set of basic widgets are available out of the box (text field, select, date picker...)</p>
+						<p>A set of widgets is available out of the box (text field, select, date picker...)</p>
 						<p>Custom widgets can be created with the UI Designer</p>
 						
 						<aside class="notes">
@@ -403,8 +411,8 @@
 				<section>
 					<section>
 						<h2>Actors</h2>
-						<p>Defined for lanes or human tasks in the diagram.</p>
-						<p>2 implementation options :</p>
+						<p>Declared at pool level. Associated with lanes or human tasks. 2 options available: actors and actors filters</p><br />
+
 						<table class="compare">
 						<tr>
 							<th></th>
@@ -413,21 +421,21 @@
 						</tr>
 						<tr>
 							<td>Actors</td>
-							<td>always up to date with organization</td>
-							<td>static mapping that does not include business data</td>
+							<td>Always up to date with organization</td>
+							<td>Static mapping that can not rely on business/process data</td>
 						</tr>
 						<tr>
 							<td>Actor filters</td>
-							<td>dynamic mapping that can include business data</td>
-							<td>executed only once at task instance start</td>
+							<td>Dynamic mapping that can include business/process data</td>
+							<td>Executed only once at task instantiation</td>
 						</tr>
 						</table>
 						
 						
 						<aside class="notes">
 						Actors allow to automatically update task visibility when organization changes.<br/>
-						Actors cannot use process data whereas filters can.<br/>
-						Filters are executed only once when task starts.
+						Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
+						Filters are executed only once when task starts. They can be run again with API call.
 						</aside>
 					</section>
 					
@@ -444,8 +452,8 @@
 						<p>A set of standard connectors is shipped in the Studio</p>
 						<p>Custom connectors can be:</p>
 						<ul>
-							<li>implemented using the Studio or other Java IDEs</li>
-							<li>imported from the Community website</li>
+							<li>Implemented using the Studio or other Java IDEs</li>
+							<li>Imported from the Community website</li>
 						</ul>
 						
 						<aside class="notes">
@@ -487,12 +495,13 @@
 				
 				<section>
 					<h2>Thank you for your attention</h2>
-					<p style="margin:3em 0;">Any questions ? Do not hesitate.</p>
-					<p>Extra Resources :</p>
+					<p style="margin:3em 0;">Any questions? Do not hesitate.</p>
+					<p>Extra Resources:</p>
 					<ul>
 						<li>Documentation - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
 						<li>Corporate Website - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
 						<li>Community - <a href="http://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+						<li>GitHub - <a href="https://github.com/bonitasoft" target="_blank">github.com/bonitasoft</a></li>
 					</ul>
 				</section>
 				
