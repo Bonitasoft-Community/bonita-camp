@@ -287,7 +287,7 @@ body {
 .reveal section a			{color:#FF3030;}
 .reveal section a:hover	{color:#FF0000;}
 /* Images without borders and transparent background */
-.reveal section img	{border-width:0; background-color:transparent;}
+.reveal section img	{border-width:0; background-color:transparent; box-shadow:none;}
 
 /* OPTIONAL CLASSES */
 
