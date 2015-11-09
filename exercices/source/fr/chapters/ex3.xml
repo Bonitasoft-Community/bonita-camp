@@ -2,13 +2,13 @@
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Exercice : Contrôle dynamique du flux d'exécution grâce aux données</title>
-	
+
 	<section>
 		<title>Objectif</title>
 		<para>L'objectif de cet exercice est d'enrichir le processus existant en ajoutant la gestion dynamique de la validation de la demande de congés.
 		Ceci sera réalisé à l'aide d'une porte logique exclusive donnant accès à deux flux d'exécutions permettant de gérer le refus ou l'approbation de la demande.</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions résumées</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</para>
@@ -22,7 +22,7 @@
 		</itemizedlist>
 		<para>Configurer les transitions en sortie de la porte exclusive pour diriger dynamiquement le flux d'exécution du processus en fonction des données du processus.</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions pas à pas</title>
 		<orderedlist>
@@ -59,7 +59,7 @@
 				<para><emphasis role="bold">Nommer les 2 transitions entre la porte logique et les étapes automatiques</emphasis></para>
 				<para>La transition menant à l'étape "Notifier approbation" se nommera "Oui" et l'autre "Non".</para>
 			</listitem>
-			
+
 			<listitem>
 				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
 				<para>Sélectionner la transition et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
@@ -79,7 +79,7 @@
 			<listitem>
 				<para><emphasis role="bold">Déclencher la validation du diagramme.</emphasis></para>
 				<para>Maintenant que les conditions sont correctement configurées sur les transitions il est possible de relancer la validation.
-				Naviguer dans l'onglet "Statut de validation" et cliquer sur "Rafraîchir".</para>
+				Naviguer dans l'onglet "Statut de validation" et cliquer sur "Rafraîchir". Vous pouvez ignorer les trois messages d'avertissement liés au UI designer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
@@ -95,20 +95,12 @@
 				<para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins.</emphasis></para>
 				<para>Attention : ne pas cliquer une deuxième fois sur le bouton "Lancer", cela aurait pour effet de redéployer le processus
 				et donc de supprimer les instances existantes. Pour créer la seconde instance, il faut naviguer dans le portail.</para>
-				<para>Ouvrir le portail à l'aide de l'icône dans la barre d'outils supérieure du Studio ou à l'aide du lien dans l'interface web :</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>Ensuite, naviguer dans le menu "Processus" puis sélectionner la définition de processus "Demande de congés" en version 3.0
+				<para>Dans le portail, naviguer dans le menu "Processus" puis sélectionner la définition de processus "Demande de congés" en version 3.0
 				et cliquez sur "démarrer".</para>
-			</listitem>			
+			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier le bon déroulement du processus dans l'interface d'administration du portail</emphasis></para>
-				<para>Une fois dans le portail, changer de profil dans le coin supérieur droit pour passer en "Administrateur".</para>
+				<para>Une fois dans le portail, changer de profil dans le coin supérieur droit pour passer en d'"Utilisateur" à "Administrateur".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
