@@ -67,10 +67,7 @@
 			<listitem><para>"leaveStart" must be in the future</para></listitem>
 			<listitem><para>"dayCount" must be strictly greater than zero</para></listitem>
 		</itemizedlist>
-		<para>Initialize the "request" BDM with the following code:</para>
-		<para>
-			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
-		</para>
+		<para>Initialize the "request" business variable.</para>
 		<para>Add a step contract on the "Validate request" task with the following item:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>isApproved (Boolean)</para></listitem>
