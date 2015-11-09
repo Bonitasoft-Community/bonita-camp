@@ -14,7 +14,7 @@
 		<para>Créer les formulaires suivants :</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un formulaire d'instanciation de processus au niveau du pool permettant d'alimenter les données "dateDebut" et "nombreJours".</para></listitem>
-			<listitem><para>Un formulaire d'étape permettant d'afficher les informations du demander et les données "dateDebut" et "nombreJours" en lecture seule puis d'alimenter la donnée "estApprouvee".</para></listitem>
+			<listitem><para>Un formulaire d'étape permettant d'afficher les informations du demandeur et les données "dateDebut" et "nombreJours" en lecture seule puis d'alimenter la donnée "estApprouvee".</para></listitem>
 		</itemizedlist>
 	</section>
 
@@ -69,7 +69,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Changer le titre du formulaire</emphasis></para>
-				<para>Sélectionner le widget "Contrat demande" en haut du formulaire.</para>
+				<para>Sélectionner le widget "Demande Input" en haut du formulaire.</para>
 				<para>Dans la section à droite de l'écran, éditer les propriétés suivantes:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -183,7 +183,8 @@
 			<listitem>
 				<para><emphasis role="bold">Changer le widget "Submit"</emphasis></para>
 				<para>Sélectionner le widget "Submit"</para>
-				<para>Cliquer sur l'icône de "biding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> se trouvant à côté de la propriété "Désactivé".
+				<para>Changer son libellé en "Soumettre"</para>
+				<para>Cliquer sur l'icône de "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> se trouvant à côté de la propriété "Désactivé".</para>
 				<para>Saisissez le code suivant dans le champ nouvellement affiché (cela aura pour effet de désactiver le bouton si le formulaire contient des données invalides) :</para>
 				<para>
 					<programlisting language="javascript">$form.$invalid</programlisting>
@@ -193,7 +194,7 @@
 			<listitem>
 				<para><emphasis role="bold">Afficher dynamiquement l'erreur</emphasis></para>
 				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Text" en dessous du bouton "Soumettre".</para>
-				<para>Modifier la valeur de "CSS classes" pour la positionner à "text-danger".</para>
+				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur):</para>
 				<para>
@@ -255,7 +256,7 @@
 			<listitem>
 				<para><emphasis role="bold">Récupérer les données métier de la demande en cours</emphasis></para>
 				<para>Dans la section "variables" en bas de l'écran, cliquer sur le bouton "Créer une nouvelle variable".</para>
-				<para>Configurer la variable avec les propriétés suivantes:</para>
+				<para>Configurer la variable avec les propriétés suivantes :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -287,12 +288,38 @@
 				Nous pouvons ainsi charger la demande grâce à l'attribut "link" qui donne l'URL à appeler pour récupérer l'objet.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter une variable pour la gestion d'erreur</emphasis></para>
-				<para>Créer une nouvelle variable, la nommer "erreur", laisser son type à "String" et sa valeur vide puis enregistrer.</para>
+				<para><emphasis role="bold">Récupérer les informations concernant le demandeur</emphasis></para>
+				<para>Créer une variable avec les propriétés suivantes :</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Nom</entry>
+								<entry>demandeur</entry>
+							</row>
+							<row>
+								<entry>Type</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>URL d'API</entry>
+								<entry>../API/identity/user/{{demande.idDemandeur}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer les variables "formInput" et "formOutput"</emphasis></para>
-				<para>Utiliser l'icône "poubelle" pour supprimer les variables "formInput" et "formOutput".</para>
+				<para><emphasis role="bold">Ajouter une variable pour la gestion d'erreur</emphasis></para>
+				<para>Créer une nouvelle variable, la nommer "erreur", laisser son type à "String" et sa valeur vide puis enregistrer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee"</emphasis></para>
@@ -334,6 +361,37 @@
 							<row>
 								<entry>Alignement</entry>
 								<entry>au centre</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un widget pour présenter le demandeur</emphasis></para>
+				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Configurer le widget comme ceci:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Demandeur</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>demandeur.firstname +" "+ demandeur.lastname</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -418,7 +476,7 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Width</entry>
+								<entry>largeur</entry>
 								<entry>6</entry>
 							</row>
 							<row>
@@ -451,7 +509,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour approuver la demande</emphasis></para>
-				<para>Faire glisser un widget de type "Button" dans la zone à droite du widget "Refuser".</para>
+				<para>Faire glisser un widget de type "Button" dans la zone "6 colonnes" à droite du widget "Refuser".</para>
 				<para>Configurer le widget comme ceci:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -491,6 +549,7 @@
 			<listitem>
 				<para><emphasis role="bold">Afficher dynamiquement les potentielles erreurs de soumission</emphasis></para>
 				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
+				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu:</para>
 				<para>
