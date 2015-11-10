@@ -37,12 +37,12 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
-				<para>Utiliser le champ texte en haut de l'écran pour renommer le formulaire en "remplirDemandeConges" (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
-				<para>Cliquer sur enregistrer.</para>
+				<para>Utiliser le champ texte en haut de l'écran pour renommer le formulaire depuis "newForm" vers "remplirDemandeConges" (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
+				<para>Cliquer sur le bouton enregistrer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un conteneur de formulaire</emphasis></para>
-				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Form container" dans une nouvelle ligne en dessous du widget "Contrat demande".</para>
+				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Form container" dans une nouvelle ligne en dessous du widget "Demande Input".</para>
 				<para><emphasis role="bold">Astuce :</emphasis> Une zone en pointillé permettant d'insérer une nouvelle ligne apparait lorsque l'on survole la séparation entre deux widget.</para>
 				<para>
 					<mediaobject>
@@ -184,7 +184,7 @@
 				<para><emphasis role="bold">Changer le widget "Submit"</emphasis></para>
 				<para>Sélectionner le widget "Submit"</para>
 				<para>Changer son libellé en "Soumettre"</para>
-				<para>Cliquer sur l'icône de "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> se trouvant à côté de la propriété "Désactivé".</para>
+				<para>Cliquer sur l'icône de "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> se trouvant à côté de la propriété "Désactivés".</para>
 				<para>Saisissez le code suivant dans le champ nouvellement affiché (cela aura pour effet de désactiver le bouton si le formulaire contient des données invalides) :</para>
 				<para>
 					<programlisting language="javascript">$form.$invalid</programlisting>
@@ -195,7 +195,7 @@
 				<para><emphasis role="bold">Afficher dynamiquement l'erreur</emphasis></para>
 				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Text" en dessous du bouton "Soumettre".</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
-				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> associé à la propriété "Hidden".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> associé à la propriété "Caché".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur):</para>
 				<para>
 					<programlisting language="javascript">erreur == null</programlisting>

@@ -2,17 +2,17 @@
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Exercice : Notification par le biais d'un connecteur</title>
-	
+
 	<section>
 		<title>Objectif</title>
 		<para>L'objectif de cet exercice est de traiter une interaction entre le processus et un système externe par le biais d'un connecteur.
 		Nous nous intéresserons ici à la notification du résultat de la demande de congés par le biais d'un connecteur d'envoi d'email.</para>
 		<warning>
-			<para>En fonction de votre configuration réseau, de votre firewall ou de la configuration de sécurité de votre serveur d'email, 
+			<para>En fonction de votre configuration réseau, de votre firewall ou de la configuration de sécurité de votre serveur d'email,
 			il est possible que vous ne soyez pas autorisé à envoyer un email depuis Bonita BPM..</para>
 		</warning>
 	</section>
-	
+
 	<section>
 		<title>Instructions résumées</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 6.0.</para>
@@ -23,7 +23,7 @@
 			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 		</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions pas à pas</title>
 		<orderedlist>
@@ -31,7 +31,7 @@
 			<listitem>
 				<para><emphasis role="bold">Tester le connecteur d'envoi d'email pour obtenir la bonne configuration SMTP.</emphasis></para>
 				<para>Naviguer dans le menu "Développement / Connecteurs / Tester un connecteur" de la barre supérieur du Studio.</para>
-				<para>Sélectionner un connecteur de type "Courriel" à partir du filtre ou depuis la catégorie "Communications".</para>
+				<para>Sélectionner un connecteur de type "Courriel" à partir du filtre ou depuis la catégorie "Communications" et cliquer sur le bouton "Suivant".</para>
 				<para>Remplir les paramètres de connexion de votre compte email et passer à la page suivante.</para>
 				<para>Entrer votre email en tant que destinataire et expéditeur et passer à la page suivante.</para>
 				<para>Entrer "Bonita test" en sujet, cliquer le bouton "Test" et confirmer sans cocher de dépendance.</para>
