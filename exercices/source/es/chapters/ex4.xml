@@ -14,7 +14,7 @@
 		<para>Crea los siguientes formularios:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un formulario de instanciación "rellenarSolicitud" donde agregar las variables "diaInicio" y "numDias".</para></listitem>
-			<listitem><para>Un formulario de tarea "Validar Solicitud de vacaciones" que muestre las variables "diaInicio" y "numDias" en solo lectura y permita definir la variable "aprobado".</para></listitem>
+			<listitem><para>Un formulario de tarea "Validar Solicitud de vacaciones" que muestre los detalles del usuario "solicitante", las variables "diaInicio" y "numDias" en solo lectura y permita definir la variable "aprobado".</para></listitem>
 		</itemizedlist>
 	</section>
 	
@@ -55,7 +55,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Mueve los widgets ya existentes dentro del Contenedor de formulario</emphasis></para>
-				<para>Selecciona el widget "Día inicio", arrastra y suéltalo dentro del widget ""Form container".</para>
+				<para>Selecciona el widget "Día inicio", arrastra y suéltalo dentro del widget "Form container".</para>
 				<para>Repite la operación para los widgets "Num días" y "Submit", añadiendo nuevas filas.</para>
 				<para>Una vez los widgets estén agrupados dentro del Contenedor de formularios, selecciona y elimina las filas vacías.</para>
 				<para><emphasis role="bold">Consejo:</emphasis> Mantén el ratón en la barra gris situada a la izquierda de una fila (A) para mostrar las acciones incluyendo la de eliminar (B).</para>
@@ -70,7 +70,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Actualiza el título del formulario.</emphasis></para>
-				<para>Selecciona el widget "Title" con texto "Solicitud Contrato" y edita las siguientes propiedades:</para>
+				<para>Selecciona el widget "Title" con texto "Solicitud Input" y edita las siguientes propiedades:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -178,34 +178,18 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Actualiza el widget "Submit"</emphasis></para>
-				<para>Selecciona el widget "Submit" y edita las siguientes propiedades:</para>
-				<informaltable frame="all">
-					<tgroup cols="2" align="left" colsep="1" rowsep="1">
-						<colspec colname='c1' colwidth="1*"/>
-						<colspec colname='c2' colwidth="4*"/>
-						<thead>
-							<row>
-								<entry>Propiedad</entry>
-								<entry>Valor</entry>
-							</row>
-						</thead>
-						<tbody>
-							<row>
-								<entry>Etiqueta</entry>
-								<entry>Enviar</entry>
-							</row>
-							<row>
-								<entry>Valor de la respuesta fallida</entry>
-								<entry>error</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-				<para>Asignando a la propiedad "Valor de la respuesta fallida" la variable "error" permitirá recibir los detalles del error (si los hubiera).</para>
-			</listitem>
+				<para>Selecciona el widget "Submit".</para>
+				<para>Haz click en el icono de "enlazar" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> junto a la propiedad "Desactivado".</para>
+				<para>Introduce el siguiente contenido en el campo de texto que acaba de aparecer (esto deshabilitará el botón cuando el formulario no pueda ser validado):</para>
+				<para>
+					<programlisting language="javascript">$form.$invalid</programlisting>
+				</para>
+				<para>Reemplaza la propiedad "Valor de la respuesta fallida" con "error" (esto nos permitirá recoger los detalles del error al envío del formulario si es que hubiera alguno).</para>
+				</listitem>
 			<listitem>
 				<para><emphasis role="bold">Muestra el error dinámicamente</emphasis></para>
 				<para>Arrastra un widget de "Texto" de la paleta y suéltalo debajo del botón "Enviar".</para>
+				<para>Rellena la propiedad "Clases CSS" con "text-danger".</para>
 				<para>Haz click en el icono de "enlazar" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> junto a la propiedad "Oculto".</para>
 				<para>Introduce el siguiente contenido en el campo de texto que acaba de aparecer (esto muestra el widget sólo cuando haya un error):</para>
 				<para>
@@ -237,11 +221,10 @@
 				</para>
 				<para>Revisa los siguientes puntos:</para>
 				<itemizedlist>
-					<listitem><para>el widget responsable de mostrar el error no debería ser visible</para></listitem>
-					<listitem><para>el botón "Enviar" debería estar desactivado (esto se debe a la validación proporcionada por el widget "form container")</para></listitem>
+					<listitem><para>el widget responsable de mostrar el error no es visible</para></listitem>
+					<listitem><para>el botón "Enviar" está desactivado por defecto (esto se debe a la validación proporcionada por el widget "form container")</para></listitem>
+					<listitem><para>el botón "Enviar" está habilitado cuando el formulario es válido</para></listitem>
 				</itemizedlist>
-				<para>Usa la vista previa para comprobar la validación de los campos del formulario.</para>
-				<para>Una vez sea válido el formulario, el botón "Enviar" debería activarse.</para>
 				<para><emphasis role="bold">Nota:</emphasis> el formulario no se puede enviar desde el modo de vista previa aunque sea válido.</para>
 			</listitem>
 			<listitem>
@@ -259,9 +242,16 @@
 				<para>En el UI Designer, renombra el formulario por "validarSolicitud" y haz click en el botón "Guardar".</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Elimina variables innecesarias</emphasis></para>
+				<para>En la sección "variables", el panel inferior situado en la pantalla, elimina la siguientes variables:</para>
+				<itemizedlist>
+					<listitem><para>formInput</para></listitem>
+					<listitem><para>formOutput</para></listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Recibe variables de negocio de la petición en curso</emphasis></para>
-				<para>Haz click en el botón "Crear una nueva vairable" en la sección inferior de "Variables" en la pantalla.</para>
-				<para>Configura la variable con las siguientes propiedades:</para>
+				<para>Haz click en el botón "Crear una nueva vairable" y configura la variable con las siguientes propiedades:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -293,12 +283,38 @@
 				Podemos recuperar la solicitud gracias al atributo "link" que nos proporciona la URL necesaria para recuperar el objeto.</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Recupera la información del usuario solicitante</emphasis></para>
+				<para>Crea una nueva variable con las siguientes propiedades:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propiedad</entry>
+								<entry>Valor</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Nombre</entry>
+								<entry>solicitante</entry>
+							</row>
+							<row>
+								<entry>Tipo</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>API URL</entry>
+								<entry>../API/identity/user/{{solicitud.solicitanteId}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>			
 				<para><emphasis role="bold">Añade una variable para el manejo de errores</emphasis></para>
 				<para>Crea una nueva variable llamada "error", deja su tipo como "String" y su valor vacío. Haz click en "Guardar".</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Elimina las variables "formInput" y "formOutput"</emphasis></para>
-				<para>Usa el icono "papelera" para eliminar las variables "formInput" y "formOutput".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Elimina el checkbox "Aprobado" </emphasis></para>
@@ -346,7 +362,7 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Añade un widget para mostrar la fecha de inicio</emphasis></para>
+				<para><emphasis role="bold">Añade un widget para mostrar al solicitante</emphasis></para>
 				<para>Arrastra un widget "Input" desde la paleta y suéltalo en una nueva fila debajo del título del formulario.</para>
 				<para>Configura el widget como sigue:</para>
 				<informaltable frame="all">
@@ -366,7 +382,38 @@
 							</row>
 							<row>
 								<entry>Etiqueta</entry>
-								<entry>Fecha de Inicio</entry>
+								<entry>Solicitante</entry>
+							</row>
+							<row>
+								<entry>Valor</entry>
+								<entry>solicitante.firstname +" "+ solicitante.lastname</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Añade un widget para mostrar la fecha de comienzo de las vacaciones</emphasis></para>
+				<para>Arrastra un widget "Input" desde la paleta y suéltalo en una nueva fila debajo del widget con el solicitante.</para>
+				<para>Configura el widget como sigue:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propiedad</entry>
+								<entry>Valor</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Sólo-lectura</entry>
+								<entry>sí</entry>
+							</row>
+							<row>
+								<entry>Etiqueta</entry>
+								<entry>Comienzo de la vacaciones</entry>
 							</row>
 							<row>
 								<entry>Valor</entry>
@@ -457,7 +504,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Añade un widget para aprobar la solicitud</emphasis></para>
-				<para>Arrastra un widget "Button" desde la paleta y suéltalo en la zona situada a la derecha del botón "Rechazar".</para>
+				<para>Arrastra un widget "Button" desde la paleta y suéltalo en la zona de "6 columnas" situada a la derecha del botón "Rechazar".</para>
 				<para>Configura el widget como sigue:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -496,7 +543,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Muestra dinámicamente errores de envío potenciales</emphasis></para>
-				<para>Arrastra un widget "Text" desde la paleta y suéltalo en una nueva fila debajo del formulario.</para>
+				<para>Arrastra un widget "Text" desde la paleta y suéltalo debajo del botón "Enviar".</para>
+				<para>Rellena la propiedad "clases CSS" con "text-danger"</para>
 				<para>Haz click en el icono de "enlazar" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> junto a la propiedad "Oculto".</para>
 				<para>Introduce el siguiente contenidos en el campo de texto que ha aparecido (esto mostrará el widget sólo cuando haya un error):</para>
 				<para>

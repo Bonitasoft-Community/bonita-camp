@@ -36,7 +36,7 @@
 					<row>
 						<entry>solicitanteId</entry>
 						<entry>Long</entry>
-						<entry>Sí</entry>
+						<entry>No</entry>
 					</row>
 					<row>
 						<entry>diaInicio</entry>
@@ -57,10 +57,10 @@
 			</tgroup>
 		</informaltable>
 		<para>Declara una variable "solicitud" de tipo "SolicitudVacaciones" en tu pool.</para>
-		<para>Añade un contrato a la instanciación del proceso con una nueva entrada "solicitudContrato" de tipo "complex" que contenga los siguientes elementos:</para>
+		<para>Genera un contrato en la instanciación del proceso desde la variable "solicitud" y que contenga los siguientes elementos:</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>diaInicio (Date)</para></listitem>
-			<listitem><para>numDias (Integer)</para></listitem>
+			<listitem><para>diaInicio</para></listitem>
+			<listitem><para>numDias</para></listitem>
 		</itemizedlist>
 		<para>Añade estas dos restricciones en el contrato:</para>
 		<itemizedlist mark='bullet'>
@@ -107,7 +107,7 @@
 							<row>
 								<entry>solicitanteId</entry>
 								<entry>Long</entry>
-								<entry>Sí</entry>
+								<entry>No</entry>
 							</row>
 							<row>
 								<entry>diaInicio</entry>
@@ -155,7 +155,7 @@
 				<para>Selecciona la Pool del proceso y navega hasta la pestaña "Ejecución / Contrato / Entradas".</para>
 				<para>Haz click en "Añadir desde datos...".</para>
 				<para>Selecciona el BDM "solicitud" y haz click en "Siguiente".</para>
-				<para>Renombra la entrada a "solicitudContrato", luego deselecciona los atributos "solicitanteId" y "aprobado".</para>
+				<para>Deselecciona los atributos "solicitanteId" y "aprobado".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -163,7 +163,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Haz click en "Finalizar".</para>
+				<para>Haz click en "Finalizar" y obvia le mensaje de advertencia sobre la instanciación incompleta de la variable de negocio.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -190,7 +190,7 @@
 							</row>
 							<row>
 								<entry>Expresión</entry>
-								<entry><programlisting language="java">return solicitudContrato.diaInicio.compareTo(new Date()) > 0;</programlisting></entry>
+								<entry><programlisting language="java">return solicitudInput.diaInicio.compareTo(new Date()) > 0;</programlisting></entry>
 							</row>
 							<row>
 								<entry>Mensaje de error</entry>
@@ -217,7 +217,7 @@
 							</row>
 							<row>
 								<entry>Expresión</entry>
-								<entry><programlisting language="java">return solicitudContrato.numDias > 0;</programlisting></entry>
+								<entry><programlisting language="java">return solicitudInput.numDias > 0;</programlisting></entry>
 							</row>
 							<row>
 								<entry>Mensaje de error</entry>
@@ -235,16 +235,15 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Inicializa el BDM "solicitud" con el contrato de instanciación de proceso</emphasis></para>
-				<para>Selecciona la Pool del proceso y navega hasta la pestaña "Datos / Variables de negocio".</para>
+				<para><emphasis role="bold">Actualiza la instanciación del BDM "solicitud"</emphasis></para>
+				<para>Selecciona la Pool del proceso y navega hasta la pestaña "Datos / Variables de proceso".</para>
 				<para>Selecciona la variable de negocio "solicitud" y haz click en "Editar".</para>
 				<para>Haz click en el icono del "Lápiz" junto al campo "Valor predeterminado" para abrir el editor de expresiones.</para>
-				<para>Asegúrate de que el tipo seleccionado para la expresión es "Script".</para>
-				<para>Nombra al script "initSolicitud".</para>
-				<para>Introduce el siguiente código:</para>
+				<para>Limpia todo el código generado y reemplázalo por el siguiente:</para>
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
+				<para>Esto iniciará el BDM desde las variables del contrato y establecerá al iniciador del proceso como el autor de la solicitud.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Establece el contrato de la tarea "Validar solicitud"</emphasis></para>
@@ -277,7 +276,7 @@
 				<para><emphasis role="bold">Consejos:</emphasis></para>
 				<itemizedlist mark='bullet'>
 					<listitem><para>para la entrada "diaInicio", introduce una fecha en el formato YYYY-MM-DD.</para></listitem>
-					<listitem><para>para la entrada "aprobado", introduce un valor booleano: "true" ó "false" (cualquier otro valor será resuelto como "false").</para></listitem>
+					<listitem><para>para la entrada "aprobado", introduce un valor booleano: "true" ó "false".</para></listitem>
 				</itemizedlist>
 				<para>
 					<mediaobject>

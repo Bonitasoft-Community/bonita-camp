@@ -10,7 +10,7 @@ ProcessInstance processInstance = processAPI.getProcessInstance(processInstanceI
 // Inicializa nueva solicitud de vacaciones
 SolicitudVacaciones nuevaSol = new SolicitudVacaciones();
 nuevaSol.setSolicitanteId(processInstance.getStartedBy());
-nuevaSol.setNumDias(solicitudContrato.get("numDias"));
-nuevaSol.setDiaInicio(solicitudContrato.get("diaInicio"));
+nuevaSol.setNumDias(solicitudInput.get("numDias"));
+nuevaSol.setDiaInicio(solicitudInput.get("diaInicio"));
 	
 return nuevaSol;

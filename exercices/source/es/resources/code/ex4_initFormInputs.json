@@ -1,5 +1,5 @@
 {
-  "solicitudContrato" : {
+  "solicitudInput" : {
     "diaInicio" : null,
     "numDias" : null
   }

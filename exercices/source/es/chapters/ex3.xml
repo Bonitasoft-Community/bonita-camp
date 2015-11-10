@@ -63,6 +63,13 @@
 				<para><emphasis role="bold">Configura la condicion en la transicion "Si" usando el atributo "aprobado" del BDM "solicitud".</emphasis></para>
 				<para>Selecciona el flujo y haz click en el icono del "lápiz" junto al selector de "Condición" para abrir el editor de expresiones.</para>
 				<para>En el editor de expresiones, selecciona "Java" como tipo de expresión, selecciona la variable "solicitud" y el método "isAprobado".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Define el flujo "No", como flujo por defecto.</emphasis></para>
@@ -71,7 +78,8 @@
 			<listitem>
 				<para><emphasis role="bold">Valida el diagrama.</emphasis></para>
 				<para>Cuando las condiciones de los flujos estén definidas, podrás validar el diagrama.
-				Para ello, navega hasta la pestaña "Estado de validación" y haz click en "Refrescar".</para>
+				Para ello, navega hasta la pestaña "Estado de validación" y haz click en "Refrescar".
+				Puedes ignorar con seguridad las 3 advertencias relacionadas con el UI Designer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Asegúrate de que el diagrama coincide con éste:</emphasis></para>
@@ -87,15 +95,7 @@
 				<para><emphasis role="bold">Ejecuta varias veces el proceso para comprobar los distintos caminos.</emphasis></para>
 				<para>Aviso: no hagas click varias veces en el botón "Ejecutar", esto redesplegará el proceso y limpiará el historico.
 				Para crear una segunda instancia de proceso, deberás navegar por el Bonita Portal.</para>
-				<para>Abre el Portal con el botón con dicho nombre en la barra de iconos superior o desde el link de la esquina superior derecha del entorno web:</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>Después, navega al menú "Procesos" y selecciona la definición de proceso "Solicitud de Vacaciones" con versión 3.0 y haz click en "Iniciar".</para>
+				<para>Para ello, navega hasta el menú "Procesos" y selecciona el proceso "Solicitud de vacaciones" definido en la versión 3.0 y haz click en "Inicio".</para>
 			</listitem>			
 			<listitem>
 				<para><emphasis role="bold">Comprueba que el proceso se ha ejecutado correctamente desde la interfaz de administración del Portal.</emphasis></para>

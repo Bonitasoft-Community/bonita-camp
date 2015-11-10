@@ -7,7 +7,7 @@
 
 		<!-- EXERCICES LINK CONSTANT (auto injected in presentation) -->
 		<script>
-		var EXERCISES_LINK = 'http://bit.ly/TODO';
+		var EXERCISES_LINK = '';
 		</script>
 		
 		<meta name="description" content="Presentation of Bonita BPM allowing to create a first process based application">
@@ -87,11 +87,11 @@
 					<div style="margin:1em auto 1em auto;">
 						<a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
 					</div>
-					<div>
+					<!-- <div>
 						<div style="float:left; text-align:left;">Víctor García</div>
-						<div style="float:right; text-align:right;">20 de agosto 2015</div>
-					</div>
-					
+						<div style="float:right; text-align:right;">12 de noviembre 2015</div>
+					 </div>
+					-->
 					<aside class="notes">
 					Presentation of Bonita BPM<br/>
 					Creation of 1st process<br/>
@@ -151,8 +151,8 @@
 						</aside>
 					</section>
 
-					<section>
-						<h2 style="font-size:1.4em;">Bonita BPM Studio : Editor de Diagramas</h2>
+					<section style="width: 107%;">
+						<h2 style="font-size:1.4em;">Bonita BPM Studio : Editor de Procesos</h2>
 						<img src="presentation_images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : Diagram Editor">
 						
 						<aside class="notes">
@@ -262,24 +262,23 @@
 				</section>
 
 				<section>
-					<section>
+					<section style="width: 130%;left: -15%;">
 						<h2>Gestión de Datos : Ámbito &amp; Ciclos de vida</h2>
 						<div class="data-scopes">
 							<div style="border-color:red;">
 								<p style="color:red;">BDM (Business Data Model)</p>
-								<p>Completamente accesibles, almacenados en la BD de Negocio, nunca se archivan</p>
-								<div style="border-color:rgb(149, 158, 7);">
-									<p style="color:rgb(149, 158, 7);">Variables de Proceso</p>
-									<p>Accesibles dentro de un proceso, almacenadas en la BD del Engine, archivadas con la instancia de proceso</p>
-									<div style="border-color:green;">
-										<p style="color:green;">Variables de Actividad</p>
-										<p>Accesibles dentro de una Tarea, transcienden o persisten (almacenadas en la BD del Engine, archivadas con la tarea instanciada</p>
-										<div style="border-color:rgb(114,114,255);">
-											<p style="color:rgb(114,114,255);">Variables de Formulario</p>
-											<p>Accesibles desde un Formulario, nunca persisten</p>
-										</div>
-									</div>
-								</div>
+								<p>Completamente accesibles, almacenados en la BD de Negocio</p>
+								<p>+ Caso de uso: guarda cualquier tipo de datos manipulados por las instancias de proceso y/o las aplicaciones</p>
+							</div>
+							<div style="border-color:rgb(149, 158, 7);">
+								<p style="color:rgb(149, 158, 7);">Variables de Proceso y de Tarea</p>
+								<p>Accesibles dentro de un proceso o de una instancia de tarea, almacenadas en la BD del Engine, archivadas con la instancia de proceso</p>
+								<p>+ Caso de uso: ejecución de conectores en cadena</p>
+							</div>
+							<div style="border-color:rgb(114,114,255);">
+								<p style="color:rgb(114,114,255);">Variables de Formulario</p>
+								<p>Accesibles desde un Formulario, nunca persisten</p>
+								<p>+ Caso de uso: procesos y variables almacenadas mostradas y actualizadas en los formularios</p>
 							</div>
 						</div>
 						
@@ -339,7 +338,7 @@
 				</section>
 
 				<section>
-					<section>
+					<section style="width: 110%;">
 						<h2>BPMN Introducción (Continuación)</h2>
 						<p style="margin-bottom:0;">3 tipos de compuertas :</p>
 						
@@ -355,7 +354,7 @@
 						</tr>
 						</table>
 						
-						<p>Buenas prácticas: las compuertas deberían ser simetricas cuando sea posible</p>
+						<p>Buenas prácticas: las compuertas deberían ser simétricas cuando sea posible</p>
 						<img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 						
 						<aside class="notes">
@@ -423,13 +422,13 @@
 						</tr>
 						<tr>
 							<td>Actores</td>
-							<td>siempre actualizados con la Organización</td>
-							<td>mapeo estático que no incluye los datos de negocio</td>
+							<td>Siempre actualizados con la Organización</td>
+							<td>Mapeo estático que no incluye los datos de negocio/proceso</td>
 						</tr>
 						<tr>
 							<td>Filtros de Actor</td>
-							<td>mapeo dinámico que puede incluir los datos de negocio</td>
-							<td>se ejecutan sólo una vez al inicio de la instancia de la tarea</td>
+							<td>Mapeo dinámico que puede incluir los datos de negocio/proceso</td>
+							<td>Se ejecutan sólo una vez al inicio de la instancia de la tarea</td>
 						</tr>
 						</table>
 						
@@ -454,8 +453,8 @@
 						<p>El Studio dispone de un conjunto de conectores</p>
 						<p>Los conectores personalizados pueden ser:</p>
 						<ul>
-							<li>implementados tanto desde el Studio como en otros Java IDEs</li>
-							<li>importados desde el sitio web de la Comunidad</li>
+							<li>Implementados tanto desde el Studio como en otros Java IDEs</li>
+							<li>Importados desde el sitio web de la Comunidad</li>
 						</ul>
 						
 						<aside class="notes">
@@ -499,12 +498,13 @@
 				
 				<section>
 					<h2>Gracias por su atención</h2>
-					<p style="margin:3em 0;">¿Alguna pregunta? ¡No lo dude!</p>
+					<p style="margin:3em 0;text-align: center;">¿Alguna pregunta?</p>
 					<p>Recursos Extra :</p>
 					<ul>
 						<li>Documentación - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
 						<li>Sitio Web Corporativo - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
 						<li>Comunidad - <a href="http://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+						<li>GitHub - <a href="http://github.com/bonitasoft/" target="_blank">github.com/bonitasoft</a></li>
 					</ul>
 				</section>
 				

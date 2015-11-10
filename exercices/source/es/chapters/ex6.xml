@@ -7,6 +7,9 @@
 		<title>Objetivo</title>
 		<para>El objetivo de este ejercicio es de demostrar la interación de Bonita BPM con un sistema externo mediante el uso de un conector.
 		En este contexto, vamos a notificar al solicitante de vacaciones sobre el estado de su solicitud con un conector de email.</para>
+		<warning>
+			<para>Dependiendo de tu configuración de red, de tu cortafuegos o de la configuración de seguridad de tu servidor de correo, puede que no puedas enviar un email desde Bonita BPM.</para>
+		</warning>
 	</section>
 	
 	<section>
