@@ -1,14 +1,12 @@
-import org.bonitasoft.engine.api.ProcessAPI;
-import org.bonitasoft.engine.bpm.process.ProcessInstance;
-import com.company.model.DemandeConges;
+def demandeCongesVar = new com.company.model.DemandeConges()
+demandeCongesVar.dateDebut = demandeInput.dateDebut
+demandeCongesVar.nombreJours = demandeInput.nombreJours
 
 // Récupérer l'instance de processus en cours
-ProcessAPI processAPI = apiAccessor.getProcessAPI();
-ProcessInstance processInstance = processAPI.getProcessInstance(processInstanceId);
+def processInstance = apiAccessor.processAPI.getProcessInstance(processInstanceId);
 
-// Initialiser nouvelle demande
-DemandeConges nouvelleDemande = new DemandeConges();
-nouvelleDemande.setIdDemandeur(processInstance.getStartedBy());
-nouvelleDemande.setDateDebut(contratDemande.get("dateDebut"));
-nouvelleDemande.setNombreJours(contratDemande.get("nombreJours"));
-return nouvelleDemande;
+// Ajouter l'identifiant du demandeur à la nouvelle demande
+demandeCongesVar.idDemandeur = processInstance.startedBy;
+
+
+return demandeCongesVar

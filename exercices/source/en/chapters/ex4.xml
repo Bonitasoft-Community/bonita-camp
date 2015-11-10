@@ -315,10 +315,6 @@
 				<para>Create a new variable named "error", leave its type to "String" and its value empty then save it.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Remove the "formInput" et "formOutput" variables</emphasis></para>
-				<para>Use the "trash bin" icon to remove the "formInput" and "formOutput" variables.</para>
-			</listitem>
-			<listitem>
 				<para><emphasis role="bold">Remove the "Is Approved" checkbox</emphasis></para>
 				<para>Select the "Is Approved" checkbox and use the removal link that appears when hovering over the widget with the cursor.</para>
 				<para>
@@ -545,7 +541,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Dynamically display potential submit errors</emphasis></para>
-				<para>Drag a "Text" widget from the palette and drop it under the "Submit" button.</para>
+				<para>Drag a "Text" widget from the palette and drop it on a new row at the bottom of the form.</para>
 				<para>Set the "CSS classes" property to "text-danger".</para>
 				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> next to the "Hidden" property.</para>
 				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>

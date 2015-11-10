@@ -5,7 +5,7 @@ Slides and exercises for the BPM Camp events.
 
 Content is available in:
 - English (Bonita BPM 7.1.2)
-- French (Bonita BPM 7.0.0)
+- French (Bonita BPM 7.1.2 - based on English version tagged 7.x-1.3)
 - Spanishh (Bonita BPM 7.0.0)
 
 ##Setup instructions for slides
