@@ -6,7 +6,7 @@ Slides and exercises for the BPM Camp events.
 Content is available in:
 - English (Bonita BPM 7.1.2)
 - French (Bonita BPM 7.1.2)
-- Spanish (Bonita BPM 7.0.0)
+- Spanish (Bonita BPM 7.1.2)
 
 ##Setup instructions for slides
 1. Download [reveal.js](https://github.com/hakimel/reveal.js/) version 3.1.0
