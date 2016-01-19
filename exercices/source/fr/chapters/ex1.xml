@@ -17,7 +17,7 @@
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un événement de début "Saisir demande"</para></listitem>
 			<listitem><para>Une tâche humaine "Valider demande"</para></listitem>
-			<listitem><para>Un événement de terminaison "Fin - Demande traitée"</para></listitem>
+			<listitem><para>Un événement de fin "Fin - Demande traitée"</para></listitem>
 		</itemizedlist>
 	</section>
 	
@@ -45,8 +45,8 @@
 			</listitem>
 			<listitem><para><emphasis role="bold">Renommer la tâche humaine en "Valider demande"</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter un événement de terminaison nommé "Fin - Demande traitée"</emphasis></para>
-				<para>Sélectionner la tâche humaine, faire un glisser-déplacer à partir de l'icône contextuel d'événement (A) et Sélectionner l'événement de terminaison (B).</para>
+				<para><emphasis role="bold">Ajouter un événement de fin nommé "Fin - Demande traitée"</emphasis></para>
+				<para>Sélectionner la tâche humaine, faire un glisser-déplacer à partir de l'icône contextuel d'événement (A) et Sélectionner l'événement de fin (B).</para>
 				<para>
 					<mediaobject>
 						<imageobject>

@@ -36,7 +36,7 @@
 					<row>
 						<entry>idDemandeur</entry>
 						<entry>Long</entry>
-						<entry>Non</entry>
+						<entry>Oui</entry>
 					</row>
 					<row>
 						<entry>dateDebut</entry>
@@ -104,7 +104,7 @@
 							<row>
 								<entry>idDemandeur</entry>
 								<entry>Long</entry>
-								<entry>Non</entry>
+								<entry>Oui</entry>
 							</row>
 							<row>
 								<entry>dateDebut</entry>
@@ -150,7 +150,7 @@
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat d'instanciation</emphasis></para>
 				<para>Sélectionner le pool de processus et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
-				<para>Cliquer sur le bouton "Ajouter à partir données...".</para>
+				<para>Cliquer sur le bouton "Ajouter à partir de données...".</para>
 				<para>Sélectionner la variable métier "demande" et cliquer sur "Suivant".</para>
 				<para>Décocher les attributs "idDemandeur" et "estApprouvee".</para>
 				<para>
@@ -160,7 +160,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click sur "Terminer" et ignorer le message d'avertissement concernant l'initialisation partielle de la variable métier.</para>
+				<para>Click sur "Terminer" et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -272,7 +272,7 @@
 				<para><emphasis role="bold">Astuces :</emphasis></para>
 				<itemizedlist mark='bullet'>
 					<listitem><para>pour le champ "dateDebut", le format de date attendu est AAAA-MM-JJ.</para></listitem>
-					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue: soit "true" ou "false" (tout autre valeur sera évaluée comme "false").</para></listitem>
+					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue: soit "true" ou "false".</para></listitem>
 				</itemizedlist>
 				<para>
 					<mediaobject>

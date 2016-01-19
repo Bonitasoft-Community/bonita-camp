@@ -79,7 +79,7 @@
 			<listitem>
 				<para><emphasis role="bold">Déclencher la validation du diagramme.</emphasis></para>
 				<para>Maintenant que les conditions sont correctement configurées sur les transitions il est possible de relancer la validation.
-				Naviguer dans l'onglet "Statut de validation" et cliquer sur "Rafraîchir". Vous pouvez ignorer les trois messages d'avertissement liés au UI designer.</para>
+				Naviguer dans l'onglet "Statut de validation" et cliquer sur "Rafraîchir". Vous pouvez ignorer les trois messages d'avertissement liés au UI Designer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
@@ -95,8 +95,15 @@
 				<para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins.</emphasis></para>
 				<para>Attention : ne pas cliquer une deuxième fois sur le bouton "Lancer", cela aurait pour effet de redéployer le processus
 				et donc de supprimer les instances existantes. Pour créer la seconde instance, il faut naviguer dans le portail.</para>
-				<para>Dans le portail, naviguer dans le menu "Processus" puis sélectionner la définition de processus "Demande de congés" en version 3.0
-				et cliquez sur "démarrer".</para>
+				<para>Dans le portail, naviguer dans le menu "Processus" (A) puis sélectionner la définition de processus "Demande de congés" en version 3.0 (B)
+				et cliquez sur "démarrer" (C).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier le bon déroulement du processus dans l'interface d'administration du portail</emphasis></para>
