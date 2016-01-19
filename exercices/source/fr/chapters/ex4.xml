@@ -33,7 +33,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Ceci aura pour effet d'ouvrir le UI Designer dans votre navigateur avec formulaire généré automatiquement à partir du contrat d'instanciation.</para>
+				<para>Ceci aura pour effet d'ouvrir le UI Designer dans votre navigateur avec un formulaire généré automatiquement à partir du contrat d'instanciation.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
@@ -100,7 +100,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Changer le widget "Date Debut"</emphasis></para>
-				<para>Sélectionner le widget "Date debut" et éditer les propriétés suivantes:</para>
+				<para>Sélectionner le widget "Date Debut" et éditer les propriétés suivantes:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -168,7 +168,7 @@
 				<para>* à ne pas confondre avec la propriété "Longueur minimum de la valeur".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer les valeurs initiales des champs</emphasis> (cela permettra d'afficher les placeholders)</para>
+				<para><emphasis role="bold">Supprimer les valeurs initiales des champs</emphasis> (cela permettra d'afficher les placeholders lors du rendu final)</para>
 				<para>Dans la partie inférieure de l'écran, sous l'onglet "variables", cliquer sur l'icône crayon situé à droite de la ligne contenant la variable "formInput".</para>
 				<para>Remplacer la valeur du JSON par ceci:</para>
 				<para>
@@ -337,7 +337,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un titre au formulaire</emphasis></para>
-				<para>Faire glisser un widget de type "Titre" depuis la palette vers l'espace inoccupé en haut du formulaire.</para>
+				<para>Faire glisser un widget de type "Titre" depuis la palette vers l'espace inoccupé du formulaire.</para>
 				<para>Configurer le widget de la manière suivante:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
