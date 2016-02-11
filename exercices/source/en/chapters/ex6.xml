@@ -9,6 +9,7 @@
 		In this context, we will notify the leave request initiator about his request's status with an email connector.</para>
 		<warning>
 			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita BPM.</para>
+			<para>In order to get rid of those technical constraints, we will use a program that simulates an email server (FakeSMTP).</para>
 		</warning>
 	</section>
 	
@@ -30,7 +31,7 @@
 			<listitem>
 				<para><emphasis role="bold">FakeSMTP setup</emphasis></para>
 				<para>Retrieve the FakeSMTP binaries from this URL: <link linkend="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</link></para>
-				<para>Run FakeSTMP by either double-clicking on the JAR file or running this shell command:</para>
+				<para>Run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
@@ -87,7 +88,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>				
-				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex6_01.png"/></guiicon>.</para>
+				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex6_02.png"/></guiicon>.</para>
 				<para>Name the configuration "emailConfig" and save it.</para>
 				<para>Close the connector test interface.</para>
 			</listitem>
@@ -111,7 +112,10 @@
 				<para><emphasis role="bold">Add an email connector on the "Notify request rejected" task.</emphasis></para>
 				<para>Repeat the previous steps by naming the connector "sendRequestRejectedEmail" and setting "Leave request rejected" as the subject.</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Execute the process twice to test the different paths and check that FakeSMTP receives the right emails.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Test the process</emphasis></para>
+				<para>Execute the process twice to test the different paths and check that FakeSMTP receives the right emails.</para>
+			</listitem>
 		</orderedlist>
 	</section>
 </chapter>
