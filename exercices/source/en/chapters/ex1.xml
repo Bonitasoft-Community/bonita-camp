@@ -17,7 +17,7 @@
 		<itemizedlist mark='bullet'>
 			<listitem><para>A start event named "Fill request"</para></listitem>
 			<listitem><para>A human task named "Validate request"</para></listitem>
-			<listitem><para>A terminate end event named "End - Request processed"</para></listitem>
+			<listitem><para>An end event named "End - Request processed"</para></listitem>
 		</itemizedlist>
 	</section>
 	
@@ -45,8 +45,8 @@
 			</listitem>
 			<listitem><para><emphasis role="bold">Rename the human task into "Validate request".</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a terminate end event named "End - Request processed".</emphasis></para>
-				<para>Select the human task, perform drag and drop from the contextual event icon (A) and select the terminate end event (B).</para>
+				<para><emphasis role="bold">Add an end event named "End - Request processed".</emphasis></para>
+				<para>Select the human task, perform drag and drop from the contextual event icon (A) and select the end event (B).</para>
 				<para>
 					<mediaobject>
 						<imageobject>

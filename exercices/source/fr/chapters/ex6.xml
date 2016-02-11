@@ -10,7 +10,7 @@
 		<warning>
 			<para>En fonction de votre configuration réseau, de votre firewall ou de la configuration de sécurité de votre serveur d'email,
 			il est possible que vous ne soyez pas autorisé à envoyer un email depuis Bonita BPM.</para>
-			<para>Afin de s'abstraire de ces contraintes techniques, cet exercice sera effectué avec un logiciel simulant un serveur d'email (FakeSTMP).</para>
+			<para>Afin de s'abstraire de ces contraintes techniques, cet exercice sera effectué avec un logiciel simulant un serveur d'email (FakeSMTP).</para>
 		</warning>
 	</section>
 
@@ -114,7 +114,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Tester le processus</emphasis></para>
-				<para>Exécuter deux fois le processus pour tester les différents chemins et s'assurer que les emails sont bien envoyés et interceptés par FakeSTMP.</para>
+				<para>Exécuter deux fois le processus pour tester les différents chemins et s'assurer que les emails sont bien envoyés et interceptés par FakeSMTP.</para>
 			</listitem>
 		</orderedlist>
 	</section>

@@ -28,7 +28,7 @@
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.0 version.</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Remove the terminate end event.</emphasis></para>
+				<para><emphasis role="bold">Remove the end event.</emphasis></para>
 				<para>Select the event from the diagram and hit "delete" on your keyboard.</para>
 			</listitem>
 			<listitem>
@@ -95,8 +95,15 @@
 				<para><emphasis role="bold">Execute twice the process to test the different paths.</emphasis></para>
 				<para>Warning: do not hit twice the "Run" button as this would redeploy the process and clear the history.
 				In order to create the second process instance, you will need to navigate in the Bonita Portal.</para>
-				<para>To do so, navigate to the "Processes" menu and select the "Leave request" process definition with version 3.0 and click on "Start".</para>
-			</listitem>			
+				<para>To do so, navigate to the "Processes" menu (A) and select the "Leave request" process definition with version 3.0 (B) and click on "Start" (C).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Check that the process is correctly executed in the Portal administration interface.</emphasis></para>
 				<para>In the Portal, switch to the "Administrator" profile with the top right dropdown.</para>

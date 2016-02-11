@@ -42,7 +42,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a form container</emphasis></para>
-				<para>Drag and drop a "Form container" widget from the widget palette located on the left on a new row under the "Request contract" widget.</para>
+				<para>Drag and drop a "Form container" widget from the widget palette located on the left on a new row under the "Request Input" widget.</para>
 				<para><emphasis role="bold">Tip:</emphasis> A dashed zone allowing to insert a new row appears when hovering the separation between two widgets.</para>
 				<para>
 					<mediaobject>
@@ -98,8 +98,8 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Update the "Leave start" widget</emphasis></para>
-				<para>Select the "Leave start" widget and edit the following properties:</para>
+				<para><emphasis role="bold">Update the "Leave Start" widget</emphasis></para>
+				<para>Select the "Leave Start" widget and edit the following properties:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -128,7 +128,7 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Update the "Day count" widget</emphasis></para>
+				<para><emphasis role="bold">Update the "Day Count" widget</emphasis></para>
 				<para>Select the "Day count" widget and edit the following properties:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">

@@ -9,11 +9,13 @@
 		In this context, we will notify the leave request initiator about his request's status with an email connector.</para>
 		<warning>
 			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita BPM.</para>
+			<para>In order to get rid of those technical constraints, we will use a program that simulates an email server (FakeSMTP).</para>
 		</warning>
 	</section>
 	
 	<section>
 		<title>Instructions overview</title>
+		<para>Obtain and start the FakeSMTP server.</para>
 		<para>Duplicate the process diagram from the previous exercise to create a 6.0 version.</para>
 		<para>Add an email connector on the "Notify request approved" and "Notify request rejected" service tasks.
 		These will send an email to the requestor with the request's validation status.</para>
@@ -26,13 +28,49 @@
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
+			<listitem>
+				<para><emphasis role="bold">FakeSMTP setup</emphasis></para>
+				<para>Retrieve the FakeSMTP binaries from this URL: <link linkend="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</link></para>
+				<para>Run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
+				<para>
+					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
+				</para>
+				<para>Once the user interface is displayed, click on the "Start server" button.</para>
+			</listitem>
 			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 6.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
 				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
 				<para>Select the "Email (SMTP)" connector by using either the text filter or the "Messaging" category and click on "Next".</para>
-				<para>Fill the connection parameters based on your email account settings and click on "Next".</para>
-				<para>Enter your email in the "From" and "To" fields and click on "Next".</para>
+				<para>Set these connection parameters:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>SMTP host</entry>
+								<entry>localhost</entry>
+							</row>
+							<row>
+								<entry>SMTP port</entry>
+								<entry>25</entry>
+							</row>
+							<row>
+								<entry>SSL (in the "Security" section)</entry>
+								<entry>unchecked</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Click on "Next".</para>
+				<para>Enter some email addresses (not necessarily existing addresses) in the "From" and "To" fields and click on "Next".</para>
 				<para>Enter "Bonita test" as the subject, click on the "Test" button and confirm the test without checking any dependency.</para>
 				<para>At this stage, you should get a message similar to this one:</para>
 				<para>
@@ -42,8 +80,15 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Make sure that you receive the email (this may take a couple of minutes). If you do not receive it, update the connector configuration and re-test it.</para>
-				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex6_01.png"/></guiicon>.</para>
+				<para>Make sure that the email is received by FakeSMTP as shown below:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_01.png" />
+						</imageobject>
+					</mediaobject>
+				</para>				
+				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex6_02.png"/></guiicon>.</para>
 				<para>Name the configuration "emailConfig" and save it.</para>
 				<para>Close the connector test interface.</para>
 			</listitem>
@@ -52,9 +97,9 @@
 				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add".</para>
 				<para>Select the "Email (SMTP)" connector.</para>
 				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
-				<para>Do not fill in the parameters but click on <guiicon><inlinegraphic fileref="resources/ex6_02.png"/></guiicon>.</para>
+				<para>Do not fill in the parameters but click on <guiicon><inlinegraphic fileref="resources/ex6_03.png"/></guiicon>.</para>
 				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>
-				<para>Enter your email address in the "From" field.</para>
+				<para>Enter "hr@acme.com" in the "From" field.</para>
 				<para>Use the "pencil" icon to edit the expression of the "To" field.</para>
 				<para>Set the "Expression type" to "Script", name the script "getRequestorEmail" and paste the following in the code edition zone:</para>
 				<para>
@@ -68,16 +113,9 @@
 				<para>Repeat the previous steps by naming the connector "sendRequestRejectedEmail" and setting "Leave request rejected" as the subject.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Update the email of the test user "Walter Bates".</emphasis></para>
-				<para>Open the Portal from the Studio by using the <guiicon><inlinegraphic fileref="resources/ex6_03.png"/></guiicon> button from the toolbar.</para>
-				<para>Switch to the "Administrator" profile then navigate to the "Organization / Users" menu.</para>
-				<para>Select the user "Walter Bates" and click on the "More" button.</para>
-				<para>Click on "Edit user".</para>
-				<para>Select the "Business card" tab</para>
-				<para>Enter your email in the "Email" field.</para>
-				<para>Save your changes and close the Portal.</para>
+				<para><emphasis role="bold">Test the process</emphasis></para>
+				<para>Execute the process twice to test the different paths and check that FakeSMTP receives the right emails.</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Execute the process twice to test the different paths and check that you receive the right emails.</emphasis></para></listitem>
 		</orderedlist>
 	</section>
 </chapter>
