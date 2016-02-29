@@ -16,9 +16,9 @@
 		<itemizedlist mark='bullet'>
 			<listitem><para>una compuerta exclusiva llamada "¿Aceptado?"</para></listitem>
 			<listitem><para>una tarea de servicio llamada "Notificar aceptación solicitud"</para></listitem>
-			<listitem><para>un evento de terminación llamado "Fin - Solicitud rechazada"</para></listitem>
+			<listitem><para>un evento de fin llamado "Fin - Solicitud rechazada"</para></listitem>
 			<listitem><para>una tarea de servicio llamada "Notificar rechazo de solicitud"</para></listitem>
-			<listitem><para>un evento de terminación llamado "Fin - Solicitud aceptada"</para></listitem>
+			<listitem><para>un evento de fin llamado "Fin - Solicitud aceptada"</para></listitem>
 		</itemizedlist>
 		<para>Configura las transiciones salientes de la puerta exclusiva para que puedan controlar dinámicamente el flujo basándose en los datos del proceso.</para>
 	</section>
@@ -28,7 +28,7 @@
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 3.0.</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Elimina el evento de terminación.</emphasis></para>
+				<para><emphasis role="bold">Elimina el evento de fin.</emphasis></para>
 				<para>Selecciona el evento en el diagrama y pulsa "Suprimir" en tu teclado.</para>
 			</listitem>
 			<listitem>
@@ -52,9 +52,9 @@
 				<para>Cambia el nombre de la compuerta a "¿Aceptado?".</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Crea una tarea de servicio llamada "Notificar aceptación solicitud" después de la compuerta.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Añade un evento de terminación llamado "Fin - Solicitud aceptada" seguida de la recién creada tarea automática.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Añade un evento de fin llamado "Fin - Solicitud aceptada" seguida de la recién creada tarea automática.</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Crea una tarea de servicio llamada "Notificar rechazo de solicitud" después de la compuerta.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Añade un evento de terminación llamado "Fin - Solicitud rechazada" seguida de la recién creada tarea automática.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Añade un evento de fin llamado "Fin - Solicitud rechazada" seguida de la recién creada tarea automática.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Agrega una etiqueta a las dos transiciones salientes de la compuerta</emphasis></para>
 				<para>La transición que conecta con "Notificar aceptación solicitud" deberá llamarse "Si" y la otra "No".</para>
@@ -95,7 +95,16 @@
 				<para><emphasis role="bold">Ejecuta varias veces el proceso para comprobar los distintos caminos.</emphasis></para>
 				<para>Aviso: no hagas click varias veces en el botón "Ejecutar", esto redesplegará el proceso y limpiará el historico.
 				Para crear una segunda instancia de proceso, deberás navegar por el Bonita Portal.</para>
-				<para>Para ello, navega hasta el menú "Procesos" y selecciona el proceso "Solicitud de vacaciones" definido en la versión 3.0 y haz click en "Inicio".</para>
+				<para>Para ello, navega hasta el menú "Procesos" (A) y selecciona el proceso "Solicitud de vacaciones" definido en la versión 3.0 (B) y haz click en "Inicio" (C).</para>
+				<para>
++					<mediaobject>
++						<imageobject>
++							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
++						</imageobject>
++					</mediaobject>
++				</para>
+			
+			
 			</listitem>			
 			<listitem>
 				<para><emphasis role="bold">Comprueba que el proceso se ha ejecutado correctamente desde la interfaz de administración del Portal.</emphasis></para>

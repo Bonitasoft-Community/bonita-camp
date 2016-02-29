@@ -36,7 +36,7 @@
 					<row>
 						<entry>solicitanteId</entry>
 						<entry>Long</entry>
-						<entry>No</entry>
+						<entry>Sí</entry>
 					</row>
 					<row>
 						<entry>diaInicio</entry>
@@ -107,7 +107,7 @@
 							<row>
 								<entry>solicitanteId</entry>
 								<entry>Long</entry>
-								<entry>No</entry>
+								<entry>Sí</entry>
 							</row>
 							<row>
 								<entry>diaInicio</entry>
@@ -163,7 +163,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Haz click en "Finalizar" y obvia le mensaje de advertencia sobre la instanciación incompleta de la variable de negocio.</para>
+				<para>Haz click en "Finalizar" y obvia los mensajes de advertencia sobre la instanciación incompleta de la variable de negocio.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -190,7 +190,7 @@
 							</row>
 							<row>
 								<entry>Expresión</entry>
-								<entry><programlisting language="java">return solicitudInput.diaInicio.compareTo(new Date()) > 0;</programlisting></entry>
+								<entry><programlisting language="java">solicitudInput.diaInicio.compareTo(new Date()) > 0;</programlisting></entry>
 							</row>
 							<row>
 								<entry>Mensaje de error</entry>
@@ -217,7 +217,7 @@
 							</row>
 							<row>
 								<entry>Expresión</entry>
-								<entry><programlisting language="java">return solicitudInput.numDias > 0;</programlisting></entry>
+								<entry><programlisting language="java">solicitudInput.numDias > 0;</programlisting></entry>
 							</row>
 							<row>
 								<entry>Mensaje de error</entry>

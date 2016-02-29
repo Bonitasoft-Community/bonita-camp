@@ -23,7 +23,7 @@
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Duplica el diagrama de proceso del ejercicio anterior para crear la versión 4.0.</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Crea un formulario de instanciación llamado "Rellenar solicitud de vacaciones".</emphasis></para>
+				<para><emphasis role="bold">Crea un formulario de instanciación.</emphasis></para>
 				<para>Selecciona el Pool del proceso y navega a la pestaña "Ejecución / Formulario de instanciación".</para>
 				<para>Usa el selector de "Formulario de destino" para crear un nuevo formulario.</para>
 				<para>
@@ -42,7 +42,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Añade un contenedor de formularios</emphasis></para>
-				<para>Arrastra y suelta un widget de "Form container" desde la paleta de widgets de la izquierda en una nueva fila debajo del widget "Solicitud contrato".</para>
+				<para>Arrastra y suelta un widget de "Form container" desde la paleta de widgets de la izquierda en una nueva fila debajo del widget "Solicitud Input".</para>
 				<para><emphasis role="bold">Consejo:</emphasis> Una zona de líneas discontínuas te permiten insertar una nueva fila cuando te sitúas en la separación entre dos widgets.</para>
 				<para>
 					<mediaobject>
@@ -129,7 +129,7 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Actualiza el widget "Num días"</emphasis></para>
+				<para><emphasis role="bold">Actualiza el widget "Num Días"</emphasis></para>
 				<para>Selecciona el widget "Num días" y edita las siguientes propiedades:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -251,7 +251,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Recibe variables de negocio de la petición en curso</emphasis></para>
-				<para>Haz click en el botón "Crear una nueva vairable" y configura la variable con las siguientes propiedades:</para>
+				<para>Haz click en el botón "Crear una nueva variable" y configura la variable con las siguientes propiedades:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -543,7 +543,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Muestra dinámicamente errores de envío potenciales</emphasis></para>
-				<para>Arrastra un widget "Text" desde la paleta y suéltalo debajo del botón "Enviar".</para>
+				<para>Arrastra un widget "Text" desde la paleta y suéltalo en una nueva fila al final del formulario.</para>
 				<para>Rellena la propiedad "clases CSS" con "text-danger"</para>
 				<para>Haz click en el icono de "enlazar" <guiicon><inlinegraphic fileref="resources/ex4_04.png"/></guiicon> junto a la propiedad "Oculto".</para>
 				<para>Introduce el siguiente contenidos en el campo de texto que ha aparecido (esto mostrará el widget sólo cuando haya un error):</para>

@@ -17,7 +17,7 @@
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un evento de inicio llamado "Rellenar solicitud"</para></listitem>
 			<listitem><para>Una tarea humana llamada "Validar solicitud"</para></listitem>
-			<listitem><para>Un evento de terminación llamado "Fin - Solicitud procesada"</para></listitem>
+			<listitem><para>Un evento de fin llamado "Fin - Solicitud procesada"</para></listitem>
 		</itemizedlist>
 	</section>
 	
@@ -46,8 +46,8 @@
 			</listitem>
 			<listitem><para><emphasis role="bold">Renombra la tarea humana a "Validar solicitud".</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Añade un evento de terminación llamado "Fin - Solicitud procesada".</emphasis></para>
-				<para>Selecciona la tarea humana, y arrastra el icono de evento (A) desde el menú contextual y selecciona el evento de terminación (B).</para>
+				<para><emphasis role="bold">Añade un evento de fin llamado "Fin - Solicitud procesada".</emphasis></para>
+				<para>Selecciona la tarea humana, y arrastra el icono de evento (A) desde el menú contextual y selecciona el evento de fin (B).</para>
 				<para>
 					<mediaobject>
 						<imageobject>

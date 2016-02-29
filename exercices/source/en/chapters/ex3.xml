@@ -52,9 +52,9 @@
 				<para>Rename the gateway into "Is approved?".</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Create a service task named "Notify request approved" after the gateway.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Add a terminate end event named "End - Request approved" next to the newly added service task.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Add an end event named "End - Request approved" next to the newly added service task.</emphasis></para></listitem>
 			<listitem><para><emphasis role="bold">Create a service task named "Notify request rejected" after the gateway.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Add a terminate end event named "End - Request rejected" next to the newly added service task.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Add an end event named "End - Request rejected" next to the newly added service task.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Name the two transitions going out of the gateway</emphasis></para>
 				<para>The transition leading to the "Notify request approved" task should be named "Yes" and the other "No".</para>

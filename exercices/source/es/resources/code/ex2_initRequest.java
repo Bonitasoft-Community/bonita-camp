@@ -1,16 +1,11 @@
-import org.bonitasoft.engine.api.ProcessAPI;
-import org.bonitasoft.engine.bpm.process.ProcessInstance;
+def solicitudVacacionesVar = new com.company.model.SolicitudVacaciones()
+solicitudVacacionesVar.diaInicio = solicitudInput.diaInicio
+solicitudVacacionesVar.numDias = solicitudInput.numDias
 
-import com.company.model.SolicitudVacaciones;
+// Tomar la instancia actual del proceso
+def processInstance = apiAccessor.processAPI.getProcessInstance(processInstanceId);
 
-// Obten la instancia del proceso actual
-ProcessAPI processAPI = apiAccessor.getProcessAPI();
-ProcessInstance processInstance = processAPI.getProcessInstance(processInstanceId);
+// Añadir id del solicitante a la nueva peticion
+solicitudVacacionesVar.solicitanteId = processInstance.startedBy;
 
-// Inicializa nueva solicitud de vacaciones
-SolicitudVacaciones nuevaSol = new SolicitudVacaciones();
-nuevaSol.setSolicitanteId(processInstance.getStartedBy());
-nuevaSol.setNumDias(solicitudInput.get("numDias"));
-nuevaSol.setDiaInicio(solicitudInput.get("diaInicio"));
-	
-return nuevaSol;
+return solicitudVacacionesVar
