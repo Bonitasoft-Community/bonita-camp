@@ -1,120 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Using a connector to send an email</title>
-	
+	<title>Exercise: Build a leave request application</title>
+
 	<section>
 		<title>Goal</title>
-		<para>The goal of this exercise is to demonstrate an interaction between Bonita BPM and an external system with the use of a connector.
-		In this context, we will notify the leave request initiator about his request's status with an email connector.</para>
-		<warning>
-			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita BPM.</para>
-			<para>In order to get rid of those technical constraints, we will use a program that simulates an email server (FakeSMTP).</para>
-		</warning>
+		<para>The goal of this exercise is to build an application for users to create and manage their leave requests.</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions overview</title>
-		<para>Obtain and start the FakeSMTP server.</para>
-		<para>Duplicate the process diagram from the previous exercise to create a 6.0 version.</para>
-		<para>Add an email connector on the "Notify request approved" and "Notify request rejected" service tasks.
-		These will send an email to the requestor with the request's validation status.</para>
-		<para>The following code will be used to retrieve the requestor's email in the connector:</para>
-		<para>
-			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
-		</para>
+		<para>Create a page to follow the status of the open leave request and initiate a new request.</para>
+		<para>Create a new application in the portal.</para>
+		<para>Define who can access this page.</para>
+		<para>Add the new page to this application.</para>
+		<para>Access to the newly create application</para>
 	</section>
-	
+
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
 			<listitem>
-				<para><emphasis role="bold">FakeSMTP setup</emphasis></para>
-				<para>Retrieve the FakeSMTP binaries from this URL: <link linkend="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</link></para>
-				<para>Run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
-				<para>
-					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
-				</para>
-				<para>Once the user interface is displayed, click on the "Start server" button.</para>
-			</listitem>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 6.0 version.</emphasis></para></listitem>
-			<listitem>
-				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
-				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
-				<para>Select the "Email (SMTP)" connector by using either the text filter or the "Messaging" category and click on "Next".</para>
-				<para>Set these connection parameters:</para>
-				<informaltable frame="all">
-					<tgroup cols="2" align="left" colsep="1" rowsep="1">
-						<colspec colname='c1' colwidth="2*"/>
-						<colspec colname='c2' colwidth="4*"/>
-						<thead>
-							<row>
-								<entry>Property</entry>
-								<entry>Value</entry>
-							</row>
-						</thead>
-						<tbody>
-							<row>
-								<entry>SMTP host</entry>
-								<entry>localhost</entry>
-							</row>
-							<row>
-								<entry>SMTP port</entry>
-								<entry>25</entry>
-							</row>
-							<row>
-								<entry>SSL (in the "Security" section)</entry>
-								<entry>unchecked</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-				<para>Click on "Next".</para>
-				<para>Enter some email addresses (not necessarily existing addresses) in the "From" and "To" fields and click on "Next".</para>
-				<para>Enter "Bonita test" as the subject, click on the "Test" button and confirm the test without checking any dependency.</para>
-				<para>At this stage, you should get a message similar to this one:</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_00.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>Make sure that the email is received by FakeSMTP as shown below:</para>
+				<para><emphasis role="bold">Create a new page.</emphasis></para>
+				<para>In the Studio, click on UI Designer.</para>
+				<para>Click on the Create button, select Application page and provide a name. Then click on Create.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
 							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_01.png" />
 						</imageobject>
 					</mediaobject>
-				</para>				
-				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex6_02.png"/></guiicon>.</para>
-				<para>Name the configuration "emailConfig" and save it.</para>
-				<para>Close the connector test interface.</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Add an email connector on the "Notify request approved" task.</emphasis></para>
-				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add".</para>
-				<para>Select the "Email (SMTP)" connector.</para>
-				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
-				<para>Do not fill in the parameters but click on <guiicon><inlinegraphic fileref="resources/ex6_03.png"/></guiicon>.</para>
-				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>
-				<para>Enter "hr@acme.com" in the "From" field.</para>
-				<para>Use the "pencil" icon to edit the expression of the "To" field.</para>
-				<para>Set the "Expression type" to "Script", name the script "getRequestorEmail" and paste the following in the code edition zone:</para>
-				<para>
-					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex6_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
-				<para>Move to the next page and set "Leave request approved" as the subject.</para>
-				<para>Click on "Finish".</para>
+				<para>You should now be on the designer page.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add an email connector on the "Notify request rejected" task.</emphasis></para>
-				<para>Repeat the previous steps by naming the connector "sendRequestRejectedEmail" and setting "Leave request rejected" as the subject.</para>
+				<para><emphasis role="bold">Add a title to your page. </emphasis></para>
+				<para>Drag the widget Title (A) from the palette to the top of the page (B).</para>
+				<para>Select the widget. On the right panel, enter "Leave request application" in the "Text" field (C)</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_02.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Test the process</emphasis></para>
-				<para>Execute the process twice to test the different paths and check that FakeSMTP receives the right emails.</para>
+				<para><emphasis role="bold">Add another title below.</emphasis></para>
+				<para>Name it "Leave request status".</para>
+				<para>Select "level 4" from the Title Level dropdown list.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a variable to store the session information.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "External API".</para>
+				<para>Name it "sessionInfo"</para>
+				<para>In the field API URL, enter: </para>
+				<para><programlisting language="xml">../API/system/session/unusedId</programlisting></para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a variable to list the leave request.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "External API".</para>
+				<para>Name it "leaveRequestStatus".</para>
+				<para>In the field API URL, enter:</para>
+				 <para><programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting></para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Define a new Javascript expression to prepare the list.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "Javascript expression".</para>
+				<para>Name it "updateLeaveRequestStatus".</para>
+				<para>Enter the following script in the value text field:</para>
+				<para>
+					<programlisting language="javascript"><xi:include parse="text" href="../resources/code/ex6_updateLeaveRequestStatus.js"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a multiple container.</emphasis></para>
+				<para>Drag the widget container from the palette and place it below the Title "Leave request status".</para>
+				<para>Select the container and on the right panel, enter "leaveRequestStatus" in the field "Collection".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add 4 widgets in the container.</emphasis></para>
+				<para>One input widget with the options: Width: 3. Value: $index + 1. Read-only: Yes. Label: Num</para>
+				<para>One date widget with the options: Width: 3. Value: $item.leaveStart. Read-only: Yes. Label: Start date</para>
+				<para>One input widget with the options: Width: 3. Value: $item.dayCount. Read-only: Yes. Label: Number of days</para>
+				<para>One input widget with the options: Width: 3. Value: $item.isApprovedLabel. Read-only: Yes. Label: Status</para>
+				<para>Save the page. The page should look like that:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>You can preview the page at anytime by clicking on preview.</para>
+				<para><emphasis role="bold">Tip:</emphasis>If you are logged in the Portal in the same browser, the real data will be displayed in the preview.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a new form container.</emphasis></para>
+				<para>Drag a form container from the palette and place it between the two titles.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a new variable to store the new leave request values.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "JSON".</para>
+				<para>Name it "formInput".</para>
+				<para>Enter the following script in the value text field:</para>
+				<para>
+					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex6_formInput.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a new variable to store the process information.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "External API".</para>
+				<para>Name it "processDefinitionInfo".</para>
+				<para>In the field API URL, enter:</para>
+				<para><programlisting language="xml">../API/bpm/process?p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Leave%20Request&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add 2 widgets in the form container.</emphasis></para>
+				<para>One date widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start</para>
+				<para>One input widget with the options: Width: 6. Value: formInput.requestInput.dayCount. Label: Number of days</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a submit button in the form container.</emphasis></para>
+				<para>Drag the button widget from the palette and place it in the form container below the two widgets.</para>
+				<para>Enter "Create a new request" in the field label.</para>
+				<para>In the field URL, enter:</para>
+				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
+				<para>In the field Target URL Success, enter:</para>
+				<para><programlisting language="xml">/bonita/apps/leaveRequest</programlisting></para>
+				<para>Save the page. The page should look like that:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>You can preview the page to make sure it works as expected.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Export the page.</emphasis></para>
+				<para>Click on the export button to download the page in ZIP format.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Import the page in the Portal.</emphasis></para>
+				<para>Log in the Bonita Portal with a Administrator user.</para>
+				<para>Change the profile to "Administrator". Go to Resources tab.</para>
+				<para>Click on the button "Add" (A)</para>
+				<para>Select (B) the ZIP file and click on Next. On the second screen, click on Confirm.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>The page should now be available in the Pages list.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a new application.</emphasis></para>
+				<para>In the Portal, navigate to the Applications tab.</para>
+				<para>Click on New.</para>
+				<para>Enter "Leave request app" in the field "Display name" (A).</para>
+				<para>Enter "leaveRequest" in the field "URL" (B).</para>
+				<para>Leave the defaults value for the Version (C) and Profile (D).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Click on "Create".</para>
+				<para>Click to "Add" on the Pages section. Select the page leaveRequest. Provide a value for the url.</para>
+				<para>Define the leaveRequest page as homepage. Then delete the default homepage.</para>
+				<para>Click on the link "../apps/leaveRequest" to load the application.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_08.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
 		</orderedlist>
 	</section>

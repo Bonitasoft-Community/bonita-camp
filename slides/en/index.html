@@ -9,7 +9,7 @@
 		<script>
 		var EXERCISES_LINK = 'http://bit.ly/1RfCJS8';
 		</script>
-		
+
 		<meta name="description" content="Presentation of Bonita BPM allowing to create a first process based application">
 		<meta name="author" content="Antoine Mottier - Philippe Ozil">
 
@@ -36,13 +36,13 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-		
+
 		<!-- CUSTOM STYLE FOR THIS PRESENTATION -->
 		<style>
 			section .agenda li	{margin-bottom:0.4em;}
 
 			section .exercise-title	{margin:1em 0; font-size:larger;}
-			
+
 			section .bpmn-table		{border-collapse:separate; border-spacing:20px; margin-top:-20px;}
 			section .bpmn-table td	{vertical-align:middle; margin:0; padding:0;}
 			section .bpmn-table td:first-child	{text-align:right;}
@@ -53,19 +53,19 @@
 			section .data-scopes p		{margin:0;}
 			section .data-scopes p:first-of-type	{font-weight:bold;}
 			section .data-scopes p:last-of-type		{font-size:70%;}
-			
+
 			section .data-types		{width:100%;}
 			section .data-types th	{text-align:center; font-weight:bold; padding:0 0 20px 0;}
 			section .data-types td	{padding:5px;}
 			section .data-types div	{margin-bottom:10px;}
 			section .data-types ul	{font-size:smaller;}
 			section .data-types li	{margin-top:10px;}
-			
+
 			section .compare th	{text-align:center; font-weight:bold;}
 			section .compare td:first-child	{font-weight:bold; vertical-align:middle;}
 			section .compare td, section .compare th	{border-right: 1px solid;}
 			section .compare td:last-child, section .compare th:last-child	{border-right-width:0;}
-			
+
 		</style>
 	</head>
 
@@ -74,7 +74,7 @@
 		<div class="reveal">
 
 			<div class="slides">
-			
+
 				<section>
 					<div style="width:900px; margin:auto;">
 						<img src="presentation_images/bpm_camp_logo.png" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
@@ -83,32 +83,32 @@
 						<a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
 					</div>
 					<div>
-						<div style="float:left; text-align:left;">Philippe Ozil</div>
-						<div style="float:right; text-align:right;">2<sup>nd</sup> of March 2016</div>
+						<div style="float:left; text-align:left;">Lionel Palacin</div>
+						<div style="float:right; text-align:right;">22<sup>th</sup> of November 2016</div>
 					</div>
-					
+
 					<aside class="notes">
 					Presentation of Bonita BPM<br/>
 					Creation of 1st process<br/>
 					Mix of theoretical presentation and practical exercises
 					</aside>
 				</section>
-				
+
 				<section>
 					<h2>Agenda</h2>
 					<ul class="no-bullet agenda">
 						<li>BPM Goals</li>
 						<li>Bonita BPM Components</li>
-						<li>BPMN Introduction</li>
+						<li>BPMN 2.0</li>
 						<li>Data &amp; Contracts</li>
-						<li>More about BPMN</li>
 						<li>Forms &amp; Pages</li>
 						<li>Actors</li>
 						<li>Connectors</li>
+						<li>BPM-based applications</li>
 						<li>Deployment</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h2>BPM Goals</h2>
 					<p>Collaborate during the definition and execution of Business Processes</p>
@@ -138,7 +138,7 @@
 								<td style="padding: 10px 0;">Bonita Portal</td>
 							</tr>
 						</table>
-					
+
 						<aside class="notes">
 						Studio is a standalone IDE for developers (screenshot on next slide).<br/>
 						Studio contains an embedded Platform used for single developer testing.<br/>
@@ -149,7 +149,7 @@
 					<section>
 						<h2 style="font-size:1.4em;">Bonita BPM Studio : Process Editor</h2>
 						<img src="presentation_images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : Diagram Editor">
-						
+
 						<aside class="notes">
 						Studio is an Eclipse based IDE. Requires a JVM 7 (not compatible with 8).<br/>
 						Allows creation of process diagrams which contain one or several processes.<br/>
@@ -157,16 +157,16 @@
 						Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.
 						</aside>
 					</section>
-					
+
 					<section>
 						<h2>Bonita BPM Studio : UI Designer</h2>
 						<img class="no-margin" src="presentation_images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
-						
+
 						<aside class="notes">
 						Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
 						</aside>
 					</section>
-					
+
 					<section>
 						<h2>Bonita BPM Engine</h2>
 						<p>In charge process execution (no built-in UI)</p>
@@ -177,19 +177,19 @@
 							<li>A Java application server</li>
 							<li>A JDBC compliant transactional database</li>
 						</ul>
-												
+
 						<aside class="notes">
 						All interactions (Portal and other) with the Engine are managed with Bonita APIs.<br/>
 						</aside>
 					</section>
-					
+
 					<section>
 						<h2>Bonita BPM Portal</h2>
 						<p>End user and administration web interface</p>
 						<p>Displays the list of available tasks</p>
 						<p>Allows to deploy and configure processes</p>
 						<img class="no-margin" src="presentation_images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : Task Inbox" height="400px" />
-						
+
 						<aside class="notes">
 						Portal uses the Bonita APIs as any client of the Engine
 						</aside>
@@ -199,7 +199,7 @@
 						<p>Renders forms created with UI Designer</p>
 						<p>Served within Bonita Portal or embedded in an application</p>
 						<img class="no-margin" src="presentation_images/screenshot_form.png" alt="Bonita form" height="400px" />
-						
+
 						<aside class="notes">
 						</aside>
 					</section>
@@ -207,7 +207,7 @@
 						<h2 style="font-size:1.4em;">Bonita BPM Portal : Applications</h2>
 						<p>Allows to deploy Business Applications composed of custom pages implemented with the UI Designer</p>
 						<img class="no-margin" src="presentation_images/screenshot_application.png" alt="Bonita application" height="400px" />
-						
+
 						<aside class="notes">
 						</aside>
 					</section>
@@ -215,11 +215,11 @@
 
 				<section>
 					<section>
-						<h2>BPMN Introduction</h2>
+						<h2>BPMN 2.0</h2>
 						<p>Standard notation (OMG) for process modelling</p>
 						<p>A process is represented by a Pool <img src="presentation_images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
 						<p>Key elements :</p>
-						
+
 						<table class="no-border bpmn-table">
 						<tr>
 							<td><img src="presentation_images/bpmn_start_event.png" alt="start event"/></td><td>Start Event</td>
@@ -234,15 +234,43 @@
 							<td><img src="presentation_images/bpmn_end_event.png" alt="end event"/></td><td>End Event</td>
 						</tr>
 						</table>
-						
+
 						<p>Elements are linked together by Transitions <span style="margin:0 0 0 20px;">&#8594;</span></p>
-						
+
 						<aside class="notes">
 						OMG = Object Management Group, founded several standards such as UML<br/>
 						Shapes (BPMN standard): circle = event, rectangle = activity<br/>
 						Colors (Bonita specific): green = start, blue = intermediate, red = end
 						</aside>
 					</section>
+
+						<section>
+							<h2>Gateways</h2>
+							<p style="margin-bottom:0;">3 types of gateways:</p>
+
+							<table class="no-border bpmn-table">
+							<tr>
+								<td><img src="presentation_images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
+							</tr>
+							<tr>
+								<td><img src="presentation_images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallel</td>
+							</tr>
+							<tr>
+								<td><img src="presentation_images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
+							</tr>
+							</table>
+
+							<p>Best practice: in order to avoid bad designs, gateways should be placed in a symmetrical manner when possible:</p>
+							<img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
+
+							<aside class="notes">
+							- Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
+							- Exclusive: only one incoming TR should reach the gateway.<br/>
+							- Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
+							- Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
+							- Inclusive: used when dealing with parallel gateways with conditions
+							</aside>
+						</section>
 
 					<section>
 						<h2>Exercise 1</h2>
@@ -271,7 +299,7 @@
 								<p>Accessible within form, never persisted<br />+ Use case: process and store data displayed and updated in forms</p>
 							</div>
 						</div>
-						
+
 						<aside class="notes">
 						How to choose between BDM and process/step data: almost always use BDM.<br />
 						Forms data are for example used to store the result of a REST API call (to get BDM value) in order to display it in a form.
@@ -312,13 +340,13 @@
 						<p>
 							<b>Documents:</b> files with revisions can be declared at process level
 						</p>
-						
+
 						<aside class="notes">
 						DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
 						Never try to R/W data directly from Bonita DB, use the APIs to do so.
 						</aside>
 					</section>
-					
+
 					<section>
 						<h2>Contracts</h2>
 						<p>Set of required input parameters with validation rules.</p>
@@ -329,48 +357,21 @@
 						</ul>
 						<p>Contributes to the decoupling of process logic and user interface.</p>
 					</section>
-				
+
 					<section>
 						<h2>Exercise 2</h2>
 						<p class="exercise-title">Adding data and specifying contracts</p>
 					</section>
 				</section>
 
-				<section>
-					<section>
-						<h2>More about BPMN</h2>
-						<p style="margin-bottom:0;">3 types of gateways:</p>
-						
-						<table class="no-border bpmn-table">
-						<tr>
-							<td><img src="presentation_images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
-						</tr>
-						<tr>
-							<td><img src="presentation_images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallel</td>
-						</tr>
-						<tr>
-							<td><img src="presentation_images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
-						</tr>
-						</table>
-						
-						<p>Best practice: in order to avoid bad designs, gateways should be placed in a symmetrical manner when possible:</p>
-						<img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
-						
-						<aside class="notes">
-						- Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
-						- Exclusive: only one incoming TR should reach the gateway.<br/>
-						- Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
-						- Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
-						- Inclusive: used when dealing with parallel gateways with conditions
-						</aside>
-					</section>
 
-					<section>
+
+				<!--	<section>
 						<h2>Exercise 3</h2>
 						<p class="exercise-title">Dynamically controlling the process flow with data</p>
 					</section>
-				</section>
-				
+				</section> -->
+
 				<section>
 					<section>
 						<h2>Forms &amp; Pages</h2>
@@ -388,16 +389,16 @@
 								<b>Overview form</b> (read-only) defined at pool level
 							</li>
 						</ul>
-						
+
 						<aside class="notes">
 						</aside>
-					</section>					
-					
+					</section>
+
 					<section>
 						<h2>Widgets</h2>
 						<p>A set of widgets is available out of the box (text field, select, date picker...)</p>
 						<p>Custom widgets can be created with the UI Designer</p>
-						
+
 						<aside class="notes">
 						</aside>
 					</section>
@@ -407,7 +408,7 @@
 						<p class="exercise-title">Creating forms</p>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>Actors</h2>
@@ -430,15 +431,15 @@
 							<td>Executed only once at task instantiation</td>
 						</tr>
 						</table>
-						
-						
+
+
 						<aside class="notes">
 						Actors allow to automatically update task visibility when organization changes.<br/>
 						Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
 						Filters are executed only once when task starts. They can be run again with API call.
 						</aside>
 					</section>
-					
+
 					<section>
 						<h2>Exercise 5</h2>
 						<p class="exercise-title">Configuring actors</p>
@@ -455,7 +456,7 @@
 							<li>Implemented using the Studio or other Java IDEs</li>
 							<li>Imported from the Community website</li>
 						</ul>
-						
+
 						<aside class="notes">
 						Connectors can be placed at the start or the end of a process or a task.<br/>
 						Any data type or groovy script can be used as I/O.<br/>
@@ -464,8 +465,28 @@
 					</section>
 
 					<section>
-						<h2>Exercise 6</h2>
+						<h2>Exercise 5</h2>
 						<p class="exercise-title">Using a connector to send an email</p>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>BPM-based applications</h2>
+						<p>Combine processes together to handle a real business use case</p>
+						<p>Respect the MVC design pattern:</p>
+						<ul>
+							<li>Model is the business data model</li>
+							<li>View is a combination of pages and process forms</li>
+							<li>Controller is a set of processes</li>
+						</ul>
+						<p>Applications are deployed and hosted in Bonita Portal</p>
+					</section>
+
+					<section>
+						<h2>Exercise 6</h2>
+						<p class="exercise-title">Create a leave request application</p>
 					</section>
 				</section>
 
@@ -487,12 +508,12 @@
 						<td>Portal</td>
 					</tr>
 					</table>
-					
+
 					<aside class="notes">
 					When running processes from the Studio the deploy procedure is automated.
 					</aside>
 				</section>
-				
+
 				<section>
 					<h2>Thank you for your attention</h2>
 					<p style="margin:3em 0;">Any questions? Do not hesitate.</p>
@@ -504,7 +525,7 @@
 						<li>GitHub - <a href="https://github.com/bonitasoft" target="_blank">github.com/bonitasoft</a></li>
 					</ul>
 				</section>
-				
+
 			</div>
 
 		</div>
@@ -536,7 +557,7 @@
 				]
 			});
 		</script>
-		
+
 		<!-- INJECTS EXERCISES LINKS -->
 		<script>
 			(function() {

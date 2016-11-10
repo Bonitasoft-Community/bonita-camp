@@ -1,39 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Dynamically controlling the process flow with data</title>
-	
+	<title>Exercise: Creating forms</title>
+
 	<section>
 		<title>Goal</title>
-		<para>The goal of this exercise is to extend the existing process by adding a dynamic validation for the leave request.
-		This will be achieved with the use of an exclusive gateway which will lead one of two possible execution paths: one for the approved request and one for the rejected request.</para>
+		<para>The goal of this exercise is to provide user friendly forms for the execution of the process.</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions overview</title>
-		<para>Duplicate the process diagram from the previous exercise to create a 3.0 version.</para>
-		<para>Modify the diagram to add the following elements after the "Validate request" task:</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 4.0 version.</para>
+		<para>Create the following forms:</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>an exclusive gateway named "Is approved?"</para></listitem>
-			<listitem><para>a service task named "Notify request approved"</para></listitem>
-			<listitem><para>a terminate end event named "End - Request rejected"</para></listitem>
-			<listitem><para>a service task named "Notify request rejected"</para></listitem>
-			<listitem><para>a terminate end event named "End - Request approved"</para></listitem>
+			<listitem><para>A case instantiation form at pool level that sets the "leaveStart" and "dayCount" data.</para></listitem>
+			<listitem><para>A form for the "Validate request" task that displays the "requestor" user details, the "leaveStart" and "dayCount" data in read-only mode and that sets the "isApproved" data.</para></listitem>
 		</itemizedlist>
-		<para>Configure the transitions going out the exclusive gateway so that they control dynamically the process flow based on process data.</para>
 	</section>
-	
+
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 4.0 version.</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Remove the end event.</emphasis></para>
-				<para>Select the event from the diagram and hit "delete" on your keyboard.</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Add an exclusive gateway named "Is approved?" next to the human task "Validate request".</emphasis></para>
-				<para>Select the "Validate request" task, perform a drag and drop from the gateway contextual icon.</para>
+				<para><emphasis role="bold">Create a case instantiation form.</emphasis></para>
+				<para>Select the process pool, and navigate to the "Execution / Instantiation form" tab.</para>
+				<para>Use the "Target form" dropdown to create a new form.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -41,7 +33,17 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Once you have created the gateway, use the context "tool" icon (1) to change its type to "Exclusive" (2).</para>
+				<para>This will open the UI Designer in a browser with a form automatically generated from your instantiation contract.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Rename the form.</emphasis></para>
+				<para>Use the text field on top of the screen to rename the form into "fillLeaveRequest" (this is a technical name so it should not contain spaces or special characters).</para>
+				<para>Click on "Save".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a form container</emphasis></para>
+				<para>Drag and drop a "Form container" widget from the widget palette located on the left on a new row under the "Request Input" widget.</para>
+				<para><emphasis role="bold">Tip:</emphasis> A dashed zone allowing to insert a new row appears when hovering the separation between two widgets.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -49,72 +51,272 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Rename the gateway into "Is approved?".</para>
-			</listitem>
-			<listitem><para><emphasis role="bold">Create a service task named "Notify request approved" after the gateway.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Add an end event named "End - Request approved" next to the newly added service task.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Create a service task named "Notify request rejected" after the gateway.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Add an end event named "End - Request rejected" next to the newly added service task.</emphasis></para></listitem>
-			<listitem>
-				<para><emphasis role="bold">Name the two transitions going out of the gateway</emphasis></para>
-				<para>The transition leading to the "Notify request approved" task should be named "Yes" and the other "No".</para>
+				<para>The form container allows to validate the content entered in the form (required fields and field formatting).</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Configure condition on the "Yes" transition to use the "isApproved" attribute of the "request" BDM.</emphasis></para>
-				<para>Select the transition and click on the pencil icon next to the "Condition" dropdown to open the expression editor.</para>
-				<para>In the expression editor, select "Java" as the expression type, select the "request" variable and the "isApproved" method.</para>
+				<para><emphasis role="bold">Move the existing widgets in the form container</emphasis></para>
+				<para>Select the "Leave Start" widget and drag and drop it inside the form container.</para>
+				<para>Repeat the operation for the "Day Count" and "Submit" widgets while adding new rows.</para>
+				<para>Once the widgets are grouped under the form container, select and remove the empty rows.</para>
+				<para><emphasis role="bold">Tip:</emphasis> Hover on the grey bar located on left of a row (A) to display the actions including the removal (B).</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_03.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Set the "No" transition as the default flow.</emphasis></para>
-				<para>Select the "No" transition and check the "Default flow" property.</para>
+				<para><emphasis role="bold">Update the form title</emphasis></para>
+				<para>Select the top most widget "Request Input" and edit the following properties:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Text</entry>
+								<entry>Fill a New Leave Request</entry>
+							</row>
+							<row>
+								<entry>Text level</entry>
+								<entry>Level 2</entry>
+							</row>
+							<row>
+								<entry>Alignment</entry>
+								<entry>Center</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Validate the diagram.</emphasis></para>
-				<para>Once the transition conditions are properly set, you can re-validate the process diagram.
-				To do so, navigate to the "Validation status" tab and click on "refresh".
-				You may safely ignore the 3 warnings related to the UI Designer.</para>
+				<para><emphasis role="bold">Update the "Leave Start" widget</emphasis></para>
+				<para>Select the "Leave Start" widget and edit the following properties:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Required</entry>
+								<entry>yes</entry>
+							</row>
+							<row>
+								<entry>Placeholder</entry>
+								<entry>Start date of your leave</entry>
+							</row>
+							<row>
+								<entry>Date format</entry>
+								<entry>yyyy-MM-dd</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Make sure that your diagram matches this:</emphasis></para>
+				<para><emphasis role="bold">Update the "Day Count" widget</emphasis></para>
+				<para>Select the "Day count" widget and edit the following properties:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Required</entry>
+								<entry>yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Number of days</entry>
+							</row>
+							<row>
+								<entry>Placeholder</entry>
+								<entry>Number of leave days</entry>
+							</row>
+							<row>
+								<entry>Min value *</entry>
+								<entry>1</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>* not to be confused with the "Value min length" property.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Clear the initial form values</emphasis> (this will show the placeholders at runtime)</para>
+				<para>In the lower "Variables" section, click on the "Pencil" icon for the "formInput" variable.</para>
+				<para>Replace the JSON values with this:</para>
 				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_04.png" />
-						</imageobject>
-					</mediaobject>
+					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex3_initFormInputs.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Execute twice the process to test the different paths.</emphasis></para>
-				<para>Warning: do not hit twice the "Run" button as this would redeploy the process and clear the history.
-				In order to create the second process instance, you will need to navigate in the Bonita Portal.</para>
-				<para>To do so, navigate to the "Processes" menu (A) and select the "Leave request" process definition with version 3.0 (B) and click on "Start" (C).</para>
+				<para><emphasis role="bold">Add a variable to handle potential form submit errors</emphasis></para>
+				<para>In the lower "Variables" section, click on "Create a new variable".</para>
+				<para>Set the variable name to "error", leave its type to "String" and it value empty then click on "Save".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Update the "Submit" widget</emphasis></para>
+				<para>Select the "Submit" widget.</para>
+				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> next to the "Disabled" property.</para>
+				<para>Enter the following content in the text field that just appeared (this will disable the button when the form cannot be validated):</para>
 				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
-						</imageobject>
-					</mediaobject>
+					<programlisting language="javascript">$form.$invalid</programlisting>
+				</para>
+				<para>Set the "Failed response value" property to "error" (this allows to retrieve submission error details if any).</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Dynamically display the error</emphasis></para>
+				<para>Drag a "Text" widget from the palette and drop it under the "Submit" button.</para>
+				<para>Set the "CSS classes" property to "text-danger".</para>
+				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> next to the "Hidden" property.</para>
+				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>
+				<para>
+					<programlisting language="javascript">error == null</programlisting>
+				</para>
+				<para>Replace the "Text" property with the following content:</para>
+				<para>
+					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Check that the process is correctly executed in the Portal administration interface.</emphasis></para>
-				<para>In the Portal, switch to the "Administrator" profile with the top right dropdown.</para>
+				<para><emphasis role="bold">Check the form's appearance</emphasis></para>
+				<para>Make sure that the form looks like this in the editor:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_06.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Navigate to the "BPM / Cases" menu (A) then, switch to the "Archived cases" tab (B) and click on the "..." link in the action column (C) to view the case details.</para>
+				<para>Click on the top most "Preview" button.</para>
+				<para>Make sure that the form preview looks like this:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Check for following points:</para>
+				<itemizedlist>
+					<listitem><para>the widget presenting the error is not visible</para></listitem>
+					<listitem><para>the "Submit" button is disabled by default (this is due to the validation provided by the form container)</para></listitem>
+					<listitem><para>the "Submit" button is enabled when the form is valid</para></listitem>
+				</itemizedlist>
+				<para><emphasis role="bold">Note:</emphasis> the form cannot be submitted from the preview mode even when it is valid.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Save the form</emphasis></para>
+				<para>Use the top "Save" button to save the form.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a form for the "Validate request" task.</emphasis></para>
+				<para>In the Studio, select the "Validate request" task and navigate to the "Execution / Form" tab.</para>
+				<para>Use the "Target form" drop down to create a new form.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Rename the form</emphasis></para>
+				<para>In the UI Designer, rename the form into "validateLeaveRequest" and save it.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Remove unneeded variables</emphasis></para>
+				<para>In the lower "variables" section of the screen, remove the following variables:</para>
+				<itemizedlist>
+					<listitem><para>formInput</para></listitem>
+					<listitem><para>formOutput</para></listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Retrieve business data from the ongoing request</emphasis></para>
+				<para>Click on the "Create a new variable" button and configure the variable with the following properties:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Name</entry>
+								<entry>request</entry>
+							</row>
+							<row>
+								<entry>Type</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>API URL</entry>
+								<entry>../{{context.request_ref.link}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para><emphasis role="bold">Note:</emphasis> here, we are calling the Bonita REST APIs to fetch our "request" BDM data.
+				We are using the "context" variable that exposes links to the process instance data including our request in the form of "request_ref".
+				We can then retrieve the request thanks to the "link" attribute which provides the URL that needs to be called to retrieve the object.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Retrieve the requestor's user data</emphasis></para>
+				<para>Create a new variable with the following properties:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Name</entry>
+								<entry>requestor</entry>
+							</row>
+							<row>
+								<entry>Type</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>API URL</entry>
+								<entry>../API/identity/user/{{request.requestorId}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a variable for error handling</emphasis></para>
+				<para>Create a new variable named "error", leave its type to "String" and its value empty then save it.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Remove the "Is Approved" checkbox</emphasis></para>
+				<para>Select the "Is Approved" checkbox and use the removal link that appears when hovering over the widget with the cursor.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -122,14 +324,254 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Check the "Done tasks" section to validate the process execution:</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Remove the "Submit" button</emphasis></para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a form title</emphasis></para>
+				<para>Drag a "Title" widget from the palette and drop it on the top row of the form.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Text</entry>
+								<entry>Validate a leave request</entry>
+							</row>
+							<row>
+								<entry>Title level</entry>
+								<entry>Level 2</entry>
+							</row>
+							<row>
+								<entry>Alignment</entry>
+								<entry>center</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a widget to display the requestor</emphasis></para>
+				<para>Drag an "Input" widget from the palette and drop it on a new row under the form title.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Read-only</entry>
+								<entry>yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Requestor</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>requestor.firstname +" "+ requestor.lastname</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a widget to display the leave start date</emphasis></para>
+				<para>Drag an "Input" widget from the palette and drop it on a new row under the requestor widget.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Read-only</entry>
+								<entry>yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Leave start</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>request.leaveStart | date</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para><emphasis role="bold">Note:</emphasis> we are using an AngularJS filter "| date" to display the date in a user-friendly format.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a widget to display the number of days</emphasis></para>
+				<para>Drag an "Input" widget from the palette and drop it on a new row under the "Start date" widget.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Read-only</entry>
+								<entry>yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Number of days</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>request.dayCount</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a widget to reject the request</emphasis></para>
+				<para>Drag a "Button" widget from the palette and drop it on a new row at the bottom of the form.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Width</entry>
+								<entry>6</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Reject</entry>
+							</row>
+							<row>
+								<entry>Alignment</entry>
+								<entry>right</entry>
+							</row>
+							<row>
+								<entry>Style</entry>
+								<entry>danger</entry>
+							</row>
+							<row>
+								<entry>Data sent on click</entry>
+								<entry>{"isApproved" : false}</entry>
+							</row>
+							<row>
+								<entry>Failed response value</entry>
+								<entry>error</entry>
+							</row>
+							<row>
+								<entry>Target URL on success</entry>
+								<entry>/bonita</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a widget to approve the request</emphasis></para>
+				<para>Drag a "Button" widget from the palette and drop it on the "6 column" zone located on the right of the "Reject" button.</para>
+				<para>Configure the widget as following:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Label</entry>
+								<entry>Approve</entry>
+							</row>
+							<row>
+								<entry>Style</entry>
+								<entry>success</entry>
+							</row>
+							<row>
+								<entry>Data sent on click</entry>
+								<entry>{"isApproved" : true}</entry>
+							</row>
+							<row>
+								<entry>Failed response value</entry>
+								<entry>error</entry>
+							</row>
+							<row>
+								<entry>Target URL on success</entry>
+								<entry>/bonita</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Dynamically display potential submit errors</emphasis></para>
+				<para>Drag a "Text" widget from the palette and drop it on a new row at the bottom of the form.</para>
+				<para>Set the "CSS classes" property to "text-danger".</para>
+				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> next to the "Hidden" property.</para>
+				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>
+				<para>
+					<programlisting language="javascript">error == null</programlisting>
+				</para>
+				<para>Replace the "Text" property with the following content:</para>
+				<para>
+					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Check the form's appearance</emphasis></para>
+				<para>Make sure that the form looks like this in the editor:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_08.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Save the form</emphasis></para>
+				<para>Use the top "Save" button to save the form.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Test the process execution</emphasis></para>
+				<para>Run the process from the Studio and execute all of its steps.</para>
+				<para>Validate that the proper execution path was taken at the end of process execution by looking at the case history in the Bonita Portal.</para>
 			</listitem>
 		</orderedlist>
 	</section>
