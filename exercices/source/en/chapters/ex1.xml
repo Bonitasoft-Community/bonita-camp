@@ -138,7 +138,7 @@
 				<para>Click on the <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> button of the Studio's top menu bar.</para>
 				<para>Your browser should open and display an automatically generated case start form. Submit the form.</para>
 				<para>You should be redirected to the task inbox of the Bonita Portal.
-				Select the "Validate request" task and click on the top right "Do it" button.</para>
+				Select the "Validate request" task and click on the "Take" button.</para>
 				<para>
 					<mediaobject>
 						<imageobject>

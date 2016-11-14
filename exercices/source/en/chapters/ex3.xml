@@ -41,33 +41,6 @@
 				<para>Click on "Save".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a form container</emphasis></para>
-				<para>Drag and drop a "Form container" widget from the widget palette located on the left on a new row under the "Request Input" widget.</para>
-				<para><emphasis role="bold">Tip:</emphasis> A dashed zone allowing to insert a new row appears when hovering the separation between two widgets.</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_02.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>The form container allows to validate the content entered in the form (required fields and field formatting).</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Move the existing widgets in the form container</emphasis></para>
-				<para>Select the "Leave Start" widget and drag and drop it inside the form container.</para>
-				<para>Repeat the operation for the "Day Count" and "Submit" widgets while adding new rows.</para>
-				<para>Once the widgets are grouped under the form container, select and remove the empty rows.</para>
-				<para><emphasis role="bold">Tip:</emphasis> Hover on the grey bar located on left of a row (A) to display the actions including the removal (B).</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_03.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-			</listitem>
-			<listitem>
 				<para><emphasis role="bold">Update the form title</emphasis></para>
 				<para>Select the top most widget "Request Input" and edit the following properties:</para>
 				<informaltable frame="all">

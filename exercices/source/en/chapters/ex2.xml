@@ -57,7 +57,7 @@
 			</tgroup>
 		</informaltable>
 		<para>Declare an instance "request" of type "LeaveRequest" on your pool.</para>
-		<para>Generate case instantiation contract from the "request" data and with the following mandatory items:</para>
+		<para>Using the Studio assistant, generate the case instantiation contract, as well as the initialization script, from the "request" data with the following mandatory items:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>leaveStart</para></listitem>
 			<listitem><para>dayCount</para></listitem>

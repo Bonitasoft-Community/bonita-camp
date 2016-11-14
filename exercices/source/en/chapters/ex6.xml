@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
+
 	<title>Exercise: Build a leave request application</title>
 
 	<section>
@@ -10,11 +11,12 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>Create a page to follow the status of the open leave request and initiate a new request.</para>
-		<para>Create a new application in the portal.</para>
-		<para>Define who can access this page.</para>
-		<para>Add the new page to this application.</para>
-		<para>Access to the newly create application</para>
+		<para>Create a page called "Leave Request Status" to follow the progress of the connected user leave request.</para>
+		<para>This page will contain one multiple container that list the on-going leave request. For each request, the start date, number of days and status will be displayed.</para>
+		<para>Export the page as a zip file and deploy it in the portal.</para>
+		<para>Create a new application. Then add the "Leave Request Status" page in the application.</para>
+		<para>Access the application using the generated URL.</para>
+		<para>Optional: Add a date widget and an input widget to collect new leave request information in the page. Then add a submit button to start a new leave request.</para>
 	</section>
 
 	<section>
@@ -27,7 +29,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_01.png" />
+							<imagedata scalefit="1"  width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -59,7 +61,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_03.png" />
+							<imagedata scalefit="1"  width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -68,8 +70,11 @@
 				<para><emphasis role="bold">Create a variable to list the leave request.</emphasis></para>
 				<para>Click on "Create a new variable" and choose "External API".</para>
 				<para>Name it "leaveRequestStatus".</para>
-				<para>In the field API URL, enter:</para>
-				 <para><programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting></para>
+				<para>In the field API URL, enter: (no breakline)</para>
+				<para>
+					<programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?
+						q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting>
+			 	</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Define a new Javascript expression to prepare the list.</emphasis></para>
@@ -103,49 +108,6 @@
 				<para><emphasis role="bold">Tip:</emphasis>If you are logged in the Portal in the same browser, the real data will be displayed in the preview.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a new form container.</emphasis></para>
-				<para>Drag a form container from the palette and place it between the two titles.</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Create a new variable to store the new leave request values.</emphasis></para>
-				<para>Click on "Create a new variable" and choose "JSON".</para>
-				<para>Name it "formInput".</para>
-				<para>Enter the following script in the value text field:</para>
-				<para>
-					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex6_formInput.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
-				</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Create a new variable to store the process information.</emphasis></para>
-				<para>Click on "Create a new variable" and choose "External API".</para>
-				<para>Name it "processDefinitionInfo".</para>
-				<para>In the field API URL, enter:</para>
-				<para><programlisting language="xml">../API/bpm/process?p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Leave%20Request&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Add 2 widgets in the form container.</emphasis></para>
-				<para>One date widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start</para>
-				<para>One input widget with the options: Width: 6. Value: formInput.requestInput.dayCount. Label: Number of days</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Add a submit button in the form container.</emphasis></para>
-				<para>Drag the button widget from the palette and place it in the form container below the two widgets.</para>
-				<para>Enter "Create a new request" in the field label.</para>
-				<para>In the field URL, enter:</para>
-				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
-				<para>In the field Target URL Success, enter:</para>
-				<para><programlisting language="xml">/bonita/apps/leaveRequest</programlisting></para>
-				<para>Save the page. The page should look like that:</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_05.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>You can preview the page to make sure it works as expected.</para>
-			</listitem>
-			<listitem>
 				<para><emphasis role="bold">Export the page.</emphasis></para>
 				<para>Click on the export button to download the page in ZIP format.</para>
 			</listitem>
@@ -174,7 +136,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_07.png" />
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -189,7 +151,60 @@
 						</imageobject>
 					</mediaobject>
 				</para>
+				<para>At this point, the exercise is done. However, if you have more time you can follow the next steps to add more features to your application.</para>
 			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a new form container.</emphasis></para>
+				<para>Go back to edit your page in the UI Designer.</para>
+				<para>Drag a form container from the palette and place it between the two titles.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a new variable to store the new leave request values.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "JSON".</para>
+				<para>Name it "formInput".</para>
+				<para>Enter the following script in the value text field:</para>
+				<para>
+					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex6_formInput.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a new variable to store the process information.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "External API".</para>
+				<para>Name it "processDefinitionInfo".</para>
+				<para>In the field API URL, enter: (no breakline)</para>
+				<para><programlisting language="xml">../API/bpm/process?
+					p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Leave%20Request&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add 2 widgets in the form container.</emphasis></para>
+				<para>One date widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start</para>
+				<para>One input widget with the options: Width: 6. Value: formInput.requestInput.dayCount. Label: Number of days</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Add a submit button in the form container.</emphasis></para>
+				<para>Drag the button widget from the palette and place it in the form container below the two widgets.</para>
+				<para>Enter "Create a new request" in the field label.</para>
+				<para>In the field URL, enter:</para>
+				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
+				<para>In the field Target URL Success, enter:</para>
+				<para><programlisting language="xml">/bonita/apps/leaveRequest</programlisting></para>
+				<para>Save the page. The page should look like that:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>You can preview the page to make sure it works as expected.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Update the page in the portal.</emphasis></para>
+			<para>Export the updated page.</para>
+			<para>Log in the portal and edit the previous page.</para>
+			<para>Select the new zip file.</para>
+			<para>Refresh your application, the change should be visible.</para>
+		</listitem>
 		</orderedlist>
 	</section>
 </chapter>
