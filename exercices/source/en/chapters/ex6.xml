@@ -38,7 +38,7 @@
 			<listitem>
 				<para><emphasis role="bold">Add a title to your page. </emphasis></para>
 				<para>Drag the widget Title (A) from the palette to the top of the page (B).</para>
-				<para>Select the widget. On the right panel, enter "Leave request application" in the "Text" field (C)</para>
+				<para>Select the widget. On the right panel, enter "Leave request application" in the "Text" field (C). Select "center" for alignment.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -50,7 +50,7 @@
 			<listitem>
 				<para><emphasis role="bold">Add another title below.</emphasis></para>
 				<para>Name it "Leave request status".</para>
-				<para>Select "level 4" from the Title Level dropdown list.</para>
+				<para>Select "level 4" from the Title Level dropdown list. Select "center" for alignment.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Create a variable to store the session information.</emphasis></para>
@@ -75,12 +75,13 @@
 					<programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?
 						q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting>
 			 	</para>
+				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Define a new Javascript expression to prepare the list.</emphasis></para>
 				<para>Click on "Create a new variable" and choose "Javascript expression".</para>
 				<para>Name it "updateLeaveRequestStatus".</para>
-				<para>Enter the following script in the value text field:</para>
+				<para>Replace the existing value with the following script:</para>
 				<para>
 					<programlisting language="javascript"><xi:include parse="text" href="../resources/code/ex6_updateLeaveRequestStatus.js"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
@@ -105,18 +106,18 @@
 					</mediaobject>
 				</para>
 				<para>You can preview the page at anytime by clicking on preview.</para>
-				<para><emphasis role="bold">Tip:</emphasis>If you are logged in the Portal in the same browser, the real data will be displayed in the preview.</para>
+				<para><emphasis role="bold">Tip: </emphasis>If you are logged in the Portal in the same browser, the current leave request will be displayed.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Export the page.</emphasis></para>
-				<para>Click on the export button to download the page in ZIP format.</para>
+				<para>Click on the export button <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_09.png"/></guiicon> to download the page in ZIP format.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Import the page in the Portal.</emphasis></para>
 				<para>Log in the Bonita Portal with a Administrator user.</para>
 				<para>Change the profile to "Administrator". Go to Resources tab.</para>
 				<para>Click on the button "Add" (A)</para>
-				<para>Select (B) the ZIP file and click on Next. On the second screen, click on Confirm.</para>
+				<para>Select (B) the ZIP file and click on Next. Then confirm on the next screen.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -140,9 +141,19 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on "Create".</para>
-				<para>Click to "Add" on the Pages section. Select the page leaveRequest. Provide a value for the url.</para>
-				<para>Define the leaveRequest page as homepage. Then delete the default homepage.</para>
+				<para>Click on "Create" to create the application.</para>
+				<para>Click on "..." to access the configuration page.</para>
+				<para>Find the Pages section on the bottom left part of the screen and Click on "Add". Select the page leaveRequest and enter "status" in the URL field.</para>
+				<para>Define the leaveRequest page as the homepage by clicking on the "house" icon  <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></guiicon>.</para>
+				<para>Once done, click on the trash icon <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></guiicon> to delete the default homepage.</para>
+				<para>The configuration page should now look like that:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_10.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 				<para>Click on the link "../apps/leaveRequest" to load the application.</para>
 				<para>
 					<mediaobject>
@@ -174,6 +185,7 @@
 				<para>In the field API URL, enter: (no breakline)</para>
 				<para><programlisting language="xml">../API/bpm/process?
 					p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Leave%20Request&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
+				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add 2 widgets in the form container.</emphasis></para>
@@ -184,6 +196,8 @@
 				<para><emphasis role="bold">Add a submit button in the form container.</emphasis></para>
 				<para>Drag the button widget from the palette and place it in the form container below the two widgets.</para>
 				<para>Enter "Create a new request" in the field label.</para>
+				<para>Select POST in the Action dropdown list.</para>
+				<para>Click on "fx" to switch the "Data sent on click" field mode and then enter "formInput".</para>
 				<para>In the field URL, enter:</para>
 				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
 				<para>In the field Target URL Success, enter:</para>

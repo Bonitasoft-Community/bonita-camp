@@ -99,7 +99,7 @@
 				<para>The transition leading to the "Notify request approved" task should be named "Yes" and the other "No".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Configure condition on the "Yes" transition to use the "isApproved" attribute of the "request" BDM.</emphasis></para>
+				<para><emphasis role="bold">Configure condition on the "Yes" transition so the flow always goes this path.</emphasis></para>
 				<para>Select the transition and type "true" in the condition field.</para>
 				<para>
 					<mediaobject>
