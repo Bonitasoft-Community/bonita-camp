@@ -1,27 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Configuring actors</title>
-	
+	<title>Exercise: Using a connector to send an email</title>
+
 	<section>
 		<title>Goal</title>
-		<para>The goal of this exercise is to add collaboration to the existing process by dispatching the forms between two actors: a requestor and a validator.</para>
+		<para>The goal of this exercise is to demonstrate an interaction between Bonita BPM and an external system with the use of a connector.
+		In this context, we will notify the leave request initiator about his request's status with an email connector.</para>
+		<warning>
+			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita BPM.</para>
+			<para>In order to get rid of those technical constraints, we will use a program that simulates an email server (FakeSMTP).</para>
+		</warning>
 	</section>
-	
+
 	<section>
 		<title>Instructions overview</title>
-		<para>Duplicate the process diagram from the previous exercise to create a 5.0 version.</para>
-		<para>Add a "Validator" lane to the diagram and move the "Validate request" task in it.</para>
-		<para>Add an actor filter of type "Initiator manager" on the "Validator" lane.</para>
+		<para>Obtain and start the FakeSMTP server.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 6.0 version.</para>
+		<para>Add an email connector on the "Notify request approved" and "Notify request rejected" service tasks.
+		These will send an email to the requestor with the request's validation status.</para>
+		<para>The following code will be used to retrieve the requestor's email in the connector:</para>
+		<para>
+			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+		</para>
 	</section>
-	
+
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 5.0 version.</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a "Validator" lane to the process.</emphasis></para>
-				<para>Select the "Lane" element from the BPMN palette and click in the process pool.</para>
+				<para><emphasis role="bold">FakeSMTP setup</emphasis></para>
+				<para>Retrieve the FakeSMTP binaries from this URL: <link linkend="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</link></para>
+				<para>Run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
+				<para>
+					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
+				</para>
+				<para>Once the user interface is displayed, click on the "Start server" button.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 6.0 version.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
+				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
+				<para>Select the "Email (SMTP)" connector by using either the text filter or the "Messaging" category and click on "Next".</para>
+				<para>Set these connection parameters:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>SMTP host</entry>
+								<entry>localhost</entry>
+							</row>
+							<row>
+								<entry>SMTP port</entry>
+								<entry>25</entry>
+							</row>
+							<row>
+								<entry>SSL (in the "Security" section)</entry>
+								<entry>unchecked</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Click on "Next".</para>
+				<para>Enter some email addresses (not necessarily existing addresses) in the "From" and "To" fields and click on "Next".</para>
+				<para>Enter "Bonita test" as the subject, click on the "Test" button and confirm the test without checking any dependency.</para>
+				<para>At this stage, you should get a message similar to this one:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_00.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Make sure that the email is received by FakeSMTP as shown below:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -29,42 +88,33 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>With the lane selected, navigate to the "General / Lane" tab and set its name to "Validator".</para>
-			</listitem>
-			<listitem><para><emphasis role="bold">Rename the other lane into "Requestor".</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Drag and drop the "Validate request" task into the "Validator" lane.</emphasis></para></listitem>
-			<listitem>
-				<para><emphasis role="bold">Add an "Initiator manager" actor filter on the "Validator" lane.</emphasis></para>
-				<para>Select the "Validator" lane and navigate to the "General / Actor" tab.</para>
-				<para>Select the "Employee actor" from the dropdown menu.</para>
-				<para>Click on the "Set" button of the actor filter.</para>
-				<para>Select an "Initiator manager" filter and click on "Next".</para>
-				<para>Name the filter "requestorManager" and click on "Finish".</para>
+				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex5_02.png"/></guiicon>.</para>
+				<para>Name the configuration "emailConfig" and save it.</para>
+				<para>Close the connector test interface.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Make sure that the diagram looks like this:</emphasis></para>
+				<para><emphasis role="bold">Add an email connector on the "Notify request approved" task.</emphasis></para>
+				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add".</para>
+				<para>Select the "Email (SMTP)" connector.</para>
+				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
+				<para>Do not fill in the parameters but click on <guiicon><inlinegraphic fileref="resources/ex5_03.png"/></guiicon>.</para>
+				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>
+				<para>Enter "hr@acme.com" in the "From" field.</para>
+				<para>Use the "pencil" icon to edit the expression of the "To" field.</para>
+				<para>Set the "Expression type" to "Script", name the script "getRequestorEmail" and paste the following in the code edition zone:</para>
 				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_02.png" />
-						</imageobject>
-					</mediaobject>
+					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
+				<para>Move to the next page and set "Leave request approved" as the subject.</para>
+				<para>Click on "Finish".</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Execute the process with the two actors.</emphasis></para>
-				<para>Run the process from the Studio (user "Walter Bates" will be used).</para>
-				<para>Submit the "Fill leave request" form. If the actors are properly set, the "Validate request" task should not be available anymore.</para>
-				<para>Disconnect from the Portal by clicking on the user name in upper right corner of the screen and clicking on "Logout".</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_03.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>Connect as user "helen.kelly" with "bpm" as password.</para>
-				<para>If the actor filter ran correctly, the "Validate request" tasks should now be available in the inbox.</para>
+				<para><emphasis role="bold">Add an email connector on the "Notify request rejected" task.</emphasis></para>
+				<para>Repeat the previous steps by naming the connector "sendRequestRejectedEmail" and setting "Leave request rejected" as the subject.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Test the process</emphasis></para>
+				<para>Execute the process twice to test the different paths and check that FakeSMTP receives the right emails.</para>
 			</listitem>
 		</orderedlist>
 	</section>

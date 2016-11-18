@@ -196,7 +196,7 @@ version="1.0">
 <xsl:attribute-set name="example.properties" use-attribute-sets="formal.object.properties">
     <xsl:attribute name="keep-together.within-column">auto</xsl:attribute>
 </xsl:attribute-set>
-<xsl:param name="exsl.node.set.available"> 
+<xsl:param name="exsl.node.set.available">
   <xsl:choose>
     <xsl:when xmlns:exsl="http://exslt.org/common" exsl:foo="" test="function-available('exsl:node-set') or                        contains(system-property('xsl:vendor'),                          'Apache Software Foundation')">1</xsl:when>
     <xsl:otherwise>0</xsl:otherwise>
@@ -401,7 +401,7 @@ set       toc,title
 <xsl:attribute-set name="itemizedlist.label.properties">
 </xsl:attribute-set>
     <xsl:param name="itemizedlist.label.width">1.0em</xsl:param>
-  
+
 
 <xsl:param name="keep.relative.image.uris" select="0"/>
 <xsl:param name="l10n.gentext.default.language">en</xsl:param>
@@ -457,7 +457,8 @@ set       toc,title
 </xsl:attribute-set>
 <xsl:attribute-set name="monospace.verbatim.properties" use-attribute-sets="verbatim.properties monospace.properties">
   <xsl:attribute name="text-align">start</xsl:attribute>
-  <xsl:attribute name="wrap-option">no-wrap</xsl:attribute>
+  <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+  <xsl:attribute name="hyphenation-character">\</xsl:attribute>
 </xsl:attribute-set>
 <xsl:param name="monospace.verbatim.font.width">0.60em</xsl:param>
 <xsl:param name="nominal.table.width">6in</xsl:param>
@@ -466,7 +467,7 @@ set       toc,title
   <xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">1.2em</xsl:attribute>
 </xsl:attribute-set>
-<xsl:param name="olink.doctitle">no</xsl:param> 
+<xsl:param name="olink.doctitle">no</xsl:param>
 <xsl:param name="olink.base.uri"/>
 <xsl:param name="olink.debug" select="0"/>
 <xsl:attribute-set name="olink.properties">
@@ -924,7 +925,7 @@ set       toc,title
 <xsl:param name="ulink.hyphenate.chars">/</xsl:param>
 <xsl:param name="ulink.show" select="1"/>
 <xsl:param name="use.extensions" select="0"/>
-<xsl:param name="use.local.olink.style" select="0"/> 
+<xsl:param name="use.local.olink.style" select="0"/>
 <xsl:param name="use.role.as.xrefstyle" select="1"/>
 <xsl:param name="use.role.for.mediaobject" select="1"/>
 <xsl:param name="use.svg" select="1"/>
@@ -993,4 +994,3 @@ set       toc,title
 </xsl:attribute-set>
 
 </xsl:stylesheet>
-

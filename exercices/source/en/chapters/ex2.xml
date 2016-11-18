@@ -2,7 +2,7 @@
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Exercise: Adding data and specifying contracts</title>
-	
+
 	<section>
 		<title>Goal</title>
 		<para>The goal of this exercise is to continue the leave request process implementation by:</para>
@@ -15,7 +15,7 @@
 			<para>It is mandatory to strictly observe the case and syntax of the technical names provided in the instructions. Failing to do so will result in errors.</para>
 		</warning>
 	</section>
-	
+
 	<section>
 		<title>Instructions overview</title>
 		<para>Duplicate the process diagram from the previous exercise to create a 2.0 version.</para>
@@ -57,7 +57,7 @@
 			</tgroup>
 		</informaltable>
 		<para>Declare an instance "request" of type "LeaveRequest" on your pool.</para>
-		<para>Generate case instantiation contract from the "request" data and with the following mandatory items:</para>
+		<para>Using the Studio assistant, generate the case instantiation contract, as well as the initialization script, from the "request" data with the following mandatory items:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>leaveStart</para></listitem>
 			<listitem><para>dayCount</para></listitem>
@@ -74,7 +74,7 @@
 		</itemizedlist>
 		<para>Add an operation on the "Validate request" task to set the "isApproved" field of the "request" BDM with the value returned by the contract.</para>
 	</section>
-	
+
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
@@ -264,6 +264,18 @@
 				</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Use the business data to dynamically control the process flow</emphasis></para>
+				<para>Select the transition "Yes" and click on the pencil icon next to the "Condition" dropdown to open the expression editor.</para>
+				<para>In the expression editor, select "Java" as the expression type, select the "request" variable and the "isApproved" method.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Save the process.</emphasis></para>
 				<para>Click on the "Save" button from the Studio's top menu bar.</para>
 			</listitem>
@@ -278,7 +290,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_07.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

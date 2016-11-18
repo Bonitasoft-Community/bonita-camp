@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercise: Modeling a basic process</title>	
-	
+	<title>Exercise: Modeling a basic process</title>
+
 	<section>
 		<title>Goal</title>
 		<para>The goal of this exercise is to create a first basic version the leave request process diagram.</para>
 		<para>At this stage the process is executable but has very limited value from the business point of view as it does not yet contain forms or data.
 		We will extend it in the upcoming exercises.</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions overview</title>
 		<para>In order to complete the exercise, create a "Leave request diagram" diagram in version 1.0 containing a "Leave request" process in version 1.0.</para>
@@ -17,10 +17,14 @@
 		<itemizedlist mark='bullet'>
 			<listitem><para>A start event named "Fill request"</para></listitem>
 			<listitem><para>A human task named "Validate request"</para></listitem>
-			<listitem><para>An end event named "End - Request processed"</para></listitem>
+			<listitem><para>An exclusive gateway named "Is Approved?"</para></listitem>
+			<listitem><para>A service task named "Notify request approved"</para></listitem>
+			<listitem><para>A service task named "Notify request rejected"</para></listitem>
+			<listitem><para>An end event named "End - Request rejected"</para></listitem>
+			<listitem><para>An end event named "End - Request approved"</para></listitem>
 		</itemizedlist>
 	</section>
-	
+
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
@@ -45,8 +49,8 @@
 			</listitem>
 			<listitem><para><emphasis role="bold">Rename the human task into "Validate request".</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Add an end event named "End - Request processed".</emphasis></para>
-				<para>Select the human task, perform drag and drop from the contextual event icon (A) and select the end event (B).</para>
+				<para><emphasis role="bold">Add an exclusive gateway named "Is approved?" next to the human task "Validate request".</emphasis></para>
+				<para>Select the "Validate request" task, perform a drag and drop from the gateway contextual icon.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -54,14 +58,73 @@
 						</imageobject>
 					</mediaobject>
 				</para>
+				<para>Once you have created the gateway, use the context "tool" icon (1) to change its type to "Exclusive" (2).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Rename the gateway into "Is approved?".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Create a service task named "Notify request approved" after the gateway.</emphasis></para>
+				<para>Select the gateway, perform drag and drop from the contextual event icon (A).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Once the service task is created, rename it.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Create a service task named "Notify request rejected" after the gateway.</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Add an end event named "End - Request approved" next to the newly added service task "Notify request approved"</emphasis></para>
+				<para>Select the task "Notify request approved", perform drag and drop from the contextual event icon (A) and select the end event (B).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 				<para>Once the event is created, rename it.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Add an end event named "End - Request rejected" next to the service task "Notify request rejected"</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Name the two transitions going out of the gateway</emphasis></para>
+				<para>The transition leading to the "Notify request approved" task should be named "Yes" and the other "No".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Configure condition on the "Yes" transition so the flow always goes this path.</emphasis></para>
+				<para>Select the transition and type "true" in the condition field.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Set the "No" transition as the default flow.</emphasis></para>
+				<para>Select the "No" transition and check the "Default flow" property.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Validate the diagram.</emphasis></para>
+				<para>Once the transition conditions are properly set, you can re-validate the process diagram.
+				To do so, navigate to the "Validation status" tab and click on "refresh".
+				You may safely ignore the 3 warnings related to the UI Designer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Make sure that your diagram matches this:</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_03.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -72,14 +135,14 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Run the process to test it.</emphasis></para>
-				<para>Click on the <guiicon><inlinegraphic fileref="resources/ex1_04.png"/></guiicon> button of the Studio's top menu bar.</para>
+				<para>Click on the <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> button of the Studio's top menu bar.</para>
 				<para>Your browser should open and display an automatically generated case start form. Submit the form.</para>
 				<para>You should be redirected to the task inbox of the Bonita Portal.
-				Select the "Validate request" task and click on the top right "Do it" button.</para>
+				Select the "Validate request" task and click on the "Take" button.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_09.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
