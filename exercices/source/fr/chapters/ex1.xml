@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercice : Modélisation basique de processus</title>	
-	
+	<title>Exercice : Modélisation basique de processus</title>
+
 	<section>
 		<title>Objectif</title>
 		<para>L'objectif de cet exercice est de créer une première version "basique" du diagramme de processus de demande de congés.</para>
 		<para>A ce stade, le processus est exécutable mais ne présente pas encore d'intérêt métier car il ne dispose pas de formulaires ni de données.
 		Nous le compléterons dans les exercices suivants.</para>
 	</section>
-	
+
 	<section>
 		<title>Instructions résumées</title>
 		<para>Afin de réaliser l'exercice, créer un diagramme "Diagramme demande de congés" contenant un processus "Demande de congés" en version 1.0.</para>
@@ -17,10 +17,14 @@
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un événement de début "Saisir demande"</para></listitem>
 			<listitem><para>Une tâche humaine "Valider demande"</para></listitem>
-			<listitem><para>Un événement de fin "Fin - Demande traitée"</para></listitem>
+			<listitem><para>Une porte exclusive "Demande approuvée ?"</para></listitem>
+			<listitem><para>Une tâche automatique "Notifier approbation"</para></listitem>
+			<listitem><para>Une tâche automatique "Notifier refus"</para></listitem>
+			<listitem><para>Un événement de fin "Fin - Demande acceptée"</para></listitem>
+			<listitem><para>Un événement de fin "Fin - Demande rejetée"</para></listitem>
 		</itemizedlist>
 	</section>
-	
+
 	<section>
 		<title>Instructions pas à pas</title>
 		<orderedlist>
@@ -45,8 +49,8 @@
 			</listitem>
 			<listitem><para><emphasis role="bold">Renommer la tâche humaine en "Valider demande"</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter un événement de fin nommé "Fin - Demande traitée"</emphasis></para>
-				<para>Sélectionner la tâche humaine, faire un glisser-déplacer à partir de l'icône contextuel d'événement (A) et Sélectionner l'événement de fin (B).</para>
+				<para><emphasis role="bold">Ajouter une porte exclusive "Demande approuvée ?" à la suite de la tâche "Valider demande".</emphasis></para>
+				<para>Sélectionner la tâche "Valider demande", effectuer un glisser-déplacer à partir de l'icône contextuel de porte logique.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -54,14 +58,67 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Une fois l'évènement créé, le renommer.</para>
+				<para>Une fois la porte créée, utiliser l'icône contextuel "boîte à outils" (1) pour changer son type en "Exclusif" (2).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_03.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Renommer la porte en "Demande approuvée ?".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Créer une tâche automatique "Notifier approbation" à partir de la porte logique.</emphasis></para>
+				<para>Sélectionner la porte logique, effectuer un glisser-déplacer à partir de l'icône contextuel de tâches (A).</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_04.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Une fois la tâche automatique crée, renommer la.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier refus" à partir de la porte logique</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande approuvée" à la suite de la tâche automatique "Notifier approbation"</emphasis></para>
+				<para>Sélectionner tâche automatique "Notifier approbation", effectuer un glisser-déplacer à partir de l'icône contextuel d'évènements (A) et sélectionner l'évènement de fin (B)</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>Une fois l'évènement crée, renommer le.</para>
+			</listitem>
+			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande refusée" à la suite de la tâche automatique "Notifier refus"</emphasis></para></listitem>
+			<listitem>
+				<para><emphasis role="bold">Nommer les 2 transitions entre la porte logique et les étapes automatiques</emphasis></para>
+				<para>La transition menant à l'étape "Notifier approbation" se nommera "Oui" et l'autre "Non".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" pour que le flot suive cette branche.</emphasis></para>
+				<para>Sélectionner la transition et entrer la valeur "true" dans le champ.</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Configurer la transition "Non" en tant que flux par défaut.</emphasis></para>
+				<para>Sélectionner la transition "Non" et cocher la case "Flux par défaut".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_03.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -72,14 +129,14 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
-				<para>Cliquer sur le bouton <guiicon><inlinegraphic fileref="resources/ex1_04.png"/></guiicon> de la barre de menu supérieur du Studio.</para>
+				<para>Cliquer sur le bouton <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.
 				Sélectionner la tâche "Valider demande" et cliquer sur "Faire" en haut à droite de l'écran.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_09.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

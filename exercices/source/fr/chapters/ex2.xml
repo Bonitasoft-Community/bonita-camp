@@ -263,6 +263,18 @@
 				</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
+				<para>Sélectionner la transition "Oui" et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
+				<para>Dans l'éditeur d'expression, sélectionner "Java" comme type d'expression, sélectionner la variable "demande" et la méthode "isEstAprouvee".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_07.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Enregistrer le processus.</emphasis></para>
 				<para>Cliquer sur le bouton "Enregistrer" de la barre de menu supérieur du Studio.</para>
 			</listitem>
@@ -277,7 +289,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_07.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
