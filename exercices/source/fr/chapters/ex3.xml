@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Exercice : Contrôle dynamique du flux d'exécution grâce aux données</title>
+	<title>Exercice : Création de formulaires</title>
 
 	<section>
 		<title>Objectif</title>
-		<para>L'objectif de cet exercice est d'enrichir le processus existant en ajoutant la gestion dynamique de la validation de la demande de congés.
-		Ceci sera réalisé à l'aide d'une porte logique exclusive donnant accès à deux flux d'exécutions permettant de gérer le refus ou l'approbation de la demande.</para>
+		<para>L'objectif de cet exercice est de fournir des formulaires conviviaux et adaptés pour l'exécution du processus.</para>
 	</section>
 
 	<section>
 		<title>Instructions résumées</title>
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</para>
-		<para>Modifier le diagramme pour placer les éléments suivants à la suite de l'étape "Valider demande" :</para>
+		<para>Créer les formulaires suivants :</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>une porte exclusive "Demande approuvée ?"</para></listitem>
-			<listitem><para>une tâche automatique "Notifier approbation"</para></listitem>
-			<listitem><para>un événement de terminaison "Fin - Demande approuvée"</para></listitem>
-			<listitem><para>une tâche automatique "Notifier refus"</para></listitem>
-			<listitem><para>un événement de terminaison "Fin - Demande refusée"</para></listitem>
+			<listitem><para>Un formulaire d'instanciation de processus au niveau du pool permettant d'alimenter les données "dateDebut" et "nombreJours".</para></listitem>
+			<listitem><para>Un formulaire d'étape permettant d'afficher les informations du demandeur et les données "dateDebut" et "nombreJours" en lecture seule puis d'alimenter la donnée "estApprouvee".</para></listitem>
 		</itemizedlist>
-		<para>Configurer les transitions en sortie de la porte exclusive pour diriger dynamiquement le flux d'exécution du processus en fonction des données du processus.</para>
 	</section>
 
 	<section>
@@ -28,12 +23,9 @@
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer l'événement de terminaison.</emphasis></para>
-				<para>Sélectionner l'évènement dans le diagramme et appuyer sur la touche "Suppr" du clavier.</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Ajouter une porte exclusive "Demande approuvée ?" à la suite de la tâche "Valider demande".</emphasis></para>
-				<para>Sélectionner la tâche "Valider demande", effectuer un glisser-déplacer à partir de l'icône contextuel de porte logique.</para>
+				<para><emphasis role="bold">Créer un formulaire d'instanciation.</emphasis></para>
+				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Exécution / Formulaire d'instanciation".</para>
+				<para>Utiliser le menu déroulant "Formulaire cible" pour créer un nouveau formulaire.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -41,7 +33,17 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Une fois la porte créée, utiliser l'icône contextuel "boîte à outils" (1) pour changer son type en "Exclusif" (2).</para>
+				<para>Ceci aura pour effet d'ouvrir le UI Designer dans votre navigateur avec un formulaire généré automatiquement à partir du contrat d'instanciation.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
+				<para>Utiliser le champ texte en haut de l'écran pour renommer le formulaire depuis "newForm" vers "remplirDemandeConges" (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
+				<para>Cliquer sur le bouton enregistrer.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un conteneur de formulaire</emphasis></para>
+				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Form container" dans une nouvelle ligne en dessous du widget "Demande Input".</para>
+				<para><emphasis role="bold">Astuce :</emphasis> Une zone en pointillé permettant d'insérer une nouvelle ligne apparait lorsque l'on survole la séparation entre deux widget.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -49,73 +51,279 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Renommer la porte en "Demande approuvée ?".</para>
+				<para>Le conteneur de formulaire permet de fournir une aide à la validation du contenu du formulaire (champs obligatoires et valeur des champs).</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier approbation" à partir de la porte logique.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande approuvée" à la suite de la tâche automatique "Notifier approbation".</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier refus" à partir de la porte logique.</emphasis></para></listitem>
-			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande refusée" à la suite de la tâche automatique "Notifier refus".</emphasis></para></listitem>
 			<listitem>
-				<para><emphasis role="bold">Nommer les 2 transitions entre la porte logique et les étapes automatiques</emphasis></para>
-				<para>La transition menant à l'étape "Notifier approbation" se nommera "Oui" et l'autre "Non".</para>
-			</listitem>
-
-			<listitem>
-				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
-				<para>Sélectionner la transition et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
-				<para>Dans l'éditeur d'expression, sélectionner "Java" comme type d'expression, sélectionner la variable "demande" et la méthode "isEstAprouvee".</para>
+				<para><emphasis role="bold">Déplacer les widgets existants dans le conteneur de formulaire</emphasis></para>
+				<para>Sélectionner le widget "Date Debut" et le faire glisser dans le conteneur de formulaire.</para>
+				<para>Répéter l'opération pour les widgets "Nombre Jours" et "Submit" en créant de nouvelles lignes.</para>
+				<para>Une fois les widgets regroupés sous le conteneur de formulaire, sélectionner et supprimer les lignes vides.</para>
+				<para><emphasis role="bold">Astuce :</emphasis> Survoler la barre grise se situant à gauche d'une ligne (A) pour faire apparaître les actions dont la suppression (B).</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_03.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Configurer la transition "Non" en tant que flux par défaut.</emphasis></para>
-				<para>Sélectionner la transition "Non" et cocher la case "Flux par défaut".</para>
+				<para><emphasis role="bold">Changer le titre du formulaire</emphasis></para>
+				<para>Sélectionner le widget "Demande Input" en haut du formulaire.</para>
+				<para>Dans la section à droite de l'écran, éditer les propriétés suivantes:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Texte</entry>
+								<entry>Saisir une demande de congés</entry>
+							</row>
+							<row>
+								<entry>Niveau du titre</entry>
+								<entry>Niveau 2</entry>
+							</row>
+							<row>
+								<entry>Alignement</entry>
+								<entry>au centre</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Déclencher la validation du diagramme.</emphasis></para>
-				<para>Maintenant que les conditions sont correctement configurées sur les transitions il est possible de relancer la validation.
-				Naviguer dans l'onglet "Statut de validation" et cliquer sur "Rafraîchir". Vous pouvez ignorer les trois messages d'avertissement liés au UI Designer.</para>
+				<para><emphasis role="bold">Changer le widget "Date Debut"</emphasis></para>
+				<para>Sélectionner le widget "Date Debut" et éditer les propriétés suivantes:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Obligatoire</entry>
+								<entry>oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Date de début</entry>
+							</row>
+							<row>
+								<entry>Placeholder</entry>
+								<entry>Date de début des congés</entry>
+							</row>
+							<row>
+								<entry>Format de la date</entry>
+								<entry>yyyy-MM-dd</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
+				<para><emphasis role="bold">Changer le widget "Nombre Jours"</emphasis></para>
+				<para>Sélectionner le widget "Nombre Jours" et éditer les propriétés suivantes:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Obligatoire</entry>
+								<entry>oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Nombre de jours</entry>
+							</row>
+							<row>
+								<entry>Placeholder</entry>
+								<entry>Nombre de jours de congés</entry>
+							</row>
+							<row>
+								<entry>Valeur minimum *</entry>
+								<entry>1</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>* à ne pas confondre avec la propriété "Longueur minimum de la valeur".</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Supprimer les valeurs initiales des champs</emphasis> (cela permettra d'afficher les placeholders lors du rendu final)</para>
+				<para>Dans la partie inférieure de l'écran, sous l'onglet "variables", cliquer sur l'icône crayon situé à droite de la ligne contenant la variable "formInput".</para>
+				<para>Remplacer la valeur du JSON par ceci:</para>
 				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_04.png" />
-						</imageobject>
-					</mediaobject>
+					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex3_initFormInputs.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Exécuter deux fois le processus pour tester les différents chemins.</emphasis></para>
-				<para>Attention : ne pas cliquer une deuxième fois sur le bouton "Lancer", cela aurait pour effet de redéployer le processus
-				et donc de supprimer les instances existantes. Pour créer la seconde instance, il faut naviguer dans le portail.</para>
-				<para>Dans le portail, naviguer dans le menu "Processus" (A) puis sélectionner la définition de processus "Demande de congés" en version 3.0 (B)
-				et cliquez sur "démarrer" (C).</para>
+				<para><emphasis role="bold">Déclarer une variable pour gérer les potentielles erreurs de soumission du formulaire</emphasis></para>
+				<para>Dans la partie inférieure de l'écran, sous l'onglet "variables", cliquer sur "Créer une nouvelle variable".</para>
+				<para>Nommer la variable "erreur", laisser son type à "String" et sa valeur vide puis enregistrer.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Changer le widget "Submit"</emphasis></para>
+				<para>Sélectionner le widget "Submit"</para>
+				<para>Changer son libellé en "Soumettre"</para>
+				<para>Cliquer sur l'icône de "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> se trouvant à côté de la propriété "Désactivés".</para>
+				<para>Saisissez le code suivant dans le champ nouvellement affiché (cela aura pour effet de désactiver le bouton si le formulaire contient des données invalides) :</para>
 				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_05.png" />
-						</imageobject>
-					</mediaobject>
+					<programlisting language="javascript">$form.$invalid</programlisting>
+				</para>
+				<para>Associer la variable "erreur" à la réponse en cas d'échec pour permettre de récupérer le détail de l'erreur.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Afficher dynamiquement l'erreur</emphasis></para>
+				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Text" en dessous du bouton "Soumettre".</para>
+				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Caché".</para>
+				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur):</para>
+				<para>
+					<programlisting language="javascript">erreur == null</programlisting>
+				</para>
+				<para>Remplacer la propriété "Texte" du widget par ce contenu:</para>
+				<para>
+					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Vérifier le bon déroulement du processus dans l'interface d'administration du portail</emphasis></para>
-				<para>Une fois dans le portail, changer de profil dans le coin supérieur droit pour passer en d'"Utilisateur" à "Administrateur".</para>
+				<para><emphasis role="bold">Vérifier le formulaire</emphasis></para>
+				<para>Vérifier que le formulaire ressemble à ceci dans l'éditeur:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_06.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Naviguer dans le menu "BPM / Cas" (A) puis sélectionner l'onglet "Cas archivés" (B) et cliquer sur le lien "..." dans la colonne action (C) pour visualiser le détail d'un cas.</para>
+				<para>Cliquer sur le bouton "Aperçu" en haut de l'écran.</para>
+				<para>Vérifier que l'aperçu ressemble à ceci:</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_06.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
+				<para>On notera les points suivants dans l'aperçu:</para>
+				<itemizedlist>
+					<listitem><para>le widget présentant l'erreur n'est pas visible</para></listitem>
+					<listitem><para>le bouton "Soumettre" est désactivé par défaut (ceci est dû à la validation fournie par le conteneur de formulaire)</para></listitem>
+					<listitem><para>le bouton "Soumettre" est activé quand le contenu du formulaire est valide</para></listitem>
+				</itemizedlist>
+				<para><emphasis role="bold">Note :</emphasis> il n'est pas possible de soumettre le formulaire depuis l'aperçu même lorsque ce dernier est valide.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Enregistrer le formulaire</emphasis></para>
+				<para>Utiliser le bouton "Enregistrer" en haut de l'écran pour enregistrer le formulaire.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Créer un formulaire pour l'étape "Valider demande".</emphasis></para>
+				<para>Dans le Studio, sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Formulaire".</para>
+				<para>Utiliser le menu déroulant "Formulaire cible" pour créer un nouveau formulaire.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
+				<para>Depuis le UI Designer, renommer le formulaire en "validerDemandeConges" et l'enregistrer.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Supprimer les variables inutiles</emphasis></para>
+				<para>Dans la section "variables" en bas de l'écran supprimer les variables suivantes :</para>
+				<itemizedlist>
+					<listitem><para>formInput</para></listitem>
+					<listitem><para>formOutput</para></listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Récupérer les données métier de la demande en cours</emphasis></para>
+				<para>Dans la section "variables" en bas de l'écran, cliquer sur le bouton "Créer une nouvelle variable".</para>
+				<para>Configurer la variable avec les propriétés suivantes :</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Nom</entry>
+								<entry>demande</entry>
+							</row>
+							<row>
+								<entry>Type</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>URL d'API</entry>
+								<entry>../{{context.demande_ref.link}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para><emphasis role="bold">Note :</emphasis> nous utilisons ici, un appel aux APIs REST de Bonita BPM pour récupérer notre BDM "demande".
+				Nous bénéficions d'une variable "context" qui expose des liens vers les données du processus dont notre demande sous la forme "demande_ref".
+				Nous pouvons ainsi charger la demande grâce à l'attribut "link" qui donne l'URL à appeler pour récupérer l'objet.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Récupérer les informations concernant le demandeur</emphasis></para>
+				<para>Créer une variable avec les propriétés suivantes :</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Nom</entry>
+								<entry>demandeur</entry>
+							</row>
+							<row>
+								<entry>Type</entry>
+								<entry>External API</entry>
+							</row>
+							<row>
+								<entry>URL d'API</entry>
+								<entry>../API/identity/user/{{demande.idDemandeur}}</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter une variable pour la gestion d'erreur</emphasis></para>
+				<para>Créer une nouvelle variable, la nommer "erreur", laisser son type à "String" et sa valeur vide puis enregistrer.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee"</emphasis></para>
+				<para>Sélectionner la case à cocher "Est Approuvee" et utiliser le contrôle de suppression qui apparait lorsque l'on survole le widget avec le curseur.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -123,14 +331,254 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Vérifier les "Tâches terminées" pour valider le bon déroulement du processus :</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Supprimer le bouton "Submit"</emphasis></para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un titre au formulaire</emphasis></para>
+				<para>Faire glisser un widget de type "Titre" depuis la palette vers l'espace inoccupé du formulaire.</para>
+				<para>Configurer le widget de la manière suivante:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Texte</entry>
+								<entry>Valider une demande de congés</entry>
+							</row>
+							<row>
+								<entry>Niveau du titre</entry>
+								<entry>Niveau 2</entry>
+							</row>
+							<row>
+								<entry>Alignement</entry>
+								<entry>au centre</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un widget pour présenter le demandeur</emphasis></para>
+				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Configurer le widget comme ceci:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Demandeur</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>demandeur.firstname +" "+ demandeur.lastname</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un widget pour afficher la date de début</emphasis></para>
+				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Configurer le widget comme ceci:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Date de début</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>demande.dateDebut | date</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para><emphasis role="bold">Note :</emphasis> nous utilisons ici un filtre "| date" dans la valeur pour formater la date de façon lisible.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un widget pour afficher le nombre de jours</emphasis></para>
+				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le widget "Date de début".</para>
+				<para>Configurer le widget comme ceci:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="1*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Nombre de jours</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>demande.nombreJours</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un widget pour refuser la demande</emphasis></para>
+				<para>Faire glisser un widget de type "Button" en bas du formulaire.</para>
+				<para>Configurer le widget comme ceci:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="3*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>largeur</entry>
+								<entry>6</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Refuser</entry>
+							</row>
+							<row>
+								<entry>Alignement</entry>
+								<entry>à droite</entry>
+							</row>
+							<row>
+								<entry>Style</entry>
+								<entry>danger</entry>
+							</row>
+							<row>
+								<entry>Données envoyées au clic</entry>
+								<entry>{"estApprouvee" : false}</entry>
+							</row>
+							<row>
+								<entry>Valeur de réponse en cas d'échec</entry>
+								<entry>erreur</entry>
+							</row>
+							<row>
+								<entry>URL cible en cas de succès</entry>
+								<entry>/bonita</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un widget pour approuver la demande</emphasis></para>
+				<para>Faire glisser un widget de type "Button" dans la zone "6 colonnes" à droite du widget "Refuser".</para>
+				<para>Configurer le widget comme ceci:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="3*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Approuver</entry>
+							</row>
+							<row>
+								<entry>Style</entry>
+								<entry>success</entry>
+							</row>
+							<row>
+								<entry>Données envoyées au clic</entry>
+								<entry>{"estApprouvee" : true}</entry>
+							</row>
+							<row>
+								<entry>Valeur de réponse en cas d'échec</entry>
+								<entry>erreur</entry>
+							</row>
+							<row>
+								<entry>URL cible en cas de succès</entry>
+								<entry>/bonita</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Afficher dynamiquement les potentielles erreurs de soumission</emphasis></para>
+				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
+				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Hidden".</para>
+				<para>Entrer ce contenu dans le champ texte qui est apparu:</para>
+				<para>
+					<programlisting language="javascript">erreur == null</programlisting>
+				</para>
+				<para>Remplacer la propriété "Texte" du widget par ce contenu:</para>
+				<para>
+					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Vérifier le formulaire</emphasis></para>
+				<para>S'assurer que le formulaire ressemble à ceci:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_08.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Enregistrer le formulaire</emphasis></para>
+				<para>Utiliser le bouton "Enregistrer" en haut au centre de l'écran pour enregistrer le formulaire.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Tester l'exécution du processus</emphasis></para>
+				<para>Lancer l'exécution du processus par le biais du Studio.</para>
+				<para>Valider à partir de l'historique des cas que le bon chemin a bien été emprunté jusqu'à la fin du processus.</para>
 			</listitem>
 		</orderedlist>
 	</section>

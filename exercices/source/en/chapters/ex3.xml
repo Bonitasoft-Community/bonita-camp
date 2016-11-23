@@ -10,7 +10,7 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>Duplicate the process diagram from the previous exercise to create a 4.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 3.0 version.</para>
 		<para>Create the following forms:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A case instantiation form at pool level that sets the "leaveStart" and "dayCount" data.</para></listitem>
@@ -21,7 +21,7 @@
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 4.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Create a case instantiation form.</emphasis></para>
 				<para>Select the process pool, and navigate to the "Execution / Instantiation form" tab.</para>
