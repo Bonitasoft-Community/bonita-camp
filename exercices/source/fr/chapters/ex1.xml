@@ -32,7 +32,7 @@
 			<listitem><para><emphasis role="bold">Créer un nouveau diagramme de processus.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Spécifier le nom du diagramme et celui du processus.</emphasis></para>
-				<para>Cliquer sur le menu "Diagramme / Renommer" en haut du Studio.</para>
+				<para>Cliquer sur le menu "Diagramme / Renommer..." en haut du Studio.</para>
 				<para>Entrer "Diagramme demande de congés" pour le nom du diagramme et "Demande de congés" pour celui du pool.</para>
 				<para>
 					<mediaobject>
@@ -114,6 +114,11 @@
 				<para>Sélectionner la transition "Non" et cocher la case "Flux par défaut".</para>
 			</listitem>
 			<listitem>
+				<para><emphasis role="bold">Actualiser la validation du diagramme :</emphasis></para>
+				<para>Naviguer dans l'onglet "Statut de validation".</para>
+				<para>Cliquer sur le bouton "Rafraîchir".</para>
+			</listitem>
+			<listitem>
 				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>
 				<para>
 					<mediaobject>
@@ -132,7 +137,7 @@
 				<para>Cliquer sur le bouton <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.
-				Sélectionner la tâche "Valider demande" et cliquer sur "Faire" en haut à droite de l'écran.</para>
+				Sélectionner la tâche "Valider demande" et cliquer sur "Prendre" en haut à droite de l'écran.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -140,7 +145,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Soumettre le formulaire de l'étape "Valider demande" pour terminer le cas.</para>
+				<para>Soumettre le formulaire de l'étape "Valider demande" en cliquant sur le bouton "Exécuter" pour terminer le cas.</para>
 			</listitem>
 		</orderedlist>
 	</section>

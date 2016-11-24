@@ -12,7 +12,7 @@
 		</orderedlist>
 		<para>Une fois complété, le processus sera exécutable avec des formulaires générés automatiquement.</para>
 		<warning>
-			<para>Il est important de strictement respecter la casse et la syntaxe des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
+			<para>Il est important de respecter strictement la casse et la syntaxe des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
 		</warning>
 	</section>
 
@@ -136,7 +136,7 @@
 			<listitem>
 				<para><emphasis role="bold">Déclarer une variable métier de type "DemandeConges" dans le processus.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Données / Variables du pool".</para>
-				<para>Cliquer sur "Ajouter" dans la section "Variables métier".</para>
+				<para>Cliquer sur "Ajouter..." dans la section "Variables métier".</para>
 				<para>Nommer la variable "demande" et sélectionner le type d'objet métier "DemandeConges".</para>
 				<para>Cliquer sur "Terminer".</para>
 				<para>
@@ -160,7 +160,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click sur "Terminer" et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
+				<para>Cliquer sur "Terminer" et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -234,12 +234,14 @@
 			<listitem>
 				<para><emphasis role="bold">Modifier l'initialisation de la variable métier.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Données / Variables du pool".</para>
-				<para>Sélectionner la variable "demande" et cliquer sur "Modifier".</para>
+				<para>Sélectionner la variable "demande" et cliquer sur "Modifier...".</para>
 				<para>Cliquer sur l'icône "crayon" associé au champ "Valeur par défaut" pour ouvrir l'éditeur d'expression.</para>
 				<para>Entrer le code suivant (ou simplement appliquer les modifications) :</para>
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
+				<para>Cliquer sur le bouton "OK" pour fermer l'éditeur d'expresion.</para>
+				<para>Cliquer à nouvau sur le bouton "OK" pour valider la modification de la variable métier.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>

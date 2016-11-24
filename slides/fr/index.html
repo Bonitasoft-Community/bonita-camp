@@ -11,12 +11,12 @@
 		</script>
 
 		<meta name="description" content="Présentation de Bonita BPM permettant de rapidement réaliser un premier processus">
-		<meta name="author" content="Antoine Mottier - Philippe Ozil">
+		<meta name="author" content="Antoine Mottier - Lionel Palacin - Philippe Ozil">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/bonita/bonita.css" id="theme">
@@ -89,7 +89,8 @@
 					<aside class="notes">
 					Presentation of Bonita BPM<br/>
 					Creation of 1st process<br/>
-					Mix of theoretical presentation and practical exercises
+					Mix of theoretical presentation and practical exercises<br />
+					Time to answer your questions
 					</aside>
 				</section>
 
@@ -100,10 +101,10 @@
 						<li>Composants de Bonita BPM</li>
 						<li>Introduction au BPMN</li>
 						<li>Données &amp; Contrats</li>
-						<li>D'avantage sur le BPMN</li>
 						<li>Formulaires et Pages</li>
 						<li>Acteurs</li>
 						<li>Connecteurs</li>
+						<li>Applications</li>
 						<li>Déploiement</li>
 					</ul>
 				</section>
@@ -146,18 +147,18 @@
 					</section>
 
 					<section>
-						<h2 style="font-size:1.4em;">Bonita BPM Studio : éditeur de diagrammes</h2>
+						<h2 style="font-size:1.4em;">Studio : éditeur de diagrammes</h2>
 						<img src="presentation_images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
 						<aside class="notes">
-						Studio is an Eclipse based IDE. Requires a JVM 7 (not compatible with 8).<br/>
+						Studio is an Eclipse based IDE. Requires a JVM 7 or 8.<br/>
 						Allows creation of process diagrams which contain one or several processes.<br/>
-						Different steps: process modelling, data setup, form design, connector setup...<br/>
+						Different steps: process modeling, data model definition, form and pages design, connector setup...<br/>
 						Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.
 						</aside>
 					</section>
 
 					<section>
-						<h2>Bonita BPM Studio : UI Designer</h2>
+						<h2>Studio : UI Designer</h2>
 						<img class="no-margin" src="presentation_images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
 
 						<aside class="notes">
@@ -214,7 +215,7 @@
 				<section>
 					<section>
 						<h2>Introduction au BPMN</h2>
-						<p>Une notation standard (OMG) pour la modélisation des processus</p>
+						<p>Notation standard pour la modélisation des processus</p>
 						<p>Un processus est représenté par un Pool <img src="presentation_images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
 						<p>Les éléments essentiels :</p>
 
@@ -287,17 +288,17 @@
 							<div style="border-color:red;">
 								<p style="color:red;">BDM (Business Data Model)</p>
 								<p>Accessible de partout, stocké dans une base métier<br/>
-								Usage: stocker les données manipulées par les instances de processus et/ou applications</p>
+								Usage : stocker les données manipulées par les instances de processus et/ou applications</p>
 							</div>
 							<div style="border-color:rgb(149, 158, 7);">
 								<p style="color:rgb(149, 158, 7);">Variables de processus &amp; d'étapes</p>
 								<p>Accessibles depuis une seule instance de processus/étape, stockées dans la base moteur, archivées avec l'instance de processus<br/>
-								Usage: chainer l'exécution de connecteurs</p>
+								Usage : chainer l'exécution de connecteurs</p>
 							</div>
 							<div style="border-color:rgb(114,114,255);">
 								<p style="color:rgb(114,114,255);">Variables de formulaire</p>
 								<p>Accessibles depuis un formulaire, jamais persistées<br/>
-								Usage: manipuler et stocker les informations accessibles en lecture et en écriture dans un formulaire</p>
+								Usage : manipuler et stocker les informations accessibles en lecture et en écriture dans un formulaire</p>
 							</div>
 						</div>
 
@@ -420,7 +421,7 @@
 						<tr>
 							<td>Acteur</td>
 							<td>Toujours à jour par rapport à l'organisation</td>
-							<td>Association statique qui ne peut se baser sur des données métier</td>
+							<td>Association statique qui ne peut pas se baser sur des données métier</td>
 						</tr>
 						<tr>
 							<td>Filtre d'acteur</td>
@@ -445,7 +446,7 @@
 				<section>
 					<section>
 						<h2>Connecteurs</h2>
-						<p>Permet à un processus d'interagir avec le SI (à l'opposé des API Bonita)</p>
+						<p>Permet à un processus d'interagir avec le SI (sens opposé à celui des API Bonita)</p>
 						<p>Un catalogue de connecteurs standard est fourni dans le Studio.</p>
 						<p>Des connecteurs personnalisés peuvent être :</p>
 						<ul>
@@ -521,7 +522,7 @@
 						<td>2. Importer les pages dans le menu Ressources<br/>
 						3. Créer une nouvelle application<br/>
 						4. Configurer l'application<br />
-						5. Ajouter les pages à l'applcation
+						5. Ajouter les pages à l'application
 						</td>
 						<td>Portail</td>
 					</tr>
@@ -556,8 +557,6 @@
 				progress: true,
 				history: true,
 				center: true,
-
-
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
@@ -565,9 +564,8 @@
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
