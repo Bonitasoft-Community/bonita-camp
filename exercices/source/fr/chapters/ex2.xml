@@ -241,7 +241,7 @@
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 				<para>Cliquer sur le bouton "OK" pour fermer l'éditeur d'expresion.</para>
-				<para>Cliquer à nouvau sur le bouton "OK" pour valider la modification de la variable métier.</para>
+				<para>Cliquer à nouveau sur le bouton "OK" pour valider la modification de la variable métier.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
