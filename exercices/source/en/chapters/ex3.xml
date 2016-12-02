@@ -42,7 +42,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Update the form title</emphasis></para>
-        <para>Select the top most widget "Request Input".<para>
+        <para>Select the top most widget "Request Input".</para>
         <para>In the section on the right edit the following properties:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -333,7 +333,7 @@
 						<tbody>
 							<row>
 								<entry>Value</entry>
-								<entry><code>&lt;b&gt;Requestor: &lt;/b&gt;{{requestor.firstname}} {{requestor.lastname}}</entry>
+                <entry><code>&lt;b&gt;Requestor: &lt;/b&gt;{{requestor.firstname}} {{requestor.lastname}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -380,7 +380,7 @@
 						<tbody>
 							<row>
 								<entry>Value</entry>
-								<entry><code>&lt;b&gt;Number of days: &lt;/b&gt; {{request.dayCount}}</entry>
+                <entry><code>&lt;b&gt;Number of days: &lt;/b&gt; {{request.dayCount}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
