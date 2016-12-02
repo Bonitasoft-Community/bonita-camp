@@ -20,7 +20,7 @@
 		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</para>
 		<para>Ajouter un connecteur d'envoi d'email sur les tâches automatiques "Notifier approbation" et "Notifier refus".
 		Ceux-ci enverront un email au demandeur avec le statut de validation de sa demande.</para>
-		<para>Le code ci-dessous sera utilisé pour récupérer l'email du demandeur dans le connecteur:</para>
+		<para>Le code ci-dessous sera utilisé pour récupérer l'email du demandeur dans le connecteur :</para>
 		<para>
 			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 		</para>
@@ -30,8 +30,8 @@
 		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Mise en place de FakeSMTP</emphasis></para>
-				<para>Récupérer le binaire de FakeSMTP depuis cette URL: <link linkend="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</link></para>
-				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante:</para>
+				<para>Récupérer le binaire de FakeSMTP depuis cette URL : <ulink url="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</ulink></para>
+				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante :</para>
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
@@ -60,7 +60,7 @@
 							</row>
 							<row>
 								<entry>Port SMTP</entry>
-								<entry>25</entry>
+								<entry>2525 (port par défaut de FakeSMTP)</entry>
 							</row>
 							<row>
 								<entry>SSL (sous l'onglet "Sécurité")</entry>
@@ -72,7 +72,7 @@
 				<para>Passer à la page suivante.</para>
 				<para>Entrer des emails (pas nécessairement existants) en tant que destinataire et expéditeur et passer à la page suivante.</para>
 				<para>Entrer "Bonita test" comme sujet, cliquer le bouton "Test" et confirmer sans cocher de dépendance.</para>
-				<para>Un message similaire à celui ci-dessous devrait s'afficher:</para>
+				<para>Un message similaire à celui ci-dessous devrait s'afficher :</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -94,14 +94,14 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un connecteur d'envoi d'email sur la tâche "Notifier approbation".</emphasis></para>
-				<para>Sélectionner la tâche "Notifier approbation", naviguer dans l'onglet "Exécution / Connecteurs en entrée" puis cliquer sur "Ajouter".</para>
+				<para>Sélectionner la tâche "Notifier approbation", naviguer dans l'onglet "Exécution / Connecteurs en entrée" puis cliquer sur "Ajouter...".</para>
 				<para>Sélectionner un connecteur de type "Courriel".</para>
 				<para>Spécifier "envoiEmailApprobation" comme nom et passer à la page suivante.</para>
 				<para>Ne pas remplir les paramètres de la page mais cliquer sur <guiicon><inlinegraphic fileref="resources/ex5_03.png"/></guiicon>.</para>
 				<para>Sélectionner la configuration "configEmail" et passer à la page de configuration du destinataire.</para>
 				<para>Entrer "rh@acme.com" comme adresse email dans le champ expéditeur "De".</para>
 				<para>Utiliser l'icône "crayon" pour éditer l'expression sur le champ destinataire "A".</para>
-				<para>Changer le type d'expression à "Script", nommer le script "recupEmailDemandeur" et coller le code ci-dessous dans la zone d'édition du script:</para>
+				<para>Changer le type d'expression à "Script", nommer le script "recupEmailDemandeur" et coller le code ci-dessous dans la zone d'édition du script :</para>
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>

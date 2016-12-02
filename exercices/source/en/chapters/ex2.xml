@@ -136,7 +136,7 @@
 			<listitem>
 				<para><emphasis role="bold">Declare an instance of the "LeaveRequest" BDM on your process</emphasis></para>
 				<para>Select the process pool, and navigate to the "Data / Pool variables" tab.</para>
-				<para>In the "Business variables" section, click on "Add".</para>
+				<para>In the "Business variables" section, click on "Add...".</para>
 				<para>Name the variable "request" and select the "LeaveRequest" business object.</para>
 				<para>Click on "Finish".</para>
 				<para>
@@ -234,18 +234,20 @@
 			<listitem>
 				<para><emphasis role="bold">Update the "request" BDM initialization</emphasis></para>
 				<para>Select the process pool, and navigate to the "Data / Pool variables" tab.</para>
-				<para>Select the "request" business variable and click on "Edit".</para>
+				<para>Select the "request" business variable and click on "Edit...".</para>
 				<para>Click on the "Pencil" icon next to the "Default value" field to open the expression editor.</para>
 				<para>Clear all of the generated code and replace it by the following:</para>
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 				<para>This will initialize the BDM from the contract data and set the process initiator as the request author.</para>
+				<para>Click on "OK" button to close the expression editor.</para>
+				<para>Click again on "OK" button to confirm the modification of the business data.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Set up the "Validate request" step contract</emphasis></para>
 				<para>Select the "Validate request" task and navigate to the "Execution / Contract / Inputs" tab.</para>
-				<para>Click on "Add" then set the input name to "isApproved" and its type to "BOOLEAN".</para>
+				<para>Click on "Add" button then set the input name to "isApproved" and its type to "BOOLEAN".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add an operation on "Validate request" to update the request</emphasis></para>
@@ -254,7 +256,7 @@
 				<para>Select "request" as the target.</para>
 				<para>Click on the "Takes value of" link and switch to the "Use a Java method" operator type.</para>
 				<para>Select the "setIsApproved" method and click on "OK".</para>
-				<para>In the rightmost dropdown, select the "isApproved" contract input.</para>
+				<para>In the rightmost drop-down, select the "isApproved" contract input.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -265,7 +267,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Use the business data to dynamically control the process flow</emphasis></para>
-				<para>Select the transition "Yes" and click on the pencil icon next to the "Condition" dropdown to open the expression editor.</para>
+				<para>Select the transition "Yes" and navigate to the "General / General" tab.</para>
+				<para>Click on the pencil icon next to the "Condition" drop-down to open the expression editor.</para>
 				<para>In the expression editor, select "Java" as the expression type, select the "request" variable and the "isApproved" method.</para>
 				<para>
 					<mediaobject>

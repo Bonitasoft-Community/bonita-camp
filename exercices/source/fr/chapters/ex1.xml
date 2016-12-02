@@ -83,7 +83,7 @@
 			<listitem><para><emphasis role="bold">Créer une tâche automatique "Notifier refus" à partir de la porte logique</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande approuvée" à la suite de la tâche automatique "Notifier approbation"</emphasis></para>
-				<para>Sélectionner tâche automatique "Notifier approbation", effectuer un glisser-déplacer à partir de l'icône contextuel d'évènements (A) et sélectionner l'évènement de fin (B)</para>
+				<para>Sélectionner tâche automatique "Notifier approbation", effectuer un glisser-déplacer à partir de l'icône contextuel d’événements (A) et sélectionner l’événement de fin (B)</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -91,7 +91,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Une fois l'évènement crée, renommer le.</para>
+				<para>Une fois l’événement crée, renommer le.</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande refusée" à la suite de la tâche automatique "Notifier refus"</emphasis></para></listitem>
 			<listitem>
@@ -117,6 +117,7 @@
 				<para><emphasis role="bold">Actualiser la validation du diagramme :</emphasis></para>
 				<para>Naviguer dans l'onglet "Statut de validation".</para>
 				<para>Cliquer sur le bouton "Rafraîchir".</para>
+				<para>Vous pouvez ignorez les 3 avertissements concernant les formulaires.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier que le diagramme ressemble à ceci :</emphasis></para>

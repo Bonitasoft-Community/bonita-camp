@@ -9,7 +9,7 @@ Content is available in:
 - Spanish (Bonita BPM 7.2)
 
 ##Setup instructions for slides
-1. Download [reveal.js](https://github.com/hakimel/reveal.js/) version 3.3.0
+1. Download [reveal.js version 3.3.0](https://github.com/hakimel/reveal.js/releases/tag/3.3.0)
 2. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
 3. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme` folder
 

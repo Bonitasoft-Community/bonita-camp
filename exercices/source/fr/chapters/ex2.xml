@@ -87,7 +87,7 @@
 				<para><emphasis role="bold">Créer le BDM "DemandeConges".</emphasis></para>
 				<para>Naviguer dans le menu "Développement / Modèle de Données Métier / Gérer...".</para>
 				<para>Cliquer sur "Ajouter" (A), dans la liste d'objets métiers et nommer l'objet "DemandeConges" (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
-				<para>Avec l'objet "DemandeConges" sélectionné, ajouter les attributs suivants (C):</para>
+				<para>Avec l'objet "DemandeConges" sélectionné, ajouter les attributs suivants (C) :</para>
 				<informaltable frame="all">
 					<tgroup cols="3" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -187,7 +187,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return demandeInput.dateDebut.compareTo(new Date()) &gt; 0;</programlisting></entry>
+								<entry><programlisting language="java">return demandeInput.dateDebut.compareTo(new Date()) &gt; 0</programlisting></entry>
 							</row>
 							<row>
 								<entry>Message d'erreur</entry>
@@ -214,7 +214,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return demandeInput.nombreJours &gt; 0;</programlisting></entry>
+								<entry><programlisting language="java">return demandeInput.nombreJours &gt; 0</programlisting></entry>
 							</row>
 							<row>
 								<entry>Message d'erreur</entry>
@@ -240,13 +240,13 @@
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
-				<para>Cliquer sur le bouton "OK" pour fermer l'éditeur d'expresion.</para>
+				<para>Cliquer sur le bouton "OK" pour fermer l'éditeur d’expression.</para>
 				<para>Cliquer à nouveau sur le bouton "OK" pour valider la modification de la variable métier.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
 				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
-				<para>Ajouter une entrée "estApprouvee" de type "BOOLEAN".</para>
+				<para>Cliquer sur le bouton "Ajouter" pour créer une nouvelle entrée avec le nom "estApprouvee" et de type "BOOLEAN".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter une opération sur la tâche "Valider demande" pour mettre à jour la demande.</emphasis></para>
@@ -265,8 +265,9 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
-				<para>Sélectionner la transition "Oui" et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
+				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
+				<para>Sélectionner la transition "Oui" et naviguer dans l'onglet "Général / Général".</para>
+				<para>Cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
 				<para>Dans l'éditeur d'expression, sélectionner "Java" comme type d'expression, sélectionner la variable "demande" et la méthode "isEstAprouvee".</para>
 				<para>
 					<mediaobject>
@@ -286,7 +287,7 @@
 				<para><emphasis role="bold">Astuces :</emphasis></para>
 				<itemizedlist mark='bullet'>
 					<listitem><para>pour le champ "dateDebut", le format de date attendu est AAAA-MM-JJ.</para></listitem>
-					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue: soit "true" ou "false".</para></listitem>
+					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue : soit "true" ou "false".</para></listitem>
 				</itemizedlist>
 				<para>
 					<mediaobject>

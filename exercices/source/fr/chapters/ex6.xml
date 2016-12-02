@@ -2,7 +2,7 @@
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
 
-	<title>Exercice: Créer une application de gestion de congés.</title>
+	<title>Exercice : Créer une application de gestion de congés.</title>
 
 	<section>
 		<title>Objectif</title>
@@ -11,12 +11,12 @@
 
 	<section>
 		<title>Instructions résumées</title>
-		<para>Créer une nouvelle page d'application "Suivi des demandes" qui permet de le suivi des demandes de congés initiés par l'utilisateur connecté</para>
-		<para>Cette page contient un container multiple qui liste les demandes de congés ouvertes. Pour chaque demande, la date de début, le nombre de jours et le status sont affichés.</para>
-		<para>Exporter la page d'application en tant que fichier ZIP et la déployer dans le portail.</para>
-		<para>Créer une nouvelle application et y ajouter la page "Suivi des demandes".</para>
+		<para>Ouvrir l'UI Designer et créer une nouvelle "Page d'application" nommée "SuiviDesDemandes" qui permet le suivi des demandes de congés initiés par l'utilisateur connecté.</para>
+		<para>Cette page contient un container multiple qui liste les demandes de congés ouvertes. Pour chaque demande, la date de début, le nombre de jours et le statut sont affichés.</para>
+		<para>Exporter la page d'application en tant que fichier ZIP et la déployer dans le portail via le menu "Ressources" de la vue "Administrateur".</para>
+		<para>Créer une nouvelle application et y ajouter la page "SuiviDesDemandes".</para>
 		<para>Accéder à l'application nouvellement créer en utilisant l'URL unique générée.</para>
-		<para>Optionnel: Ajouter un widget date et un widget input pour collecter les informations nécessaires à la création d'une nouvelle demande de congés. Puis ajouter et configurer un bouton pour soumettre la nouvelle demande.</para>
+		<para>Optionnel : Ajouter un widget date et un widget input pour collecter les informations nécessaires à la création d'une nouvelle demande de congés. Puis ajouter et configurer un bouton pour soumettre la nouvelle demande.</para>
 	</section>
 
 	<section>
@@ -69,18 +69,18 @@
 			<listitem>
 				<para><emphasis role="bold">Créer une variable pour lister les demandes de congés.</emphasis></para>
 				<para>Cliquer sur "Créer un nouvelle variable" et choisir "External API".</para>
-				<para>Nommer la "leaveRequestStatus".</para>
+				<para>Nommer la "demandesConges".</para>
 				<para>Dans le champ "API URL", taper : </para>
 				<para>
 					<programlisting language="xml">../API/bdm/businessData/com.company.model.DemandeConges?
 						q=findByIdDemandeur&amp;p=0&amp;c=100&amp;f=idDemandeur={{sessionInfo.user_id}}</programlisting>
 			 	</para>
-				<para>Faire attention qu'aucun espace dans l'URL ne subsiste apres le copier/coller.</para>
+				<para>Faire attention qu'aucun espace dans l'URL ne subsiste après le copier/coller.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Declarer une nouvelle expression Javascript pour mettre en forme la liste.</emphasis></para>
-				<para>Cliquer sur "Créer un nouvelle variable" et choisir "Javascript expression".</para>
-				<para>Nommer la "updateLeaveRequestStatus".</para>
+				<para><emphasis role="bold">Déclarer une nouvelle expression JavaScript pour mettre en forme la liste.</emphasis></para>
+				<para>Cliquer sur "Créer un nouvelle variable" et choisir "JavaScript expression".</para>
+				<para>Nommer la "ajoutLibelleStatutDemandeConges".</para>
 				<para>Remplacer la valeur existante par le script suivant : </para>
 				<para>
 					<programlisting language="javascript"><xi:include parse="text" href="../resources/code/ex6_updateLeaveRequestStatus.js"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
@@ -88,16 +88,16 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer un container multiple.</emphasis></para>
-				<para>Glisser le widget Container depuis la palette et placer le sous le titre "Suivi des demandes".</para>
-				<para>Sélectionner le container puis, sur le panneau de droite, entrer "leaveRequestStatus" dans le champ "Collections".</para>
+				<para>Glisser le widget "Container" depuis la palette et placer le sous le titre "Suivi des demandes".</para>
+				<para>Sélectionner le container puis, sur le panneau de droite, entrer "demandesConges" dans le champ "Collections".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter 4 widgets dans le container : </emphasis></para>
-				<para>Un widget input avec les options suivantes : Largeur: 3. Valeur: $index + 1. Lecture seule: Oui. Libellé: Num</para>
-				<para>Un widget date avec les options suivantes : Largeur: 3. Valeur: $item.dateDebut. Lecture seule: Oui. Libellé: Date de début</para>
-				<para>Un widget input avec les options suivantes : Largeur: 3. Valeur: $item.nombreJours. Lecture seule: Oui. Libellé: Nombre de jours</para>
-				<para>Un widget input avec les options suivantes : Largeur: 3. Valeur: $item.estApprouveeLabel. Lecture seule: Oui. Libellé: Status</para>
-				<para>Sauvegarder la page. La page devrait ressembler à çela :</para>
+				<para>Un widget "Input" avec les options suivantes : Largeur : 3. Valeur : $index + 1. Lecture seule : Oui. Libellé : Num</para>
+				<para>Un widget "Date picker" avec les options suivantes : Largeur : 3. Valeur : $item.dateDebut. Lecture seule : Oui. Libellé : Date de début</para>
+				<para>Un widget "Input" avec les options suivantes : Largeur : 3. Valeur : $item.nombreJours. Lecture seule : Oui. Libellé : Nombre de jours</para>
+				<para>Un widget "Input" avec les options suivantes : Largeur : 3. Valeur : $item.estApprouveeLabel. Lecture seule : Oui. Libellé : Statut</para>
+				<para>Sauvegarder la page. La page devrait ressembler à cela :</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -106,7 +106,7 @@
 					</mediaobject>
 				</para>
 				<para>Vous pouvez à n'importe quel moment pré-visualiser la page en cliquant sur "Aperçu".</para>
-				<para><emphasis role="bold">Astuce: </emphasis>Si vous êtes connectés au portail dans le même navigateur, les demandes de congés réelles seront affichés.</para>
+				<para><emphasis role="bold">Astuce : </emphasis>Si vous êtes connectés au portail dans le même navigateur, les demandes de congés réelles seront affichés.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Exporter la page.</emphasis></para>
@@ -117,7 +117,7 @@
 				<para>Se connecter au portail Bonita avec un utilisateur Administrateur.</para>
 				<para>Choisir le profil "Administrateur". Naviguer vers le menu "Ressources".</para>
 				<para>Cliquer sur le bouton "Ajouter" (A)</para>
-				<para>Sélectionner (B) la page au format ZIP et cliquer sur Suivant. Confirmer sur l'écran suivant.</para>
+				<para>Sélectionner (B) la page au format ZIP et cliquer sur "Suivant". Sur l'écran suivant cliquer sur "Confirmer".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -129,11 +129,11 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer une nouvelle application.</emphasis></para>
-				<para>Dans le portail, naviguer vers le menu Applications.</para>
-				<para>Cliquer sur Nouveau.</para>
-				<para>Saisir "Application de demande de conges" dans le champ "Nom affiché" (A).</para>
-				<para>Saisir "demandeConge" dans le champ "URL" (B).</para>
-				<para>Laisser les valeurs par defaut dans les champs Version (C) et Profils (D).</para>
+				<para>Dans le portail, naviguer vers le menu "Applications".</para>
+				<para>Cliquer sur "Nouveau".</para>
+				<para>Saisir "Application de demande de congés" dans le champ "Nom affiché" (A).</para>
+				<para>Saisir "demandeConges" dans le champ "URL" (B).</para>
+				<para>Laisser les valeurs par défaut dans les champs Version (C) et Profils (D).</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -143,8 +143,8 @@
 				</para>
 				<para>Cliquer sur "Créer" pour créer l'application.</para>
 				<para>Cliquer sur "..." pour accéder à l'écran de configuration.</para>
-				<para>Aller à la section "Pages", situé dans la partie basse de l'écran et cliquer sur "Ajouter". Sélectionner la page demandeConges et saisir "status" dans le champ "URL".</para>
-				<para>Définir la page demandeConges en tant que page d'accueil en cliquer sur l'icône "maison" <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></guiicon>.</para>
+				<para>Aller à la section "Pages", situé dans la partie basse de l'écran et cliquer sur "Ajouter". Sélectionner la page custompage_SuiviDesDemandes et saisir "statut" dans le champ "URL".</para>
+				<para>Définir la page SuiviDesDemandes en tant que page d'accueil en cliquer sur l'icône "maison" <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></guiicon>.</para>
 				<para>Une fois cela fait, cliquer sur l'icône "corbeille" <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></guiicon> pour supprimer la page par défaut.</para>
 				<para>Vérifier que la page de configuration ressemble à ceci : </para>
 				<para>
@@ -166,13 +166,13 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un nouveau form container.</emphasis></para>
-				<para>Retourner dans l'UI designer pour éditer la page de gestion des demandes de conges.</para>
+				<para>Retourner dans l'UI designer pour éditer la page de gestion des demandes de congés.</para>
 				<para>Glisser un form container depuis la palette et le placer entre les deux titres.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer une nouvelle variable pour stocker les informations liées à la demande de congés.</emphasis></para>
 				<para>Cliquer sur "Créer sur une nouvelle variable" et choisir "JSON".</para>
-				<para>Nommer le "formInput".</para>
+				<para>Nommer la "nouvelleDemandeConges".</para>
 				<para>Dans le champ texte "valeur", taper le script suivant : </para>
 				<para>
 					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex6_formInput.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
@@ -181,32 +181,32 @@
 			<listitem>
 				<para><emphasis role="bold">Créer une nouvelle variable pour stocker les informations liés au processus.</emphasis></para>
 				<para>Cliquer sur "Créer une nouvelle variable" et choisir "External API".</para>
-				<para>Nommer le "processDefinitionInfo".</para>
-				<para>Dans le champ API URL, taper : </para>
+				<para>Nommer le "informationDefinitionProcessus".</para>
+				<para>Dans le champ URL d'API, taper : </para>
 				<para><programlisting language="xml">../API/bpm/process?
 					p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Demande%20de%20Conges&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
-				<para>Faire attention qu'aucun espace dans l'URL ne subsiste apres le copier/coller.</para>
+				<para>Faire attention qu'aucun espace dans l'URL ne subsiste après le copier/coller.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter deux widgets dans le form container.</emphasis></para>
-				<para>Un widget date avec les options: Largeur : 6. Valeur : formInput.demandeInput.dateDebut. Libellé : Date Début</para>
-				<para>Un widget input avec les options : Largeur : 6. Valeur: formInput.demandeInput.nombreJours. Libellé: Nombre de jours</para>
+				<para>Un widget date avec les options : Largeur : 6. Valeur : nouvelleDemandeConges.demandeInput.dateDebut. Libellé : Date de début</para>
+				<para>Un widget input avec les options : Largeur : 6. Valeur : nouvelleDemandeConges.demandeInput.nombreJours. Libellé : Nombre de jours</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un bouton pour soumettre le formulaire.</emphasis></para>
 				<para>Glisser le widget bouton depuis la palette et placer le dans le form container en dessous des deux widgets.</para>
 				<para>Entrer "Créer une nouvelle demande" dans le champ libellé.</para>
-				<para>Sélectionner POST dans le list déroulante "Action".</para>
-				<para>Cliquer sur "fx" pour changer le mode du champ "Données envoyés au click" et taper "formInput".</para>
+				<para>Sélectionner POST dans la liste déroulante "Action".</para>
+				<para>Cliquer sur "fx" pour changer le mode du champ "Données envoyés au clic" et taper "nouvelleDemandeConges".</para>
 				<para>Dans le champ "URL à appeler", taper :</para>
-				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
+				<para><programlisting language="xml">../API/bpm/process/{{informationDefinitionProcessus[0].id}}/instantiation</programlisting></para>
 				<para>Dans le champ "URL cible en cas de succès", taper : </para>
-				<para><programlisting language="xml">/bonita/apps/demandeConge</programlisting></para>
+				<para><programlisting language="xml">/bonita/apps/demandeConges</programlisting></para>
 				<para>Sauver la page. La page devrait maintenant ressembler à ceci : </para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_13.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -215,9 +215,9 @@
 			<listitem>
 				<para><emphasis role="bold">Mettre à jour la page dans le portail.</emphasis></para>
 			<para>Exporter la nouvelle version de la page.</para>
-			<para>Se connecter au portail et cliquer sur le bouton Editer de la page.</para>
+			<para>Se connecter au portail et cliquer sur le bouton Éditer de la page.</para>
 			<para>Sélectionner le fichier ZIP correspondant la nouvelle version de la page.</para>
-			<para>Rafraichir l'application, les changements devraient être visibles.</para>
+			<para>Rafraîchir l'application, les changements devraient être visibles.</para>
 		</listitem>
 		</orderedlist>
 	</section>
