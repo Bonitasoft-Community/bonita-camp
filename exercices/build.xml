@@ -34,7 +34,7 @@
 		<!-- Build ZIP with exercises and corrections -->
 		<zip destfile="${dir.target}/${ant.project.name}-${docbook.xml.language}.zip">
 			<zipfileset dir="${dir.target}" includes="*.pdf" prefix="${ant.project.name}"/>
-			<zipfileset dir="${basedir}/corrections/${docbook.xml.language}" includes="*.bos" prefix="${ant.project.name}/Corrections"/>
+			<zipfileset dir="${basedir}/corrections/${docbook.xml.language}" includes="*" prefix="${ant.project.name}/Corrections"/>
 		</zip>
 	</target>
 </project>
