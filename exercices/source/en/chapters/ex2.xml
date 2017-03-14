@@ -132,11 +132,11 @@
 					</mediaobject>
 				</para>
 				<para>Click on "Finish". </para>
-				<para>You should be displayed the following message to confirm the deployment of the BDM. Check the box "Don't show me this message again" and click on "Ok".</para>
+				<para>You should be displayed with the following message that confirm the deployment of the BDM. Check the box "Don't show me this message again" and click on "Ok".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_10.png" />
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_10.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

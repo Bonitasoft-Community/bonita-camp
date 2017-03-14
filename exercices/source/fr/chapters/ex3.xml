@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire d'instanciation.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Exécution / Formulaire d'instanciation".</para>
-				<para>Utiliser le menu déroulant "Formulaire cible" pour créer un nouveau formulaire.</para>
+				<para>Cliquer sur l'icone "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -39,33 +39,6 @@
 				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
 				<para>Utiliser le champ texte en haut de l'écran pour renommer le formulaire depuis "newForm" vers "remplirDemandeConges" (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
 				<para>Cliquer sur le bouton enregistrer.</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Ajouter un conteneur de formulaire</emphasis></para>
-				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Form container" dans une nouvelle ligne en dessous du widget "Demande Input".</para>
-				<para><emphasis role="bold">Astuce :</emphasis> Une zone en pointillé permettant d'insérer une nouvelle ligne apparait lorsque l'on survole la séparation entre deux widget.</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_02.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
-				<para>Le conteneur de formulaire permet de fournir une aide à la validation du contenu du formulaire (champs obligatoires et valeur des champs).</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Déplacer les widgets existants dans le conteneur de formulaire</emphasis></para>
-				<para>Sélectionner le widget "Date Debut" et le faire glisser dans le conteneur de formulaire.</para>
-				<para>Répéter l'opération pour les widgets "Nombre Jours" et "Submit" en créant de nouvelles lignes.</para>
-				<para>Une fois les widgets regroupés sous le conteneur de formulaire, sélectionner et supprimer les lignes vides.</para>
-				<para><emphasis role="bold">Astuce :</emphasis> Survoler la barre grise se situant à gauche d'une ligne (A) pour faire apparaître les actions dont la suppression (B).</para>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_03.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Changer le titre du formulaire</emphasis></para>
@@ -322,8 +295,8 @@
 				<para>Créer une nouvelle variable, la nommer "erreur", laisser son type à "String" et sa valeur vide puis enregistrer.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee"</emphasis></para>
-				<para>Sélectionner la case à cocher "Est Approuvee" et utiliser le contrôle de suppression qui apparait lorsque l'on survole le widget avec le curseur.</para>
+				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee" et le bouton "Submit"</emphasis></para>
+				<para>Sélectionner le Form container qui contient la case à cocher ainsi que le bouton et supprimer le. Pour cela, utiliser le contrôle de suppression qui apparait lorsque l'on survole le container avec le curseur.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -333,11 +306,8 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer le bouton "Submit"</emphasis></para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Ajouter un titre au formulaire</emphasis></para>
-				<para>Faire glisser un widget de type "Titre" depuis la palette vers l'espace inoccupé du formulaire.</para>
+				<para><emphasis role="bold">Modifier le titre du formulaire</emphasis></para>
+				<para>Sélectionner le widget de type "Titre" situé en haut du formulaire.</para>
 				<para>Configurer le widget de la manière suivante:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -399,7 +369,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour afficher la date de début</emphasis></para>
-				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Faire glisser un widget de type "Date picker" dans une nouvelle ligne sous le titre du formulaire.</para>
 				<para>Configurer le widget comme ceci:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">

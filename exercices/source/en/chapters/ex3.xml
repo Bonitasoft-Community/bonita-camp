@@ -281,7 +281,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Remove the "Is Approved" checkbox and the "Submit" button</emphasis></para>
-				<para>Select the Form container that contains the checkbox and buttons widgets, then delete it by using the X button that appears when hovering over the container with the cursor.</para>
+				<para>Select the Form container that contains the checkbox and button widgets, then delete it by using the X button that appears when hovering over the container with the cursor.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -291,7 +291,7 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a form title</emphasis></para>
+				<para><emphasis role="bold">Modify the form title</emphasis></para>
 				<para>Select the existing "Title" widget and configure it as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">

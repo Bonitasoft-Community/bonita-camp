@@ -93,11 +93,131 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter 4 widgets dans le container : </emphasis></para>
-				<para>Un widget input avec les options suivantes : Largeur: 3. Valeur: $index + 1. Lecture seule: Oui. Libellé: Num</para>
-				<para>Un widget date avec les options suivantes : Largeur: 3. Valeur: $item.dateDebut. Lecture seule: Oui. Libellé: Date de début</para>
-				<para>Un widget input avec les options suivantes : Largeur: 3. Valeur: $item.nombreJours. Lecture seule: Oui. Libellé: Nombre de jours</para>
-				<para>Un widget input avec les options suivantes : Largeur: 3. Valeur: $item.estApprouveeLabel. Lecture seule: Oui. Libellé: Status</para>
-				<para>Sauvegarder la page. La page devrait ressembler à çela :</para>
+				<para>Un widget "Input" avec les options suivantes : </para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Largeur</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Num</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>$index + 1</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Un widget "Date picker" avec les options suivantes : </para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Largeur</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Date de début</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>$item.dateDebut</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>		
+				<para>Un widget input avec les options suivantes : </para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Largeur</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Nombre de jours</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>$item.nombreJours</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Un widget input avec les options suivantes : </para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Propriété</entry>
+								<entry>Valeur</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Largeur</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Lecture seule</entry>
+								<entry>Oui</entry>
+							</row>
+							<row>
+								<entry>Libellé</entry>
+								<entry>Status</entry>
+							</row>
+							<row>
+								<entry>Valeur</entry>
+								<entry>$item.estApprouveeLabel</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>			
+				<para>Sauvegarder la page. La page devrait ressembler à cela :</para>
 				<para>
 					<mediaobject>
 						<imageobject>
