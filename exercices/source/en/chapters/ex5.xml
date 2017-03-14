@@ -30,8 +30,8 @@
 		<orderedlist>
 			<listitem>
 				<para><emphasis role="bold">FakeSMTP setup</emphasis></para>
-				<para>Retrieve the FakeSMTP binaries from this URL: <link linkend="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</link></para>
-				<para>Run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
+				<para>Download FakeSMTP from this link: <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
+				<para>Unzip the file and run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
@@ -60,7 +60,7 @@
 							</row>
 							<row>
 								<entry>SMTP port</entry>
-								<entry>25</entry>
+								<entry>25 (Or the port number specified in FakeSMTP)</entry>
 							</row>
 							<row>
 								<entry>SSL (in the "Security" section)</entry>

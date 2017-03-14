@@ -131,7 +131,15 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on "Finish".</para>
+				<para>Click on "Finish". </para>
+				<para>You should be displayed the following message to confirm the deployment of the BDM. Check the box "Don't show me this message again" and click on "Ok".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_10.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Declare an instance of the "LeaveRequest" BDM on your process</emphasis></para>
@@ -151,7 +159,7 @@
 				<para><emphasis role="bold">Set up the case instantiation contract</emphasis></para>
 				<para>Select the process pool, and navigate to the "Execution / Contract / Inputs" tab.</para>
 				<para>Click on "Add from data".</para>
-				<para>Select the "request" BDM and click on "Next".</para>
+				<para>Select the "request" BDM and click on "Next". Keep the default input name "requestInput".</para>
 				<para>Uncheck the "requestorId" and "isApproved" attributes.</para>
 				<para>
 					<mediaobject>
@@ -160,7 +168,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on "Finish" and dismiss the warning messages about the incomplete initialization of the business variable.</para>
+				<para>Click on "Finish" and dismiss the warning messages about the incomplete initialization of the business variable.</para>		
 				<para>
 					<mediaobject>
 						<imageobject>

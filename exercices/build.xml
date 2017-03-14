@@ -3,7 +3,7 @@
 
 	<!-- Dockbook default build properties -->
 	<property name="docbook.xml.filename" value="docbook" />
-	<property name="docbook.xml.language" value="fr" />
+	<property name="docbook.xml.language" value="en" />
 	<import file="${net.sourceforge.dep4e.resources}/ant/docbook_5-0.xml" />
 
 	<!-- Packages the BPM Camp content (except slides) as a ZIP -->
