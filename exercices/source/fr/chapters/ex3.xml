@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire d'instanciation.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Exécution / Formulaire d'instanciation".</para>
-				<para>Utiliser le menu déroulant "Formulaire cible" pour créer un nouveau formulaire.</para>
+				<para>Cliquer sur l'icone "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -282,8 +282,8 @@
 				<para>Créer une nouvelle variable, la nommer "erreur", laisser son type à "String" et sa valeur vide puis enregistrer.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee"</emphasis></para>
-				<para>Sélectionner la case à cocher "Est Approuvee" et utiliser le contrôle de suppression qui apparaît lorsque l'on survole le widget avec le curseur.</para>
+				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee" et le bouton "Submit"</emphasis></para>
+				<para>Sélectionner le Form container qui contient la case à cocher ainsi que le bouton et supprimer le. Pour cela, utiliser le contrôle de suppression qui apparait lorsque l'on survole le container avec le curseur.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -293,12 +293,9 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Supprimer le bouton "Submit"</emphasis></para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Modifier le titre au formulaire</emphasis></para>
-				<para>Sélectionner le widget automatiquement généré.</para>
-				<para>Modifier la configuration du widget de la manière suivante :</para>
+				<para><emphasis role="bold">Modifier le titre du formulaire</emphasis></para>
+				<para>Sélectionner le widget de type "Titre" situé en haut du formulaire.</para>
+				<para>Configurer le widget de la manière suivante:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>

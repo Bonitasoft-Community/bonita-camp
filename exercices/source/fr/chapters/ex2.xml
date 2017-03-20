@@ -132,6 +132,14 @@
 					</mediaobject>
 				</para>
 				<para>Cliquer sur "Terminer".</para>
+				<para>Le message suivant s'affiche pour confirmer le deploiement du BDM. Cocher l'option "Don't show me this message again" et cliquer sur "Ok".</para>
+				<para>
+					<mediaobject>
+						<imageobject>
+							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_10.png" />
+						</imageobject>
+					</mediaobject>
+				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Déclarer une variable métier de type "DemandeConges" dans le processus.</emphasis></para>
@@ -151,7 +159,7 @@
 				<para><emphasis role="bold">Configurer le contrat d'instanciation</emphasis></para>
 				<para>Sélectionner le pool de processus et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
 				<para>Cliquer sur le bouton "Ajouter à partir de données...".</para>
-				<para>Sélectionner la variable métier "demande" et cliquer sur "Suivant".</para>
+				<para>Sélectionner la variable métier "demande" et cliquer sur "Suivant". Garder le nom par défaut "demandeInput".</para>
 				<para>Décocher les attributs "idDemandeur" et "estApprouvee".</para>
 				<para>
 					<mediaobject>

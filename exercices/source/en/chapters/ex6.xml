@@ -72,8 +72,7 @@
 				<para>Name it "leaveRequestStatus".</para>
 				<para>In the field API URL, enter: (no line break)</para>
 				<para>
-					<programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?
-						q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting>
+					<programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting>
 			 	</para>
 				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
 			</listitem>
@@ -93,11 +92,131 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add 4 widgets in the container.</emphasis></para>
-				<para>One input widget with the options: Width: 3. Value: $index + 1. Read-only: Yes. Label: Num</para>
-				<para>One date widget with the options: Width: 3. Value: $item.leaveStart. Read-only: Yes. Label: Start date</para>
-				<para>One input widget with the options: Width: 3. Value: $item.dayCount. Read-only: Yes. Label: Number of days</para>
-				<para>One input widget with the options: Width: 3. Value: $item.isApprovedLabel. Read-only: Yes. Label: Status</para>
-				<para>Save the page. The page should look like that:</para>
+				<para>One "Input" widget with the following options:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Width</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Read-Only</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Num</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>$index + 1</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>One "Date picker" widget with the following options:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Width</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Read-Only</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Start date</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>$item.leaveStart</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>One input widget with the following options:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Width</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Read-Only</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Number of days</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>$item.dayCount</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable> 
+				<para>One "Input" widget with the following options:</para>
+				<informaltable frame="all">
+					<tgroup cols="2" align="left" colsep="1" rowsep="1">
+						<colspec colname='c1' colwidth="2*"/>
+						<colspec colname='c2' colwidth="4*"/>
+						<thead>
+							<row>
+								<entry>Property</entry>
+								<entry>Value</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>Width</entry>
+								<entry>3</entry>
+							</row>
+							<row>
+								<entry>Read-Only</entry>
+								<entry>Yes</entry>
+							</row>
+							<row>
+								<entry>Label</entry>
+								<entry>Status</entry>
+							</row>
+							<row>
+								<entry>Value</entry>
+								<entry>$item.isApprovedLabel</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<para>Save the page. The page should look like this:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -218,6 +337,13 @@
 			<para>Log in the portal and edit the previous page.</para>
 			<para>Select the new zip file.</para>
 			<para>Refresh your application, the change should be visible.</para>
+			<para>
+				<mediaobject>
+					<imageobject>
+						<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_13.png" />
+					</imageobject>
+				</mediaobject>
+			</para>
 		</listitem>
 		</orderedlist>
 	</section>

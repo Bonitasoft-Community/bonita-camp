@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Create a case instantiation form.</emphasis></para>
 				<para>Select the process pool, and navigate to the "Execution / Instantiation form" tab.</para>
-				<para>Use the "Target form" drop-down to create a new form.</para>
+				<para>Click on the pencil next to the Target form input.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -137,14 +137,13 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a variable to handle potential form submit errors</emphasis></para>
+				<para><emphasis role="bold">Add a variable to store potential form submit errors</emphasis></para>
 				<para>In the lower "Variables" section, click on "Create a new variable".</para>
 				<para>Set the variable name to "error", leave its type to "String" and it value empty then click on "Save".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Update the "Submit" widget</emphasis></para>
-				<para>Select the "Submit" widget.</para>
-				<para>Set the "Failed response value" property to "error" (this allows to retrieve submission error details if any).</para>
+				<para>Set the "Failed response value" property to "error" (this will store the submit errors in the variable "error" if any).</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Dynamically display the error</emphasis></para>
@@ -170,8 +169,9 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on the top most "Preview" button.</para>
-				<para>Make sure that the form preview looks like this:</para>
+				<para>Click on the "Save" button.</para>
+				<para>Click on the "Preview" button.</para>
+				<para>The form should look like this:</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -179,29 +179,26 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Check for following points:</para>
+				<para>Verify the following points:</para>
 				<itemizedlist>
 					<listitem><para>the widget presenting the error is not visible</para></listitem>
 					<listitem><para>the "Submit" button is disabled by default (this is due to the validation provided by the form container)</para></listitem>
 					<listitem><para>the "Submit" button is enabled when the form is valid</para></listitem>
 				</itemizedlist>
-				<para><emphasis role="bold">Note:</emphasis> the form cannot be submitted from the preview mode even when it is valid.</para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Save the form</emphasis></para>
-				<para>Use the top "Save" button to save the form.</para>
+				<para><emphasis role="bold">Note:</emphasis> the form cannot be submitted from the preview mode even if it is valid.</para>
+				<para>Close the preview window.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Create a form for the "Validate request" task.</emphasis></para>
 				<para>In the Studio, select the "Validate request" task and navigate to the "Execution / Form" tab.</para>
-				<para>Use the "Target form" drop down to create a new form.</para>
+				<para>Click on the pencil next to the Target form input to open a new form in the UI Designer.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Rename the form</emphasis></para>
 				<para>In the UI Designer, rename the form into "validateLeaveRequest" and save it.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Remove unneeded variables</emphasis></para>
+				<para><emphasis role="bold">Remove unnecessary variables</emphasis></para>
 				<para>In the lower "variables" section of the screen, remove the following variables:</para>
 				<itemizedlist>
 					<listitem><para>formInput</para></listitem>
@@ -276,8 +273,8 @@
 				<para>Create a new variable named "error", leave its type to "String" and its value empty then save it.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Remove the "Is Approved" checkbox</emphasis></para>
-				<para>Select the "Is Approved" checkbox and use the removal link that appears when hovering over the widget with the cursor.</para>
+				<para><emphasis role="bold">Remove the "Is Approved" checkbox and the "Submit" button</emphasis></para>
+				<para>Select the Form container that contains the checkbox and button widgets, then delete it by using the X button that appears when hovering over the container with the cursor.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -287,12 +284,8 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Remove the "Submit" button</emphasis></para>
-			</listitem>
-			<listitem>
-				<para><emphasis role="bold">Edit the form title</emphasis></para>
-				<para>Select the widget automatically created.</para>
-				<para>Edit the widget configuration as following:</para>
+				<para><emphasis role="bold">Modify the form title</emphasis></para>
+				<para>Select the existing "Title" widget and configure it as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -341,7 +334,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the leave start date</emphasis></para>
-				<para>Drag an "Text" widget from the palette and drop it on a new row under the requestor widget.</para>
+				<para>Drag an "Text" widget from the palette and drop it in the Form container under the requestor widget.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -356,12 +349,11 @@
 						<tbody>
 							<row>
 								<entry>Value</entry>
-								<entry><code>&lt;b&gt;Leave start: &lt;/b&gt;{{request.leaveStart | date : 'MM/dd/yyyy' : 'UTC'}}</code></entry>
+								<entry>&lt;b&gt;Leave start date: &lt;/b&gt;{{request.leaveStart | date : 'dd/MM/yyyy' : 'UTC'}}</entry>
 							</row>
 						</tbody>
 					</tgroup>
 				</informaltable>
-				<para><emphasis role="bold">Note:</emphasis> we are using an AngularJS filter "| date" to display the date in a user-friendly format.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the number of days</emphasis></para>
@@ -492,7 +484,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_08.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

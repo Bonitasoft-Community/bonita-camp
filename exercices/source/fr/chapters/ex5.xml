@@ -30,8 +30,8 @@
 		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Mise en place de FakeSMTP</emphasis></para>
-				<para>Récupérer le binaire de FakeSMTP depuis cette URL : <ulink url="https://nilhcem.github.io/FakeSMTP/">https://nilhcem.github.io/FakeSMTP/</ulink></para>
-				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante :</para>
+				<para>Récupérer le binaire de FakeSMTP depuis cette URL: <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
+				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante:</para>
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
@@ -60,7 +60,7 @@
 							</row>
 							<row>
 								<entry>Port SMTP</entry>
-								<entry>2525 (port par défaut de FakeSMTP)</entry>
+								<entry>2525 (port par défaut de FakeSMTP ou le port spécifié dans FakeSMTP )</entry>
 							</row>
 							<row>
 								<entry>SSL (sous l'onglet "Sécurité")</entry>
