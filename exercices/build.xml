@@ -3,7 +3,7 @@
 
 	<!-- Dockbook default build properties -->
 	<property name="docbook.xml.filename" value="docbook" />
-	<property name="docbook.xml.language" value="fr" />
+	<property name="docbook.xml.language" value="en" />
 	<import file="${net.sourceforge.dep4e.resources}/ant/docbook_5-0.xml" />
 
 	<!-- Packages the BPM Camp content (except slides) as a ZIP -->
@@ -34,7 +34,7 @@
 		<!-- Build ZIP with exercises and corrections -->
 		<zip destfile="${dir.target}/${ant.project.name}-${docbook.xml.language}.zip">
 			<zipfileset dir="${dir.target}" includes="*.pdf" prefix="${ant.project.name}"/>
-			<zipfileset dir="${basedir}/corrections/${docbook.xml.language}" includes="*.bos" prefix="${ant.project.name}/Corrections"/>
+			<zipfileset dir="${basedir}/corrections/${docbook.xml.language}" includes="*" prefix="${ant.project.name}/Corrections"/>
 		</zip>
 	</target>
 </project>

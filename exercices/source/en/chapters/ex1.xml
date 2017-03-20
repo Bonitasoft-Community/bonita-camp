@@ -32,7 +32,7 @@
 			<listitem><para><emphasis role="bold">Create a new process diagram.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Set the diagram and process names.</emphasis></para>
-				<para>Click on the "Diagram / Rename" top menu.</para>
+				<para>Click on the "Diagram / Rename..." top menu.</para>
 				<para>Enter "Leave request diagram" as the diagram name and "Leave request" as the pool name.</para>
 				<para>
 					<mediaobject>
@@ -116,7 +116,7 @@
 			<listitem>
 				<para><emphasis role="bold">Validate the diagram.</emphasis></para>
 				<para>Once the transition conditions are properly set, you can re-validate the process diagram.
-				To do so, navigate to the "Validation status" tab and click on "refresh".
+				To do so, navigate to the "Validation status" tab and click on "Refresh".
 				You may safely ignore the 3 warnings related to the UI Designer.</para>
 			</listitem>
 			<listitem>
@@ -146,7 +146,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Submit the form of the "Validate request" task to complete your case.</para>
+				<para>Submit the form of the "Validate request" task by clicking on the "Execute" button to complete your case.</para>
 			</listitem>
 		</orderedlist>
 	</section>

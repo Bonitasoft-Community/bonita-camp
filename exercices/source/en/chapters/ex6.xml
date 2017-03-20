@@ -11,10 +11,10 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>Create a page called "Leave Request Status" to follow the progress of the connected user leave request.</para>
+		<para>Open the UI Designer and create a new "Application page" named "LeaveRequestStatus" to follow the progress of the connected user leave request.</para>
 		<para>This page will contain one multiple container that list the on-going leave request. For each request, the start date, number of days and status will be displayed.</para>
-		<para>Export the page as a zip file and deploy it in the portal.</para>
-		<para>Create a new application. Then add the "Leave Request Status" page in the application.</para>
+		<para>Export the page as a zip file and deploy it in the portal using the "Resources" menu of the "Administrator" view.</para>
+		<para>Create a new application. Then add the "LeaveRequestStatus" page in the application.</para>
 		<para>Access the application using the generated URL.</para>
 		<para>Optional: Add a date widget and an input widget to collect new leave request information in the page. Then add a submit button to start a new leave request.</para>
 	</section>
@@ -50,7 +50,7 @@
 			<listitem>
 				<para><emphasis role="bold">Add another title below.</emphasis></para>
 				<para>Name it "Leave request status".</para>
-				<para>Select "level 4" from the Title Level dropdown list. Select "center" for alignment.</para>
+				<para>Select "level 4" from the Title Level drop-down list. Select "center" for alignment.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Create a variable to store the session information.</emphasis></para>
@@ -70,15 +70,15 @@
 				<para><emphasis role="bold">Create a variable to list the leave request.</emphasis></para>
 				<para>Click on "Create a new variable" and choose "External API".</para>
 				<para>Name it "leaveRequestStatus".</para>
-				<para>In the field API URL, enter: (no breakline)</para>
+				<para>In the field API URL, enter: (no line break)</para>
 				<para>
 					<programlisting language="xml">../API/bdm/businessData/com.company.model.LeaveRequest?q=findByRequestorId&amp;p=0&amp;c=100&amp;f=requestorId={{sessionInfo.user_id}}</programlisting>
 			 	</para>
 				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Define a new Javascript expression to prepare the list.</emphasis></para>
-				<para>Click on "Create a new variable" and choose "Javascript expression".</para>
+				<para><emphasis role="bold">Define a new JavaScript expression to prepare the list.</emphasis></para>
+				<para>Click on "Create a new variable" and choose "JavaScript expression".</para>
 				<para>Name it "updateLeaveRequestStatus".</para>
 				<para>Replace the existing value with the following script:</para>
 				<para>
@@ -301,7 +301,7 @@
 				<para><emphasis role="bold">Create a new variable to store the process information.</emphasis></para>
 				<para>Click on "Create a new variable" and choose "External API".</para>
 				<para>Name it "processDefinitionInfo".</para>
-				<para>In the field API URL, enter: (no breakline)</para>
+				<para>In the field API URL, enter: (no line break)</para>
 				<para><programlisting language="xml">../API/bpm/process?
 					p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Leave%20Request&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
 				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
@@ -315,7 +315,7 @@
 				<para><emphasis role="bold">Add a submit button in the form container.</emphasis></para>
 				<para>Drag the button widget from the palette and place it in the form container below the two widgets.</para>
 				<para>Enter "Create a new request" in the field label.</para>
-				<para>Select POST in the Action dropdown list.</para>
+				<para>Select POST in the Action drop-down list.</para>
 				<para>Click on "fx" to switch the "Data sent on click" field mode and then enter "formInput".</para>
 				<para>In the field URL, enter:</para>
 				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>

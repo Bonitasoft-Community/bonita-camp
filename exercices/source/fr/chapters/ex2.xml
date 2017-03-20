@@ -12,7 +12,7 @@
 		</orderedlist>
 		<para>Une fois complété, le processus sera exécutable avec des formulaires générés automatiquement.</para>
 		<warning>
-			<para>Il est important de strictement respecter la casse et la syntaxe des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
+			<para>Il est important de respecter strictement la casse et la syntaxe des noms techniques fournis dans les instructions sous peine d'erreurs.</para>
 		</warning>
 	</section>
 
@@ -87,7 +87,7 @@
 				<para><emphasis role="bold">Créer le BDM "DemandeConges".</emphasis></para>
 				<para>Naviguer dans le menu "Développement / Modèle de Données Métier / Gérer...".</para>
 				<para>Cliquer sur "Ajouter" (A), dans la liste d'objets métiers et nommer l'objet "DemandeConges" (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
-				<para>Avec l'objet "DemandeConges" sélectionné, ajouter les attributs suivants (C):</para>
+				<para>Avec l'objet "DemandeConges" sélectionné, ajouter les attributs suivants (C) :</para>
 				<informaltable frame="all">
 					<tgroup cols="3" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -144,7 +144,7 @@
 			<listitem>
 				<para><emphasis role="bold">Déclarer une variable métier de type "DemandeConges" dans le processus.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Données / Variables du pool".</para>
-				<para>Cliquer sur "Ajouter" dans la section "Variables métier".</para>
+				<para>Cliquer sur "Ajouter..." dans la section "Variables métier".</para>
 				<para>Nommer la variable "demande" et sélectionner le type d'objet métier "DemandeConges".</para>
 				<para>Cliquer sur "Terminer".</para>
 				<para>
@@ -168,7 +168,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click sur "Terminer" et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
+				<para>Cliquer sur "Terminer" et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -195,7 +195,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return demandeInput.dateDebut.compareTo(new Date()) &gt; 0;</programlisting></entry>
+								<entry><programlisting language="java">return demandeInput.dateDebut.compareTo(new Date()) &gt; 0</programlisting></entry>
 							</row>
 							<row>
 								<entry>Message d'erreur</entry>
@@ -222,7 +222,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return demandeInput.nombreJours &gt; 0;</programlisting></entry>
+								<entry><programlisting language="java">return demandeInput.nombreJours &gt; 0</programlisting></entry>
 							</row>
 							<row>
 								<entry>Message d'erreur</entry>
@@ -242,17 +242,19 @@
 			<listitem>
 				<para><emphasis role="bold">Modifier l'initialisation de la variable métier.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Données / Variables du pool".</para>
-				<para>Sélectionner la variable "demande" et cliquer sur "Modifier".</para>
+				<para>Sélectionner la variable "demande" et cliquer sur "Modifier...".</para>
 				<para>Cliquer sur l'icône "crayon" associé au champ "Valeur par défaut" pour ouvrir l'éditeur d'expression.</para>
 				<para>Entrer le code suivant (ou simplement appliquer les modifications) :</para>
 				<para>
 					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
+				<para>Cliquer sur le bouton "OK" pour fermer l'éditeur d’expression.</para>
+				<para>Cliquer à nouveau sur le bouton "OK" pour valider la modification de la variable métier.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
 				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
-				<para>Ajouter une entrée "estApprouvee" de type "BOOLEAN".</para>
+				<para>Cliquer sur le bouton "Ajouter" pour créer une nouvelle entrée avec le nom "estApprouvee" et de type "BOOLEAN".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter une opération sur la tâche "Valider demande" pour mettre à jour la demande.</emphasis></para>
@@ -271,8 +273,9 @@
 				</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
-				<para>Sélectionner la transition "Oui" et cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
+				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" à partir de l'attribut "estApprouvee" du BDM "demande".</emphasis></para>
+				<para>Sélectionner la transition "Oui" et naviguer dans l'onglet "Général / Général".</para>
+				<para>Cliquer sur l'icône crayon à côté du champ "Condition" pour ouvrir l'éditeur d'expression.</para>
 				<para>Dans l'éditeur d'expression, sélectionner "Java" comme type d'expression, sélectionner la variable "demande" et la méthode "isEstAprouvee".</para>
 				<para>
 					<mediaobject>
@@ -292,7 +295,7 @@
 				<para><emphasis role="bold">Astuces :</emphasis></para>
 				<itemizedlist mark='bullet'>
 					<listitem><para>pour le champ "dateDebut", le format de date attendu est AAAA-MM-JJ.</para></listitem>
-					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue: soit "true" ou "false".</para></listitem>
+					<listitem><para>pour le champ "estApprouvee", une valeur booléenne est attendue : soit "true" ou "false".</para></listitem>
 				</itemizedlist>
 				<para>
 					<mediaobject>

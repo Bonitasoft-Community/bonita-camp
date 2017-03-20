@@ -43,7 +43,7 @@
 			<listitem>
 				<para><emphasis role="bold">Changer le titre du formulaire</emphasis></para>
 				<para>Sélectionner le widget "Demande Input" en haut du formulaire.</para>
-				<para>Dans la section à droite de l'écran, éditer les propriétés suivantes:</para>
+				<para>Dans la section à droite de l'écran, éditer les propriétés suivantes :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -73,7 +73,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Changer le widget "Date Debut"</emphasis></para>
-				<para>Sélectionner le widget "Date Debut" et éditer les propriétés suivantes:</para>
+				<para>Sélectionner le widget "Date Debut" et éditer les propriétés suivantes :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -86,20 +86,16 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Obligatoire</entry>
-								<entry>oui</entry>
-							</row>
-							<row>
 								<entry>Libellé</entry>
 								<entry>Date de début</entry>
 							</row>
 							<row>
 								<entry>Placeholder</entry>
-								<entry>Date de début des congés</entry>
+								<entry>jj/mm/aaaa</entry>
 							</row>
 							<row>
 								<entry>Format de la date</entry>
-								<entry>yyyy-MM-dd</entry>
+								<entry>dd/MM/yyyy</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -107,7 +103,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Changer le widget "Nombre Jours"</emphasis></para>
-				<para>Sélectionner le widget "Nombre Jours" et éditer les propriétés suivantes:</para>
+				<para>Sélectionner le widget "Nombre Jours" et éditer les propriétés suivantes :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -119,10 +115,6 @@
 							</row>
 						</thead>
 						<tbody>
-							<row>
-								<entry>Obligatoire</entry>
-								<entry>oui</entry>
-							</row>
 							<row>
 								<entry>Libellé</entry>
 								<entry>Nombre de jours</entry>
@@ -143,7 +135,7 @@
 			<listitem>
 				<para><emphasis role="bold">Supprimer les valeurs initiales des champs</emphasis> (cela permettra d'afficher les placeholders lors du rendu final)</para>
 				<para>Dans la partie inférieure de l'écran, sous l'onglet "variables", cliquer sur l'icône crayon situé à droite de la ligne contenant la variable "formInput".</para>
-				<para>Remplacer la valeur du JSON par ceci:</para>
+				<para>Remplacer la valeur du JSON par ceci :</para>
 				<para>
 					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex3_initFormInputs.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
@@ -157,11 +149,6 @@
 				<para><emphasis role="bold">Changer le widget "Submit"</emphasis></para>
 				<para>Sélectionner le widget "Submit"</para>
 				<para>Changer son libellé en "Soumettre"</para>
-				<para>Cliquer sur l'icône de "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> se trouvant à côté de la propriété "Désactivés".</para>
-				<para>Saisissez le code suivant dans le champ nouvellement affiché (cela aura pour effet de désactiver le bouton si le formulaire contient des données invalides) :</para>
-				<para>
-					<programlisting language="javascript">$form.$invalid</programlisting>
-				</para>
 				<para>Associer la variable "erreur" à la réponse en cas d'échec pour permettre de récupérer le détail de l'erreur.</para>
 			</listitem>
 			<listitem>
@@ -169,18 +156,18 @@
 				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Text" en dessous du bouton "Soumettre".</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Caché".</para>
-				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur):</para>
+				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur) :</para>
 				<para>
 					<programlisting language="javascript">erreur == null</programlisting>
 				</para>
-				<para>Remplacer la propriété "Texte" du widget par ce contenu:</para>
+				<para>Remplacer la propriété "Texte" du widget par ce contenu :</para>
 				<para>
 					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier le formulaire</emphasis></para>
-				<para>Vérifier que le formulaire ressemble à ceci dans l'éditeur:</para>
+				<para>Vérifier que le formulaire ressemble à ceci dans l'éditeur :</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -189,7 +176,7 @@
 					</mediaobject>
 				</para>
 				<para>Cliquer sur le bouton "Aperçu" en haut de l'écran.</para>
-				<para>Vérifier que l'aperçu ressemble à ceci:</para>
+				<para>Vérifier que l'aperçu ressemble à ceci :</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -197,7 +184,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>On notera les points suivants dans l'aperçu:</para>
+				<para>On notera les points suivants dans l'aperçu :</para>
 				<itemizedlist>
 					<listitem><para>le widget présentant l'erreur n'est pas visible</para></listitem>
 					<listitem><para>le bouton "Soumettre" est désactivé par défaut (ceci est dû à la validation fournie par le conteneur de formulaire)</para></listitem>
@@ -328,18 +315,14 @@
 								<entry>Niveau du titre</entry>
 								<entry>Niveau 2</entry>
 							</row>
-							<row>
-								<entry>Alignement</entry>
-								<entry>au centre</entry>
-							</row>
 						</tbody>
 					</tgroup>
 				</informaltable>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour présenter le demandeur</emphasis></para>
-				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le titre du formulaire.</para>
-				<para>Configurer le widget comme ceci:</para>
+				<para>Faire glisser un widget de type "Text" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -352,16 +335,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Lecture seule</entry>
-								<entry>oui</entry>
-							</row>
-							<row>
-								<entry>Libellé</entry>
-								<entry>Demandeur</entry>
-							</row>
-							<row>
 								<entry>Valeur</entry>
-								<entry>demandeur.firstname +" "+ demandeur.lastname</entry>
+								<entry><code>&lt;b&gt;Demandeur :&lt;/b&gt; {{demandeur.firstname}} {{demandeur.lastname}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -369,8 +344,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour afficher la date de début</emphasis></para>
-				<para>Faire glisser un widget de type "Date picker" dans une nouvelle ligne sous le titre du formulaire.</para>
-				<para>Configurer le widget comme ceci:</para>
+				<para>Faire glisser un widget de type "Text" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -383,16 +358,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Lecture seule</entry>
-								<entry>oui</entry>
-							</row>
-							<row>
-								<entry>Libellé</entry>
-								<entry>Date de début</entry>
-							</row>
-							<row>
 								<entry>Valeur</entry>
-								<entry>demande.dateDebut | date</entry>
+								<entry><code>&lt;b&gt;Date de début :&lt;/b&gt; {{demande.dateDebut | date : 'dd/MM/yyyy' : 'UTC'}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -401,8 +368,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour afficher le nombre de jours</emphasis></para>
-				<para>Faire glisser un widget de type "Input" dans une nouvelle ligne sous le widget "Date de début".</para>
-				<para>Configurer le widget comme ceci:</para>
+				<para>Faire glisser un widget de type "Text" dans une nouvelle ligne sous le widget "Date de début".</para>
+				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -415,16 +382,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Lecture seule</entry>
-								<entry>oui</entry>
-							</row>
-							<row>
-								<entry>Libellé</entry>
-								<entry>Nombre de jours</entry>
-							</row>
-							<row>
 								<entry>Valeur</entry>
-								<entry>demande.nombreJours</entry>
+								<entry><code>&lt;b&gt;Nombre de jours :&lt;/b&gt; {{demande.nombreJours}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -433,7 +392,7 @@
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour refuser la demande</emphasis></para>
 				<para>Faire glisser un widget de type "Button" en bas du formulaire.</para>
-				<para>Configurer le widget comme ceci:</para>
+				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="2*"/>
@@ -480,7 +439,7 @@
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour approuver la demande</emphasis></para>
 				<para>Faire glisser un widget de type "Button" dans la zone "6 colonnes" à droite du widget "Refuser".</para>
-				<para>Configurer le widget comme ceci:</para>
+				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="2*"/>
@@ -521,18 +480,18 @@
 				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Hidden".</para>
-				<para>Entrer ce contenu dans le champ texte qui est apparu:</para>
+				<para>Entrer ce contenu dans le champ texte qui est apparu :</para>
 				<para>
 					<programlisting language="javascript">erreur == null</programlisting>
 				</para>
-				<para>Remplacer la propriété "Texte" du widget par ce contenu:</para>
+				<para>Remplacer la propriété "Texte" du widget par ce contenu :</para>
 				<para>
 					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Vérifier le formulaire</emphasis></para>
-				<para>S'assurer que le formulaire ressemble à ceci:</para>
+				<para>S'assurer que le formulaire ressemble à ceci :</para>
 				<para>
 					<mediaobject>
 						<imageobject>

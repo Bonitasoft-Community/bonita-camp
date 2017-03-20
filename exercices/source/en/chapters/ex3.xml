@@ -42,7 +42,8 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Update the form title</emphasis></para>
-				<para>Select the top most widget "Request Input" and edit the following properties:</para>
+        <para>Select the top most widget "Request Input".</para>
+        <para>In the section on the right edit the following properties:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="1*"/>
@@ -85,16 +86,12 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Required</entry>
-								<entry>yes</entry>
-							</row>
-							<row>
 								<entry>Placeholder</entry>
-								<entry>Start date of your leave</entry>
+								<entry>mm/dd/yyyy</entry>
 							</row>
 							<row>
 								<entry>Date format</entry>
-								<entry>yyyy-MM-dd</entry>
+								<entry>MM/dd/yyyy</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -114,10 +111,6 @@
 							</row>
 						</thead>
 						<tbody>
-							<row>
-								<entry>Required</entry>
-								<entry>yes</entry>
-							</row>
 							<row>
 								<entry>Label</entry>
 								<entry>Number of days</entry>
@@ -312,17 +305,13 @@
 								<entry>Title level</entry>
 								<entry>Level 2</entry>
 							</row>
-							<row>
-								<entry>Alignment</entry>
-								<entry>center</entry>
-							</row>
 						</tbody>
 					</tgroup>
 				</informaltable>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the requestor</emphasis></para>
-				<para>Drag an "Input" widget from the palette and drop it on the empty Form container.</para>
+				<para>Drag an "Text" widget from the palette and drop it on a new row under the form title.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -336,16 +325,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Read-only</entry>
-								<entry>yes</entry>
-							</row>
-							<row>
-								<entry>Label</entry>
-								<entry>Requestor</entry>
-							</row>
-							<row>
 								<entry>Value</entry>
-								<entry>requestor.firstname +" "+ requestor.lastname</entry>
+                <entry><code>&lt;b&gt;Requestor: &lt;/b&gt;{{requestor.firstname}} {{requestor.lastname}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -353,7 +334,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the leave start date</emphasis></para>
-				<para>Drag an "Date picker" widget from the palette and drop it in the Form container under the requestor widget.</para>
+				<para>Drag an "Text" widget from the palette and drop it in the Form container under the requestor widget.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -367,16 +348,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Read-only</entry>
-								<entry>yes</entry>
-							</row>
-							<row>
-								<entry>Label</entry>
-								<entry>Leave start</entry>
-							</row>
-							<row>
 								<entry>Value</entry>
-								<entry>request.leaveStart</entry>
+								<entry>&lt;b&gt;Leave start date: &lt;/b&gt;{{request.leaveStart | date : 'dd/MM/yyyy' : 'UTC'}}</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -384,7 +357,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the number of days</emphasis></para>
-				<para>Drag an "Input" widget from the palette and drop it on a new row under the "Start date" widget.</para>
+				<para>Drag an "Text" widget from the palette and drop it on a new row under the "Start date" widget.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -398,16 +371,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Read-only</entry>
-								<entry>yes</entry>
-							</row>
-							<row>
-								<entry>Label</entry>
-								<entry>Number of days</entry>
-							</row>
-							<row>
 								<entry>Value</entry>
-								<entry>request.dayCount</entry>
+                <entry><code>&lt;b&gt;Number of days: &lt;/b&gt; {{request.dayCount}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -519,7 +484,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_08.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

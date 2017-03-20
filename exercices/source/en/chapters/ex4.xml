@@ -36,8 +36,8 @@
 			<listitem>
 				<para><emphasis role="bold">Add an "Initiator manager" actor filter on the "Validator" lane.</emphasis></para>
 				<para>Select the "Validator" lane and navigate to the "General / Actor" tab.</para>
-				<para>Select the "Employee actor" from the dropdown menu.</para>
-				<para>Click on the "Set" button of the actor filter.</para>
+				<para>Select the "Employee actor" from the drop-down menu.</para>
+				<para>Click on the "Set..." button of the actor filter.</para>
 				<para>Select an "Initiator manager" filter and click on "Next".</para>
 				<para>Name the filter "requestorManager" and click on "Finish".</para>
 			</listitem>
