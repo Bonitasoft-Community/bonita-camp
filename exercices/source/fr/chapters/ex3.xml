@@ -158,7 +158,7 @@
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Caché".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur) :</para>
 				<para>
-					<programlisting language="javascript">erreur == null</programlisting>
+					<programlisting language="javascript">!erreur</programlisting>
 				</para>
 				<para>Remplacer la propriété "Texte" du widget par ce contenu :</para>
 				<para>
@@ -199,7 +199,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire pour l'étape "Valider demande".</emphasis></para>
 				<para>Dans le Studio, sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Formulaire".</para>
-				<para>Utiliser le menu déroulant "Formulaire cible" pour créer un nouveau formulaire.</para>
+				<para>Cliquer sur l'icone "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
@@ -335,7 +335,7 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Valeur</entry>
+								<entry>Texte</entry>
 								<entry><code>&lt;b&gt;Demandeur :&lt;/b&gt; {{demandeur.firstname}} {{demandeur.lastname}}</code></entry>
 							</row>
 						</tbody>
@@ -344,7 +344,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour afficher la date de début</emphasis></para>
-				<para>Faire glisser un widget de type "Text" dans une nouvelle ligne sous le titre du formulaire.</para>
+				<para>Faire glisser un widget de type "Text" dans une nouvelle ligne sous le widget "Demandeur".</para>
 				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -358,7 +358,7 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Valeur</entry>
+								<entry>Texte</entry>
 								<entry><code>&lt;b&gt;Date de début :&lt;/b&gt; {{demande.dateDebut | date : 'dd/MM/yyyy' : 'UTC'}}</code></entry>
 							</row>
 						</tbody>
@@ -382,7 +382,7 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Valeur</entry>
+								<entry>Texte</entry>
 								<entry><code>&lt;b&gt;Nombre de jours :&lt;/b&gt; {{demande.nombreJours}}</code></entry>
 							</row>
 						</tbody>
@@ -422,7 +422,7 @@
 							</row>
 							<row>
 								<entry>Données envoyées au clic</entry>
-								<entry>{"estApprouvee" : false}</entry>
+								<entry>{"estApprouvee":false}</entry>
 							</row>
 							<row>
 								<entry>Valeur de réponse en cas d'échec</entry>
@@ -461,7 +461,7 @@
 							</row>
 							<row>
 								<entry>Données envoyées au clic</entry>
-								<entry>{"estApprouvee" : true}</entry>
+								<entry>{"estApprouvee":true}</entry>
 							</row>
 							<row>
 								<entry>Valeur de réponse en cas d'échec</entry>
@@ -482,7 +482,7 @@
 				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu :</para>
 				<para>
-					<programlisting language="javascript">erreur == null</programlisting>
+					<programlisting language="javascript">!erreur</programlisting>
 				</para>
 				<para>Remplacer la propriété "Texte" du widget par ce contenu :</para>
 				<para>

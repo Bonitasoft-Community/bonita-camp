@@ -159,7 +159,7 @@
 				<para><emphasis role="bold">Configurer le contrat d'instanciation</emphasis></para>
 				<para>Sélectionner le pool de processus et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
 				<para>Cliquer sur le bouton "Ajouter à partir de données...".</para>
-				<para>Sélectionner la variable métier "demande" et cliquer sur "Suivant". Garder le nom par défaut "demandeInput".</para>
+				<para>Sélectionner la variable métier "demande", garder le nom par défaut "demandeInput" et cliquer sur "Suivant".</para>
 				<para>Décocher les attributs "idDemandeur" et "estApprouvee".</para>
 				<para>
 					<mediaobject>
@@ -261,7 +261,7 @@
 				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Opérations".</para>
 				<para>Cliquer sur "Ajouter".</para>
 				<para>Sélectionne "demande" comme cible.</para>
-				<para>Cliquer sur le lien "Prend la valeur de" et changer l'opérateur en "Utiliser une méthode Java".</para>
+				<para>Cliquer sur le lien "Prend la valeur de" et changer l'opérateur en "Utilise une méthode Java".</para>
 				<para>Sélectionner la méthode "setEstApprouvee" et cliquer sur "OK".</para>
 				<para>Sélectionner l'entrée de contrat "estApprouvee" dans le menu déroulant de droite.</para>
 				<para>

@@ -31,11 +31,12 @@
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Mise en place de FakeSMTP</emphasis></para>
 				<para>Récupérer le binaire de FakeSMTP depuis cette URL: <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
+				<para>Décompresser l'archive fakeSMTP-latest.zip</para>
 				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante:</para>
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
-				<para>Une fois l'interface graphique de FakeSMTP affichée, cliquer sur le bouton "Start server".</para>
+				<para>Une fois l'interface graphique de FakeSMTP affichée, cliquer sur le bouton "Démarrer le serveur".</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</emphasis></para></listitem>
 			<listitem>
@@ -111,6 +112,7 @@
 			<listitem>
 				<para><emphasis role="bold">Ajouter un connecteur d'envoi d'email sur la tâche "Notifier refus".</emphasis></para>
 				<para>Répéter l'étape précédente en nommant le connecteur "envoiEmailRefus" et en spécifiant "Demande de congés refusée" comme sujet.</para>
+				<para>Vous pouvez utiliser la fonctionnalité qui permet de copier un connecteur configuré sur une tâche vers une autre tâche.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Tester le processus</emphasis></para>
