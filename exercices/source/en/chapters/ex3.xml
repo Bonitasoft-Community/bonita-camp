@@ -152,7 +152,7 @@
 				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> next to the "Hidden" property.</para>
 				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>
 				<para>
-					<programlisting language="javascript">error == null</programlisting>
+					<programlisting language="javascript">!error</programlisting>
 				</para>
 				<para>Replace the "Text" property with the following content:</para>
 				<para>
@@ -325,7 +325,7 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Value</entry>
+								<entry>Text</entry>
                 <entry><code>&lt;b&gt;Requestor: &lt;/b&gt;{{requestor.firstname}} {{requestor.lastname}}</code></entry>
 							</row>
 						</tbody>
@@ -348,7 +348,7 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Value</entry>
+								<entry>Text</entry>
 								<entry>&lt;b&gt;Leave start date: &lt;/b&gt;{{request.leaveStart | date : 'dd/MM/yyyy' : 'UTC'}}</entry>
 							</row>
 						</tbody>
@@ -471,7 +471,7 @@
 				<para>Click on the "binding" icon <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> next to the "Hidden" property.</para>
 				<para>Enter the following content in the text field that just appeared (this display the widget only when there is an error):</para>
 				<para>
-					<programlisting language="javascript">error == null</programlisting>
+					<programlisting language="javascript">!error</programlisting>
 				</para>
 				<para>Replace the "Text" property with the following content:</para>
 				<para>

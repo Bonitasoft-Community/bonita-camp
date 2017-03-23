@@ -111,6 +111,7 @@
 			<listitem>
 				<para><emphasis role="bold">Add an email connector on the "Notify request rejected" task.</emphasis></para>
 				<para>Repeat the previous steps by naming the connector "sendRequestRejectedEmail" and setting "Leave request rejected" as the subject.</para>
+				<para>Alternatively you can use the feature that let you create a copy of an already configured connector and add it to another task.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Test the process</emphasis></para>
