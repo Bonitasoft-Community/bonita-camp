@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer une page d'application.</emphasis></para>
 				<para>Dans le Studio, cliquer sur le bouton UI Designer.</para>
-				<para>Cliquer sur le bouton "Créer", sélectionner "Page d'application" et fournir un nom. Finalement, cliquer sur "Créer".</para>
+				<para>Cliquer sur le bouton "Créer", sélectionner "Page d'application" et fournir le nom "SuiviDesDemandes". Finalement, cliquer sur "Créer".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -152,9 +152,13 @@
 								<entry>Valeur</entry>
 								<entry>$item.dateDebut</entry>
 							</row>
+							<row>
+								<entry>Format de la date</entry>
+								<entry>dd/MM/yyyy</entry>
+							</row>
 						</tbody>
 					</tgroup>
-				</informaltable>		
+				</informaltable>
 				<para>Un widget input avec les options suivantes : </para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -208,7 +212,7 @@
 							</row>
 							<row>
 								<entry>Libellé</entry>
-								<entry>Status</entry>
+								<entry>Statut</entry>
 							</row>
 							<row>
 								<entry>Valeur</entry>
@@ -216,7 +220,7 @@
 							</row>
 						</tbody>
 					</tgroup>
-				</informaltable>			
+				</informaltable>
 				<para>Sauvegarder la page. La page devrait ressembler à cela :</para>
 				<para>
 					<mediaobject>
@@ -303,8 +307,7 @@
 				<para>Cliquer sur "Créer une nouvelle variable" et choisir "External API".</para>
 				<para>Nommer le "informationDefinitionProcessus".</para>
 				<para>Dans le champ URL d'API, taper : </para>
-				<para><programlisting language="xml">../API/bpm/process?
-					p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Demande%20de%20Conges&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
+				<para><programlisting language="xml">../API/bpm/process?p=0&amp;c=100&amp;o=version%20DESC&amp;f=name=Demande%20de%20cong%C3%A9s</programlisting></para>
 				<para>Faire attention qu'aucun espace dans l'URL ne subsiste après le copier/coller.</para>
 			</listitem>
 			<listitem>

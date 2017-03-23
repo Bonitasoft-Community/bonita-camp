@@ -100,7 +100,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" pour que le flot suive cette branche.</emphasis></para>
-				<para>Sélectionner la transition et entrer la valeur "true" dans le champ.</para>
+				<para>Sélectionner la transition et entrer la valeur "true" dans le champ "Condition".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
