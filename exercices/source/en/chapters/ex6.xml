@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Create a new page.</emphasis></para>
 				<para>In the Studio, click on UI Designer.</para>
-				<para>Click on the Create button, select Application page and provide a name. Then click on Create.</para>
+				<para>Click on the Create button, select Application page, set the name to: LeaveRequestStatus. Then click on Create.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -184,7 +184,7 @@
 							</row>
 						</tbody>
 					</tgroup>
-				</informaltable> 
+				</informaltable>
 				<para>One "Input" widget with the following options:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -302,8 +302,7 @@
 				<para>Click on "Create a new variable" and choose "External API".</para>
 				<para>Name it "processDefinitionInfo".</para>
 				<para>In the field API URL, enter: (no line break)</para>
-				<para><programlisting language="xml">../API/bpm/process?
-					p=0&amp;c=100&amp;o=displayName%20DESC&amp;s=Leave%20Request&amp;f=user_id={{sessionInfo.user_id}}</programlisting></para>
+				<para><programlisting language="xml">../API/bpm/process?p=0&amp;c=100&amp;o=version%20DESC&amp;f=name=Leave%20Request</programlisting></para>
 				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
 			</listitem>
 			<listitem>
