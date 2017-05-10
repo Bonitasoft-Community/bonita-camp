@@ -19,7 +19,7 @@
 	<section>
 		<title>Instructions overview</title>
 		<para>Duplicate the process diagram from the previous exercise to create a 2.0 version.</para>
-		<para>Create a "LeaveRequest" BDM with the following attributes:</para>
+		<para>Create a "LeaveRequest" BDM with the following attributes (don't use the "Multiple" option):</para>
 		<informaltable frame="all">
 			<tgroup cols="3" align="left" colsep="1" rowsep="1">
 				<colspec colname='c1' colwidth="1*"/>
@@ -168,7 +168,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on "Finish" and dismiss the warning messages about the incomplete initialization of the business variable.</para>		
+				<para>Click on "Finish" and dismiss the warning messages about the incomplete initialization of the business variable.</para>
 				<para>
 					<mediaobject>
 						<imageobject>

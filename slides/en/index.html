@@ -6,8 +6,9 @@
     <title>BPM Camp</title>
 
     <!-- EXERCICES LINK CONSTANT (auto injected in presentation) -->
+    <!-- bitly link redirect to the latest release on GitHub -->
     <script>
-      var EXERCISES_LINK = 'http://bit.ly/2nGys7b';
+      var EXERCISES_LINK = 'http://bit.ly/2fNzASM';
     </script>
 
     <meta name="description" content="Presentation of Bonita BPM allowing to create a first process based application" />
@@ -92,6 +93,15 @@
             Mix of theoretical presentation and practical exercises<br />
             Time to answer your questions
           </aside>
+        </section>
+
+        <section>
+          <h2>Checklist</h2>
+          <ul>
+            <li>Download BPM Camp resources: <a href="#" class="exercise-link" target="_blank">auto</a></li>
+            <li>Make sure that latest version of Studio is correctly installed (see exercises instructions)</li>
+            <li>We recommend to use Chrome or Firefox as your default web browser for development</li>
+          </ul>
         </section>
 
         <section>
@@ -262,6 +272,7 @@
               </tr>
               </table>
 
+              <p>Note: conditions are defined on gateway outgoing transitions (no condition for parallel gateway)</p>
               <p>Best practice: in order to avoid bad designs, gateways should be placed in a symmetrical manner when possible:</p>
               <img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 
@@ -281,6 +292,12 @@
             <div style="margin:3em auto 3em auto;">
               <a href="#" class="exercise-link" target="_blank" style="font-size:200%;">auto</a>
             </div>
+
+            <aside class="notes">
+              - Demonstrate how to check process history using the administrator view. Speak about the value of graphical monitoring from Subscription edition.<br/>
+              - Demonstrate how to export the content of the workspace (one diagram / the whole workspace).<br/>
+              - Demonstrate how to import a correction and deal with conflict.
+            </aside>
           </section>
         </section>
 
@@ -380,7 +397,7 @@
               <li><b>Editable forms</b> that must satisfy a contract
               <ul>
                 <li>Process instantiation</li>
-                <li>Human tasks</li>
+                <li>Human tasks (no forms on service tasks)</li>
               </ul>
               </li>
               <li style="margin-top:10px;">
@@ -398,6 +415,7 @@
             <p>Custom widgets can be created with the UI Designer</p>
 
             <aside class="notes">
+              Demonstrate the usage of web browser console to debug forms/contracts.
             </aside>
           </section>
 
@@ -433,7 +451,8 @@
             <aside class="notes">
               Actors allow to automatically update task visibility when organization changes.<br/>
               Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
-              Filters are executed only once when task starts. They can be run again with API call.
+              Filters are executed only once when task starts. They can be run again with API call.<br />
+              If you already have information about your organization stored in an LDAP/Active Directory server Subscription edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.
             </aside>
           </section>
 
