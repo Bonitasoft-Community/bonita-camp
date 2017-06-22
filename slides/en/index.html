@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/bonita/bonita.css" id="theme" />
+    <link rel="stylesheet" href="css/theme/bonita.css" id="theme" />
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css" />
@@ -77,7 +77,7 @@
 
         <section>
           <div style="width:900px; margin:auto;">
-            <img src="presentation_images/bpm_camp_logo.png" alt="BPM Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
+            <img src="images/bpm_camp_logo.png" alt="BPM Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
           </div>
           <div style="margin:1em auto 1em auto;">
             <a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
@@ -100,6 +100,7 @@
           <ul>
             <li>Download BPM Camp resources: <a href="#" class="exercise-link" target="_blank">auto</a></li>
             <li>Make sure that latest version of Studio is correctly installed (see exercises instructions)</li>
+            <li>Install latest Oracle JDK 8</li>
             <li>We recommend to use Chrome or Firefox as your default web browser for development</li>
           </ul>
         </section>
@@ -158,11 +159,11 @@
 
           <section>
             <h2 style="font-size:1.4em;">Bonita BPM Studio : Process Editor</h2>
-            <img src="presentation_images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : Diagram Editor" />
+            <img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : Diagram Editor" />
 
             <aside class="notes">
-              Studio is an Eclipse based IDE. Requires a JVM 7 or 8.<br/>
-              Allows creation of process diagrams which contain one or several processes.<br/>
+              Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
+              Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
               Different steps: process modeling, data model definition, form and pages design, connectors setup...<br/>
               Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.
             </aside>
@@ -170,7 +171,7 @@
 
           <section>
             <h2>Bonita BPM Studio : UI Designer</h2>
-            <img class="no-margin" src="presentation_images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
+            <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
 
             <aside class="notes">
             Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
@@ -180,7 +181,7 @@
           <section>
             <h2>Bonita BPM Engine</h2>
             <p>In charge process execution (no built-in UI)</p>
-            <p>Based on Java SE 7 / Java EE 6</p>
+            <p>Based on Java SE 8 / Java EE 6</p>
             <p>Packaged with the Bonita Portal in a Java web application</p>
             <p>Requires:</p>
             <ul>
@@ -198,7 +199,7 @@
             <p>End user and administration web interface</p>
             <p>Displays the list of available tasks</p>
             <p>Allows to deploy and configure processes</p>
-            <img class="no-margin" src="presentation_images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : Task Inbox" height="400" />
+            <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : Task Inbox" height="400" />
 
             <aside class="notes">
               Portal uses the Bonita APIs as any client of the Engine
@@ -209,7 +210,7 @@
             <h2 style="font-size:1.4em;">Bonita BPM Portal: Forms</h2>
             <p>Renders forms created with UI Designer</p>
             <p>Served within Bonita Portal or embedded in an application</p>
-            <img class="no-margin" src="presentation_images/screenshot_form.png" alt="Bonita form" height="400" />
+            <img class="no-margin" src="images/screenshot_form.png" alt="Bonita form" height="400" />
 
             <aside class="notes">
             </aside>
@@ -218,7 +219,7 @@
           <section>
             <h2 style="font-size:1.4em;">Bonita BPM Portal: Applications</h2>
             <p>Allows to deploy Business Applications composed of custom pages implemented with the UI Designer</p>
-            <img class="no-margin" src="presentation_images/screenshot_application.png" alt="Bonita application" height="400" />
+            <img class="no-margin" src="images/screenshot_application.png" alt="Bonita application" height="400" />
 
             <aside class="notes">
             </aside>
@@ -229,21 +230,21 @@
           <section>
             <h2>BPMN 2.0</h2>
             <p>Standard notation (OMG) for process modeling</p>
-            <p>A process is represented by a Pool <img src="presentation_images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
+            <p>A process is represented by a Pool <img src="images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
             <p>Key elements :</p>
 
             <table class="no-border bpmn-table">
             <tr>
-              <td><img src="presentation_images/bpmn_start_event.png" alt="start event"/></td><td>Start Event</td>
+              <td><img src="images/bpmn_start_event.png" alt="start event"/></td><td>Start Event</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_human_task.png" alt="human task"/></td><td>Human Task</td>
+              <td><img src="images/bpmn_human_task.png" alt="human task"/></td><td>Human Task</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_service_task.png" alt="service task"/></td><td>Automated/Service Task</td>
+              <td><img src="images/bpmn_service_task.png" alt="service task"/></td><td>Automated/Service Task</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_end_event.png" alt="end event"/></td><td>End Event</td>
+              <td><img src="images/bpmn_end_event.png" alt="end event"/></td><td>End Event</td>
             </tr>
             </table>
 
@@ -262,19 +263,19 @@
 
               <table class="no-border bpmn-table">
               <tr>
-                <td><img src="presentation_images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
+                <td><img src="images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
               </tr>
               <tr>
-                <td><img src="presentation_images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallel</td>
+                <td><img src="images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallel</td>
               </tr>
               <tr>
-                <td><img src="presentation_images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
+                <td><img src="images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
               </tr>
               </table>
 
-              <p>Note: conditions are defined on gateway outgoing transitions (no condition for parallel gateway)</p>
-              <p>Best practice: in order to avoid bad designs, gateways should be placed in a symmetrical manner when possible:</p>
-              <img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
+              <p>Conditions are defined on gateway outgoing transitions. No condition for parallel gateway</p>
+              <p>Gateways should be placed in a symmetrical manner when possible:</p>
+              <img class="no-margin" src="images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 
               <aside class="notes">
                 - Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
@@ -537,14 +538,13 @@
           <table>
           <tr>
             <td>1. Export pages from UI Designer<br/>
+            2. Export the application
             </td>
             <td>Studio</td>
           </tr>
           <tr>
-            <td>2. Import pages as Resource<br/>
-            3. Create an application<br/>
-            4. Configure the application<br />
-            5. Add the pages to the application
+            <td>3. Import pages as Resource<br/>
+            4. Import the application
             </td>
             <td>Portal</td>
           </tr>
