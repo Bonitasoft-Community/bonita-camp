@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/bonita/bonita.css" id="theme">
+    <link rel="stylesheet" href="css/theme/bonita.css" id="theme">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -75,7 +75,7 @@
 
         <section>
           <div style="width:900px; margin:auto;">
-            <img src="presentation_images/bpm_camp_logo.png" alt="BPM Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;" />
+            <img src="images/bpm_camp_logo.png" alt="BPM Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;" />
           </div>
           <div style="margin:1em auto 1em auto;">
             <a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
@@ -91,6 +91,16 @@
             Mix of theoretical presentation and practical exercises<br />
             Time to answer your questions
           </aside>
+        </section>
+
+        <section>
+          <h2>Checklist</h2>
+          <ul>
+            <li>Télécharger les fichier du BPM Camp : <a href="#" class="exercise-link" target="_blank">auto</a></li>
+            <li>Installer la dernière version du Studio (cf document exercises)</li>
+            <li>Installer la dernière version du JDK Oracle 8</li>
+            <li>Nous recommandons d'utiliser Chrome où Firefox lors de vos développements</li>
+          </ul>
         </section>
 
         <section>
@@ -147,10 +157,10 @@
 
           <section>
             <h2 style="font-size:1.4em;">Studio : éditeur de diagrammes</h2>
-            <img src="presentation_images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
+            <img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
             <aside class="notes">
-            Studio is an Eclipse based IDE. Requires a JVM 7 or 8.<br/>
-            Allows creation of process diagrams which contain one or several processes.<br/>
+            Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
+            Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
             Different steps: process modeling, data model definition, form and pages design, connector setup...<br/>
             Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.
             </aside>
@@ -158,7 +168,7 @@
 
           <section>
             <h2>Studio : UI Designer</h2>
-            <img class="no-margin" src="presentation_images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
+            <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
 
             <aside class="notes">
             Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
@@ -168,7 +178,7 @@
           <section>
             <h2>Bonita BPM Engine</h2>
             <p>Responsable de l'exécution des processus (pas d'interface graphique)</p>
-            <p>Basé sur Java SE 7 / Java EE 6</p>
+            <p>Basé sur Java SE 8 / Java EE 6</p>
             <p>Encapsulé avec le Portal dans une application web Java</p>
             <p>Requiert :</p>
             <ul>
@@ -186,7 +196,7 @@
             <p>Interface web pour l'utilisateur final et l'administrateur</p>
             <p>Présente la liste des tâches à réaliser</p>
             <p>Permet de déployer et configurer des processus</p>
-            <img class="no-margin" src="presentation_images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400" />
+            <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400" />
 
             <aside class="notes">
             Portal uses the Bonita APIs as any client of the Engine
@@ -196,7 +206,7 @@
             <h2 style="font-size:1.4em;">Bonita BPM Portal : Forms</h2>
             <p>Affiche les formulaires créés avec le UI Designer</p>
             <p>Servis dans le Portal Bonita ou intégré dans une application</p>
-            <img class="no-margin" src="presentation_images/screenshot_form.png" alt="Bonita form" height="400" />
+            <img class="no-margin" src="images/screenshot_form.png" alt="Bonita form" height="400" />
 
             <aside class="notes">
             </aside>
@@ -204,7 +214,7 @@
           <section>
             <h2 style="font-size:1.4em;">Bonita BPM Portal : Applications</h2>
             <p>Permet le déploiement d'application métiers composées de pages personnalisées créées avec le UI Designer</p>
-            <img class="no-margin" src="presentation_images/screenshot_application.png" alt="Bonita application" height="400" />
+            <img class="no-margin" src="images/screenshot_application.png" alt="Bonita application" height="400" />
 
             <aside class="notes">
             </aside>
@@ -215,21 +225,21 @@
           <section>
             <h2>Introduction au BPMN</h2>
             <p>Notation standard pour la modélisation des processus</p>
-            <p>Un processus est représenté par un Pool <img src="presentation_images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
+            <p>Un processus est représenté par un Pool <img src="images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
             <p>Les éléments essentiels :</p>
 
             <table class="no-border bpmn-table">
             <tr>
-              <td><img src="presentation_images/bpmn_start_event.png" alt="start event"/></td><td>Evénement de début</td>
+              <td><img src="images/bpmn_start_event.png" alt="start event"/></td><td>Evénement de début</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_human_task.png" alt="human task"/></td><td>Tâche humaine</td>
+              <td><img src="images/bpmn_human_task.png" alt="human task"/></td><td>Tâche humaine</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_service_task.png" alt="service task"/></td><td>Tâche automatique/service</td>
+              <td><img src="images/bpmn_service_task.png" alt="service task"/></td><td>Tâche automatique/service</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_end_event.png" alt="end event"/></td><td>Evénement de fin</td>
+              <td><img src="images/bpmn_end_event.png" alt="end event"/></td><td>Evénement de fin</td>
             </tr>
             </table>
 
@@ -248,18 +258,19 @@
 
             <table class="no-border bpmn-table">
             <tr>
-              <td><img src="presentation_images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
+              <td><img src="images/bpmn_gateway_exclusive.png" alt="exclusive gateway"/></td><td>Exclusive</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallèle</td>
+              <td><img src="images/bpmn_gateway_parallel.png" alt="inclusive gateway"/></td><td>Parallèle</td>
             </tr>
             <tr>
-              <td><img src="presentation_images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
+              <td><img src="images/bpmn_gateway_inclusive.png" alt="inclusive gateway"/></td><td>Inclusive</td>
             </tr>
             </table>
 
+            <p>Les conditions sont définies sur les transitions sortantes. Pas de conditions pour les portes parallèles</p>
             <p>Une bonne pratique consiste à utiliser les portes de manière symétrique si possible :</p>
-            <img class="no-margin" src="presentation_images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
+            <img class="no-margin" src="images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 
             <aside class="notes">
             - Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
@@ -277,6 +288,12 @@
             <div style="margin:3em auto 3em auto;">
               <a href="#" class="exercise-link" target="_blank" style="font-size:200%;">auto</a>
             </div>
+
+            <aside class="notes">
+              - Demonstrate how to check process history using the administrator view. Speak about the value of graphical monitoring from Subscription edition.<br/>
+              - Demonstrate how to export the content of the workspace (one diagram / the whole workspace).<br/>
+              - Demonstrate how to import a correction and deal with conflict.
+            </aside>
           </section>
         </section>
 
@@ -382,7 +399,7 @@
               <li><b>Formulaires éditables</b> qui doivent remplir un contrat
               <ul>
                 <li>Instanciation de processus</li>
-                <li>Tâches humaines</li>
+                <li>Tâches humaines (pas de formulaire sur les tâches de type service)</li>
               </ul>
               </li>
               <li style="margin-top:10px;">
@@ -400,6 +417,7 @@
             <p>Des widgets personnalisés peuvent être créés avec le UI Designer</p>
 
             <aside class="notes">
+              Demonstrate the usage of web browser console to debug forms/contracts.
             </aside>
           </section>
 
@@ -434,7 +452,8 @@
             <aside class="notes">
               Actors allow to automatically update task visibility when organization changes.<br/>
               Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
-              Filters are executed only once when task starts. They can be run again with API call.
+              Filters are executed only once when task starts. They can be run again with API call..<br />
+              If you already have information about your organization stored in an LDAP/Active Directory server Subscription edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.
             </aside>
           </section>
 
@@ -516,14 +535,13 @@
           <table>
           <tr>
             <td>1. Exporter les pages depuis le UI Designer<br/>
+              2. Exporter l'application
             </td>
             <td>Studio</td>
           </tr>
           <tr>
-            <td>2. Importer les pages dans le menu Ressources<br/>
-            3. Créer une nouvelle application<br/>
-            4. Configurer l'application<br />
-            5. Ajouter les pages à l'application
+            <td>3. Importer les pages dans le menu Ressources<br/>
+            4. Importer l'application
             </td>
             <td>Portail</td>
           </tr>
