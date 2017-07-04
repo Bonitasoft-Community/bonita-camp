@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Installation de l'environnement</title>
+
+  <section>
+    <para>Ce chapitre explique les étapes à réaliser pour mettre en place l'environnement de développement permettant de réaliser les exercices des chapitres qui suivent.</para>
+  </section>
+
+  <section>
+    <title>Installation du Java Development Kit (JDK) 8</title>
+    <para>Bonita Studio nécessite Java 8 pour s'exécuter. Vous pouvez télécharger le JDK depuis le <ulink url="http://www.oracle.com/technetwork/java/javase/downloads/index.html">site web d'Oracle</ulink>.</para>
+    <para>Veillez à installer la version appropriée du JDK en fonction de votre système d'exploitation : 32-bit (x86) ou 64-bit (x64). Sous Windows 10, afin de savoir si vous utilisez une version 32 ou 64 bit, aller dans Paramètres - Système - À propos et dans la liste d'informations regardez la propriété "Type de système".</para>
+    <para>Si possible nous recommandons de désinstaller les autres versions de Java éventuellement installées afin de réduire le risque d'utilisation d'une version incompatible.</para>
+  </section>
+
+  <section>
+    <title>Installation de Bonita Studio</title>
+    <para>Sur le site web de Bonitasoft, aller sur la page de <ulink url="http://fr.bonitasoft.com/telecharger">téléchargement</ulink>, cliquer sur "Personnalisez votre téléchargement" et cliquer sur le bouton "Télécharger" sur la ligne "Bonita BPM All in one" pour récupérer le <emphasis role="bold">zip</emphasis> du Studio Bonita.</para>
+    <para>Dézipper le fichier dans le dossier de votre choix. De préférence choisir un dossier avec un chemin court ne contenant pas d'espaces comme par exemple <code>C:\BonitaBPMComunity-x.y.z</code>.</para>
+  </section>
+
+  <section>
+    <title>Démarrer le Studio</title>
+    <para>Ouvrer le dossier du Studio et utiliser l'exécutable approprié pour démarrer le Studio :</para>
+    <itemizedlist mark='bullet'>
+  		<listitem><para>Windows 64 bit : BonitaBPMCommunity64.exe</para></listitem>
+      <listitem><para>Windows 32 bit : BonitaBPMCommunity.exe</para></listitem>
+      <listitem><para>macOS : BonitaBPMCommunity.app</para></listitem>
+      <listitem><para>Linux 64 bit : BonitaBPMCommunity64-linux</para></listitem>
+      <listitem><para>Linux 32 bit : BonitaBPMCommunity-linux</para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Navigateur web pour le développement</title>
+    <para>Nous recommandons d'utiliser Chrome ou Firefox dans les phases de développement afin de bénéficier d'outils de test et debug. Afin de savoir quel navigateur est utilisé par défaut par le Studio, cliquer sur le bouton "Portail". Le portail Bonita devrait s'ouvrir avec le navigateur par défaut de votre système d'exploitation.</para>
+    <para>Vous pouvez configurer le Studio Bonita pour qu'il utilise un navigateur autre que celui par défaut :</para>
+    <itemizedlist mark='bullet'>
+      <listitem><para>Dans le Studio cliquer sur le bouton "Préférences".</para></listitem>
+      <listitem><para>Dans la section "Web" cliquer sur "Navigateur".</para></listitem>
+      <listitem><para>Cliquer sur le bouton "Nouveau...".</para></listitem>
+      <listitem><para>Entrer un nom et utiliser le bouton "Parcourir..." pour sélectionner l'exécutable du navigateur web (e.g. C:\Program Files (x86)\Google\Application\chrome.exe pour Chrome sur Windows).</para></listitem>
+      <listitem><para>Cliquer sur le bouton "OK".</para></listitem>
+      <listitem><para>Dans la liste "External web browsers" sélectionner le navigateur souhaité et cliquer sur le bouton "Appliquer".</para></listitem>
+      <listitem><para>Fermer la fenêtre des préférences.</para></listitem>
+    </itemizedlist>
+  </section>
+
+</chapter>

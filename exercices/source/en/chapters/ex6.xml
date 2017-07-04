@@ -24,8 +24,8 @@
 		<orderedlist>
 			<listitem>
 				<para><emphasis role="bold">Create a new page.</emphasis></para>
-				<para>In the Studio, click on UI Designer.</para>
-				<para>Click on the Create button, select Application page, set the name to: LeaveRequestStatus. Then click on Create.</para>
+				<para>In the Studio, click on the "UI Designer" button.</para>
+				<para>Click on the "Create" button, select "Application page", set the name to: LeaveRequestStatus. Then click on "Create".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -150,6 +150,10 @@
 							<row>
 								<entry>Value</entry>
 								<entry>$item.leaveStart</entry>
+							</row>
+							<row>
+								<entry>Show Today button</entry>
+								<entry>no</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -316,7 +320,7 @@
 				<para>Enter "Create a new request" in the field label.</para>
 				<para>Select POST in the Action drop-down list.</para>
 				<para>Click on "fx" to switch the "Data sent on click" field mode and then enter "formInput".</para>
-				<para>In the field URL, enter:</para>
+				<para>In the field URL to call, enter:</para>
 				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
 				<para>In the field Target URL Success, enter:</para>
 				<para><programlisting language="xml">/bonita/apps/leaveRequest</programlisting></para>

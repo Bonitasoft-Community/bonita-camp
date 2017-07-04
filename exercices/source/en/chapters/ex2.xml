@@ -40,7 +40,7 @@
 					</row>
 					<row>
 						<entry>leaveStart</entry>
-						<entry>Date</entry>
+						<entry>Date only</entry>
 						<entry>Yes</entry>
 					</row>
 					<row>
@@ -108,7 +108,7 @@
 							</row>
 							<row>
 								<entry>leaveStart</entry>
-								<entry>Date</entry>
+								<entry>Date only</entry>
 								<entry>Yes</entry>
 							</row>
 							<row>
@@ -158,7 +158,7 @@
 			<listitem>
 				<para><emphasis role="bold">Set up the case instantiation contract</emphasis></para>
 				<para>Select the process pool, and navigate to the "Execution / Contract / Inputs" tab.</para>
-				<para>Click on "Add from data".</para>
+				<para>Click on "Add from data...".</para>
 				<para>Select the "request" business data, keep the default input name "requestInput" and click on "Next".</para>
 				<para>Uncheck the "requestorId" and "isApproved" attributes.</para>
 				<para>
@@ -195,7 +195,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">requestInput.leaveStart.compareTo(new Date()) &gt; 0</programlisting></entry>
+								<entry><programlisting language="java">requestInput.leaveStart.isAfter(java.time.LocalDate.now())</programlisting></entry>
 							</row>
 							<row>
 								<entry>Error message</entry>
