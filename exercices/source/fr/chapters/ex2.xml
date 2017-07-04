@@ -40,7 +40,7 @@
 					</row>
 					<row>
 						<entry>dateDebut</entry>
-						<entry>Date</entry>
+						<entry>Date only</entry>
 						<entry>Oui</entry>
 					</row>
 					<row>
@@ -108,7 +108,7 @@
 							</row>
 							<row>
 								<entry>dateDebut</entry>
-								<entry>Date</entry>
+								<entry>Date only</entry>
 								<entry>Oui</entry>
 							</row>
 							<row>
@@ -132,7 +132,7 @@
 					</mediaobject>
 				</para>
 				<para>Cliquer sur "Terminer".</para>
-				<para>Le message suivant s'affiche pour confirmer le deploiement du BDM. Cocher l'option "Don't show me this message again" et cliquer sur "Ok".</para>
+				<para>Le message suivant s'affiche pour confirmer le déploiement du BDM. Cocher l'option "Don't show me this message again" et cliquer sur "Ok".</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -195,7 +195,7 @@
 							</row>
 							<row>
 								<entry>Expression</entry>
-								<entry><programlisting language="java">return demandeInput.dateDebut.compareTo(new Date()) &gt; 0</programlisting></entry>
+								<entry><programlisting language="java">return demandeInput.dateDebut.isAfter(java.time.LocalDate.now())</programlisting></entry>
 							</row>
 							<row>
 								<entry>Message d'erreur</entry>

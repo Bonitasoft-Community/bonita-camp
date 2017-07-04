@@ -25,7 +25,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire d'instanciation.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Exécution / Formulaire d'instanciation".</para>
-				<para>Cliquer sur l'icone "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
+				<para>Cliquer sur l’icône "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -94,7 +94,7 @@
 								<entry>jj/mm/aaaa</entry>
 							</row>
 							<row>
-								<entry>Format de la date</entry>
+								<entry>Format technique de la date</entry>
 								<entry>dd/MM/yyyy</entry>
 							</row>
 						</tbody>
@@ -127,6 +127,10 @@
 								<entry>Valeur minimum *</entry>
 								<entry>1</entry>
 							</row>
+                            <row>
+                                <entry>Libellé du bouton Aujourd'hui</entry>
+                                <entry>Aujourd'hui</entry>
+                            </row>
 						</tbody>
 					</tgroup>
 				</informaltable>
@@ -199,7 +203,7 @@
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire pour l'étape "Valider demande".</emphasis></para>
 				<para>Dans le Studio, sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Formulaire".</para>
-				<para>Cliquer sur l'icone "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
+				<para>Cliquer sur l'icône "Crayon" du champ "Formulaire cible" pour ouvrir l'UI Designer sur un nouveau formulaire.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Renommer le formulaire</emphasis></para>
@@ -283,7 +287,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Supprimer la case à cocher "Est Approuvee" et le bouton "Submit"</emphasis></para>
-				<para>Sélectionner le Form container qui contient la case à cocher ainsi que le bouton et supprimer le. Pour cela, utiliser le contrôle de suppression qui apparait lorsque l'on survole le container avec le curseur.</para>
+				<para>Sélectionner le Form container qui contient la case à cocher ainsi que le bouton et supprimer le. Pour cela, utiliser le contrôle de suppression qui apparaît lorsque l'on survole le container avec le curseur.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -359,7 +363,7 @@
 						<tbody>
 							<row>
 								<entry>Texte</entry>
-								<entry><code>&lt;b&gt;Date de début :&lt;/b&gt; {{demande.dateDebut | date : 'dd/MM/yyyy' : 'UTC'}}</code></entry>
+								<entry><code>&lt;b&gt;Date de début :&lt;/b&gt; {{demande.dateDebut | date : 'dd/MM/yyyy'}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -391,7 +395,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour refuser la demande</emphasis></para>
-				<para>Faire glisser un widget de type "Button" en bas du formulaire.</para>
+				<para>Faire glisser un widget de type "Button" et ajouter le dans le form container.</para>
 				<para>Configurer le widget comme ceci :</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">

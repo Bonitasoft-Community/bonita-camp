@@ -36,12 +36,12 @@
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
-				<para>Une fois l'interface graphique de FakeSMTP affichée, cliquer sur le bouton "Démarrer le serveur".</para>
+				<para>Une fois l'interface graphique de FakeSMTP affichée, configurer le port d'écoute sur 2525 et cliquer sur le bouton "Démarrer le serveur".</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Tester le connecteur d'envoi d'email pour obtenir la bonne configuration SMTP.</emphasis></para>
-				<para>Naviguer dans le menu "Développement / Connecteurs / Tester un connecteur" de la barre supérieur du Studio.</para>
+				<para>Naviguer dans le menu "Développement / Connecteurs / Tester un connecteur..." de la barre supérieur du Studio.</para>
 				<para>Sélectionner un connecteur de type "Courriel" à partir du filtre ou depuis la catégorie "Communications" et cliquer sur le bouton "Suivant".</para>
 				<para>Remplir les paramètres de connexion suivants :</para>
 				<informaltable frame="all">
@@ -61,7 +61,7 @@
 							</row>
 							<row>
 								<entry>Port SMTP</entry>
-								<entry>2525 (port par défaut de FakeSMTP ou le port spécifié dans FakeSMTP )</entry>
+								<entry>2525 (le port spécifié dans FakeSMTP )</entry>
 							</row>
 							<row>
 								<entry>SSL (sous l'onglet "Sécurité")</entry>

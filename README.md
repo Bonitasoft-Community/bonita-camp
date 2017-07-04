@@ -4,14 +4,19 @@ BPM Camp - 7.x
 Slides and exercises for the BPM Camp events.
 
 Content is available in:
-- English (Bonita BPM 7.4)
-- French (Bonita BPM 7.4)
+- English (Bonita BPM 7.5)
+- French (Bonita BPM 7.5)
 - Spanish (Bonita BPM 7.2)
 
-## Setup instructions for slides
-1. Download [reveal.js version 3.4.1](https://github.com/hakimel/reveal.js/releases/tag/3.4.1)
+## Get the latest version
+You can get the latest version of slides and exercices by downloading the [latest release](https://github.com/Bonitasoft-Community/bpm-camp/releases/latest) from GitHub.
+
+## Build instructions for slides
+1. Download [reveal.js version 3.5.0](https://github.com/hakimel/reveal.js/releases/tag/3.5.0)
 2. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
-3. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme` folder
+3. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme/source` folder
+4. Run `npm install`
+5. Run `grunt package`
 
 ## Setup instructions for exercises
 1. Download and install the [DEP4E eclipse plugin](http://dep4e.sourceforge.net/)

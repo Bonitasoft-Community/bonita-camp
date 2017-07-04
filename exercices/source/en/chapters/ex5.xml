@@ -35,7 +35,7 @@
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
 				</para>
-				<para>Once the user interface is displayed, click on the "Start server" button.</para>
+				<para>Once the user interface is displayed, set the listenning port to 2525 and click on the "Start server" button.</para>
 			</listitem>
 			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 5.0 version.</emphasis></para></listitem>
 			<listitem>
@@ -60,7 +60,7 @@
 							</row>
 							<row>
 								<entry>SMTP port</entry>
-								<entry>2525 (FakeSMTP default port or the port number specified in FakeSMTP)</entry>
+								<entry>2525 (the port number specified in FakeSMTP)</entry>
 							</row>
 							<row>
 								<entry>SSL (in the "Security" section)</entry>

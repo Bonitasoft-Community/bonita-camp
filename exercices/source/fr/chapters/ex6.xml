@@ -24,7 +24,7 @@
 		<orderedlist>
 			<listitem>
 				<para><emphasis role="bold">Créer une page d'application.</emphasis></para>
-				<para>Dans le Studio, cliquer sur le bouton UI Designer.</para>
+				<para>Dans le Studio, cliquer sur le bouton "UI Designer".</para>
 				<para>Cliquer sur le bouton "Créer", sélectionner "Page d'application" et fournir le nom "SuiviDesDemandes". Finalement, cliquer sur "Créer".</para>
 				<para>
 					<mediaobject>
@@ -153,8 +153,12 @@
 								<entry>$item.dateDebut</entry>
 							</row>
 							<row>
-								<entry>Format de la date</entry>
+								<entry>Format technique de la date</entry>
 								<entry>dd/MM/yyyy</entry>
+							</row>
+							<row>
+								<entry>Afficher le bouton Aujourd'hui</entry>
+								<entry>non</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -338,7 +342,7 @@
 			<listitem>
 				<para><emphasis role="bold">Mettre à jour la page dans le portail.</emphasis></para>
 			<para>Exporter la nouvelle version de la page.</para>
-			<para>Se connecter au portail et cliquer sur le bouton Éditer de la page.</para>
+			<para>Se connecter au portail et cliquer sur le bouton Modifier de la page.</para>
 			<para>Sélectionner le fichier ZIP correspondant la nouvelle version de la page.</para>
 			<para>Rafraîchir l'application, les changements devraient être visibles.</para>
 		</listitem>

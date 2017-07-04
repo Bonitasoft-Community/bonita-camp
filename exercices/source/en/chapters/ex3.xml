@@ -72,32 +72,6 @@
 				</informaltable>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Update the "Leave Start" widget</emphasis></para>
-				<para>Select the "Leave Start" widget and edit the following properties:</para>
-				<informaltable frame="all">
-					<tgroup cols="2" align="left" colsep="1" rowsep="1">
-						<colspec colname='c1' colwidth="1*"/>
-						<colspec colname='c2' colwidth="4*"/>
-						<thead>
-							<row>
-								<entry>Property</entry>
-								<entry>Value</entry>
-							</row>
-						</thead>
-						<tbody>
-							<row>
-								<entry>Placeholder</entry>
-								<entry>mm/dd/yyyy</entry>
-							</row>
-							<row>
-								<entry>Date format</entry>
-								<entry>MM/dd/yyyy</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-			</listitem>
-			<listitem>
 				<para><emphasis role="bold">Update the "Day Count" widget</emphasis></para>
 				<para>Select the "Day count" widget and edit the following properties:</para>
 				<informaltable frame="all">
@@ -334,7 +308,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the leave start date</emphasis></para>
-				<para>Drag an "Text" widget from the palette and drop it in the Form container under the requestor widget.</para>
+				<para>Drag an "Text" widget from the palette and drop it under the requestor widget.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -349,7 +323,7 @@
 						<tbody>
 							<row>
 								<entry>Text</entry>
-								<entry>&lt;b&gt;Leave start date: &lt;/b&gt;{{request.leaveStart | date : 'dd/MM/yyyy' : 'UTC'}}</entry>
+								<entry>&lt;b&gt;Leave start date: &lt;/b&gt;{{request.leaveStart | date : 'dd/MM/yyyy'}}</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -357,7 +331,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to display the number of days</emphasis></para>
-				<para>Drag an "Text" widget from the palette and drop it on a new row under the "Start date" widget.</para>
+				<para>Drag an "Text" widget from the palette and drop it on a new row under the "Leave start date" widget.</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
@@ -380,7 +354,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a widget to reject the request</emphasis></para>
-				<para>Drag a "Button" widget from the palette and drop it on a new row at the bottom of the form.</para>
+				<para>Drag a "Button" widget from the palette and drop it in the form container (highlight with a dashed border).</para>
 				<para>Configure the widget as following:</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
