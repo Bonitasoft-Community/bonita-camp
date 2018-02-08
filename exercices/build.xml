@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="BPM Camp" default="All">
+<project name="Bonita Camp" default="All">
 
 	<!-- Dockbook default build properties -->
 	<property name="docbook.xml.filename" value="docbook" />
 	<property name="docbook.xml.language" value="en" />
 	<import file="${net.sourceforge.dep4e.resources}/ant/docbook_5-0.xml" />
 
-	<!-- Packages the BPM Camp content (except slides) as a ZIP -->
+	<!-- Packages the Bonita Camp content (except slides) as a ZIP -->
 	<!-- Requires Ant Contrib to be installed in Eclipse (add the Ant Contrib JAR in Eclipse Ant preferences) -->
 	<target name="Package as ZIP">
 		<!-- Generate excercises PDF -->

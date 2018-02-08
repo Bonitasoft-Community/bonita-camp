@@ -9,7 +9,7 @@
 		Nous nous intéresserons ici à la notification du résultat de la demande de congés par le biais d'un connecteur d'envoi d'email.</para>
 		<warning>
 			<para>En fonction de votre configuration réseau, de votre firewall ou de la configuration de sécurité de votre serveur d'email,
-			il est possible que vous ne soyez pas autorisé à envoyer un email depuis Bonita BPM.</para>
+			il est possible que vous ne soyez pas autorisé à envoyer un email depuis Bonita.</para>
 			<para>Afin de s'abstraire de ces contraintes techniques, cet exercice sera effectué avec un logiciel simulant un serveur d'email (FakeSMTP).</para>
 		</warning>
 	</section>

@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8">
 
-    <title>BPM Camp</title>
+    <title>Bonita Camp</title>
 
-    <!-- EXERCICES LINK CONSTANT (auto injected in presentation) -->
+    <!-- EXERCICES LINK CONSTANT (auto injected in presentation) and webinar dynamic date (auto injected in presentation) -->
     <!-- bitly link redirect to the latest release on GitHub -->
     <script>
-      var EXERCISES_LINK = 'http://bit.ly/2fNzASM';
+      var EXERCISES_LINK = 'http://bit.ly/2BsZUvf';
+      
+      var WEBINAR_DATE = (new Date()).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
     </script>
 
-    <meta name="description" content="Presentation of Bonita BPM allowing to create a first process based application" />
-    <meta name="author" content="Antoine Mottier - Lionel Palacin - Philippe Ozil" />
+    <meta name="description" content="Introduction to Bonita and how to create a first process based application" />
+    <meta name="author" content="Antoine Mottier" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -77,18 +79,18 @@
 
         <section>
           <div style="width:900px; margin:auto;">
-            <img src="images/bpm_camp_logo.png" alt="BPM Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
+            <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;"/>
           </div>
           <div style="margin:1em auto 1em auto;">
             <a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
           </div>
           <div>
-            <div style="float:left; text-align:left;">Lionel Palacin</div>
-            <div style="float:right; text-align:right;">28<sup>th</sup> of March 2017</div>
+            <div style="float:left; text-align:left;">Antoine Mottier</div>
+            <div style="float:right; text-align:right;" id="webinarDate"></div>
           </div>
 
           <aside class="notes">
-            Presentation of Bonita BPM<br />
+            Presentation of Bonita<br />
             Creation of 1st process and application<br />
             Mix of theoretical presentation and practical exercises<br />
             Time to answer your questions
@@ -98,9 +100,10 @@
         <section>
           <h2>Checklist</h2>
           <ul>
-            <li>Download BPM Camp resources: <a href="#" class="exercise-link" target="_blank">auto</a></li>
+            <li>Download Bonita Camp resources: <a href="#" class="exercise-link" target="_blank">auto</a></li>
             <li>Make sure that latest version of Studio is correctly installed (see exercises instructions)</li>
             <li>Install latest Oracle JDK 8</li>
+            <li>Start the Studio and click on Portal button</li>
             <li>We recommend to use Chrome or Firefox as your default web browser for development</li>
           </ul>
         </section>
@@ -109,7 +112,7 @@
           <h2>Agenda</h2>
           <ul class="no-bullet agenda">
             <li>BPM Goals</li>
-            <li>Bonita BPM Components</li>
+            <li>Bonita Components</li>
             <li>BPMN 2.0</li>
             <li>Data &amp; Contracts</li>
             <li>Forms &amp; Pages</li>
@@ -124,18 +127,18 @@
           <h2>BPM Goals</h2>
           <p>Collaborate during the definition and execution of Business Processes</p>
           <p>Track process execution</p>
-          <p>Optimise processes</p>
+          <p>Optimize processes</p>
 
           <aside class="notes">
-            Ensure tasks are performed in the right order, by the good persons and timely<br/>
+            Ensure tasks are performed in the right order, by the appropriate persons and timely<br/>
             Guarantee that process can be reproduced efficiently<br/>
-            Tracking and continuous improvement with software such as Bonita BPM
+            Tracking and continuous improvement with software such as Bonita
           </aside>
         </section>
 
         <section>
           <section>
-            <h2>Bonita BPM Components</h2>
+            <h2>Bonita Components</h2>
             <table class="no-border">
               <tr>
                 <td colspan="3" style="padding: 10px 0;">Bonita Studio</td>
@@ -158,8 +161,8 @@
           </section>
 
           <section>
-            <h2 style="font-size:1.4em;">Bonita BPM Studio : Process Editor</h2>
-            <img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : Diagram Editor" />
+            <h2 style="font-size:1.4em;">Bonita Studio: Process Editor</h2>
+            <img src="images/screenshot_studio_diagram.png" alt="Bonita Studio: Diagram Editor" />
 
             <aside class="notes">
               Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
@@ -170,8 +173,8 @@
           </section>
 
           <section>
-            <h2>Bonita BPM Studio : UI Designer</h2>
-            <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
+            <h2>Bonita Studio: UI Designer</h2>
+            <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita Studio: UI Designer">
 
             <aside class="notes">
             Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
@@ -179,13 +182,13 @@
           </section>
 
           <section>
-            <h2>Bonita BPM Engine</h2>
-            <p>In charge process execution (no built-in UI)</p>
-            <p>Based on Java SE 8 / Java EE 6</p>
+            <h2>Bonita Engine</h2>
+            <p>In charge of process execution (no built-in UI)</p>
+            <p>Based on Java SE 8</p>
             <p>Packaged with the Bonita Portal in a Java web application</p>
             <p>Requires:</p>
             <ul>
-              <li>A Java application server</li>
+              <li>A Java EE application server</li>
               <li>A JDBC compliant transactional database</li>
             </ul>
 
@@ -195,11 +198,11 @@
           </section>
 
           <section>
-            <h2>Bonita BPM Portal</h2>
+            <h2>Bonita Portal</h2>
             <p>End user and administration web interface</p>
             <p>Displays the list of available tasks</p>
             <p>Allows to deploy and configure processes</p>
-            <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : Task Inbox" height="400" />
+            <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita Portal: Task Inbox" height="400" />
 
             <aside class="notes">
               Portal uses the Bonita APIs as any client of the Engine
@@ -207,9 +210,9 @@
           </section>
 
           <section>
-            <h2 style="font-size:1.4em;">Bonita BPM Portal: Forms</h2>
+            <h2 style="font-size:1.4em;">Bonita Portal: Forms</h2>
             <p>Renders forms created with UI Designer</p>
-            <p>Served within Bonita Portal or embedded in an application</p>
+            <p>Served by Bonita Portal</p>
             <img class="no-margin" src="images/screenshot_form.png" alt="Bonita form" height="400" />
 
             <aside class="notes">
@@ -217,7 +220,7 @@
           </section>
 
           <section>
-            <h2 style="font-size:1.4em;">Bonita BPM Portal: Applications</h2>
+            <h2 style="font-size:1.4em;">Bonita Portal: Applications</h2>
             <p>Allows to deploy Business Applications composed of custom pages implemented with the UI Designer</p>
             <img class="no-margin" src="images/screenshot_application.png" alt="Bonita application" height="400" />
 
@@ -231,20 +234,20 @@
             <h2>BPMN 2.0</h2>
             <p>Standard notation (OMG) for process modeling</p>
             <p>A process is represented by a Pool <img src="images/bpmn_pool.png" alt="pool" style="margin:0 0 0 20px; vertical-align:middle;"/></p>
-            <p>Key elements :</p>
+            <p>Key elements:</p>
 
             <table class="no-border bpmn-table">
             <tr>
-              <td><img src="images/bpmn_start_event.png" alt="start event"/></td><td>Start Event</td>
+              <td><img src="images/bpmn_start_event.png" alt="start event"/></td><td>Start event</td>
             </tr>
             <tr>
-              <td><img src="images/bpmn_human_task.png" alt="human task"/></td><td>Human Task</td>
+              <td><img src="images/bpmn_human_task.png" alt="human task"/></td><td>Human task</td>
             </tr>
             <tr>
-              <td><img src="images/bpmn_service_task.png" alt="service task"/></td><td>Automated/Service Task</td>
+              <td><img src="images/bpmn_service_task.png" alt="service task"/></td><td>Automated/Service task</td>
             </tr>
             <tr>
-              <td><img src="images/bpmn_end_event.png" alt="end event"/></td><td>End Event</td>
+              <td><img src="images/bpmn_end_event.png" alt="end event"/></td><td>End event</td>
             </tr>
             </table>
 
@@ -273,7 +276,7 @@
               </tr>
               </table>
 
-              <p>Conditions are defined on gateway outgoing transitions. No condition for parallel gateway</p>
+              <p>Conditions are defined on gateway outgoing transitions. No condition for parallel gateways</p>
               <p>Gateways should be placed in a symmetrical manner when possible:</p>
               <img class="no-margin" src="images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 
@@ -288,8 +291,8 @@
 
           <section>
             <h2>Exercise 1</h2>
-            <p class="exercise-title">Modelling a basic process</p>
-            <p style="margin-top:2em;">Download the instructions and corrections from this link :</p>
+            <p class="exercise-title">Modeling a basic process</p>
+            <p style="margin-top:2em;">Download the instructions and corrections from this link:</p>
             <div style="margin:3em auto 3em auto;">
               <a href="#" class="exercise-link" target="_blank" style="font-size:200%;">auto</a>
             </div>
@@ -308,11 +311,7 @@
             <div class="data-scopes">
               <div style="border-color:red;">
                 <p style="color:red;">BDM (Business Data Model)</p>
-                <p>Accessible from anywhere, stored in Business DB<br />+ Use case: store any kind of data manipulated by processes instances and/or applications.</p>
-              </div>
-              <div style="border-color:rgb(149, 158, 7);">
-                <p style="color:rgb(149, 158, 7);">Process &amp; Step data</p>
-                <p>Accessible within a single process or step instance, stored in Engine DB, archived with process instance<br />+ Use case: chain connectors execution.</p>
+                <p>Accessible from anywhere, stored in a dedicated database<br />+ Use case: store any kind of data manipulated by processes instances and/or applications.</p>
               </div>
               <div style="border-color:rgb(114,114,255);">
                 <p style="color:rgb(114,114,255);">Form data</p>
@@ -321,7 +320,6 @@
             </div>
 
             <aside class="notes">
-              How to choose between BDM and process/step data: almost always use BDM.<br />
               Forms data are for example used to store the result of a REST API call (to get BDM value) in order to display it in a form.
             </aside>
           </section>
@@ -331,7 +329,6 @@
             <table class="data-types no-border">
             <tr>
               <th style="width:33%;">BDM</th>
-              <th>Process &amp; Task data</th>
               <th style="width:33%;">Form data</th>
             </tr>
             <tr>
@@ -339,24 +336,14 @@
                 <ul>
                   <li>Structured objects composed of:
                     <ul>
-                      <li>Java primitives (String, Integer, Boolean, Date...)</li>
+                      <li>Java primitives (Integer, Boolean, String, Date...)</li>
                       <li>Other BDMs</li>
                     </ul>
                   </li>
                 </ul>
               </td>
-              <td style="vertical-align:top">
-                <ul>
-                  <li>Any Java Serializable type:
-                    <ul>
-                        <li>Primitives, Collections...</li>
-                        <li>Custom types...</li>
-                    </ul>
-                  </li>
-                </ul>
-              </td>
               <td style="text-align:center;">
-                <ul><li>Any JavaScript type</li></ul>
+                <ul><li>Any JavaScript objects</li></ul>
               </td>
             </tr>
             </table>
@@ -374,12 +361,25 @@
           <section>
             <h2>Contracts</h2>
             <p>Set of required input parameters with validation rules.</p>
-            <p>Data sent by forms must satisfy a contract in order to</p>
+            <p>Data sent by forms must satisfy a contract in order to:</p>
             <ul>
               <li>Start a process</li>
               <li>Execute a human task</li>
             </ul>
             <p>Contributes to the decoupling of process logic and user interface.</p>
+          </section>
+          
+          <section>
+            <h2>Architecture overview</h2>
+            <p>Sending data from the form to the business variable</p>
+            <img class="no-margin" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
+
+            <aside class="notes">
+            When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
+            When user click on the submit button, a REST API call is performed to the Engine API to instruct the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
+            Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
+            Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a business variable (this will perform an UPDATE SQL request on the business database)...
+            </aside>
           </section>
 
           <section>
@@ -416,7 +416,22 @@
             <p>Custom widgets can be created with the UI Designer</p>
 
             <aside class="notes">
-              Demonstrate the usage of web browser console to debug forms/contracts.
+              Demonstrate the usage of web browser console to debug forms/contracts.<br/>
+              http://localhost:8080/bonita/API/bdm/businessData/com.company.model.VacationRequest?q=find&p=0&c=10
+            </aside>
+          </section>
+          
+          <section>
+            <h2>Architecture overview</h2>
+            <p>Display process variable in a form</p>
+            <img class="no-margin" src="images/display_business_variables_in_forms.png" alt="Data flow from process variables to forms">
+
+            <aside class="notes">
+            When you create a new form you can use some predefined JavaScript variables.<br/>
+            The "context" variable give some information about the task and process instance associated with the visible form.<br/>
+            "context" variable have attribute that match the name of process variable with suffix _ref. Those variable have a "link" attribute that define the URL of the API to call in order to retrieve the business variable value.<br/>
+            The business variable value is actually a reference to a row in a table of the business database.<br/>
+            So to retrieve the business variable in a form, create a variable with type set to "External API" and the URL to ../{{context.myBusinessVar_ref.link}}. You can then map this variable to the form widgets.
             </aside>
           </section>
 
@@ -510,7 +525,7 @@
         <section>
          <section>
           <h2>Process Deployment</h2>
-          <p>Main steps for process deployment :</p>
+          <p>Main steps for process deployment:</p>
           <table>
           <tr>
             <td>1. Process configuration<br/>
@@ -534,7 +549,7 @@
 
          <section>
           <h2>Application Deployment</h2>
-          <p>Main steps for application deployment :</p>
+          <p>Main steps for application deployment:</p>
           <table>
           <tr>
             <td>1. Export pages from UI Designer<br/>
@@ -557,9 +572,9 @@
           <p style="margin:3em 0;">Any questions? Do not hesitate.</p>
           <p>Extra Resources:</p>
           <ul>
-            <li>Documentation - <a href="http://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
-            <li>Corporate Website - <a href="http://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
-            <li>Community - <a href="http://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+            <li>Documentation - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
+            <li>Corporate Website - <a href="https://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
+            <li>Community - <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
             <li>GitHub - <a href="https://github.com/bonitasoft" target="_blank">github.com/bonitasoft</a></li>
           </ul>
         </section>
@@ -593,7 +608,7 @@
       });
     </script>
 
-    <!-- INJECTS EXERCISES LINKS -->
+    <!-- INJECTS EXERCISES LINKS and webinar date -->
     <script>
       (function() {
         var exLinks = document.querySelectorAll('a.exercise-link');
@@ -602,6 +617,8 @@
           exLinks[i].href = EXERCISES_LINK;
           exLinks[i].innerHTML = EXERCISES_LINK;
         }
+        
+        document.getElementById("webinarDate").innerHTML = WEBINAR_DATE;
       })();
     </script>
   </body>

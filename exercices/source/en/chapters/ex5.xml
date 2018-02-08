@@ -5,10 +5,10 @@
 
 	<section>
 		<title>Goal</title>
-		<para>The goal of this exercise is to demonstrate an interaction between Bonita BPM and an external system with the use of a connector.
+		<para>The goal of this exercise is to demonstrate an interaction between Bonita and an external system with the use of a connector.
 		In this context, we will notify the leave request initiator about his request status with an email connector.</para>
 		<warning>
-			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita BPM.</para>
+			<para>Depending on your network configuration, your firewall or the security settings of your email server you may not be able to send an email from Bonita.</para>
 			<para>In order to get rid of those technical constraints, we will use a program that simulates an email server (FakeSMTP).</para>
 		</warning>
 	</section>
