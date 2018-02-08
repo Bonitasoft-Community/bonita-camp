@@ -16,19 +16,19 @@
 
   <section>
     <title>Installation de Bonita Studio</title>
-    <para>Sur le site web de Bonitasoft, aller sur la page de <ulink url="http://fr.bonitasoft.com/telecharger">téléchargement</ulink>, cliquer sur "Personnalisez votre téléchargement" et cliquer sur le bouton "Télécharger" sur la ligne "Bonita BPM All in one" pour récupérer le <emphasis role="bold">zip</emphasis> du Studio Bonita.</para>
-    <para>Dézipper le fichier dans le dossier de votre choix. De préférence choisir un dossier avec un chemin court ne contenant pas d'espaces comme par exemple <code>C:\BonitaBPMComunity-x.y.z</code>.</para>
+    <para>Sur le site web de Bonitasoft, aller sur la page de <ulink url="http://fr.bonitasoft.com/telecharger">téléchargement</ulink>, cliquer sur "Personnalisez votre téléchargement" et cliquer sur le bouton "Télécharger" sur la ligne "Bonita All in one" pour récupérer le <emphasis role="bold">zip</emphasis> du Studio Bonita.</para>
+    <para>Dézipper le fichier dans le dossier de votre choix. De préférence choisir un dossier avec un chemin court ne contenant pas d'espaces comme par exemple <code>C:\BonitaStudioComunity-x.y.z</code>.</para>
   </section>
 
   <section>
     <title>Démarrer le Studio</title>
     <para>Ouvrer le dossier du Studio et utiliser l'exécutable approprié pour démarrer le Studio :</para>
     <itemizedlist mark='bullet'>
-  		<listitem><para>Windows 64 bit : BonitaBPMCommunity64.exe</para></listitem>
-      <listitem><para>Windows 32 bit : BonitaBPMCommunity.exe</para></listitem>
-      <listitem><para>macOS : BonitaBPMCommunity.app</para></listitem>
-      <listitem><para>Linux 64 bit : BonitaBPMCommunity64-linux</para></listitem>
-      <listitem><para>Linux 32 bit : BonitaBPMCommunity-linux</para></listitem>
+  		<listitem><para>Windows 64 bit : BonitaStudioCommunity64.exe</para></listitem>
+      <listitem><para>Windows 32 bit : BonitaStudioCommunity.exe</para></listitem>
+      <listitem><para>macOS : BonitaStudioCommunity.app</para></listitem>
+      <listitem><para>Linux 64 bit : BonitaStudioCommunity64-linux</para></listitem>
+      <listitem><para>Linux 32 bit : BonitaStudioCommunity-linux</para></listitem>
     </itemizedlist>
   </section>
 
