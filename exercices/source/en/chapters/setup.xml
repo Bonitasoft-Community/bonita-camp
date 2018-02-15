@@ -16,19 +16,19 @@
 
   <section>
     <title>Install Bonita Studio</title>
-    <para>Go to the <ulink url="http://www.bonitasoft.com/download">download section</ulink> of Bonitasoft website, click on "Customize your download" and click on the "Download" button next to "Bonita BPM All in one" to get the <emphasis role="bold">zip</emphasis> package of Bonita Studio.</para>
-    <para>Unzip the Studio to the folder of your choice. Preferably choose a target folder with a path that is short and that don't include any space such as <code>C:\BonitaBPMComunity-x.y.z</code>.</para>
+    <para>Go to the <ulink url="http://www.bonitasoft.com/download">download section</ulink> of Bonitasoft website, click on "Customize your download" and click on the "Download" button next to "Bonita All in one" to get the <emphasis role="bold">zip</emphasis> package of Bonita Studio.</para>
+    <para>Unzip the Studio to the folder of your choice. Preferably choose a target folder with a path that is short and that don't include any space such as <code>C:\BonitaStudioComunity-x.y.z</code>.</para>
   </section>
 
   <section>
     <title>Start Bonita Studio</title>
     <para>Open the Studio folder and use the appropriate runtime to start it:</para>
     <itemizedlist mark='bullet'>
-  		<listitem><para>Windows 64 bit: BonitaBPMCommunity64.exe</para></listitem>
-      <listitem><para>Windows 32 bit: BonitaBPMCommunity.exe</para></listitem>
-      <listitem><para>macOS: BonitaBPMCommunity.app</para></listitem>
-      <listitem><para>Linux 64 bit: BonitaBPMCommunity64-linux</para></listitem>
-      <listitem><para>Linux 32 bit: BonitaBPMCommunity-linux</para></listitem>
+  		<listitem><para>Windows 64 bit: BonitaStudioCommunity64.exe</para></listitem>
+      <listitem><para>Windows 32 bit: BonitaStudioCommunity.exe</para></listitem>
+      <listitem><para>macOS: BonitaStudioCommunity.app</para></listitem>
+      <listitem><para>Linux 64 bit: BonitaStudioCommunity64-linux</para></listitem>
+      <listitem><para>Linux 32 bit: BonitaStudioCommunity-linux</para></listitem>
     </itemizedlist>
   </section>
 

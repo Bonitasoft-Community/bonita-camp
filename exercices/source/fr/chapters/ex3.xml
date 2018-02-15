@@ -247,7 +247,7 @@
 						</tbody>
 					</tgroup>
 				</informaltable>
-				<para><emphasis role="bold">Note :</emphasis> nous utilisons ici, un appel aux APIs REST de Bonita BPM pour récupérer notre BDM "demande".
+				<para><emphasis role="bold">Note :</emphasis> nous utilisons ici, un appel aux APIs REST de Bonita pour récupérer notre BDM "demande".
 				Nous bénéficions d'une variable "context" qui expose des liens vers les données du processus dont notre demande sous la forme "demande_ref".
 				Nous pouvons ainsi charger la demande grâce à l'attribut "link" qui donne l'URL à appeler pour récupérer l'objet.</para>
 			</listitem>

@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
 
-    <title>BPM Camp</title>
+    <title>Bonita Camp</title>
 
-    <!-- EXERCICES LINK CONSTANT (auto injected in presentation) -->
+    <!-- EXERCICES LINK CONSTANT and webinar dynamic date (auto injected in presentation) -->
     <script>
     var EXERCISES_LINK = 'http://bit.ly/2niTasS';
+    
+    var WEBINAR_DATE = (new Date()).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })
     </script>
 
-    <meta name="description" content="Présentation de Bonita BPM permettant de rapidement réaliser un premier processus">
-    <meta name="author" content="Antoine Mottier - Lionel Palacin - Philippe Ozil">
+    <meta name="description" content="Présentation de Bonita permettant de rapidement réaliser une premier application">
+    <meta name="author" content="Antoine Mottier">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -75,18 +77,18 @@
 
         <section>
           <div style="width:900px; margin:auto;">
-            <img src="images/bpm_camp_logo.png" alt="BPM Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;" />
+            <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" style="display:block; margin:0 auto; background-color:transparent; border-width:0; box-shadow:none;" />
           </div>
           <div style="margin:1em auto 1em auto;">
             <a class="exercise-link" href="#" target="_blank" style="font-size:200%;">auto</a>
           </div>
           <div>
             <div style="float:left; text-align:left;">Antoine Mottier</div>
-            <div style="float:right; text-align:right;">23 Mars 2017</div>
+            <div style="float:right; text-align:right;" id="webinarDate"></div>
           </div>
 
           <aside class="notes">
-            Presentation of Bonita BPM<br/>
+            Presentation of Bonita<br/>
             Creation of 1st process and application<br/>
             Mix of theoretical presentation and practical exercises<br />
             Time to answer your questions
@@ -96,9 +98,10 @@
         <section>
           <h2>Checklist</h2>
           <ul>
-            <li>Télécharger les fichier du BPM Camp : <a href="#" class="exercise-link" target="_blank">auto</a></li>
+            <li>Télécharger les fichier du Bonita Camp : <a href="#" class="exercise-link" target="_blank">auto</a></li>
             <li>Installer la dernière version du Studio (cf document exercises)</li>
             <li>Installer la dernière version du JDK Oracle 8</li>
+            <li>Démarrer le Studio et cliquer le bouton Portail</li>
             <li>Nous recommandons d'utiliser Chrome où Firefox lors de vos développements</li>
           </ul>
         </section>
@@ -107,7 +110,7 @@
           <h2>Programme</h2>
           <ul class="no-bullet agenda">
             <li>Objectifs du BPM</li>
-            <li>Composants de Bonita BPM</li>
+            <li>Composants de Bonita</li>
             <li>Introduction au BPMN</li>
             <li>Données et Contrats</li>
             <li>Formulaires et Pages</li>
@@ -127,13 +130,13 @@
           <aside class="notes">
           Ensure tasks are performed in the right order, by the good persons and timely<br/>
           Guarantee that process can be reproduced efficiently<br/>
-          Tracking and continuous improvement with software such as Bonita BPM
+          Tracking and continuous improvement with software such as Bonita
           </aside>
         </section>
 
         <section>
           <section>
-            <h2>Composants de Bonita BPM</h2>
+            <h2>Composants de Bonita</h2>
             <table class="no-border">
               <tr>
                 <td colspan="3" style="padding: 10px 0;">Bonita Studio</td>
@@ -157,7 +160,7 @@
 
           <section>
             <h2 style="font-size:1.4em;">Studio : éditeur de diagrammes</h2>
-            <img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
+            <img src="images/screenshot_studio_diagram.png" alt="Bonita Studio : edition de diagrammes">
             <aside class="notes">
             Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
             Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
@@ -168,7 +171,7 @@
 
           <section>
             <h2>Studio : UI Designer</h2>
-            <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita BPM Studio : UI Designer">
+            <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita Studio : UI Designer">
 
             <aside class="notes">
             Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
@@ -176,13 +179,14 @@
           </section>
 
           <section>
-            <h2>Bonita BPM Engine</h2>
+            <h2>Bonita Engine</h2>
+            <p>Fournit un ensemble de services</p>
             <p>Responsable de l'exécution des processus (pas d'interface graphique)</p>
-            <p>Basé sur Java SE 8 / Java EE 6</p>
+            <p>Basé sur Java SE 8</p>
             <p>Encapsulé avec le Portal dans une application web Java</p>
             <p>Requiert :</p>
             <ul>
-              <li>Serveur d'application Java</li>
+              <li>Serveur d'application Java EE </li>
               <li>Base de données transactionnelle compatible avec JDBC</li>
             </ul>
 
@@ -192,27 +196,27 @@
           </section>
 
           <section>
-            <h2>Bonita BPM Portal</h2>
+            <h2>Bonita Portal</h2>
             <p>Interface web pour l'utilisateur final et l'administrateur</p>
             <p>Présente la liste des tâches à réaliser</p>
             <p>Permet de déployer et configurer des processus</p>
-            <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400" />
+            <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita Portal : liste de tâches" height="400" />
 
             <aside class="notes">
             Portal uses the Bonita APIs as any client of the Engine
             </aside>
           </section>
           <section>
-            <h2 style="font-size:1.4em;">Bonita BPM Portal : Forms</h2>
+            <h2 style="font-size:1.4em;">Bonita Portal : Forms</h2>
             <p>Affiche les formulaires créés avec le UI Designer</p>
-            <p>Servis dans le Portal Bonita ou intégré dans une application</p>
+            <p>Servis dans le Portal Bonita ou via une application</p>
             <img class="no-margin" src="images/screenshot_form.png" alt="Bonita form" height="400" />
 
             <aside class="notes">
             </aside>
           </section>
           <section>
-            <h2 style="font-size:1.4em;">Bonita BPM Portal : Applications</h2>
+            <h2 style="font-size:1.4em;">Bonita Portal : Applications</h2>
             <p>Permet le déploiement d'application métiers composées de pages personnalisées créées avec le UI Designer</p>
             <img class="no-margin" src="images/screenshot_application.png" alt="Bonita application" height="400" />
 
@@ -303,13 +307,8 @@
             <div class="data-scopes">
               <div style="border-color:red;">
                 <p style="color:red;">BDM (Business Data Model)</p>
-                <p>Accessible de partout, stocké dans une base métier<br/>
+                <p>Accessible de partout, stocké dans une base métier dédiée<br/>
                 Usage : stocker les données manipulées par les instances de processus et/ou applications</p>
-              </div>
-              <div style="border-color:rgb(149, 158, 7);">
-                <p style="color:rgb(149, 158, 7);">Variables de processus &amp; d'étapes</p>
-                <p>Accessibles depuis une seule instance de processus/étape, stockées dans la base moteur, archivées avec l'instance de processus<br/>
-                Usage : chainer l'exécution de connecteurs</p>
               </div>
               <div style="border-color:rgb(114,114,255);">
                 <p style="color:rgb(114,114,255);">Variables de formulaire</p>
@@ -329,7 +328,6 @@
             <table class="data-types no-border">
             <tr>
               <th style="width:33%;">BDM</th>
-              <th>Variables de processus &amp; d'étapes</th>
               <th style="width:33%;">Variables de formulaire</th>
             </tr>
             <tr>
@@ -337,18 +335,8 @@
                 <ul>
                   <li>Objets structurés composés de :
                     <ul>
-                      <li>Primitives Java (String, Integer, Boolean, Date...)</li>
+                      <li>Types primitifs Java (Integer, Boolean, String, Date...)</li>
                       <li>Autres BDMs</li>
-                    </ul>
-                  </li>
-                </ul>
-              </td>
-              <td style="vertical-align:top">
-                <ul>
-                  <li>Tout type Java Serializable :
-                    <ul>
-                      <li>Primitives, Collections...</li>
-                      <li>Types personnalisés</li>
                     </ul>
                   </li>
                 </ul>
@@ -379,6 +367,19 @@
               <li>Exécuter une tâche humaine</li>
             </ul>
             <p>Contribue au découplage entre la logique métier et les interfaces graphiques.</p>
+          </section>
+          
+          <section>
+            <h2>Aperçu de l'architecture</h2>
+            <p>Envoi de données depuis un formulaire vers une variable métier</p>
+            <img class="no-margin" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
+
+            <aside class="notes">
+            When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
+            When user click on the submit button, a REST API call is performed to the Engine API to instrcut the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
+            Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
+            Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a businnes variable (this will perform an UPDATE SQL request on the business database)...
+            </aside>
           </section>
 
           <section>
@@ -417,7 +418,22 @@
             <p>Des widgets personnalisés peuvent être créés avec le UI Designer</p>
 
             <aside class="notes">
-              Demonstrate the usage of web browser console to debug forms/contracts.
+              Demonstrate the usage of web browser console to debug forms/contracts.<br/>
+              http://localhost:8080/bonita/API/bdm/businessData/com.company.model.DemandeConges?q=find&p=0&c=10
+            </aside>
+          </section>
+          
+          <section>
+            <h2>Aperçu de l'architecture</h2>
+            <p>Afficher une donnée métier dans un formulaire</p>
+            <img class="no-margin" src="images/display_business_variables_in_forms.png" alt="Data flow from process variables to forms">
+
+            <aside class="notes">
+            When you create a new form you can use some predefined JavaScript variables.<br/>
+            The "context" variable give some information about the task and process instance associated with the visible form.<br/>
+            "context" variable have attribute that match the name of process variable with suffix _ref. Those variable have a "link" attribute that define the URL of the API to call in order to retrieve the business variable value.<br/>
+            The business variable value is actually a reference to a row in a table of the business database.<br/>
+            So to retrieve the business variable in a form, create a variable with type set to "External API" and the URL to ../{{context.myBusinessVar_ref.link}}. You can then map this variable to the form widgets.
             </aside>
           </section>
 
@@ -493,11 +509,11 @@
             <p>Combiner différents processus ensemble dans le but de fournir une application métier riche et cohérente.</p>
             <p>Respecte le modèle MVC :</p>
             <ul>
-              <li>Le modele est le BDM</li>
+              <li>Le modèle est le BDM</li>
               <li>La vue est la combinaison des pages d'applications et des formulaires de processus</li>
-              <li>Le controlleur est un ensemble de processus</li>
+              <li>Le contrôleur est un ensemble de processus</li>
             </ul>
-            <p>Les applications sont déployés et rendus par le Portail Bonita</p>
+            <p>Les applications sont déployées et rendues par le Portail Bonita</p>
           </section>
 
           <section>
@@ -590,7 +606,7 @@
       });
     </script>
 
-    <!-- INJECTS EXERCISES LINKS -->
+    <!-- INJECTS EXERCISES LINKS and webinar date -->
     <script>
       (function() {
         var exLinks = document.querySelectorAll('a.exercise-link');
@@ -599,6 +615,8 @@
           exLinks[i].href = EXERCISES_LINK;
           exLinks[i].innerHTML = EXERCISES_LINK;
         }
+        
+        document.getElementById("webinarDate").innerHTML = WEBINAR_DATE;
       })();
     </script>
   </body>
