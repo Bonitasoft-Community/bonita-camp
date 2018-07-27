@@ -114,7 +114,7 @@
 		  
           <aside class="notes">
 			3:30<br /><br />
-			Resources: slides, exercises, solutions, etc. [latest release from GitHub]<br />
+			Resources: slides, exercises, solutions, etc. [GitHub - latest release]<br />
 			Need the Studio to follow the session<br />
 			Community vs Enterprise editions (Support, access to professional services & additional features)<br />
 			Browser recommendation: better tooling like debug & co
@@ -286,10 +286,14 @@
             <p>Elements are linked together by Transitions <span style="margin:0 0 0 20px;">&#8594;</span></p>
 
             <aside class="notes">
-		      17<br /><br />
+		      6.30<br /><br />
               OMG = Object Management Group, founded several standards such as UML<br/>
+			  Not business limitations<br />
+			  Not Bonita specific<br />
               Shapes (BPMN standard): circle = event, rectangle = activity<br/>
               Colors (Bonita specific): green = start, blue = intermediate, red = end
+			  [Studio - language (EN/ES/FR by default & crowdin community), import BOS/BPMN, diagram, whiteboard, process, properties, lane, task, event, switch between item types
+			  Documentation for details of all elements in the palette
             </aside>
           </section>
 
@@ -314,11 +318,14 @@
               <img class="no-margin" src="images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 
               <aside class="notes">
-                - Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
-                - Exclusive: only one incoming TR should reach the gateway.<br/>
-                - Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
-                - Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
-                - Inclusive: used when dealing with parallel gateways with conditions
+		        10<br /><br />
+                Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
+                Exclusive: only one incoming TR should reach the gateway.<br/>
+                Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
+                Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
+                Inclusive: used when dealing with parallel gateways with conditions<br />
+				Best practice: explicit, symmetric and default<br />
+				[Studio - parallel / exclusive / inclusive gateways, order of condition evaluation, validation]
               </aside>
             </section>
 
@@ -331,9 +338,18 @@
             </div>
 
             <aside class="notes">
-              - Demonstrate how to check process history using the administrator view. Speak about the value of graphical monitoring from Subscription edition.<br/>
-              - Demonstrate how to export the content of the workspace (one diagram / the whole workspace).<br/>
-              - Demonstrate how to import a correction and deal with conflict.
+		      2.30<br /><br />
+			  Sump the content of the exercise: build a basic but running leave request process for a company<br />
+			  Exercise correction resources are available: one BOS file per exercise<br />
+			  Useful because exercises are iterations on the same process<br />
+			  [Studio - save button, export, import, conflict]<br />
+			  <br />
+			  30 - WAIT / ANSWER QUESTIONS<br />
+			  <br /><br />
+			  5<br /><br />
+			  Embedded engine in Studio to test development
+			  [Studio - run a case of exercise 1, process instantiation form, assign/execute task from task list page, administrator perspective to see archived case]
+			  [Studio - edit the condition to false, run another case and show other task]
             </aside>
           </section>
         </section>
@@ -353,7 +369,9 @@
             </div>
 
             <aside class="notes">
-              Forms data are for example used to store the result of a REST API call (to get BDM value) in order to display it in a form.
+			  2.30<br /><br />
+			  BDM: complex type with fields, dedicated DB with automatic administration, accessible by API
+              Form: used to store the result of a REST API call (like getting BDM data)
             </aside>
           </section>
 
@@ -386,8 +404,11 @@
             </p>
 
             <aside class="notes">
+			  4<br /><br />
               DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
-              Never try to R/W data directly from Bonita DB, use the APIs to do so.
+              Never try to R/W data directly from Bonita DB, use the APIs to do so.<br />
+			  Document: basic in Bonita but could use CMS using connectors like Alfresco or Sharepoint
+			  [Studio - show data in the process to execute the flow]
             </aside>
           </section>
 
@@ -400,6 +421,12 @@
               <li>Execute a human task</li>
             </ul>
             <p>Contributes to the decoupling of process logic and user interface.</p>
+            <aside class="notes">
+			  2.30<br /><br />
+			  Invalid contract will fail
+			  [Studio - process & human task contracts, approval from user form example]
+			  In case you want to use your own forms, the contract is the interface that warranty the right execution
+            </aside>
           </section>
           
           <section>
@@ -408,6 +435,7 @@
             <img class="no-margin" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
 
             <aside class="notes">
+			  2.30<br /><br />
             When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
             When user click on the submit button, a REST API call is performed to the Engine API to instruct the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
             Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
@@ -419,6 +447,13 @@
             <h2>Exercise 2</h2>
             <p class="exercise-title">Adding data and specifying contracts</p>
           </section>
+            <aside class="notes">
+			  6<br /><br />
+			  Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
+			  [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
+			  <br/>
+			  15 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
         </section>
 
         <section>
@@ -440,6 +475,11 @@
             </ul>
 
             <aside class="notes">
+			  4<br /><br />
+			  Form: return some input from the end user, associated to process (process instantiation or human task)
+			  Page: does not return anything, display information and optionally provide access to actions
+			  [Studio - human task form, process instantiation form, case overview]
+			  [UID - open]
             </aside>
           </section>
 
@@ -449,6 +489,7 @@
             <p>Custom widgets can be created with the UI Designer</p>
 
             <aside class="notes">
+			  105.30<br /><br />
               Demonstrate the usage of web browser console to debug forms/contracts.<br/>
               http://localhost:8080/bonita/API/bdm/businessData/com.company.model.VacationRequest?q=find&p=0&c=10
             </aside>
