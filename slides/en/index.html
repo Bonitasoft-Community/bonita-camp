@@ -90,10 +90,15 @@
           </div>
 
           <aside class="notes">
+			1<br /><br />
+			Welcome<br />
+			Introduction of myself<br />
             Presentation of Bonita<br />
             Creation of 1st process and application<br />
             Mix of theoretical presentation and practical exercises<br />
-            Time to answer your questions
+            Time to answer your questions: after each chapter<br />
+			Community forum<br />
+			Contact form bonitasoft.com
           </aside>
         </section>
 
@@ -106,6 +111,14 @@
             <li>Start the Studio and click on Portal button</li>
             <li>We recommend to use Chrome or Firefox as your default web browser for development</li>
           </ul>
+		  
+          <aside class="notes">
+			3:30<br /><br />
+			Resources: slides, exercises, solutions, etc. [latest release from GitHub]<br />
+			Need the Studio to follow the session<br />
+			Community vs Enterprise editions (Support, access to professional services & additional features)<br />
+			Browser recommendation: better tooling like debug & co
+		  </aside>
         </section>
 
         <section>
@@ -121,6 +134,10 @@
             <li>BPM-based applications</li>
             <li>Deployment</li>
           </ul>
+          <aside class="notes">
+		    2<br /><br />
+			3:30h of time
+		  </aside>
         </section>
 
         <section>
@@ -130,6 +147,7 @@
           <p>Optimize processes</p>
 
           <aside class="notes">
+		    1:30<br /><br />
             Ensure tasks are performed in the right order, by the appropriate persons and timely<br/>
             Guarantee that process can be reproduced efficiently<br/>
             Tracking and continuous improvement with software such as Bonita
@@ -154,6 +172,7 @@
             </table>
 
             <aside class="notes">
+			  1:30<br /><br />
               Studio is a standalone IDE for developers (screenshot on next slide).<br/>
               Studio contains an embedded Platform used for single developer testing.<br/>
               Production-ready platforms are deployed on dedicated servers.
@@ -165,6 +184,7 @@
             <img src="images/screenshot_studio_diagram.png" alt="Bonita Studio: Diagram Editor" />
 
             <aside class="notes">
+			  1:30<br /><br />
               Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
               Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
               Different steps: process modeling, data model definition, form and pages design, connectors setup...<br/>
@@ -177,6 +197,8 @@
             <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita Studio: UI Designer">
 
             <aside class="notes">
+			1<br /><br />
+			Easy to use, mockup to production ready displays<br />
             Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
             </aside>
           </section>
@@ -193,7 +215,10 @@
             </ul>
 
             <aside class="notes">
+			1.30<br /><br />
             All interactions (Portal and other) with the Engine are managed with Bonita APIs.<br/>
+			Bundles (Tomcat and WildFly) and Docker image are available to simplify the server installation<br />
+			Enterprise edition provides features to handle deployment an maintenance on the cloud (AWS or other)
             </aside>
           </section>
 
@@ -205,6 +230,7 @@
             <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita Portal: Task Inbox" height="400" />
 
             <aside class="notes">
+		      30<br /><br />
               Portal uses the Bonita APIs as any client of the Engine
             </aside>
           </section>
@@ -216,6 +242,8 @@
             <img class="no-margin" src="images/screenshot_form.png" alt="Bonita form" height="400" />
 
             <aside class="notes">
+		      14.00<br /><br />
+			  definition of form (display and get input as part of the process execution)
             </aside>
           </section>
 
@@ -225,6 +253,10 @@
             <img class="no-margin" src="images/screenshot_application.png" alt="Bonita application" height="400" />
 
             <aside class="notes">
+		      1.30<br /><br />
+			  Global view that use pages like dashboards to display and give access to actions<br />
+			  Everything is defined in the UID and hosted by the Bonita plaform<br />
+			  Business specific which makes it usually better than generic task list that might not be as convenient
             </aside>
           </section>
         </section>
@@ -254,6 +286,7 @@
             <p>Elements are linked together by Transitions <span style="margin:0 0 0 20px;">&#8594;</span></p>
 
             <aside class="notes">
+		      17<br /><br />
               OMG = Object Management Group, founded several standards such as UML<br/>
               Shapes (BPMN standard): circle = event, rectangle = activity<br/>
               Colors (Bonita specific): green = start, blue = intermediate, red = end
