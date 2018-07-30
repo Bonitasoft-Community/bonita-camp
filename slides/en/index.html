@@ -489,8 +489,9 @@
             <p>Custom widgets can be created with the UI Designer</p>
 
             <aside class="notes">
-			  105.30<br /><br />
-              Demonstrate the usage of web browser console to debug forms/contracts.<br/>
+			  4<br /><br />
+			  Community contribution
+              [UID, create new artifact, overview of features with HELP redirection, use default Widget like button, create CW to be includes into the form, Chrome dev tools to debug forms/contracts]<br/>
               http://localhost:8080/bonita/API/bdm/businessData/com.company.model.VacationRequest?q=find&p=0&c=10
             </aside>
           </section>
@@ -501,7 +502,10 @@
             <img class="no-margin" src="images/display_business_variables_in_forms.png" alt="Data flow from process variables to forms">
 
             <aside class="notes">
-            When you create a new form you can use some predefined JavaScript variables.<br/>
+			8<br /><br />
+			The UI usually displays business information that is stored<br />
+			[Studio & UID & H2 interface - explained the following based on exercise solution, run it with DEV TOOL enabled]<br />
+            When you create a new form you can use some predefined JavaScript variables to make the link with business variables and documents linked to the context<br/>
             The "context" variable give some information about the task and process instance associated with the visible form.<br/>
             "context" variable have attribute that match the name of process variable with suffix _ref. Those variable have a "link" attribute that define the URL of the API to call in order to retrieve the business variable value.<br/>
             The business variable value is actually a reference to a row in a table of the business database.<br/>
@@ -512,6 +516,12 @@
           <section>
             <h2>Exercise 3</h2>
             <p class="exercise-title">Creating forms</p>
+			
+			<aside class="notes">
+			Build a form from scratch<br/>
+			<br/>
+			30 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
 
@@ -539,16 +549,30 @@
             </table>
 
             <aside class="notes">
+			  12<br /><br />
+			  Explain what is a candidate and assignee<br />
+			  Actor can be related to process instantiation, single human task or lane<br />
+			  [Studio - actors list and reference to process, initiator]<br />
               Actors allow to automatically update task visibility when organization changes.<br/>
+			  Actor can be mapped to a subset of the organization using actor mapping: lists of users, groups, roles and memberships<br />
+              [Studio & Portal - edit process configuration actor mappings, run it]<br />
               Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
               Filters are executed only once when task starts. They can be run again with API call.<br />
-              If you already have information about your organization stored in an LDAP/Active Directory server Subscription edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.
+              [Studio & Portal - change task actor to actor filter, run it]<br />
+			  If you already have information about your organization stored in an LDAP/Active Directory server Subscription edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.
+			  On the authentication purpose, Bonita provides features to use SSO (SAML V2, CAS) and LDAP. Kerberos is also something we see regularly implemented for projects.
             </aside>
           </section>
 
           <section>
             <h2>Exercise 4</h2>
             <p class="exercise-title">Configuring actors</p>
+			
+			<aside class="notes">
+			  Configure actors in the process
+			  <br/>
+			  15 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
 
@@ -564,15 +588,22 @@
             </ul>
 
             <aside class="notes">
+			  5<br /><br />
               Connectors can be placed at the start or the end of a process or a task.<br/>
               Any data type or groovy script can be used as I/O.<br/>
               When possible prefer connectors over scripts for increased performance, error handling (SP).
+			  [Studio - add connector, set I/O]
+			  Connector dependencies are used in priority to avoid conflict with Engine ones: specific classloaders are used to make it possible
             </aside>
           </section>
 
           <section>
             <h2>Exercise 5</h2>
             <p class="exercise-title">Using a connector to send an email</p>
+			
+            <aside class="notes">
+			  20 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
 
@@ -588,11 +619,27 @@
               <li>Controller is a set of processes</li>
             </ul>
             <p>Applications are deployed and hosted in Bonita Portal</p>
+			
+            <aside class="notes">
+			  14<br /><br />
+			  Business data is central to processes that make the overall application<br />
+			  We can live update most of the elements (process configuration, BDM definition, etc...)<br />
+			  [Portal - edit process configuration]
+			  Page is a type of artifact that is used in the view that is specific to the application layer
+			  [Studio & UID & Portal - show the result of the exercise and explain the dashboard page implementation of the leaving request application, use preview]
+			  To have an application, we need a descriptor that will define how resources will be glued together
+			  [Studio - show the descriptor and deploy it]
+			  [Portal - show edition of the deployed application with new version of the dashboard page, menus, etc.]
+            </aside>
           </section>
 
           <section>
             <h2>Exercise 6</h2>
             <p class="exercise-title">Create a leave request application</p>
+			
+			<aside class="notes">
+			  30 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
 
@@ -617,7 +664,10 @@
           </table>
 
           <aside class="notes">
-            When running processes from the Studio the deploy procedure is automated.
+			5<br /><br />
+            When running processes from the Studio the deploy procedure is automated to ease tests
+			This does multiple steps
+			[Studio & Portal - build, deploy, process configuration]
           </aside>
          </section>
 
@@ -638,6 +688,14 @@
             <td>Portal</td>
           </tr>
           </table>
+		  
+		  <aside class="notes">
+		    5<br /><br />
+			The final purpose of all this development is to get business applications deployed on a server<br />
+			The process part is only the controller part
+			The deployment of such an application has to be done in a specific order as there are dependencies between the developed elements<br />
+			For real server deployment, it has to be follow few rules that can be done manually with the Portal or be automated using CI/CD with APIs
+          </aside>
          </section>
         </section>
 
