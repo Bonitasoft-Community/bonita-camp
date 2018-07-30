@@ -291,8 +291,8 @@
 			  Not business limitations<br />
 			  Not Bonita specific<br />
               Shapes (BPMN standard): circle = event, rectangle = activity<br/>
-              Colors (Bonita specific): green = start, blue = intermediate, red = end
-			  [Studio - language (EN/ES/FR by default & crowdin community), import BOS/BPMN, diagram, whiteboard, process, properties, lane, task, event, switch between item types
+              Colors (Bonita specific): green = start, blue = intermediate, red = end<br />
+			  [Studio - language (EN/ES/FR by default & crowdin community), import BOS/BPMN, diagram, whiteboard, process, properties, lane, task, event, switch between item types<br />
 			  Documentation for details of all elements in the palette
             </aside>
           </section>
@@ -347,8 +347,8 @@
 			  30 - WAIT / ANSWER QUESTIONS<br />
 			  <br /><br />
 			  5<br /><br />
-			  Embedded engine in Studio to test development
-			  [Studio - run a case of exercise 1, process instantiation form, assign/execute task from task list page, administrator perspective to see archived case]
+			  Embedded engine in Studio to test development<br />
+			  [Studio - run a case of exercise 1, process instantiation form, assign/execute task from task list page, administrator perspective to see archived case]<br />
 			  [Studio - edit the condition to false, run another case and show other task]
             </aside>
           </section>
@@ -370,7 +370,7 @@
 
             <aside class="notes">
 			  2.30<br /><br />
-			  BDM: complex type with fields, dedicated DB with automatic administration, accessible by API
+			  BDM: complex type with fields, dedicated DB with automatic administration, accessible by API<br />
               Form: used to store the result of a REST API call (like getting BDM data)
             </aside>
           </section>
@@ -407,7 +407,7 @@
 			  4<br /><br />
               DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
               Never try to R/W data directly from Bonita DB, use the APIs to do so.<br />
-			  Document: basic in Bonita but could use CMS using connectors like Alfresco or Sharepoint
+			  Document: basic in Bonita but could use CMS using connectors like Alfresco or Sharepoint<br />
 			  [Studio - show data in the process to execute the flow]
             </aside>
           </section>
@@ -423,8 +423,8 @@
             <p>Contributes to the decoupling of process logic and user interface.</p>
             <aside class="notes">
 			  2.30<br /><br />
-			  Invalid contract will fail
-			  [Studio - process & human task contracts, approval from user form example]
+			  Invalid contract will fail<br />
+			  [Studio - process & human task contracts, approval from user form example]<br />
 			  In case you want to use your own forms, the contract is the interface that warranty the right execution
             </aside>
           </section>
@@ -476,9 +476,9 @@
 
             <aside class="notes">
 			  4<br /><br />
-			  Form: return some input from the end user, associated to process (process instantiation or human task)
-			  Page: does not return anything, display information and optionally provide access to actions
-			  [Studio - human task form, process instantiation form, case overview]
+			  Form: return some input from the end user, associated to process (process instantiation or human task)<br />
+			  Page: does not return anything, display information and optionally provide access to actions<br />
+			  [Studio - human task form, process instantiation form, case overview]<br />
 			  [UID - open]
             </aside>
           </section>
@@ -490,7 +490,7 @@
 
             <aside class="notes">
 			  4<br /><br />
-			  Community contribution
+			  Community contribution<br />
               [UID, create new artifact, overview of features with HELP redirection, use default Widget like button, create CW to be includes into the form, Chrome dev tools to debug forms/contracts]<br/>
               http://localhost:8080/bonita/API/bdm/businessData/com.company.model.VacationRequest?q=find&p=0&c=10
             </aside>
@@ -559,7 +559,7 @@
               Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
               Filters are executed only once when task starts. They can be run again with API call.<br />
               [Studio & Portal - change task actor to actor filter, run it]<br />
-			  If you already have information about your organization stored in an LDAP/Active Directory server Subscription edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.
+			  If you already have information about your organization stored in an LDAP/Active Directory server Subscription edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.<br />
 			  On the authentication purpose, Bonita provides features to use SSO (SAML V2, CAS) and LDAP. Kerberos is also something we see regularly implemented for projects.
             </aside>
           </section>
@@ -569,7 +569,7 @@
             <p class="exercise-title">Configuring actors</p>
 			
 			<aside class="notes">
-			  Configure actors in the process
+			  Configure actors in the process<br />
 			  <br/>
 			  15 - WAIT / ANSWER QUESTIONS<br />
             </aside>
@@ -591,8 +591,8 @@
 			  5<br /><br />
               Connectors can be placed at the start or the end of a process or a task.<br/>
               Any data type or groovy script can be used as I/O.<br/>
-              When possible prefer connectors over scripts for increased performance, error handling (SP).
-			  [Studio - add connector, set I/O]
+              When possible prefer connectors over scripts for increased performance, error handling (SP).<br />
+			  [Studio - add connector, set I/O]<br />
 			  Connector dependencies are used in priority to avoid conflict with Engine ones: specific classloaders are used to make it possible
             </aside>
           </section>
@@ -624,11 +624,11 @@
 			  14<br /><br />
 			  Business data is central to processes that make the overall application<br />
 			  We can live update most of the elements (process configuration, BDM definition, etc...)<br />
-			  [Portal - edit process configuration]
-			  Page is a type of artifact that is used in the view that is specific to the application layer
-			  [Studio & UID & Portal - show the result of the exercise and explain the dashboard page implementation of the leaving request application, use preview]
-			  To have an application, we need a descriptor that will define how resources will be glued together
-			  [Studio - show the descriptor and deploy it]
+			  [Portal - edit process configuration]<br />
+			  Page is a type of artifact that is used in the view that is specific to the application layer<br />
+			  [Studio & UID & Portal - show the result of the exercise and explain the dashboard page implementation of the leaving request application, use preview]<br />
+			  To have an application, we need a descriptor that will define how resources will be glued together<br />
+			  [Studio - show the descriptor and deploy it]<br />
 			  [Portal - show edition of the deployed application with new version of the dashboard page, menus, etc.]
             </aside>
           </section>
@@ -665,8 +665,8 @@
 
           <aside class="notes">
 			5<br /><br />
-            When running processes from the Studio the deploy procedure is automated to ease tests
-			This does multiple steps
+            When running processes from the Studio the deploy procedure is automated to ease tests<br />
+			This does multiple steps<br />
 			[Studio & Portal - build, deploy, process configuration]
           </aside>
          </section>
@@ -692,7 +692,7 @@
 		  <aside class="notes">
 		    5<br /><br />
 			The final purpose of all this development is to get business applications deployed on a server<br />
-			The process part is only the controller part
+			The process part is only the controller part<br />
 			The deployment of such an application has to be done in a specific order as there are dependencies between the developed elements<br />
 			For real server deployment, it has to be follow few rules that can be done manually with the Portal or be automated using CI/CD with APIs
           </aside>
