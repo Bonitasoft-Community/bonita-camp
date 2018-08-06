@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
-	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Environment setup</title>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Environment setup</title>
 
   <section>
     <para>This chapter explain how to setup your development environment in order to be able to do the exercises described in the next chapters.</para>
@@ -16,15 +15,15 @@
 
   <section>
     <title>Install Bonita Studio</title>
-    <para>Go to the <ulink url="http://www.bonitasoft.com/download">download section</ulink> of Bonitasoft website, click on "Customize your download" and click on the "Download" button next to "Bonita All in one" to get the <emphasis role="bold">zip</emphasis> package of Bonita Studio.</para>
-    <para>Unzip the Studio to the folder of your choice. Preferably choose a target folder with a path that is short and that don't include any space such as <code>C:\BonitaStudioComunity-x.y.z</code>.</para>
+    <para>Go to the <ulink url="https://www.bonitasoft.com/downloads">download section</ulink> of Bonitasoft website, click on "Customize your download" and click on the "Download" button next to "Bonita Studio zip package" to get the <emphasis role="bold">zip</emphasis> package of Bonita Studio.</para>
+    <para>Unzip the Studio to the folder of your choice. Preferably choose a target folder with a path that is short and that doesn't include any space such as <code>C:\BonitaStudioComunity-x.y.z</code>.</para>
   </section>
 
   <section>
     <title>Start Bonita Studio</title>
     <para>Open the Studio folder and use the appropriate runtime to start it:</para>
     <itemizedlist mark='bullet'>
-  		<listitem><para>Windows 64 bit: BonitaStudioCommunity64.exe</para></listitem>
+      <listitem><para>Windows 64 bit: BonitaStudioCommunity64.exe</para></listitem>
       <listitem><para>Windows 32 bit: BonitaStudioCommunity.exe</para></listitem>
       <listitem><para>macOS: BonitaStudioCommunity.app</para></listitem>
       <listitem><para>Linux 64 bit: BonitaStudioCommunity64-linux</para></listitem>
@@ -37,7 +36,7 @@
     <para>We recommend to use Chrome or Firefox for development. In order to test which web browser your computer is currently using click on the "Portal" button in Studio tool bar. It should open the Bonita Portal with your default web browser.</para>
     <para>You can configure Bonita Studio to use an other browser when opening web user interfaces:</para>
     <itemizedlist mark='bullet'>
-  		<listitem><para>In the Studio click on "Preferences" button.</para></listitem>
+      <listitem><para>In the Studio click on "Preferences" (gear) button.</para></listitem>
       <listitem><para>In the "Web" section click on "Browser".</para></listitem>
       <listitem><para>Click on "New..." button.</para></listitem>
       <listitem><para>Type a name and use the "Browse..." button to select the web browser runtime (e.g. C:\Program Files (x86)\Google\Application\chrome.exe for Chrome on Windows).</para></listitem>
