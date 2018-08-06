@@ -18,7 +18,7 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>Duplicate the process diagram from the previous exercise to create a 2.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 2.0.0 version.</para>
 		<para>Create a "LeaveRequest" BDM with the following attributes (don't use the "Multiple" option):</para>
 		<informaltable frame="all">
 			<tgroup cols="3" align="left" colsep="1" rowsep="1">
@@ -79,13 +79,13 @@
 		<title>Step by step instructions</title>
 		<orderedlist>
 			<listitem>
-				<para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 2.0 version.</emphasis></para>
-				<para>In the Studio's top menu, click on "Diagram / Duplicate".</para>
+				<para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 2.0.0 version.</emphasis></para>
+				<para>In the Studio's top menu, click on "File / Duplicate diagram...".</para>
 				<para>Update the process diagram AND pool version numbers.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Create the "LeaveRequest" BDM</emphasis></para>
-				<para>Navigate to the "Development / Business Data Model / Manage" top menu.</para>
+				<para>Navigate to the "Development / Business Data Model / Define..." top menu.</para>
 				<para>Click on "Add" (A) in the "List of Business Objects" and name the object "LeaveRequest" (B) (this is a technical name so it should not contain spaces or special characters).</para>
 				<para>With the "LeaveRequest" object selected, add the following attributes (C):</para>
 				<informaltable frame="all">
