@@ -18,7 +18,7 @@
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 4.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.0.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a "Validator" lane to the process.</emphasis></para>
 				<para>Select the "Lane" element from the BPMN palette and click in the process pool.</para>
