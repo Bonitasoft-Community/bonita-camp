@@ -17,7 +17,7 @@
 	<section>
 		<title>Instructions résumées</title>
 		<para>Obtenir et démarrer le serveur FakeSMTP.</para>
-		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</para>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.1.0.</para>
 		<para>Ajouter un connecteur d'envoi d'email sur les tâches automatiques "Notifier approbation" et "Notifier refus".
 		Ceux-ci enverront un email au demandeur avec le statut de validation de sa demande.</para>
 		<para>Le code ci-dessous sera utilisé pour récupérer l'email du demandeur dans le connecteur :</para>
@@ -38,7 +38,7 @@
 				</para>
 				<para>Une fois l'interface graphique de FakeSMTP affichée, configurer le port d'écoute sur 2525 et cliquer sur le bouton "Démarrer le serveur".</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 5.0.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.1.0.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Tester le connecteur d'envoi d'email pour obtenir la bonne configuration SMTP.</emphasis></para>
 				<para>Naviguer dans le menu "Développement / Connecteurs / Tester un connecteur..." de la barre supérieur du Studio.</para>
