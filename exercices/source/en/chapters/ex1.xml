@@ -13,7 +13,7 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>In order to complete the exercise, create a "Leave request diagram" diagram in version 1.0 containing a "LeaveRequest" process in version 1.0.0.</para>
+		<para>In order to complete the exercise, create a "LeaveRequestDiagram" diagram in version 1.0.0 containing a "LeaveRequest" process in version 1.0.0.</para>
 		<para>The process pool should contain the following BPMN elements:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A start event named "Fill request"</para></listitem>
