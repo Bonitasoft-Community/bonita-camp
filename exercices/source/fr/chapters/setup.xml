@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
-	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Installation de l'environnement</title>
+<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Installation de l'environnement</title>
 
   <section>
     <para>Ce chapitre explique les étapes à réaliser pour mettre en place l'environnement de développement permettant de réaliser les exercices des chapitres qui suivent.</para>
@@ -16,7 +15,7 @@
 
   <section>
     <title>Installation de Bonita Studio</title>
-    <para>Sur le site web de Bonitasoft, aller sur la page de <ulink url="http://fr.bonitasoft.com/telecharger">téléchargement</ulink>, cliquer sur "Personnalisez votre téléchargement" et cliquer sur le bouton "Télécharger" sur la ligne "Bonita All in one" pour récupérer le <emphasis role="bold">zip</emphasis> du Studio Bonita.</para>
+    <para>Sur le site web de Bonitasoft, aller sur la page de <ulink url="https://fr.bonitasoft.com/telechargez">téléchargement</ulink>, cliquer sur "Personnalisez votre téléchargement" et cliquer sur le bouton "Télécharger" sur la ligne "Bonita Studio zip package" pour récupérer le <emphasis role="bold">zip</emphasis> du Studio Bonita.</para>
     <para>Dézipper le fichier dans le dossier de votre choix. De préférence choisir un dossier avec un chemin court ne contenant pas d'espaces comme par exemple <code>C:\BonitaStudioComunity-x.y.z</code>.</para>
   </section>
 
@@ -24,7 +23,7 @@
     <title>Démarrer le Studio</title>
     <para>Ouvrer le dossier du Studio et utiliser l'exécutable approprié pour démarrer le Studio :</para>
     <itemizedlist mark='bullet'>
-  		<listitem><para>Windows 64 bit : BonitaStudioCommunity64.exe</para></listitem>
+      <listitem><para>Windows 64 bit : BonitaStudioCommunity64.exe</para></listitem>
       <listitem><para>Windows 32 bit : BonitaStudioCommunity.exe</para></listitem>
       <listitem><para>macOS : BonitaStudioCommunity.app</para></listitem>
       <listitem><para>Linux 64 bit : BonitaStudioCommunity64-linux</para></listitem>
