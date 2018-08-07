@@ -16,7 +16,7 @@
 	<section>
 		<title>Instructions overview</title>
 		<para>Obtain and start the FakeSMTP server.</para>
-		<para>Duplicate the process diagram from the previous exercise to create a 5.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 3.1.0 version.</para>
 		<para>Add an email connector on the "Notify request approved" and "Notify request rejected" service tasks.
 		These will send an email to the requestor with the request validation status.</para>
 		<para>The following code will be used to retrieve the requestor's email in the connector:</para>
@@ -37,7 +37,7 @@
 				</para>
 				<para>Once the user interface is displayed, set the listenning port to 2525 and click on the "Start server" button.</para>
 			</listitem>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 5.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.1.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
 				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
