@@ -255,7 +255,7 @@
 				<para>In the Portal, navigate to the Applications tab.</para>
 				<para>Click on New.</para>
 				<para>Enter "Leave request app" in the field "Display name" (A).</para>
-				<para>Enter "leaveRequest" in the field "URL" (B).</para>
+				<para>Enter "leave-request" in the field "URL" (B).</para>
 				<para>Leave the defaults value for the Version (C) and Profile (D).</para>
 				<para>
 					<mediaobject>
@@ -266,7 +266,7 @@
 				</para>
 				<para>Click on "Create" to create the application.</para>
 				<para>Click on "..." to access the configuration page.</para>
-				<para>Find the Pages section on the bottom left part of the screen and Click on "Add". Select the page leaveRequest and enter "status" in the URL field.</para>
+				<para>Find the Pages section on the bottom left part of the screen and Click on "Add". Select the page LeaveRequestStatus and enter "status" in the URL field.</para>
 				<para>Define the leaveRequest page as the homepage by clicking on the "house" icon  <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></guiicon>.</para>
 				<para>Once done, click on the trash icon <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></guiicon> to delete the default homepage.</para>
 				<para>The configuration page should now look like that:</para>
@@ -277,7 +277,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on the link "../apps/leaveRequest" to load the application.</para>
+				<para>Click on the link "../apps/leave-request" to load the application.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -306,24 +306,24 @@
 				<para>Click on "Create a new variable" and choose "External API".</para>
 				<para>Name it "processDefinitionInfo".</para>
 				<para>In the field API URL, enter: (no line break)</para>
-				<para><programlisting language="xml">../API/bpm/process?p=0&amp;c=100&amp;o=version%20DESC&amp;f=name=Leave%20Request</programlisting></para>
+				<para><programlisting language="xml">../API/bpm/process?p=0&amp;c=100&amp;o=version%20DESC&amp;f=name=LeaveRequest</programlisting></para>
 				<para>Be careful when you copy/paste the URL that there is no whitespace left.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add 2 widgets in the form container.</emphasis></para>
-				<para>One date widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start</para>
+				<para>One date widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start date</para>
 				<para>One input widget with the options: Width: 6. Value: formInput.requestInput.dayCount. Label: Number of days</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a submit button in the form container.</emphasis></para>
 				<para>Drag the button widget from the palette and place it in the form container below the two widgets.</para>
-				<para>Enter "Create a new request" in the field label.</para>
+				<para>Enter "Create a new request" in the field Label.</para>
 				<para>Select POST in the Action drop-down list.</para>
 				<para>Click on "fx" to switch the "Data sent on click" field mode and then enter "formInput".</para>
 				<para>In the field URL to call, enter:</para>
 				<para><programlisting language="xml">../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation</programlisting></para>
 				<para>In the field Target URL Success, enter:</para>
-				<para><programlisting language="xml">/bonita/apps/leaveRequest</programlisting></para>
+				<para><programlisting language="xml">/bonita/apps/leave-request</programlisting></para>
 				<para>Save the page. The page should look like that:</para>
 				<para>
 					<mediaobject>

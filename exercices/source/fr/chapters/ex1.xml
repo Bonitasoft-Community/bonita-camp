@@ -12,7 +12,7 @@
 
 	<section>
 		<title>Instructions résumées</title>
-		<para>Afin de réaliser l'exercice, créer un diagramme "Diagramme demande de congés" contenant un processus "Demande de congés" en version 1.0.</para>
+		<para>Afin de réaliser l'exercice, créer un diagramme "DiagrammeDemandeConges" contenant un processus "DemandeConges" en version 1.0.0.</para>
 		<para>Le pool du processus devra contenir les éléments BPMN suivants :</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un événement de début "Saisir demande"</para></listitem>
@@ -32,8 +32,8 @@
 			<listitem><para><emphasis role="bold">Créer un nouveau diagramme de processus.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Spécifier le nom du diagramme et celui du processus.</emphasis></para>
-				<para>Cliquer sur le menu "Diagramme / Renommer..." en haut du Studio.</para>
-				<para>Entrer "Diagramme demande de congés" pour le nom du diagramme et "Demande de congés" pour celui du pool.</para>
+				<para>Cliquer sur le menu "Fichier / Renommer le diagramme..." en haut du Studio.</para>
+				<para>Entrer "DiagrammeDemandeConges" pour le nom du diagramme et "DemandeConges" pour celui du pool et "1.0.0" pour la version du diagramme et du pool.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -96,6 +96,8 @@
 			<listitem><para><emphasis role="bold">Ajouter un événement de terminaison "Fin - Demande refusée" à la suite de la tâche automatique "Notifier refus"</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Nommer les 2 transitions entre la porte logique et les étapes automatiques</emphasis></para>
+				<para>Sélectionner la transition.</para>
+				<para>Naviguer dans l'onglet "Général / Général" puis entrer le nom.</para>
 				<para>La transition menant à l'étape "Notifier approbation" se nommera "Oui" et l'autre "Non".</para>
 			</listitem>
 			<listitem>
@@ -135,6 +137,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
+				<para>Selectionner le pool du processus.</para>
 				<para>Cliquer sur le bouton <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.

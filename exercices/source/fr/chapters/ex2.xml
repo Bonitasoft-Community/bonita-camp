@@ -18,7 +18,7 @@
 
 	<section>
 		<title>Instructions résumées</title>
-		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.0.</para>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.0.0.</para>
 		<para>Créer un objet BDM "DemandeConges" (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux) avec les attributs suivants :</para>
 		<informaltable frame="all">
 			<tgroup cols="3" align="left" colsep="1" rowsep="1">
@@ -79,13 +79,13 @@
 		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem>
-				<para><emphasis role="bold">Dupliquer le diagramme de processus existant pour créer une version 2.0.</emphasis></para>
-				<para>Dans le menu supérieur du Studio, cliquer "Diagramme / Dupliquer...".</para>
+				<para><emphasis role="bold">Dupliquer le diagramme de processus existant pour créer une version 2.0.0.</emphasis></para>
+				<para>Dans le menu supérieur du Studio, cliquer "Fichier / Dupliquer le diagramme...".</para>
 				<para>Mettre à jour les numéros de version du diagramme ET du processus.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer le BDM "DemandeConges".</emphasis></para>
-				<para>Naviguer dans le menu "Développement / Modèle de Données Métier / Gérer...".</para>
+				<para>Naviguer dans le menu "Développement / Modèle de Données Métier / Définir...".</para>
 				<para>Cliquer sur "Ajouter" (A), dans la liste d'objets métiers et nommer l'objet "DemandeConges" (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).</para>
 				<para>Avec l'objet "DemandeConges" sélectionné, ajouter les attributs suivants (C) :</para>
 				<informaltable frame="all">
@@ -132,7 +132,7 @@
 					</mediaobject>
 				</para>
 				<para>Cliquer sur "Terminer".</para>
-				<para>Le message suivant s'affiche pour confirmer le déploiement du BDM. Cocher l'option "Don't show me this message again" et cliquer sur "Ok".</para>
+				<para>Le message suivant s'affiche pour confirmer le déploiement du BDM. Cocher l'option "Ne plus me montrer ce message" et cliquer sur "Ok".</para>
 				<para>
 					<mediaobject>
 						<imageobject>

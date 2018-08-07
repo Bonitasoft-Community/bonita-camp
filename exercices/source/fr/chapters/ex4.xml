@@ -10,7 +10,7 @@
 
 	<section>
 		<title>Instructions résumées</title>
-		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 4.0.</para>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.0.</para>
 		<para>Ajouter une lane "Validateur" au diagramme et y déplacer la tâche "Valider demande".</para>
 		<para>Configurer un filtre d'acteur de type "Manager de l'initiateur du processus" sur la lane "Validateur".</para>
 	</section>
@@ -18,7 +18,7 @@
 	<section>
 		<title>Instructions pas à pas</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 4.0.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.0.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter une lane "Validateur" au diagramme</emphasis></para>
 				<para>Sélectionner une lane à partir de la palette d'éléments BPMN présente sur le côté gauche du Studio puis cliquer dans le pool du processus.</para>
@@ -35,7 +35,7 @@
 			<listitem><para><emphasis role="bold">Faire glisser la tâche "Valider demande" dans la lane "Validateur".</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer un filtre d'acteur de type "Manager de l'initiateur du processus" sur la lane "Validateur".</emphasis></para>
-				<para>Sélectionner la lane "Validateur", naviguer dans l'onglet "Général / Acteur".</para>
+				<para>Sélectionner la lane "Validateur", naviguer dans l'onglet "Général / Acteurs".</para>
 				<para>Sélectionner l'acteur "Employee actor" à partir du menu déroulant.</para>
 				<para>Cliquer sur le bouton "Définir..." associé au filtre.</para>
 				<para>Sélectionner un filtre de type "Manager de l'initiateur du processus" puis cliquer sur "Suivant".</para>

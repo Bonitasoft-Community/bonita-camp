@@ -10,7 +10,7 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>Duplicate the process diagram from the previous exercise to create a 4.0 version.</para>
+		<para>Duplicate the process diagram from the previous exercise to create a 3.0.0 version.</para>
 		<para>Add a "Validator" lane to the diagram and move the "Validate request" task in it.</para>
 		<para>Add an actor filter of type "Initiator manager" on the "Validator" lane.</para>
 	</section>
@@ -18,7 +18,7 @@
 	<section>
 		<title>Step by step instructions</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 4.0 version.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Duplicate the process diagram from the previous exercise to create a 3.0.0 version.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Add a "Validator" lane to the process.</emphasis></para>
 				<para>Select the "Lane" element from the BPMN palette and click in the process pool.</para>
@@ -35,7 +35,7 @@
 			<listitem><para><emphasis role="bold">Drag and drop the "Validate request" task into the "Validator" lane.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Add an "Initiator manager" actor filter on the "Validator" lane.</emphasis></para>
-				<para>Select the "Validator" lane and navigate to the "General / Actor" tab.</para>
+				<para>Select the "Validator" lane and navigate to the "General / Actors" tab.</para>
 				<para>Select the "Employee actor" from the drop-down menu.</para>
 				<para>Click on the "Set..." button of the actor filter.</para>
 				<para>Select an "Initiator manager" filter and click on "Next".</para>

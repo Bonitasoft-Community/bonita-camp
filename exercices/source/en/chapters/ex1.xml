@@ -13,7 +13,7 @@
 
 	<section>
 		<title>Instructions overview</title>
-		<para>In order to complete the exercise, create a "Leave request diagram" diagram in version 1.0 containing a "Leave request" process in version 1.0.</para>
+		<para>In order to complete the exercise, create a "LeaveRequestDiagram" diagram in version 1.0.0 containing a "LeaveRequest" process in version 1.0.0.</para>
 		<para>The process pool should contain the following BPMN elements:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>A start event named "Fill request"</para></listitem>
@@ -35,8 +35,8 @@
 			<listitem><para><emphasis role="bold">Create a new process diagram.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Set the diagram and process names.</emphasis></para>
-				<para>Click on the "Diagram / Rename..." top menu.</para>
-				<para>Enter "Leave request diagram" as the diagram name and "Leave request" as the pool name.</para>
+				<para>Click on the "File / Rename diagram..." top menu.</para>
+				<para>Enter "LeaveRequestDiagram" as the diagram name, "LeaveRequest" as the pool name and set the version to 1.0.0 for both.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -99,6 +99,8 @@
 			<listitem><para><emphasis role="bold">Add an end event named "End - Request rejected" next to the service task "Notify request rejected"</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Name the two transitions going out of the gateway</emphasis></para>
+				<para>Select the transition.</para>
+				<para>Navigate to the "General / General" tab and enter the name.</para>
 				<para>The transition leading to the "Notify request approved" task should be named "Yes" and the other "No".</para>
 			</listitem>
 			<listitem>

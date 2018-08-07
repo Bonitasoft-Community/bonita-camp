@@ -4,7 +4,7 @@ Bonita Camp - 7.x
 Slides and exercises for the Bonita Camp events.
 
 Content is available in:
-- English (Bonita Camp 7.6)
+- English (Bonita Camp 7.7)
 - French (Bonita Camp 7.6)
 - Spanish (Bonita BPM 7.2)
 
@@ -12,7 +12,7 @@ Content is available in:
 You can get the latest version of slides and exercices by downloading the [latest release](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest) from GitHub.
 
 ## Build instructions for slides
-1. Download and unzip [reveal.js version 3.6.0](https://github.com/hakimel/reveal.js/releases/tag/3.6.0)
+1. Download and unzip [reveal.js version 3.7.0](https://github.com/hakimel/reveal.js/releases/tag/3.7.0)
 2. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
 3. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme/source` folder
 4. Run `npm install`
