@@ -10,7 +10,7 @@
 
 	<section>
 		<title>Instructions résumées</title>
-		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</para>
+		<para>Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.1.0.</para>
 		<para>Créer les formulaires suivants :</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>Un formulaire d'instanciation de processus au niveau du pool permettant d'alimenter les données "dateDebut" et "nombreJours".</para></listitem>
@@ -21,7 +21,7 @@
 	<section>
 		<title>Instructions pas à pas</title>
 		<orderedlist>
-			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.0.</emphasis></para></listitem>
+			<listitem><para><emphasis role="bold">Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.1.0.</emphasis></para></listitem>
 			<listitem>
 				<para><emphasis role="bold">Créer un formulaire d'instanciation.</emphasis></para>
 				<para>Sélectionner le pool du processus et naviguer dans l'onglet "Exécution / Formulaire d'instanciation".</para>
@@ -97,6 +97,10 @@
 								<entry>Format technique de la date</entry>
 								<entry>dd/MM/yyyy</entry>
 							</row>
+							<row>
+								<entry>Libellé du bouton Aujourd'hui</entry>
+								<entry>Aujourd'hui</entry>
+							</row>
 						</tbody>
 					</tgroup>
 				</informaltable>
@@ -127,10 +131,6 @@
 								<entry>Valeur minimum *</entry>
 								<entry>1</entry>
 							</row>
-                            <row>
-                                <entry>Libellé du bouton Aujourd'hui</entry>
-                                <entry>Aujourd'hui</entry>
-                            </row>
 						</tbody>
 					</tgroup>
 				</informaltable>
@@ -392,6 +392,10 @@
 						</tbody>
 					</tgroup>
 				</informaltable>
+			</listitem>
+			<listitem>
+				<para><emphasis role="bold">Ajouter un form container</emphasis></para>
+				<para>Faire glisser un widget de type "Form container" dans une nouvelle ligne sous le widget "Nombre de jours".</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Ajouter un widget pour refuser la demande</emphasis></para>
