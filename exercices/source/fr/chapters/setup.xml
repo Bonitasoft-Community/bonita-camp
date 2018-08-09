@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<article xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Installation de l'environnement</title>
 
   <section>
@@ -36,7 +36,7 @@
     <para>Nous recommandons d'utiliser Chrome ou Firefox dans les phases de développement afin de bénéficier d'outils de test et debug. Afin de savoir quel navigateur est utilisé par défaut par le Studio, cliquer sur le bouton "Portail". Le portail Bonita devrait s'ouvrir avec le navigateur par défaut de votre système d'exploitation.</para>
     <para>Vous pouvez configurer le Studio Bonita pour qu'il utilise un navigateur autre que celui par défaut :</para>
     <itemizedlist mark='bullet'>
-      <listitem><para>Dans le Studio cliquer sur le bouton "Préférences".</para></listitem>
+      <listitem><para>Dans le Studio cliquer sur le bouton "Préférences" (icône d'engrenage).</para></listitem>
       <listitem><para>Dans la section "Web" cliquer sur "Navigateur".</para></listitem>
       <listitem><para>Cliquer sur le bouton "Nouveau...".</para></listitem>
       <listitem><para>Entrer un nom et utiliser le bouton "Parcourir..." pour sélectionner l'exécutable du navigateur web (e.g. C:\Program Files (x86)\Google\Application\chrome.exe pour Chrome sur Windows).</para></listitem>
@@ -46,4 +46,4 @@
     </itemizedlist>
   </section>
 
-</chapter>
+</article>
