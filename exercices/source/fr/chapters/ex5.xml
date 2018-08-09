@@ -30,7 +30,7 @@
 		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Mise en place de FakeSMTP</emphasis></para>
-				<para>Récupérer le binaire de FakeSMTP depuis cette URL: <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
+				<para>Récupérer le binaire de FakeSMTP depuis cette URL : <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
 				<para>Décompresser l'archive fakeSMTP-latest.zip</para>
 				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante:</para>
 				<para>
