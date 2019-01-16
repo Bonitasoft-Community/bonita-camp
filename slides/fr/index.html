@@ -88,6 +88,9 @@
           </div>
 
           <aside class="notes">
+            1:00<br /><br />
+            Welcome<br />
+            Introduction of myself<br />
             Presentation of Bonita<br/>
             Creation of 1st process and application<br/>
             Mix of theoretical presentation and practical exercises<br />
@@ -104,6 +107,14 @@
             <li>Démarrer le Studio et cliquer le bouton Portail</li>
             <li>Nous recommandons d'utiliser Chrome où Firefox lors de vos développements</li>
           </ul>
+          
+          <aside class="notes">
+            2:00<br /><br />
+            Resources: slides, exercises, solutions, etc. [GitHub - latest release]<br />
+            Need the Studio to follow the session<br />
+            Community vs Enterprise editions (Support, access to professional services & additional features)<br />
+            Browser recommendation: better tooling like debug and co
+          </aside>
         </section>
 
         <section>
@@ -119,6 +130,11 @@
             <li>Applications</li>
             <li>Déploiement</li>
           </ul>
+          
+          <aside class="notes">
+            1<br /><br />
+            3:30h of time
+          </aside>
         </section>
 
         <section>
@@ -128,6 +144,7 @@
           <p>Optimiser les processus</p>
 
           <aside class="notes">
+          1:30<br /><br />
           Ensure tasks are performed in the right order, by the good persons and timely<br/>
           Guarantee that process can be reproduced efficiently<br/>
           Tracking and continuous improvement with software such as Bonita
@@ -152,6 +169,7 @@
             </table>
 
             <aside class="notes">
+            0:30<br /><br />
             Studio is a standalone IDE for developers (screenshot on next slide).<br/>
             Studio contains an embedded Platform used for single developer testing.<br/>
             Production-ready platforms are deployed on dedicated servers.
@@ -162,6 +180,7 @@
             <h2 style="font-size:1.4em;">Studio : éditeur de diagrammes</h2>
             <img src="images/screenshot_studio_diagram.png" alt="Bonita Studio : edition de diagrammes">
             <aside class="notes">
+            1:30<br /><br />
             Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
             Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
             Different steps: process modeling, data model definition, form and pages design, connector setup...<br/>
@@ -174,6 +193,8 @@
             <img class="no-margin" src="images/screenshot_ui_designer.png" alt="Bonita Studio : UI Designer">
 
             <aside class="notes">
+            1<br /><br />
+￼            Easy to use, mockup to production ready displays<br />
             Browser based. Using AngularJS and Bootstrap. Allows to create custom widgets.
             </aside>
           </section>
@@ -191,7 +212,10 @@
             </ul>
 
             <aside class="notes">
-            All interactions (Portal and other) with the Engine are managed with Bonita APIs.<br/>
+              1.30<br /><br />
+              All interactions (Portal and other) with the Engine are managed with Bonita APIs.<br/>
+              Bundles (Tomcat and WildFly) and Docker image are available to simplify the server installation<br />
+              Enterprise edition provides features to handle deployment an maintenance on the cloud (AWS or other)
             </aside>
           </section>
 
@@ -203,7 +227,8 @@
             <img class="no-margin" src="images/screenshot_portal_inbox.png" alt="Bonita Portal : liste de tâches" height="400" />
 
             <aside class="notes">
-            Portal uses the Bonita APIs as any client of the Engine
+              30<br /><br />
+              Portal uses the Bonita APIs as any client of the Engine
             </aside>
           </section>
           <section>
@@ -213,6 +238,8 @@
             <img class="no-margin" src="images/screenshot_form.png" alt="Bonita form" height="400" />
 
             <aside class="notes">
+              1.00<br /><br />
+              definition of form (display and get input as part of the process execution)
             </aside>
           </section>
           <section>
@@ -221,6 +248,10 @@
             <img class="no-margin" src="images/screenshot_application.png" alt="Bonita application" height="400" />
 
             <aside class="notes">
+              1.30<br /><br />
+              Global view that use pages like dashboards to display and give access to actions<br />
+              Everything is defined in the UID and hosted by the Bonita plaform<br />
+              Business specific which makes it usually better than generic task list that might not be as convenient
             </aside>
           </section>
         </section>
@@ -250,9 +281,14 @@
             <p>Les éléments sont reliés par des Transitions <span style="margin:0 0 0 20px;">&#8594;</span></p>
 
             <aside class="notes">
-            OMG = Object Management Group, founded several standards such as UML<br/>
-            Shapes (BPMN standard): circle = event, rectangle = activity<br/>
-            Colors (Bonita specific): green = start, blue = intermediate, red = end
+              4.30<br /><br />
+              OMG = Object Management Group, founded several standards such as UML<br/>
+              Not business limitations<br />
+              Not Bonita specific<br />
+              Shapes (BPMN standard): circle = event, rectangle = activity<br/>
+              Colors (Bonita specific): green = start, blue = intermediate, red = end<br />
+              [Studio - language (EN/ES/FR by default & crowdin community), import BOS/BPMN, diagram, whiteboard, process, properties, lane, task, event, switch between item types<br />
+              Documentation for details of all elements in the palette
             </aside>
           </section>
 
@@ -277,11 +313,14 @@
             <img class="no-margin" src="images/bpmn_gateway_design.png" alt="Symetrical gateway design"/>
 
             <aside class="notes">
-            - Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
-            - Exclusive: only one incoming TR should reach the gateway.<br/>
-            - Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
-            - Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
-            - Inclusive: used when dealing with parallel gateways with conditions
+              5<br /><br />
+              - Exclusive: only one incoming TR should reach the gateway.<br/>	                Exclusive: use default TR and make sure only one condition is true among outgoing TRs<br/>
+              - Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>	                Exclusive: only one incoming TR should reach the gateway.<br/>
+              - Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>	                Parallel: all outgoing TR fired at the same time (no condition allowed).<br/>
+              - Inclusive: used when dealing with parallel gateways with conditions	                Parallel: all incoming TR are waited for even if some can never be reached due to bad design.<br/>
+              Inclusive: used when dealing with parallel gateways with conditions<br />
+              Best practice: explicit, symmetric and default<br />
+              [Studio - parallel / exclusive / inclusive gateways, order of condition evaluation, validation]
             </aside>
           </section>
 
@@ -294,6 +333,17 @@
             </div>
 
             <aside class="notes">
+              Sump the content of the exercise: build a basic but running leave request process for a company<br />
+              - Demonstrate how to import a correction and deal with conflict.				  Exercise correction resources are available: one BOS file per exercise<br />
+              Useful because exercises are iterations on the same process<br />
+              [Studio - save button, export, import, conflict]<br />
+              <br />
+              25 - WAIT / ANSWER QUESTIONS<br />
+              <br /><br />
+              5<br /><br />
+              Embedded engine in Studio to test development<br />
+              [Studio - run a case of exercise 1, process instantiation form, assign/execute task from task list page, administrator perspective to see archived case]<br />
+              [Studio - edit the condition to false, run another case and show other task]
               - Demonstrate how to check process history using the administrator view. Speak about the value of graphical monitoring from Enterprise Edition.<br/>
               - Demonstrate how to export the content of the workspace (one diagram / the whole workspace).<br/>
               - Demonstrate how to import a correction and deal with conflict.
@@ -318,8 +368,9 @@
             </div>
 
             <aside class="notes">
-            How to choose between BDM and process/step data: almost always use BDM.<br/>
-            Forms data are for example used to store the result of a REST API call (to get BDM value) in order to display it in a form.
+              1.30<br /><br />
+              BDM: complex type with fields, dedicated DB with automatic administration, accessible by API<br />
+              Forms data are for example used to store the result of a REST API call (to get BDM value) in order to display it in a form.
             </aside>
           </section>
 
@@ -353,8 +404,11 @@
             </p>
 
             <aside class="notes">
-            DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
-             Never try to R/W data directly from Bonita DB, use the APIs to do so.
+              4<br /><br />
+              DB storage guarantees that data is safely kept in case of server shut down (expected or not).<br/>
+              Never try to R/W data directly from Bonita DB, use the APIs to do so.<br />
+              Document: basic in Bonita but could use CMS using connectors like Alfresco or Sharepoint<br />
+              [Studio - show data in the process to execute the flow]
             </aside>
           </section>
 
@@ -367,6 +421,13 @@
               <li>Exécuter une tâche humaine</li>
             </ul>
             <p>Contribue au découplage entre la logique métier et les interfaces graphiques.</p>
+            
+            <aside class="notes">
+              2.30<br /><br />
+              Invalid contract will fail<br />
+              [Studio - process and human task contracts, approval from user form example]<br />
+              In case you want to use your own forms, the contract is the interface that warranty the right execution
+            </aside>
           </section>
           
           <section>
@@ -375,16 +436,25 @@
             <img class="no-margin" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
 
             <aside class="notes">
-            When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
-            When user click on the submit button, a REST API call is performed to the Engine API to instrcut the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
-            Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
-            Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a businnes variable (this will perform an UPDATE SQL request on the business database)...
+              2.30<br /><br />
+              When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
+              When user click on the submit button, a REST API call is performed to the Engine API to instrcut the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
+              Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
+              Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a businnes variable (this will perform an UPDATE SQL request on the business database)...
             </aside>
           </section>
 
           <section>
             <h2>Exercice 2</h2>
             <p class="exercise-title">Ajout de données et spécification de contrats</p>
+            
+            <aside class="notes">
+              6<br /><br />
+              Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
+              [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
+              <br/>
+              15 - WAIT / ANSWER QUESTIONS<br />
+￼             </aside>
           </section>
         </section>
 
@@ -409,6 +479,11 @@
             </ul>
 
             <aside class="notes">
+              4<br /><br />
+              Form: return some input from the end user, associated to process (process instantiation or human task)<br />
+              Page: does not return anything, display information and optionally provide access to actions<br />
+              [Studio - human task form, process instantiation form, case overview]<br />
+              [UID - open]
             </aside>
           </section>
 
@@ -418,7 +493,9 @@
             <p>Des widgets personnalisés peuvent être créés avec le UI Designer</p>
 
             <aside class="notes">
-              Demonstrate the usage of web browser console to debug forms/contracts.<br/>
+              4<br /><br />
+              Community contribution<br />
+              [UID, create new artifact, overview of features with HELP redirection, use default Widget like button, create CW to be includes into the form, Chrome dev tools to debug forms/contracts]<br/>
               http://localhost:8080/bonita/API/bdm/businessData/com.company.model.DemandeConges?q=find&p=0&c=10
             </aside>
           </section>
@@ -429,17 +506,26 @@
             <img class="no-margin" src="images/display_business_variables_in_forms.png" alt="Data flow from process variables to forms">
 
             <aside class="notes">
-            When you create a new form you can use some predefined JavaScript variables.<br/>
-            The "context" variable give some information about the task and process instance associated with the visible form.<br/>
-            "context" variable have attribute that match the name of process variable with suffix _ref. Those variable have a "link" attribute that define the URL of the API to call in order to retrieve the business variable value.<br/>
-            The business variable value is actually a reference to a row in a table of the business database.<br/>
-            So to retrieve the business variable in a form, create a variable with type set to "External API" and the URL to ../{{context.myBusinessVar_ref.link}}. You can then map this variable to the form widgets.
+              8<br /><br />
+              The UI usually displays business information that is stored<br />
+              [Studio and UID and H2 interface - explained the following based on exercise solution, run it with DEV TOOL enabled]<br />
+              When you create a new form you can use some predefined JavaScript variables to make the link with business variables and documents linked to the context<br/>
+              The "context" variable give some information about the task and process instance associated with the visible form.<br/>
+              "context" variable have attribute that match the name of process variable with suffix _ref. Those variable have a "link" attribute that define the URL of the API to call in order to retrieve the business variable value.<br/>
+              The business variable value is actually a reference to a row in a table of the business database.<br/>
+              So to retrieve the business variable in a form, create a variable with type set to "External API" and the URL to ../{{context.myBusinessVar_ref.link}}. You can then map this variable to the form widgets.
             </aside>
           </section>
 
           <section>
             <h2>Exercice 3</h2>
             <p class="exercise-title">Création de formulaires</p>
+            
+            <aside class="notes">
+              Build a form from scratch<br/>
+              <br/>
+              20 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
 
@@ -466,16 +552,30 @@
             </table>
 
             <aside class="notes">
+              8<br /><br />
+              Explain what is a candidate and assignee<br />
+              Actor can be related to process instantiation, single human task or lane<br />
+              [Studio - actors list and reference to process, initiator]<br />
               Actors allow to automatically update task visibility when organization changes.<br/>
+              Actor can be mapped to a subset of the organization using actor mapping: lists of users, groups, roles and memberships<br />
+              [Studio and Portal - edit process configuration actor mappings, run it]<br />
               Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
               Filters are executed only once when task starts. They can be run again with API call..<br />
-              If you already have information about your organization stored in an LDAP/Active Directory server Enterprise Edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.
+              [Studio and Portal - change task actor to actor filter, run it]<br />
+              If you already have information about your organization stored in an LDAP/Active Directory server Enterprise Edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.<br />
+              On the authentication purpose, Bonita provides features to use SSO (SAML V2, CAS, Kerberos-Windows SSO) and LDAP.
             </aside>
           </section>
 
           <section>
             <h2>Exercice 4</h2>
             <p class="exercise-title">Gestion d'acteurs</p>
+            
+            <aside class="notes">
+              Configure actors in the process<br />
+              <br/>
+              15 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
 
@@ -491,15 +591,22 @@
             </ul>
 
             <aside class="notes">
+              5<br /><br />
               Connectors can be placed at the start or the end of a process or a task.<br/>
               Any data type or groovy script can be used as I/O.<br/>
-              When possible prefer connectors over scripts for increased performance, error handling (Enterprise Edition).
+              When possible prefer connectors over scripts for increased performance, error handling (Enterprise Edition).<br />
+              [Studio - add connector, set I/O]<br />
+              Connector dependencies are used in priority to avoid conflict with Engine ones: specific classloaders are used to make it possible
             </aside>
           </section>
 
           <section>
             <h2>Exercice 5</h2>
             <p class="exercise-title">Notification par le biais d'un connecteur</p>
+            
+            <aside class="notes">
+              20 - WAIT / ANSWER QUESTIONS<br />
+￼            </aside>
           </section>
         </section>
 
@@ -514,11 +621,27 @@
               <li>Le contrôleur est un ensemble de processus</li>
             </ul>
             <p>Les applications sont déployées et rendues par le Portail Bonita</p>
+            
+            <aside class="notes">
+              14<br /><br />
+              Business data is central to processes that make the overall application<br />
+              We can live update most of the elements (process configuration, BDM definition, etc...)<br />
+              [Portal - edit process configuration]<br />
+              Page is a type of artifact that is used in the view that is specific to the application layer<br />
+              [Studio and UID and Portal - show the result of the exercise and explain the dashboard page implementation of the leaving request application, use preview]<br />
+              To have an application, we need a descriptor that will define how resources will be glued together<br />
+              [Studio - show the descriptor and deploy it]<br />
+              [Portal - show edition of the deployed application with new version of the dashboard page, menus, etc.]
+            </aside>
           </section>
 
           <section>
             <h2>Exercice 6</h2>
             <p class="exercise-title">Créer une application de gestion des congés.</p>
+            
+            <aside class="notes">
+              20 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
           </section>
         </section>
         <section>
@@ -542,7 +665,10 @@
           </table>
 
           <aside class="notes">
-          When running processes from the Studio the deploy procedure is automated.
+            2.30<br /><br />
+            When running processes from the Studio the deploy procedure is automated to ease tests<br />
+            This does multiple steps<br />
+            [Studio and Portal - build, deploy, process configuration]
           </aside>
         </section>
           <section>
@@ -562,8 +688,14 @@
             <td>Portail</td>
           </tr>
           </table>
+          
           <aside class="notes">
-            Mention BCD for automated command line/Jnkeins build and deployment (Enterprise Edition).
+            2.30<br /><br />
+            Mention BCD for automated command line/Jenkins build and deployment (Enterprise Edition).
+            The final purpose of all this development is to get business applications deployed on a server<br />
+            The process part is only the controller part<br />
+            The deployment of such an application has to be done in a specific order as there are dependencies between the developed elements<br />
+            For real server deployment, it has to be follow few rules that can be done manually with the Portal or be automated using CI/CD with APIs
           </aside>
         </section>
 
