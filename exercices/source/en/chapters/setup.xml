@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<article xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<article xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
   <title>Environment setup</title>
 
   <section>
+		<title>Overview</title>
     <para>This chapter explain how to setup your development environment in order to be able to do the exercises described in the next chapters.</para>
   </section>
 
   <section>
     <title>Install Java Development Kit (JDK) 8</title>
-    <para>Bonita Studio requires Java 8 to run. You can get the JDK from <ulink url="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle website</ulink>.</para>
+    <para>Bonita Studio requires Java 8 to run. You can get the JDK from <link xl:href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle website</link>.</para>
     <para>Make sure that you install Java 8 32-bit (x86) or 64-bit (x64) according to your Operating System type. For Windows 10, in order to know if you are running a 32 or 64 bit version of Windows, you can go to Settings - System - About and refer to "System type" in the list of information.</para>
     <para>If possible we recommend to uninstall any other version of Java to guaranty that the correct version is used.</para>
   </section>
 
   <section>
     <title>Install Bonita Studio</title>
-    <para>Go to the <ulink url="https://www.bonitasoft.com/downloads">download section</ulink> of Bonitasoft website, click on "Customize your download" and click on the "Download" button next to "Bonita Studio zip package" to get the <emphasis role="bold">zip</emphasis> package of Bonita Studio.</para>
+    <para>Go to the <link xl:href="https://www.bonitasoft.com/downloads">download section</link> of Bonitasoft website, click on "Customize your download" and click on the "Download" button next to "Bonita Studio zip package" to get the <emphasis role="bold">zip</emphasis> package of Bonita Studio.</para>
     <para>Unzip the Studio to the folder of your choice. Preferably choose a target folder with a path that is short and that doesn't include any space such as <code>C:\BonitaStudioComunity-x.y.z</code>.</para>
   </section>
 

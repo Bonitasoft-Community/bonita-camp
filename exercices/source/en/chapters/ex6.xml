@@ -233,7 +233,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Export the page.</emphasis></para>
-				<para>Click on the export button <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_09.png"/></guiicon> to download the page in ZIP format.</para>
+				<para>Click on the export button <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_09.png"/></imageobject></inlinemediaobject></guiicon> to download the page in ZIP format.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Import the page in the Portal.</emphasis></para>
@@ -267,8 +267,8 @@
 				<para>Click on "Create" to create the application.</para>
 				<para>Click on "..." to access the configuration page.</para>
 				<para>Find the Pages section on the bottom left part of the screen and Click on "Add". Select the page LeaveRequestStatus and enter "status" in the URL field.</para>
-				<para>Define the leaveRequest page as the homepage by clicking on the "house" icon  <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></guiicon>.</para>
-				<para>Once done, click on the trash icon <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></guiicon> to delete the default homepage.</para>
+				<para>Define the leaveRequest page as the homepage by clicking on the "house" icon  <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></imageobject></inlinemediaobject></guiicon>.</para>
+				<para>Once done, click on the trash icon <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></imageobject></inlinemediaobject></guiicon> to delete the default homepage.</para>
 				<para>The configuration page should now look like that:</para>
 				<para>
 					<mediaobject>

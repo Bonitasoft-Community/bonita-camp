@@ -141,7 +141,7 @@
 			<listitem>
 				<para><emphasis role="bold">Run the process to test it.</emphasis></para>
 				<para>Select the process pool</para>
-				<para>Click on the <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> button of the Studio's top menu bar (if button is disabled make sure the process pool is actually selected).</para>
+				<para>Click on the <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex1_08.png"/></imageobject></inlinemediaobject></guiicon> button of the Studio's top menu bar (if button is disabled make sure the process pool is actually selected).</para>
 				<para>Your browser should open and display an automatically generated case start form. Submit the form.</para>
 				<para>You should be redirected to the task inbox of the Bonita Portal.
 				Select the "Validate request" task and click on the "Take" button.</para>

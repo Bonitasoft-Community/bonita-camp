@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="en" xmlns="http://docbook.org/ns/docbook" version="5.0"
-	xmlns:xi="http://www.w3.org/2001/XInclude">
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
 	<title>Exercise: Using a connector to send an email</title>
 
 	<section>
@@ -30,7 +30,7 @@
 		<orderedlist>
 			<listitem>
 				<para><emphasis role="bold">FakeSMTP setup</emphasis></para>
-				<para>Download FakeSMTP from this link: <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
+				<para>Download FakeSMTP from this link: <link xl:href="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
 				<para>Unzip the file and run FakeSMTP by either double-clicking on the JAR file or running this shell command:</para>
 				<para>
 					<programlisting language="shell">java -jar fakeSMTP-2.0.jar</programlisting>
@@ -88,7 +88,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Once the configuration is valid, click on <guiicon><inlinegraphic fileref="resources/ex5_02.png"/></guiicon>.</para>
+				<para>Once the configuration is valid, click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_02.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Name the configuration "emailConfig" and save it.</para>
 				<para>Close the connector test interface.</para>
 			</listitem>
@@ -97,7 +97,7 @@
 				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add...".</para>
 				<para>Select the "Email (SMTP)" connector.</para>
 				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
-				<para>Do not fill in the parameters but click on <guiicon><inlinegraphic fileref="resources/ex5_03.png"/></guiicon>.</para>
+				<para>Do not fill in the parameters but click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_03.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>
 				<para>Enter "hr@acme.com" in the "From" field.</para>
 				<para>Use the "pencil" icon to edit the expression of the "To" field.</para>
