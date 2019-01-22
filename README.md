@@ -5,8 +5,8 @@ Slides and exercises for the Bonita Camp events.
 
 Content is available in:
 - English (Bonita Camp 7.7)
-- French (Bonita Camp 7.7)
-- Spanish (Bonita BPM 7.2)
+- Français (Bonita Camp 7.7)
+- Español (Bonita BPM 7.2)
 
 ## Get the latest version
 You can get the latest version of slides and exercices by downloading the [latest release](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest) from GitHub.
