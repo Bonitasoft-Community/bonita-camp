@@ -159,7 +159,7 @@
 				<para><emphasis role="bold">Afficher dynamiquement l'erreur</emphasis></para>
 				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Text" en dessous du bouton "Soumettre".</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
-				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Caché".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex3_04.png"/></imageobject></inlinemediaobject></guiicon> associé à la propriété "Caché".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur) :</para>
 				<para>
 					<programlisting language="javascript">!erreur</programlisting>
@@ -487,7 +487,7 @@
 				<para><emphasis role="bold">Afficher dynamiquement les potentielles erreurs de soumission</emphasis></para>
 				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
-				<para>Cliquer sur l'icône "binding" <guiicon><inlinegraphic fileref="resources/ex3_04.png"/></guiicon> associé à la propriété "Hidden".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex3_04.png"/></imageobject></inlinemediaobject></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu :</para>
 				<para>
 					<programlisting language="javascript">!erreur</programlisting>

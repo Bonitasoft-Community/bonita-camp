@@ -138,7 +138,7 @@
 			<listitem>
 				<para><emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
 				<para>Selectionner le pool du processus.</para>
-				<para>Cliquer sur le bouton <guiicon><inlinegraphic fileref="resources/ex1_08.png"/></guiicon> de la barre de menu supérieur du Studio.</para>
+				<para>Cliquer sur le bouton <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex1_08.png"/></imageobject></inlinemediaobject></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.
 				Sélectionner la tâche "Valider demande" et cliquer sur "Prendre" en haut à droite de l'écran.</para>

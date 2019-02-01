@@ -238,7 +238,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Exporter la page.</emphasis></para>
-				<para>Cliquer sur le bouton "Exporter" <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_09.png"/></guiicon> pour télécharger la page au format ZIP.</para>
+				<para>Cliquer sur le bouton "Exporter" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_09.png"/></imageobject></inlinemediaobject></guiicon> pour télécharger la page au format ZIP.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Importer la page dans le portail.</emphasis></para>
@@ -272,8 +272,8 @@
 				<para>Cliquer sur "Créer" pour créer l'application.</para>
 				<para>Cliquer sur "..." pour accéder à l'écran de configuration.</para>
 				<para>Aller à la section "Pages", situé dans la partie basse de l'écran et cliquer sur "Ajouter". Sélectionner la page custompage_SuiviDesDemandes et saisir "statut" dans le champ "URL".</para>
-				<para>Définir la page SuiviDesDemandes en tant que page d'accueil en cliquer sur l'icône "maison" <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></guiicon>.</para>
-				<para>Une fois cela fait, cliquer sur l'icône "corbeille" <guiicon><inlinegraphic contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></guiicon> pour supprimer la page par défaut.</para>
+				<para>Définir la page SuiviDesDemandes en tant que page d'accueil en cliquer sur l'icône "maison" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></imageobject></inlinemediaobject></guiicon>.</para>
+				<para>Une fois cela fait, cliquer sur l'icône "corbeille" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></imageobject></inlinemediaobject></guiicon> pour supprimer la page par défaut.</para>
 				<para>Vérifier que la page de configuration ressemble à ceci : </para>
 				<para>
 					<mediaobject>

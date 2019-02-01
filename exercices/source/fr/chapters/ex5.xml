@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:lang="fr" xmlns="http://docbook.org/ns/docbook" version="5.0"
-	xmlns:xi="http://www.w3.org/2001/XInclude">
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xl="http://www.w3.org/1999/xlink">
 	<title>Exercice : Notification par le biais d'un connecteur</title>
 
 	<section>
@@ -30,7 +30,7 @@
 		<title>Instructions pas à pas</title>
 		<orderedlist>
 			<listitem><para><emphasis role="bold">Mise en place de FakeSMTP</emphasis></para>
-				<para>Récupérer le binaire de FakeSMTP depuis cette URL : <link linkend="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
+				<para>Récupérer le binaire de FakeSMTP depuis cette URL : <link xl:href="http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip">http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip</link></para>
 				<para>Décompresser l'archive fakeSMTP-latest.zip</para>
 				<para>Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante:</para>
 				<para>
@@ -89,7 +89,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Une fois la configuration validée, cliquer sur <guiicon><inlinegraphic fileref="resources/ex5_02.png"/></guiicon>.</para>
+				<para>Une fois la configuration validée, cliquer sur <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_02.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Nommer la configuration "configEmail" et la sauvegarder.</para>
 				<para>Fermer l'interface de test du connecteur.</para>
 			</listitem>
@@ -98,7 +98,7 @@
 				<para>Sélectionner la tâche "Notifier approbation", naviguer dans l'onglet "Exécution / Connecteurs en entrée" puis cliquer sur "Ajouter...".</para>
 				<para>Sélectionner un connecteur de type "Courriel".</para>
 				<para>Spécifier "envoiEmailApprobation" comme nom et passer à la page suivante.</para>
-				<para>Ne pas remplir les paramètres de la page mais cliquer sur <guiicon><inlinegraphic fileref="resources/ex5_03.png"/></guiicon>.</para>
+				<para>Ne pas remplir les paramètres de la page mais cliquer sur <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_03.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Sélectionner la configuration "configEmail" et passer à la page de configuration du destinataire.</para>
 				<para>Entrer "rh@acme.com" comme adresse email dans le champ expéditeur "De".</para>
 				<para>Utiliser l'icône "crayon" pour éditer l'expression sur le champ destinataire "A".</para>
