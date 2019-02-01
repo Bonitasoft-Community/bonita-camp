@@ -61,14 +61,19 @@ $blockMargin: 10px;
 .reveal section p		{text-align:left;}
 
 /* Images without borders and transparent background */
-div.reveal section img	{border-width:0; background-color:transparent; box-shadow:none;}
+div.reveal section img	{border-width:0; background-color:transparent; box-shadow:none; object-fit: scale-down;}
 
 /* Any element without margins */
 .reveal  .no-margin	{margin:0 !important;}
 /* Any element including tables without borders */
 .reveal  .no-border, table.no-border td	{border-width:0 !important;}
+
+.reveal section ul {display: block;}
+
 /* Lists without bullets */
 .reveal section ul.no-bullet	{list-style-type:none;}
+
+.reveal section p + ul {padding-left: 1.5em}
 
 
 // Theme template ------------------------------
