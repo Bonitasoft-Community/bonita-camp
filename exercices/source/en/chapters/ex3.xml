@@ -208,8 +208,8 @@
 						</tbody>
 					</tgroup>
 				</informaltable>
-				<para><emphasis role="bold">Note:</emphasis> here, we are calling the Bonita REST APIs to fetch our "request" BDM data.
-				We are using the "context" variable that exposes links to the process instance data including our request in the form of "request_ref".
+				<para><emphasis role="bold">Note:</emphasis> here, we are calling the Bonita REST APIs to fetch our "request" business variable value.
+				We are using the "context" variable that exposes links to the process instance business variables including our request in the form of "request_ref".
 				We can then retrieve the request thanks to the "link" attribute which provides the URL that needs to be called to retrieve the object.</para>
 			</listitem>
 			<listitem>
@@ -345,8 +345,8 @@
 						</thead>
 						<tbody>
 							<row>
-								<entry>Value</entry>
-                <entry><code>&lt;b&gt;Number of days: &lt;/b&gt; {{request.dayCount}}</code></entry>
+								<entry>Text</entry>
+                				<entry><code>&lt;b&gt;Number of days: &lt;/b&gt; {{request.dayCount}}</code></entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -389,7 +389,7 @@
 							</row>
 							<row>
 								<entry>Data sent on click</entry>
-								<entry>{"isApproved" : false}</entry>
+								<entry>{ "requestInput" : {"isApproved" : false} }</entry>
 							</row>
 							<row>
 								<entry>Failed response value</entry>
@@ -428,7 +428,7 @@
 							</row>
 							<row>
 								<entry>Data sent on click</entry>
-								<entry>{"isApproved" : true}</entry>
+								<entry>{ "requestInput" : {"isApproved" : true} }</entry>
 							</row>
 							<row>
 								<entry>Failed response value</entry>

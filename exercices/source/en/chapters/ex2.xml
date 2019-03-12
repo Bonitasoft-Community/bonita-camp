@@ -56,8 +56,8 @@
 				</tbody>
 			</tgroup>
 		</informaltable>
-		<para>Declare an instance "request" of type "LeaveRequest" on your pool.</para>
-		<para>Using the Studio assistant, generate the case instantiation contract, as well as the initialization script, from the "request" data with the following mandatory items:</para>
+		<para>Declare a business variable "request" of type "LeaveRequest" on your pool.</para>
+		<para>Using the Studio assistant (i.e.: "Add from data..."), generate the case instantiation contract, as well as the initialization script, from the "request" data with the following mandatory items:</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>leaveStart</para></listitem>
 			<listitem><para>dayCount</para></listitem>
@@ -68,11 +68,10 @@
 			<listitem><para>"dayCount" must be strictly greater than zero</para></listitem>
 		</itemizedlist>
 		<para>Initialize the "request" business variable.</para>
-		<para>Add a step contract on the "Validate request" task with the following item:</para>
+		<para>Add a step contract on the "Validate request" task use the Studio assistant with the following item:</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>isApproved (Boolean)</para></listitem>
+			<listitem><para>isApproved</para></listitem>
 		</itemizedlist>
-		<para>Add an operation on the "Validate request" task to set the "isApproved" field of the "request" BDM with the value returned by the contract.</para>
 	</section>
 
 	<section>
@@ -168,7 +167,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Click on "Finish" and dismiss the warning messages about the incomplete initialization of the business variable.</para>
+				<para>Click on "Finish" (not on "Finish & Add") and dismiss the warning message about the incomplete initialization of the business variable.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -255,16 +254,14 @@
 			<listitem>
 				<para><emphasis role="bold">Set up the "Validate request" step contract</emphasis></para>
 				<para>Select the "Validate request" task and navigate to the "Execution / Contract / Inputs" tab.</para>
-				<para>Click on "Add" button then set the input name to "isApproved" and its type to "BOOLEAN".</para>
+				<para>Click on "Add from data..."</para>
+				<para>Select the "request" business data, keep the default input name "requestInput" and click on "Next".</para>
+				<para>Check only the "isApproved" attribute.</para>
+				<para>Click on "Finish" (not on "Finish & Add") and dismiss the warning message about the incomplete initialization of the business variable.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add an operation on "Validate request" to update the request</emphasis></para>
+				<para><emphasis role="bold">Note that an operation on "Validate request" to update the request has been automatically generated:</emphasis></para>
 				<para>With the "Validate request" task selected, navigate to the "Execution / Operations" tab.</para>
-				<para>Click on "Add"</para>
-				<para>Select "request" as the target.</para>
-				<para>Click on the "Takes value of" link and switch to the "Use a Java method" operator type.</para>
-				<para>Select the "setIsApproved" method and click on "OK".</para>
-				<para>In the rightmost drop-down, select the "isApproved" contract input.</para>
 				<para>
 					<mediaobject>
 						<imageobject>

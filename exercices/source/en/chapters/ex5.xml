@@ -42,7 +42,7 @@
 				<para><emphasis role="bold">Test the email connector to obtain the right SMTP configuration.</emphasis></para>
 				<para>Navigate to the "Development / Connectors / Test connector" top menu.</para>
 				<para>Select the "Email (SMTP)" connector by using either the text filter or the "Messaging" category and click on "Next".</para>
-				<para>Set these connection parameters:</para>
+				<para>Set these connection parameters (username and password remain empty):</para>
 				<informaltable frame="all">
 					<tgroup cols="2" align="left" colsep="1" rowsep="1">
 						<colspec colname='c1' colwidth="2*"/>
@@ -95,7 +95,7 @@
 			<listitem>
 				<para><emphasis role="bold">Add an email connector on the "Notify request approved" task.</emphasis></para>
 				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add...".</para>
-				<para>Select the "Email (SMTP)" connector.</para>
+				<para>Select the "Email (SMTP)" connector and click on "Next".</para>
 				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
 				<para>Do not fill in the parameters but click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_03.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>

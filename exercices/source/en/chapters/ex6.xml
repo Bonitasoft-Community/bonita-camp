@@ -12,7 +12,7 @@
 	<section>
 		<title>Instructions overview</title>
 		<para>Open the UI Designer and create a new "Application page" named "LeaveRequestStatus" to follow the progress of the connected user leave request.</para>
-		<para>This page will contain one multiple container that list the on-going leave request. For each request, the start date, number of days and status will be displayed.</para>
+		<para>This page will contain one "multiple container" that list the on-going leave requests. For each request, the start date, number of days and status will be displayed.</para>
 		<para>Export the page as a zip file and deploy it in the portal using the "Resources" menu of the "Administrator" view.</para>
 		<para>Create a new application. Then add the "LeaveRequestStatus" page in the application.</para>
 		<para>Access the application using the generated URL.</para>
@@ -36,7 +36,7 @@
 				<para>You should now be on the designer page.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Add a title to your page. </emphasis></para>
+				<para><emphasis role="bold">Add a title to your page.</emphasis></para>
 				<para>Drag the widget Title (A) from the palette to the top of the page (B).</para>
 				<para>Select the widget. On the right panel, enter "Leave request application" in the "Text" field (C). Select "center" for alignment.</para>
 				<para>
@@ -50,11 +50,11 @@
 			<listitem>
 				<para><emphasis role="bold">Add another title below.</emphasis></para>
 				<para>Name it "Leave request status".</para>
-				<para>Select "level 4" from the Title Level drop-down list. Select "center" for alignment.</para>
+				<para>Select "Level 4" from the Title level drop-down list. Select "center" for alignment.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Create a variable to store the session information.</emphasis></para>
-				<para>Click on "Create a new variable" and choose "External API".</para>
+				<para>Click on "Create a new variable" and choose "External API" for the type.</para>
 				<para>Name it "sessionInfo"</para>
 				<para>In the field API URL, enter: </para>
 				<para><programlisting language="xml">../API/system/session/unusedId</programlisting></para>
@@ -311,7 +311,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Add 2 widgets in the form container.</emphasis></para>
-				<para>One date widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start date</para>
+				<para>One date picker widget with the options: Width: 6. Value: formInput.requestInput.leaveStart. Label: Leave start date</para>
 				<para>One input widget with the options: Width: 6. Value: formInput.requestInput.dayCount. Label: Number of days</para>
 			</listitem>
 			<listitem>
