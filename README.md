@@ -31,7 +31,12 @@ To do the build, in Eclipse's Package Explorer, expand the `exercices` folder, r
 [fop] [root_path]/bonita-camp-7.x/exercices/target/en/xsl-fo/docbook.fo -> [root_path]/bonita-camp-7.x/exercices/target/en/xsl-fo/docbook.pdf
 [move] Moving 1 file to [root_path]/bonita-camp-7.x/exercices/target/en
 ```
-The eclipse plugin configuration path in the console output should be something similar to this: `eclipse/configuration/org.eclipse.osgi/433/0/.cp/resources/` (search near the beginning of the console log a line starting with `[xslt] Loading stylesheet...`
+The eclipse plugin configuration path in the console output should be something similar to this:
+
+`eclipse/configuration/org.eclipse.osgi/433/0/.cp/resources/`
+
+(Search near the beginning of the console log a line starting with `[xslt] Loading stylesheet...`).
+
 7. Overwrite your configuration files with the content of `custom-template` (some .xml and .xsl files should be overwritten); do this by putting the `docbook-xsl-ns` folder that is in the `exercices/custom-template` folder into the `/.cp/resources/` folder that you found at the previous step.
 
 ## Build instructions for exercises
