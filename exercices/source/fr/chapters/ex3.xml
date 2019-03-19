@@ -90,12 +90,12 @@
 								<entry>Date de début</entry>
 							</row>
 							<row>
-								<entry>Placeholder</entry>
-								<entry>jj/mm/aaaa</entry>
-							</row>
-							<row>
 								<entry>Format technique de la date</entry>
 								<entry>dd/MM/yyyy</entry>
+							</row>
+							<row>
+								<entry>Placeholder</entry>
+								<entry>jj/mm/aaaa</entry>
 							</row>
 							<row>
 								<entry>Libellé du bouton Aujourd'hui</entry>
@@ -430,7 +430,7 @@
 							</row>
 							<row>
 								<entry>Données envoyées au clic</entry>
-								<entry>{"estApprouvee":false}</entry>
+								<entry>{"demandeInput":{"estApprouvee":false}}</entry>
 							</row>
 							<row>
 								<entry>Valeur de réponse en cas d'échec</entry>
@@ -469,7 +469,7 @@
 							</row>
 							<row>
 								<entry>Données envoyées au clic</entry>
-								<entry>{"estApprouvee":true}</entry>
+								<entry>{"demandeInput":{"estApprouvee":true}}</entry>
 							</row>
 							<row>
 								<entry>Valeur de réponse en cas d'échec</entry>

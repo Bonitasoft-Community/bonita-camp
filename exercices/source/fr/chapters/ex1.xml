@@ -102,7 +102,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Configurer la condition sur la transition "Oui" pour que le flot suive cette branche.</emphasis></para>
-				<para>Sélectionner la transition et entrer la valeur "true" dans le champ "Condition".</para>
+				<para>Sélectionner la transition et entrer la valeur "true" dans le champ "Condition" ("General / General" tab). Si vous ne voyez pas le champ "Condition" c'est probablement parce que vous avez ajouté une porte logique parallèle au lieu d'une exclusive.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -137,7 +137,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
-				<para>Selectionner le pool du processus.</para>
+				<para>Sélectionner le pool du processus (la forme rectangulaire qui contiens les tâches et événements).</para>
 				<para>Cliquer sur le bouton <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex1_08.png"/></imageobject></inlinemediaobject></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.

@@ -57,7 +57,7 @@
 			</tgroup>
 		</informaltable>
 		<para>Déclarer une variable métier "demande" de type "DemandeConges" sur le pool.</para>
-		<para>Générer un contrat d'instanciation en utilisant la variable métier "demande" et en incluant donc les éléments suivants :</para>
+		<para>À l'aide de l'assistant du Studio (i.e. "Ajouter à partir de données..."), générer un contrat d'instanciation ainsi que le script d'initialisation de la variable métier en utilisant la variable métier "demande" et en incluant donc les éléments suivants :</para>
 		<itemizedlist mark='bullet'>
 			<listitem><para>dateDebut</para></listitem>
 			<listitem><para>nombreJours</para></listitem>
@@ -68,11 +68,10 @@
 			<listitem><para>"nombreJours" doit être strictement supérieur à zéro</para></listitem>
 		</itemizedlist>
 		<para>Initialiser le BDM "demande" en utilisant la génération automatique à partir du contrat.</para>
-		<para>Ajouter un contrat sur l'étape "Valider demande" avec les éléments suivants :</para>
+		<para>Ajouter un contrat sur l'étape "Valider demande" en utilisant l'assistant avec l'élément suivant :</para>
 		<itemizedlist mark='bullet'>
-			<listitem><para>estApprouvee (Booléen)</para></listitem>
+			<listitem><para>estApprouvee</para></listitem>
 		</itemizedlist>
-		<para>Ajouter une opération sur l'étape "Valider demande" pour affecter la valeur retournée par le contrat à l'attribut "estApprouvee" de la variable métier "demande".</para>
 	</section>
 
 	<section>
@@ -168,7 +167,7 @@
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Cliquer sur "Terminer" et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
+				<para>Cliquer sur "Terminer" (pas sur "Terminer &amp; Ajouter") et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
@@ -254,16 +253,13 @@
 			<listitem>
 				<para><emphasis role="bold">Configurer le contrat de l'étape "Valider demande".</emphasis></para>
 				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Contrat / Entrées".</para>
-				<para>Cliquer sur le bouton "Ajouter" pour créer une nouvelle entrée avec le nom "estApprouvee" et de type "BOOLEAN".</para>
+				<para>Cliquer sur le bouton "Ajouter à partir de données...".</para>
+				<para>Sélectionner la variable métier "demande", garder le nom de l'input par défaut "demandeInput" et cliquer sur "Suivant".</para>
+				<para>Sélectionner seulement l'attribut "estApprouvee".</para>
+				<para>Cliquer sur "Terminer" (et pas sur "Terminer &amp; Ajouter") et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.</para>
 			</listitem>
 			<listitem>
-				<para><emphasis role="bold">Ajouter une opération sur la tâche "Valider demande" pour mettre à jour la demande.</emphasis></para>
-				<para>Sélectionner l'étape "Valider demande" et naviguer dans l'onglet "Exécution / Opérations".</para>
-				<para>Cliquer sur "Ajouter".</para>
-				<para>Sélectionne "demande" comme cible.</para>
-				<para>Cliquer sur le lien "Prend la valeur de" et changer l'opérateur en "Utilise une méthode Java".</para>
-				<para>Sélectionner la méthode "setEstApprouvee" et cliquer sur "OK".</para>
-				<para>Sélectionner l'entrée de contrat "estApprouvee" dans le menu déroulant de droite.</para>
+				<para><emphasis role="bold">Noter qu'une opération sur la tâche "Valider demande" pour mettre à jour la demande a automatiquement été générée.</emphasis></para>
 				<para>
 					<mediaobject>
 						<imageobject>
