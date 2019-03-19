@@ -9,7 +9,7 @@
 	<!-- Packages the Bonita Camp content (except slides) as a ZIP -->
 	<!-- Requires Ant Contrib to be installed in Eclipse (add the Ant Contrib JAR in Eclipse Ant preferences) -->
 	<target name="Package as ZIP">
-		<!-- Generate excercises PDF -->
+		<!-- Generate exercises PDF -->
 		<antcall target="PDF"/>
 		
 		<!-- Load ant contrib for custom build support -->
@@ -19,13 +19,13 @@
 		<property name="exercises.filename" value="" />
 		<switch value="${docbook.xml.language}">
 			<case value="fr">
-				<var name="exercises.filename" value="Excercices"/>
+				<var name="exercises.filename" value="Exercices"/>
 			</case>
 			<case value="es">
 				<var name="exercises.filename" value="Ejercicios"/>
 			</case>
 			<default>
-				<var name="exercises.filename" value="Excercises"/>
+				<var name="exercises.filename" value="Exercises"/>
 			</default>
 		</switch>
 		<var name="exercises.filename" value="${ant.project.name} - ${exercises.filename}.pdf"/>
