@@ -1,1 +1,3 @@
-BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).email
+BonitaUsers.
+	getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).
+		email

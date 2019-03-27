@@ -29,7 +29,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_01.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex3_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -141,7 +141,7 @@
 				<para>Dans la partie inférieure de l'écran, sous l'onglet "variables", cliquer sur l'icône crayon situé à droite de la ligne contenant la variable "formInput".</para>
 				<para>Remplacer la valeur du JSON par ceci :</para>
 				<para>
-					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex3_initFormInputs.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="json"><xi:include parse="text" href="resources/code/ex3_initFormInputs.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
@@ -159,14 +159,14 @@
 				<para><emphasis role="bold">Afficher dynamiquement l'erreur</emphasis></para>
 				<para>Depuis la palette de widget située sur la gauche, faire glisser un widget de type "Text" en dessous du bouton "Soumettre".</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
-				<para>Cliquer sur l'icône "binding" <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex3_04.png"/></imageobject></inlinemediaobject></guiicon> associé à la propriété "Caché".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/screenshots/ex3_04.png"/></imageobject></inlinemediaobject></guiicon> associé à la propriété "Caché".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu (ceci aura pour effet d'afficher le widget uniquement en cas d'erreur) :</para>
 				<para>
 					<programlisting language="javascript">!erreur</programlisting>
 				</para>
 				<para>Remplacer la propriété "Texte" du widget par ce contenu :</para>
 				<para>
-					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="html"><xi:include parse="text" href="resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
@@ -175,7 +175,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_05.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex3_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -184,7 +184,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_06.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex3_06.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -291,7 +291,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex3_07.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex3_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -487,14 +487,14 @@
 				<para><emphasis role="bold">Afficher dynamiquement les potentielles erreurs de soumission</emphasis></para>
 				<para>Ajouter un widget de type "Text" en bas du formulaire.</para>
 				<para>Modifier la valeur de "Classes CSS" pour la positionner à "text-danger".</para>
-				<para>Cliquer sur l'icône "binding" <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex3_04.png"/></imageobject></inlinemediaobject></guiicon> associé à la propriété "Hidden".</para>
+				<para>Cliquer sur l'icône "binding" <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/screenshots/ex3_04.png"/></imageobject></inlinemediaobject></guiicon> associé à la propriété "Hidden".</para>
 				<para>Entrer ce contenu dans le champ texte qui est apparu :</para>
 				<para>
 					<programlisting language="javascript">!erreur</programlisting>
 				</para>
 				<para>Remplacer la propriété "Texte" du widget par ce contenu :</para>
 				<para>
-					<programlisting language="html"><xi:include parse="text" href="../resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="html"><xi:include parse="text" href="resources/code/ex3_errorWidget.html"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
@@ -503,7 +503,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex3_08.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex3_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

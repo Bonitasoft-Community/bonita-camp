@@ -126,7 +126,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_01.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -135,7 +135,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_10.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_10.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -149,7 +149,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_02.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_02.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -163,7 +163,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_03.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -171,7 +171,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_04.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_04.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -233,7 +233,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_05.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -245,7 +245,7 @@
 				<para>Click on the "Pencil" icon next to the "Default value" field to open the expression editor.</para>
 				<para>Clear all of the generated code and replace it by the following:</para>
 				<para>
-					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="java"><xi:include parse="text" href="resources/code/ex2_initRequest.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 				<para>This will initialize the BDM from the contract data and set the process initiator as the request author.</para>
 				<para>Click on "OK" button to close the expression editor.</para>
@@ -265,7 +265,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_06.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_06.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -278,7 +278,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex2_07.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -298,7 +298,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="70%" contentdepth="70%" align="center" format="png" fileref="resources/ex2_08.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex2_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

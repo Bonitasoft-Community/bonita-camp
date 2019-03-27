@@ -21,7 +21,7 @@
 		These will send an email to the requestor with the request validation status.</para>
 		<para>The following code will be used to retrieve the requestor's email in the connector:</para>
 		<para>
-			<programlisting language="java"><xi:include parse="text" href="../resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+			<programlisting language="java"><xi:include parse="text" href="resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 		</para>
 	</section>
 
@@ -76,7 +76,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_00.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex5_00.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -84,11 +84,11 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex5_01.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex5_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
-				<para>Once the configuration is valid, click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_02.png"/></imageobject></inlinemediaobject></guiicon>.</para>
+				<para>Once the configuration is valid, click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/screenshots/ex5_02.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Name the configuration "emailConfig" and save it.</para>
 				<para>Close the connector test interface.</para>
 			</listitem>
@@ -97,14 +97,12 @@
 				<para>Select the task, navigate to the "Execution / Connectors in" tab and click on "Add...".</para>
 				<para>Select the "Email (SMTP)" connector and click on "Next".</para>
 				<para>Name it "sendRequestApprovedEmail" and click on "Next".</para>
-				<para>Do not fill in the parameters but click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex5_03.png"/></imageobject></inlinemediaobject></guiicon>.</para>
+				<para>Do not fill in the parameters but click on <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/screenshots/ex5_03.png"/></imageobject></inlinemediaobject></guiicon>.</para>
 				<para>Select the "emailConfig" and move to the "Email addressee" configuration page.</para>
 				<para>Enter "hr@acme.com" in the "From" field.</para>
 				<para>Use the "pencil" icon to edit the expression of the "To" field.</para>
 				<para>Set the "Expression type" to "Script", name the script "getRequestorEmail" and paste the following in the code edition zone:</para>
-				<para>
-					<programlisting language="java"><xi:include parse="text" href="../resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
-				</para>
+				<para><programlisting language="java"><xi:include parse="text" href="resources/code/ex5_getRequestorEmail.java"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting></para>
 				<para>Move to the next page and set "Leave request approved" as the subject.</para>
 				<para>Click on "Finish".</para>
 			</listitem>

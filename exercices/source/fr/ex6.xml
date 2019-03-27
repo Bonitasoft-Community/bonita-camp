@@ -29,7 +29,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1"  width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_01.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -42,7 +42,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_02.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_02.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -61,7 +61,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1"  width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_03.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -83,7 +83,7 @@
 				<para>Nommer la "ajoutLibelleStatutDemandeConges".</para>
 				<para>Remplacer la valeur existante par le script suivant : </para>
 				<para>
-					<programlisting language="javascript"><xi:include parse="text" href="../resources/code/ex6_updateLeaveRequestStatus.js"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="javascript"><xi:include parse="text" href="resources/code/ex6_updateLeaveRequestStatus.js"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
@@ -229,7 +229,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_04.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_04.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -238,7 +238,7 @@
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Exporter la page.</emphasis></para>
-				<para>Cliquer sur le bouton "Exporter" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_09.png"/></imageobject></inlinemediaobject></guiicon> pour télécharger la page au format ZIP.</para>
+				<para>Cliquer sur le bouton "Exporter" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/screenshots/ex6_09.png"/></imageobject></inlinemediaobject></guiicon> pour télécharger la page au format ZIP.</para>
 			</listitem>
 			<listitem>
 				<para><emphasis role="bold">Importer la page dans le portail.</emphasis></para>
@@ -249,7 +249,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_06.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_06.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -265,20 +265,20 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="60%" contentdepth="60%" align="center" format="png" fileref="resources/ex6_07.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
 				<para>Cliquer sur "Créer" pour créer l'application.</para>
 				<para>Cliquer sur "..." pour accéder à l'écran de configuration.</para>
 				<para>Aller à la section "Pages", situé dans la partie basse de l'écran et cliquer sur "Ajouter". Sélectionner la page custompage_SuiviDesDemandes et saisir "statut" dans le champ "URL".</para>
-				<para>Définir la page SuiviDesDemandes en tant que page d'accueil en cliquer sur l'icône "maison" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_11.png"/></imageobject></inlinemediaobject></guiicon>.</para>
-				<para>Une fois cela fait, cliquer sur l'icône "corbeille" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/ex6_12.png"/></imageobject></inlinemediaobject></guiicon> pour supprimer la page par défaut.</para>
+				<para>Définir la page SuiviDesDemandes en tant que page d'accueil en cliquer sur l'icône "maison" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/screenshots/ex6_11.png"/></imageobject></inlinemediaobject></guiicon>.</para>
+				<para>Une fois cela fait, cliquer sur l'icône "corbeille" <guiicon><inlinemediaobject><imageobject><imagedata contentwidth="70%" contentdepth="70%" fileref="resources/screenshots/ex6_12.png"/></imageobject></inlinemediaobject></guiicon> pour supprimer la page par défaut.</para>
 				<para>Vérifier que la page de configuration ressemble à ceci : </para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" align="center" format="png" fileref="resources/ex6_10.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_10.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -286,7 +286,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_08.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_08.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -303,7 +303,7 @@
 				<para>Nommer la "nouvelleDemandeConges".</para>
 				<para>Dans le champ texte "valeur", taper le script suivant : </para>
 				<para>
-					<programlisting language="json"><xi:include parse="text" href="../resources/code/ex6_formInput.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
+					<programlisting language="json"><xi:include parse="text" href="resources/code/ex6_formInput.json"><xi:fallback><para>XINCLUDE-ERROR</para></xi:fallback></xi:include></programlisting>
 				</para>
 			</listitem>
 			<listitem>
@@ -333,7 +333,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex6_05.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex6_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

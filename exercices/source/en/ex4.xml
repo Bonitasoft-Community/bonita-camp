@@ -25,7 +25,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_01.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex4_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -46,7 +46,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_02.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex4_02.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -59,7 +59,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex4_03.png" />
+							<imagedata align="center" scalefit="1" width="100%" contentdepth="100%" format="png" fileref="resources/screenshots/ex4_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>

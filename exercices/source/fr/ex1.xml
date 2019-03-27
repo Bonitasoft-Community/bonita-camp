@@ -37,7 +37,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_01.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_01.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -54,7 +54,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_02.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_02.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -62,7 +62,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_03.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_03.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -74,7 +74,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_04.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_04.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -87,7 +87,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_05.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_05.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -106,7 +106,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_06.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_06.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -126,7 +126,7 @@
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_07.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_07.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
@@ -138,14 +138,14 @@
 			<listitem>
 				<para><emphasis role="bold">Exécuter le processus pour le tester.</emphasis></para>
 				<para>Sélectionner le pool du processus (la forme rectangulaire qui contiens les tâches et événements).</para>
-				<para>Cliquer sur le bouton <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/ex1_08.png"/></imageobject></inlinemediaobject></guiicon> de la barre de menu supérieur du Studio.</para>
+				<para>Cliquer sur le bouton <guiicon><inlinemediaobject><imageobject><imagedata fileref="resources/screenshots/ex1_08.png"/></imageobject></inlinemediaobject></guiicon> de la barre de menu supérieur du Studio.</para>
 				<para>Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré. Soumettre le formulaire.</para>
 				<para>Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.
 				Sélectionner la tâche "Valider demande" et cliquer sur "Prendre" en haut à droite de l'écran.</para>
 				<para>
 					<mediaobject>
 						<imageobject>
-							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/ex1_09.png" />
+							<imagedata scalefit="1" width="100%" contentdepth="100%" align="center" format="png" fileref="resources/screenshots/ex1_09.png" />
 						</imageobject>
 					</mediaobject>
 				</para>
