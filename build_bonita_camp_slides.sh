@@ -32,7 +32,7 @@ mkdir -p $folder
 cd $folder
 
 # Dowload required files. With --no-clobber, we do not download files already there
-wget --no-clobber https://github.com/hakimel/reveal.js/archive/3.7.0.zip
+wget --no-clobber https://github.com/hakimel/reveal.js/archive/3.8.0.zip
 wget --no-clobber https://github.com/Bonitasoft-Community/bonita-camp/archive/7.x.zip
 unzip 7.x.zip
 
@@ -42,13 +42,13 @@ unzip 7.x.zip
     {
         echo "Generating slides for language: $language"
         cd $folder
-        rm -f -r $folder/reveal.js-3.7.0
-        unzip 3.7.0.zip
-        cp -a $folder/bonita-camp-7.x/slides/theme/. $folder/reveal.js-3.7.0/css/theme/source/
+        rm -f -r $folder/reveal.js-3.8.0
+        unzip 3.8.0.zip
+        cp -a $folder/bonita-camp-7.x/slides/theme/. $folder/reveal.js-3.8.0/css/theme/source/
 
-        cp -a $folder/bonita-camp-7.x/slides/$language/. $folder/reveal.js-3.7.0/
+        cp -a $folder/bonita-camp-7.x/slides/$language/. $folder/reveal.js-3.8.0/
 
-        cd $folder/reveal.js-3.7.0
+        cd $folder/reveal.js-3.8.0
         npm install
         # Original instructions for building slides at https://github.com/Bonitasoft-Community/bonita-camp
         # say that one should run 'npm install -g grunt-cli' at this stage
@@ -57,15 +57,15 @@ unzip 7.x.zip
 
         # Build the presentation slides and unzip them
         grunt package
-        mv $folder/reveal.js-3.7.0/reveal-js-presentation.zip $folder/bonita_camp_7.8_slides_$language.zip
+        mv $folder/reveal.js-3.8.0/reveal-js-presentation.zip $folder/bonita_camp_7.10_slides_$language.zip
         cd $folder
-        mkdir -p $folder/bonita_camp_7.8_slides_$language
-        unzip bonita_camp_7.8_slides_$language.zip -d $folder/bonita_camp_7.8_slides_$language
+        mkdir -p $folder/bonita_camp_7.10_slides_$language
+        unzip bonita_camp_7.10_slides_$language.zip -d $folder/bonita_camp_7.10_slides_$language
 
         # Spanish slides have a slightly different structure, with images in /presentation_images, not in /images
         # TODO: this should probably not be required if the slides source files were correct for Spanish
-        if [ -d "$folder/reveal.js-3.7.0/presentation_images" ]; then
-        cp -r $folder/reveal.js-3.7.0/presentation_images $folder/bonita_camp_7.8_slides_$language/presentation_images
+        if [ -d "$folder/reveal.js-3.8.0/presentation_images" ]; then
+        cp -r $folder/reveal.js-3.8.0/presentation_images $folder/bonita_camp_7.10_slides_$language/presentation_images
         fi
         
         # The pdf can then be built opening the presentation with chromium and printing as a pdf file.
@@ -73,15 +73,15 @@ unzip 7.x.zip
         # Test if we generate pdf automatically (following is optional and experimental)
         case $generate_pdf in (true) {
             echo "Generating pdf file for language: $language"
-            cp $folder/bonita_camp_7.8_slides_$language/css/print/paper.css $folder/bonita_camp_7.8_slides_$language/css/print/paper_portrait_backup.css
+            cp $folder/bonita_camp_7.10_slides_$language/css/print/paper.css $folder/bonita_camp_7.10_slides_$language/css/print/paper_portrait_backup.css
             
             # Remove the last curly bracket (end of file), add @page {size: landscape}, and the curly bracket again
-            head -n -1 $folder/bonita_camp_7.8_slides_$language/css/print/paper.css > $folder/bonita_camp_7.8_slides_$language/css/print/paper_temp.css
-            echo " @page {size: landscape} }" >> $folder/bonita_camp_7.8_slides_$language/css/print/paper_temp.css
-            mv -f $folder/bonita_camp_7.8_slides_$language/css/print/paper_temp.css $folder/bonita_camp_7.8_slides_$language/css/print/paper.css
+            head -n -1 $folder/bonita_camp_7.10_slides_$language/css/print/paper.css > $folder/bonita_camp_7.10_slides_$language/css/print/paper_temp.css
+            echo " @page {size: landscape} }" >> $folder/bonita_camp_7.10_slides_$language/css/print/paper_temp.css
+            mv -f $folder/bonita_camp_7.10_slides_$language/css/print/paper_temp.css $folder/bonita_camp_7.10_slides_$language/css/print/paper.css
             
             # Generate the pdf
-            chromium-browser --headless  --print-to-pdf=$folder/bonita_camp_7.8_slides_$language.pdf $folder/bonita_camp_7.8_slides_$language/index.html
+            chromium-browser --headless --print-to-pdf=$folder/bonita_camp_7.10_slides_$language.pdf $folder/bonita_camp_7.10_slides_$language/index.html
         }
         esac
 

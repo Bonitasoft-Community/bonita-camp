@@ -5,14 +5,14 @@ Slides and exercises for the Bonita Camp events.
 
 Content is available in:
 - English (Bonita Camp 7.8)
-- Français (Bonita Camp 7.8)
+- Français (Bonita Camp 7.10)
 - Español (Bonita BPM 7.2)
 
 ## Get the latest version
-You can get the latest version of slides and exercices by downloading the [latest release](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest) from GitHub.
+You can get the latest version of slides and exercises by downloading the [latest release](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest) from GitHub.
 
 ## Build instructions for slides
-1. Download and unzip [reveal.js version 3.7.0](https://github.com/hakimel/reveal.js/releases/tag/3.7.0)
+1. Download and unzip [reveal.js version 3.8.0](https://github.com/hakimel/reveal.js/releases/tag/3.8.0)
 2. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
 3. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme/source` folder
 4. Run `npm install`
@@ -30,5 +30,5 @@ You can get the latest version of slides and exercices by downloading the [lates
 2. Run `java -cp ~/SaxonHE9-9-1-2J/saxon9he.jar net.sf.saxon.Transform -xi -t -s:exercises.xml -xsl:~/docbook-xslt2-2.3.11/xslt/base/fo/final-pass.xsl -o:exercises.fo page.margin.inner=0.25i` command (adapt path to Saxon and stylessheets installation folders)
 3. Run `fop exercises.fo exercises.pdf`
 
-## Validation of exercices DocBook files
+## Validation of exercises DocBook files
 You can validate the files using xmllint tool: `xmllint --xinclude --schema ./exercices/schemas/docbook.xsd --noout ./exercices/source/en/exercises.xml`
