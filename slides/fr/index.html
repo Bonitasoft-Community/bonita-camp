@@ -66,8 +66,7 @@
           <h2>Checklist</h2>
           <ul>
             <li>Télécharger les fichiers du Bonita Camp depuis GitHub : <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
-            <li>Installer la dernière version du Studio (cf document exercises)</li>
-            <li>Installer la dernière version du JDK Oracle 8</li>
+            <li>Installer la dernière version du Studio (cf document exercices)</li>
             <li>Démarrer le Studio et cliquer le bouton Portail</li>
             <li>Nous recommandons d'utiliser Chrome où Firefox lors de vos développements</li>
           </ul>
@@ -137,7 +136,7 @@
               0:30<br /><br />
               Studio is a standalone IDE for developers (screenshot on next slide).<br/>
               Studio contains an embedded Platform used for single developer testing.<br/>
-              Production-ready platforms are deployed on dedicated servers using Bonita + Tomcat/WildFly bundles or Bonita Docker image.
+              Production-ready platforms are deployed on dedicated servers using Bonita + Tomcat bundles or Bonita Docker image.
             </aside>
           </section>
 
@@ -146,7 +145,7 @@
             <img class="stretch" src="images/screenshot_studio_diagram.png" alt="Bonita Studio : edition de diagrammes">
             <aside class="notes">
             1:30<br /><br />
-            Studio is an Eclipse based IDE. Requires a JVM (version 8).<br/>
+            Studio is an Eclipse based IDE. Requires a JVM (version 11 is recommended).<br/>
             Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
             Different steps: process modeling, data model definition, form and pages design, connector setup...<br/>
             Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.<br />
@@ -170,18 +169,18 @@
             <p>Fournit un ensemble de services</p>
             <p>Responsable de l'exécution des processus (pas d'interface graphique)</p>
             <p>Expose des API REST</p>
-            <p>Basé sur Java SE 8</p>
+            <p>Basé sur Java SE</p>
             <p>Encapsulé avec le Portal dans une application web Java</p>
             <p>Requiert :</p>
             <ul>
-              <li>Serveur d'application Java EE </li>
+              <li>Serveur d'application Java EE</li>
               <li>Base de données transactionnelle compatible avec JDBC</li>
             </ul>
 
             <aside class="notes">
             1.30<br /><br />
             All interactions (Portal and other) with the Engine are managed with Bonita REST APIs.<br/>
-            Bundles (Tomcat and WildFly) and Docker images are available to simplify the server installation<br />
+            Bundle (Tomcat) and Docker images are available to simplify the server installation<br />
             Enterprise edition provides features to handle deployment an maintenance on the cloud (AWS or other)
             </aside>
           </section>
