@@ -1,5 +1,7 @@
-# Bonita Camp
+---
+layout: home
+---
 
-* [English 🇺🇸/🇬🇧](en/index.md)
-* [Français 🇫🇷](fr/index.md)
-* [Español 🇪🇸](es/index.md)
+* [English 🇺🇸/🇬🇧](en/)
+* [Français 🇫🇷](fr/)
+* [Español 🇪🇸](es/)
