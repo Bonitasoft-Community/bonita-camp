@@ -46,8 +46,8 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    - Dans le menu supérieur du Studio, cliquer sur *Fichier / Dupliquer le diagramme...*
    - Mettre à jour les numéros de version du diagramme ET du processus (pool)
 1. Créer le BDM *DemandeConges* :
-   - Naviguer dans le menu **Développement / Modèle de Données Métier / Définir...**.
-   - Cliquer sur **Nouvel Objet Métier** (A), dans la liste d'objets métiers et nommer l'objet *DemandeConges* (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux).
+   - Naviguer dans le menu **Développement / Modèle de Données Métier / Définir...**
+   - Cliquer sur **Nouvel Objet Métier** (A), dans la liste d'objets métiers et nommer l'objet *DemandeConges* (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
    - Avec l'objet *DemandeConges* sélectionné, ajouter les attributs suivants (C) :
    
      Nom | Type | Obligatoire
@@ -58,27 +58,27 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
      *estApprouvee* | `Boolean` | ◻
     
     ![définition du modèle de données métier](images/ex02/ex2_01.png)
-    - Cliquer sur **Terminer**.
-    - Le message suivant s'affiche pour confirmer le déploiement du BDM.
+    - Cliquer sur **Terminer**
+    - Le message suivant s'affiche pour confirmer le déploiement du BDM
     ![message d'information déploiement du BDM](images/ex02/ex2_10.png)
     - Cocher l'option **Ne plus me montrer ce message**
     - Cliquer sur **Ok**
 1. Déclarer une variable métier de type *DemandeConges* dans le processus :
    - Sélectionner le pool du processus
-   - Naviguer dans l'onglet **Données / Variables du pool**.
-   - Cliquer sur **Ajouter...** dans la section **Variables métier**.
-   - Nommer la variable *demande* et sélectionner le type d'objet métier *com.company.model.DemandeConges*.
-   - Cliquer sur **Terminer**.  
+   - Naviguer dans l'onglet **Données / Variables du pool**
+   - Cliquer sur **Ajouter...** dans la section **Variables métier**
+   - Nommer la variable *demande* et sélectionner le type d'objet métier *com.company.model.DemandeConges*
+   - Cliquer sur **Terminer**  
    ![déclaration d'une variable métier](images/ex02/ex2_02.png)
 
 1. Configurer le contrat d'instanciation :
    - Sélectionner le pool de processus
-   - Naviguer dans l'onglet **Exécution / Contrat / Entrées**.
-   - Cliquer sur le bouton **Ajouter à partir de données...**.
+   - Naviguer dans l'onglet **Exécution / Contrat / Entrées**
+   - Cliquer sur le bouton **Ajouter à partir de données...**
    - Sélectionner la variable métier *demande*, garder le nom par défaut *demandeInput* et cliquer sur **Suivant**
-   - Décocher les attributs *idDemandeur* et *estApprouvee*.  
+   - Décocher les attributs *idDemandeur* et *estApprouvee*  
    ![assistant de définition de contrat](images/ex02/ex2_03.png)
-   - Cliquer sur **Terminer** (pas sur **Terminer & Ajouter**) et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.  
+   - Cliquer sur **Terminer** (pas sur **Terminer & Ajouter**) et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier  
    ![contrat défini pour le démarrage du processus](images/ex02/ex2_04.png)
    - Toujours dans l'onglet **Exécution / Contrat**, basculer dans l'onglet **Contraintes**
    - Ajouter la contrainte suivante :
@@ -100,9 +100,9 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    ![définition de contraintes](images/ex02/ex2_05.png)
    
 1. Modifier l'initialisation de la variable métier :
-   - Sélectionner le pool du processus et naviguer dans l'onglet **Données / Variables du pool**.
-   - Sélectionner la variable *demande* et cliquer sur **Modifier...**.
-   - Cliquer sur l'icône **crayon** associé au champ **Valeur par défaut** pour ouvrir l'éditeur d'expression.
+   - Sélectionner le pool du processus et naviguer dans l'onglet **Données / Variables du pool**
+   - Sélectionner la variable *demande* et cliquer sur **Modifier...**
+   - Cliquer sur l'icône **crayon** associé au champ **Valeur par défaut** pour ouvrir l'éditeur d'expression
    - Entrer le code suivant (ou simplement appliquer les modifications) :
    ```groovy
    def demandeCongesVar = new com.company.model.DemandeConges()
@@ -116,33 +116,33 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
 
    return demandeCongesVar
    ```
-   - Cliquer sur le bouton **OK** pour fermer l'éditeur d'expression.
-   - Cliquer à nouveau sur le bouton **OK** pour valider la modification de la variable métier.
+   - Cliquer sur le bouton **OK** pour fermer l'éditeur d'expression
+   - Cliquer à nouveau sur le bouton **OK** pour valider la modification de la variable métier
 
 1. Configurer le contrat de l'étape *Valider demande* :
    - Sélectionner l'étape *Valider demande*
-   - Naviguer dans l'onglet **Exécution / Contrat / Entrées**.
-   - Cliquer sur le bouton **Ajouter à partir de données...**.
-   - Sélectionner la variable métier *demande*, garder le nom de l'input par défaut *demandeInput* et cliquer sur **Suivant**.
-   - Sélectionner seulement l'attribut *estApprouvee*.
-   - Cliquer sur **Terminer** (et pas sur **Terminer & Ajouter**) et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier.
-1. Noter qu'une opération (**Exécution / Opérations**) sur la tâche *Valider demande* pour mettre à jour la demande a automatiquement été générée.  
+   - Naviguer dans l'onglet **Exécution / Contrat / Entrées**
+   - Cliquer sur le bouton **Ajouter à partir de données...**
+   - Sélectionner la variable métier *demande*, garder le nom de l'input par défaut *demandeInput* et cliquer sur **Suivant**
+   - Sélectionner seulement l'attribut *estApprouvee*
+   - Cliquer sur **Terminer** (et pas sur **Terminer & Ajouter**) et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier
+1. Noter qu'une opération (**Exécution / Opérations**) sur la tâche *Valider demande* pour mettre à jour la demande a automatiquement été générée  
    ![opération générée automatiquement](images/ex02/ex2_06.png)
 1. Configurer la condition sur la transition *Oui* à partir de l'attribut *estApprouvee* du BDM *demande* :
    - Sélectionner la transition *Oui*
-   - Naviguer dans l'onglet **Général / Général**.
-   - Cliquer sur l'icône crayon à côté du champ **Condition** pour ouvrir l'éditeur d'expression.
+   - Naviguer dans l'onglet **Général / Général**
+   - Cliquer sur l'icône crayon à côté du champ **Condition** pour ouvrir l'éditeur d'expression
    - Dans l'éditeur d'expression, sélectionner **Java** comme type d'expression
-   - Sélectionner la variable *demande* et la méthode *isEstAprouvee*.  
+   - Sélectionner la variable *demande* et la méthode *isEstAprouvee*  
    ![utilisation de variable métier pour définir la condition d'une transition](images/ex02/ex2_07.png)
 1. Enregistrer le processus :
-   - Cliquer sur le bouton **Enregistrer** de la barre de menu supérieur du Studio.
+   - Cliquer sur le bouton **Enregistrer** de la barre de menu supérieur du Studio
 1. Exécuter le processus et tester les contraintes des contrats :
-   - Lancer le processus et remplir les formulaires automatiquement générés.
+   - Lancer le processus et remplir les formulaires automatiquement générés
 
 > ℹnformation :
-> - pour le champ *dateDebut*, le format de date attendu est AAAA-MM-JJ.
-> - pour le champ *estApprouvee*, une valeur booléenne est attendue : soit `true` ou `false`.
+> - pour le champ *dateDebut*, le format de date attendu est AAAA-MM-JJ
+> - pour le champ *estApprouvee*, une valeur booléenne est attendue : soit `true` ou `false`
 
    ![formulaire autogénéré](images/ex02/ex2_08.png)
 

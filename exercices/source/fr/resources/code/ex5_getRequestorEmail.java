@@ -1,3 +1,0 @@
-BonitaUsers.
-	getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).
-		email
