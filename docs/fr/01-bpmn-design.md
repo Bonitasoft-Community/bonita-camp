@@ -9,6 +9,8 @@ L'objectif de cet exercice est de créer une première version "basique" du diag
 A ce stade, le processus est exécutable mais ne présente pas encore d'intérêt métier car il ne dispose pas de formulaires ni de données.
 Nous le compléterons dans les exercices suivants.
 
+Note : la validation des diagrammes dans le Studio Bonita doit être déclenchée manuellement. Si vous corrigez une erreur ou un message d'avertissement vous devez aller dans l'onglet **Statut de validation** et cliquer sur le bouton **Rafraîchir** ou aller dans le menu **Fichier** et cliquer sur le bouton **Valider**.
+
 ## Instructions résumées
 
 Afin de réaliser l'exercice, créer un diagramme *DiagrammeDemandeConges* contenant un processus *DemandeConges* en version *1.0.0*.
@@ -18,7 +20,9 @@ Le pool du processus devra contenir les éléments BPMN suivants :
 * Une tâche humaine *Valider demande*
 * Une porte exclusive *Demande approuvée ?*
 * Une tâche automatique *Notifier approbation*
+* Une condition toujours vraie (`true`) sur la transition connectant la porte exclusive à la tâche de notification d'approbation
 * Une tâche automatique *Notifier refus*
+* Une transition par défaut connectant la porte exclusive à la tâche de notification de refus
 * Un événement de fin *Fin - Demande acceptée*
 * Un événement de fin *Fin - Demande rejetée*
 
