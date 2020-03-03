@@ -5,6 +5,7 @@ title: Exercice 2 - Ajout de données et spécification de contrats
 ## Objectif
 
 L'objectif de cet exercice est de continuer l'implémentation du processus de demande de congés en :
+
 1. Configurant un modèle de données métier communément appelé BDM (Business Data Model)
 1. Spécifiant des contrats pour l'instanciation du processus et l'exécution des étapes humaines
 
@@ -16,51 +17,58 @@ Une fois complété, le processus sera exécutable avec des formulaires génér�
 
 Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 2.0.0.
 
-Créer un objet BDM *DemandeConges* (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux) avec les attributs suivants :
+Créer un objet BDM *DemandeConges* (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux) avec les attributs suivants (n'utilisez pas l'option **Multiple**):
 
-Nom | Type | Obligatoire
---- | ---- | -----------
-*idDemandeur* | `Long` | ☑
-*dateDebut* | `Date only` | ☑
-*nombreJours* | `Entier` | ☑
-*estApprouvee* | `Booléen` | ◻
+Nom | Type | Multiple | Obligatoire
+--- | ---- | -------- | -----------
+*idDemandeur* | `Long` | ◻ | ☑
+*dateDebut* | `Date only` | ◻ | ☑
+*nombreJours* | `Entier` | ◻ | ☑
+*estApprouvee* | `Booléen` | ◻ | ◻
 
 Déclarer une variable métier *demande* de type *DemandeConges* sur le pool.
 
 À l'aide de l'assistant du Studio (i.e. **Ajouter à partir de données...**), générer un contrat d'instanciation ainsi que le script d'initialisation de la variable métier en utilisant la variable métier *demande* et en incluant donc les éléments suivants :
+
 -   dateDebut
 -   nombreJours
 
 Ajouter les deux contraintes suivantes sur le contrat d'instanciation :
+
 -   *dateDebut* doit être dans le futur
 -   *nombreJours* doit être strictement supérieur à zéro
 
 Initialiser le BDM *demande* en utilisant la génération automatique à partir du contrat.
 
 Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec l'élément suivant :
+
 -   estApprouvee
 
 ## Instructions pas à pas
 
-1. Dupliquer le diagramme de processus existant pour créer une version 2.0.0 :
-   - Dans le menu supérieur du Studio, cliquer sur *Fichier / Dupliquer le diagramme...*
+1. Dupliquer le diagramme de processus existant pour créer une version *2.0.0* :
+   - Dans le menu supérieur du Studio, cliquer sur **Fichier / Dupliquer le diagramme...**
    - Mettre à jour les numéros de version du diagramme ET du processus (pool)
 1. Créer le BDM *DemandeConges* :
    - Naviguer dans le menu **Développement / Modèle de Données Métier / Définir...**
-   - Cliquer sur **Nouvel Objet Métier** (A), dans la liste d'objets métiers et nommer l'objet *DemandeConges* (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
+   - Cliquer sur **Nouvel Objet Métier** (A), dans la liste d'objets métiers
+   - Nommer l'objet *DemandeConges* (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
    - Avec l'objet *DemandeConges* sélectionné, ajouter les attributs suivants (C) :
-   
-     Nom | Type | Obligatoire
-     --- | ---- | -----------
-     *idDemandeur* | `Long` | ☑
-     *dateDebut* | `Date only` | ☑
-     *nombreJours* | `Integer` | ☑
-     *estApprouvee* | `Boolean` | ◻
-    
+
+    Nom | Type | Multiple | Obligatoire
+    --- | ---- | -------- | -----------
+    *idDemandeur* | `Long` | ◻ | ☑
+    *dateDebut* | `Date only` | ◻ | ☑
+    *nombreJours* | `Entier` | ◻ | ☑
+    *estApprouvee* | `Booléen` | ◻ | ◻
+
     ![définition du modèle de données métier](images/ex02/ex2_01.png)
+    
     - Cliquer sur **Terminer**
     - Le message suivant s'affiche pour confirmer le déploiement du BDM
+    
     ![message d'information déploiement du BDM](images/ex02/ex2_10.png)
+    
     - Cocher l'option **Ne plus me montrer ce message**
     - Cliquer sur **Ok**
 1. Déclarer une variable métier de type *DemandeConges* dans le processus :
@@ -68,18 +76,23 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    - Naviguer dans l'onglet **Données / Variables du pool**
    - Cliquer sur **Ajouter...** dans la section **Variables métier**
    - Nommer la variable *demande* et sélectionner le type d'objet métier *com.company.model.DemandeConges*
-   - Cliquer sur **Terminer**  
+   - Cliquer sur **Terminer**
+   
    ![déclaration d'une variable métier](images/ex02/ex2_02.png)
-
+   
 1. Configurer le contrat d'instanciation :
    - Sélectionner le pool de processus
    - Naviguer dans l'onglet **Exécution / Contrat / Entrées**
    - Cliquer sur le bouton **Ajouter à partir de données...**
    - Sélectionner la variable métier *demande*, garder le nom par défaut *demandeInput* et cliquer sur **Suivant**
-   - Décocher les attributs *idDemandeur* et *estApprouvee*  
+   - Décocher les attributs *idDemandeur* et *estApprouvee*
+   
    ![assistant de définition de contrat](images/ex02/ex2_03.png)
-   - Cliquer sur **Terminer** (pas sur **Terminer & Ajouter**) et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier  
+   
+   - Cliquer sur **Terminer** (pas sur **Terminer & Ajouter**) et ignorer les messages d'avertissement concernant l'initialisation partielle de la variable métier
+   
    ![contrat défini pour le démarrage du processus](images/ex02/ex2_04.png)
+   
    - Toujours dans l'onglet **Exécution / Contrat**, basculer dans l'onglet **Contraintes**
    - Ajouter la contrainte suivante :
 
@@ -90,7 +103,7 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    Message d'erreur | La date de début doit être dans le futur
 
    - Ajouter une seconde contrainte :
-   
+
    Propriété | Valeur
    --------- | ------
    Nom         | auMoinsUnJour
@@ -98,7 +111,6 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    Message d'erreur | Le nombre de jours doit être supérieur à zéro
 
    ![définition de contraintes](images/ex02/ex2_05.png)
-   
 1. Modifier l'initialisation de la variable métier :
    - Sélectionner le pool du processus et naviguer dans l'onglet **Données / Variables du pool**
    - Sélectionner la variable *demande* et cliquer sur **Modifier...**
@@ -118,7 +130,6 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    ```
    - Cliquer sur le bouton **OK** pour fermer l'éditeur d'expression
    - Cliquer à nouveau sur le bouton **OK** pour valider la modification de la variable métier
-
 1. Configurer le contrat de l'étape *Valider demande* :
    - Sélectionner l'étape *Valider demande*
    - Naviguer dans l'onglet **Exécution / Contrat / Entrées**

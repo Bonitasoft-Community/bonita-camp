@@ -11,76 +11,70 @@ The goal of this exercise is to continue the leave request process implementatio
 
 Once completed, the process will be executable with automatically generated forms.
 
-> **Warning**
->
-> It is mandatory to strictly observe the case and syntax of the
-> technical names provided in the instructions. Failing to do so will
-> result in errors.
+> ⚠ It is mandatory to strictly observe the case and syntax of the technical names provided in the instructions. Failing to do so will result in errors.
 
 ## Instructions overview
 
 Duplicate the process diagram from the previous exercise to create a 2.0.0 version
 
-Create a "LeaveRequest" BDM with the following attributes (don't use the "Multiple" option):
+Create a *LeaveRequest* business object (this is a technical name so it should not contain spaces or special characters) with the following attributes (don't use the **Multiple** option):
 
-  ------------------------------------------------------------------------
-  Name           Type           Mandatory
-  -------------- -------------- ------------------------------------------
-  requestorId    Long           Yes
+Name | Type | Multiple | Mandatory
+---- | ---- | -------- | ---------
+*requestorId* | `Long` | ◻ | ☑
+*leaveStart* | `Date only` | ◻ | ☑
+*dayCount* | `Integer` | ◻ | ☑
+*isApproved* | `Boolean` | ◻ | ◻
 
-  leaveStart     Date only      Yes
+Declare a business variable *request* of type *LeaveRequest* on your pool.
 
-  dayCount       Integer        Yes
+Using the Studio assistant (i.e.: **Add from data...**), generate the case instantiation contract, as well as the initialization script, from the "request" data with the following mandatory attributes:
 
-  isApproved     Boolean        No
-  ------------------------------------------------------------------------
-
-Declare a business variable "request" of type "LeaveRequest" on your pool.
-
-Using the Studio assistant (i.e.: "Add from data\..."), generate the case instantiation contract, as well as the initialization script, from the "request" data with the following mandatory items:
 - leaveStart
 - dayCount
 
 Add these two constraints on the case instantiation contract:
-- "leaveStart" must be in the future
-- "dayCount" must be strictly greater than zero
 
-Initialize the "request" business variable.
+- *leaveStart* must be in the future
+- *dayCount* must be strictly greater than zero
 
-Add a step contract on the "Validate request" task use the Studio assistant with the following item:
+Initialize the *request* business variable using the auto-generation provided by the contract creation.
+
+Add a step contract on the *Validate request* task use the Studio assistant with the following attribute:
+
 - isApproved
 
 ## Step by step instructions
-1. Duplicate the process diagram from the previous exercise to create a 2.0.0 version:
-   - In the Studio's top menu, click on "File / Duplicate diagram\..."
+
+1. Duplicate the process diagram from the previous exercise to create a *2.0.0* version:
+   - In the Studio's top menu, click on **File / Duplicate diagram...**
    - Update the process diagram AND pool version numbers
+1. Create the *LeaveRequest* BDM:
+   - Navigate to the **Development / Business Data Model / Define...** top menu
+   - Click on **New Business Object** (A) in the **List of Business Objects**
+   - Name the object *LeaveRequest* (B) (this is a technical name so it should not contain spaces or special characters)
+   - With the *LeaveRequest* object selected, add the following attributes (C):
 
-1. Create the "LeaveRequest" BDM:
-   - Navigate to the "Development / Business Data Model / Define\..." top menu
-   - Click on "Add" (A) in the "List of Business Objects" and name the object "LeaveRequest" (B) (this is a technical name so it should not contain spaces or special characters)
-   - With the "LeaveRequest" object selected, add the following attributes (C):
+   Name | Type | Multiple | Mandatory
+   ---- | ---- | -------- | ---------
+   *requestorId* | `Long` | ◻ | ☑
+   *leaveStart* | `Date only` | ◻ | ☑
+   *dayCount* | `Integer` | ◻ | ☑
+   *isApproved* | `Boolean` | ◻ | ◻
 
-      ------------------------------------------------------------------------
-      Name           Type           Mandatory
-      -------------- -------------- ------------------------------------------
-      requestorId    Long           Yes
-
-      leaveStart     Date only      Yes
-
-      dayCount       Integer        Yes
-
-      isApproved     Boolean        No
-      ------------------------------------------------------------------------
-
-   - Click on "Finish"
-   - You should be displayed with the following message that confirm the deployment of the BDM. Check the box "Don't show me this message again" and click on "Ok"
+   - Click on **Finish**
+   - You should be displayed with the following message that confirm the deployment of the BDM
+   
+   ![BDM deployment information message](images/ex02/ex2_10.png)
+   
+   - Check the box **Don't show me this message again**
+   - Click on **Ok**
 
 1. Declare an instance of the "LeaveRequest" BDM on your process:
    - Select the process pool, and navigate to the "Data / Pool variables" tab
    - In the "Business variables" section, click on "Add..."
    - Name the variable "request" and select the "LeaveRequest" business object
    - Click on "Finish"
-
 1. Set up the case instantiation contract:
    - Select the process pool, and navigate to the "Execution / Contract / Inputs" tab
    - Click on "Add from data..."

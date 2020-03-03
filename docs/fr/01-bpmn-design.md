@@ -31,17 +31,17 @@ Le pool du processus devra contenir les éléments BPMN suivants :
 1. Créer un nouveau diagramme de processus
 1. Spécifier le nom du diagramme et celui du processus :
    - Cliquer sur le menu **Fichier / Renommer le diagramme...** en haut du Studio
-   - Entrer *DiagrammeDemandeConges* pour le nom du diagramme et *DemandeConges* pour celui du pool et *1.0.0* pour la version du diagramme et du pool
+   - Entrer *DiagrammeDemandeConges* pour le nom du diagramme et *DemandeConges* pour celui du pool et *1.0.0* pour la version du diagramme et du pool  
    ![pop up de modification de nom et version de diagramme et pool](images/ex01/ex1_01.png)
 1. Renommer l'événement de démarrage en *Saisir demande* :
    - Sélectionner l'événement de démarrage présent dans le diagramme
-   - Naviguer dans l'onglet *Général / Général* puis entrer le nouveau nom.
+   - Naviguer dans l'onglet **Général / Général** puis entrer le nouveau nom
 1. Renommer la tâche humaine en *Valider demande*
 1. Ajouter une porte exclusive *Demande approuvée ?* à la suite de la tâche *Valider demande* :
    - Sélectionner la tâche *Valider demande*, effectuer un glisser-déplacer à partir de l'icône contextuel de porte logique  
    ![création de porte logique depuis une tâche](images/ex01/ex1_02.png)
    - Une fois la porte créée, utiliser l'icône contextuel **boîte à outils** (1) pour changer son type en **Exclusif** (2)  
-   ![création de porte logique depuis une tâche](images/ex01/ex1_03.png)
+   ![Modification du type de porte logique](images/ex01/ex1_03.png)
    - Renommer la porte en *Demande approuvée ?*
 1. Créer une tâche automatique *Notifier approbation* à partir de la porte logique :
    - Sélectionner la porte logique, effectuer un glisser-déplacer à partir de l'icône contextuel de tâches (A)  
@@ -74,14 +74,14 @@ Le pool du processus devra contenir les éléments BPMN suivants :
 1. Enregistrer le processus :
    - Cliquer sur le bouton **Enregistrer** de la barre de menu supérieur du Studio
 1. Exécuter le processus pour le tester :
-   - Sélectionner le pool du processus (la forme rectangulaire qui contiens les tâches et événements).
-   - Cliquer sur le bouton ![bouton lancer](images/ex01/ex1_08.png) de la barre de menu supérieur du Studio.
-   - Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré.
-   - Soumettre le formulaire.
-   - Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita.
+   - Sélectionner le pool du processus (la forme rectangulaire qui contiens les tâches et événements)
+   - Cliquer sur le bouton ![bouton lancer](images/ex01/ex1_08.png) de la barre de menu supérieur du Studio (si le bouton est désactivé, assurez vous que le pool est bien sélectionné)
+   - Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré
+   - Soumettre le formulaire
+   - Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita
    - Sélectionner la tâche *Valider demande*
    - Cliquer sur **Prendre** en haut à droite de l'écran  
    ![s'affecter une tâche](images/ex01/ex1_09.png)
-   - Soumettre le formulaire de l'étape *Valider demande* en cliquant sur le bouton **Exécuter** pour terminer le cas.
+   - Soumettre le formulaire de l'étape *Valider demande* en cliquant sur le bouton **Exécuter** pour terminer le cas
 
 [Exercice suivant : création de données et définition de contracts](02-data-contract)
