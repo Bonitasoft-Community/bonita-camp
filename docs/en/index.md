@@ -17,14 +17,13 @@ Bonita Camp includes:
 
 ## Prerequisites
 1. [Download](https://www.bonitasoft.com/downloads) and install the latest version of Bonita Studio. For more details you can refer to [official documentation](https://documentation.bonitasoft.com/bonita//bonita-studio-download-installation))
-1. Make sure that the Studio is fully operational :
+1. Make sure that the Studio is fully operational:
    - Start the Studio
    - Click on the **Portal** ![Portal icon](../images/portal-icon.png) located in Studio toolbar: Bonita Portal should open in your web browser
    - Click on the **UI Designer** ![UI Designer icon](../images/ui_designer_24x24.png) located in Studio toolbar: UI Designer should open in your web browser
-1. You can also, optionally, download corrections and slides as PDF from [GitHub "release" section](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest).
-1. We recommend to use Chrome or Firefox for development in order to benefit from great developers tools. Internet Explorer 11, Edge and Safari are also supported (partial support for IE11). In order to test which web browser your computer is currently using click on the **Portal** button in Studio tool bar. It should open the Bonita Portal
-with your default web browser. You can configure Bonita Studio to use an other browser when opening web
-user interfaces:
+1. You can also, optionally, download corrections and slides as PDF from [GitHub "release" section](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
+1. We recommend to use Chrome or Firefox for development in order to benefit from great developers tools. Internet Explorer 11, Edge and Safari are also supported (partial support for IE11). In order to test which web browser is used by default by Bonita Studio click on the **Portal** button in Studio tool bar. It should open the Bonita Portal
+with your default web browser. You can configure Bonita Studio to use an other browser:
    - In the Studio click on **Preferences** button ![Preferences icon](../images/preferences.png)
    - In the **Web** section click on **Browser**
    - Click on **New...** button
