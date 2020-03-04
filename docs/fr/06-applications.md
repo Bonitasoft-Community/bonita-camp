@@ -57,7 +57,7 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
 1. Créer une variable pour lister les demandes de congés :
    - Cliquer sur l'icône **Data model**
    - Glisser-déposser *DemandeConges* sur la page
-   - Conserver le nom par défaut : *demandesConges*
+   - Conserver le nom par défaut : *demandeConges*
    - Dans la section **"Find By" queries on an attribute**, sélectionner *idDemandeur*
    - Dans la section **"idDemandeur" value** saisir : `{% raw %}{{sessionInfo.user_id}}{% endraw %}`
    - Cliquer sur le bouton **Enregistrer**
@@ -86,7 +86,7 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
 1. Créer un container multiple :
    - Glisser le widget **Container** depuis la palette et placer le sous le titre *Suivi des demandes*
    - Sélectionner le container
-   - Dans le panneau de droite, entrer *demandesConges* dans le champ **Collections**
+   - Dans le panneau de droite, entrer *demandeConges* dans le champ **Collections**
 
 1. Ajouter 4 widgets dans le container :
    - Un widget **Input** avec les options suivantes :
