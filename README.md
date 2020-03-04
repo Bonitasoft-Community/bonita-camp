@@ -1,34 +1,42 @@
-Bonita Camp - 7.x
-====================
+# Bonita Camp
 
-Slides and exercises for the Bonita Camp events.
+Bonita Camp is an introduction training to Bonita Community Edition.  
+The main objective of this training is to familiarize yourself with concepts and key features of Bonita.  
+Bonita Camp include both theoretical knowledge and hands on with exercises that let you build your first Bonita application.
+Bonita Camp comes with:
 
-Content is available in:
-- English (Bonita Camp 7.8)
+- A set of slides commented in a [series of videos](https://www.youtube.com/playlist?list=PLvvoQatxaHOMHRiP7hFayNXTJNdxIEiYp) (also available in [French](https://www.youtube.com/playlist?list=PLvvoQatxaHOPSATzZe-zPh-LrSNGfpQEf)) or during live sessions
+- A set of exercises described on a [dedicated web site](http://bonitasoft-community.github.io/bonita-camp/)
+- [Exercises solutions](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
+
+If you need assistance you can:
+
+- Ask your question on [Bonitasoft Community forum](https://community.bonitasoft.com/questions-and-answers)
+- [Get in touch with Bonitasoft](https://www.bonitasoft.com/contact-us) to get more information about [support offering](https://www.bonitasoft.com/support) and additional features of Enterprise Edition
+
+Content is currently available in:
+- English (Bonita Camp 7.10)
 - Français (Bonita Camp 7.10)
 - Español (Bonita BPM 7.2)
 
-## Get the latest version
-You can get the latest version of slides and exercises by downloading the [latest release](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest) from GitHub.
 
-## Build instructions for slides
+## For Bonita Camp contributors
+
+### Sources
+
+All sources are available on [Bonita Camp GitHub repository]](https://github.com/Bonitasoft-Community/bonita-camp/):
+
+- Slides are create using reveal.js and are located in the [sldies](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/slides) folder
+- Exercises are hosted using GitHub Pages. Source are located in [docs](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/docs) folder and content is available for users at http://bonitasoft-community.github.io/bonita-camp/
+- Folder [exercices](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/exercices) is a legacy folder and should be removed once training Spanish version update is done
+
+### Build instructions for slides
+
 1. Download and unzip [reveal.js version 3.8.0](https://github.com/hakimel/reveal.js/releases/tag/3.8.0)
-2. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
-3. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme/source` folder
-4. Run `npm install`
-5. Run `npm install -g grunt-cli`
-6. Run `grunt package`
+1. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
+1. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme/source` folder
+1. Run `npm install`
+1. Run `npm install -g grunt-cli`
+1. Run `grunt package`
+1. Use the built zip package to share and run the presentation
 
-## Setup instructions to build exercises
-1. Download and install [Saxon-HE 9.9](https://www.saxonica.com/download/java.xml)
-2. Download and install it [Apache FOP 2.3](https://xmlgraphics.apache.org/fop/download.html)
-3. Download and unzip [DocBook XSLT 2.0 stylesheets](https://github.com/docbook/xslt20-stylesheets/releases)
-
-
-## Build instructions for exercises
-1. Open a terminal and go to: exercices/source/[en,fr,es]
-2. Run `java -cp ~/SaxonHE9-9-1-2J/saxon9he.jar net.sf.saxon.Transform -xi -t -s:exercises.xml -xsl:~/docbook-xslt2-2.3.11/xslt/base/fo/final-pass.xsl -o:exercises.fo page.margin.inner=0.25i` command (adapt path to Saxon and stylessheets installation folders)
-3. Run `fop exercises.fo exercises.pdf`
-
-## Validation of exercises DocBook files
-You can validate the files using xmllint tool: `xmllint --xinclude --schema ./exercices/schemas/docbook.xsd --noout ./exercices/source/en/exercises.xml`
