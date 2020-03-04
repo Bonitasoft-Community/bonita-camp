@@ -16,8 +16,8 @@ Le Bonita Camp se compose :
 * Les [corrections des exercices](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
 
 ## Prérequis
-1. [Téléchargez](https://fr.bonitasoft.com/telechargez) et installez la dernière version du Studio Bonita (pour plus de détails référez vous à la [documentation officielle](https://documentation.bonitasoft.com/bonita//bonita-studio-download-installation))
-1. Validez le fonctionnement correct du Studio 
+1. [Téléchargez](https://fr.bonitasoft.com/telechargez) et installez la dernière version du Studio Bonita. Pour plus de détails référez vous à la [documentation officielle](https://documentation.bonitasoft.com/bonita//bonita-studio-download-installation)
+1. Validez le fonctionnement correct du Studio :
    - Démarrez le Studio
    - Cliquez sur le bouton **Portail** ![icône portail](../images/portal-icon.png) de la barre d'outil du Studio : le portail devrait s'ouvrir dans votre navigateur web
    - Cliquez sur le bouton **UI Designer** ![icône UI Designer](../images/ui_designer_24x24.png) de la barre d'outil du Studio : l'UI Designer devrait s'ouvrir dans votre navigateur web
