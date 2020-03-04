@@ -110,6 +110,7 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
      Afficher le bouton Aujourd'hui | **Non**
 
    - Un widget **Input** avec les options suivantes :
+   
      Propriété | Valeur
      --------- | ------
      Largeur | *3*
@@ -118,6 +119,7 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
      Valeur | `$item.nombreJours`
 
    - Un widget **Input** avec les options suivantes :
+   
      Propriété | Valeur
      --------- | ------
      Largeur | *3*
