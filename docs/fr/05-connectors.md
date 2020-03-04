@@ -13,7 +13,7 @@ L'objectif de cet exercice est de traiter une interaction entre le processus et 
 
 Obtenir et démarrer le serveur [FakeSMTP](http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip).
 
-Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.1.0.
+Dupliquer le diagramme de processus de l'exercice précédent pour créer une version *3.1.0*.
 
 Ajouter un connecteur d'envoi d'email sur les tâches automatiques *Notifier approbation* et *Notifier refus*. Ceux-ci enverront un email au demandeur avec le statut de validation de sa demande.
 
@@ -29,12 +29,12 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
    - Récupérer le binaire de FakeSMTP depuis cette URL : [http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip](http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip)
    - Décompresser l'archive `fakeSMTP-latest.zip`
    - Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante : `java -jar fakeSMTP-2.0.jar`
-   - Une fois l'interface graphique de FakeSMTP affichée, configurer le port d'écoute sur 2525 et cliquer sur le bouton **Démarrer le serveur**
+   - Une fois l'interface graphique de FakeSMTP affichée, configurer le port d'écoute sur *2525* et cliquer sur le bouton **Démarrer le serveur**
 
-1. Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 3.1.0
+1. Dupliquer le diagramme de processus de l'exercice précédent pour créer une version *3.1.0*
 
 1. Tester le connecteur d'envoi d'email pour obtenir la bonne configuration SMTP :
-   - Naviguer dans le menu **Développement / Connecteurs / Tester un connecteur\...** de la barre supérieur du Studio
+   - Naviguer dans le menu **Développement / Connecteurs / Tester un connecteur...** de la barre supérieur du Studio
    - Sélectionner un connecteur de type **Courriel** à partir du filtre ou depuis la catégorie **Communications**
    - Cliquer sur le bouton **Suivant**
    - Remplir les paramètres de connexion suivants :
@@ -51,10 +51,14 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
    - Entrer *Bonita test* comme sujet
    - Cliquer le bouton **Test**
    - Confirmer sans cocher de dépendance
-   - Un message similaire à celui ci-dessous devrait s'afficher, cliquer sur le bouton **OK** :  
+   - Un message similaire à celui ci-dessous devrait s'afficher, cliquer sur le bouton **OK** :
+   
    ![message avertissement sortie non-sérialisable](images/ex05/ex5_00.png)
-   - S'assurer que l'email est bien reçu par FakeSMTP comme illustré ci-dessous :  
-   ![élément lane dans la palette BPMN](images/ex05/ex5_01.png)
+   
+   - S'assurer que l'email est bien reçu par FakeSMTP comme illustré ci-dessous :
+   
+   ![Fake SMTP avec un message reçu](images/ex05/ex5_01.png)
+   
    - Une fois la configuration validée, cliquer sur ![bouton enregistrer](images/ex05/ex5_02.png)
    - Nommer la configuration *configEmail* et la sauvegarder
    - Fermer l'interface de test du connecteur
@@ -73,12 +77,14 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
    - Passer à la page de configuration du destinataire
    - Entrer *rh@acme.com* comme adresse email dans le champ expéditeur **De**
    - Utiliser l'icône **crayon** pour éditer l'expression sur le champ destinataire **A**
-   - Changer le type d'expression à **Script**
+   - Changer le **Type d'expression** à **Script**
    - Nommer le script *recupEmailDemandeur*
    - Coller le code ci-dessous dans la zone d'édition du script :
+   
    ```groovy
    BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).email
    ```
+   
    - Cliquer sur le bouton **OK** pour fermer l'éditeur de script
    - Passer à la page suivante
    - Spécifier *Demande de congés approuvée* comme sujet
