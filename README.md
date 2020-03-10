@@ -24,9 +24,9 @@ Content is currently available in:
 
 ### Sources
 
-All sources are available on [Bonita Camp GitHub repository]](https://github.com/Bonitasoft-Community/bonita-camp/):
+All sources are available on [Bonita Camp GitHub repository](https://github.com/Bonitasoft-Community/bonita-camp/):
 
-- Slides are create using reveal.js and are located in the [sldies](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/slides) folder
+- Slides are create using reveal.js and are located in the [slides](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/slides) folder
 - Exercises are hosted using GitHub Pages. Source are located in [docs](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/docs) folder and content is available for users at http://bonitasoft-community.github.io/bonita-camp/
 - Folder [exercices](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/exercices) is a legacy folder and should be removed once training Spanish version update is done
 
