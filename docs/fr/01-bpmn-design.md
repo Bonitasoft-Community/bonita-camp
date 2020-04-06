@@ -46,7 +46,7 @@ Le pool du processus devra contenir les éléments BPMN suivants :
 1. Créer une tâche automatique *Notifier approbation* à partir de la porte logique :
    - Sélectionner la porte logique, effectuer un glisser-déplacer à partir de l'icône contextuel de tâches (A)  
    ![création d'une tâche depuis une porte logique](images/ex01/ex1_04.png)
-   - Une fois la tâche automatique crée, renommer la
+   - Une fois la tâche automatique créée, la renommer
 1. Créer une tâche automatique *Notifier refus* à partir de la porte logique
 1. Ajouter un événement de terminaison *Fin - Demande approuvée* à la suite de la tâche automatique *Notifier approbation* :
    - Sélectionner la tâche automatique *Notifier approbation*
@@ -84,4 +84,4 @@ Le pool du processus devra contenir les éléments BPMN suivants :
    ![s'affecter une tâche](images/ex01/ex1_09.png)
    - Soumettre le formulaire de l'étape *Valider demande* en cliquant sur le bouton **Exécuter** pour terminer le cas
 
-[Exercice suivant : création de données et définition de contracts](02-data-contract)
+[Exercice suivant : création de données et définition de contrats](02-data-contract)
