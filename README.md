@@ -11,13 +11,14 @@ Bonita Camp comes with:
 
 If you need assistance you can:
 
+- Ask your question on our dedicated Bonita Camp Slack channel if you have attended a live session
 - Ask your question on [Bonitasoft Community forum](https://community.bonitasoft.com/questions-and-answers)
 - [Get in touch with Bonitasoft](https://www.bonitasoft.com/contact-us) to get more information about [support offering](https://www.bonitasoft.com/support) and additional features of Enterprise Edition
 
 Content is currently available in:
 - English (Bonita Camp 7.10)
 - Français (Bonita Camp 7.10)
-- Español (Bonita BPM 7.2)
+- Español (Bonita BPM 7.10)
 
 
 ## For Bonita Camp contributors
@@ -26,9 +27,8 @@ Content is currently available in:
 
 All sources are available on [Bonita Camp GitHub repository](https://github.com/Bonitasoft-Community/bonita-camp/):
 
-- Slides are create using reveal.js and are located in the [slides](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/slides) folder
-- Exercises are hosted using GitHub Pages. Source are located in [docs](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/docs) folder and content is available for users at http://bonitasoft-community.github.io/bonita-camp/
-- Folder [exercices](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/exercices) is a legacy folder and should be removed once training Spanish version update is done
+- Slides are created using reveal.js and are located in the [slides](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/slides) folder
+- Exercises are hosted using GitHub Pages. Source are located in the [docs](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/docs) folder and content is available for users at [http://bonitasoft-community.github.io/bonita-camp/](http://bonitasoft-community.github.io/bonita-camp/)
 
 ### Build instructions for slides
 
