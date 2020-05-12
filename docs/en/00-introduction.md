@@ -15,4 +15,4 @@ Each exercise is divided in 3 sections:
 1. **Instructions overview**: provides an overview of the main steps required for completing the exercise
 1. **Step by step instructions**: contains a step by step description of actions required to complete the exercise
 
-[Start the first exercice](01-bpmn-design)
+[Start the first exercice](01-bpmn-design.md)

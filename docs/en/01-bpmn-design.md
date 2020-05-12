@@ -84,4 +84,4 @@ The process pool should contain the following BPMN elements:
    ![Claim a task](images/ex01/ex1_09.png)
    - Submit the form of the *Validate request* task by clicking on the **Execute** button to complete your case
 
-[Next exercise: create data model and contracts definition](02-data-contract)
+[Next exercise: create data model and contracts definition](02-data-contract.md)

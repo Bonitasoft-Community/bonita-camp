@@ -56,4 +56,4 @@ Add an actor filter of type **Initiator manager** on the *Validator* lane.
    - Connect as user *helen.kelly* with *bpm* as password
    - If the actor filter ran correctly, the *Validate request* tasks should now be available in the inbox
 
-[Next exercise: connector configuration](05-connectors)
+[Next exercise: connector configuration](05-connectors.md)

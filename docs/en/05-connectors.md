@@ -97,4 +97,4 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
 1. Test the process:
    - Execute the process twice to test the different paths and check that FakeSMTP receives the right emails
 
-[Next exercise: create an application](06-applications)
+[Next exercise: create an application](06-applications.md)

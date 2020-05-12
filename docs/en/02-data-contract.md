@@ -172,4 +172,4 @@ Add a step contract on the *Validate request* task use the Studio assistant with
 
    ![Auto generated form](images/ex02/ex2_08.png)
 
-[Next exercise: create forms](03-forms)
+[Next exercise: create forms](03-forms.md)

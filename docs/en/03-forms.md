@@ -102,7 +102,7 @@ Create the following forms:
    -------- | ------
    Name | requestor
    Type | External API
-   API URL | `../API/identity/user/{% raw %}{{request.requestorId}}{% endraw %}`
+   API URL | `../API/identity/user/{%raw%}{{request.requestorId}}{%endraw%}`
 
 1. Edit the form title:
    - Select the **Title** widget located at the top of the form
@@ -119,7 +119,7 @@ Create the following forms:
 
    Property | Value
    --------- | ------
-   Text | `<b>Requestor:</b> {% raw %}{{requestor.firstname}} {{requestor.lastname}}{% endraw %}`
+   Text | `<b>Requestor:</b> {%raw%}{{requestor.firstname}} {{requestor.lastname}}{%endraw%}`
 
    
 1. Add a widget to reject the request:
@@ -162,4 +162,4 @@ Create the following forms:
    - Run the process from the Studio and execute all of its steps
    - Validate that the proper execution path was taken at the end of process execution by looking at the case history in the Bonita Portal
    
-[Next exercise : actors configuration](04-actors)
+[Next exercise : actors configuration](04-actors.md)
