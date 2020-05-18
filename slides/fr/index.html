@@ -51,14 +51,15 @@
             1<br /><br />
             Welcome<br />
             Introduction of myself<br />
-            Presentation of Bonita<br />
-            Creation of 1st process and application using Community Edition only<br />
-            Mix of theoretical presentation and practical exercises<br />
+            Goal of the session : creation of 1st process and application using Community Edition only<br />
+            How : Mix of theoretical presentation and practical exercises and help through Discord dedicated channel #during and after the session<br />
+            Interactivity through regular polls, we can have breaks and interact in the "coffee" channel, and if some of you want to stay for some time after the camp, we can have a drink together<br />
             Community forum<br />
+            Quick Presentation of Bonita<br />
             Community vs Enterprise editions (Support, access to professional services &amp; additional features)<br />
             Contact form bonitasoft.com if you need more information about Enterprise Edition<br />
             Make sure that you are watching the latest version of Bonita Camp either from Bonitasoft website or from YouTube and that you are using the latest version of Bonita.<br />
-            If you already watch a previous edition of Bonita Camp you should probably watch video dedicated to what's new in latest release instead of watching this video.<br />
+            If you've already watched a previous edition of Bonita Camp you should probably watch video dedicated to what's new in latest release instead of watching this video.<br />
           </aside>
         </section>
 
@@ -145,7 +146,7 @@
             <img class="stretch" src="images/screenshot_studio_diagram.png" alt="Bonita Studio : edition de diagrammes">
             <aside class="notes">
             1:30<br /><br />
-            Studio is an Eclipse based IDE. Requires a JVM (version 11 is recommended).<br/>
+            Studio is an Eclipse based IDE. Requires a JVM (version 11 is recommended mais vous pouvez utiliser la version 8).<br/>
             Allows creation of process diagrams which contain one or several processes (recommend one process per diagram).<br/>
             Different steps: process modeling, data model definition, form and pages design, connector setup...<br/>
             Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.<br />
@@ -235,13 +236,13 @@
               <tr><td><img class="no-margin" src="images/bpmn_human_task.png" alt="human task"/></td><td>Tâche humaine : quand un utilisateur est impliqué</td></tr>
               <tr><td><img class="no-margin" src="images/bpmn_service_task.png" alt="service task"/></td><td>Tâche automatique/service : exécutée par le moteur</td></tr>
               <tr><td><img class="no-margin" src="images/bpmn_end_event.png" alt="end event"/></td><td>Événement de fin : déclenche l'archivage du processus</td></tr>
-              <tr><td><span>&#8594;</span></td><td>Transitions : utilisée pour lier les éléments entre eux</td></tr>
+              <tr><td><span>&#8594;</span></td><td>Transition : utilisée pour lier les éléments entre eux</td></tr>
             </table>
 
             <aside class="notes">
               4.30<br /><br />
               OMG = Object Management Group, founded several standards such as UML<br/>
-              Not business limitations<br />
+              No business limitations<br />
               Not Bonita specific<br />
               Shapes (BPMN standard): circle = event, rectangle = activity<br/>
               Colors (Bonita specific): green = start, blue = intermediate, red = end<br />
@@ -313,9 +314,9 @@
             <h2>BDM : Business Data Model</h2>
             <ul>
               <li>Stocke les données métier en lien avec les processus et/ou les applications</li>
-              <li>Le modèle défini des objets pour stocker les données métier</li>
+              <li>Le modèle définit des objets pour stocker les données métier</li>
               <li>Le modèle est défini dans le Studio</li>
-              <li>Depuis le modèle Bonita génère des classes Java (POJO) et créer les tables en base de données</li>
+              <li>Depuis le modèle Bonita génère des classes Java (POJO) et crée les tables en base de données</li>
               <li>La persistance est gérée par le moteur</li>
             </ul>
             <aside class="notes">
@@ -350,7 +351,7 @@
               <li>Stocke et traite les données affichées et mise à jour dans les UI</li>
               <li>Accessible depuis le navigateur web</li>
               <li>Tout type d'objet JavaScript</li>
-              <li>Initialisées et mise à jour par : les saisies utilisateur, appels API REST, code JavaScript</li>
+              <li>Initialisées et mises à jour par : les saisies utilisateur, appels API REST, code JavaScript</li>
               <li>Non persistées</li>
             </ul>
             
@@ -365,9 +366,9 @@
           <section>
             <h2>Documents</h2>
             <ul>
-              <li>Bonita fourni un système de GED léger</li>
-              <li>Les références aux documents font parti de la définition de processus</li>
-              <li>Lors de l'exécution les documents peuvent être Initialisés, mise à jour...</li>
+              <li>Bonita fournit un système de GED léger</li>
+              <li>Les références aux documents font partie de la définition de processus</li>
+              <li>Lors de l'exécution les documents peuvent être initialisés, mis à jour...</li>
               <li>Contrairement aux BDM, les documents sont associés à une instance de processus donnée</li>
             </ul>
 
@@ -430,8 +431,8 @@
         <section>
           <section>
             <h2>Formulaires</h2>
-            <p>Créé dans l'UI Designer à base de conteneurs et de widgets</p>
-            <p>Basé sur AngularJS et Bootstrap</p>
+            <p>Créés dans l'UI Designer à base de conteneurs et de widgets</p>
+            <p>Basés sur AngularJS et Bootstrap</p>
             <p>Associés avec les tâches ou le processus</p>
             <p>2 types de formulaires :</p>
             <ul>
@@ -463,11 +464,11 @@
             <p>Construites de la même manière que les formulaires</p>
             <p>Principale différence au niveau du contexte d'exécution :</p>
             <ul>
-              <li>Les formulaires ont des information sur la définition du processus ou sur l'instance de processus et tâche</li>
+              <li>Les formulaires ont des informations sur la définition du processus ou sur l'instance de processus et la tâche</li>
               <li>Les pages n'ont pas d'information de contexte</li>
             </ul>
             <p>Les pages peuvent obtenir des informations de BDM et de processus ou déclencher des actions via les API REST</p>
-            <p>Grouper plusieurs pages et un menu pour construire une application</p>
+            <p>Grouper plusieurs pages et créer un menu pour construire une application</p>
             <aside class="notes">
               4<br /><br />
               Display information (BDM, process definitions, process instances) and optionally provide access to actions (start a process instance, execute a task...)<br />
@@ -522,12 +523,12 @@
           <section>
             <h2>Qui peut effectuer une tâche ?</h2>
             <p>Un ensemble d'utilisateurs. Protection contre les accès concurrents</p>
-            <p>2 options disponible pour définir qui peut faire une tâche :</p>
+            <p>2 options disponibles pour définir qui peut faire une tâche :</p>
             <ul>
               <li>Acteurs</li>
               <li>Filtre d'acteurs</li>
             </ul>
-            <p>Les deux options nécessite que l'utilisateur s'authentifie</p>
+            <p>Les deux options nécessitent que l'utilisateur s'authentifie</p>
             <p>L'utilisateur doit être enregistré dans la base de données Bonita</p>
             <p>Support de : LDAP, Active Directory, SAML V2, CAS, Kerberos inclus dans l'édition Enterprise</p>
             
@@ -552,7 +553,7 @@
                   <li>Indirectement via des groupes et rôles</li>
                 </ul>
               </li>
-              <li>Associer les acteurs directement aux tâche ou via une lane</li>
+              <li>Associer les acteurs directement aux tâches ou via une lane</li>
               <li>Les acteurs ne peuvent pas utiliser des données "live"</li>
             </ul>
             <aside class="notes">
@@ -569,7 +570,7 @@
             <p>Un nom mal choisi</p>
             <p>Remplace complètement l'acteur</p> 
             <p>Produit une liste d'utilisateurs en fonction d'informations en entrée et d'une logique interne</p>
-            <p>Exécuté quand l'exécution du processus atteins l'étape associée au filtre d'acteur</p>
+            <p>Exécuté quand l'exécution du processus atteint l'étape associée au filtre d'acteur</p>
             <p>Peut être actualisé en utilisant les API</p> 
             <aside class="notes">
               Filters are executed only once when task starts. They can be run again with API call.<br />
@@ -667,7 +668,7 @@
               <li>La vue est la combinaison des pages d'applications et des formulaires de processus</li>
               <li>Le contrôleur est un ensemble de processus</li>
             </ul>
-            <p>Les applications sont déployées et rendues par le Portail Bonita</p>
+            <p>Les applications sont déployées et restituées par le Portail Bonita</p>
             
             <aside class="notes">
               14<br /><br />
@@ -750,12 +751,15 @@
 
         <section>
           <h2>Merci pour votre attention</h2>
+          <p>Des questions ?<br />
+            N'hésitez pas à les poser tout d'abord sur le serveur Discord dédié <a href="https://www.discord.com/HDKC4SA">#bonita-camp-français</a>, <br />
+            et ensuite posez vos questions sur notre communauté Bonitasoft.</p>
           <p>Ressources complémentaires :</p>
           <ul>
             <li>Documentation - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
             <li>Site corporate - <a href="https://fr.bonitasoft.com/" target="_blank">fr.bonitasoft.com</a></li>
             <li>Communauté - <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
-            <li>GitHub - <a href="https://github.com/bonitasoft" target="_blank">github.com/bonitasoft</a></li>
+            <li>GitHub - <a href="https://github.com/bonitasoft-community" target="_blank">github.com/bonitasoft-community</a></li>
           </ul>
         </section>
 
