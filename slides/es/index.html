@@ -303,8 +303,8 @@
 
               <br /><br />
               5<br /><br />
-              [Studio - run a case of exercise 1, process instantiation form, assign/execute task from task list page, administrator perspective to see archived case]<br />
-              [Studio - edit the condition to false, run another case and show other task]
+              [Studio - ejecutar un caso del ejercicio 1, procesar el formulario de creación de instancias, asignar / ejecutar tarea desde la página de lista de tareas, perspectiva del administrador para ver el caso archivado]<br />
+              [Studio - edite la condición en falso, ejecute otro caso y muestre otra tarea]
             </aside>
           </section>
         </section>
@@ -313,11 +313,11 @@
           <section>
             <h2>BDM : Business Data Model</h2>
             <ul>
-              <li>Stocke les données métier en lien avec les processus et/ou les applications</li>
-              <li>Le modèle défini des objets pour stocker les données métier</li>
-              <li>Le modèle est défini dans le Studio</li>
-              <li>Depuis le modèle Bonita génère des classes Java (POJO) et créer les tables en base de données</li>
-              <li>La persistance est gérée par le moteur</li>
+              <li>Almacena datos de negocio relacionados con procesos y/o aplicaciones</li>
+              <li>El modelo definido de objetos para almacenar datos de negocio</li>
+              <li>El modelo se define en el estudio Bonita</li>
+              <li>Desde el modelo, Bonita genera clases Java (POJO) y crea las tablas en la base de datos</li>
+              <li>La persistencia está manejada por el motor</li>
             </ul>
             <aside class="notes">
               Complex type with fields. Structured objects composed of: Java classes (Integer, Boolean, String, Date...) and other BDMs<br />
@@ -328,13 +328,13 @@
             </aside>
           </section>
           <section>
-            <h2>BDM : utilisation</h2>
+            <h2>BDM: uso</h2>
             <ul>
-              <li>Déclarer des variables métier dans la définition du processus</li>
-              <li>Create/Read/Update/Delete en utilisant : valeur par défaut, opérations, connecteurs...</li>
-              <li>Peuvent être partagés entre différentes instance de processus</li>
-              <li>Cycle de vie contrôlé par le développeur</li>
-              <li>API pour les opérations de lecture</li>
+              <li>Declarar variables de negocio en la definición del proceso </li>
+              <li>Crear (Create) / Leer (Read) / Actualizar (Update) / Eliminar (Delete) usando: valor predeterminado, operaciones, conectores ... </li>
+              <li>Se puede compartir entre diferentes instancias de proceso </li>
+              <li>Ciclo de vida controlado por el desarrollador </li>
+              <li>API para operaciones de lectura </li>
             </ul>
             <aside class="notes">
               Business variable used BDM definition to define the type of the variable.<br />
@@ -346,13 +346,13 @@
             </aside>
           </section>
           <section>
-            <h2>Données de formulaire</h2>
+            <h2>Datos de formularios</h2>
             <ul>
-              <li>Stocke et traite les données affichées et mise à jour dans les UI</li>
-              <li>Accessible depuis le navigateur web</li>
-              <li>Tout type d'objet JavaScript</li>
-              <li>Initialisées et mise à jour par : les saisies utilisateur, appels API REST, code JavaScript</li>
-              <li>Non persistées</li>
+              <li> Almacena y procesa los datos que se muestran y actualizan en las UI </li>
+              <li> Accesible desde el navegador web </li>
+              <li> Cualquier tipo de objeto JavaScript </li>
+              <li> Inicializado y actualizado por: entrada del usuario, llamadas API REST, código JavaScript </li>
+              <li> No hay persistencia </li>
             </ul>
             
             <aside class="notes">
@@ -364,12 +364,12 @@
             </aside>
           </section>
           <section>
-            <h2>Documents</h2>
+            <h2>Documentos</h2>
             <ul>
-              <li>Bonita fourni un système de GED léger</li>
-              <li>Les références aux documents font parti de la définition de processus</li>
-              <li>Lors de l'exécution les documents peuvent être Initialisés, mise à jour...</li>
-              <li>Contrairement aux BDM, les documents sont associés à une instance de processus donnée</li>
+              <li> Bonita proporciona un sistema de gestión de documentos simple </li>
+              <li> Las referencias a documentos hacen parte de la definición del proceso </li>
+              <li> En tiempo de ejecución los documentos se pueden inicializar, actualizar ... </li>
+              <li> A diferencia del BDM, los documentos están asociados con una instancia de proceso determinada </li>
             </ul>
 
             <aside class="notes">
@@ -381,14 +381,14 @@
           </section>
 
           <section>
-            <h2>Contrats</h2>
-            <p>Ensemble de paramètres d'entrée requis + des règles de validation</p>
-            <p>Les données envoyées par les formulaires doivent remplir des contrats pour :</p>
-            <ul>
-              <li>Instancier un processus</li>
-              <li>Exécuter une tâche humaine</li>
-            </ul>
-            <p>Contribue au découplage entre la logique métier et les interfaces graphiques</p>
+            <h2>Contratos</h2>
+            <p> Conjunto de parámetros de entrada requeridos y reglas de validación </p>
+            <p> Los datos enviados por los formularios deben cumplir con los contratos para: </p>
+              <ul>
+                  <li> Instanciar un proceso </li>
+                  <li> Realizar una tarea humana </li>
+              </ul>
+             <p> Contribuye al desacoplamiento entre la lógica empresarial y las interfaces gráficas </p>
             
             <aside class="notes">
               2.30<br /><br />
@@ -399,8 +399,8 @@
           </section>
           
           <section>
-            <h2>Aperçu de l'architecture</h2>
-            <p>Envoi de données depuis un formulaire vers une variable métier</p>
+            <h2>Resumen de arquitectura</h2>
+            <p>Enviar datos desde un formulario a una variable de negocio</p>
             <img class="stretch" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
 
             <aside class="notes">
@@ -413,8 +413,8 @@
           </section>
 
           <section>
-            <h2>Exercice 2</h2>
-            <p class="exercise-title">Ajout de données et spécification de contrats</p>
+            <h2>Ejercicio 2</h2>
+            <p class="exercise-title">Agregar datos y especificar contratos</p>
             
             <aside class="notes">
               6<br /><br />
@@ -430,22 +430,21 @@
 
         <section>
           <section>
-            <h2>Formulaires</h2>
-            <p>Créé dans l'UI Designer à base de conteneurs et de widgets</p>
-            <p>Basé sur AngularJS et Bootstrap</p>
-            <p>Associés avec les tâches ou le processus</p>
-            <p>2 types de formulaires :</p>
-            <ul>
-              <li><b>Formulaires éditables</b> qui doivent remplir un contrat
+            <h2>Formularios</h2>
+            <p> Creado en el UI Designer basado en contenedores y widgets </p>
+            <p> Basado en AngularJS y Bootstrap </p>
+            <p> Asociado con tareas o procesos </p>
+            <p> 2 tipos de formularios: </p>
               <ul>
-                <li>Instanciation de processus</li>
-                <li>Tâches humaines (pas de formulaire sur les tâches de type service)</li>
+                <li> <b> Formularios editables </b> que deben cumplir un contrato
+                  <ul>
+                    <li> Instanciación de procesos </li>
+                    <li> Tareas humanas (sin formulario de tipo de servicio) </li>
+                  </ul>
+                </li>
+                <li><b> Formulario de resumen </b> (solo lectura) definido a nivel de pool
+                </li>
               </ul>
-              </li>
-              <li>
-                <b>Formulaire de synthèse</b> (lecture seule) défini au niveau du Pool
-              </li>
-            </ul>
 
             <aside class="notes">
               4<br /><br />
@@ -460,15 +459,16 @@
           </section>
           
           <section>
-            <h2>Pages</h2>
-            <p>Construites de la même manière que les formulaires</p>
-            <p>Principale différence au niveau du contexte d'exécution :</p>
-            <ul>
-              <li>Les formulaires ont des information sur la définition du processus ou sur l'instance de processus et tâche</li>
-              <li>Les pages n'ont pas d'information de contexte</li>
-            </ul>
-            <p>Les pages peuvent obtenir des informations de BDM et de processus ou déclencher des actions via les API REST</p>
-            <p>Grouper plusieurs pages et un menu pour construire une application</p>
+            <h2> Páginas </h2>
+            <p> Construido de la misma manera que los formularios </p>
+            <p> Diferencia principal en el contexto de ejecución: </p>
+                <ul>
+                    <li> Los formularios tienen información sobre la definición del proceso o sobre la instancia del proceso y la tarea </li>
+                    <li> Las páginas no tienen información de contexto </li>
+                </ul>
+            <p> Las páginas pueden obtener información del BDM o de los processos o activar acciones a través de las API REST </p>
+            <p> Agrupe varias páginas y un menú para crear una aplicación </p>
+
             <aside class="notes">
               4<br /><br />
               Display information (BDM, process definitions, process instances) and optionally provide access to actions (start a process instance, execute a task...)<br />
@@ -478,10 +478,10 @@
           </section>
 
           <section>
-            <h2>Widgets</h2>
-            <p>Un ensemble de widgets est fourni par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
-            <p>Des widgets personnalisés peuvent être créés avec l'UI Designer</p>
-            <p>Réutiliser les contributions partagées par la communauté</p>
+            <h2> Widgets </h2>
+            <p> Se proporciona un conjunto de widgets de forma predeterminada (campo de texto, menú desplegable, selector de fecha ...) </p>
+            <p> Se pueden crear widgets personalizados con el UI Designer </p>
+            <p> Se pueden reutilizar las contribuciones compartidas por la comunidad </p>
 
             <aside class="notes">
               4<br /><br />
@@ -491,8 +491,8 @@
           </section>
           
           <section>
-            <h2>Aperçu de l'architecture</h2>
-            <p>Afficher une donnée métier dans un formulaire</p>
+            <h2>Resumen de arquitectura</h2>
+            <p>Mostrar datos de negocio en un formulario</p>
             <img class="stretch" src="images/display_business_variables_in_forms.png" alt="Data flow from process variables to forms">
 
             <aside class="notes">
@@ -508,8 +508,8 @@
           </section>
 
           <section>
-            <h2>Exercice 3</h2>
-            <p class="exercise-title">Création de formulaires</p>
+            <h2>Ejercicio 3</h2>
+            <p class="exercise-title">Creación de formulario</p>
             
             <aside class="notes">
               Build a form from scratch<br/>
@@ -521,16 +521,16 @@
         
         <section>
           <section>
-            <h2>Qui peut effectuer une tâche ?</h2>
-            <p>Un ensemble d'utilisateurs. Protection contre les accès concurrents</p>
-            <p>2 options disponible pour définir qui peut faire une tâche :</p>
-            <ul>
-              <li>Acteurs</li>
-              <li>Filtre d'acteurs</li>
-            </ul>
-            <p>Les deux options nécessite que l'utilisateur s'authentifie</p>
-            <p>L'utilisateur doit être enregistré dans la base de données Bonita</p>
-            <p>Support de : LDAP, Active Directory, SAML V2, CAS, Kerberos inclus dans l'édition Enterprise</p>
+            <h2> ¿Quién puede realizar una tarea? </h2>
+            <p> Un conjunto de usuarios. Protección contra acceso concurrente </p>
+            <p> 2 opciones disponibles para definir quién puede hacer una tarea: </p>
+               <ul>
+                   <li> Actores </li>
+                   <li> Filtro de actor </li>
+               </ul>
+            <p> Ambas opciones requieren que el usuario se autentique </p>
+            <p> El usuario debe estar registrado en la base de datos Bonita </p>
+            <p> Soporte para: LDAP, Active Directory, SAML V2, CAS, Kerberos incluidos en la edición Enterprise </p>
             
             <aside class="notes">
               Explain what is a candidate and assignee.<br />
@@ -544,17 +544,17 @@
           </section>
           
           <section>
-            <h2>Acteurs</h2>
+            <h2>Actores</h2>
             <ul>
-              <li>Déclarer un ou plusieurs acteurs dans la définition du processus (juste un nom)</li>
-              <li>À configurer pour associer l'acteur aux utilisateurs :
-                <ul>
-                  <li>Directement à un ensemble d'utilisateurs donné</li>
-                  <li>Indirectement via des groupes et rôles</li>
+              <li> Declarar uno o más actores en la definición del proceso (solo un nombre) </li>
+              <li> Configurar para asociar al actor con los usuarios:
+                <ul>
+                    <li> Directamente a un conjunto determinado de usuarios </li>
+                    <li> Indirectamente a través de grupos y roles </li>
                 </ul>
               </li>
-              <li>Associer les acteurs directement aux tâche ou via une lane</li>
-              <li>Les acteurs ne peuvent pas utiliser des données "live"</li>
+              <li> Asociar a los actores directamente con la tarea o a través de un carril (lane) </li>
+              <li> Los actores no pueden usar datos "en vivo" </li>
             </ul>
             <aside class="notes">
               Declare actor by selecting the process pool.<br />
@@ -566,12 +566,11 @@
           </section>
           
           <section>
-            <h2>Filtres d'acteur</h2>
-            <p>Un nom mal choisi</p>
-            <p>Remplace complètement l'acteur</p> 
-            <p>Produit une liste d'utilisateurs en fonction d'informations en entrée et d'une logique interne</p>
-            <p>Exécuté quand l'exécution du processus atteins l'étape associée au filtre d'acteur</p>
-            <p>Peut être actualisé en utilisant les API</p> 
+            <h2> Filtros de actor </h2>
+            <p> Reemplaza completamente al actor </p>
+            <p> Produce una lista de usuarios basada en información de entrada y lógica interna </p>
+            <p> Ejecutado cuando la ejecución del proceso alcanza la etapa asociada con el filtro de actor </p>
+            <p> Puede actualizarse usando API </p>
             <aside class="notes">
               Filters are executed only once when task starts. They can be run again with API call.<br />
               [Studio &amp; Portal - change task actor to actor filter, run it]<br />
@@ -579,23 +578,23 @@
           </section>
           
           <section>
-            <h2>Acteurs vs filtres d'acteur</h2>
+            <h2>Actores vs Filtros de actor</h2>
 
             <table class="compare">
             <tr>
               <th></th>
-              <th>Avantages</th>
-              <th>Limitations</th>
+              <th>Beneficios</th>
+              <th>Limitaciones</th>
             </tr>
             <tr>
-              <td>Acteur</td>
-              <td>Toujours à jour par rapport à l'organisation</td>
-              <td>Association qui ne peut pas se baser sur des données métier</td>
+              <td>Actor</td>
+              <td> Siempre actualizado con la organización </td>
+              <td> Asociación que no puede basarse en datos de negocio </td>
             </tr>
             <tr>
-              <td>Filtre d'acteur</td>
-              <td>Association qui peut inclure des données métier</td>
-              <td>Calculé à l'instanciation d'une étape</td>
+              <td>Filtro de actor</td>
+              <td> Asociación que puede incluir datos de negocio </td>
+              <td> Calculado al crear instancias de una etapa </td>
             </tr>
             </table>
 
@@ -616,8 +615,8 @@
           </section>
 
           <section>
-            <h2>Exercice 4</h2>
-            <p class="exercise-title">Gestion d'acteurs</p>
+            <h2>Ejerciio 4</h2>
+            <p class="exercise-title">Gestión de actores</p>
             
             <aside class="notes">
               Configure actors in the process<br />
@@ -629,14 +628,14 @@
 
         <section>
           <section>
-            <h2>Connecteurs</h2>
-            <p>Permet à un processus d'interagir avec le SI (sens opposé à celui des API Bonita)</p>
-            <p>Un catalogue de connecteurs standard est fourni dans le Studio.</p>
-            <p>Des connecteurs personnalisés peuvent être :</p>
-            <ul>
-              <li>Implémentés dans le Studio ou un IDE Java</li>
-              <li>Importés depuis notre site communautaire</li>
-            </ul>
+            <h2>Connectores</h2>
+            <p> Permite que un proceso interactúe con el SI (es decir, opuesto al de las API de Bonita) </p>
+            <p> Se proporciona un catálogo de conectores estándar en Bonita Studio </p>
+            <p> Los conectores personalizados pueden ser: </p>
+              <ul>
+                 <li> Implementados en el estudio o un IDE de Java </li>
+                 <li> Importados de nuestro sitio de la comunidad </li>
+              </ul>
 
             <aside class="notes">
               5<br /><br />
@@ -649,8 +648,8 @@
           </section>
 
           <section>
-            <h2>Exercice 5</h2>
-            <p class="exercise-title">Notification par le biais d'un connecteur</p>
+            <h2>Ejercicio 5</h2>
+            <p class="exercise-title">Notificación a través de un connector</p>
             
             <aside class="notes">
               20 - WAIT / ANSWER QUESTIONS<br />
@@ -660,15 +659,15 @@
 
         <section>
           <section>
-            <h2>Applications basées sur le BPM</h2>
-            <p>Combiner différents processus ensemble dans le but de fournir une application métier riche et cohérente</p>
-            <p>Respecte le modèle MVC :</p>
-            <ul>
-              <li>Le modèle est le BDM</li>
-              <li>La vue est la combinaison des pages d'applications et des formulaires de processus</li>
-              <li>Le contrôleur est un ensemble de processus</li>
-            </ul>
-            <p>Les applications sont déployées et rendues par le Portail Bonita</p>
+            <h2> Aplicaciones basadas en BPM </h2>
+            <p> Combine diferentes procesos juntos para proporcionar una aplicación de negocio rica y consistente </p>
+            <p> Respeta el modelo MVC: </p>
+              <ul>
+                  <li> El modelo es el BDM </li>
+                  <li> La vista es una combinación de páginas de solicitud y formularios de proceso </li>
+                  <li> El controlador es un conjunto de procesos </li>
+              </ul>
+            <p> Las aplicaciones son implementadas y renderizadas por el Portal Bonita </p>
             
             <aside class="notes">
               14<br /><br />
@@ -684,8 +683,8 @@
           </section>
 
           <section>
-            <h2>Exercice 6</h2>
-            <p class="exercise-title">Créer une application de gestion des congés.</p>
+            <h2>Ejercicio 6</h2>
+            <p class="exercise-title">Creer una aplicación de gestión de solicitudes de vacaciones</p>
             
             <aside class="notes">
               20 - WAIT / ANSWER QUESTIONS<br />
@@ -694,19 +693,19 @@
         </section>
         <section>
         <section>
-          <h2>Déploiement de processus</h2>
-          <p>Étapes principales du déploiement d'un processus :</p>
+          <h2>Implementación de procesos</h2>
+          <p> Pasos principales para implementar un proceso: </p>
           <table>
           <tr>
-            <td>1. Configuration du processus<br/>
-            2. Génération du fichier Bar
+            <td>1. Configuración del proceso<br/>
+            2. Generación del fichero .bar
             </td>
             <td>Studio</td>
           </tr>
           <tr>
-            <td>3. Déploiement du fichier Bar<br/>
-            4. Configuration du processus<br/>
-            5. Activation du processus
+            <td>3. Despliegue del fichero .bar<br/>
+            4. Configuración del proceso<br/>
+            5. Activación del proceso
             </td>
             <td>Portal</td>
           </tr>
@@ -720,18 +719,18 @@
           </aside>
         </section>
           <section>
-          <h2>Déploiement d'applications</h2>
-          <p>Étapes principales du déploiement d'une application:</p>
+          <h2>Implementación de aplicaciones</h2>
+          <p>Pasos principales para implementar una aplicación:</p>
           <table>
           <tr>
-            <td>1. Exporter les pages depuis l'UI Designer<br/>
-              2. Exporter l'application
+            <td>1. Exportar páginas desde el UI Designer<br/>
+                2. Exportar la aplicación
             </td>
             <td>Studio</td>
           </tr>
           <tr>
-            <td>3. Importer les pages dans le menu Ressources<br/>
-            4. Importer l'application
+            <td>3. Importar las páginas en el menú Recursos <br/>
+                4. Importar la aplicación
             </td>
             <td>Portail</td>
           </tr>
