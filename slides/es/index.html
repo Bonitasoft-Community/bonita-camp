@@ -49,7 +49,7 @@
 
           <aside class="notes">
             1<br /><br />
-            Bienvenidos a todos en nuestra session de formacion Bonita Camp<br />
+            Bienvenidos a todos en nuestra sesión de formación Bonita Camp<br />
             Me presento<br />
             Presentación de Bonita<br />
             Creación de un 1r proceso y una 1ra aplicación con la edición Community solo<br />
@@ -58,17 +58,16 @@
             Edición Community vs Enterprise (Soporte, acceso a PS &amp; funcionalidades adicionales)<br />
             Formulario de contacto bonitasoft.com si quieres más información sobre la edicción Enterprise<br />
             Antes de empezar, asegurate que estes usando la ultima versión de Bonita.<br />
-            Si ya seguiste una previa versión del Bonita Camp, te recomendo mirar el video dedicado a las novedades de la ultima versión de Bonita , en lugar de este vidoo.
-            .<br />
+            Si ya seguiste una previa versión del Bonita Camp, te recomendo mirar el video dedicado a las novedades de la ultima versión de Bonita , en lugar de este vidoo.<br />
           </aside>
         </section>
 
         <section>
           <h2>Checklist</h2>
           <ul>
-            <li>Descargue los archivos de Bonita Camp de GitHub: <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
-            <li>Instale la última versión de Studio (consulte el documento de ejercicios)</li>
-            <li>Inicie Bonita Studio y haga clic en el botón Portal.</li>
+            <li>Descarga los archivos de Bonita Camp de GitHub: <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
+            <li>Instala la última versión del Studio (consulta el documento de ejercicios)</li>
+            <li>Inicia Bonita Studio y haz clic en el botón Portal.</li>
             <li>Recomendamos usar Chrome o Firefox durante el desarrollo</li>
           </ul>
           
@@ -103,11 +102,12 @@
         <section>
           <h2>La solución Bonita</h2>
           <ul>
-            <li> Limite el volumen de código necesario para crear una aplicación </li>
+            <li> Para limitar el volumen de código necesario para crear una aplicación </li>
             <li> Usar modelos (por ejemplo, diagramas BPMN) para definir aplicaciones </li>
             <li> Los modelos mejoran la colaboración al definir aplicaciones </li>
             <li> Un enfoque orientado a procesos facilita la cooperación durante la ejecución de procesos </li>
-            <li> Te permite monitorear y optimizar la ejecución de procesos </li>
+            <li> Permite monitorear y optimizar la ejecución de procesos </li>
+
           </ul>
 
           <aside class="notes">
@@ -130,7 +130,7 @@
               <li>Bonita Engine</li>
               <li>Bonita Portal</li>
             </ul>
-            <p>Bonita Engine + Portal: empaquetado en una aplicación web JEE (war)</p>
+            <p>Bonita Engine + Portal: juntos en una aplicación web JEE (war)</p>
             <p>Bonita Studio incorpora un entorno de prueba con Tomcat + la aplicación web</p>
 
             <aside class="notes">
@@ -161,7 +161,7 @@
             1<br /><br />
               Fácil de usar, maqueta para pantallas listas para producción <br />
               Navegador basado. Uso de AngularJS y Bootstrap (para una interfaz de usuario receptiva en Enterprise Edition). Permite crear widgets personalizados. <br />
-              Tenga cuidado: si cierra Studio, vas a matar al Diseñador de IU y perder el trabajo no guardado.
+              Tenga cuidado: si cierras Studio, vas a matar al Diseñador de IU y perder el trabajo no guardado.
             </aside>
           </section>
 
@@ -169,7 +169,7 @@
             <h2>Bonita Engine</h2>
             <p> Proporciona un conjunto de servicios </p>
             <p> Responsable de la ejecución de los procesos (sin interfaz gráfica) </p>
-            <p> Exponer API REST </p>
+            <p> Expone API REST </p>
             <p> Basado en Java SE </p>
             <p> Encapsulado con el Portal en una aplicación web Java </p>
             <p> Requiere: </p>
@@ -230,9 +230,10 @@
             <h2>Introducción a BPMN</h2>
             <p> Notación estándar para modelado de procesos </p>
             <p> Lo esencial: </p>
+
             <table class="no-margin no-border">
               <tr><td><img class="no-margin" src="images/bpmn_pool.png" alt="pool"/></td><td>Pool : un pool por proceso</td></tr>
-              <tr><td><img class="no-margin" src="images/bpmn_start_event.png" alt="start event"/></td><td>Événement de début : le démarrage d'un processus</td></tr>
+              <tr><td><img class="no-margin" src="images/bpmn_start_event.png" alt="start event"/></td><td>Evento de inició: el inició del proceso</td></tr>
               <tr><td><img class="no-margin" src="images/bpmn_human_task.png" alt="human task"/></td><td>Tarea humana: cuando un usuario está involucrado</td></tr>
               <tr><td><img class="no-margin" src="images/bpmn_service_task.png" alt="service task"/></td><td>Tarea / servicio automático: ejecutado por el motor</td></tr>
               <tr><td><img class="no-margin" src="images/bpmn_end_event.png" alt="end event"/></td><td>Evento final: desencadena el archivo del proceso</td></tr>
@@ -439,7 +440,7 @@
                 <li> <b> Formularios editables </b> que deben cumplir un contrato
                   <ul>
                     <li> Instanciación de procesos </li>
-                    <li> Tareas humanas (sin formulario de tipo de servicio) </li>
+                    <li> Tareas humanas (sin formulario la tarea es de tipo de servicio) </li>
                   </ul>
                 </li>
                 <li><b> Formulario de resumen </b> (solo lectura) definido a nivel de pool
@@ -466,8 +467,9 @@
                     <li> Los formularios tienen información sobre la definición del proceso o sobre la instancia del proceso y la tarea </li>
                     <li> Las páginas no tienen información de contexto </li>
                 </ul>
-            <p> Las páginas pueden obtener información del BDM o de los processos o activar acciones a través de las API REST </p>
-            <p> Agrupe varias páginas y un menú para crear una aplicación </p>
+            <p> Las páginas pueden obtener información del BDM o de los procesos o activar acciones a través de las API REST </p>
+            <p> Agrupar varias páginas y un menú para crear una aplicación </p>
+
 
             <aside class="notes">
               4<br /><br />
@@ -569,7 +571,7 @@
             <h2> Filtros de actor </h2>
             <p> Reemplaza completamente al actor </p>
             <p> Produce una lista de usuarios basada en información de entrada y lógica interna </p>
-            <p> Ejecutado cuando la ejecución del proceso alcanza la etapa asociada con el filtro de actor </p>
+            <p> Se ejecuta cuando la ejecución del proceso alcanza la etapa asociada con el filtro de actor </p>
             <p> Puede actualizarse usando API </p>
             <aside class="notes">
               Filters are executed only once when task starts. They can be run again with API call.<br />
@@ -660,15 +662,17 @@
         <section>
           <section>
             <h2> Aplicaciones basadas en BPM </h2>
-            <p> Combine diferentes procesos juntos para proporcionar una aplicación de negocio rica y consistente </p>
+
+            <p> Combina diferentes procesos juntos para proporcionar una aplicación de negocio rica y consistente </p>
             <p> Respeta el modelo MVC: </p>
-              <ul>
-                  <li> El modelo es el BDM </li>
-                  <li> La vista es una combinación de páginas de solicitud y formularios de proceso </li>
-                  <li> El controlador es un conjunto de procesos </li>
-              </ul>
+            <ul>
+              <li> El modelo es el BDM </li>
+              <li> La vista es una combinación de páginas de solicitud y formularios de proceso </li>
+              <li> El controlador es un conjunto de procesos </li>
+            </ul>
             <p> Las aplicaciones son implementadas y renderizadas por el Portal Bonita </p>
-            
+
+
             <aside class="notes">
               14<br /><br />
               Business data is central to processes that make the overall application<br />
@@ -751,8 +755,8 @@
         <section>
           <h2> Gracias por su atención </h2>
           <p> ¿Alguna pregunta? <br />
-            No duden en preguntarles primero en el servidor dedicado de Discord <a href="https://discord.gg/dtZUc6s"> # bonita-camp-español </a>, <br />
-            y luego haga sus preguntas sobre nuestra comunidad Bonitasoft. </p>
+            No dudes en preguntarles primero en el servidor dedicado de Discord <a href="https://discord.gg/dtZUc6s"> # bonita-camp-español </a>, <br />
+            y luego haz tus preguntas sobre nuestra comunidad Bonitasoft. </p>
           <p> Recursos adicionales: </p>
           <ul>
             <li>Documentación - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
