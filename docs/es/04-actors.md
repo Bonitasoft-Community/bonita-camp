@@ -59,4 +59,4 @@ Configure un filtro de actor del tipo **Gestor del iniciador de proceso** en la 
  
     - Si el filtro de actor se ejecutó correctamente, la tarea *Validar solicitud de vacaciones* debería estar disponible en la lista de tareas
    
-   [Ejercicio siguiente: configuración de un conector](05-connectors)
+   [Ejercicio siguiente: configuración de un conector](05-connectors.md)
