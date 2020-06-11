@@ -170,4 +170,4 @@ Crea los siguientes formularios:
    - Inicie la ejecución del proceso a través de Bonita Studio
    - Valide, a partir del historial de casos, que se ha seguido el camino correcto hasta el final del proceso
 
-[Ejercicio siguiente: definición de los actores](04-actors)
+[Ejercicio siguiente: definición de los actores](04-actors.md)
