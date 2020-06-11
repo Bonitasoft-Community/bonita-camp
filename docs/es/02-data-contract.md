@@ -173,4 +173,4 @@ Agregue un contrato en el paso *Validar solicitud* utilizando el asistente con e
 
    ![formulario autogenerado](images/ex02/ex2_08.png)
 
-[Siguiente ejercicio: crear formularios](03-forms)
+[Siguiente ejercicio: crear formularios](03-forms.md)
