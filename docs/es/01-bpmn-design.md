@@ -83,4 +83,4 @@ El grupo de procesos debe contener los siguientes elementos BPMN:
     - Haga clic en **Tomar** en la parte superior derecha de la pantalla ![asignar una tarea](images/ex01/ex1_09.png)
     - Envíe el formulario para el paso *Validar solicitud* haciendo clic en el botón **Ejecutar** para completar el caso
 
-[Ejercicio siguiente: creación de datos y definición de contratos](02-data-contract)
+[Ejercicio siguiente: creación de datos y definición de contratos](02-data-contract.md)
