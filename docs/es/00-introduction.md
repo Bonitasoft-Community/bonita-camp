@@ -16,4 +16,4 @@ Cada ejercicio se divide en 3 secciones:
 1. **Resumen de instrucciones**: contiene los pasos principales para llevar a cabo el ejercicio
 1. **Instrucciones paso a paso**: proporciona una descripción detallada paso a paso de los pasos para realizar el ejercicio
 
-[Comience el primer ejercicio](01-bpmn-design)
+[Comience el primer ejercicio](01-bpmn-design.md)
