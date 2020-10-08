@@ -4,7 +4,7 @@ title: Ejercicio 2 - Agregar datos y especificar contratos
 
 ## Objetivo
 
-El objetivo de este ejercicio es continuar implementando el proceso de solicitud de licencia mediante:
+El objetivo de este ejercicio es continuar implementando el proceso de solicitud de vacaciones mediante:
 
 1. Configuración de un modelo de datos de negocio comúnmente llamado BDM (Business Data Management)
 1. Especificar contratos para crear instancias del proceso y ejecutar tareas humanas
@@ -15,9 +15,9 @@ Una vez completado, el proceso será ejecutable con formularios generados autom�
 
 ## Resumen de las instrucciones
 
-Duplique el diagrama de proceso del ejercicio anterior para crear una versión 2.0.0.
+Duplica el diagrama de proceso del ejercicio anterior para crear una versión 2.0.0.
 
-Cree un objeto BDM *SolicitudVacaciones* (este es un nombre técnico, por lo que debe omitir espacios, acentos y otros caracteres especiales) con los siguientes atributos (no use la opción **Múltiple**):
+Crea un objeto BDM *SolicitudVacaciones* (este es un nombre técnico, por lo que debes omitir espacios, acentos y otros caracteres especiales) con los siguientes atributos (no usa la opción **Múltiple**):
 
 Nombre | Tipo | Múltiple | Requerido
 --- | ---- | -------- | -----------
@@ -26,34 +26,34 @@ Nombre | Tipo | Múltiple | Requerido
 *numeroDias* | `Integer` | ◻ | ☑
 *estaAprobado* | `Boolean` | ◻ | ◻
 
-Declare una variable empresarial *solicitud* de tipo *solicitudVacaciones* en el pool.
+Declara una variable empresarial *solicitud* de tipo *solicitudVacaciones* en el pool.
 
-Usando el asistente de Bonita Studio (es decir, **Añadir a partir de datos ...**), genere un contrato de creación de instancias, así como el script de inicialización para la variable de negocio utilizando la variable de negocio *solicitud* y por lo tanto incluye lo siguiente:
+Usando el asistente de Bonita Studio (es decir, **Añadir a partir de datos ...**), genera un contrato de creación de instancias, así como el script de inicialización para la variable de negocio utilizando la variable de negocio *solicitud* y por lo tanto incluya lo siguiente:
 
         fechaInicio
         numeroDias
 
-Agregue las siguientes dos restricciones en el contrato de instanciación:
+Agrega las siguientes dos restricciones en el contrato de instanciación:
 
 - *fechaInicio* debe estar en el futuro
 - *numeroDias* debe ser estrictamente mayor que cero
 
-Inicialice la BDM *solicitud* utilizando la generación automática del contrato.
+Inicializa la BDM *solicitud* utilizando la generación automática del contrato.
 
-Agregue un contrato en el paso *Validar solicitud* utilizando el asistente con el siguiente elemento:
+Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el siguiente elemento:
 
         estaAprobado
 
 ## Instrucciones paso a paso
 
-1. Duplique el diagrama de proceso existente para crear una versión *2.0.0*:
-   - En el menú superior de Studio, haga clic en **Archivo / Duplicar diagrama ...**
-   - Actualice los números de versión del proceso Y diagrama (grupo)
-1. Cree el BDM *SolicitudVacaciones*:
-   - Navegue en el menú **Desarrollo / Modelo de datos de negocio / Definir ...**
-   - Haga clic en **Nuevo objeto de negocio** (A), en la lista de objetos de negocio
-   - Nombre el objeto *SolicitudVacaciones* (B) (este es un nombre técnico, por lo que debe omitir espacios, acentos y otros caracteres especiales)
-   - Con el objeto *SolicitudVacaciones* seleccionado, agregue los siguientes atributos (C):
+1. Duplica el diagrama de proceso existente para crear una versión *2.0.0*:
+   - En el menú superior de Studio, haz clic en **Archivo / Duplicar diagrama ...**
+   - Actualiza los números de versión del proceso Y diagrama (grupo)
+1. Crea el BDM *SolicitudVacaciones*:
+   - Navega en el menú **Desarrollo / Modelo de datos de negocio / Definir ...**
+   - Haz clic en **Nuevo objeto de negocio** (A), en la lista de objetos de negocio
+   - Nombra el objeto *SolicitudVacaciones* (B) (este es un nombre técnico, por lo que debes omitir espacios, acentos y otros caracteres especiales)
+   - Con el objeto *SolicitudVacaciones* seleccionado, agrega los siguientes atributos (C):
 
     Nombre | Tipo | Múltiple | Requerido
     --- | ---- | -------- | -----------
@@ -64,40 +64,40 @@ Agregue un contrato en el paso *Validar solicitud* utilizando el asistente con e
 
     ![definición_del_modelo_de_datos_de_negocio](images/ex02/ex2_01.png)
     
-   - Haga clic en **Finalizar**
+   - Haz clic en **Finalizar**
    - Se muestra el siguiente mensaje para confirmar la implementación del BDM
     
     ![Mensaje de información de despliegue de BDM](images/ex02/ex2_10.png)
     
-   - Marque la opción **No volver a mostrar este mensaje**
-   - Haga clic en **Ok**
+   - Marca la opción **No volver a mostrar este mensaje**
+   - Haz clic en **Ok**
  
-1. Declare una variable de negocio de tipo *solicitudVacaciones* en el proceso:
-   - Seleccione el pool de procesos
-   - Navegue en la pestaña **Datos / Variables del proceso**
-   - Haga clic en **Agregar ...** en la sección **Variables de negocio**
-   - Asigne un nombre a la variable *solicitud* y seleccione el tipo de objeto de negocio *com.company.model.SolicitudVacaciones*
-   - Haga clic en **Finalizar**
+1. Declara una variable de negocio de tipo *solicitudVacaciones* en el proceso:
+   - Selecciona el pool de procesos
+   - Navega en la pestaña **Datos / Variables del proceso**
+   - Haz clic en **Agregar ...** en la sección **Variables de negocio**
+   - Asigna un nombre a la variable *solicitud* y seleccione el tipo de objeto de negocio *com.company.model.SolicitudVacaciones*
+   - Haz clic en **Finalizar**
    
    ![déclaración de una variable de negocio](images/ex02/ex2_02.png)
    
-1. Configure el contrato de instanciación:
-   - Seleccione el pool de procesos
-   - Navegue en la pestaña **Ejecución / Contrato / Entradas**
-   - Haga clic en el botón **Añadir desde datos ...**
-   - Seleccione la variable de negocio *solicitud*
+1. Configura el contrato de instanciación:
+   - Selecciona el pool de procesos
+   - Navega en la pestaña **Ejecución / Contrato / Entradas**
+   - Haz clic en el botón **Añadir desde datos ...**
+   - Selecciona la variable de negocio *solicitud*
    - Mantenga el nombre predeterminado *solicitudInput*
-   - Haga clic en **Siguiente**
-   - Desmarque los atributos *solicitanteID* y *estaAprobado*
+   - Haz clic en **Siguiente**
+   - Desmarca los atributos *solicitanteID* y *estaAprobado*
    
    ![asistente de definición de contrato](images/ex02/ex2_03.png)
    
-   - Haga clic en **Finalizar** (no en **Finalizar y Añadir**) e ignore los mensajes de advertencia sobre la inicialización parcial de la variable de negocio
+   - Haz clic en **Finalizar** (no en **Finalizar y Añadir**) e ignora los mensajes de advertencia sobre la inicialización parcial de la variable de negocio
      
       ![contrato definido para iniciar el proceso](images/ex02/ex2_04.png)
    
-   - Siguiendo en la pestaña **Ejecución / Contrato**, cambie a la pestaña **Restricciones**
-   - Agregue la siguiente restricción:
+   - Siguiendo en la pestaña **Ejecución / Contrato**, cambia a la pestaña **Restricciones**
+   - Agrega la siguiente restricción:
   
     Propiedad | Valor
     --------- | ------
@@ -105,7 +105,7 @@ Agregue un contrato en el paso *Validar solicitud* utilizando el asistente con e
     Expresión | `solicitudInput.fechaInicio.isAfter(java.time.LocalDate.now())`
     Mensaje de error| La fecha de inicio debe ser en el futuro
 
-   - Agregue una segunda restricción:
+   - Agrega una segunda restricción:
   
     Propiedad | Valor
     -------- | ------
@@ -115,15 +115,15 @@ Agregue un contrato en el paso *Validar solicitud* utilizando el asistente con e
 
    ![definición de restricciones](images/ex02/ex2_05.png)
    
-1. Modifique la inicialización de la variable empresarial *solicitud*:
-   - Seleccione el pool de procesos y navegue a la pestaña **Datos / Variables de proceso**
-   - Seleccione la variable *solicitud*
-   - Haga clic en **Editar ...**
-   - Haga clic en el icono de **lápiz** asociado con el campo **Valor predeterminado** para abrir el editor de expresiones
-   - Ingrese el siguiente código (o simplemente aplique las modificaciones):
+1. Modifica la inicialización de la variable de negocio *solicitud*:
+   - Selecciona el pool de procesos y navega a la pestaña **Datos / Variables de proceso**
+   - Selecciona la variable *solicitud*
+   - Haz clic en **Editar ...**
+   - Haz clic en el icono de **lápiz** asociado con el campo **Valor predeterminado** para abrir el editor de expresiones
+   - Ingresa el siguiente código (o simplemente aplica las modificaciones):
    
 ```groovy
-   def solicitudVacacionesVar = new com.company.model1.SolicitudVacaciones()
+   def solicitudVacacionesVar = new com.company.model.SolicitudVacaciones()
    solicitudVacacionesVar.fechaInicio = solicitudInput?.fechaInicio
    solicitudVacacionesVar.numeroDias = solicitudInput?.numeroDias
 
@@ -136,36 +136,36 @@ Agregue un contrato en el paso *Validar solicitud* utilizando el asistente con e
 ```
 
    El script inicializará la variable de negocio utilizando los datos del contrato y el identificador del solicitante. 
-   - Haga clic en el botón **Aceptar** para cerrar el editor de expresiones
-   - Haga clic otra vez en el botón **Aceptar** para validar la modificación de la variable de negocio
+   - Haz clic en el botón **Aceptar** para cerrar el editor de expresiones
+   - Haz clic otra vez en el botón **Aceptar** para validar la modificación de la variable de negocio
 
-1. Configure el contrato para el paso *Validar solicitud*:
-    - Seleccione el paso *Validar solicitud*
-    - Navegue en la pestaña **Ejecución / Contrato / Entradas**
-    - Haga clic en el botón **Añadir desde datos ...**
-    - Seleccione la variable de negocio *solicitud*, mantenga el nombre de la entrada predeterminada *solicitudInput*
-    - Haga clic en **Siguiente**
-    - Seleccione solo el atributo *estaAprobado*
-    - Haga clic en **Finalizar** (y no en **Finalizar y Añadir**) e ignore los mensajes de advertencia sobre la inicialización parcial de la variable de negocio
+1. Configura el contrato para el paso *Validar solicitud*:
+    - Selecciona el paso *Validar solicitud*
+    - Navega en la pestaña **Ejecución / Contrato / Entradas**
+    - Haz clic en el botón **Añadir desde datos ...**
+    - Selecciona la variable de negocio *solicitud*, mantenga el nombre de la entrada predeterminada *solicitudInput*
+    - Haz clic en **Siguiente**
+    - Selecciona solo el atributo *estaAprobado*
+    - Haz clic en **Finalizar** (y no en **Finalizar y Añadir**) e ignora los mensajes de advertencia sobre la inicialización parcial de la variable de negocio
 
 
-1. Tenga en cuenta que se ha generado automáticamente una operación (**Ejecución / Operaciones**) en la tarea *Validar solicitud* para actualizar la solicitud
+1. Ten en cuenta que se ha generado automáticamente una operación (**Ejecución / Operaciones**) en la tarea *Validar solicitud* para actualizar la solicitud
  
     ![operación generada automáticamente](images/ex02/ex2_06.png)
    
-1. Configure la condición en la transición *Sí* desde el atributo *estaAprobado* del BDM *solicitud*:
-    - Seleccione la transición *Sí*
-    - Navegue en la pestaña **General / General**
-    - Haga clic en el ícono de lápiz junto al campo **Condición** para abrir el editor de expresiones
-    - En el editor de expresiones, seleccione **Java** como tipo de expresión
-    - Seleccione la variable *solicitud* y el método *isEstaAprobado*
+1. Configura la condición en la transición *Sí* desde el atributo *estaAprobado* del BDM *solicitud*:
+    - Selecciona la transición *Sí*
+    - Navega en la pestaña **General / General**
+    - Haz clic en el ícono de lápiz junto al campo **Condición** para abrir el editor de expresiones
+    - En el editor de expresiones, selecciona **Java** como tipo de expresión
+    - Selecciona la variable *solicitud* y el método *isEstaAprobado*
    
    ![uso de la variable de negocio para definir la condición de una transición](images/ex02/ex2_07.png)
    
-1. Guarde el proceso:
-    - Haga clic en el botón **Guardar** en la barra de menú superior de Bonita Studio
-1. Ejecute el proceso y pruebe las restricciones de los contratos:
-    - Inicie el proceso y complete los formularios generados automáticamente
+1. Guarda el proceso:
+    - Haz clic en el botón **Guardar** en la barra de menú superior de Bonita Studio
+1. Ejecuta el proceso y prueba las restricciones de los contratos:
+    - Inicia el proceso y completa los formularios generados automáticamente
 
 > Información:
 > - para el campo *fechaInicio*, el formato de fecha esperado es AAAA-MM-DD
