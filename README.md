@@ -5,7 +5,7 @@ The main objective of this training is to familiarize yourself with concepts and
 Bonita Camp include both theoretical knowledge and hands on with exercises that let you build your first Bonita application.
 Bonita Camp comes with:
 
-- A set of slides commented in a [series of videos](https://www.youtube.com/playlist?list=PLvvoQatxaHOMHRiP7hFayNXTJNdxIEiYp) (also available in [French](https://www.youtube.com/playlist?list=PLvvoQatxaHOPSATzZe-zPh-LrSNGfpQEf)) or during live sessions
+- A set of slides commented in a [series of videos](https://www.youtube.com/playlist?list=PLvvoQatxaHOMHRiP7hFayNXTJNdxIEiYp) (also available in [French](https://www.youtube.com/playlist?list=PLvvoQatxaHOPSATzZe-zPh-LrSNGfpQEf) and [Spanish](https://www.youtube.com/playlist?list=PLvvoQatxaHOOgWEMHZjk5rjc9qsCnh7bi)) or during live sessions
 - A set of exercises described on a [dedicated web site](http://bonitasoft-community.github.io/bonita-camp/)
 - [Exercises solutions](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
 
@@ -32,7 +32,7 @@ All sources are available on [Bonita Camp GitHub repository](https://github.com/
 
 ### Build instructions for slides
 
-1. Download and unzip [reveal.js version 3.8.0](https://github.com/hakimel/reveal.js/releases/tag/3.8.0)
+1. Download and unzip [reveal.js](https://github.com/hakimel/reveal.js/archive/master.zip)
 1. Paste the content of the `slides/THE_LANGUAGE/` folder into your `reveal.js` directory
 1. Paste the content of the `slides/theme` folder in your `reveal.js/css/theme/source` folder
 1. Run `npm install`

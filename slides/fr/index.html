@@ -6,7 +6,7 @@
     <title>Bonita Camp</title>
 
     <meta name="description" content="Présentation de Bonita permettant de rapidement réaliser une premier application">
-    <meta name="author" content="Antoine Mottier">
+    <meta name="author" content="Antoine Mottier - Delphine Coille">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -69,7 +69,7 @@
             <li>Télécharger les fichiers du Bonita Camp depuis GitHub : <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
             <li>Installer la dernière version du Studio (cf document exercices)</li>
             <li>Démarrer le Studio et cliquer le bouton Portail</li>
-            <li>Nous recommandons d'utiliser Chrome où Firefox lors de vos développements</li>
+            <li>Nous recommandons d'utiliser <img class="no-margin" src="images/chrome.png" alt="chrome"/> ou <img class="no-margin" src="images/firefox.png" alt="firefox"/> lors de vos développements</li>
           </ul>
           
           <aside class="notes">
@@ -82,28 +82,32 @@
 
         <section>
           <h2>Programme</h2>
-          <ul class="agenda">
-            <li>La solution Bonita</li>
-            <li>Composants de Bonita</li>
-            <li>Introduction au BPMN</li>
-            <li>Données et Contrats</li>
-            <li>Formulaires et Pages</li>
-            <li>Acteurs</li>
-            <li>Connecteurs</li>
-            <li>Applications</li>
-            <li>Déploiement</li>
-          </ul>
+            <p>Jour 1</p>
+              <ul class="agenda">
+                <li>La solution Bonita et les composants de Bonita</li>
+                <li>Introduction au BPMN</li>
+                <li>Gestion des données et contrats</li>
+                <li>L'interface utilisateur (Formulaires et pages)</li>
+              </ul>
+
+            <p>Jour 2</p>
+              <ul class=""agenda">
+                <li>Gestion des utilisateurs</li>
+                <li>Connecteurs</li>
+                <li>Applications</li>
+                <li>Déploiement</li>
+              </ul>
           
           <aside class="notes">
             1<br /><br />
-            3:30h of time
+            3:30h of time découpé en 2 fois 2 heures pour vous laisser le temps de pratiquer
           </aside>
         </section>
 
         <section>
           <h2>La solution Bonita</h2>
           <ul>
-            <li>Limiter le volume de code nécessaire pour construire une application</li>
+            <li>Limite le volume de code nécessaire pour construire une application</li>
             <li>S'appuie sur des modèles (e.g. diagrammes BPMN) pour définir les applications</li>
             <li>Les modèles améliorent la collaboration lors de la définition des applications</li>
             <li>Une approche orientée processus facilite la coopération lors de l'exécution des processus</li>
@@ -166,7 +170,31 @@
           </section>
 
           <section>
-            <h2>Bonita Engine</h2>
+            <h2>Portail Bonita</h2>
+            <p>Interface web pour l'utilisateur final et l'administrateur</p>
+            <ul>
+              <li>Présente la liste des tâches à réaliser</li>
+              <li>Permet de déployer et configurer des formualaires, processus et des applications métiers crées avec l'UI Designer</li>
+              <li>Permet de gérer l'organisation</li>
+
+            <aside class="notes">
+              30<br /><br />
+              Portal uses the Bonita APIs as any client of the Engine
+            </aside>
+          </section>
+
+          <section>
+            <h2>Portail Bonita</h2>
+            <img class="stretch" src="images/screenshot_portal_inbox.png" alt="Bonita Portal : liste de tâches" />
+          </section>
+
+          <section>
+            <h2>Portail Bonita</h2>
+            <img class="stretch" src="images/screenshot_application.png" alt="Bonita application" />
+          </section>
+
+          <section>
+            <h2>Moteur Bonita</h2>
             <p>Fournit un ensemble de services</p>
             <p>Responsable de l'exécution des processus (pas d'interface graphique)</p>
             <p>Expose des API REST</p>
@@ -187,43 +215,18 @@
           </section>
 
           <section>
-            <h2>Bonita Portal</h2>
-            <p>Interface web pour l'utilisateur final et l'administrateur</p>
-            <p>Présente la liste des tâches à réaliser</p>
-            <p>Permet de déployer et configurer des processus</p>
-            <img class="stretch" src="images/screenshot_portal_inbox.png" alt="Bonita Portal : liste de tâches" />
-
-            <aside class="notes">
-              30<br /><br />
-              Portal uses the Bonita APIs as any client of the Engine
-            </aside>
-          </section>
-          <section>
-            <h2>Bonita Portal : Forms</h2>
-            <p>Affiche les formulaires créés avec l'UI Designer</p>
-            <p>Les formulaires sont associés avec le processus (instanciation) ou des tâches humaines</p>
-            <p>Servis dans le Portal Bonita ou via une application</p>
-            <img class="stretch" src="images/screenshot_form.png" alt="Bonita form" />
-
-            <aside class="notes">
-              1.00<br /><br />
-              Definition of form: display data and get inputs as part of the process execution
-            </aside>
-          </section>
-          <section>
-            <h2>Bonita Portal : Applications</h2>
-            <p>Permet le déploiement d'application métiers composées de pages créées avec l'UI Designer</p>
-            <img class="stretch" src="images/screenshot_application.png" alt="Bonita application" />
+            <h2>Architecture de la plateforme Bonita</h2>
+            <img class="stretch" src="images/architectural-overview.png" alt="Architecture Bonita" />
 
             <aside class="notes">
               1.30<br /><br />
-              Global view that use pages like dashboards to display and give access to actions<br />
-              Pages are build in the same way as Forms. The only difference is that Pages are not associated directly with a process definition. One page might interact with different processes or even no process at all (e.g. for a dashboard with no action on the underlying process).<br />
-              Everything is defined in the UID and hosted by the Bonita platform<br />
-              Business specific UI which makes it usually better than generic tasks list that might not be as convenient
+              Todas las interacciones (Portal y otras) con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
             </aside>
           </section>
         </section>
+
 
         <section>
           <section>
@@ -289,9 +292,11 @@
           </section>
 
           <section>
-            <h2>Exercice 1</h2>
-            <p class="exercise-title">Modélisation basique de processus</p>
-            <p>Si vous ne l'avez pas déjà fait, téléchargez les instructions et les corrections à partir de GitHub : https://github.com/Bonitasoft-Community/bonita-camp/releases</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 1</h2>
+            </div>
+            <h4>Modélisation basique de processus</h4>
+            <p>Si vous ne l'avez pas déjà fait, téléchargez les instructions et les corrections à partir de GitHub <br> <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></p>
 
             <aside class="notes">
               2.00<br /><br />
@@ -413,8 +418,10 @@
           </section>
 
           <section>
-            <h2>Exercice 2</h2>
-            <p class="exercise-title">Ajout de données et spécification de contrats</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 2</h2>
+            </div>
+            <h4>Ajout de données et spécification de contrats</h4>
             
             <aside class="notes">
               6<br /><br />
@@ -508,8 +515,10 @@
           </section>
 
           <section>
-            <h2>Exercice 3</h2>
-            <p class="exercise-title">Création de formulaires</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 3</h2>
+            </div>
+            <h4>Création de formulaires</h4>
             
             <aside class="notes">
               Build a form from scratch<br/>
@@ -518,7 +527,42 @@
             </aside>
           </section>
         </section>
-        
+
+
+        <!-- Fin jour 1 -->
+
+
+        <section>
+          <section>
+          <div>
+            <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" />
+          </div>
+          <div>
+            <h4>Jour 2</h4>
+            <div>Delphine Coille</div>
+          </div>
+          </section>
+
+          <section>
+            <h2>Rappel du programme</h2>
+            <p>Jour 1</p>
+            <ul class="agenda">
+              <li>La solution Bonita et les composants de Bonita</li>
+              <li>Introduction au BPMN</li>
+              <li>Gestion des données et contrats</li>
+              <li>L'interface utilisateur (Formulaires et pages)</li>
+            </ul>
+
+            <p>Jour 2</p>
+            <ul class=""agenda">
+            <li>Gestion des utilisateurs</li>
+            <li>Connecteurs</li>
+            <li>Applications</li>
+            <li>Déploiement</li>
+            </ul>
+          </section>
+        </section>
+
         <section>
           <section>
             <h2>Qui peut effectuer une tâche ?</h2>
@@ -531,7 +575,7 @@
             <p>Les deux options nécessitent que l'utilisateur s'authentifie</p>
             <p>L'utilisateur doit être enregistré dans la base de données Bonita</p>
             <p>Support de : LDAP, Active Directory, SAML V2, CAS, Kerberos inclus dans l'édition Enterprise</p>
-            
+
             <aside class="notes">
               Explain what is a candidate and assignee.<br />
               We will see in details both options in upcoming slides.<br />
@@ -542,7 +586,7 @@
               Use the contact us form on Bonitasoft website if you want more information about Enterprise Edition.
             </aside>
           </section>
-          
+
           <section>
             <h2>Acteurs</h2>
             <ul>
@@ -564,20 +608,20 @@
               Actors cannot use any live data (business variables, external system information...). We can do that with filters<br/>
             </aside>
           </section>
-          
+
           <section>
             <h2>Filtres d'acteur</h2>
             <p>Un nom mal choisi</p>
-            <p>Remplace complètement l'acteur</p> 
+            <p>Remplace complètement l'acteur</p>
             <p>Produit une liste d'utilisateurs en fonction d'informations en entrée et d'une logique interne</p>
             <p>Exécuté quand l'exécution du processus atteint l'étape associée au filtre d'acteur</p>
-            <p>Peut être actualisé en utilisant les API</p> 
+            <p>Peut être actualisé en utilisant les API</p>
             <aside class="notes">
               Filters are executed only once when task starts. They can be run again with API call.<br />
               [Studio &amp; Portal - change task actor to actor filter, run it]<br />
             </aside>
           </section>
-          
+
           <section>
             <h2>Acteurs vs filtres d'acteur</h2>
 
@@ -616,9 +660,11 @@
           </section>
 
           <section>
-            <h2>Exercice 4</h2>
-            <p class="exercise-title">Gestion d'acteurs</p>
-            
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 4</h2>
+            </div>
+            <h4>Gestion d'acteurs</h4>
+
             <aside class="notes">
               Configure actors in the process<br />
               <br/>
@@ -649,9 +695,11 @@
           </section>
 
           <section>
-            <h2>Exercice 5</h2>
-            <p class="exercise-title">Notification par le biais d'un connecteur</p>
-            
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 5</h2>
+            </div>
+            <h4>Notification par le biais d'un connecteur</h4>
+
             <aside class="notes">
               20 - WAIT / ANSWER QUESTIONS<br />
 ￼            </aside>
@@ -669,7 +717,7 @@
               <li>Le contrôleur est un ensemble de processus</li>
             </ul>
             <p>Les applications sont déployées et restituées par le Portail Bonita</p>
-            
+
             <aside class="notes">
               14<br /><br />
               Business data is central to processes that make the overall application<br />
@@ -684,9 +732,11 @@
           </section>
 
           <section>
-            <h2>Exercice 6</h2>
-            <p class="exercise-title">Créer une application de gestion des congés.</p>
-            
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 6</h2>
+            </div>
+            <h4>Créer une application de gestion des congés.</h4>
+
             <aside class="notes">
               20 - WAIT / ANSWER QUESTIONS<br />
             </aside>
@@ -736,7 +786,7 @@
             <td>Portail</td>
           </tr>
           </table>
-          
+
           <aside class="notes">
             2.30<br /><br />
             Mention BCD for automated command line/Jenkins build and deployment (Enterprise Edition).
@@ -751,7 +801,15 @@
 
         <section>
           <h2>Merci pour votre attention</h2>
-          <p>Ressources complémentaires :</p>
+          <div>
+            <h3>Une question ?</h3>
+            <p> N'hésitez pas à la poser tout d'abord sur le serveur Discord dédié<a href="https://discord.gg/HDKC4SA"> # bonita-camp-français</a>, <br />
+              Et vous pourrez ensuite poser toutes vos questions sur la communauté Bonitasoft.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Ressources complémentaires</h2>
           <ul>
             <li>Documentation - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
             <li>Site corporate - <a href="https://fr.bonitasoft.com/" target="_blank">fr.bonitasoft.com</a></li>
@@ -760,7 +818,8 @@
           </ul>
         </section>
 
-      </div>
+      </section>
+    </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
