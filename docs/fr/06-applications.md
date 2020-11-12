@@ -59,7 +59,7 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
    - Glisser-déposser *DemandeConges* sur la page
    - Conserver le nom par défaut : *demandeConges*
    - Dans la section **"Find By" queries on an attribute**, sélectionner *idDemandeur*
-   - Dans la section **"idDemandeur" value** saisir : `{% raw %}{{sessionInfo.user_id}}{% endraw %}`
+   - Dans la section **"idDemandeur" value** saisir : `{{sessionInfo.user_id}}`
    - Cliquer sur le bouton **Enregistrer**
 
 1. Déclarer une nouvelle expression JavaScript pour mettre en forme la liste :
