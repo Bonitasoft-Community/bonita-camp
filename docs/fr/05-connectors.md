@@ -98,4 +98,4 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
 1. Tester le processus :
    - Exécuter deux fois le processus pour tester les différents chemins et s'assurer que les emails sont bien envoyés et interceptés par FakeSMTP
 
-[Exercice suivant : création d'une application](06-applications)
+[Exercice suivant : création d'une application](06-applications.md)

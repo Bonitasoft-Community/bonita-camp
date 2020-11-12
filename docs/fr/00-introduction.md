@@ -16,4 +16,4 @@ Chaque exercice est découpé en 3 sections :
 1. **Instructions résumées** : contient les grandes étapes de la réalisation de l'exercice
 1. **Instructions pas à pas** : fournit une description détaillée pas à pas des étapes permettant de réaliser l'exercice
 
-[Commencer le premier exercice](01-bpmn-design)
+[Commencer le premier exercice](01-bpmn-design.md)

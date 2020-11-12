@@ -108,7 +108,7 @@ Créer les formulaires suivants :
    --------- | ------
    Nom | *demandeur*
    Type | **External API**
-   URL d'API | `../API/identity/user/{% raw %}{{demande.idDemandeur}}{% endraw %}`
+   URL d'API | `../API/identity/user/{{demande.idDemandeur}}`
 
 1. Modifier le titre du formulaire
    - Sélectionner le widget de type **Titre** situé en haut du formulaire
@@ -125,7 +125,7 @@ Créer les formulaires suivants :
 
    Propriété | Valeur
    --------- | ------
-   Texte | `<b>Demandeur :</b> {% raw %}{{demandeur.firstname}} {{demandeur.lastname}}{% endraw %}`
+   Texte | `<b>Demandeur :</b> {{demandeur.firstname}} {{demandeur.lastname}}`
 
 1. Ajouter un widget pour refuser la demande:
    - Faire glisser un widget de type **Button** et ajouter le dans le form container (zone délimitée par une ligne pointillée épaisse)
@@ -167,4 +167,4 @@ Créer les formulaires suivants :
    - Lancer l'exécution du processus par le biais du Studio
    - Valider à partir de l'historique des cas que le bon chemin a bien été emprunté jusqu'à la fin du processus
 
-[Exercice suivant : définition des acteurs](04-actors)
+[Exercice suivant : définition des acteurs](04-actors.md)

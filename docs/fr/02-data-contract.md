@@ -169,4 +169,4 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
 
    ![formulaire autogénéré](images/ex02/ex2_08.png)
 
-[Exercice suivant : création de formulaires](03-forms)
+[Exercice suivant : création de formulaires](03-forms.md)

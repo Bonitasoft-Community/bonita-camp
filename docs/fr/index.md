@@ -31,4 +31,4 @@ Le Bonita Camp se compose :
    - Dans la liste **External web browsers** sélectionnez le navigateur souhaité et cliquez sur le bouton **Appliquer**
    - Fermez la fenêtre des préférences
 
-[Débuter les exercices](00-introduction)
+[Débuter les exercices](00-introduction.md)

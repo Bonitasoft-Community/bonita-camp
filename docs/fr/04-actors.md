@@ -56,4 +56,4 @@ Configurer un filtre d'acteur de type **Manager de l'initiateur du processus** s
    - Se connecter avec l'utilisateur *helen.kelly* et le mot de passe *bpm*
    - Si le filtre d'acteur s'est bien exécuté, la tâche *Valider demande de congés* devrait être disponible dans la liste des tâches à faire
 
-[Exercice suivant : configuration d'un connecteur](05-connectors)
+[Exercice suivant : configuration d'un connecteur](05-connectors.md)
