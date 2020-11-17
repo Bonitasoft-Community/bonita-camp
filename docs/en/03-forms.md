@@ -102,7 +102,7 @@ Create the following forms:
    -------- | ------
    Name | requestor
    Type | External API
-   API URL | `../API/identity/user/{%raw%}{{request.requestorId}}{%endraw%}`
+   API URL | `../API/identity/user/{{request.requestorId}}`
 
 1. Edit the form title:
    - Select the **Title** widget located at the top of the form
@@ -119,9 +119,8 @@ Create the following forms:
 
    Property | Value
    --------- | ------
-   Text | `<b>Requestor:</b> {%raw%}{{requestor.firstname}} {{requestor.lastname}}{%endraw%}`
+   Text | `<b>Requestor:</b> {{requestor.firstname}} {{requestor.lastname}}`
 
-   
 1. Add a widget to reject the request:
    - Drag a **Button** widget from the palette and drop it in the form container (highlight with a dashed border)
    - Configure the widget as following:
@@ -147,7 +146,6 @@ Create the following forms:
    Data sent on click | `{"requestInput":{"isApproved":true}}`
    Failed response value | `formOutput._submitError`
    Target URL on success | `/bonita`
-
 
 1. Remove the *Is Approved* checkbox and the *Submit* button
       

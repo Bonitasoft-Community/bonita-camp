@@ -32,4 +32,4 @@ with your default web browser. You can configure Bonita Studio to use an other b
    - In the list of **External web browsers** select the one you want to use and click on **Apply** button
    - Close the preferences window
 
-[Start exercises](00-introduction)
+[Start exercises](00-introduction.md)

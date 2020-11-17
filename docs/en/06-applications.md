@@ -58,7 +58,7 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    - Click on **Data model** icon
    - Drag and drop *LeaveRequest* onto the page
    - In section **"Find By" queries on an attribute**, select *requestorId*
-   - In section **"requestorId" value** enter : `{% raw %}{{sessionInfo.user_id}}{% endraw %}`
+   - In section **"requestorId" value** enter : `{{sessionInfo.user_id}}`
    - Click on **Save** button
 
 1. Declare a new JavaScript expression to format the list of request:
@@ -207,7 +207,7 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    - Enter *Create a new request* in the field **Label**
    - Select **POST** in the **Action** drop-down list
    - Click on **fx** to switch the **Data sent on click** field mode and then enter *formInput*
-   - In the field **URL to call**, enter: `../API/bpm/process/{% raw %}{{processDefinitionInfo[0].id}}{% endraw %}/instantiation`
+   - In the field **URL to call**, enter: `../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation`
    - In the field **Target URL on success**, enter: `/bonita/apps/leave-request`
    - Save the page
    - The page should look like that:
