@@ -68,8 +68,7 @@
           <ul>
             <li>Download Bonita Camp resources from GitHub: <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
             <li>Make sure that latest version of Studio is correctly installed (see exercises instructions)</li>
-            <li>Install latest Oracle JDK 8</li>
-            <li>Start the Studio and click on Portal button</li>
+            <li>Install latest Oracle JDK 8 or 11 if needed</li>
             <li>We recommend to use Chrome or Firefox as your default web browser for development</li>
           </ul>
           
@@ -83,20 +82,24 @@
 
         <section>
           <h2>Agenda</h2>
+          <p>Day 1</p>
           <ul class="agenda">
-            <li>Bonita solution</li>
-            <li>Bonita components</li>
-            <li>BPMN 2.0</li>
-            <li>Data &amp; Contracts</li>
-            <li>Forms &amp; Pages</li>
-            <li>Actors</li>
+            <li>Bonita solution and Bonita components</li>
+            <li>Introduction to BPMN 2.0</li>
+            <li>Data management (Business Data model &amp; Contracts)</li>
+            <li>User interface (Forms &amp; Pages)</li>
+          </ul>
+
+          <p>Day 2</p>
+          <ul class=""agenda">
+            <li>Users managements (Actors)</li>
             <li>Connectors</li>
             <li>Bonita applications</li>
             <li>Deployment</li>
           </ul>
           <aside class="notes">
             1<br /><br />
-            3:30h of time
+            4:00h of time split into 2 sessions to let you practice
           </aside>
         </section>
 
@@ -127,8 +130,8 @@
             <ul>
               <li>Bonita Studio</li>
               <li>Bonita UI Designer</li>
-              <li>Bonita Engine</li>
               <li>Bonita Portal</li>
+              <li>Bonita Engine</li>
             </ul>
             <p>Engine + Portal: packaged in a single JEE web application (war)</p>
             <p>Studio embeds a test environment with Tomcat + web application</p>
@@ -147,7 +150,7 @@
 
             <aside class="notes">
               1:30<br /><br />
-              Studio is an Eclipse based IDE and requires a JVM (version 8 but version 11 is recommended).<br/>
+              Studio is an Eclipse based IDE and requires a JVM (version 8 minimum but version 11 is recommended).<br/>
               Allows creation of process diagrams which contain one or several processes (we recommend one process per diagram).<br/>
               Different steps: process modeling, data model definition, form and pages design, connectors setup...<br/>
               Diagram editor perspective: white board on which you drag and drop BPMN elements from a palette.<br />
@@ -163,6 +166,19 @@
             Easy to use, mockup to production ready displays<br />
             Browser based. Using AngularJS and Bootstrap (for responsive UI in Enterprise Edition). Allows to create custom widgets.<br />
             Be careful: if you close the Studio it will kill the UI Designer and you will lose unsaved work.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Bonita Portal</h2>
+            <p>End user and administration web interface</p>
+            <p>Displays the list of available tasks</p>
+            <p>Allows to deploy and configure processes and related resources</p>
+            <img class="stretch" src="images/screenshot_portal_inbox.png" alt="Bonita Portal: Task Inbox" />
+
+            <aside class="notes">
+              30<br /><br />
+              Portal uses the Bonita APIs as any client of the Engine
             </aside>
           </section>
 
@@ -187,50 +203,21 @@
           </section>
 
           <section>
-            <h2>Bonita Portal</h2>
-            <p>End user and administration web interface</p>
-            <p>Displays the list of available tasks</p>
-            <p>Allows to deploy and configure processes and related resources</p>
-            <img class="stretch" src="images/screenshot_portal_inbox.png" alt="Bonita Portal: Task Inbox" />
-
-            <aside class="notes">
-              30<br /><br />
-              Portal uses the Bonita APIs as any client of the Engine
-            </aside>
-          </section>
-
-          <section>
-            <h2>Bonita Portal: Forms</h2>
-            <p>Renders forms created with UI Designer</p>
-            <p>Forms are associated with process (instantiation) or human tasks</p>
-            <p>Served by Bonita Portal</p>
-            <img src="images/screenshot_form.png" alt="Bonita form" />
-
-            <aside class="notes">
-              1.00<br /><br />
-              Definition of form: display data and get inputs as part of the process execution
-              Linked to human tasks
-            </aside>
-          </section>
-
-          <section>
-            <h2>Bonita Portal: Applications</h2>
-            <p>Allows to deploy Business Applications composed of pages implemented with the UI Designer</p>
-            <img class="stretch" src="images/screenshot_application.png" alt="Bonita application" />
+            <h2>Bonita Platform architecture</h2>
+            <img class="stretch" src="images/architectural-overview.png" alt="Architecture Bonita" />
 
             <aside class="notes">
               1.30<br /><br />
-              Global view that uses pages like dashboards to display and gives access to actions.<br />
-              Pages are build in the same way as Forms. The only difference is that Pages are not associated directly with a process definition. One page might interact with different processes or even no process at all (e.g. for a dashboard with no action on the underlying process).<br />
-              Everything is defined in the UID and hosted by the Bonita platform.<br />
-              Business specific UI which makes it usually better than generic tasks list that might not be as convenient.
+              Todas las interacciones (Portal y otras) con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
             </aside>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>BPMN 2.0</h2>
+            <h2>Introduction to BPMN 2.0</h2>
             <p>Standard notation (OMG) for process modeling</p>
             
             <p>Key elements:</p>
@@ -293,9 +280,11 @@
           </section>
 
           <section>
-            <h2>Exercise 1</h2>
-            <p class="exercise-title">Modeling a basic process</p>
-            <p>If you don't already did it get instruction from GitHub: https://github.com/Bonitasoft-Community/bonita-camp/releases</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 1</h2>
+            </div>
+            <h4>Modeling a basic process</h4>
+            <p>If you don't already did it get instruction from GitHub: <br> <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></p>
 
             <aside class="notes">
               2.00<br /><br />
@@ -416,8 +405,10 @@
           </section>
 
           <section>
-            <h2>Exercise 2</h2>
-            <p class="exercise-title">Adding data and specifying contracts</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 2</h2>
+            </div>
+            <h4>Adding data and specifying contracts</h4>
           </section>
             <aside class="notes">
               6<br /><br />
@@ -508,8 +499,10 @@
           </section>
 
           <section>
-            <h2>Exercise 3</h2>
-            <p class="exercise-title">Creating forms</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 3</h2>
+            </div>
+            <h4>Creating forms</h4>
             <aside class="notes">
             Build a form from scratch<br/>
             <br/>
@@ -517,6 +510,42 @@
             </aside>
           </section>
         </section>
+
+        <!-- Fin jour 1 -->
+
+        <section>
+          <section>
+            <div>
+              <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" />
+            </div>
+            <div>
+              <h4>Day 2</h4>
+              <div>Delphine Coille</div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Agenda - reminder</h2>
+            <p>Day 1</p>
+            <ul class="agenda">
+              <li>Bonita solution and Bonita components</li>
+              <li>Introduction to BPMN 2.0</li>
+              <li>Data management (Business Data model &amp; Contracts)</li>
+              <li>User interface (Forms &amp; Pages)</li>
+            </ul>
+
+            <p>Day 2</p>
+            <ul class=""agenda">
+            <li>Users managements (Actors)</li>
+            <li>Connectors</li>
+            <li>Bonita applications</li>
+            <li>Deployment</li>
+            </ul>
+            <aside class="notes">
+              1<br /><br />
+              If you have not managed to do the exercises yesterday, you can download the solution part 1
+            </aside>
+          </section>
 
         <section>
           <section>
@@ -615,8 +644,10 @@
           </section>
 
           <section>
-            <h2>Exercise 4</h2>
-            <p class="exercise-title">Configuring actors</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 4</h2>
+            </div>
+            <h4>Configuring actors</h4>
             
             <aside class="notes">
               Configure actors in the process<br />
@@ -648,8 +679,10 @@
           </section>
 
           <section>
-            <h2>Exercise 5</h2>
-            <p class="exercise-title">Using a connector to send an email</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 5</h2>
+            </div>
+            <h4>">Using a connector to send an email</h4>
             <aside class="notes">
               20 - WAIT / ANSWER QUESTIONS<br />
             </aside>
@@ -682,8 +715,10 @@
           </section>
 
           <section>
-            <h2>Exercise 6</h2>
-            <p class="exercise-title">Create a leave request application</p>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 6</h2>
+            </div>
+            <h4>Create a leave request application</h4>
             
             <aside class="notes">
               20 - WAIT / ANSWER QUESTIONS<br />
@@ -756,7 +791,7 @@
           <ul>
             <li>Documentation - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
             <li>Corporate Website - <a href="https://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
-            <li>Community - <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+            <li>Community Website- <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
             <li>GitHub - <a href="https://github.com/bonitasoft-community" target="_blank">github.com/bonitasoft-community</a></li>
           </ul>
         </section>
