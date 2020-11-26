@@ -20,7 +20,7 @@ El grupo de procesos debe contener los siguientes elementos BPMN:
 * Una tarea humana *Validar solicitud*
 * Una puerta exclusiva *¿Solicitud aprobada?*
 * Una tarea automática *Notificar aprobación*
-* Una condición siempre verdadera (`verdadero`) en la transición que conecta la puerta exclusiva a la tarea de notificación de aprobación
+* Una condición siempre verdadera (`true`) en la transición que conecta la puerta exclusiva a la tarea de notificación de aprobación
 * Una tarea automática *Notificar rechazo*
 * Una transición predeterminada que conecta la puerta exclusiva a la tarea de notificación de rechazo
 * Un evento final *Fin - Solicitud aceptada*
@@ -60,7 +60,7 @@ El grupo de procesos debe contener los siguientes elementos BPMN:
     - La transición que conduce al paso *Notificar aprobación* se llamará *Sí* y la otra *No*
 1. Configura la condición en la transición *Sí* para que el flujo siga esta rama:
     - Selecciona la transición
-    - Ingresa el valor `verdadero` en el campo **Condición** (pestaña **General / General**). Si no ves el campo **Condición**, probablemente sea porque agregaste una puerta lógica paralela en lugar de una exclusiva.
+    - Ingresa el valor `true` en el campo **Condición** (pestaña **General / General**). Si no ves el campo **Condición**, probablemente sea porque agregaste una puerta lógica paralela en lugar de una exclusiva.
    ![definición de condición en una transición](images/ex01/ex1_06.png)
 1. Configura la transición *No* como el flujo por defecto:
     - Selecciona la transición *No*

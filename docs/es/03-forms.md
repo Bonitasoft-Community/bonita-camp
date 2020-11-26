@@ -110,7 +110,7 @@ Crea los siguientes formularios:
    --------- | ------
    Nombre | *solicitante*
    Tipo | **External API**
-   URL del API | `../API/identity/user/{% raw %}{{solicitud.solicitanteID}}{% endraw %}`
+   URL del API | `../API/identity/user/{{solicitud.solicitanteID}}`
 
 1. Cambie el título del formulario
     - Seleccione el widget **Título** (Title) ubicado en la parte superior del formulario
@@ -127,7 +127,7 @@ Crea los siguientes formularios:
 
    Propiedad | Valor
    --------- | ------
-   Texto | `<b>Solicitante :</b> {% raw %}{{solicitante.firstname}} {{solicitante.lastname}}{% endraw %}`
+   Texto | `<b>Solicitante :</b> {{solicitante.firstname}} {{solicitante.lastname}}`
 
 1. Agregue un widget para rechazar la solicitud:
     - Arrastre un widget **Botón** y agréguelo al contenedor del formulario (área delimitada por una línea gruesa de puntos)
