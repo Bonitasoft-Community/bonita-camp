@@ -128,7 +128,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
      Ancho | *3*
      Sólo lectura | **Sí**
      Etiqueta | *Estado*
-     Valor | `$item.estaAprobadaEtiqueta`
+     Valor | `$item.estaAprobadoEtiqueta`
 
    - Guardar la página
    - La página debería verse así:
