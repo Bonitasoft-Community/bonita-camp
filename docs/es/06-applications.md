@@ -59,7 +59,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - Arrastra y suelta *SolicitudVacaciones* en la página
     - Mantenga el nombre predeterminado: *solicitudVacaciones*
     - En la sección **Consultas de "Buscar por (Find By)" en un atributo**, seleccione *solicitanteID*
-    - En la sección **"solicitanteID" valor** ingrese: `{%raw%} {{sessionInfo.user_id}} {%endraw%}`
+    - En la sección **"solicitanteID" valor** ingrese: `{{sessionInfo.user_id}}`
     - Haga clic en el botón **Guardar**
 
     ![agregar variable solicitudVacaciones](images/ex06/ex6_06.png)
@@ -72,17 +72,17 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
 
     ```javascript
    if($data.hasOwnProperty('solicitudVacaciones') && $data.solicitudVacaciones) {
-     for (let solicitud of $data.solicitudVacaciones) {
-       if(solicitud.estaAprobada)  {
-         solictitud.estaAprobadaEtiqueta = "Aprobada";
-       } else if(solicitud.estaAprobada === false) {
-         solictitud.estaAprobadaEtiqueta = "Rechazada";
-       } else {
-         solictitud.estaAprobadaEtiqueta = "En curso";
-       }
-     }
+    for (let solicitud of $data.solicitudVacaciones) {
+      if(solicitud.estaAprobado)  {
+        solicitud.estaAprobadoEtiqueta = "Aprobada";
+      } else if(solicitud.estaAprobado === false) {
+        solicitud.estaAprobadoEtiqueta = "Rechazada";
+      } else {
+        solicitud.estaAprobadoEtiqueta = "En curso";
+      }
+    }
    }
-
+   
    return $data.solicitudVacaciones;
     ```
    
@@ -108,7 +108,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
      Ancho | *3*
      Sólo lectura | **Sí**
      Etiqueta | *Fecha de inicio*
-     Valor | `$item.dateDebut`
+     Valor | `$item.fechaInicio`
      Formato de fecha técnica | *dd/MM/yyyy*
      Mostrar botón Hoy | **No**
 
@@ -220,7 +220,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - Ingrese *Crear una nueva solicitud* en el campo **Etiqueta**
     - Seleccione **POST** de la lista desplegable **Acción**
     - Haga clic en **fx** para cambiar el modo del campo **Datos enviados al hacer clic** y selecciona *nuevaSolicitudVacaciones*
-    - En el campo **URL para llamar**, escriba: `../API/bpm/process/{% raw%}{{informacionDefinicionProceso[0].id}}{%endraw%}/instanciación`
+    - En el campo **URL para llamar**, escriba: `../API/bpm/process/{{informacionDefinicionProceso[0].id}}/instantiation`
     - En el campo **URL de destino si tiene éxito**, escriba: `/bonita/apps/solicitud-vacaciones`
     - Seleccione la opción **centrado** para el parámetro **Alineación**
     - Seleccione la opción **primary** para el parámetro **Estílo** 
