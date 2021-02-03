@@ -24,11 +24,14 @@ Créer les formulaires suivants :
    ![création d'un formulaire](images/ex03/ex3_01.png)
    
    - Cela va ouvrir l'UI Designer dans votre navigateur web avec un nouveau formulaire généré automatiquement à partir de la définition du contrat d'instanciation
+   
+   ![Initialisation du formulaire dans UID](images/ex03/ex3_02.png)
+   
 1. Renommer le formulaire :
    - Utiliser le champ texte en haut de l'écran pour renommer le formulaire depuis *newForm* vers *remplirDemandeConges* (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
    - Cliquer sur le bouton **Enregistrer**
 1. Changer le titre du formulaire :
-   - Sélectionner le widget *Demande* en haut du formulaire.
+   - Sélectionner le widget **Titre** *Demande* en haut du formulaire.
    - Dans la section à droite de l'écran, éditer les propriétés suivantes :
 
    Propriété | Valeur
@@ -37,7 +40,7 @@ Créer les formulaires suivants :
    Niveau du titre | Niveau 2
    Alignement | au centre
 
-1. Changer le widget *Date Debut* :
+1. Changer le widget **Date Picker** *Date Debut* :
    - Sélectionner le widget *Date Debut* et éditer les propriétés suivantes :
 
    Propriété | Valeur
@@ -45,9 +48,9 @@ Créer les formulaires suivants :
    Libellé | Date de début
    Format technique de la date | dd/MM/yyyy
    Placeholder | jj/mm/aaaa
-   Libellé du bouton Aujourd'hui | Aujourd'hui
+   Afficher le bouton Aujourd'hui | non
 
-1. Changer le widget *Nombre Jours* :
+1. Changer le widget **Input** *Nombre Jours* :
    - Sélectionner le widget *Nombre Jours* et éditer les propriétés suivantes :
 
    Propriété | Valeur
@@ -68,7 +71,7 @@ Créer les formulaires suivants :
    }
    ```
 
-1. Changer le widget *Submit* :
+1. Changer le widget **Button** *Submit* :
    - Sélectionner le widget *Submit*
    - Changer son libellé en *Soumettre*
 
@@ -85,8 +88,9 @@ Créer les formulaires suivants :
    
    - On notera les points suivants dans l'aperçu :
      - Le widget présentant l'erreur n'est pas visible
+     - Il est possible de tester l'aperçu sur différents périphériques, du mobile au grand écran
      - Le bouton *Soumettre* est désactivé par défaut (ceci est dû à la validation fournie par le conteneur de formulaire)
-     - Le bouton *Soumettre* est activé quand le contenu du formulaire est valide
+     - Le bouton *Soumettre* est activé quand le contenu du formulaire est valide  
 
    > **Note :** il n'est pas possible de soumettre le formulaire depuis l'aperçu même lorsque ce dernier est valide.
 
@@ -96,7 +100,9 @@ Créer les formulaires suivants :
    - Dans le Studio, sélectionner l'étape *Valider demande*
    - Naviguer dans l'onglet **Exécution / Formulaire**
    - Cliquer sur l'icône **Crayon** du champ **Formulaire cible** pour ouvrir l'UI Designer sur un nouveau formulaire
-   - Répondre **Oui** à la question concernant l'ajout de widgets en lecture seule
+   - Répondre **Oui** à la question concernant l'ajout de widgets en lecture seule 
+
+   > **Note :** le formulaire a été généré automatiquement à partir du BDM et du contrat, et affiche en lecture seule les données du BDM qui ne sont pas attendues par le contrat à cette étape.
 
 1. Renommer le formulaire :
    - Depuis le UI Designer, renommer le formulaire en  *validerDemandeConges* et l'enregistrer
@@ -104,11 +110,7 @@ Créer les formulaires suivants :
 1. Récupérer les informations concernant le demandeur
    - Cliquer sur le bouton **Créer une nouvelle variable** pour définir une variable avec les propriétés suivantes :
 
-   Propriété | Valeur
-   --------- | ------
-   Nom | *demandeur*
-   Type | **External API**
-   URL d'API | `../API/identity/user/{{demande.idDemandeur}}`
+   ![propriétés variable demandeur](images/ex03/ex3_03.png)
 
 1. Modifier le titre du formulaire
    - Sélectionner le widget de type **Titre** situé en haut du formulaire
@@ -123,12 +125,10 @@ Créer les formulaires suivants :
    - Faire glisser un widget de type **Text**
    - Configurer le widget comme ceci :
 
-   Propriété | Valeur
-   --------- | ------
-   Texte | `<b>Demandeur :</b> {{demandeur.firstname}} {{demandeur.lastname}}`
+  ![propriétés texte demandeur](images/ex03/ex3_04.png)
 
 1. Ajouter un widget pour refuser la demande:
-   - Faire glisser un widget de type **Button** et ajouter le dans le form container (zone délimitée par une ligne pointillée épaisse)
+   - Faire glisser un widget de type **Button** et l'ajouter dans le form container (zone délimitée par une ligne pointillée épaisse)
    - Configurer le widget comme ceci :
 
    Propriété | Valeur

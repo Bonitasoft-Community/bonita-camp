@@ -77,13 +77,18 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
    - Passer à la page de configuration du destinataire
    - Entrer *rh@acme.com* comme adresse email dans le champ expéditeur **De**
    - Utiliser l'icône **crayon** pour éditer l'expression sur le champ destinataire **A**
-   - Changer le **Type d'expression** à **Script**
    - Nommer le script *recupEmailDemandeur*
-   - Coller le code ci-dessous dans la zone d'édition du script :
+   - Dans l'éditeur de script, sélectionner *processInitiatorUser* dans le menu **Modèles de code/Utilisateurs Bonita**
+   - Glisser et déposer le modèle dans l'éditeur. Un modèle de script est automatiquement généré.
    
-   ```groovy
-   BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).email
-   ```
+   ![récuperer l'initiateur du processus](images/ex05/ex5_04.png)
+   
+   - Pour pouvoir retourner l'email de l'initiateur du processus, glisser et déposer *userProfessionalContact* depuis le menu **Modèles de code/Utilisateurs Bonita** entre `.getStartedBy()` et `}catch(UserNotFoundException e){`
+   - Remplacer *userId* par `processInitiator.id`
+   - Ajouter un "." et sélectionner *email : string* dans la liste déroulante
+   - On peut remplacer `def proContactData = ` par `return`
+   
+   ![récuperer l'email de l'initiateur](images/ex05/ex5_05.png)
    
    - Cliquer sur le bouton **OK** pour fermer l'éditeur de script
    - Passer à la page suivante

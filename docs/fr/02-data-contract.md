@@ -50,24 +50,27 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    - Dans le menu supérieur du Studio, cliquer sur **Fichier / Dupliquer le diagramme...**
    - Mettre à jour les numéros de version du diagramme ET du processus (pool)
 1. Créer le BDM *DemandeConges* :
-   - Naviguer dans le menu **Développement / Modèle de Données Métier / Définir...**
-   - Cliquer sur **Nouvel Objet Métier** (A), dans la liste d'objets métiers
-   - Nommer l'objet *DemandeConges* (B) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
-   - Avec l'objet *DemandeConges* sélectionné, ajouter les attributs suivants (C) :
+   - Naviguer dans le menu **Développement / Modèle de Données Métier / Définir...** L'éditeur de Modèle de données métier s'ouvre.
+   - Renommer l'objet initialisé par défaut **BusinessObject** dans la liste d'objets métiers en *DemandeConges* (A) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
+   - Avec l'objet *DemandeConges* sélectionné, ajouter les attributs suivants (B) :
 
     Nom | Type | Multiple | Obligatoire
     --- | ---- | -------- | -----------
     *idDemandeur* | `Long` | ◻ | ☑
     *dateDebut* | `Date only` | ◻ | ☑
-    *nombreJours* | `Entier` | ◻ | ☑
-    *estApprouvee* | `Booléen` | ◻ | ◻
+    *nombreJours* | `Integer` | ◻ | ☑
+    *estApprouvee* | `Boolean` | ◻ | ◻
 
     ![définition du modèle de données métier](images/ex02/ex2_01.png)
     
-    - Cliquer sur **Terminer**
-    - Le message suivant s'affiche pour confirmer le déploiement du BDM
+    - Sauvegarder. Le message suivant s'affiche pour indiquer qu'il faut déployer le BDM
     
-    ![message d'information déploiement du BDM](images/ex02/ex2_10.png)
+    ![message d'information déploiement du BDM](images/ex02/ex2_09.png)
+    
+    - Cliquer sur le bouton ![icone déploiement](images/ex02/ex2_11.png) dans l'éditeur de BDM pour déployer le BDM.  
+    Le message suivant indique que le BDM a été déployé avec succès.
+    
+    ![message déploiement réussi du BDM](images/ex02/ex2_10.png)
     
     - Cocher l'option **Ne plus me montrer ce message**
     - Cliquer sur **Ok**
@@ -133,6 +136,7 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
 
    return demandeCongesVar
    ```
+   ![editeur expression script](images/ex02/ex2_12.png)
    
    - Le script va initialiser la variable métier en utilisant les données du contrat et l'identifiant de l'auteur de la demande
    - Cliquer sur le bouton **OK** pour fermer l'éditeur d'expression
