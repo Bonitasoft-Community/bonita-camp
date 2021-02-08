@@ -18,7 +18,7 @@ If you need assistance you can:
 Content is currently available in:
 - English (Bonita Camp 7.10)
 - Français (Bonita Camp 2021.1)
-- Español (Bonita BPM 7.10)
+- Español (Bonita BPM 2021.1)
 
 
 ## For Bonita Camp contributors
@@ -28,7 +28,7 @@ Content is currently available in:
 All sources are available on [Bonita Camp GitHub repository](https://github.com/Bonitasoft-Community/bonita-camp/):
 
 - Slides are created using reveal.js and are located in the [slides](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/slides) folder
-- Exercises are hosted using GitHub Pages. Source are located in the [docs](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/docs) folder and content is available for users at [http://bonitasoft-community.github.io/bonita-camp/](http://bonitasoft-community.github.io/bonita-camp/)
+- Exercises are hosted using GitHub Pages. Source are located in the [docs](https://github.com/Bonitasoft-Community/bonita-camp/tree/master/docs) folder and content is available for users at [http://bonitasoft-community.github.io/bonita-camp/](https://bonitasoft-community.github.io/bonita-camp/)
 
 ### Build instructions for slides
 
