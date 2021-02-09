@@ -18,7 +18,7 @@ If you need assistance you can:
 Content is currently available in:
 - English (Bonita Camp 7.10)
 - Français (Bonita Camp 2021.1)
-- Español (Bonita BPM 7.10)
+- Español (Bonita BPM 2021.1)
 
 
 ## For Bonita Camp contributors

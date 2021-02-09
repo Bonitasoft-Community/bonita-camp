@@ -32,4 +32,4 @@ Bonita Camp consiste en:
         - En la lista **Navegadores web externos** seleccione el navegador deseado y haga clic en el botón **Aplicar**
         - Cerrar la ventana de preferencias
         
-[Empezar los ejercicios](00-introduction)
+[Empezar los ejercicios](00-introduction.md)
