@@ -135,13 +135,15 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
    - Nommer la variable *nouvelleDemandeConges*
    - Choisir le type **JSON**
    - Dans le champ texte **Valeur**, taper le script suivant :
-   ```json
-   {
-     "demandeInput" : {
-       "dateDebut" : null,
-       "nombreJours" : null
+   ```
+   var demande = {
+     demandeInput : {
+       dateDebut : null,
+       nombreJours : null,
+       idDemandeur : $data.sessionInfo.user_id
      }
-   }
+   };
+   return demande;
    ```
 
 1. Créer une nouvelle variable pour stocker les informations liés au processus :
