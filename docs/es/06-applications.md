@@ -195,7 +195,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - Ingresa *Crear una nueva solicitud* en el campo **Etiqueta**
     - Selecciona **POST** de la lista desplegable **Acción**
     - Haz clic en **fx** para cambiar el modo del campo **Datos enviados al hacer clic** y selecciona *nuevaSolicitudVacaciones*
-    - En el campo **URL para llamar**, escribe: `../API/bpm/process/{{informacionDefinicionProceso[0].id}}/instantiation`
+    - En el campo **URL para llamar**, escribe: `../API/bpm/process/{% raw %}{{informacionDefinicionProceso[0].id}}{% endraw %}/instantiation`
     - En el campo **URL de destino si tiene éxito**, escribe: `/bonita/apps/solicitud-vacaciones` (de momento no se puede ir a la página porque hay que crear la aplicación de destino)
     - Selecciona la opción **centrado** para el parámetro **Alineación**
     - Selecciona la opción **primary** para el parámetro **Estílo** 
