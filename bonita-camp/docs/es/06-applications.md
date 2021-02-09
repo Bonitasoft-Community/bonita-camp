@@ -152,15 +152,18 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
 1. Crea una nueva variable para almacenar información relacionada con la solicitud de licencia:
     - Haz clic en **Crear en una nueva variable**
     - Nombra la variable *nuevaSolicitudVacaciones*
-    - Elije el tipo **JSON**
+    - Elije el tipo **Javascript expression**
     - En el campo de texto **Valor**, escribe el siguiente script:
-   ```json
-   {
-     "solicitudInput" : {
-       "fechaInicio" : null,
-       "numeroDias" : null
+   ```
+   var solicitud =  { 
+     solicitudInput : {
+       fechaInicio : null,
+       numeroDias : null,
+       solicitanteId : $data.sessionInfo.user_id
      }
-   }
+   } ;
+   
+   return solicitud;
    ```
 
 1. Crea una nueva variable para almacenar información relacionada con el proceso:
@@ -168,7 +171,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - Nombra la variable *informacionDefinicionProceso*
     - Elije el tipo **API externa**   
     - En el campo **API URL**, escribe: 
-    `../API/bpm/process? P=0 & c=100 & o=version%20DESC & f=name=SolicitudVacaciones`
+    `../API/bpm/process?p=0&c=100&o=version%20DESC&f=name=SolicitudVacaciones`
 
 1. Agrega dos widgets en el contenedor del formulario:
      - Un widget **Date picker** con las siguientes opciones:
