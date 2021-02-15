@@ -28,7 +28,10 @@ The process pool should contain the following BPMN elements:
 
 ## Step by step instructions
 1. Start the Bonita Studio
+1. On the Studio home page, click on **New Project** in the Design menu.
+1. Enter the project name *LeaveRequest*
 1. Create a new process diagram
+       ![New diagram](images/ex01/ex1_10.png)
 1. Set the diagram and process names:
    - Click on the **File / Rename diagram...** top menu
    - Enter *LeaveRequestDiagram* as the diagram name, *LeaveRequest* as the pool name and set the version to *1.0.0* for both  

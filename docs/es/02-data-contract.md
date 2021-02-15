@@ -96,8 +96,7 @@ Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el
    ![asistente de definición de contrato](images/ex02/ex2_03.png)
    
    - Haz clic en **Finalizar** (no en **Finalizar y Añadir**) e ignora los mensajes de advertencia sobre la inicialización parcial de la variable de negocio
-     
-      ![contrato definido para iniciar el proceso](images/ex02/ex2_04.png)
+    ![contrato definido para iniciar el proceso](images/ex02/ex2_04.png)
    
    - Siguiendo en la pestaña **Ejecución / Contrato**, cambia a la pestaña **Restricciones**
    - Agrega la siguiente restricción:
@@ -127,10 +126,10 @@ Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el
    Ya se inicializó el script.
    Ahora queremos recuperar la Id del solicitante arrancando la instancia de proceso actual.
    
-   - En el menú de la izquierda, selecciona **Plantillas de código/Usuarios de Bonita** y arrastra la plantilla *processInitiatorUser*  
+   - En el menú de la izquierda, selecciona **Plantillas de código/Usuarios de Bonita** (A) y arrastra la plantilla *processInitiatorUser*  
      
       El script para recuperar la instancia del proceso y el iniciador se crea automáticamente.
-   - Ingresa `solicitudVacacionesVar.solicitanteId = processInitiator.id` para recuperar el Id del iniciador de la instancia en el atributo *solicitanteId*
+   - Ingresa `solicitudVacacionesVar.solicitanteId = processInitiator.id` para recuperar el Id del iniciador de la instancia en el atributo *solicitanteId* (B)
 
     ![actualización de variable](images/ex02/ex2_12.png)
    
@@ -152,7 +151,6 @@ Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el
 
 
 1. Ten en cuenta que se ha generado automáticamente una operación (**Ejecución / Operaciones**) en la tarea *Validar solicitud* para actualizar la solicitud
- 
     ![operación generada automáticamente](images/ex02/ex2_06.png)
    
 1. Configura la condición en la transición *Sí* desde el atributo *estaAprobado* del BDM *solicitud*:

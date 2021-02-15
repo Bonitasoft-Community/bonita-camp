@@ -83,6 +83,7 @@ Create the following forms:
    
    - Verify the following points:
      - The widget presenting the error is not visible
+     - It is possible to test the preview on different devices, from the mobile phone to the big screen
      - The *Submit* button is disabled by default (this is due to the validation provided by the form container)
      - The *Submit* button is enabled when the form is valid
    > **Note:** the form cannot be submitted from the preview mode even if it is valid.
@@ -93,16 +94,16 @@ Create the following forms:
    - Navigate to the **Execution / Form** tab
    - Click on the **Pencil** next to the **Target form** input to open a new form in the UI Designer
    - Answer **Yes** to the question regarding generation of read-only widgets
+   
+   > **Note:** the form was automatically generated from the BDM and the contract, and displays read-only data from the BDM that is not expected by the contract at this stage.
+
 1. Rename the form:
    - In the UI Designer, rename the form into *validateLeaveRequest* and save it
 1. Retrieve the requestor's user data
    - Click on the **Create a new variable** button to declare a new variable with the following properties:
+   
+   ![requestor variable properties](images/ex03/ex3_03.png)
 
-   Property | Value
-   -------- | ------
-   Name | requestor
-   Type | External API
-   API URL | `../API/identity/user/{{request.requestorId}}`
 
 1. Edit the form title:
    - Select the **Title** widget located at the top of the form
@@ -117,9 +118,7 @@ Create the following forms:
    - Drag and drop a **Text** widget
    - Configure the widget with the following settings:
 
-   Property | Value
-   --------- | ------
-   Text | `<b>Requestor:</b> {{requestor.firstname}} {{requestor.lastname}}`
+  ![properties widget text requestor](images/ex03/ex3_04.png)
 
 1. Add a widget to reject the request:
    - Drag a **Button** widget from the palette and drop it in the form container (highlight with a dashed border)
@@ -135,8 +134,7 @@ Create the following forms:
    Failed response value | `formOutput._submitError`
    Target URL on success | `/bonita`
 
-1. Add a widget to approve the request:
-   - Drag a **Button** widget from the palette and drop it on the "6 column" zone located on the right of the *Reject* button
+1. Modifiy the *Submit* widget to approve the request:
    - Configure the widget as following:
 
    Property | Value

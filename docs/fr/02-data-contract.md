@@ -117,7 +117,7 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
 
    ![définition de contraintes](images/ex02/ex2_05.png)
    
-1. Modifier l'initialisation de la variable métier *demande* :
+1. Modifier l'initialisation de la variable métier *demande* pour pouvoir récupérer l'initiateur de la nouvelle demande :
    - Sélectionner le pool du processus et naviguer dans l'onglet **Données / Variables du pool**
    - Sélectionner la variable *demande*
    - Cliquer sur **Modifier...**
