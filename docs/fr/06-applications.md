@@ -11,14 +11,14 @@ L'objectif de cet exercice est de fournir aux utilisateurs une application qui p
 Ouvrir l'UI Designer et créer une nouvelle **Page d'application** nommée *SuiviDesDemandes* qui permet le suivi des demandes de congés initiés par l'utilisateur connecté.
 
 Cette page contient un container multiple qui liste les demandes de congés ouvertes. Pour chaque demande, la date de début, le nombre de jours et le statut sont affichés.
-
-Déployer la page d'application en utilisant le bouton **Déployer** du Studio.
+*Optionnel : Ajouter un widget date et un widget input pour collecter les informations nécessaires à la création d'une nouvelle demande de congés. Puis ajouter et configurer un bouton pour soumettre la nouvelle demande.*
 
 Créer une nouvelle application et y ajouter la page *SuiviDesDemandes*.
 
+Déployer l'application en utilisant le bouton **Déployer** du Studio.
+
 Accéder à l'application nouvellement créer en utilisant l'URL unique générée.
 
-Optionnel : Ajouter un widget date et un widget input pour collecter les informations nécessaires à la création d'une nouvelle demande de congés. Puis ajouter et configurer un bouton pour soumettre la nouvelle demande.
 
 ## Instructions pas à pas
 
@@ -133,7 +133,7 @@ Optionnel : Ajouter un widget date et un widget input pour collecter les informa
 1. Créer une nouvelle variable pour stocker les informations liées à la demande de congés :
    - Cliquer sur **Créer sur une nouvelle variable**
    - Nommer la variable *nouvelleDemandeConges*
-   - Choisir le type **JSON**
+   - Choisir le type **Javascript expression**
    - Dans le champ texte **Valeur**, taper le script suivant :
    ```
    var demande = {
@@ -216,7 +216,6 @@ Nous allons maintenant déployer l'application dans le portail depuis le Studio.
    
    - Pour ouvrir l'application, sélectionner *Application de demande de congés en tant que User*.
    - Cliquer sur *Ouvrir*
-   
    
     ![fenetre d'ouverture](images/ex06/ex6_18.png)
     

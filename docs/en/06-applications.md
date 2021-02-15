@@ -12,13 +12,14 @@ Open the UI Designer and create a new **Application page** named *LeaveRequestSt
 
 This page will contain one "multiple container" that list the on-going leave requests. For each request, the start date, number of days and status will be displayed.
 
-Deploy the application page using the **Deploy** button from the Studio.
+*Optional: Add a date widget and an input widget to collect new leave request information in the page. Then add a submit button to start a new leave request.*
 
 Create a new application. Then add the *LeaveRequestStatus* page in the application.
 
+Deploy the application page using the **Deploy** button from the Studio.
+
 Access the application using the generated URL.
 
-Optional: Add a date widget and an input widget to collect new leave request information in the page. Then add a submit button to start a new leave request.
 
 ## Step by step instructions
 
@@ -41,11 +42,6 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    
    ![Widget title addition](images/ex06/ex6_02.png)
 
-1. Add another title below:
-   - Name it *Leave request status*
-   - Select **Level 4** from the **Title level** drop-down list
-   - Select **center** for **Alignment**
-
 1. Create a variable to store the session information:
    - Click on **Create a new variable**
    - Name it *sessionInfo*
@@ -55,13 +51,32 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    ![Definition of session info variable](images/ex06/ex6_03.png)
    
 1. Create a variable to list the leave request:
-   - Click on **Data model** icon
-   - Drag and drop *LeaveRequest* onto the page
+   - Click on **Data model** icon ![icone-datamodel](images/ex06/ex6_00.png)
+   - Drag and drop *LeaveRequest* onto the page just below the main title (a dotted line should appear)
+   - Keep the name by default *leaveRequest*
    - In section **"Find By" queries on an attribute**, select *requestorId*
-   - In section **"requestorId" value** enter : `{{sessionInfo.user_id}}`
-   - Click on **Save** button
+   - In section **Filter the query of findByRequestorId** enter the followig variable: 
+        ![sessionInfo variable findBy](images/ex06/ex6_13.png)
 
-1. Declare a new JavaScript expression to format the list of request:
+   - Click on **Save** button
+    
+   A multiple container is automatically generated with a table showing the attributes of the RequestConges object.
+   ![container leaveRequest](images/ex06/ex6_14.png)
+
+1. Modify the container title like follows:
+   
+     Property | Value
+     -------- | -----
+     Title | *Leave request status*
+     Title level | **Level 4**
+     Alignment | **left**
+
+1. Modify the labels of the widget **Table**:
+    - Select the widget **Table**
+    - In the right panel, in the **Headers** field, delete *RequestorId*.
+    - Replace *Leave Start* with *Start date*, *Day Count* with *Number of days* and *Is Approved* with *Status*.
+
+1. Declare a new JavaScript expression to format the column *Status* of the list:
    - Click on **Create a new variable**
    - Name it *updateLeaveRequestStatus*
    - Choose **JavaScript expression** type
@@ -82,48 +97,25 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    return $data.leaveRequest;
    ```
 
-1. Create a multiple container:
-   - Drag the widget **Container** from the palette and place it below the Title *Leave request status*
-   - Select the container
-   - In the right panel, enter *leaveRequest* in the field **Collection**
-
-1. Add 4 widgets in the container:
-   - One **Input** widget with the following options:
+1. Display the information in the columns of the table more clearly :
+    - In the right panel, in the field **Column keys**, delete *requestorId*.
+    - In the same field, replace *isApproved* with *isApprovedLabel*.
+    - Delete the Input *IdDemandor* widget in the details container because this information is not useful
+    
+1. Select the **Date picker** widget called *Leave Start* and edit the following properties:
    
      Property | Value
      -------- | -----
-     Width | *3*
-     Read-Only | **Yes**
-     Label | *#*
-     Value | `$index + 1`
-
-   - One **Date picker** widget with the following options:
-   
-     Property | Value
-     -------- | -----
-     Width | *3*
      Read-Only | **Yes**
      Label | *Start date*
-     Value | `$item.leaveStart`
      Show Today button | **No**
 
-   - One **Input** widget with the following options:
+1. Select the **Input** widget called *Day Count* and edit the following properties:
    
      Property | Value
      -------- | -----
-     Width | *3*
      Read-Only | **Yes**
      Label | *Number of days*
-     Value | `$item.dayCount`
-
-   - One **Input** widget with the following options:
-   
-     Property | Value
-     -------- | -----
-     Width | *3*
-     Read-Only | **Yes**
-     Label | *Status*
-     Value | `$item.isApprovedLabel`
 
    - Save the page
    - The page should look like this:
@@ -132,40 +124,10 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    
    - You can preview the page at anytime by clicking on **Preview** button
    
+   ![Page preview in UI Designer](images/ex06/ex6_06.png)
+
+   
    > Tip: if you are logged in the Portal in the same browser, the current leave request will be displayed.
-
-1. Deploy the application page in the Portal:
-   - On the left hand side of the Studio, in the project **Explorer**, unfold **Pages/Forms/Layouts**
-   - Select the page *LeaveRequestStatus*
-   - Do a right click and select **Deploy**
-   - Click on **OK** button
-
-1. Create a new application:
-   - In the Portal, switch to **Administatior** view
-   - Navigate to the **Applications** tab
-   - Click on **New**
-   - Enter *Leave request app* in the field **Display name** (A)
-   - Enter *leave-request* in the field **URL** (B)
-   - Leave the defaults value for the **Version** (C) and **Profile** (D)
-   
-   ![Create an application](images/ex06/ex6_07.png)
-   
-   - Click on **Create** to create the application
-   - Click on **...** to access the configuration page
-   - Find the **Pages** section on the bottom left part of the screen
-   - Click on **Add**
-   - Select the page *custompage_LeaveRequestStatus*
-   - Enter *status* in the **URL** field
-   - Click on the **Add** button
-   - Define the *leaveRequest* page as the homepage by clicking on the **house** icon ![House icon](images/ex06/ex6_11.png)
-   - Once done, click on the trash icon ![Trash icon](images/ex06/ex6_12.png) to delete the default homepage
-   - The configuration page should now look like that:
-   
-   ![Application configuration](images/ex06/ex6_10.png)
-   
-   - Click on the link *../apps/leave-request* to load the application:
-   
-   ![Application rendering](images/ex06/ex6_08.png)
 
 1. Add a new form container:
    - Go back to edit your page in the UI Designer
@@ -173,19 +135,20 @@ Optional: Add a date widget and an input widget to collect new leave request inf
 
 1. Create a new variable to store the new leave request values:
    - Click on **Create a new variable**
-   - Name it *formInput*
+   - Name it *newLeaveRequest*
    - Choose **JSON** type
    - Enter the following script in the **Value** text field:
    
    ```
-   {
+      var request = {
      "requestInput" : {
        "leaveStart" : null,
-       "dayCount" : null
+       "dayCount" : null,
+       requestorId : $data.sessionInfo.user_id
      }
-   }
+   };
+   return request;
    ```
-
 1. Create a new variable to store the process information:
    - Click on **Create a new variable**
    - Name it *processDefinitionInfo*
@@ -196,26 +159,69 @@ Optional: Add a date widget and an input widget to collect new leave request inf
    - One **Date picker** widget with the options:
      - Width: *6*
      - Value: `formInput.requestInput.leaveStart`
-     - Label: *Leave start date*
+     - Label: *New leave start date*
    - One input widget with the options:
      - Width: *6*
      - Value: `formInput.requestInput.dayCount`
      - Label: *Number of days*
+     - Type: *number*
 
 1. Add a submit button in the form container:
    - Drag the **Button** widget from the palette and place it in the form container below the two widgets
    - Enter *Create a new request* in the field **Label**
    - Select **POST** in the **Action** drop-down list
-   - Click on **fx** to switch the **Data sent on click** field mode and then enter *formInput*
-   - In the field **URL to call**, enter: `../API/bpm/process/{{processDefinitionInfo[0].id}}/instantiation`
+   - Click on **fx** to switch the **Data sent on click** field mode and then enter *leaveRequest*
+   - In the field **URL to call**, enter: `../API/bpm/process/{% raw %}{{processDefinitionInfo[0].id}}{% endraw %}/instantiation`
    - In the field **Target URL on success**, enter: `/bonita/apps/leave-request`
    - Save the page
    - The page should look like that:
    
    ![Application page in UI Designer including a form](images/ex06/ex6_05.png)
-   
-   - You can preview the page to make sure it works as expected
+   You can click on Preview to verify the page is displayed correctly.
 
-1. Update the page in the portal:
-   - Repeat the steps you took to deploy the page
-   - Refresh your application, the change should be visible
+   > **Note**: at this stage the target URL on success won't work, as we are pointing to the application home page we are going to define in the next steps 
+   
+We will now deploy the application in the portal from the Studio.
+
+1. Add an application descriptor :
+   - In the Studio, in the **Development/Application Descriptor** menu select **New**. An .xml file is automatically initialized.
+   - Click *Add an Application Descriptor*.
+   - Enter *leave-request* in the field **Application URL token**.
+   - Enter *Leave requests application* in the field **Displayed name**.
+   - Click on the button **Add**.
+   
+   ![creation of an application](images/ex06/ex6_15.png)
+
+1. Create a new application :
+   - In the Navigation menu, click *Add Single Menu Page* (A)
+   - Enter *Requests follow-up* in the field **Menu**.
+   - Select the *custompage_LeaveRequestStatus* page in the field **Application Page** (B)
+   - Enter *leave-request* in the **Token** field (C)  
+   
+   ![creation of an application](images/ex06/ex6_07.png)
+   
+1. Define the *Requests follow-up* page as the application home page :
+   - Select the *leave-request* token from the Menu **HomePage**.
+   ![home page](images/ex06/ex6_16.png)
+   - Save
+   - Check that the configuration page looks like this :
+   
+   ![configuration page](images/ex06/ex6_17.png)
+
+1. Deploy the application in the Portal:
+   - Click on the link *http://localhost:8080/bonita/apps/demande-conges* to access the application. (A)
+   - A deployment window opens. Click on *Deploy* (B) 
+   
+   ![Deploy the application](images/ex06/ex6_09.png)
+   
+   - To open the application, select *Leave requests application as User*.
+   - Click on *Open*.
+   
+    ![opening window](images/ex06/ex6_18.png)
+    
+ The application should look like this once deployed :
+ 
+   
+   ![application rendering](images/ex06/ex6_08.png)   
+
+And that's it!

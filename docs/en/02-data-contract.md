@@ -50,10 +50,10 @@ Add a step contract on the *Validate request* task use the Studio assistant with
    - In the Studio's top menu, click on **File / Duplicate diagram...**
    - Update the process diagram AND pool version numbers
 1. Create the *LeaveRequest* BDM:
-   - Navigate to the **Development / Business Data Model / Define...** top menu
-   - Click on **New Business Object** (A) in the **List of Business Objects**
-   - Name the object *LeaveRequest* (B) (this is a technical name so it should not contain spaces or special characters)
-   - With the *LeaveRequest* object selected, add the following attributes (C):
+   - Navigate to the **Development / Business Data Model / Define...** top menu. The Business Data Model editor opens.
+   - Rename the default initialized object **BusinessObject** in the list of business objects to *LeaveRequest* (A) (this is a technical name so spaces, accents and other special characters should be omitted)
+   - After *LeaveRequest* object is selected, add the following attributes (B) :
+
 
    Name | Type | Multiple | Mandatory
    ---- | ---- | -------- | ---------
@@ -64,8 +64,10 @@ Add a step contract on the *Validate request* task use the Studio assistant with
 
    ![Business data model definition](images/ex02/ex2_01.png)
     
-   - Click on **Finish**
-   - You should be displayed with the following message that confirm the deployment of the BDM:
+   - Save. The following message is displayed to indicate that the BDM must be deployed
+     ![warning bdm should be deployed](images/ex02/ex2_09.png)
+   - Clic on the button ![icon-deploy](images/ex02/ex2_11.png) in the BDM editor to deploy it.
+     You should be displayed with the following message that confirm the deployment of the BDM:
    
    ![BDM deployment information message](images/ex02/ex2_10.png)
    
@@ -114,29 +116,23 @@ Add a step contract on the *Validate request* task use the Studio assistant with
    
    ![Constraints definition](images/ex02/ex2_05.png)
 
-1. Update the *request* business variable initialization:
+1. Update the *request* business variable initialization to be able to retrieve the requestor id of the new request:
    - Select the process pool, and navigate to the **Data / Pool variables** tab
    - Select the *request* business variable
    - Click on **Edit...**
-   - Click on the **pencil** icon next to the **Default value** field to open the expression editor
-   - Clear all of the generated code and replace it by the following:
+   - Click on the **pencil** icon next to the **Default value** field to open the expression editor. The script has been initialized.
+   - In the left menu, select **Code Templates/Bonita Users** (A) and drag the *processInitiatorUser* template before the last line starting with `return
+     The script to retrieve the process instance and the initiator is created automatically.
+   - Enter `leaveRequestVar.requestorId = processInitiator.id` to retrieve the instance initiator Id in the *requestorId* attribute (B).
+     
+   ![variable update](images/ex02/ex2_12.png)
 
-   ```groovy
-   def leaveRequestVar = new com.company.model.LeaveRequest()
-   leaveRequestVar.leaveStart = requestInput?.leaveStart
-   leaveRequestVar.dayCount = requestInput?.dayCount
-
-   // Retrieve current process instance
-   def processInstance = apiAccessor.processAPI.getProcessInstance(processInstanceId)
-   // Add requestor id to the new request
-   leaveRequestVar.requestorId = processInstance.startedBy
-
-   return leaveRequestVar
-   ```
+   The script will initialize the business variable using the contract data and the requestor id.
    
-   - This will initialize the business variable from the contract data and set the process initiator as the request author
-   - Click on **OK** button to close the expression editor
-   - Click again on **OK** button to confirm the modification of the business data
+   > The `try` and `catch` tags are initialized for script validation. It is possible to remove them.
+
+    - Click on the **OK** button to close the expression editor.
+    - Click again on the **OK** button to validate the modification of the business variable.
 
 1. Set up the *Validate request* step contract
    - Select the *Validate request* task

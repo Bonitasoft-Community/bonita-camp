@@ -17,11 +17,7 @@ Duplicate the process diagram from the previous exercise to create a *3.1.0* ver
 
 Add an email connector on the *Notify request approved* and *Notify request rejected* service tasks. They will send an email to the requestor with the request validation status.
 
-The following code will be used to retrieve the requestor's email in the connector:
-
-```groovy
-BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).email
-```
+A script must be defined to retrieve the requestor's email in the connector.
 
 ## Step by step instructions
 
@@ -77,14 +73,18 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
    - Move to the *Email addressee* configuration page
    - Enter *hr@acme.com* in the **From** field
    - Use the **pencil** icon to edit the expression of the **To** field
-   - Set the **Expression type** to **Script**
    - Name the script *getRequestorEmail*
-   - Paste the following in the code edition zone:
-    
-   ```groovy
-   BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).email
-   ```
+   - In the script editor, select *processInitiatorUser* from the menu **Code templates/Bonita Users**.
+   - Drag and drop the template into the editor. A script template is automatically generated.
    
+   ![get the process initiator](images/ex05/ex5_04.png)
+   
+   - To be able to return the email of the process initiator, drag and drop *userProfessionalContact* from the **Code templates/Bonita Users** menu between `.getStartedBy()` and `}catch(UserNotFoundException e){`.
+   - Replace *userId* with `processInitiator.id`.
+   - Add a "." and select *email: string* in the drop-down list
+   - We can replace `def proContactData = ` by `return`.
+   
+   ![get the email from the initiator](images/ex05/ex5_05.png)
    - Click on **OK** to close the script editor window
    - Move to the next page
    - Set *Leave request approved* as the subject
@@ -92,7 +92,7 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
 1. Add an email connector on the *Notify request rejected* task:
    - Repeat the previous steps by naming the connector *sendRequestRejectedEmail* and setting *Leave request rejected* as the subject
 
-   Alternatively you can use the feature that let you create a copy of an already configured connector and add it to another task
+   >**Note**: alternatively you can use the feature that let you create a copy of an already configured connector and add it to another task
 
 1. Test the process:
    - Execute the process twice to test the different paths and check that FakeSMTP receives the right emails
