@@ -140,12 +140,13 @@ Create the following forms:
    Property | Value
    --------- | ------
    Label | Approve
+   Alignment | left
    Style | success
    Data sent on click | `{"requestInput":{"isApproved":true}}`
    Failed response value | `formOutput._submitError`
    Target URL on success | `/bonita`
 
-1. Remove the *Is Approved* checkbox and the *Submit* button
+1. Remove the *Is Approved* checkbox
       
 1. Check the form's appearance
    - Make sure that the form looks like this in the editor:
