@@ -60,7 +60,7 @@ Access the application using the generated URL.
 
    - Click on **Save** button
     
-   A multiple container is automatically generated with a table showing the attributes of the RequestConges object.
+   A multiple container is automatically generated with a table showing the attributes of the LeaveRequest object.
    ![container leaveRequest](images/ex06/ex6_14.png)
 
 1. Modify the container title like follows:
@@ -100,7 +100,7 @@ Access the application using the generated URL.
 1. Display the information in the columns of the table more clearly :
     - In the right panel, in the field **Column keys**, delete *requestorId*.
     - In the same field, replace *isApproved* with *isApprovedLabel*.
-    - Delete the Input *IdDemandor* widget in the details container because this information is not useful
+    - Delete the Input widget *RequestorId* in the details container because this information is not useful
     
 1. Select the **Date picker** widget called *Leave Start* and edit the following properties:
    
@@ -136,7 +136,7 @@ Access the application using the generated URL.
 1. Create a new variable to store the new leave request values:
    - Click on **Create a new variable**
    - Name it *newLeaveRequest*
-   - Choose **JSON** type
+   - Choose **Javascript expression** type
    - Enter the following script in the **Value** text field:
    
    ```
@@ -158,19 +158,21 @@ Access the application using the generated URL.
 1. Add 2 widgets in the form container:
    - One **Date picker** widget with the options:
      - Width: *6*
-     - Value: `formInput.requestInput.leaveStart`
+     - Value: `newLeaveRequest.requestInput.leaveStart`
      - Label: *New leave start date*
    - One input widget with the options:
      - Width: *6*
-     - Value: `formInput.requestInput.dayCount`
+     - Value: `newLeaveRequest.requestInput.dayCount`
      - Label: *Number of days*
      - Type: *number*
 
 1. Add a submit button in the form container:
    - Drag the **Button** widget from the palette and place it in the form container below the two widgets
    - Enter *Create a new request* in the field **Label**
+   - Set **Alignment** as *Center*
+   - Set **Style** as *Primary*
    - Select **POST** in the **Action** drop-down list
-   - Click on **fx** to switch the **Data sent on click** field mode and then enter *leaveRequest*
+   - Click on **fx** to switch the **Data sent on click** field mode and then enter *newLeaveRequest*
    - In the field **URL to call**, enter: `../API/bpm/process/{% raw %}{{processDefinitionInfo[0].id}}{% endraw %}/instantiation`
    - In the field **Target URL on success**, enter: `/bonita/apps/leave-request`
    - Save the page
@@ -193,7 +195,7 @@ We will now deploy the application in the portal from the Studio.
    ![creation of an application](images/ex06/ex6_15.png)
 
 1. Create a new application :
-   - In the Navigation menu, click *Add Single Menu Page* (A)
+   - In the Navigation menu, click *Add one-page menu* (A)
    - Enter *Requests follow-up* in the field **Menu**.
    - Select the *custompage_LeaveRequestStatus* page in the field **Application Page** (B)
    - Enter *leave-request* in the **Token** field (C)  
@@ -209,7 +211,7 @@ We will now deploy the application in the portal from the Studio.
    ![configuration page](images/ex06/ex6_17.png)
 
 1. Deploy the application in the Portal:
-   - Click on the link *http://localhost:8080/bonita/apps/demande-conges* to access the application. (A)
+   - Click on the link *http://localhost:8080/bonita/apps/leave-request* to access the application. (A)
    - A deployment window opens. Click on *Deploy* (B) 
    
    ![Deploy the application](images/ex06/ex6_09.png)
