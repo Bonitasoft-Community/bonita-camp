@@ -171,8 +171,8 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
         Ancho | *6*
         Etiqueta | *Número de días*
         Valor | `nuevaSolicitudVacaciones.solicitudInput.numeroDias`
-        Tipo : *number*
-        Valor minimo : *1*
+        Tipo | *number*
+        Valor minimo | *1*
         
 1. Agrega un botón para enviar el formulario:
     - Arrastra el widget **Botón** desde la paleta y colócalo en el contenedor del formulario debajo de los dos widgets
