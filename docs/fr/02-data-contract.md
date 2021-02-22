@@ -121,21 +121,11 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    - Sélectionner le pool du processus et naviguer dans l'onglet **Données / Variables du pool**
    - Sélectionner la variable *demande*
    - Cliquer sur **Modifier...**
-   - Cliquer sur l'icône **crayon** associé au champ **Valeur par défaut** pour ouvrir l'éditeur d'expression
-   - Entrer le code suivant (ou simplement appliquer les modifications) :
+   - Cliquer sur l'icône **crayon** associé au champ **Valeur par défaut** pour ouvrir l'éditeur d'expression. Le script a déjà été initialisé.
+   - Dans le menu de gauche, sélectionnez **Modèles de code/Utilisateurs Bonita** (A) et faites glisser le modèle *processInitiatorUser* avant la dernière ligne commençant par `return
+     Le script permettant de récupérer l'instance du processus et l'initiateur est créé automatiquement.
+   - Saisissez `demandeCongesVar.idDemandeur = processInitiator.id` pour récupérer l'id de l'initiateur de l'instance dans l'attribut *idDemandeur* (B).
    
-   ```groovy
-   def demandeCongesVar = new com.company.model.DemandeConges()
-   demandeCongesVar.dateDebut = demandeInput?.dateDebut
-   demandeCongesVar.nombreJours = demandeInput?.nombreJours
-
-   // Récupérer l'instance de processus en cours
-   def processInstance = apiAccessor.processAPI.getProcessInstance(processInstanceId)
-   // Ajouter l'identifiant du demandeur à la nouvelle demande
-   demandeCongesVar.idDemandeur = processInstance.startedBy
-
-   return demandeCongesVar
-   ```
    ![editeur expression script](images/ex02/ex2_12.png)
    
    - Le script va initialiser la variable métier en utilisant les données du contrat et l'identifiant de l'auteur de la demande

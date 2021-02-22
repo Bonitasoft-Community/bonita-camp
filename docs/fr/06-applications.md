@@ -209,7 +209,7 @@ Nous allons maintenant déployer l'application dans le portail depuis le Studio.
    ![page de configuration](images/ex06/ex6_17.png)
    
 1. Déployer l'application dans le portail
-   - Cliquer sur le lien *http://localhost:8080/bonita/apps/demande-conges* pour accéder à l'application. (A)
+   - Cliquer sur le lien *http://localhost:8080/bonita/apps/demand`e-conges* pour accéder à l'application. (A)
    - Une fenêtre de déploiement s'ouvre. Cliquer sur *Déployer* (B) 
    
    ![Déployer l'application](images/ex06/ex6_09.png)

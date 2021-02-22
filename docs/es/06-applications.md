@@ -67,10 +67,14 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
 
     ![contenedor multiple](images/ex06/ex6_13.png)
 
-1. Borrar el sub-titulo *SolicitudVacaciones* del contenedor y las etiquetas inutiles:
-    - Selecciona el widget **Table**
-    - En el panel de configuración de la derecha, en el campo **Cabeceras**, borra *Solicitante Id, *
-    - Reemplaza *Fecha Inicio* con *Fecha de inicio*, *Numero Dias* con *Número de días* y *EstaAprobado* con *Estado*
+1. Sustituir el subtítulo *SolicitudVacaciones* del contenedor y las etiquetas : 
+   - Nómbralo *Seguimientio de solicitudes*
+   - Selecciona la opción **Nivel 4** para el parámetro **Nivel del título**.
+   - Selecciona la opción **centro** para el parámetro **alineación**. 
+   - Selecciona el widget Tabla
+   - En el panel de la derecha, en el campo **Cabeceras**, borra *Solicitante Id*.
+   - Sustituye *Fecha Inicio* por *Fecha de inicio*, *Número Dias* por *Número de días* y *EstaAprobado* por *Estado*.
+    
 1. Declara una nueva expresión de JavaScript para formatear la lista:
     - Haz clic en **Crear una nueva variable**
     - Nombra el *agregarEtiquetaEstadoSolicitud*
@@ -98,44 +102,22 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - En el mismo campo, cambia *estaAprobado* por *estaAprobadoEtiqueta*
     - Borra el widget Input *SolicitanteId* en el contenedor de detalles porque esta información no es útil.
 
-1. Agrega 4 widgets al contenedor:
-    - Un widget **Input** con las siguientes opciones:
+1. Selecciona el widget *Fecha Inicio* y cambia las siguientes propiedades:
    
-     Propiedad | Valpr
-     --------- | ------
-     Ancho     | *3*
-     Sólo lectura | **Sí**
-     Etiqueta | *Num*
-     Valor | `$index + 1`
+      Propiedad | Valor
+      --------- | ------
+      Etiqueta | Fecha de inicio
+      Formato técnico de la fecha | dd/MM/yyyy
+      Placeholder | dd/mm/aaaa
+      Mostrar el botón de hoy | no
+      
+1. Selecciona el widget *Número de días* y cambia las siguientes propiedades :
 
-   - Un widget **Date picker** con las siguientes opciones:
-   
-     Propiedad | Valor
-     --------- | ------
-     Ancho | *3*
-     Sólo lectura | **Sí**
-     Etiqueta | *Fecha de inicio*
-     Valor | `$item.fechaInicio`
-     Formato de fecha técnica | *dd/MM/yyyy*
-     Mostrar botón Hoy | **No**
-
-   - Un widget **Input** con las siguientes opciones:
-   
-     Propiedad | Valor
-     --------- | ------
-     Ancho | *3*
-     Sólo lectura | **Sí**
-     Etiqueta | *Numero de días*
-     Valor | `$item.numeroDias`
-
-   - Un widget **Input** con las siguientes opciones:
-   
-     Propiedad | Valor
-     --------- | ------
-     Ancho | *3*
-     Sólo lectura | **Sí**
-     Etiqueta | *Estado*
-     Valor | `$item.estaAprobadoEtiqueta`
+      Propiedad | Valor
+      --------- | ------
+      Etiqueta | Número de días
+      Placeholder | Número de días de vacaciones
+      Valor mínimo | 1
 
    - Guarda la página
    - La página debería verse así:
@@ -179,8 +161,8 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
         Propiedad | Valor
         --------- | ------
         Ancho | *6*
-         Etiqueta | *Fecha de inicio*
-         Valor | `nuevaSolicitudVacaciones.solicitudInput.fechaInicio`
+        Etiqueta | *Fecha de inicio*
+        Valor | `nuevaSolicitudVacaciones.solicitudInput.fechaInicio`
        
     - Un widget **Input** con las siguientes opciones:
    
@@ -189,6 +171,8 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
         Ancho | *6*
         Etiqueta | *Número de días*
         Valor | `nuevaSolicitudVacaciones.solicitudInput.numeroDias`
+        Tipo : *number*
+        Valor minimo : *1*
         
 1. Agrega un botón para enviar el formulario:
     - Arrastra el widget **Botón** desde la paleta y colócalo en el contenedor del formulario debajo de los dos widgets
@@ -221,14 +205,14 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - En el menú de navegación, haz clic en **Añadir menú de una página** (A)
     - Ingresa *Seguimiento de las solicitudes de vacaciones* en el campo **Menú**
     - Selecciona la página *custompage_SeguimientoDeSolicitud* en el campo **Página de aplicación** (B)
-    - Ingresa *lista-solicitudes* en el campo **Token** (C).
+    - Ingresa *solicitud-vacaciones* en el campo **Token** (C).
     
       ![creación de una aplicación](images/ex06/ex6_07.png) 
     
 1. Define la página *Aplicación de solicitudes de vacaciones* como página de inicio de la aplicación: 
-    - Selecciona el token *lista-solicitudes* en el menú **Página de inicio**
+    - Selecciona el token *solicitud-vacaciones* en el menú **Página de inicio**
     - Haz clic en el enlace para probar la aplicación (A)
-    - Una ventana se abre para confirmar el despliegue. Haz clic en el botón **Desplegar**
+    - Una ventana se abre para confirmar el despliegue. Haz clic en el botón **Desplegar**
   
    
    
