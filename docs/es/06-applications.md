@@ -148,7 +148,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - Nombra la variable *informacionDefinicionProceso*
     - Elije el tipo **API externa**   
     - En el campo **API URL**, escribe: 
-    `../API/bpm/process?p=0&c=100&o=version%20DESC&f=name=SolicitudVacaciones`
+    `../API/bpm/process?p=0&c=10&f=name=SolicitudVacaciones&o=version%20desc`
 
 1. Agrega dos widgets en el contenedor del formulario:
      - Un widget **Date picker** con las siguientes opciones:
