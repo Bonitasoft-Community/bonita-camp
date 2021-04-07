@@ -39,11 +39,6 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
    
    ![agregar widget título](images/ex06/ex6_02.png)
 
-1. Agrega otro título a tu página debajo del título principal:
-    - Nombralo *Seguimiento de solicitudes*
-    - Selecciona la opción **Nivel 4** para el parámetro **Nivel de título**
-    - Selecciona la opción **centrado** para el parámetro **Alineación**  
-
 1. Crea una variable para almacenar información de sesión:
     - Haz clic en **Crear una nueva variable**
     - Nombra la *sessionInfo*
@@ -70,7 +65,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
 1. Sustituir el subtítulo *SolicitudVacaciones* del contenedor y las etiquetas : 
    - Nómbralo *Seguimientio de solicitudes*
    - Selecciona la opción **Nivel 4** para el parámetro **Nivel del título**.
-   - Selecciona la opción **centro** para el parámetro **alineación**. 
+   - Selecciona la opción **centrado** para el parámetro **alineación**. 
    - Selecciona el widget Tabla
    - En el panel de la derecha, en el campo **Cabeceras**, borra *Solicitante Id*.
    - Sustituye *Fecha Inicio* por *Fecha de inicio*, *Número Dias* por *Número de días* y *EstaAprobado* por *Estado*.
@@ -136,7 +131,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
     - Nombra la variable *nuevaSolicitudVacaciones*
     - Elije el tipo **Javascript expression**
     - En el campo de texto **Valor**, escribe el siguiente script:
-   ```
+   ```javascript
    var solicitud =  { 
      solicitudInput : {
        fechaInicio : null,

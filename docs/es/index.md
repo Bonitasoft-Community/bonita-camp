@@ -22,7 +22,7 @@ Bonita Camp consiste en:
         - Haga clic en el botón **Portal** ![Icono del portal](images/portal-icon.png) en la barra de herramientas de Studio: el portal debe abrirse en su navegador web
         - Haga clic en el botón **UI Designer** ![Icono de UI Designer](images/ui_designer_24x24.png) en la barra de herramientas de Studio: el UI Designer debería abrirse en su navegador web
    1. También puede descargar opcionalmente las correcciones y diapositivas en formato PDF desde la [sección "release" del proyecto GitHub bonita-camp](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
-   1. Se recomienda utilizar Chrome o Firefox durante el desarrollo para beneficiarse de las herramientas de prueba de estos navegadores. Internet Explorer 11, Edge y Safari también son compatibles (soporte parcial para IE11). Para saber qué navegador Bonita Studio usa por defecto, haga clic en el botón **Portal** ![Icono del portal](../images/portal-icon.png). 
+   1. Se recomienda utilizar Chrome o Firefox durante el desarrollo para beneficiarse de las herramientas de prueba de estos navegadores. Internet Explorer 11, Edge y Safari también son compatibles (soporte parcial para IE11). Para saber qué navegador Bonita Studio usa por defecto, haga clic en el botón **Portal** ![Icono del portal](images/portal-icon.png). 
    El portal Bonita debería abrirse con el navegador predeterminado para su sistema operativo. Puede configurar Bonita Studio para usar un navegador que no sea el predeterminado:
         - En el estudio, haga clic en el botón **Preferencias** [icono de preferencias](images/preferences.png)
         - En la sección **Web** haga clic en **Navegador**

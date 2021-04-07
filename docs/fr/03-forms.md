@@ -123,7 +123,7 @@ Créer les formulaires suivants :
 
 1. Supprimer le widget *Id demandeur* et mettre à la place un widget pour présenter le prénom et nom du demandeur :
    - Faire glisser un widget de type **Text**
-   - Configurer le widget comme ceci :
+   - Configurer le widget comme ceci : `<b>Demandeur : </b>{{firstname}} {{lastname}}`
 
   ![propriétés texte demandeur](images/ex03/ex3_04.png)
 
