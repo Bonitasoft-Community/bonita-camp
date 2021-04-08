@@ -170,7 +170,7 @@ Accéder à l'application nouvellement créer en utilisant l'URL unique génér�
    - Entrer *Créer une nouvelle demande* dans le champ **Libellé**
    - Sélectionner **POST** dans la liste déroulante **Action**
    - Cliquer sur **fx** pour changer le mode du champ **Données envoyés au clic** et taper *nouvelleDemandeConges*
-   - Dans le champ **URL à appeler**, taper : ../API/bpm/process/{% raw %}{{informationDefinitionProcessus[0].id}}{% endraw %}/instantiation`
+   - Dans le champ **URL à appeler**, taper : `../API/bpm/process/{% raw %}{{informationDefinitionProcessus[0].id}}{% endraw %}/instantiation`
    - Dans le champ **URL cible en cas de succès**, taper : `/bonita/apps/demande-conges`
    - Enregistrer les changements
    - La page devrait maintenant ressembler à ceci :
