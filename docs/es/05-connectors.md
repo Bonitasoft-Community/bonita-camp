@@ -11,7 +11,7 @@ El objetivo de este ejercicio es tratar una interacción entre el proceso y un s
 
 ## Resumen de las instrucciones
 
-Recupera y inicia el servidor [FakeSMTP](http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip).
+Recupera y inicia el servidor [FakeSMTP](http://nilhcem.github.io/FakeSMTP/downloads/fakeSMTP-latest.zip).
 
 Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *3.1.0*.
 
