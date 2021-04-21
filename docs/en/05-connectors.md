@@ -11,7 +11,7 @@ The goal of this exercise is to demonstrate an interaction between Bonita and an
 
 ## Instructions overview
 
-Obtain and start the [FakeSMTP](http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip) server.
+Obtain and start the [FakeSMTP](http://nilhcem.github.io/FakeSMTP/downloads/fakeSMTP-latest.zip) server.
 
 Duplicate the process diagram from the previous exercise to create a *3.1.0* version.
 
