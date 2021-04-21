@@ -11,7 +11,7 @@ L'objectif de cet exercice est de traiter une interaction entre le processus et 
 
 ## Instructions résumées
 
-Obtenir et démarrer le serveur [FakeSMTP](http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip).
+Obtenir et démarrer le serveur [FakeSMTP](http://nilhcem.github.io/FakeSMTP/downloads/fakeSMTP-latest.zip).
 
 Dupliquer le diagramme de processus de l'exercice précédent pour créer une version *3.1.0*.
 
