@@ -6,7 +6,7 @@
     <title>Bonita Camp</title>
 
     <meta name="description" content="Présentation de Bonita permettant de rapidement réaliser une premier application">
-    <meta name="author" content="Antoine Mottier - Delphine Coille">
+    <meta name="author" content="Delphine Coille">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -63,55 +63,72 @@
           </aside>
         </section>
 
+        <!-- Introduction  -->
         <section>
             <h2>Objectifs du Bonita Camp</h2>
             <p><b>Quoi ?</b> Comprendre les concepts liés à la création d'applications basées sur l'automatisation des processus et les mettre en application.</p>
+            <p><b>Qui ?</b> Equipe projet et développeurs débutants avec Bonita</p>
             <p><b>Comment ?</b> Cours théorique et pratique basé sur un exemple concret avec Bonita</p>
-          </section>
+        </section>
 
         <section>
-          <h2>Checklist</h2>
+            <section>
+              <h2>Programme</h2>
+               <p>Jour 1 - Tout pour créer une première application</p>
+               <ul class="agenda">
+                  <li>La solution Bonita et les composants de Bonita</li>
+                  <li>Démarrer un projet Bonita</li>
+                  <li>Modélisation de processus</li>
+                  <li>Gestion des données</li>
+                  <li>Les formulaires de processus</li>
+                  <li>Gestion des utilisateurs</li>
+                  <li>Connecteurs</li>
+                  <li>Applications</li>
+               </ul>
+            </section>
+            <section>
+              <h2>Programme</h2>
+                <p>Jour 2 - Pour aller plus loin dans le développement</p>
+                <ul class=agenda">
+                  <li>L'architecture de la solution Bonita</li>
+                  <li>Modélisation et automatisation</li>
+                  <li>Les données - utilisation avancée</li>
+                  <li>Les extensions</li>
+                  <li>L'interface utilisateur</li>
+                  <li>Déploiement</li>
+                </ul>
+
+              <aside class="notes">
+            1<br /><br />
+            4:00h of time découpé en 2 fois 2 heures pour vous laisser le temps de pratiquer - Session 1 pour tous - Session 2 dédiée aux personnes qui vont faire du développement plus avancé
+              </aside>
+            </section>
+        </section>
+
+        <section>
+          <h2>Avant de démarrer</h2>
           <ul>
-            <li>Télécharger les fichiers du Bonita Camp depuis GitHub : <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
+            <li>Assurez-vous d'avoir une JVM (Java 11 recommandée)</li>
             <li>Installer la dernière version du Studio (cf document exercices)</li>
-            <li>Démarrer le Studio et cliquer le bouton Portail</li>
+            <li>Télécharger les fichiers du Bonita Camp depuis GitHub : <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a></li>
             <li>Nous recommandons d'utiliser <img class="no-margin" src="images/chrome.png" alt="chrome"/> ou <img class="no-margin" src="images/firefox.png" alt="firefox"/> lors de vos développements</li>
           </ul>
           
           <aside class="notes">
             2<br /><br />
             Resources: slides, exercises, solutions, etc. [GitHub - latest release]<br />
-            Need the Studio to follow the session. Launching the Portal will be make sure everything start properly<br />
+            Need the Studio to follow the session.<br />
             Browser recommendation: better tooling like debug &amp; co<br />
           </aside>
         </section>
 
-        <section>
-          <h2>Programme</h2>
-            <p>Jour 1</p>
-              <ul class="agenda">
-                <li>La solution Bonita et les composants de Bonita</li>
-                <li>Introduction au BPMN</li>
-                <li>Gestion des données et contrats</li>
-                <li>L'interface utilisateur (Formulaires et pages)</li>
-              </ul>
-
-            <p>Jour 2</p>
-              <ul class=""agenda">
-                <li>Gestion des utilisateurs</li>
-                <li>Connecteurs</li>
-                <li>Applications</li>
-                <li>Déploiement</li>
-              </ul>
-          
-          <aside class="notes">
-            1<br /><br />
-            4:00h of time découpé en 2 fois 2 heures pour vous laisser le temps de pratiquer
-          </aside>
-        </section>
+         <!-- Présentation de Bonita  -->
         <section>
           <section>
           <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">La solution Bonita</h2><img src="images/bonita-logo.png" /></div>
+
+                     <!-- MAJ avec le nouveau messaging  -->
+
            <ul>
              <li>Limite le volume de code nécessaire pour construire une application</li>
              <li>S'appuie sur des modèles (e.g. diagrammes BPMN) pour définir les applications</li>
@@ -130,23 +147,35 @@
             </aside>
           </section>
 
-        <section>
-            <h2>Le cycle d'exécution d'un projet DPA</h2>
-            <img class="stretch" src="images/schema-cycleprojet-EN.png" alt="Ciclo de proyecto con Bonita" />
-          </section>
-        </section>
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Exemples d'applications</h2><img src="images/bonita-logo.png" /></div>
+           <!-- Ajout images showroom  -->
 
-        <section>
+            <aside class="notes">
+            1:30<br /><br />
+
+            </aside>
+          </section>
+
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Projet d'automatisation de processus Bonita</h2><img src="images/bonita-logo.png" /></div>
+            <p>Eléments de structure d'un projet</p>
+            <img class="stretch" src="images/bonita-project-elements.png" alt="Bonita project elements" />
+
+            <aside class="notes">
+            Expliquer de quoi est composé un projet d'automatisation<br />
+
+            </aside>
+          </section>
+
           <section>
             <h2>Composants de Bonita</h2>
-            <p>Quatre composants principaux :</p>
+            <p>Trois composants principaux :</p>
             <ul>
-              <li>Bonita Studio</li>
-              <li>Bonita UI Designer <img src="images/ui_designer_24x24.png"></li>
-              <li>Bonita Engine <img src="images/preferences.png"></li>
-              <li>Bonita Portal <img src="images/portal-icon.png"></li>
+              <li>Bonita Studio, l'environnement de développement</li>
+              <li>Bonita Runtime, l'environnement de production</li>
+              <li>Bonita Continuous Delivery <img src="images/preferences.png">, l'environnement de déploiement continue des projets Bonita (Editions Souscription)</li>
             </ul>
-            <p>Engine + Portal : packagés dans une application web JEE (war)</p>
             <p>Le Studio embarque un environnement de test avec Tomcat + application web</p>
 
             <aside class="notes">
@@ -158,48 +187,32 @@
           </section>
 
           <section>
-            <h2>Architecture de la plateforme Bonita</h2>
-            <p>Engine + Portal : packagés dans une application web JEE (war)</p>
-            <p>Le Studio embarque un environnement de test avec Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> + application web</p>
-            <p>Le package Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> ou l'image Docker <img class="no-margin" src="images/docker.png" alt="docker-logo"/> simplifient l'installation du serveur</p>
-          </section>
-
-          <section>
-            <h2>Architecture de la plateforme Bonita</h2>
-            <img class="stretch" src="images/architectural-overview.png" alt="Architecture Bonita" />
-
-            <aside class="notes">
-              1.30<br /><br />
-              Todas las interacciones (Portal y otras) con el Motor se gestionan con las API REST de Bonita. <br/>
-              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
-              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
-            </aside>
-          </section>
-          <section>
-            <h2>Studio: environnement de modélisation et développement</h2>
+            <h2>Studio: environnement de modélisation et configuration</h2>
             <table class="no-margin no-border">
               <tr>
                 <td width="30%"><img src="images/screenshot_studio_diagram.png" alt="Bonita Studio : edición de diagramas"></td>
-                <td width="100%">Las etapas :
+                <td width="100%">Les étapes :
                   <ul>
                     <li>Modélisation de processus</li>
                     <li>Définition du modèle de données</li>
-                    <li>Définition de la connectivité</li>
+                    <li>Configuration de la connectivité</li>
+                    <li>Configuration de l'organisation</li>
                     <li>Définition des applications</li>
                   </ul></td>
               </tr>
               <tr align="left">
                 IDE basé sur Eclipse<br>
-               Nécessite l'utilisation d'une JVM (on recommande Java 11)
+                Nécessite l'utilisation d'une JVM (on recommande Java 11)<br>
+                Basé sur des modèles et wizards pour limiter le code
               </tr>
             </table>
 
             <aside class="notes">
             1:30<br /><br />
-              Bonita Studio es un IDE basado en Eclipse. Requiere una JVM (se recomienda la versión 11). <br/>
-              Permite la creación de diagramas de proceso que contienen uno o varios procesos (se recomienda un proceso por diagrama). <br/>
-              Diferentes pasos: modelado de procesos, definición del modelo de datos, diseño de formularios y páginas, configuración del conector ... <br/>
-              Perspectiva del editor de diagramas: pizarra en la que arrastra y suelta elementos BPMN de una paleta. <br />
+              Bonita Studio contains three major design tools:<br>
+                the whiteboard, for drawing a process flow diagram and defining the detail of steps, transitions, decision points and other process elements<br>
+                several low-code development tools, to design data models, process-based applications, sandbox organizations<br>
+                the UI Designer, used to create process forms, application pages and layouts<br>
             </aside>
           </section>
 
@@ -218,7 +231,7 @@
               </tr>
               <tr align="left">
                 Basé sur AngularJS et Bootstrap<br>
-               Fonctionne dans le navigateur
+                Fonctionne dans le navigateur
               </tr>
             </table>
 
@@ -231,17 +244,34 @@
           </section>
 
           <section>
-            <h2>Portail Bonita : interface web de l'utilisateur et de l'administrateur</h2>
+            <h2>Bonita Runtime : le chef d'orchestre</h2>
+            <p><b>Runtime : Tomcat + Bonita applications + Moteur Bonita + Base de données</b></p>
+            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
+              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
+            <p> Expose des API REST </p>
+            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
+            <p> Nécessite : </p>
+             <ul>
+              <li> Serveur d'application Java EE </li>
+              <li> Base de données transactionnelle avec JDBC </li>
+             </ul>
+
+            <aside class="notes">
+            1.30<br /><br />
+              Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
+            </aside>
+          </section>
+
+          <section>
+            <h2>Applications Bonita : interfaces web de l'utilisateur et de l'administrateur</h2>
+            <p>4 applications par défaut embarquées dans Bonita runtime</p>
             <ul>
-              <li>Présente la liste de tâches à réaliser </li>
-              <li>Permet de déployer et configurer les formulaires, processus et applications d'entreprise</li>
-              <li>Permet de gérer l'organisation </li>
-              <li>Utilise les API Bonita comme tout client du moteur</li>
-            </ul>
-            <p>2 types de portails :</p>
-            <ul>
-              <li>les portails utilisateur et administrateur natifs de Bonita</li>
-              <li>Bonita Living application pour l'utilisateur et l'administrateur</li>
+              <li>Application <b>utilisateur Bonita</b></li>
+              <li>Application <b>administrateur Bonita</b></li>
+              <li>Application <b>super-administrateur Bonita</b></li>
+              <li>Application <b>répertoire d'applications</b></li>
             </ul>
 
             <aside class="notes">
@@ -251,41 +281,72 @@
           </section>
 
           <section>
-            <h2>Portail Bonita</h2>
-            <img class="stretch" src="images/screenshot_portal_inbox.png" alt="Bonita Portal : liste de tâches" />
-          </section>
-
-          <section>
             <h2>Application utilisateur</h2>
+            <p>Application native de suivi des cas et tâches</p>
             <img class="stretch" src="images/user-app-tasklist.png" alt="Bonita application" />
           </section>
 
           <section>
             <h2>Application administrateur</h2>
+            <p>Application native d'administration et de suivi des processus</p>
             <img class="stretch" src="images/admin-app.png" alt="Bonita application" />
           </section>
 
           <section>
-            <h2>Bonita Engine : le chef d'orchestre</h2>
-            <p>Responsable de l'exécution des processus (sans interface graphique) <br>
-              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
-            <p> Expose des API REST </p>
-            <p> Basé sur Java SE et encapsulé avec le Portail dans une app web Java </p>
-            <p> Nécessite : </p>
-             <ul>
-              <li> Serveur d'application Java EE </li>
-              <li> Base de données transactionnelle avec JDBC </li>
-              </ul>
+            <h2>Application super administrateur</h2>
+            <p>Application native d'administration avancée de la plateforme</p>
+            <img class="stretch" src="images/app-super-admin.png" alt="Bonita Super admin" />
+          </section>
 
-            <aside class="notes">
-            1.30<br /><br />
-              Todas las interacciones (Portal y otras) con el Motor se gestionan con las API REST de Bonita. <br/>
-              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
-              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
-            </aside>
+          <section>
+            <h2>Répertoire centralisé d'applications</h2>
+            <p>Une URL unique centralisant toutes les applications accessibles par l'utilisateur</p>
+            <img class="stretch" src="images/app-directory.png" alt="App directory" />
           </section>
         </section>
 
+        <!-- Présentation d'un projet Bonita et project composition  -->
+        <section>
+          <section>
+           <h2>Le cycle d'exécution d'un projet DPA</h2>
+           <img class="stretch" src="images/schema-cycleprojet-EN.png" alt="Ciclo de proyecto con Bonita" />
+
+            <aside class="notes">
+            1.30<br /><br />
+              Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
+            </aside>
+
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Démarrer le projet dans Bonita Studio</h2><img src="images/icon-design-EN.png" /></div>
+            <ul>
+              <li>Un projet Bonita est un projet Maven</li>
+              <li>Les projets sont intégrés à un workspace en local ou à distance</li>
+              <li>Les projets peuvent être partagés avec SVN ou Git depuis Bonita Studio</li>
+            </ul>
+
+
+            <aside class="notes">
+            1.30<br />
+              Expliquer ce qu'est un projet Maven rapidement et l'intérêt<br />
+              Montrer ce qu'on peut faire avec git en terme de collaboration<br>
+
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Démarrer le projet : vue d'ensemble</h2><img src="images/icon-design-EN.png" /></div>
+            <p>Accès à la vue d'ensemble dès la création du projet</p>
+            <img class="stretch" src="images/project-overview.png" alt="Bonita project overview" />
+          </section>
+
+        </section>
+
+        <!--Process design - BPMN - A revoir
+           Pre-requisite : having followed the video "Ultimate guide to BPMN" Still to be done-->
 
         <section>
           <section>
@@ -374,12 +435,8 @@
           </section>
         </section>
 
+        <!--La gestion des données-->
         <section>
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">La gestion des données</h2><img src="images/icon-model-data.png" alt="model data" /></div>
-            <img class="stretch" src="images/contract-MVC.png" alt="model-mvc"/>
-          </section>
-
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les types de données</h2><img src="images/icon-model-data.png" alt="model data" /></div>
             <p>Données de processus</p>
@@ -419,7 +476,6 @@
               <li>Create/Read/Update/Delete en utilisant : valeur par défaut, opérations, connecteurs...</li>
               <li>Peuvent être partagés entre différentes instance de processus</li>
               <li>Cycle de vie contrôlé par le développeur</li>
-              <li>Utiliser les API pour les opérations de lecture</li>
             </ul>
             <aside class="notes">
               Business variable used BDM definition to define the type of the variable.<br />
@@ -430,24 +486,7 @@
               [Studio - show data in the process to execute the flow]
             </aside>
           </section>
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'exemple des données de formulaire</h2><img src="images/icon-model-data.png" alt="model data" /></div>
-            <ul>
-              <li>Stocke et traite les données affichées et mise à jour dans les UI</li>
-              <li>Accessible depuis le navigateur web</li>
-              <li>Tout type d'objet JavaScript</li>
-              <li>Initialisées et mises à jour par : les saisies utilisateur, appels API REST, code JavaScript</li>
-              <li>Non persistées</li>
-            </ul>
 
-            <aside class="notes">
-              1.30<br /><br />
-              Used to build web user interfaces.<br />
-              Used to store the result of a REST API call (like getting BDM data) or user inputs.<br />
-              Data is local to each users web browser<br />
-              As we are in web browser we use JavaScript.<br />
-            </aside>
-          </section>
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Autre type de données : les documents</h2><img src="images/icon-model-data.png" alt="model data" /></div>
             <ul>
@@ -466,6 +505,24 @@
           </section>
 
           <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">La gestion des données</h2><img src="images/icon-model-data.png" alt="model data" /></div>
+            <img class="stretch" src="images/contract-MVC.png" alt="model-mvc"/>
+            <p>Modèle MVC pour le découplage entre la logique métier et les interfaces graphiques</p>
+            <ul>
+              <li>Le modèle est le BDM</li>
+              <li>La vue est la combinaison des pages d'applications et des formulaires de processus</li>
+              <li>Le contrôleur est un ensemble de processus</li>
+            </ul>
+
+            <aside class="notes">
+              4<br /><br />
+              <br/>
+              Expliquer que dans ce schéma que pour le controller on va utiliser le contrat <br />
+            </aside>
+          </section>
+
+
+          <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les contrats</h2><img src="images/icon-model-data.png" alt="model data" /></div>
             <p>Ensemble de paramètres d'entrée requis + des règles de validation</p>
             <p>Les données envoyées par les formulaires doivent remplir des contrats pour :</p>
@@ -473,7 +530,6 @@
               <li>Instancier un processus</li>
               <li>Exécuter une tâche humaine</li>
             </ul>
-            <p>Contribue au découplage entre la logique métier et les interfaces graphiques</p>
 
             <aside class="notes">
               2.30<br /><br />
@@ -513,14 +569,21 @@
           </section>
         </section>
 
-
+        <!--Formulaires-->
 
         <section>
           <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Formulaires</h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
-            <p>Créés dans l'UI Designer à base de conteneurs et de widgets</p>
-            <p>Basés sur AngularJS et Bootstrap</p>
-            <p>Associés avec les tâches ou le processus</p>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur: Formulaires</h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
+            <ul>
+              <li>Initialisés automatiquement dans UI Designer à partir du contrat</li>
+              <li>Créés à base de conteneurs et de widgets</li>
+              <li>Basés sur AngularJS et Bootstrap</li>
+              <li>Associés avec les tâches ou le processus</li>
+            </ul>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur : Formulaires</h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
             <p>2 types de formulaires :</p>
             <ul>
               <li><b>Formulaires éditables</b> qui doivent remplir un contrat
@@ -547,42 +610,7 @@
           </section>
 
           <section>
-            <h2>Aperçu de l'architecture</h2>
-            <p>Afficher une donnée métier dans un formulaire</p>
-            <img class="stretch" src="images/display_business_variables_in_forms.png" alt="Data flow from process variables to forms">
-
-            <aside class="notes">
-              8<br /><br />
-              The UI usually displays business information that is stored<br />
-              [Studio and UID and H2 interface - explained the following based on exercise solution, run it with DEV TOOL enabled]<br />
-              When you create a new form you can use some predefined JavaScript variables to make the link with business variables and documents linked to the context<br/>
-              The "context" variable give some information about the task and process instance associated with the visible form.<br/>
-              "context" variable have attribute that match the name of process variable with suffix _ref. Those variable have a "link" attribute that define the URL of the API to call in order to retrieve the business variable value.<br/>
-              The business variable value is actually a reference to a row in a table of the business database.<br/>
-              So to retrieve the business variable in a form, create a variable with type set to "External API" and the URL to ../{{context.myBusinessVar_ref.link}}. You can then map this variable to the form widgets.
-            </aside>
-          </section>
-          
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pages</h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
-            <p>Construites de la même manière que les formulaires</p>
-            <p>Principale différence au niveau du contexte d'exécution :</p>
-            <ul>
-              <li>Les formulaires ont des informations sur la définition du processus ou sur l'instance de processus et la tâche</li>
-              <li>Les pages n'ont pas d'information de contexte</li>
-            </ul>
-            <p>Les pages peuvent obtenir des informations de BDM et de processus ou déclencher des actions via les API REST</p>
-            <p>Grouper plusieurs pages et créer un menu pour construire une application</p>
-            <aside class="notes">
-              4<br /><br />
-              Display information (BDM, process definitions, process instances) and optionally provide access to actions (start a process instance, execute a task...)<br />
-              When you create a page you don't have any variable available by default.<br />
-              Example to list vacation requests: http://localhost:8080/bonita/API/bdm/businessData/com.company.model.VacationRequest?q=find&p=0&c=10
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"> Widgets </h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur : Widgets </h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
             <p>Un ensemble de widgets est fourni par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
             <p>Des widgets personnalisés peuvent être créés avec l'UI Designer</p>
             <p>Réutiliser les contributions partagées par la communauté</p>
@@ -593,19 +621,25 @@
               [UID, create new artifact, overview of features with HELP redirection, use default Widget like button, create CW to be includes into the form, Chrome dev tools to debug forms/contracts]<br/>
             </aside>
           </section>
-          
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Fragments</h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
-            <p>Clés pour la réutilisation et le gain de temps de développement</p>
-            <p>Pièce élémentaire composée de widgets et/ou de conteneurs.</p>
-            <p>Soit il a sa propre configuration et ses propres données...</p>
-            <p>soit il expose les données dans les pages qui l'incluent...</p>
 
-            <aside class="notes">
-              4<br /><br />
-              piece of a page, form or layout, composed of one or more widgets and/or containers<br/>
-              A fragment has its own widget configurations and data, but can also expose data to the pages that include it.<br>
-            </aside>
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur : cycle de la donnée</h2><img src="images/icon-model-data.png" alt="model data" /></div>
+              <!-- A revoir pour simplifier et expliquer le cycle de la donnée depuis variable vers form puis données de formulaire vers update BDM -->
+            <ul>
+                <li>Stocke et traite les données affichées et mise à jour dans les UI</li>
+                <li>Accessible depuis le navigateur web</li>
+                <li>Tout type d'objet JavaScript</li>
+                <li>Initialisées et mises à jour par : les saisies utilisateur, appels API REST, code JavaScript</li>
+                <li>Non persistées</li>
+              </ul>
+
+              <aside class="notes">
+               1.30<br /><br />
+                Used to build web user interfaces.<br />
+                Used to store the result of a REST API call (like getting BDM data) or user inputs.<br />
+                Data is local to each users web browser<br />
+                As we are in web browser we use JavaScript.<br />
+              </aside>
           </section>
 
           <section>
@@ -622,41 +656,7 @@
           </section>
         </section>
 
-
-        <!-- Fin jour 1 -->
-
-
-        <section>
-          <section>
-          <div>
-            <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" />
-          </div>
-          <div>
-            <h4>Jour 2</h4>
-            <div>Delphine Coille</div>
-          </div>
-          </section>
-
-          <section>
-            <h2>Rappel du programme</h2>
-            <p>Jour 1</p>
-            <ul class="agenda">
-              <li>La solution Bonita et les composants de Bonita</li>
-              <li>Introduction au BPMN</li>
-              <li>Gestion des données et contrats</li>
-              <li>L'interface utilisateur (Formulaires et pages)</li>
-            </ul>
-
-            <p>Jour 2</p>
-            <ul class=""agenda">
-            <li>Gestion des utilisateurs</li>
-            <li>Connecteurs</li>
-            <li>Applications</li>
-            <li>Déploiement</li>
-            </ul>
-          </section>
-        </section>
-
+        <!--Gestion des utilisateurs-->
         <section>
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Qui peut effecteur une tâche ? </h2><img src="images/icon-organisation-EN.png" alt="organisation" /></div>
@@ -677,7 +677,6 @@
               <li>Acteurs</li>
               <li>Filtre d'acteurs</li>
             </ul>
-           </ul>
              <p>Ces acteurs sont associés à l'organisation définie au travers de :</p>
               <ul>
                 <li>Groupes</li>
@@ -731,7 +730,7 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>Acteurs vs filtres d'acteur</h2><img src="images/icon-organisation-EN.png" alt="organisation" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Acteurs vs filtres d'acteur</h2><img src="images/icon-organisation-EN.png" alt="organisation" /></div>
 
             <table class="compare">
             <tr>
@@ -768,6 +767,24 @@
           </section>
 
           <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Profils</h2><img src="images/icon-organisation-EN.png" alt="organisation" /></div>
+            <!--Récupérer le schéma de fonctionnement des profils-->
+            <p>Les profils définissent les accès et la navigation dans les Living applications, aux objets et attributs du BDM
+            <p>3 profils par défaut dans Bonita :</p>
+            <ul>
+              <li>Utilisateur</li>
+              <li>Administrateur</li>
+              <li>Process manager (Uniquement en éditions souscription)</li>
+            </ul>
+            <p>Il est possible de définir des profils personnalisés (Editions souscription uniquement)
+
+            <aside class="notes">
+              Filters are executed only once when task starts. They can be run again with API call.<br />
+              [Studio &amp; Portal - change task actor to actor filter, run it]<br />
+            </aside>
+          </section>
+
+          <section>
             <div>
               <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 4</h2>
             </div>
@@ -783,9 +800,9 @@
 
         <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Connecteurs</h2><img src="images/icon-integration-EN.png" alt="integration" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions : connecteurs</h2><img src="images/icon-integration-EN.png" alt="integration" /></div>
             <p>Permet à un processus d'interagir avec le SI (sens opposé à celui des API Bonita)</p>
-            <p>Un catalogue de connecteurs standard est fourni dans le Studio.</p>
+            <p>Un catalogue de connecteurs standard est fourni dans le Marketplace du  Studio.</p>
             <p>Des connecteurs personnalisés peuvent être :</p>
             <ul>
               <li>Implémentés dans le Studio ou un IDE Java</li>
@@ -816,14 +833,95 @@
 
         <section>
           <section>
+            <h2>Applications basées sur l'automatisation des processus</h2>
+            <p>Combiner différents processus ensemble dans le but de fournir une application métier riche et cohérente</p>
+            <p>Les applications sont déployées et restituées dans un navigateur web ou mobile</p>
+            <p>L'application est composée de nombreux éléments dont : </p>
+            <ul>
+              <li>Formulaires</li>
+              <li>Pages</li>
+              <li>Layout</li>
+              <li>Thème</li>
+            </ul>
+
+            <aside class="notes">
+              14<br /><br />
+              Business data is central to processes that make the overall application<br />
+              We can live update most of the elements (process configuration, BDM definition, etc...)<br />
+              [Portal - edit process configuration]<br />
+              Page is a type of artifact that is used in the view that is specific to the application layer<br />
+              [Studio and UID and Portal - show the result of the exercise and explain the dashboard page implementation of the leaving request application, use preview]<br />
+              To have an application, we need a descriptor that will define how resources will be glued together<br />
+              [Studio - show the descriptor and deploy it]<br />
+              [Portal - show edition of the deployed application with new version of the dashboard page, menus, etc.]
+            </aside>
+          </section>
+
+          <section>
+            <h2>Interfaces entre les artefacts d'une application</h2>
+            <img class="stretch" src="images/graph-dependencies-FR.png" alt="Artefacts d'une application">
+          </section>
+
+          <section>
+            <h2>Créer une application : le descripteur d'applications</h2>
+            <p>Définir la structure de l'application depuis Bonita Studio</p>
+            <p>Déploiement direct pour pouvoir tester</p>
+            <!-- Mettre l'impression d'écran du descripteur -->
+            <img class="stretch" src="images/application-descriptor.png" alt="Descripteur d'application">
+          </section>
+        </section>
+
+        <!-- Fin jour 1 -->
+
+
+        <section>
+          <section>
+          <div>
+            <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" />
+          </div>
+          <div>
+            <h4>Jour 2</h4>
+            <div>Delphine Coille</div>
+          </div>
+          </section>
+
+          <section>
+            <h2>Rappel du programme</h2>
+               <p>Jour 1 - Tout pour créer une première application</p>
+               <ul class="agenda">
+                  <li>La solution Bonita et les composants de Bonita</li>
+                  <li>Démarrer un projet Bonita</li>
+                  <li>Modélisation de processus</li>
+                  <li>Gestion des données</li>
+                  <li>Les formulaires de processus</li>
+                  <li>Gestion des utilisateurs</li>
+                  <li>Connecteurs</li>
+                  <li>Applications</li>
+               </ul>
+            </section>
+            <section>
+              <h2>Programme</h2>
+                <p>Jour 2 - Pour aller plus loin dans le développement</p>
+                <ul class=agenda">
+                  <li>L'architecture de la solution Bonita</li>
+                  <li>Modélisation et automatisation</li>
+                  <li>Les données - utilisation avancée</li>
+                  <li>Les extensions</li>
+                  <li>L'interface utilisateur</li>
+                  <li>Déploiement</li>
+                </ul>
+
+              <aside class="notes">
+            1<br /><br />
+            4:00h of time découpé en 2 fois 2 heures pour vous laisser le temps de pratiquer - Session 1 pour tous - Session 2 dédiée aux personnes qui vont faire du développement plus avancé
+              </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h2>Applications basées sur le BPM</h2>
             <p>Combiner différents processus ensemble dans le but de fournir une application métier riche et cohérente</p>
-            <p>Respecte le modèle MVC :</p>
-            <ul>
-              <li>Le modèle est le BDM</li>
-              <li>La vue est la combinaison des pages d'applications et des formulaires de processus</li>
-              <li>Le contrôleur est un ensemble de processus</li>
-            </ul>
             <p>Les applications sont déployées et restituées par le Portail Bonita</p>
 
             <aside class="notes">
