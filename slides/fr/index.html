@@ -187,7 +187,7 @@
           </section>
 
           <section>
-            <h2>Studio: environnement de modélisation et configuration</h2>
+            <h2>Studio: environnement de modélisation et collaboration</h2>
             <table class="no-margin no-border">
               <tr>
                 <td width="30%"><img src="images/screenshot_studio_diagram.png" alt="Bonita Studio : edición de diagramas"></td>
@@ -202,7 +202,7 @@
               </tr>
               <tr align="left">
                 IDE basé sur Eclipse<br>
-                Nécessite l'utilisation d'une JVM (on recommande Java 11)<br>
+                Nécessite l'utilisation d'une JVM (Embarquée dans Bonita Community)<br>
                 Basé sur des modèles et wizards pour limiter le code
               </tr>
             </table>
@@ -213,6 +213,7 @@
                 the whiteboard, for drawing a process flow diagram and defining the detail of steps, transitions, decision points and other process elements<br>
                 several low-code development tools, to design data models, process-based applications, sandbox organizations<br>
                 the UI Designer, used to create process forms, application pages and layouts<br>
+              JVM recommended : Java 11 - embedded in Bonita bundle for Community only
             </aside>
           </section>
 
@@ -245,11 +246,8 @@
 
           <section>
             <h2>Bonita Runtime : le chef d'orchestre</h2>
-            <p><b>Runtime : Tomcat + Bonita applications + Moteur Bonita + Base de données</b></p>
-            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
-              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
-            <p> Expose des API REST </p>
-            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
+            <!-- Remplacer par le schéma de description de l'architecture -->
+
             <p> Nécessite : </p>
              <ul>
               <li> Serveur d'application Java EE </li>
@@ -261,6 +259,11 @@
               Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
               Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
               La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
+              <p><b>Runtime : Tomcat + Bonita applications + Moteur Bonita + Base de données</b></p>
+            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
+              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
+            <p> Expose des API REST </p>
+            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
             </aside>
           </section>
 
