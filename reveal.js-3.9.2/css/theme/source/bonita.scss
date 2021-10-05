@@ -14,14 +14,14 @@
 
 
 // Include theme-specific fonts
-@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@import url(../../lib/font/open-sans/source-sans-pro.css);
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #222;
+$backgroundColor: #0b4361; //Change for Bonita
 
 $mainColor: #fff;
-$headingColor: #fff;
+$headingColor: #15abe9;
 
 $mainFontSize: 35px; // Change for Bonita
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
@@ -30,8 +30,8 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
-$linkColor: #ff3030; // Change for Bonita
-$linkColorHover: #ff0000; // Change for Bonita
+$linkColor: #e31937; // Change for Bonita
+$linkColorHover: #e31937; // Change for Bonita
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
 $heading1Size: 2.5em;
@@ -41,7 +41,7 @@ $heading4Size: 1.0em;
 
 section.has-light-background {
 	&, h1, h2, h3, h4, h5, h6 {
-		color: #222;
+		color: #0b4361;
 	}
 }
 
