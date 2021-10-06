@@ -16,13 +16,11 @@ Le Bonita Camp se compose :
 * Les [corrections des exercices](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
 
 ## Prérequis
-1. [Téléchargez](https://fr.bonitasoft.com/telechargez) et installez la dernière version du Studio Bonita. Pour plus de détails référez vous à la [documentation officielle](https://documentation.bonitasoft.com/bonita//bonita-studio-download-installation)
-1. Validez le fonctionnement correct du Studio :
-   - Démarrez le Studio
-   - Cliquez sur le bouton **Portail** ![icône portail](images/portal-icon.png) de la barre d'outil du Studio : le portail devrait s'ouvrir dans votre navigateur web
-   - Cliquez sur le bouton **UI Designer** ![icône UI Designer](images/ui_designer_24x24.png) de la barre d'outil du Studio : l'UI Designer devrait s'ouvrir dans votre navigateur web
+1. [Téléchargez](https://fr.bonitasoft.com/telechargez) et installez la dernière version du Studio Bonita. Pour plus de détails référez vous à la [documentation officielle](https://documentation.bonitasoft.com/bonita/latest/bonita-studio-download-installation)
 1. Vous pouvez également optionnellement télécharger les corrections et les slides au format PDF depuis la [section "release" du projet GitHub bonita-camp](https://github.com/Bonitasoft-Community/bonita-camp/releases/latest)
-1. Il est recommandé d'utiliser Chrome ou Firefox lors du développement pour bénéficier de l'outillage de test de ces navigateurs. Internet Explorer 11, Edge et Safari sont également supportés (support partiel pour IE11). Afin de savoir quel navigateur est utilisé par défaut par le Studio, cliquez sur le bouton **Portail**. Le portail Bonita devrait s'ouvrir avec le navigateur par défaut de votre système d'exploitation. Vous pouvez configurer le Studio Bonita pour qu'il utilise un navigateur autre que celui par défaut :
+1. Téléchargez [Fake SMTP](http://nilhcem.github.io/FakeSMTP/downloads/fakeSMTP-latest.zip). Cette application va être utilisée pour simuler un serveur de mail.
+1. Il est recommandé d'utiliser Chrome ou Firefox lors du développement pour bénéficier de l'outillage de test de ces navigateurs. 
+   Edge et Safari sont également supportés (IE11 n'est plus supporté). Afin de savoir quel navigateur est utilisé par défaut par le Studio, cliquez sur le bouton **Lancer** ![icone lancer](images/icon-run.png). L'application utilisateur Bonita devrait s'ouvrir avec le navigateur par défaut de votre système d'exploitation. Vous pouvez configurer le Studio Bonita pour qu'il utilise un navigateur autre que celui par défaut :
    - Dans le Studio cliquez sur le bouton **Préférences** ![icône préférences](images/preferences.png)
    - Dans la section **Web** cliquez sur **Navigateur**
    - Cliquez sur le bouton **Nouveau...**
