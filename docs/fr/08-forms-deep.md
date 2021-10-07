@@ -4,7 +4,7 @@ title: Exercice 3 - Création de formulaires
 
 ## Objectif
 
-L'objectif de cet exercice est de fournir des formulaires simplifiés conviviaux et adaptés pour l'exécution du processus.
+L'objectif de cet exercice est de fournir des formulaires conviviaux et adaptés pour l'exécution du processus.
 
 ## Instructions résumées
 
@@ -58,6 +58,18 @@ Créer les formulaires suivants :
    Libellé | Nombre de jours
    Placeholder | Nombre de jours de congés
    Valeur minimum (à ne pas confondre avec la propriété **Longueur minimum de la valeur**) | 1
+   
+1. Supprimer les valeurs initiales des champs (cela permettra d'afficher les placeholders lors du rendu final) :
+   - Dans la partie inférieure de l'écran, sous l'onglet **Variables**, cliquer sur l'icône **Crayon** situé à droite de la ligne contenant la variable *formInput*
+   - Remplacer la valeur du JSON par ceci :
+   ```json
+   {
+     "demandeInput" : {
+       "dateDebut" : null,
+       "nombreJours" : null
+     }
+   }
+   ```
 
 1. Changer le widget **Button** *Submit* :
    - Sélectionner le widget *Submit*
@@ -99,7 +111,6 @@ Créer les formulaires suivants :
    - Cliquer sur le bouton **Créer une nouvelle variable** pour définir une variable avec les propriétés suivantes :
 
    ![propriétés variable demandeur](images/ex03/ex3_03.png)
-   > **Note :** vous pouvez utiliser les exemples qui vous permettent de récupérer automatiquement des modèles d'appels API. Ici on va récupérer `identity API` car on cherche les informations liées à un utilisateur.
 
 1. Modifier le titre du formulaire
    - Sélectionner le widget de type **Titre** situé en haut du formulaire
@@ -110,14 +121,39 @@ Créer les formulaires suivants :
    Texte | Valider une demande de congés
    Niveau du titre | Niveau 2
 
-1. Modifier le widget *Id demandeur* pour p`résenter le prénom et nom du demandeur :
-   - Changer la valeur du libellé du widget **Texte** et indiquer *Demandeur*
-   - Configurer le champ **Texte** avec les variables : `{{demandeur.firstname}} {{demandeur.lastname}}`
-     ![propriétés texte demandeur](images/ex03/ex3_04.png)
+1. Supprimer le widget *Id demandeur* et mettre à la place un widget pour présenter le prénom et nom du demandeur :
+   - Faire glisser un widget de type **Text**
+   - Configurer le widget comme ceci : `<b>Demandeur : </b>{{firstname}} {{lastname}}`
 
-1. Changer le widget **Button** *Submit* :
-   - Sélectionner le widget *Submit*
-   - Changer son libellé en *Soumettre*
+  ![propriétés texte demandeur](images/ex03/ex3_04.png)
+
+1. Ajouter un widget pour refuser la demande:
+   - Faire glisser un widget de type **Button** et l'ajouter dans le form container (zone délimitée par une ligne pointillée épaisse)
+   - Configurer le widget comme ceci :
+
+   Propriété | Valeur
+   --------- | ------
+   largeur | 6
+   Libellé | Refuser
+   Alignement | à droite
+   Style | danger
+   Données envoyées au clic | `{"demandeInput":{"estApprouvee":false}}`
+   Valeur de réponse en cas d'échec | `formOutput._submitError`
+   URL cible en cas de succès | `/bonita`
+
+1. Ajouter un widget pour approuver la demande
+   - Faire glisser un widget de type **Button** dans la zone "6 colonnes" à droite du bouton *Refuser*
+   - Configurer le widget comme ceci :
+
+   Propriété | Valeur
+   --------- | ------
+   Libellé | Approuver
+   Style | success
+   Données envoyées au clic | `{"demandeInput":{"estApprouvee":true}}`
+   Valeur de réponse en cas d'échec | `formOutput._submitError`
+   URL cible en cas de succès | `/bonita`
+
+1. Supprimer la case à cocher *Est Approuvee* et le bouton *Submit*
 
 1. Vérifier le formulaire :
    - S'assurer que le formulaire ressemble à ceci :

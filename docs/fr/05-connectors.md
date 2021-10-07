@@ -22,7 +22,6 @@ Le code ci-dessous sera utilisé pour récupérer l'email du demandeur dans le c
 ```groovy
 BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,processInstanceId).email
 ```
-
 ## Instructions pas à pas
 
 1. Mise en place de FakeSMTP :
@@ -33,47 +32,29 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
 
 1. Dupliquer le diagramme de processus de l'exercice précédent pour créer une version *3.1.0*
 
-1. Tester le connecteur d'envoi d'email pour obtenir la bonne configuration SMTP :
-   - Naviguer dans le menu **Développement / Connecteurs / Tester un connecteur...** de la barre supérieur du Studio
-   - Sélectionner un connecteur de type **Courriel** à partir du filtre ou depuis la catégorie **Communications**
+1. Ajouter un connecteur d'envoi d'email sur la tâche *Notifier approbation* :
+   - Sélectionner la tâche *Notifier approbation*
+   - Naviguer dans l'onglet **Exécution / Connecteurs en entrée**
+   - Cliquer sur **Ajouter\...**
+     Un avertissement  indique qu'aucun connecteur n'a été préalablement installé dans le projet et invite à le faire. 
+     
+     ![avertissement connecteur](images/ex05/ex5_00.png)
+     >**Note** : Les extensions peuvent être récupérées depuis le Bonita MarketPlace ou depuis des répertoires distants privés ou publiques. Si vous souhaitez aller plus loing, le développement et la gestion de ces extensions sont abordées dans un prochain exercice.
+   - Cliquer sur OK pour accéder au MarketPlace et sélectionner le connecteur **Email** dans la liste.  
+     ![MarketPlace](images/ex05/ex5_02.png)
+   - Cliquer sur **Installer**  
+   - Sélectionner la définition de connecteur de type **Courriel**
    - Cliquer sur le bouton **Suivant**
+   - Spécifier *envoiEmailApprobation* comme nom
+   - Passer à la page suivante
    - Remplir les paramètres de connexion suivants :
 
    Propriété | Valeur
    --------- | ------
    Hôte SMTP | *localhost*
    Port SMTP | *2525* (le port spécifié dans FakeSMTP)
-   SSL (sous l'onglet **Sécurité**) | décoché
+   SSL (sous l'onglet **Sécurité**) | décoché 
 
-   - Passer à la page suivante
-   - Entrer des emails (pas nécessairement existants) en tant que  destinataire et expéditeur
-   - Passer à la page suivante
-   - Entrer *Bonita test* comme sujet
-   - Cliquer le bouton **Test**
-   - Confirmer sans cocher de dépendance
-   - Un message similaire à celui ci-dessous devrait s'afficher, cliquer sur le bouton **OK** :
-   
-   ![message avertissement sortie non-sérialisable](images/ex05/ex5_00.png)
-   
-   - S'assurer que l'email est bien reçu par FakeSMTP comme illustré ci-dessous :
-   
-   ![Fake SMTP avec un message reçu](images/ex05/ex5_01.png)
-   
-   - Une fois la configuration validée, cliquer sur ![bouton enregistrer](images/ex05/ex5_02.png)
-   - Nommer la configuration *configEmail* et la sauvegarder
-   - Fermer l'interface de test du connecteur
-
-1. Ajouter un connecteur d'envoi d'email sur la tâche *Notifier approbation* :
-   - Sélectionner la tâche *Notifier approbation*
-   - Naviguer dans l'onglet **Exécution / Connecteurs en entrée**
-   - Cliquer sur **Ajouter\...**
-   - Sélectionner un connecteur de type **Courriel**
-   - Cliquer sur le bouton **Suivant**
-   - Spécifier *envoiEmailApprobation* comme nom
-   - Passer à la page suivante
-   - Ne pas remplir les paramètres de la page
-   - Cliquer sur ![bouton charger](images/ex05/ex5_03.png)
-   - Sélectionner la configuration *configEmail*
    - Passer à la page de configuration du destinataire
    - Entrer *rh@acme.com* comme adresse email dans le champ expéditeur **De**
    - Utiliser l'icône **crayon** pour éditer l'expression sur le champ destinataire **A**
