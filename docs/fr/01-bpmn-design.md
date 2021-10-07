@@ -29,11 +29,18 @@ Le pool du processus devra contenir les éléments BPMN suivants :
 ## Instructions pas à pas
 1. Démarrer le Studio Bonita
 1. Sur la page d'accueil du Studio, cliquer sur **Nouveau projet** dans le menu Concevoir
-1. Entrer le nom du projet *"DemandeConges"*
+1. Entrer le nom du projet *"DemandeConges"* et cliquer sur **Créer**
+
+> Note : Vous avez la possibilité de choisir dès la création du projet les extensions à intégrer. Cela peut être utile dans le cas d'un projet réel, mais dans notre exemple nous aborderons les extensions plus tard.
+   
 1. Créer un nouveau diagramme de processus 
+   - Soit depuis la vue générale du projet, en cliquant sur **Créer**
+     ![Creer diagramme](images/ex01/ex1_11.png)
+   - Soit depuis le menu
     ![Nouveau diagramme](images/ex01/ex1_10.png)
+     
 1. Spécifier le nom du diagramme et celui du processus :
-   - Cliquer sur le menu **Fichier / Renommer le diagramme...** en haut du Studio
+   - Cliquer à droite sur le nom du diagramme *MonDiagramme-1.0.proc* dans l'explorateur, **Renommer**
    - Entrer *DiagrammeDemandeConges* pour le nom du diagramme et *DemandeConges* pour celui du pool et *1.0.0* pour la version du diagramme et du pool  
    ![pop up de modification de nom et version de diagramme et pool](images/ex01/ex1_01.png)
 1. Renommer l'événement de démarrage en *Saisir demande* :

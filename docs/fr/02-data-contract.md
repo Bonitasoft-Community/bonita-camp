@@ -33,11 +33,6 @@ Déclarer une variable métier *demande* de type *DemandeConges* sur le pool.
 -   dateDebut
 -   nombreJours
 
-Ajouter les deux contraintes suivantes sur le contrat d'instanciation :
-
--   *dateDebut* doit être dans le futur
--   *nombreJours* doit être strictement supérieur à zéro
-
 Initialiser le BDM *demande* en utilisant la génération automatique à partir du contrat.
 
 Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec l'élément suivant :
@@ -47,10 +42,12 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
 ## Instructions pas à pas
 
 1. Dupliquer le diagramme de processus existant pour créer une version *2.0.0* :
-   - Dans le menu supérieur du Studio, cliquer sur **Fichier / Dupliquer le diagramme...**
+   - Dans l'explorateur du projet, faire un clic droit sur le diagramme et **Dupliquer**
    - Mettre à jour les numéros de version du diagramme ET du processus (pool)
 1. Créer le BDM *DemandeConges* :
-   - Naviguer dans le menu **Développement / Modèle de Données Métier / Définir...** L'éditeur de Modèle de données métier s'ouvre.
+   - Cliquer sur l'icône **Vue d'ensemble** ![overview](images/ex02/ex2_13.png) du projet. Cliquer sur **Créer** de la section *Modèle de Données Métier*.
+     
+     L'éditeur de Modèle de données métier s'ouvre.
    - Renommer l'objet initialisé par défaut **BusinessObject** dans la liste d'objets métiers en *DemandeConges* (A) (il s'agit d'un nom technique, il faut donc omettre les espaces, accents et autres caractères spéciaux)
    - Avec l'objet *DemandeConges* sélectionné, ajouter les attributs suivants (B) :
 
@@ -98,25 +95,6 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    
    ![contrat défini pour le démarrage du processus](images/ex02/ex2_04.png)
    
-   - Toujours dans l'onglet **Exécution / Contrat**, basculer dans l'onglet **Contraintes**
-   - Ajouter la contrainte suivante :
-
-   Propriété | Valeur
-   --------- | ------
-   Nom         | dateDebutDansFutur
-   Expression  | `demandeInput.dateDebut.isAfter(java.time.LocalDate.now())`
-   Message d'erreur | La date de début doit être dans le futur
-
-   - Ajouter une seconde contrainte :
-
-   Propriété | Valeur
-   --------- | ------
-   Nom         | auMoinsUnJour
-   Expression  | `demandeInput.nombreJours > 0`
-   Message d'erreur | Le nombre de jours doit être supérieur à zéro
-
-   ![définition de contraintes](images/ex02/ex2_05.png)
-   
 1. Modifier l'initialisation de la variable métier *demande* pour pouvoir récupérer l'initiateur de la nouvelle demande :
    - Sélectionner le pool du processus et naviguer dans l'onglet **Données / Variables du pool**
    - Sélectionner la variable *demande*
@@ -147,17 +125,16 @@ Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec 
    - Sélectionner la transition *Oui*
    - Naviguer dans l'onglet **Général / Général**
    - Cliquer sur l'icône crayon à côté du champ **Condition** pour ouvrir l'éditeur d'expression
-   - Dans l'éditeur d'expression, sélectionner **Java** comme type d'expression
-   - Sélectionner la variable *demande* et la méthode *isEstAprouvee*
+   - Dans l'éditeur d'expression, sélectionner **Variables métier/estApprouvee** et le glisser dans l'éditeur d'expression à la place de `true`
    
    ![utilisation de variable métier pour définir la condition d'une transition](images/ex02/ex2_07.png)
    
 1. Enregistrer le processus :
    - Cliquer sur le bouton **Enregistrer** de la barre de menu supérieur du Studio
-1. Exécuter le processus et tester les contraintes des contrats :
+1. Exécuter le processus :
    - Lancer le processus et remplir les formulaires automatiquement générés
 
-> ℹnformation :
+> ℹ Information :
 > - pour le champ *dateDebut*, le format de date attendu est AAAA-MM-JJ
 > - pour le champ *estApprouvee*, une valeur booléenne est attendue : soit `true` ou `false`
 
