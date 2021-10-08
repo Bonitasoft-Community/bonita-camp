@@ -161,4 +161,4 @@ Accéder à l'application nouvellement créer en utilisant l'URL unique génér�
    
     ![fenetre d'ouverture](images/ex06/ex6_18.png)
 
-Et voilà ! Vous avez terminé votre première itération, avec une application simple et fonctionnelle. Pour aller plus loin, suivez la deuxième partie des exercices.
+Et voilà ! Vous avez terminé votre première itération, avec une application simple et fonctionnelle. Pour aller plus loin, suivez la [deuxième partie](08.contract-deep.md) des exercices.
