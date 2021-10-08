@@ -100,23 +100,11 @@
             </section>
         </section>
 
-         <!-- Présentation avancée du projet Bonita  -->
+         <!-- Présentation de l'architecture Bonita et des API -->
         <section>
           <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Développer avec la solution Bonita</h2><img src="images/bonita-logo.png" /></div>
-            <!-- MAJ avec le nouveau messaging  -->
-
-            <p>Plateforme open-source et extensible pour l'automatisation et l'optimisation des processus d'entreprise</p>
-
-            <aside class="notes">
-            1:30<br /><br />
-
-            </aside>
-          </section>
-
-          <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Projet d'automatisation de processus Bonita</h2><img src="images/bonita-logo.png" /></div>
-            <p>Architecture 3-Tier</p>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Rappel Architecture 3-Tier</h2><img src="images/bonita-logo.png" /></div>
+            <p>Facilite la séparation des couches processus, données et interface utilisateur</p>
             <img class="stretch" src="images/3_tier_graphic_with_blue.png" alt="Bonita 3-tier architecture" />
 
             <aside class="notes">
@@ -143,30 +131,113 @@
             <p> Expose des API REST </p>
             <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
                             Portal uses the Bonita APIs as any client of the Engine
-
+              Community Java dependencies are stored on a Maven repository</li>
+		      <li>Easier to build a Bonita java client</li>
             </aside>
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>Les services Bonita</h2><img src="images/bonita-logo.png" /></div>
-            <img class="stretch" src="images/BonitaServices.png" alt="Bonita services" />
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>Les API Moteur Bonita</h2><img src="images/bonita-logo.png" /></div>
+              <ul>
+                <li>Unique moyen pour communiquer avec le moteur Bonita</li>
+                <li>Community edition: packages commencent par org.*</li>
+                <li>S'utilisent
+			      <ul>
+				      <li>Groovy scripts</li>
+				      <li>Connectors</li>
+				      <li>Rest Api Extensions</li>
+                      <li>Client java externe qui a besoin de communiquer avec le moteur</li>
+                  </ul></li>
+              </ul>
 
             <aside class="notes">
             1.30<br /><br />
-              Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
-              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
-              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
-              <p><b>Runtime : Tomcat + Bonita applications + Moteur Bonita + Base de données</b></p>
-            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
-              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
-            <p> Expose des API REST </p>
-            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
-                            Portal uses the Bonita APIs as any client of the Engine
+            </aside>
+          </section>
 
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>Les API les plus utilisées</h2><img src="images/bonita-logo.png" /></div>
+              <ul>
+		        <li>Login API: accéder au moteur</li>
+		        <li>ProcessAPI: traiter les actions liées au processus</li>
+		        <li>IdentityAPI: gérer l'organisation (utilisateurs/groupes/rôles)</li>
+		        <li>ProcessManagementAPI: déploiement de processus  et gestion des droits</li>
+	          </ul>
+              <p>Documentation détaillée : <a target="_blank" href="http://documentation.bonitasoft.com/bonita/latest/engine-architecture-overview">Bonita Engine architecture</a></p>
+	        <aside class="notes">
+	        </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>Les API REST</h2><img src="images/bonita-logo.png" /></div>
+            <p>Les API exposées sont
+              <ul>
+                <li>BPM REST API</li>
+                <li>BDM REST API</li>
+                <li>BDM REST Access Control (Enterprise)</li>
+              </ul>
+
+            <aside class="notes">
+            1.30<br /><br />
+            </aside>
+          </section>
+
+          <section>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>BPM REST API: utilisation</h2><img src="images/bonita-logo.png" /></div>
+	          <ul>
+		        <li>opérations sur le moteur Bonita à partir d'un langage autre que JAVA ou dans une application web en combinaison avec Ajax</li>
+                <li>Nombreux API disponibles (bpm, identity, system...)</li>
+                <li>4 opérations : GET, POST, PUT, DELETE</li>
+              </ul>
+	          <img src="images/restApiDiagram.PNG" />
+
+            <aside class="notes">
+            1.30<br /><br />
+              <ul>
+		<li>Several API are available (bpm, identity, system…)</li>
+		<li>Every API has a set of resources (i.e. for API identity: user, group, role, membership…)</li>
+		<li>Each resource can support a subset of 4 operations:
+			<ul>
+				<li>Get: retrieve a resource</li>
+				<li>Post: add a resource</li>
+				<li>Put: modify a resource</li>
+				<li>Delete: delete a resource</li>
+			</ul>
+                Switch to documentation to show the API
+            </aside>
+          </section>
+
+          <section>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin"><h2>BDM REST API: utilisation</h2><img src="images/bonita-logo.png" /></div>
+            <p>Récupérer de l'information sur un objet, sa structure, ses données</p>
+            <p>/!\ <i>l'API REST assure l'accès aux données, pas l'ajout ou la mise à jour</i> /!\</p>
+            <aside class="notes">
+            1.30<br / >
+              <p>Different use cases</p>
+	<ul>
+		<li>List your BOs</li>
+		<li>List your BOs applying filters</li>
+		<li>Access the BO variable of a case</li>
+		<li>Access the BO knowing its identifier</li>
+	</ul>
+	<p><i>REST APIs allow for accessing data, not for updating and adding</i></p>
+              <br />
+              <ul>
+		<li>Several API are available (bpm, identity, system…)</li>
+		<li>Every API has a set of resources (i.e. for API identity: user, group, role, membership…)</li>
+		<li>Each resource can support a subset of 4 operations:
+			<ul>
+				<li>Get: retrieve a resource</li>
+				<li>Post: add a resource</li>
+				<li>Put: modify a resource</li>
+				<li>Delete: delete a resource</li>
+			</ul>
+                Switch to documentation to show the API
             </aside>
           </section>
 
         </section>
+
 
         <!-- Présentation d'un projet Bonita et project composition  -->
         <section>
@@ -239,22 +310,31 @@
             </aside>
           </section>
 
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les itérations</h2><img src="images/diagram-icon.png" /></div>
+            <p>3 types d'itérations : </p>
+            <ul>Met le processus parent en attente</ul>
+              <li>Boucle standard</li>
+              <li>Multi-instanciation en parallèle</li>
+              <li>Multi-instanciation en séquence</li>
+
+            <aside class="notes">
+            1.30<br />
+              BPMN events - call activities<br>
+            </aside>
+          </section>
+
         </section>
 
         <!--La gestion des données-->
         <section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2>La donnée, du processus à l'interface utilisateur</h2><img src="images/bdm-icon.png" alt="model data" /></div>
-            <p>Le cycle de la donnée de l'initialisation à la mise à jour</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2>Le cycle de la donnée, rappel</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <img class="stretch" src="images/data-cycle-FR.png" alt="Data flow">
 
             <aside class="notes">
               2.30<br /><br />
-              When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
-              When user click on the submit button, a REST API call is performed to the Engine API to instrcut the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
-              Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
-              Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a businnes variable (this will perform an UPDATE SQL request on the business database)...
             </aside>
           </section>
 
@@ -262,8 +342,16 @@
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Le modèle de données métier (BDM)</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
               <li>2 modes de chargement : eager ou lazy</li>
-              <li>Persistence gérée par Bonita via librairies Hibernate et la base de données
+              	          <img src="images/restLazyVsEager.png"/>
+              <li>Persistence gérée par Bonita via librairies Hibernate et la base de données</li>
             </ul>
+            <table>
+              <tr>
+                <td><img src="images/employeeContactTable.png" /></td><td> <img src="images/jsonResponseEmployeeContact.png"/></td>
+              </tr>
+            </table>
+	          <p>API/bdm/businessData/com.training.model.Employee/{persistenceId}</p>
+
 
             <aside class="notes">
               Complex type with fields. Structured objects composed of: Java classes (Integer, Boolean, String, Date...) and other BDMs<br />
@@ -276,6 +364,7 @@
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Développer avec le modèle de données métier</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
+              <li>Les relations : composition et aggrégation</li>
               <li>Les contraintes d'unicité</li>
               <li>Les requêtes : par défaut ou spécifiques
               <li>Accessible par API REST si intégration avec une application tierce ou avec des pages</li>
@@ -319,9 +408,9 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 2</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 7</h2>
             </div>
-            <h4>Ajout de données et spécification de contrats</h4>
+            <h4>Ajout de contraintes aux contrats</h4>
             
             <aside class="notes">
               6<br /><br />
@@ -379,6 +468,35 @@
           </section>
 
           <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Développer une extension</h2><img src="images/filter-icon.png" alt="profiles" /></div>
+            <p>Utilisation des archétypes Maven (modèles)</p>
+            <p>Développement dans votre IDE</p>
+            <p>Stockage en local ou sur des répertoire distants :</p>
+            <ul>
+              <li>Maven public ou privé</li>
+              <li>Package GitHub</li>
+            </ul>
+            <aside class="notes">
+              Vous pouvez voir la video qui détaille les étapes de création<br />
+              [Studio &amp; Portal - change task actor to actor filter, run it]<br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Le cas particulier des extensions d'API REST</h2><img src="images/filter-icon.png" alt="profiles" /></div>
+            <p>Créées dans votre IDE et importées, ou développées depuis Bonita Studio</p>
+            <table>
+              <tr>
+                <td><img src="images/rest-api-ext-import.png" alt="develop rest api ext from IDE" /></td>
+                <td><img src="images/rest-api-ext-studio.png" alt="develop rest api ext from Studio" /></td>
+              </tr>
+            </table>
+
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Filtre d'acteurs - fonctionnement</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
             <p>Remplace complètement l'acteur</p>
             <p>Produit une liste d'utilisateurs en fonction d'informations en entrée et d'une logique interne</p>
@@ -428,20 +546,18 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Développer une extension</h2><img src="images/filter-icon.png" alt="profiles" /></div>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
+            </div>
+            <h4>Ajout d'un filtre d'acteur</h4>
 
             <aside class="notes">
-              Filters are executed only once when task starts. They can be run again with API call.<br />
-              [Studio &amp; Portal - change task actor to actor filter, run it]<br />
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Le cas particulier des extensions d'API REST</h2><img src="images/filter-icon.png" alt="profiles" /></div>
-            <p></p>
-
-            <aside class="notes">
-            </aside>
+              6<br /><br />
+              Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
+              [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
+              <br/>
+              15 - WAIT / ANSWER QUESTIONS<br />
+￼             </aside>
           </section>
         </section>
 
@@ -449,42 +565,14 @@
 
         <section>
           <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur: Formulaires</h2><img src="images/page-icon.png" alt="create ui" /></div>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur: composition</h2><img src="images/page-icon.png" alt="create ui" /></div>
             <ul>
-              <li>Associés aux tâches ou au processus</li>
-              <li>Initialisés automatiquement dans UI Designer à partir du contrat</li>
-              <li>Créés à base de conteneurs et de widgets</li>
-              <li>Basés sur AngularJS et Bootstrap</li>
-
+              <li>Formulaires, pages et fragments : la structure</li>
+              <li>Containers et widgets : le contenant</li>
+              <li>Variables, propriétés et assets : le comportement</li>
             </ul>
           </section>
 
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur : Formulaires</h2><img src="images/page-icon.png" alt="create ui" /></div>
-            <p>2 types de formulaires :</p>
-            <ul>
-              <li><b>Formulaires éditables</b> qui doivent remplir un contrat
-              <ul>
-                <li>Instanciation de processus</li>
-                <li>Tâches humaines (pas de formulaire sur les tâches de type service)</li>
-              </ul>
-              </li>
-              <li>
-                <b>Formulaire de synthèse</b> (lecture seule) défini au niveau du Pool
-              </li>
-            </ul>
-
-            <aside class="notes">
-              4<br /><br />
-              Use UID to create them. Also possible to use your own solution but not covered in Bonita Camp.<br />
-              Use standard web technologies: HTML5, JavaScript, Bootstrap, AngularJS. Support IE11 and all modern web browsers.<br />
-              Associated to: process (for instantiation and overview forms) or human task.<br />
-              Context (information available to the form) is different for an instantiation form (process definition information provide in the URL as id or name+version) and a task (process instance, task instance, context).<br />
-              Instantiation form and task form are used to display data and capture user inputs. When submitted they trigger instantiation or execution by calling the Engine<br />
-              [Studio - human task form, process instantiation form, case overview]<br />
-              [UID - open]
-            </aside>
-          </section>
 
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pages</h2><img src="images/icon-ui-EN.png" alt="create ui" /></div>
@@ -505,8 +593,9 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'interface utilisateur : conteneurs et widgets </h2><img src="images/page-icon.png" alt="create ui" /></div>
-            <p>Un ensemble de widgets est fourni par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Conteneurs et widgets </h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <p>Un ensemble de widgets et conteneurs par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
+            <p>Conteneurs utilisés pour grouper des widgets ou leur comportement</p>
             <p>Des widgets personnalisés peuvent être créés avec l'UI Designer</p>
             <p>Réutiliser les contributions partagées par la communauté</p>
 
@@ -552,9 +641,9 @@
 --->
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 3</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 9</h2>
             </div>
-            <h4>Création de formulaires</h4>
+            <h4>Enrichir l'application</h4>
 
             <aside class="notes">
               Build a form from scratch<br/>
