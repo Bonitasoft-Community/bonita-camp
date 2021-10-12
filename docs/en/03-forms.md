@@ -4,7 +4,7 @@ title: Exercise 3 - Creating forms
 
 ## Goal
 
-The goal of this exercise is to provide user friendly forms for the execution of the process.
+The goal of this exercise is to provide simplified but user friendly forms for the execution of the process.
 
 ## Instructions overview
 
@@ -24,6 +24,8 @@ Create the following forms:
    ![création d'un formulaire](images/ex03/ex3_01.png)
    
    - This will open the UI Designer in a browser with a form automatically generated from your instantiation contract
+     ![Form initialization in UID](images/ex03/ex3_02.png)
+     
 1. Rename the form:
    - Use the text field on top of the screen to rename the form from *newForm* to *fillLeaveRequest* (this is a technical name so it should not contain spaces or special characters)
    - Click on **Save**
@@ -51,21 +53,7 @@ Create the following forms:
    Property | Value
    -------- | -----
    Label | Number of days
-   Placeholder | Number of leave days
    Min value (not to be confused with the **Value min length** property) | 1
-   
-1. Clear the initial form values (this will show the placeholders at runtime)
-   - At the bottom of the screen, in **Variables** section, click on the **Pencil** icon for the *formInput* variable
-   - Replace the JSON values with this:
-
-   ```json
-   {
-     "requestInput" : {
-       "leaveStart" : null,
-       "dayCount" : null
-     }
-   }
-   ```
 
 1. Update the *Submit* widget
    - Select the *Submit* widget
@@ -103,7 +91,7 @@ Create the following forms:
    - Click on the **Create a new variable** button to declare a new variable with the following properties:
    
    ![requestor variable properties](images/ex03/ex3_03.png)
-
+   > **Note:** you can use the examples that allow you to automatically retrieve API call patterns. Here we will retrieve `identity API` because we are looking for information related to a user.
 
 1. Edit the form title:
    - Select the **Title** widget located at the top of the form
@@ -114,40 +102,16 @@ Create the following forms:
    Text | Validate leave request
    Title level | Level 2
 
-1. Delete the *Requestor id* widget and replace it with a widget to display requestor first and last names:
-   - Drag and drop a **Text** widget
-   - Configure the widget with the following settings:
+1. Modify the text widget *Requestor id* to display requestor first and last names:
+   - Change the label value to *Requestor*   
+   - Configure the widget with the following settings:`{{requestor.firstname}} {{requestor.lastname}}`
 
   ![properties widget text requestor](images/ex03/ex3_04.png)
 
-1. Add a widget to reject the request:
-   - Drag a **Button** widget from the palette and drop it in the form container (highlight with a dashed border)
-   - Configure the widget as following:
-
-   Property | Value
-   --------- | ------
-   Width | 6
-   Label | Reject
-   Alignment | right
-   Style | danger
-   Data sent on click | `{"requestInput":{"isApproved":false}}`
-   Failed response value | `formOutput._submitError`
-   Target URL on success | `/bonita`
-
-1. Modifiy the *Submit* widget to approve the request:
-   - Configure the widget as following:
-
-   Property | Value
-   --------- | ------
-   Label | Approve
-   Alignment | left
-   Style | success
-   Data sent on click | `{"requestInput":{"isApproved":true}}`
-   Failed response value | `formOutput._submitError`
-   Target URL on success | `/bonita`
-
-1. Remove the *Is Approved* checkbox
-      
+1. Modifiy the *Submit* widget:
+   - Select the widget
+   - Modify the label to *Validate*
+    
 1. Check the form's appearance
    - Make sure that the form looks like this in the editor:
    
@@ -157,6 +121,6 @@ Create the following forms:
    - Use the top **Save** button to save the form
 1. Test the process execution:
    - Run the process from the Studio and execute all of its steps
-   - Validate that the proper execution path was taken at the end of process execution by looking at the case history in the Bonita Portal
+   - Validate that the proper execution path was taken at the end of process execution by looking at the case history in the Bonita user application
    
 [Next exercise : actors configuration](04-actors.md)

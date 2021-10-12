@@ -110,7 +110,7 @@ Créer les formulaires suivants :
    Texte | Valider une demande de congés
    Niveau du titre | Niveau 2
 
-1. Modifier le widget *Id demandeur* pour p`résenter le prénom et nom du demandeur :
+1. Modifier le widget *Id demandeur* pour présenter le prénom et nom du demandeur :
    - Changer la valeur du libellé du widget **Texte** et indiquer *Demandeur*
    - Configurer le champ **Texte** avec les variables : `{{demandeur.firstname}} {{demandeur.lastname}}`
      ![propriétés texte demandeur](images/ex03/ex3_04.png)
