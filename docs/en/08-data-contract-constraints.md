@@ -33,6 +33,11 @@ Using the Studio assistant (i.e.: **Add from data...**), generate the case insta
 - leaveStart
 - dayCount
 
+Add these two constraints on the case instantiation contract:
+
+- *leaveStart* must be in the future
+- *dayCount* must be strictly greater than zero
+
 Initialize the *request* business variable using the auto-generation provided by the contract creation.
 
 Add a step contract on the *Validate request* task use the Studio assistant with the following attribute:
@@ -42,11 +47,10 @@ Add a step contract on the *Validate request* task use the Studio assistant with
 ## Step by step instructions
 
 1. Duplicate the process diagram from the previous exercise to create a *2.0.0* version:
-   - In the project explorer, right click on the diagram and **Duplicate**
+   - In the Studio's top menu, click on **File / Duplicate diagram...**
    - Update the process diagram AND pool version numbers
 1. Create the *LeaveRequest* BDM:
-   - Click on the icon **project overview** ![overview](images/ex02/ex2_13.png). Click on **Create** in the *Business Data Model* section. 
-   The Business Data Model editor opens.
+   - Navigate to the **Development / Business Data Model / Define...** top menu. The Business Data Model editor opens.
    - Rename the default initialized object **BusinessObject** in the list of business objects to *LeaveRequest* (A) (this is a technical name so spaces, accents and other special characters should be omitted)
    - After *LeaveRequest* object is selected, add the following attributes (B) :
 
@@ -92,6 +96,25 @@ Add a step contract on the *Validate request* task use the Studio assistant with
    - Click on **Finish** (not on **Finish & Add**) and dismiss the warning message about the incomplete initialization of the business variable
    
    ![Process instantiation contract](images/ex02/ex2_04.png)
+   
+   - Still in the **Execution / Contract** tab, switch to the **Constraints** tab
+   - Add the following constraint:
+
+   Property | Value
+   -------- | -----
+   Name | leaveStartIsFuture
+   Expression | `requestInput.leaveStart.isAfter(java.time.LocalDate.now())`
+   Error message | Leave start must be in the future
+   
+   - Add a second constraint:
+   
+   Property | Value
+   -------- | -----
+   Name | atLeastOneDay
+   Expression | `requestInput.dayCount > 0`
+   Error message | Day count must be greater than zero
+   
+   ![Constraints definition](images/ex02/ex2_05.png)
 
 1. Update the *request* business variable initialization to be able to retrieve the requestor id of the new request:
    - Select the process pool, and navigate to the **Data / Pool variables** tab
@@ -128,7 +151,8 @@ Add a step contract on the *Validate request* task use the Studio assistant with
    - Select the transition *Yes*
    - Navigate to the **General / General** tab
    - Click on the pencil icon next to the **Condition** drop-down to open the expression editor
-   - In the expression editor, select **Business Variables/isApproved** and drag it to the whiteboard to replace `true`
+   - In the expression editor, select **Java** as the expression type
+   - Select the *request* variable and the *isIsApproved* method
    
    ![Usage of business variable attribute to define transition condition](images/ex02/ex2_07.png)
    

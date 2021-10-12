@@ -33,7 +33,7 @@ Déclarer une variable métier *demande* de type *DemandeConges* sur le pool.
 -   dateDebut
 -   nombreJours
 
-Initialiser le BDM *demande* en utilisant la génération automatique à partir du contrat.
+Initialiser la variable métier *demande* en utilisant la génération automatique à partir du contrat.
 
 Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec l'élément suivant :
 

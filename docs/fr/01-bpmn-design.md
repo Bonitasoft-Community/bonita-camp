@@ -34,7 +34,7 @@ Le pool du processus devra contenir les éléments BPMN suivants :
 > Note : Vous avez la possibilité de choisir dès la création du projet les extensions à intégrer. Cela peut être utile dans le cas d'un projet réel, mais dans notre exemple nous aborderons les extensions plus tard.
    
 1. Créer un nouveau diagramme de processus 
-   - Soit depuis la vue générale du projet, en cliquant sur **Créer**
+   - Soit depuis la vue générale du projet, en cliquant sur **Créer** dans la section *Diagramme de processus*
      ![Creer diagramme](images/ex01/ex1_11.png)
    - Soit depuis le menu
     ![Nouveau diagramme](images/ex01/ex1_10.png)
@@ -88,7 +88,7 @@ Le pool du processus devra contenir les éléments BPMN suivants :
    - Cliquer sur le bouton ![bouton lancer](images/ex01/ex1_08.png) de la barre de menu supérieur du Studio (si le bouton est désactivé, assurez vous que le pool est bien sélectionné)
    - Votre navigateur devrait s'ouvrir et présenter un formulaire d'instanciation automatiquement généré
    - Soumettre le formulaire
-   - Vous devriez être redirigé vers la boîte de réception de tâches du Portail Bonita
+   - Vous devriez être redirigé vers la boîte de réception de tâches de l'application utilisateur Bonita
    - Sélectionner la tâche *Valider demande*
    - Cliquer sur **Prendre** en haut à droite de l'écran  
    ![s'affecter une tâche](images/ex01/ex1_09.png)
