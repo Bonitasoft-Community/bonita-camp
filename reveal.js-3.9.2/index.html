@@ -114,10 +114,9 @@
 
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita Runtime</h2><img src="images/bonita-logo.png" /></div>
-            <!-- Remplacer par le schéma de description de l'architecture -->
+              <p>Available on premise or in the cloud</p>
               <p>Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> + Bonita applications + Bonita Engine + Database</p>
-              <p>Package Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> or Docker image<img class="no-margin" src="images/docker.png" alt="docker-logo"/> to simplify the installation of the server </p>
-            <img class="stretch" src="images/architectureNew.png" alt="Bonita architecture" />
+              <p>Package Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> or Docker image<img class="no-margin" src="images/docker.png" alt="docker-logo"/> to simplify the installation of the server</p>
 
             <aside class="notes">
             1.30<br /><br />
@@ -135,6 +134,25 @@
             </aside>
           </section>
 
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita Runtime</h2><img src="images/bonita-logo.png" /></div>
+          <!-- Remplacer par le schéma de description de l'architecture -->
+          <img class="stretch" src="images/architectureNew.png" alt="Bonita architecture" />
+
+          <aside class="notes">
+            1.30<br /><br />
+
+            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
+              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
+            <p> Expose des API REST </p>
+            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
+            Portal uses the Bonita APIs as any client of the Engine
+            Community Java dependencies are stored on a Maven repository</li>
+            connecté à un serveur de base de données transactionnel avec connecteur JDBC - 2 bases - moteur + business
+            Support de PostGreSQL, MySQL, MsSQL, Oracle
+            <li>Easier to build a Bonita java client</li>
+          </aside>
+        </section>
         <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">API Bonita Engine</h2><img src="images/api-logo.png" /></div>
               <ul>
@@ -150,43 +168,32 @@
               </ul>
 
             <aside class="notes">
-            1.30<br /><br />
+            1.30<br />
+              2 ways to communicate with Bonita Engine JAVA directly and REST from front-end<br />
+              Show JAVADOC
             </aside>
           </section>
 
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Most used engine APIs</h2><img src="images/api-logo-dark.png" /></div>
               <ul>
-		        <li>Login API: accéder au moteur</li>
-		        <li>ProcessAPI: traiter les actions liées au processus</li>
-		        <li>IdentityAPI: gérer l'organisation (utilisateurs/groupes/rôles)</li>
-		        <li>ProcessManagementAPI: déploiement de processus  et gestion des droits</li>
+		        <li>Login API: access to Bonita engine</li>
+		        <li>ProcessAPI: actions linked to the process</li>
+		        <li>IdentityAPI: manage the organization (users, groups, roles)</li>
 	          </ul>
-              <p>Documentation détaillée : <a target="_blank" href="http://documentation.bonitasoft.com/bonita/latest/engine-architecture-overview">Bonita Engine architecture</a></p>
+              <p>Documentation: <a target="_blank" href="http://documentation.bonitasoft.com/bonita/latest/engine-architecture-overview">Bonita Engine architecture</a></p>
 	        <aside class="notes">
 	        </aside>
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita REST API</h2><img src="images/api-logo-dark.png" /></div>
-            <p>Rendered APIs are:
-              <ul>
-                <li>BPM REST API</li>
-                <li>BDM REST API</li>
-                <li>BDM REST Access Control (Enterprise)</li>
-              </ul>
-
-            <aside class="notes">
-            1.30<br /><br />
-            </aside>
-          </section>
-
-          <section>
-	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">BPM REST API: usage</h2><img src="images/api-logo-dark.png" /></div>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita REST API</h2><img src="images/api-logo-dark.png" /></div>
 	          <ul>
 		        <li>operations on Bonita Engine from a language other than JAVA or in a web application in combination with Ajax</li>
-                <li>Many APIs available (bpm, identity, system...)</li>
+                <li>Many APIs available (bpm, bdm, identity, system...)</li>
                 <li>4 operations: GET, POST, PUT, DELETE</li>
+                <li>includes BDM REST Access Control (Enterprise)</li>
+
               </ul>
 	          <img src="images/restApiDiagram.PNG" />
 
@@ -225,6 +232,7 @@
 		        <li>Access the BO knowing its identifier</li>
 	          </ul>
 	          <p><i>REST APIs allow for accessing data, not for updating and adding</i></p>
+              Actions on the data (CRUD operations) have to be done via processes
               <br />
                 Switch to documentation to show the API
             </aside>
@@ -356,36 +364,16 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Business data model (BDM)</h2><img src="images/bdm-icon.png" alt="model data" /></div>
-            <ul>
-              <li>2 ways of loading data: eager or lazy</li>
-              	          <img src="images/restLazyVsEager.png"/>
-              <li>Persistence managed by Bonita Engine via Hibernate libraries and the database</li>
-            </ul>
-            <table>
-              <tr>
-                <td><img src="images/employeeContactTable.png" /></td><td> <img src="images/jsonResponseEmployeeContact.png"/></td>
-              </tr>
-            </table>
-	          <p>API/bdm/businessData/com.training.model.Employee/{persistenceId}</p>
-
-
-            <aside class="notes">
-              Complex type with fields. Structured objects composed of: Java classes (Integer, Boolean, String, Date...) and other BDMs<br />
-              Java POJO generated out of the model.<br />
-              Stored in a dedicated database with automatic administration (tables creation, updates...).<br />
-              Persistence handle by Bonita using Hibernate library and the database.<br />
-              Transactional database storage guarantees that data is safely kept in case of server shut down (expected or not).
-            </aside>
-          </section>
-          <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop with Bonita BDM</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
               <li>Relations : composition and aggregation</li>
-              <li>Unicity constraints</li>
-              <li>Queries: by défaut or custom
+              <li>Unique constraints</li>
+              <li>Queries: by défaut or custom</li>
+              <li>Indexes</li>
               <li>Accessible by REST API if integrated with a third party application or with pages</li>
             </ul>
+            <p>Persistence managed by Bonita Engine via Hibernate libraries and the database</p>
+
             <p>Never read or write directly from the BDM database but use the APIs</p>
             <aside class="notes">
               Business variable used BDM definition to define the type of the variable.<br />
@@ -396,6 +384,29 @@
               [Studio - show data in the process to execute the flow]
             </aside>
           </section>
+
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop with Bonita BDM</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+          <ul>
+            <li>2 ways of loading data: eager or lazy</li>
+            <img src="images/restLazyVsEager.png"/>
+          </ul>
+          <table>
+            <tr>
+              <td><img src="images/employeeContactTable.png" /></td><td> <img src="images/jsonResponseEmployeeContact.png"/></td>
+            </tr>
+          </table>
+          <p>API/bdm/businessData/com.training.model.Employee/{persistenceId}</p>
+
+
+          <aside class="notes">
+            Complex type with fields. Structured objects composed of: Java classes (Integer, Boolean, String, Date...) and other BDMs<br />
+            Java POJO generated out of the model.<br />
+            Stored in a dedicated database with automatic administration (tables creation, updates...).<br />
+            Persistence handle by Bonita using Hibernate library and the database.<br />
+            Transactional database storage guarantees that data is safely kept in case of server shut down (expected or not).
+          </aside>
+        </section>
 
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Constraints of the contract</h2><img src="images/bdm-icon.png" alt="model data" /></div>
@@ -462,7 +473,7 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 7</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
             </div>
             <h4>Add constraints to a contract</h4>
 
@@ -591,7 +602,7 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 9</h2>
             </div>
             <h4>Add an actor filter</h4>
 
@@ -670,7 +681,7 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 9</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 10</h2>
             </div>
             <h4>Enrich the application</h4>
             <aside class="notes">
