@@ -271,12 +271,6 @@
           <section>
             <h2>Bonita Runtime: the production environment</h2>
             <!-- Remplacer par le schéma de description de l'architecture -->
-
-            <p> Requires : </p>
-             <ul>
-              <li>A Java EE application server</li>
-              <li>A JDBC compliant transactional database</li>
-             </ul>
             <img class="stretch" src="images/architectureNew.png" alt="Bonita architecture" />
 
             <aside class="notes">
@@ -306,6 +300,41 @@
             <aside class="notes">
               30<br /><br />
             </aside>
+          </section>
+
+          <!-- introduction to a Bonita project  -->
+          <section>
+           <h2>Implementation cycle of a DPA project</h2>
+           <img class="stretch" src="images/project-lifecycle.png" alt="cycle projet Bonita"" />
+
+            <aside class="notes">
+            1.30<br /><br />
+              Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
+            </aside>
+
+          </section>
+
+          <section>
+           <h2>The first iteration</h2>
+           <img class="stretch" src="images/project-lifecycle-2.png" alt="cycle projet Bonita"" />
+
+            <aside class="notes">
+            1.30<br /><br />
+              Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Start the project: overview</h2><img src="images/project-icon.png" /></div>
+            <ul>
+              <li>A Bonita project is based on <img width="130px" src="images/maven.png" /></li>
+              <li>Direct access to the overview of the project</li>
+            <img class="stretch" src="images/project-overview.png" alt="Bonita project overview" />
+            </ul>
           </section>
         </section>
 
@@ -740,11 +769,6 @@
               [Studio - show the descriptor and deploy it]<br />
               [Portal - show edition of the deployed application with new version of the dashboard page, menus, etc.]
             </aside>
-          </section>
-
-          <section>
-            <h2>Interfaces between application's artefacts</h2>
-            <img class="stretch" src="images/graph-dependencies-EN.png" alt="Artefacts of an application">
           </section>
 
           <section>
