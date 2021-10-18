@@ -33,11 +33,6 @@ Usando el asistente de Bonita Studio (es decir, **Añadir a partir de datos ...*
         fechaInicio
         numeroDias
 
-Agrega las siguientes dos restricciones en el contrato de instanciación:
-
-- *fechaInicio* debe estar en el futuro
-- *numeroDias* debe ser estrictamente mayor que cero
-
 Inicializa la BDM *solicitud* utilizando la generación automática del contrato.
 
 Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el siguiente elemento:
@@ -47,10 +42,11 @@ Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el
 ## Instrucciones paso a paso
 
 1. Duplica el diagrama de proceso existente para crear una versión *2.0.0*:
-   - En el menú superior de Studio, haz clic en **Archivo / Duplicar diagrama ...**
+   - En el explorador del proyecto, haz clic derecha en el diagrama y  **Duplicar**
    - Actualiza los números de versión del proceso Y diagrama (pool)
 1. Crea la BDM *SolicitudVacaciones*:
-   - Navega en el menú **Desarrollo / Modelo de datos de negocio / Definir ...**
+   - Haz clic en el icono **Vista global** ![overview](images/ex02/ex2_13.png). Haz clic en **Crear** en la sección *Modelo de datos de la empresa*. 
+   El editor del modelo de datos de negocio aparece.   
    - Cambia el nombre del objeto initializado por defecto **BusinessObject** en la lista de objetos de negocio a *SolicitudVacaciones* (A) (este es un nombre técnico, por lo que debes omitir espacios, acentos y otros caracteres especiales)
    - Con el objeto *SolicitudVacaciones* seleccionado, agrega los siguientes atributos (B):
 
@@ -98,31 +94,11 @@ Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el
    - Haz clic en **Finalizar** (no en **Finalizar y Añadir**) e ignora los mensajes de advertencia sobre la inicialización parcial de la variable de negocio
     ![contrato definido para iniciar el proceso](images/ex02/ex2_04.png)
    
-   - Siguiendo en la pestaña **Ejecución / Contrato**, cambia a la pestaña **Restricciones**
-   - Agrega la siguiente restricción:
-  
-    Propiedad | Valor
-    --------- | ------
-    Nombre    | fechaInicioEnFuturo
-    Expresión | `solicitudInput.fechaInicio.isAfter(java.time.LocalDate.now())`
-    Mensaje de error| La fecha de inicio debe ser en el futuro
-
-   - Agrega una segunda restricción:
-  
-    Propiedad | Valor
-    -------- | ------
-    Nombre | alMenosUnDía
-    Expresión | `solicitudInput.numeroDias>0`
-    Mensaje de error | El número de días debe ser mayor que cero.
-
-   ![definición de restricciones](images/ex02/ex2_05.png)
-   
-1. Modifica la inicialización de la variable de negocio *solicitud*:
+1. Modifica la inicialización de la variable de negocio *solicitud* para poder recuperar el identificador del solicitante de la nueva petición:
    - Selecciona el pool de procesos y navega a la pestaña **Datos / Variables de proceso**
    - Selecciona la variable *solicitud*
    - Haz clic en **Editar ...**
    - Haz clic en el icono de **lápiz** asociado con el campo **Valor predeterminado** para abrir el editor de expresiones de script.  
-   
    Ya se inicializó el script.
    Ahora queremos recuperar la Id del solicitante arrancando la instancia de proceso actual.
    
@@ -157,14 +133,13 @@ Agrega un contrato en el paso *Validar solicitud* utilizando el asistente con el
     - Selecciona la transición *Sí*
     - Navega en la pestaña **General / General**
     - Haz clic en el ícono de lápiz junto al campo **Condición** para abrir el editor de expresiones
-    - En el editor de expresiones, selecciona **Java** como tipo de expresión
-    - Selecciona la variable *solicitud* y el método *isEstaAprobado*
+    - En el editor de expresiones, selecciona **Variables de negocio/estaAprobado** y arrastrarlo a la pizarra para sustituir a `true`.
    
    ![uso de la variable de negocio para definir la condición de una transición](images/ex02/ex2_07.png)
    
 1. Guarda el proceso:
     - Haz clic en el botón **Guardar** en la barra de menú superior de Bonita Studio
-1. Ejecuta el proceso y prueba las restricciones de los contratos:
+1. Ejecuta el proceso:
     - Inicia el proceso y completa los formularios generados automáticamente
 
 > Información:
