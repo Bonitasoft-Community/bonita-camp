@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Bonita Camp</title>
+
+    <meta name="description" content="Introduction to Bonita and how to create a first process based application" />
+    <meta name="author" content="Delphine Coille" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/bonita.css" id="theme" />
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+
+        <section>
+          <section>
+          <div>
+            <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo"/>
+          </div>
+          <div>
+            <h4>DAY 2</h4>
+            <h4>Delphine Coille</h4>
+          </div>
+
+          <aside class="notes">
+            1<br /><br />
+            Welcome<br />
+            Introduction of myself<br />
+            Goal of the session : creation of 1st process and application using Community Edition only<br />
+            How : Mix of theoretical presentation and practical exercises and help through Discord dedicated channel #during and after the session<br />
+            Interactivity through regular polls, we can have breaks and interact in the "coffee" channel, and if some of you want to stay for some time after the camp, we can have a drink together<br />
+            Community forum<br />
+            Quick Presentation of Bonita<br />
+            Community vs Enterprise editions (Support, access to professional services &amp; additional features)<br />
+            Contact form bonitasoft.com if you need more information about Enterprise Edition<br />
+            Make sure that you are watching the latest version of Bonita Camp either from Bonitasoft website or from YouTube and that you are using the latest version of Bonita.<br />
+            If you've already watched a previous edition of Bonita Camp you should probably watch video dedicated to what's new in latest release instead of watching this video.<br />
+          </aside>
+          </section>
+
+          <section>
+          <h2>Agenda - reminder</h2>
+          <p>Day 1 - Create a first application</p>
+            <ul class="agenda">
+              <li>Bonita solution and Bonita components</li>
+              <li>Start a project with Bonita</li>
+              <li>Introduction to BPMN 2.0</li>
+              <li>Introduction to data management</li>
+              <li>User interface: forms</li>
+              <li>Users managements (Actors)</li>
+              <li>Connectors</li>
+              <li>Introduction to applications</li>
+            </ul>
+            </section>
+
+            <section>
+           <h2>Agenda - reminder</h2>
+            <p>Day 2 - To go further in the development with Bonita</p>
+            <ul class=agenda">
+              <li>Architecture of Bonita platform</li>
+              <li>Process design and automation</li>
+              <li>Advanced data management
+              <li>Extensions</li>
+              <li>User interface</li>
+              <li>Deployment</li>
+             </ul>
+            <aside class="notes">
+            1<br /><br />
+            4:00h of time split into 2 sessions to let you practice
+            </aside>
+            </section>
+          </section>
+
+        <!-- Bonita architecture and APIs -->
+
+        <section>
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">3-Tier architecture</h2><img src="images/bonita-logo.png" /></div>
+            <p>Helps separate the process, data and user interface layers</p>
+            <img class="stretch" src="images/3_tier_graphic_with_blue.png" alt="Bonita 3-tier architecture" />
+
+            <aside class="notes">
+            Expliquer l'intérêt de la séparation des couches<br />
+
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita Runtime</h2><img src="images/bonita-logo.png" /></div>
+              <p>Available on premise or in the cloud</p>
+              <p>Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> + Bonita applications + Bonita Engine + Database</p>
+              <p>Package Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> or Docker image<img class="no-margin" src="images/docker.png" alt="docker-logo"/> to simplify the installation of the server</p>
+
+            <aside class="notes">
+            1.30<br /><br />
+              Todas las interacciones con el Motor se gestionan con las API REST de Bonita. <br/>
+              Las imágenes de paquete (Tomcat) y Docker están disponibles para simplificar la instalación del servidor <br />
+              La edición Enterprise proporciona características para manejar la implementación y el mantenimiento en la nube (AWS u otro)
+              <p><b>Runtime : Tomcat + Bonita applications + Moteur Bonita + Base de données</b></p>
+            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
+              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
+            <p> Expose des API REST </p>
+            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
+                            Portal uses the Bonita APIs as any client of the Engine
+              Community Java dependencies are stored on a Maven repository</li>
+		      <li>Easier to build a Bonita java client</li>
+            </aside>
+          </section>
+
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita Runtime</h2><img src="images/bonita-logo.png" /></div>
+          <!-- Remplacer par le schéma de description de l'architecture -->
+          <img class="stretch" src="images/architectureNew.png" alt="Bonita architecture" />
+
+          <aside class="notes">
+            1.30<br /><br />
+
+            <p>Moteur responsable de l'exécution des processus (sans interface graphique) <br>
+              Offre un certain nombre de services (BPM, IM, Authentification, événements, etc)</p>
+            <p> Expose des API REST </p>
+            <p> Basé sur Java SE et encapsulé avec les applications dans une app web Java </p>
+            Portal uses the Bonita APIs as any client of the Engine
+            Community Java dependencies are stored on a Maven repository</li>
+            connecté à un serveur de base de données transactionnel avec connecteur JDBC - 2 bases - moteur + business
+            Support de PostGreSQL, MySQL, MsSQL, Oracle
+            <li>Easier to build a Bonita java client</li>
+          </aside>
+        </section>
+        <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">API Bonita Engine</h2><img src="images/api-logo.png" /></div>
+              <ul>
+                <li>Unique way to communicate with the Bonita engine (JAVA)</li>
+                <li>Community edition: packages start with <b>org.*</b></li>
+                <li>Used with
+			      <ul>
+				      <li>Groovy scripts</li>
+				      <li>Connectors</li>
+				      <li>Rest Api Extensions</li>
+                      <li>External java client to communicate with the engine</li>
+                  </ul></li>
+              </ul>
+
+            <aside class="notes">
+            1.30<br />
+              2 ways to communicate with Bonita Engine JAVA directly and REST from front-end<br />
+              Show JAVADOC
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Most used engine APIs</h2><img src="images/api-logo-dark.png" /></div>
+              <ul>
+		        <li>Login API: access to Bonita engine</li>
+		        <li>ProcessAPI: actions linked to the process</li>
+		        <li>IdentityAPI: manage the organization (users, groups, roles)</li>
+	          </ul>
+              <p>Documentation: <a target="_blank" href="http://documentation.bonitasoft.com/bonita/latest/engine-architecture-overview">Bonita Engine architecture</a></p>
+	        <aside class="notes">
+	        </aside>
+          </section>
+
+          <section>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita REST API</h2><img src="images/api-logo-dark.png" /></div>
+	          <ul>
+		        <li>operations on Bonita Engine from a language other than JAVA or in a web application in combination with Ajax</li>
+                <li>Many APIs available (bpm, bdm, identity, system...)</li>
+                <li>4 operations: GET, POST, PUT, DELETE</li>
+                <li>includes BDM REST Access Control (Enterprise)</li>
+
+              </ul>
+	          <img src="images/restApiDiagram.PNG" />
+
+            <aside class="notes">
+            1.30<br /><br />
+              <ul>
+		<li>Several API are available (bpm, identity, system…)</li>
+		<li>Every API has a set of resources (i.e. for API identity: user, group, role, membership…)</li>
+		<li>Each resource can support a subset of 4 operations:
+        </li>
+              </ul>
+			<ul>
+				<li>Get: retrieve a resource</li>
+				<li>Post: add a resource</li>
+				<li>Put: modify a resource</li>
+				<li>Delete: delete a resource</li>
+			</ul>
+                Switch to documentation to show the API
+
+          <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">BDM REST API: usage</h2><img src="images/api-logo-dark.png" /></div>
+            <p>Retrieve information about an object, its structure, its data</p>
+            <p>/!\ <i>the REST API provides data access, not addition or update</i> /!\</p>
+
+            <aside class="notes">
+            1.30<br />
+              <p>Different use cases</p>
+              <ul>
+		        <li>List your BOs</li>
+		        <li>List your BOs applying filters</li>
+		        <li>Access the BO variable of a case</li>
+		        <li>Access the BO knowing its identifier</li>
+	          </ul>
+	          <p><i>REST APIs allow for accessing data, not for updating and adding</i></p>
+              Actions on the data (CRUD operations) have to be done via processes
+              <br />
+                Switch to documentation to show the API
+            </aside>
+          </section>
+        </section>
+
+        <!-- Introduction to project composition  -->
+
+        <section>
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Project composition in Bonita Studio</h2><img src="images/diagram-icon.png" /></div>
+            <p>A Bonita project is a <img width="130px" src="images/maven.png" /> project with:</p>
+            <ul>
+              <li>Name, version, description</li>
+              <li>Maven IDs : groupID, artifactID</li>
+            </ul>
+              <p>Projects are integrated into a local or remote workspace</p>
+              <p>Automatic recovery of dependencies</p>
+
+            <aside class="notes">
+            1.30<br />
+              Maven permet de structurer les projets Java avec une meilleure gestion des dépendances<br />
+              Version et Group ID sont prérenplis, l'artifact ID (nom du .jar) a le nom du projet par simplicité
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Collaboration on the project</h2><img src="images/project-icon.png" /></div>
+            <p>Projects can be shared using SVN or Git <img width="40px" src="images/github.png" /> from Bonita Studio</p>
+            <img class="stretch" src="images/git.png" alt="Git" />
+
+            <aside class="notes">
+            1.30<br />
+              Montrer ce qu'on peut faire avec git en terme de collaboration<br>
+            </aside>
+          </section>
+        </section>
+
+        <!--Process design et automatisation-->
+
+        <section>
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Automate processes: events</h2><img src="images/diagram-icon.png" /></div>
+            <p>Occur throughout the process</p>
+            <p>Asynchronous
+            <img src="images/events-overview.png" alt="Bonita events overview" />
+            <p>Boundary event: triggers an alternative path</p>
+
+            <aside class="notes">
+            1.30<br />
+              Asynchrones
+              BPMN events - call activities
+              Give the example of the timer - interruptive and non interruptive
+              <br>
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Call activities and sub-processes</h2><img src="images/diagram-icon.png" /></div>
+            <p>Trigger a sub-process</p>
+            <p>Parent process put on hold</p>
+            <img class="stretch" src="images/callActivity.png" alt="call activity" />
+
+            <aside class="notes">
+            1.30<br />
+              BPMN events - call activities<br>
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Call activities and sub-processes</h2><img src="images/diagram-icon.png" /></div>
+            <p>Data mapping</p>
+            <img class="stretch" src="images/call_activity_data_mapping.png" alt="call activity data mapping" />
+
+            <aside class="notes">
+            1.30<br />
+              BPMN events - call activities<br>
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Iterations</h2><img src="images/diagram-icon.png" /></div>
+            <p>3 types of iterations : </p>
+            <ul>
+              <li>Standard loop</li>
+              <li>Parallel multi-instanciation</li>
+              <li>Sequential multi-instanciation</li>
+            </ul>
+
+            <aside class="notes">
+            1.30<br />
+              BPMN events - call activities<br>
+            </aside>
+          </section>
+
+
+          <section>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 7</h2>
+            </div>
+            <h4>Adding a timer to a process</h4>
+
+            <aside class="notes">
+              2.00<br /><br />
+              Sum up the content of the exercise: build a basic but running leave request process for a company<br />
+              Exercise correction resources are available: one BOS file per exercise<br />
+              Useful because exercises are iterations on the same process<br />
+              [Studio - save button, export, import, conflict, reset view]<br />
+              [Portal - Administrator view with graphical monitoring (Enterprise Edition)]
+
+              <br /><br />
+              5<br /><br />
+              [Studio - run a case of exercise 1, process instantiation form, assign/execute task from task list page, administrator perspective to see archived case]<br />
+              [Studio - edit the condition to false, run another case and show other task]
+            </aside>
+          </section>
+        </section>
+
+        <!-- Advanced data management -->
+
+        <section>
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2>Business datacycle - reminder</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <img class="stretch" src="images/data-cycle-EN.png" alt="Data flow">
+
+            <aside class="notes">
+              2.30<br /><br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop with Bonita BDM</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <ul>
+              <li>Relations : composition and aggregation</li>
+              <li>Unique constraints</li>
+              <li>Queries: by défaut or custom</li>
+              <li>Indexes</li>
+              <li>Accessible by REST API if integrated with a third party application or with pages</li>
+            </ul>
+            <p>Persistence managed by Bonita Engine via Hibernate libraries and the database</p>
+
+            <p>Never read or write directly from the BDM database but use the APIs</p>
+            <aside class="notes">
+              Business variable used BDM definition to define the type of the variable.<br />
+              Several solutions exist to Create (INSERT) / Read (SELECT) / Update (UPDATE) / Delete (DELETE).<br />
+              Business variables lifecycle is independent of the lifecycle of process instance. The data can be updated by several processes.<br />
+              Accessible by REST APIs if integration is needed with third party application or for application pages.<br />
+              Never try to read or write data directly from the BDM database, use the APIs to do so.<br />
+              [Studio - show data in the process to execute the flow]
+            </aside>
+          </section>
+
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop with Bonita BDM</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+          <ul>
+            <li>2 ways of loading data: eager or lazy</li>
+            <img src="images/restLazyVsEager.png"/>
+          </ul>
+          <table>
+            <tr>
+              <td><img src="images/employeeContactTable.png" /></td><td> <img src="images/jsonResponseEmployeeContact.png"/></td>
+            </tr>
+          </table>
+          <p>API/bdm/businessData/com.training.model.Employee/{persistenceId}</p>
+
+
+          <aside class="notes">
+            Complex type with fields. Structured objects composed of: Java classes (Integer, Boolean, String, Date...) and other BDMs<br />
+            Java POJO generated out of the model.<br />
+            Stored in a dedicated database with automatic administration (tables creation, updates...).<br />
+            Persistence handle by Bonita using Hibernate library and the database.<br />
+            Transactional database storage guarantees that data is safely kept in case of server shut down (expected or not).
+          </aside>
+        </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Constraints of the contract</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <p>Constraints = specific rules for expected data value's validation</p>
+            <p>Defined by Groovy scripts</p>
+
+            <aside class="notes">
+              2.30<br /><br />
+              Invalid contract will prevent start of process or execution of a task<br />
+              [Studio - process &amp; human task contracts, approval from user form example]<br />
+              In case you want to use your own forms, the contract is the interface that warranty the right execution
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">The example of form data</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <ul>
+              <li>Stores and processes data displayed and updated in UIs</li>
+              <li>Accessible in the user web browser</li>
+              <li>Can be any type of JavaScript objects</li>
+              <li>Initialized and updated by: user inputs, REST API calls, JavaScript code</li>
+              <li>Never persisted</li>
+            </ul>
+
+            <aside class="notes">
+              1.30<br /><br />
+              Used to build web user interfaces.<br />
+              Used to store the result of a REST API call (like getting BDM data) or user inputs.<br />
+              Data is local to each users web browser<br />
+              As we are in a web browser we use JavaScript.<br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Architecture overview</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <p>Sending data from the form to the business variable</p>
+            <img class="stretch" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
+
+            <aside class="notes">
+              2.30<br /><br />
+            When the user inputs some data in a form they are first stored in JavaScript variables.<br/>
+            When the user clicks on the submit button, a REST API call is performed to the Engine API to instruct the Engine to start a new process instance or execute a task. This call carry the value of a JavaScript variable associated with the submit button. REST API call is an HTTP request that carry out data as JSON.<br/>
+            Engine will check that received JSON data match the contract definition and validation rules. If it match, the data are now stored in the contract variables.<br />
+            Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a business variable (this will perform an UPDATE SQL request on the business database)...
+            </aside>
+          </section>
+
+           <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Other data type: documents</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <ul>
+              <li>Bonita provides a lightweight content management system</li>
+              <li>References to documents are part of the process definition</li>
+              <li>At runtime documents can be initialized, updated...</li>
+              <li>Unlike BDM, documents are associated with a given process instance</li>
+            </ul>
+
+            <aside class="notes">
+              4<br /><br />
+              <br/>
+              Bonita CMS service support files revisions<br />
+              Basic in Bonita but could use CMS using connectors like CMIS to connect to Alfresco or SharePoint
+            </aside>
+          </section>
+
+          <section>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
+            </div>
+            <h4>Add constraints to a contract</h4>
+
+            <aside class="notes">
+              6<br /><br />
+              Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
+              [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
+              <br/>
+              15 - WAIT / ANSWER QUESTIONS<br />
+￼             </aside>
+          </section>
+        </section>
+
+        <!--Gestion des extensions-->
+
+        <section>
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions in Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Allows to adapt the project to your needs by integrating, among others: </p>
+            <ul>
+              <li>Connectors <img src="images/connector-icon.png" alt="connector" /></li>
+              <li>Actor filters <img src="images/filter-icon.png" alt="actor filter" /></li>
+              <li>Custom themes <img width="40px" src="images/theme-icon.png" alt="theme" /></li>
+              <li>REST API Extensions <img width="40px" src="images/rest_api-icon.png" alt="extensions" /></li>
+
+            <aside class="notes">
+              5<br /><br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions in Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Bonita Studio extension manager to centralize and use them</p>
+            <img class="stretch" src="images/extensions-manager.png" alt="extensions manager"/>
+
+            <aside class="notes">
+              5<br /><br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions in Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Retrieve the extensions in 2 ways:</p>
+            <table>
+              <tr>
+                <td>
+                  <ul>
+                     <li>From remote public or private Maven repositories</li>
+                     <li><img src="images/marketplace-icon.png" alt="marketplace" /> From Bonita MarketPlace </li>
+                  </ul></td>
+                <td><img src="images/marketplace.png" alt="Bonita Marketplace"/></td>
+              </tr>
+            </table>
+
+            <aside class="notes">
+              5<br /><br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop an extension</h2><img src="images/extensions-icon.png" alt="extensions"  /></div>
+            <p>Usage of Maven archetypes (templates)</p>
+            <p>Developped in your IDE</p>
+            <p>Stored locally or on remote repositories:</p>
+            <ul>
+              <li>Private or public Maven repository</li>
+              <li>GitHub package</li>
+            </ul>
+            <aside class="notes">
+              Vous pouvez voir la video qui détaille les étapes de création<br />
+              [Studio &amp; Portal - change task actor to actor filter, run it]<br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Specificities of REST API Extensions</h2><img src="images/rest_api-icon.png" alt="rest-api-ext" /></div>
+            <p>Created in your IDE and imported in Bonita extension manager, or developed from Bonita Studio</p>
+            <table>
+              <tr>
+                <td><img src="images/rest-api-ext-import.png" alt="develop rest api ext from IDE" /></td>
+                <td><img src="images/rest-api-ext-studio.png" alt="develop rest api ext from Studio" /></td>
+              </tr>
+            </table>
+
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Example of extension: the actor filter</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
+            <p>Completely override the actor configuration</p>
+            <p>Produce a list of users based on input information and an internal logic</p>
+            <p>Executed when process reach a step to which the filter is mapped</p>
+            <p>Can be "refresh" using Engine API</p>
+            <aside class="notes">
+              Filters are executed only once when task starts. They can be run again with API call.<br />
+              [Studio &amp; Portal - change task actor to actor filter, run it]<br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Actors vs actor filters</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
+
+            <table class="compare">
+            <tr>
+              <th></th>
+              <th>Benefits</th>
+              <th>Limitations</th>
+            </tr>
+            <tr>
+              <td>Actors</td>
+              <td>Always up to date with organization</td>
+              <td>Mapping that can not rely on business/process data</td>
+            </tr>
+            <tr>
+              <td>Actor filters</td>
+              <td>Mapping that can be based on business/process data</td>
+              <td>Executed only once at task instantiation</td>
+            </tr>
+            </table>
+
+            <aside class="notes">
+              Actor does not requires any processing when reaching a task. It is when a user authenticate on Bonita Portal that Engine will produce the list of actors he belongs to.<br />
+            </aside>
+          </section>
+
+          <section>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 9</h2>
+            </div>
+            <h4>Add an actor filter</h4>
+
+            <aside class="notes">
+              6<br /><br />
+              Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
+              [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
+              <br/>
+              15 - WAIT / ANSWER QUESTIONS<br />
+￼             </aside>
+          </section>
+        </section>
+
+        <!--User interface-->
+
+        <section>
+          <section>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Structure of the user interface</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <ul>
+              <li>Forms, pages and fragments : structure</li>
+              <li>Containers and widgets : containing</li>
+              <li>Variables, properties and assets : behaviour</li>
+            </ul>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pages</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <p>Built in the same way as a form</p>
+            <p>Main difference is the execution context:</p>
+            <ul>
+              <li>Forms have information about process definition or process instance and task instance</li>
+              <li>Pages have no context information</li>
+            </ul>
+            <p>Pages can get BDM and process information or trigger actions using REST APIs</p>
+            <p>Group several pages together with a menu in order to build an application</p>
+            <aside class="notes">
+              4<br /><br />
+              Display information (BDM, process definitions, process instances) and optionally provide access to actions (start a process instance, execute a task...)<br />
+              When you create a page you don't have any variable available by default.<br />
+              Example to list vacation requests: http://localhost:8080/bonita/API/bdm/businessData/com.company.model.VacationRequest?q=find&p=0&c=10
+            </aside>
+          </section>
+
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Containers and Widgets</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <p>A set of widgets and containers available out of the box</p>
+            <p>Containers used to group widgets or their behavior</p>
+            <p>Custom widgets can be created with the UI Designer</p>
+            <p>You can also reuse contributions shared on community website</p>
+
+            <aside class="notes">
+              4<br /><br />
+              Community contribution<br />
+              [UID, create new artifact, overview of features with HELP redirection, use default Widget like button, create CW to be includes into the form, Chrome dev tools to debug forms/contracts]<br/>
+            </aside>
+          </section>
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Fragments</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <p>Keys to reusability and time saving</p>
+            <p>Parts of element composed of widgets and/or containers</p>
+            <p>It has its own configuration and data...</p>
+            <p>Or expose the data in the pages that include them...</p>
+
+            <aside class="notes">
+              4<br /><br />
+              piece of a page, form or layout, composed of one or more widgets and/or containers<br/>
+              A fragment has its own widget configurations and data, but can also expose data to the pages that include it.<br>
+            </aside>
+          </section>
+
+           <section>
+            <h2>Interfaces between application's artefacts</h2>
+            <img class="stretch" src="images/graph-dependencies-EN.png" alt="Artefacts of an application">
+          </section>
+
+          <section>
+            <div>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 10</h2>
+            </div>
+            <h4>Enrich the application</h4>
+            <aside class="notes">
+            Build a form from scratch<br/>
+            <br/>
+            20 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
+          </section>
+        </section>
+
+<!-- Déploiement -->
+
+        <section>
+          <section>
+           <h2>Process Deployment</h2>
+            <p>Main steps for process deployment:</p>
+            <table>
+              <tr>
+                <td>1. Process configuration<br/>
+                    2. Bar file generation
+                </td>
+                <td>Studio</td>
+              </tr>
+              <tr>
+               <td>3. Bar deployment<br/>
+                  4. Process configuration<br/>
+                  5. Process activation
+               </td>
+                <td>Runtime - Admin app</td>
+              </tr>
+            </table>
+
+            <aside class="notes">
+            2.30<br /><br />
+            When running processes from the Studio the deploy procedure is automated to ease tests<br />
+            This does multiple steps<br />
+            [Studio &amp; Portal - build, deploy, process configuration]
+            </aside>
+          </section>
+
+          <section>
+            <h2>Application deployment</h2>
+            <p>2 types of application deployment</p>
+            <ul>
+              <li>Deployment for testing purpose in a LOCAL environment from the Studio</li>
+              <li>Deployment in a DEVELOPMENT or PRODUCTION environment from the Portal</li>
+            </ul>
+           <aside class="notes">
+            2.30<br /><br />
+            The final purpose of all this development is to get business applications deployed on a server<br />
+            The process part is only the controller part<br />
+            The deployment of such an application has to be done in a specific order as there are dependencies between the developed elements<br />
+            For real server deployment, it has to be follow few rules that can be done manually with the Portal or be automated using CI/CD with APIs
+            Mention BCD for automated command line/Jenkins build and deployment (Enterprise Edition).
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
+              <p>Organisation then profiles</p>
+              <img class="stretch" src="images/DeployOrganization.png" alt="deploy organization">
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
+            <p>API extensions then pages, layout et thèmes</p>
+            <img class="stretch" src="images/DeployResource.png" alt="deploy resources">
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
+            <p>Business data model then processes</p>
+            <img class="stretch" src="images/DeployBDM.png" alt="deploy bdm">
+          </section>
+
+           <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
+             <p>Definition of the application</p>
+            <img class="stretch" src="images/DeployLivingApplication.png" alt="deploy app">
+
+            <aside class="notes">
+              20 - WAIT / ANSWER QUESTIONS<br />
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+          <h2>Thank you for your attention</h2>
+            <div>
+              <h3>Any questions?</h3>
+            <p>Feel free to post them first on our dedicated Discord channel <a href="https://www.discord.com/gjQanU3">#bonita-camp-english</a>, <br />
+            and then please post them on Bonitasoft community website.</p>
+            </div>
+          </section>
+
+          <section>
+          <h2>Extra Resources:</h2>
+          <ul>
+            <li>Documentation - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
+            <li>Corporate Website - <a href="https://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
+            <li>Community Website- <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+            <li>GitHub - <a href="https://github.com/bonitasoft-community" target="_blank">github.com/bonitasoft-community</a></li>
+          </ul>
+          </section>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+
+  </body>
+</html>
