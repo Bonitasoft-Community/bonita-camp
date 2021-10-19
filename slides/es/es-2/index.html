@@ -45,7 +45,7 @@
             <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo"/>
           </div>
           <div>
-            <h4>DAY 2</h4>
+            <h4>Día #2</h4>
             <h4>Delphine Coille</h4>
           </div>
 
@@ -66,44 +66,44 @@
           </section>
 
           <section>
-          <h2>Agenda - reminder</h2>
-          <p>Day 1 - Create a first application</p>
+           <h2>Programa - recordatorio</h2>
+            <p><b>Día #1 - Crear una primera aplicación</b></p>
             <ul class="agenda">
-              <li>Bonita solution and Bonita components</li>
-              <li>Start a project with Bonita</li>
-              <li>Introduction to BPMN 2.0</li>
-              <li>Introduction to data management</li>
-              <li>User interface: forms</li>
-              <li>Users managements (Actors)</li>
-              <li>Connectors</li>
-              <li>Introduction to applications</li>
+              <li>La solución Bonita y sus componentes</li>
+              <li>Empezar un proyecto con Bonita</li>
+              <li>Introducción a BPMN 2.0</li>
+              <li>Introducción a la gestión de datos</li>
+              <li>Interfaz de usuario (Formularios)</li>
+              <li>Organización, actores y permisos</li>
+              <li>Conectores</li>
+              <li>Introducción a las aplicaciones</li>
             </ul>
-            </section>
+          </section>
 
-            <section>
-           <h2>Agenda - reminder</h2>
-            <p>Day 2 - To go further in the development with Bonita</p>
+          <section>
+           <h2>Programa</h2>
+            <p><b>Día #2 - Para ir más allá en el desarrollo con Bonita</b></p>
             <ul class=agenda">
-              <li>Architecture of Bonita platform</li>
-              <li>Process design and automation</li>
-              <li>Advanced data management
-              <li>Extensions</li>
-              <li>User interface</li>
-              <li>Deployment</li>
+              <li>Arquitectura de la plataforma Bonita</li>
+              <li>Diseño y automatización de procesos</li>
+              <li>Gestión de datos</li>
+              <li>Extensiones</li>
+              <li>Interfaz de usuarios</li>
+              <li>Despliegue</li>
              </ul>
             <aside class="notes">
             1<br /><br />
             4:00h of time split into 2 sessions to let you practice
             </aside>
-            </section>
           </section>
+        </section>
 
         <!-- Bonita architecture and APIs -->
 
         <section>
           <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">3-Tier architecture</h2><img src="images/bonita-logo.png" /></div>
-            <p>Helps separate the process, data and user interface layers</p>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Arquitectura 3-Tier</h2><img src="images/bonita-logo.png" /></div>
+            <p>Ayuda a separar las capas de proceso, datos e interfaz de usuario</p>
             <img class="stretch" src="images/3_tier_graphic_with_blue.png" alt="Bonita 3-tier architecture" />
 
             <aside class="notes">
@@ -114,9 +114,9 @@
 
           <section>
             <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita Runtime</h2><img src="images/bonita-logo.png" /></div>
-              <p>Available on premise or in the cloud</p>
-              <p>Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> + Bonita applications + Bonita Engine + Database</p>
-              <p>Package Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> or Docker image<img class="no-margin" src="images/docker.png" alt="docker-logo"/> to simplify the installation of the server</p>
+              <p>Disponible en las instalaciones "on premise" o en la nube</p>
+              <p>Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> + aplicaciones Bonita + Motor Bonita + Base de datos</p>
+              <p>Paquete Tomcat <img class="no-margin" src="images/tomcat.jpeg" alt="tomcat-logo"/> o imagen Docker<img class="no-margin" src="images/docker.png" alt="docker-logo"/> para simplificar la instalación del servidor</p>
 
             <aside class="notes">
             1.30<br /><br />
@@ -154,16 +154,16 @@
           </aside>
         </section>
         <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">API Bonita Engine</h2><img src="images/api-logo.png" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">API del motor Bonita</h2><img src="images/api-logo.png" /></div>
               <ul>
-                <li>Unique way to communicate with the Bonita engine (JAVA)</li>
-                <li>Community edition: packages start with <b>org.*</b></li>
-                <li>Used with
+                <li>Forma única de comunicarse con el motor de Bonita (JAVA)</li>
+                <li>Edición Community: los paquetes empiezan con <b>org.*</b></li>
+                <li>Se usa con
 			      <ul>
 				      <li>Groovy scripts</li>
-				      <li>Connectors</li>
-				      <li>Rest Api Extensions</li>
-                      <li>External java client to communicate with the engine</li>
+				      <li>Connectores</li>
+				      <li>Extensiones de la Api REST</li>
+                      <li>Cliente java externo para comunicarse con el motor</li>
                   </ul></li>
               </ul>
 
@@ -175,24 +175,24 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Most used engine APIs</h2><img src="images/api-logo-dark.png" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">APIs del motor más utilizadas</h2><img src="images/api-logo-dark.png" /></div>
               <ul>
-		        <li>Login API: access to Bonita engine</li>
-		        <li>ProcessAPI: actions linked to the process</li>
-		        <li>IdentityAPI: manage the organization (users, groups, roles)</li>
+		        <li>Login API: acceso al motor Bonita</li>
+		        <li>ProcessAPI: acciones ligadas con el proceso</li>
+		        <li>IdentityAPI: gestión de la organización (usuarios, grupos, roles)</li>
 	          </ul>
-              <p>Documentation: <a target="_blank" href="http://documentation.bonitasoft.com/bonita/latest/engine-architecture-overview">Bonita Engine architecture</a></p>
+              <p>Documentación: <a target="_blank" href="http://documentation.bonitasoft.com/bonita/latest/engine-architecture-overview">Bonita Engine architecture</a></p>
 	        <aside class="notes">
 	        </aside>
           </section>
 
           <section>
-	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Bonita REST API</h2><img src="images/api-logo-dark.png" /></div>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">API REST Bonita</h2><img src="images/api-logo-dark.png" /></div>
 	          <ul>
-		        <li>operations on Bonita Engine from a language other than JAVA or in a web application in combination with Ajax</li>
-                <li>Many APIs available (bpm, bdm, identity, system...)</li>
-                <li>4 operations: GET, POST, PUT, DELETE</li>
-                <li>includes BDM REST Access Control (Enterprise)</li>
+		        <li>Operaciones en Bonita Engine desde un lenguaje distinto a JAVA o en una aplicación web en combinación con Ajax</li>
+                <li>Muchas APIs disponibles (bpm, bdm, identity, system...)</li>
+                <li>4 operaciones: GET, POST, PUT, DELETE</li>
+                <li>incluye al BDM REST Access Control (Enterprise)</li>
 
               </ul>
 	          <img src="images/restApiDiagram.PNG" />
@@ -218,9 +218,9 @@
           </section>
 
           <section>
-	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">BDM REST API: usage</h2><img src="images/api-logo-dark.png" /></div>
-            <p>Retrieve information about an object, its structure, its data</p>
-            <p>/!\ <i>the REST API provides data access, not addition or update</i> /!\</p>
+	        <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">API REST BDM: uso</h2><img src="images/api-logo-dark.png" /></div>
+            <p>Recuperar información sobre un objeto, su estructura, sus datos</p>
+            <p>/!\ <i>la API REST proporciona acceso a los datos, no a su adición o actualización</i> /!\</p>
 
             <aside class="notes">
             1.30<br />
@@ -243,14 +243,14 @@
 
         <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Project composition in Bonita Studio</h2><img src="images/diagram-icon.png" /></div>
-            <p>A Bonita project is a <img width="130px" src="images/maven.png" /> project with:</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Composición de proyecto en Bonita Studio</h2><img src="images/diagram-icon.png" /></div>
+            <p>Un proyecto Bonita es un proyecto <img width="130px" src="images/maven.png" /> con:</p>
             <ul>
-              <li>Name, version, description</li>
+              <li>Nombre, versión, descripción</li>
               <li>Maven IDs : groupID, artifactID</li>
             </ul>
-              <p>Projects are integrated into a local or remote workspace</p>
-              <p>Automatic recovery of dependencies</p>
+              <p>Los proyectos se integran en un workspace local o remoto</p>
+              <p>Recuperación automática de dependencias</p>
 
             <aside class="notes">
             1.30<br />
@@ -260,8 +260,8 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Collaboration on the project</h2><img src="images/project-icon.png" /></div>
-            <p>Projects can be shared using SVN or Git <img width="40px" src="images/github.png" /> from Bonita Studio</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Colaboración en el proyecto</h2><img src="images/project-icon.png" /></div>
+            <p>Los proyectos se pueden compartir mediante SVN o Git <img width="40px" src="images/github.png" /> desde Bonita Studio</p>
             <img class="stretch" src="images/git.png" alt="Git" />
 
             <aside class="notes">
@@ -275,11 +275,11 @@
 
         <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Automate processes: events</h2><img src="images/diagram-icon.png" /></div>
-            <p>Occur throughout the process</p>
-            <p>Asynchronous
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Automatizar los procesos: eventos</h2><img src="images/diagram-icon.png" /></div>
+            <p>Ocurren a lo largo del proceso</p>
+            <p>Asincronos
             <img src="images/events-overview.png" alt="Bonita events overview" />
-            <p>Boundary event: triggers an alternative path</p>
+            <p>Evento de borde: desencadena un camino alternativo</p>
 
             <aside class="notes">
             1.30<br />
@@ -291,9 +291,9 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Call activities and sub-processes</h2><img src="images/diagram-icon.png" /></div>
-            <p>Trigger a sub-process</p>
-            <p>Parent process put on hold</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Actividades de llamada y sub-procesos</h2><img src="images/diagram-icon.png" /></div>
+            <p>Activa un subproceso.</p>
+            <p>Proceso padre puesto en espera</p>
             <img class="stretch" src="images/callActivity.png" alt="call activity" />
 
             <aside class="notes">
@@ -303,8 +303,8 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Call activities and sub-processes</h2><img src="images/diagram-icon.png" /></div>
-            <p>Data mapping</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Actividades de llamada y sub-procesos</h2><img src="images/diagram-icon.png" /></div>
+            <p>Mapeo de datos</p>
             <img class="stretch" src="images/call_activity_data_mapping.png" alt="call activity data mapping" />
 
             <aside class="notes">
@@ -314,12 +314,12 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Iterations</h2><img src="images/diagram-icon.png" /></div>
-            <p>3 types of iterations : </p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Iteraciones</h2><img src="images/diagram-icon.png" /></div>
+            <p>3 tipos de iteraciones: </p>
             <ul>
-              <li>Standard loop</li>
-              <li>Parallel multi-instanciation</li>
-              <li>Sequential multi-instanciation</li>
+              <li>Bucle estándar</li>
+              <li>Multi-instanciación paralela</li>
+              <li>Multi-instanciación secuencial</li>
             </ul>
 
             <aside class="notes">
@@ -331,9 +331,9 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 7</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Ejercicio 7</h2>
             </div>
-            <h4>Adding a timer to a process</h4>
+            <h4>Añadir un temporizador a un proceso</h4>
 
             <aside class="notes">
               2.00<br /><br />
@@ -355,8 +355,8 @@
 
         <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2>Business datacycle - reminder</h2><img src="images/bdm-icon.png" alt="model data" /></div>
-            <img class="stretch" src="images/data-cycle-EN.png" alt="Data flow">
+            <div class="flex justify-spacebetween alignitems-center"><h2>Ciclo de vida de los datos de negocio</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <img class="stretch" src="images/data-cycle-ES.png" alt="Data flow">
 
             <aside class="notes">
               2.30<br /><br />
@@ -364,17 +364,17 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop with Bonita BDM</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Desarrollar con el modelo de datos de negocio</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
-              <li>Relations : composition and aggregation</li>
-              <li>Unique constraints</li>
-              <li>Queries: by défaut or custom</li>
-              <li>Indexes</li>
-              <li>Accessible by REST API if integrated with a third party application or with pages</li>
+              <li>Relaciones : composición y agregación</li>
+              <li>Restricciones únicas</li>
+              <li>Consultas: por defecto o personalizadas</li>
+              <li>Índices</li>
+              <li>Accesible mediante la API REST</li>
             </ul>
-            <p>Persistence managed by Bonita Engine via Hibernate libraries and the database</p>
+            <p><b>/!\ Nunca hay que leer o escribir directamente desde la base de datos BDM /!\</b></p>
+            <p>Persistencia gestionada por el motor Bonita a través de las bibliotecas Hibernate y la base de datos</p>
 
-            <p>Never read or write directly from the BDM database but use the APIs</p>
             <aside class="notes">
               Business variable used BDM definition to define the type of the variable.<br />
               Several solutions exist to Create (INSERT) / Read (SELECT) / Update (UPDATE) / Delete (DELETE).<br />
@@ -386,9 +386,9 @@
           </section>
 
           <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop with Bonita BDM</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Desarrollar con el modelo de datos de negocio</h2><img src="images/bdm-icon.png" alt="model data" /></div>
           <ul>
-            <li>2 ways of loading data: eager or lazy</li>
+            <li>2 formas de cargar los datos: eager o lazy</li>
             <img src="images/restLazyVsEager.png"/>
           </ul>
           <table>
@@ -409,9 +409,9 @@
         </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Constraints of the contract</h2><img src="images/bdm-icon.png" alt="model data" /></div>
-            <p>Constraints = specific rules for expected data value's validation</p>
-            <p>Defined by Groovy scripts</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Restricciones del contrato</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <p>Restricciones = reglas específicas para la validación de los valores de los datos esperados</p>
+            <p>Definidas con Groovy scripts</p>
 
             <aside class="notes">
               2.30<br /><br />
@@ -422,13 +422,13 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">The example of form data</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">El ejemplo de los datos del formulario</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
-              <li>Stores and processes data displayed and updated in UIs</li>
-              <li>Accessible in the user web browser</li>
-              <li>Can be any type of JavaScript objects</li>
-              <li>Initialized and updated by: user inputs, REST API calls, JavaScript code</li>
-              <li>Never persisted</li>
+              <li>Almacena y procesa los datos mostrados y actualizados en las interfaces de usuario</li>
+              <li>Accesibles en el navegador del usuario</li>
+              <li>Puede ser cualquier tipo de objeto JavaScript</li>
+              <li>Inicializado y actualizado por: entradas del usuario, llamadas a la API REST, código JavaScript</li>
+              <li>No hay persistencia</li>
             </ul>
 
             <aside class="notes">
@@ -441,8 +441,8 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Architecture overview</h2><img src="images/bdm-icon.png" alt="model data" /></div>
-            <p>Sending data from the form to the business variable</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Vista global de la arquitectura</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <p>Envío de datos del formulario a la variable de negocio</p>
             <img class="stretch" src="images/data_from_forms_to_process_variables.png" alt="Data flow from forms to process variables">
 
             <aside class="notes">
@@ -455,12 +455,12 @@
           </section>
 
            <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Other data type: documents</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Otro tipo de datos: documentos</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
-              <li>Bonita provides a lightweight content management system</li>
-              <li>References to documents are part of the process definition</li>
-              <li>At runtime documents can be initialized, updated...</li>
-              <li>Unlike BDM, documents are associated with a given process instance</li>
+              <li> Bonita proporciona un sistema de gestión de documentos simple </li>
+              <li> Las referencias a documentos hacen parte de la definición del proceso </li>
+              <li> En tiempo de ejecución los documentos se pueden inicializar, actualizar ... </li>
+              <li> A diferencia de la BDM, los documentos están asociados con una instancia de proceso determinada </li>
             </ul>
 
             <aside class="notes">
@@ -473,9 +473,9 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Ejercicio 8</h2>
             </div>
-            <h4>Add constraints to a contract</h4>
+            <h4>Agregar restricciones a un contrato</h4>
 
             <aside class="notes">
               6<br /><br />
@@ -491,13 +491,13 @@
 
         <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions in Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
-            <p>Allows to adapt the project to your needs by integrating, among others: </p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensiones en Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Permite adaptar el proyecto a sus necesidades integrando, entre otros: </p>
             <ul>
-              <li>Connectors <img src="images/connector-icon.png" alt="connector" /></li>
-              <li>Actor filters <img src="images/filter-icon.png" alt="actor filter" /></li>
-              <li>Custom themes <img width="40px" src="images/theme-icon.png" alt="theme" /></li>
-              <li>REST API Extensions <img width="40px" src="images/rest_api-icon.png" alt="extensions" /></li>
+              <li><img src="images/connector-icon.png" alt="connector" /> Connectores </li>
+              <li><img src="images/filter-icon.png" alt="actor filter" /> Filtros de actores </li>
+              <li><img width="40px" src="images/theme-icon.png" alt="theme" /> Temas personalizados </li>
+              <li><img width="40px" src="images/rest_api-icon.png" alt="extensions" /> Extensiones de la API REST</li>
 
             <aside class="notes">
               5<br /><br />
@@ -505,8 +505,8 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions in Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
-            <p>Bonita Studio extension manager to centralize and use them</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensiones en Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Gestor de extensiones de Bonita Studio para centralizarlos y utilizarlos</p>
             <img class="stretch" src="images/extensions-manager.png" alt="extensions manager"/>
 
             <aside class="notes">
@@ -515,14 +515,15 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions in Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
-            <p>Retrieve the extensions in 2 ways:</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensiones en Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Recupera las extensiones de 3 maneras:</p>
             <table>
               <tr>
                 <td>
                   <ul>
-                     <li>From remote public or private Maven repositories</li>
-                     <li><img src="images/marketplace-icon.png" alt="marketplace" /> From Bonita MarketPlace </li>
+                    <li>Desde un fichero local</li>
+                     <li>Desde repositorios Maven a distancia, públicos o privados</li>
+                     <li><img src="images/marketplace-icon.png" alt="marketplace" /> Desde el MarketPlace Bonita</li>
                   </ul></td>
                 <td><img src="images/marketplace.png" alt="Bonita Marketplace"/></td>
               </tr>
@@ -534,13 +535,13 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Develop an extension</h2><img src="images/extensions-icon.png" alt="extensions"  /></div>
-            <p>Usage of Maven archetypes (templates)</p>
-            <p>Developped in your IDE</p>
-            <p>Stored locally or on remote repositories:</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Desarrollar una extensión</h2><img src="images/extensions-icon.png" alt="extensions"  /></div>
+            <p>Uso de los arquetipos Maven (plantillas)</p>
+            <p>Desarrollado en su IDE</p>
+            <p>Almacenados en local o en repositorios remotos:</p>
             <ul>
-              <li>Private or public Maven repository</li>
-              <li>GitHub package</li>
+              <li>Repositorio Maven privado o público</li>
+              <li>Paquetes GitHub</li>
             </ul>
             <aside class="notes">
               Vous pouvez voir la video qui détaille les étapes de création<br />
@@ -549,8 +550,8 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Specificities of REST API Extensions</h2><img src="images/rest_api-icon.png" alt="rest-api-ext" /></div>
-            <p>Created in your IDE and imported in Bonita extension manager, or developed from Bonita Studio</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Especificidades de las extensiones de la API REST</h2><img src="images/rest_api-icon.png" alt="rest-api-ext" /></div>
+            <p>Creado en su IDE e importado en el gestor de extensiones de Bonita, o desarrollado desde Bonita Studio</p>
             <table>
               <tr>
                 <td><img src="images/rest-api-ext-import.png" alt="develop rest api ext from IDE" /></td>
@@ -563,11 +564,12 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Example of extension: the actor filter</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
-            <p>Completely override the actor configuration</p>
-            <p>Produce a list of users based on input information and an internal logic</p>
-            <p>Executed when process reach a step to which the filter is mapped</p>
-            <p>Can be "refresh" using Engine API</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Ejemplo de extensión: el filtro de actores</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
+            <p> Reemplaza completamente al actor </p>
+            <p> Produce una lista de usuarios basada en información de entrada y lógica interna </p>
+            <p> Se ejecuta cuando la ejecución del proceso alcanza la etapa asociada con el filtro de actor </p>
+            <p> Puede actualizarse usando API </p>
+
             <aside class="notes">
               Filters are executed only once when task starts. They can be run again with API call.<br />
               [Studio &amp; Portal - change task actor to actor filter, run it]<br />
@@ -575,23 +577,23 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Actors vs actor filters</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Actores vs filtros de actores</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
 
             <table class="compare">
             <tr>
               <th></th>
-              <th>Benefits</th>
-              <th>Limitations</th>
+              <th>Beneficios</th>
+              <th>Limitaciones</th>
             </tr>
             <tr>
-              <td>Actors</td>
-              <td>Always up to date with organization</td>
-              <td>Mapping that can not rely on business/process data</td>
+              <td>Actor</td>
+              <td> Siempre actualizado con la organización </td>
+              <td> Asociación que no puede basarse en datos de negocio </td>
             </tr>
             <tr>
-              <td>Actor filters</td>
-              <td>Mapping that can be based on business/process data</td>
-              <td>Executed only once at task instantiation</td>
+              <td>Filtro de actor</td>
+              <td> Asociación que puede incluir datos de negocio </td>
+              <td> Calculado al crear instancias de una etapa </td>
             </tr>
             </table>
 
@@ -602,9 +604,9 @@
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 9</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Ejercicio 9</h2>
             </div>
-            <h4>Add an actor filter</h4>
+            <h4>Agrega un filtro de actor</h4>
 
             <aside class="notes">
               6<br /><br />
@@ -620,24 +622,25 @@
 
         <section>
           <section>
-          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Structure of the user interface</h2><img src="images/page-icon.png" alt="create ui" /></div>
+          <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Estructura de la interfaz de usuario</h2><img src="images/page-icon.png" alt="create ui" /></div>
             <ul>
-              <li>Forms, pages and fragments : structure</li>
-              <li>Containers and widgets : containing</li>
-              <li>Variables, properties and assets : behaviour</li>
+              <li>Formularios, páginas y fragmentos : estructura</li>
+              <li> Contenedores y widgets : contenido</li>
+              <li>Variables, propiedades y activos : comportamiento</li>
             </ul>
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pages</h2><img src="images/page-icon.png" alt="create ui" /></div>
-            <p>Built in the same way as a form</p>
-            <p>Main difference is the execution context:</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Páginas</h2><img src="images/page-icon.png" alt="create ui" /></div>
+             <p> Construida de la misma manera que los formularios <br>
+              Diferencia principal en el contexto de ejecución:</p>
             <ul>
-              <li>Forms have information about process definition or process instance and task instance</li>
-              <li>Pages have no context information</li>
+              <li> Los formularios tienen información sobre la definición del proceso o sobre la instancia del proceso y la tarea </li>
+              <li> Las páginas no tienen información de contexto </li>
             </ul>
-            <p>Pages can get BDM and process information or trigger actions using REST APIs</p>
-            <p>Group several pages together with a menu in order to build an application</p>
+            <p> Las páginas pueden obtener información del BDM o de los procesos o activar acciones a través de las API REST </p>
+            <p> Agrupar varias páginas y un menú para crear una aplicación </p>
+
             <aside class="notes">
               4<br /><br />
               Display information (BDM, process definitions, process instances) and optionally provide access to actions (start a process instance, execute a task...)<br />
@@ -648,11 +651,11 @@
 
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Containers and Widgets</h2><img src="images/page-icon.png" alt="create ui" /></div>
-            <p>A set of widgets and containers available out of the box</p>
-            <p>Containers used to group widgets or their behavior</p>
-            <p>Custom widgets can be created with the UI Designer</p>
-            <p>You can also reuse contributions shared on community website</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Contenedores y widgets</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <p>Un conjunto de widgets y contenedores disponibles out-of-the-box</p>
+            <p>Contenedores utilizados para agrupar los widgets o su comportamiento</p>
+            <p>Se pueden crear widgets personalizados con el UI Designer</p>
+            <p>También se pueden reutilizar las contribuciones compartidas en la web de la comunidad</p>
 
             <aside class="notes">
               4<br /><br />
@@ -661,11 +664,11 @@
             </aside>
           </section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Fragments</h2><img src="images/page-icon.png" alt="create ui" /></div>
-            <p>Keys to reusability and time saving</p>
-            <p>Parts of element composed of widgets and/or containers</p>
-            <p>It has its own configuration and data...</p>
-            <p>Or expose the data in the pages that include them...</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Fragmentos</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <p>Claves para la reutilización y el ahorro de tiempo</p>
+            <p>Pieza de elemento compuesta por widgets y/o contenedores</p>
+            <p>O bien tiene su propia configuración y datos...</p>
+            <p>O bien expone los datos en las páginas que los incluyen...</p>
 
             <aside class="notes">
               4<br /><br />
@@ -675,15 +678,15 @@
           </section>
 
            <section>
-            <h2>Interfaces between application's artefacts</h2>
+            <h2>Interfaces entre los recursos de la aplicación</h2>
             <img class="stretch" src="images/graph-dependencies-EN.png" alt="Artefacts of an application">
           </section>
 
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercise 10</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Ejercicio 10</h2>
             </div>
-            <h4>Enrich the application</h4>
+            <h4>Mejorar la aplicación</h4>
             <aside class="notes">
             Build a form from scratch<br/>
             <br/>
@@ -696,20 +699,20 @@
 
         <section>
           <section>
-           <h2>Process Deployment</h2>
-            <p>Main steps for process deployment:</p>
-            <table>
-              <tr>
-                <td>1. Process configuration<br/>
-                    2. Bar file generation
-                </td>
-                <td>Studio</td>
-              </tr>
-              <tr>
-               <td>3. Bar deployment<br/>
-                  4. Process configuration<br/>
-                  5. Process activation
-               </td>
+           <h2>Implementación de procesos</h2>
+          <p> Pasos principales para implementar un proceso: </p>
+          <table>
+          <tr>
+            <td>1. Configuración del proceso<br/>
+            2. Generación del fichero .bar
+            </td>
+            <td>Studio</td>
+          </tr>
+          <tr>
+            <td>3. Despliegue del fichero .bar<br/>
+            4. Configuración del proceso<br/>
+            5. Activación del proceso
+            </td>
                 <td>Runtime - Admin app</td>
               </tr>
             </table>
@@ -723,12 +726,13 @@
           </section>
 
           <section>
-            <h2>Application deployment</h2>
-            <p>2 types of application deployment</p>
+            <h2>Despliegue de aplicaciones</h2>
+            <p>2 tipos de despliegue de aplicaciones</p>
             <ul>
-              <li>Deployment for testing purpose in a LOCAL environment from the Studio</li>
-              <li>Deployment in a DEVELOPMENT or PRODUCTION environment from the Portal</li>
+              <li>Despliegue para pruebas en un entorno LOCAL desde Bonita Studio</li>
+              <li>Despliegue en un entorno de DESARROLLO o PRODUCCIÓN desde la aplicación Bonita administrador</li>
             </ul>
+
            <aside class="notes">
             2.30<br /><br />
             The final purpose of all this development is to get business applications deployed on a server<br />
@@ -740,26 +744,26 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
-              <p>Organisation then profiles</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pasos de despliegue en el servidor</h2><img src="images/application-icon.png" alt="applications" /></div>
+              <p>Organization y luego perfiles</p>
               <img class="stretch" src="images/DeployOrganization.png" alt="deploy organization">
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
-            <p>API extensions then pages, layout et thèmes</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pasos de despliegue en el servidor</h2><img src="images/application-icon.png" alt="applications" /></div>
+            <p>Extensiones de la API y luego páginas, layout, temas</p>
             <img class="stretch" src="images/DeployResource.png" alt="deploy resources">
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
-            <p>Business data model then processes</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pasos de despliegue en el servidor</h2><img src="images/application-icon.png" alt="applications" /></div>
+            <p>Business data model y luego procesos</p>
             <img class="stretch" src="images/DeployBDM.png" alt="deploy bdm">
           </section>
 
            <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Deployment steps on the server</h2><img src="images/application-icon.png" alt="applications" /></div>
-             <p>Definition of the application</p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Pasos de despliegue en el servidor</h2><img src="images/application-icon.png" alt="applications" /></div>
+             <p>Definición de la aplicación</p>
             <img class="stretch" src="images/DeployLivingApplication.png" alt="deploy app">
 
             <aside class="notes">
@@ -770,22 +774,22 @@
 
         <section>
           <section>
-          <h2>Thank you for your attention</h2>
+            <h2> Gracias por tu atención </h2>
             <div>
-              <h3>Any questions?</h3>
-            <p>Feel free to post them first on our dedicated Discord channel <a href="https://www.discord.com/gjQanU3">#bonita-camp-english</a>, <br />
-            and then please post them on Bonitasoft community website.</p>
+            <h3> ¿Alguna pregunta? </h3>
+            <p>No dudes en preguntarles primero en el servidor dedicado de Discord <a href="https://discord.gg/dtZUc6s"> # bonita-camp-español </a>, <br />
+            y luego haz tus preguntas sobre nuestra comunidad Bonitasoft. </p>
             </div>
           </section>
 
           <section>
-          <h2>Extra Resources:</h2>
-          <ul>
-            <li>Documentation - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
-            <li>Corporate Website - <a href="https://www.bonitasoft.com/" target="_blank">bonitasoft.com</a></li>
-            <li>Community Website- <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
-            <li>GitHub - <a href="https://github.com/bonitasoft-community" target="_blank">github.com/bonitasoft-community</a></li>
-          </ul>
+            <h2> Recursos adicionales: </h2>
+            <ul>
+              <li>Documentación - <a href="https://documentation.bonitasoft.com/" target="_blank">documentation.bonitasoft.com</a></li>
+              <li>Sitio web Bonitasoft - <a href="https://fr.bonitasoft.com/" target="_blank">fr.bonitasoft.com</a></li>
+              <li>Communidad - <a href="https://community.bonitasoft.com/" target="_blank">community.bonitasoft.com</a></li>
+              <li>GitHub - <a href="https://github.com/bonitasoft-community" target="_blank">github.com/bonitasoft-community</a></li>
+            </ul>
           </section>
         </section>
 
