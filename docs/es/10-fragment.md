@@ -1,166 +1,137 @@
 ---
-title: Exercise 6 - Build a leave request application
+title: Ejercicio 6 - Enriquecer la aplicación con un fragmento
 ---
 
-## Goal
+## Objetivo
 
-The goal of this exercise is to enrich the application for users to create and manage their leave requests by adding a fragment.
+El objetivo de este ejercicio es enriquecer la aplicación para que los usuarios creen y gestionen sus solicitudes de vacaciones agregando un fragmento a la página *SeguimientoDeSolicitud*.
 
-## Instructions overview
+## Resumen de las instrucciones
 
-Open the UI Designer and go to the Application page named *LeaveRequestStatus*.
+Abre el UI Designer y vete a la página de la aplicación llamada *SeguimientoDeSolicitud*.
 
-This page already contains a "multiple container" that list the on-going leave requests. We are going to configure this container to enrich it. For each request a clear status will be displayed.
+Esta página ya contiene un "contenedor múltiple" que enumera las solicitudes de baja en curso. Vamos a configurar este contenedor para enriquecerlo. Para cada solicitud se mostrará un estado claro.
 
-Create a fragment containing a date widget and an input widget to collect new leave request information in the page. Use this fragment in the page and bind its data.
-Then add a submit button to start a new leave request.
+Tambien vamos a configurar un contenedor de fragmentos para poder enviar una nueva solicitud.
+Para eso, vas a crear un fragmento que contenga un widget de fecha y un widget de entrada para recoger la información de las nuevas solicitudes de vacaciones en la página. Utiliza este fragmento en la página y vincula sus datos.
+A continuación, agrega un botón para iniciar una nueva solicitud de vacaciones.
 
-Redeploy the application page using the **Deploy** button from the application descriptor in Bonita Studio.
+Hay que desplegar otra vez la página de la aplicación utilizando el botón **Deploy** del descriptor de la aplicación en Bonita Studio.
 
-Access the application using the generated URL.
+## Instrucciones paso a paso
 
-
-## Step by step instructions
-
-1. Go to the page *LeaveRequestStatus*:
-   - In the Studio, click on the **UI Designer** button
-   - Select *LeaveRequestStatus* page in the **Pages** tab
-   - You should now be on the designer page
+1. Abre la página *SeguimientoDeSolicitud* en el UI Designer:
+   - En el Studio, haz clic en el botón **UI Designer**
+   - Selecciona la página ya creada *SeguimientoDeSolicitud*. Se abre el editor del UI Designer.
+   - Borra el widget **Link** 
    
-1. Create a variable to store the session information:
-   - Click on **Create a new variable**
-   - Name it *sessionInfo*
-   - Choose **External API** for the type
-   - In the field API URL, enter: `../API/system/session/unusedId`
-   
-   ![Definition of session info variable](images/ex10/ex10_01.png)
+1. Crea una variable para almacenar información de sesión:
+   - Haz clic en **Crear una nueva variable**
+   - Nombra la *sessionInfo*
+   - Elije el tipo **external API**
+   - Añade en el campo **API URL**: `../API/system/session/unusedId`
 
-1. Modify the label *Is Approved* of the widget **Table**:
-    - Select the widget **Table**
-    - In the right panel, in the **Headers** field, delete *RequestorId*.
-    - Replace *Is Approved* with *Status*.
+   ![agregar variable sessionInfo](images/ex06/ex6_03.png)
 
-1. Declare a new JavaScript expression to format the column *Status* of the list:
-   - Click on **Create a new variable**
-   - Name it *updateLeaveRequestStatus*
-   - Choose **JavaScript expression** type
-   - Replace the existing value with the following script:
-   ```javascript
-   if($data.hasOwnProperty('leaveRequest') && $data.leaveRequest) {
-     for (let line of $data.leaveRequest) {
-       if (line.isApproved === null) {
-         line.isApprovedLabel = "In progress";
-       } else if (line.isApproved) {
-         line.isApprovedLabel = "Approved";
-       } else {
-         line.isApprovedLabel = "Rejected";
-       }
-     }
+1. Declara una nueva expresión de JavaScript para formatear la lista:
+   - Haz clic en **Crear una nueva variable**
+   - Nombra el *agregarEtiquetaEstadoSolicitud*
+   - Elije el tipo **JavaScript expression**
+   - Reemplaza el valor existente con el siguiente script:
+
+    ```javascript
+   if($data.hasOwnProperty('solicitudVacaciones') && $data.solicitudVacaciones) {
+    for (let solicitud of $data.solicitudVacaciones) {
+      if(solicitud.estaAprobado)  {
+        solicitud.estaAprobadoEtiqueta = "Aprobada";
+      } else if(solicitud.estaAprobado === false) {
+        solicitud.estaAprobadoEtiqueta = "Rechazada";
+      } else {
+        solicitud.estaAprobadoEtiqueta = "En curso";
+      }
+    }
    }
    
-   return $data.leaveRequest;
-   ```
+   return $data.solicitudVacaciones;
+    ```
+1. Muestra la información en las columnas de la tabla de una manera más clara:
+   - En el panel de la derecha, en el campo **Cabeceras**  , cambia Esta Aprobado por *Estado* 
+   - En el campo **Claves de columna**,cambia estaAprobado por *estaAprobadoEtiqueta*
 
-1. Display the information in the columns of the table more clearly :
-    - In the right panel, in the field **Column keys** replace *isApproved* with *isApprovedLabel*.
-    
-1. Select the **Date picker** widget called *Leave Start* and edit the following properties:
-   
-     Property | Value
-     -------- | -----
-     Read-Only | **Yes**
-     Label | *Start date*
-     Show Today button | **No**
+1. Añade un nuevo contenedor de formularios:
+   - Arrastra un contenedor de formulario desde la paleta y colóquelo entre los dos títulos
 
-1. Select the **Input** widget called *Day Count* and edit the following properties:
-   
-     Property | Value
-     -------- | -----
-     Read-Only | **Yes**
-     Label | *Number of days*
+1. Cree una nueva variable para almacenar los valores de la nueva solicitud de permiso:
+   - Haga clic en **Crear una nueva variable**
+   - Nómbrala *nuevaSolicitudDeVacaciones*.
+   - Elige el tipo **JSON**.
+   - Haga clic en **Guardar**.
 
-   - Save the page
-   - The container should look like this:
-   
-   ![container in UI Designer](images/ex10/ex10_02.png)
-   
-   - You can preview the page at anytime by clicking on **Preview** button
-   
-   > Tip: if you are logged in the Portal in the same browser, the current leave request will be displayed.
+1. Crea un fragmento del formulario *ingresarSolicitudVacaciones* que se reutilizará en la página:
+   - Vuelve a la página de inicio de UI Designer
+   - Selecciona el formulario *ingresarSolicitudVacaciones* en la pestaña **Fomularios** y haz clic para abrirlo
+   - En el formulario *ingresarSolicitudVacaciones*, selecciona el contenedor con los 2 widgets *Fecha de ínicio* y *Número de días*
+   - En el panel derecho, haz clic en **...** y selecciona **Guardar como fragmento**.  
+     ![selección de fragmentos en UI Designer](images/ex10/ex10_03.png)
+   - Nómbralo *nuevaSolicitudVacacionesFragmento*.
+   - Haz clic en **Guardar**. Aparece una nueva pestaña de menú en la parte izquierda del UI Designer.  
+     ![fragmento de menú en UI Designer](images/ex10/ex10_04.png)
+   - Guarda el formulario y vuelve a la página de inicio de UI Designer
 
-1. Add a new form container:
-   - Go back to edit your page in the UI Designer
-   - Drag a form container from the palette and place it between the two titles
+1. Agrega el fragmento en el contenedor del formulario y configúralo:
+   - Vuelve a la página *SeguimientoDeSolicitud*
+   - Arrastra y suelta el *nuevaSolicitudVacacionesFragmento* del menú de la izquierda al contenedor del formulario.
+   - Selecciona el fragmento y haz clic en **Editar...** para configurar los datos del fragmento  
+     ![Fragmento de menú en UI Designer](images/ex10/ex10_05.png)
+   - Haz clic en **Crear una nueva variable**
+   - Nómbrala *dataExt*.
+   - Haz clic en **Sí** para exponer los datos del fragmento a la página y **Guardar** la variable
+   - Selecciona el widget *DatePicker*.
+   - En el campo *Valor* sustituye *formInput* por *dataExt*
+   - Selecciona el widget *Input* y sustituye formInput por *dataExt* en el campo *Value*
+   - Haz clic en **Guardar**.
 
-1. Create a new variable to store the new leave request values:
-   - Click on **Create a new variable**
-   - Name it *newLeaveRequest*
-   - Choose **JSON** type
-   - Click **Save**
+1.  Vincula los datos del fragmento con los datos de la página:
+   - Vuelva a la página de la aplicación *SeguimientoDeSolicitud*.
+   - En el panel de configuración, en *Datos de fragmento enlazable* agrega la variable *nuevaSolicitudVacaciones*
 
-1. Create a fragment from the *FillLeaveRequest* form that will be reused in the page:
-   - Go back to UI Designer home page
-   - Select *LeaveRequestStatus* page in the **Pages** tab and click to open it
-   - On the *fillLeaveRequest* form, select the container with the 2 widgets *Leave Start* and *DayCount*
-   - In the right panel, click on **...** and select **Save as fragment**  
-     ![fragment selection in UI Designer](images/ex10/ex10_03.png)
-   - Name it *NewLeaveRequestFragment*
-   - Click on **Save**. A new menu tab appears at the left side of UI Designer.  
-     ![menu fragment in UI Designer](images/ex10/ex10_04.png)
-   - Save the form and go back to UI Designer home page  
-   
-1. Add the fragment in the form container and configure it:
-   - Drag and drop the *NewLeaveRequestFragment* from the left menu to the form container.
-   - Select the fragment and click on **Edit...** to configure the fragment's data  
-     ![menu fragment in UI Designer](images/ex10/ex10_05.png)
-   - Click on **Create a new variable**
-   - Name it *dataExt*
-   - Click on **Yes** to expose the fragment data to the page and **Save** the variable
-   - Select the *DatePicker* widget 
-   - In the field *Value* replace *formInput* by *dataExt*
-   - Select the *Input* widget and replace formInput by *dataExt* in the field *Value*
-   - Click on **Save**
+1. Crea una nueva variable para almacenar información relacionada con el proceso:
+   - Haz clic en **Crear una nueva variable**
+   - Nombra la variable *informacionDefinicionProceso*
+   - Elije el tipo **API externa**
+   - En el campo **API URL**, escribe:
+     `../API/bpm/process?p=0&c=10&f=name=SolicitudVacaciones&o=version%20desc`
+     
+1. Agrega un botón para enviar el formulario:
+   - Arrastra el widget **Botón** desde la paleta y colócalo en el contenedor del formulario debajo de los dos widgets
+   - Ingresa *Crear una nueva solicitud* en el campo **Etiqueta**
+   - Selecciona **POST** de la lista desplegable **Acción**
+   - Haz clic en **fx** para cambiar el modo del campo **Datos enviados al hacer clic** y selecciona *nuevaSolicitudVacaciones*
+   - En el campo **URL para llamar**, escribe: `../API/bpm/process/{% raw %}{{informacionDefinicionProceso[0].id}}{% endraw %}/instantiation`
+   - En el campo **URL de destino si tiene éxito**, escribe: `/bonita/apps/solicitud-vacaciones` (de momento no se puede ir a la página porque hay que crear la aplicación de destino)
+   - Selecciona la opción **centrado** para el parámetro **Alineación**
+   - Selecciona la opción **primary** para el parámetro **Estílo**
+   - Guarda los cambios. La página ahora debería verse así:
 
-1.  Bind the fragment data with the page data:
-   - Go back to the *LeaveRequestStatus* application page
-   - In the configuration panel, in *Bindable fragment data* add the variable *newLeaveRequest*
-   
-1. Create a new variable to store the process information:
-   - Click on **Create a new variable**
-   - Name it *processDefinitionInfo*
-   - Choose **External API** type
-   - In the field API URL, enter: `../API/bpm/process?p=0&c=100&o=version%20DESC&f=name=LeaveRequest`
+   ![página de aplicación en UI Designer con formulario](images/ex06/ex6_05.png)
 
-1. Add a submit button in the form container:
-   - Drag the **Button** widget from the palette and place it in the form container below the two widgets
-   - Enter *Create a new request* in the field **Label**
-   - Set **Alignment** as *Center*
-   - Set **Style** as *Primary*
-   - Select **POST** in the **Action** drop-down list
-   - Click on **fx** to switch the **Data sent on click** field mode and then enter *newLeaveRequest*
-   - In the field **URL to call**, enter: `../API/bpm/process/{% raw %}{{processDefinitionInfo[0].id}}{% endraw %}/instantiation`
-   - In the field **Target URL on success**, enter: `/bonita/apps/leave-request`
-   - Save the page
-   - Click on **Preview**
-   - The page should look like that:
-   
-   ![Application page in UI Designer including a form](images/ex10/ex10_06.png)
-   You can click on Preview to verify the page is displayed correctly.
-   
-1. Deploy again the application from Bonita Studio:
-   - Click on button **Deploy**
-   - A deployment window opens. Click on *Deploy* (B) 
+   - La vista previa de la página te permite verificar que funciona correctamente
+     
+> Consejo: si está conectado al Portal en el mismo navegador, se mostrará la solicitud de baja actual.
+
+1. Despliegue de nuevo la aplicación desde Bonita Studio:
+   - Haz clic en el botón **Desplegar**
+   - Se abre una ventana de despliegue. Haz clic en *Desplegar* (B) 
    
    ![Deploy the application](images/ex10/ex10_07.png)
-   
-   - To open the application, select *Leave requests application as User*.
-   - Click on *Open*.
+
+   - Para abrir la aplicación, selecciona *Aplicación de solicitud de vacaciones como usuario*.
+   - Haz clic en *Abrir*.
    
     ![opening window](images/ex10/ex10_08.png)
-    
- The application should look like this once deployed :
- 
+
+La aplicación debería tener este aspecto una vez desplegada: 
    
    ![application rendering](images/ex06/ex6_08.png)   
 
-And that's it!
+¡Y ya está!

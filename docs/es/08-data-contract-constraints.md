@@ -1,28 +1,28 @@
 ---
-title: Exercise 8 - Adding constraints on contracts
+title: Ejercicio 8 - Agregar restricciones a un contrato
 ---
 
-## Goal
+## Objetivo
 
 El objetivo de este ejercicio es seguir con la implantación del proceso de solicitud de vacaciones mediante la especificación de restricciones al contrato para la instanciación del caso.
 
 > ⚠ Es obligatorio respetar estrictamente las mayúsculas y minúsculas y la sintaxis de los nombres técnicos indicados en las instrucciones.
 
-## Instructions overview
+## Resumen de las instrucciones
 
-Duplica el diagrama de proceso del ejercicio anterior para crear una versión 2.0.0.
+Duplica el diagrama de proceso del ejercicio anterior para crear una versión 8.0.0.
 
-Agrega las siguientes dos restricciones en el contrato de instanciación:
+Agrega las siguientes restricciones en el contrato de instanciación:
 
 - *fechaInicio* debe estar en el futuro
 - *numeroDias* debe ser estrictamente mayor que cero
 
 
-## Step by step instructions
+## Instrucciones paso a paso
 
-1. Duplica el diagrama de proceso del ejercicio anterior para crear una versión 2.0.0.
+1. Duplica el diagrama de proceso del ejercicio anterior para crear una versión 8.0.0.
 
-1. Set up the case instantiation contract constraints:
+1. Establece las restricciones del contrato de instanciación del caso:
    - Selecciona el pool del proceso
    - Navega en la pestaña **Ejecución / Contrato** y selecciona la pestaña **Restricciones**
    - Agrega la siguiente restricción:
@@ -50,4 +50,4 @@ Agrega las siguientes dos restricciones en el contrato de instanciación:
 1. Ejecuta el proceso y prueba las restricciones de los contratos:
     - Inicia el proceso y completa los formularios generados automáticamente
 
-[Siguiente ejercicio: añadir un filtro de actor](09-actor-filter.md)
+[Siguiente ejercicio: agregar un filtro de actor](09-actor-filter.md)

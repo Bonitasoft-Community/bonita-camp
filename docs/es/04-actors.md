@@ -76,6 +76,6 @@ Define un rol **Validador** en la organización y asignalo al carril *Validador*
    
  1. Conéctate con el usuario *helen.kelly* y la contraseña *bpm*
  
-    - Si el filtro de actor se ejecutó correctamente, la tarea *Validar solicitud de vacaciones* debería estar disponible en la lista de tareas
+    - Si los actores se han definido correctamente, la tarea *Validar solicitud de vacaciones* debería estar disponible en la lista de tareas
    
    [Ejercicio siguiente: configuración de un conector](05-connectors.md)
