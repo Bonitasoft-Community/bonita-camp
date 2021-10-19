@@ -27,6 +27,7 @@ El grupo de procesos debe incluir los siguientes elementos BPMN:
 * Un evento final *Fin - Solicitud rechazada*
 
 ## Instrucciones paso a paso
+
 1. Inicia Bonita Studio
 1. En la página de inicio de Studio, haz clic en **Nuevo proyecto** en el menú Diseño.
 1. Ingrese el nombre del proyecto _"SolicitudVacaciones"_.

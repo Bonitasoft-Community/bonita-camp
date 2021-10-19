@@ -1,67 +1,70 @@
 ---
-title: Exercise 7 - Adding a timer to the process
+title: Ejercicio 7 - Agregar un evento de tiempo al proceso
 ---
 
-## Goal
+## Objetivo
 
-The goal of this exercise is to enrich the first version of the leave request process diagram with a **timer** on the validation task.
+El objetivo de este ejercicio es enriquecer la primera versión del diagrama del proceso de solicitud de vacaciones con un **evento de tiempo** en la tarea de validación.
 
-This timer will automatically send a reminder to the validator if he doesn't perform the task on time, without interrupting the process.
+Este evento de tiempo enviará automáticamente un recordatorio al validador si no realiza la tarea a tiempo, sin interrumpir el proceso.
 
-## Instructions overview
+## Resumen de las instrucciones
 
-Duplicate the process diagram from the previous exercise to create a 3.2.0 version
+Duplica el diagrama de proceso del ejercicio anterior para crear una versión 7.0.0.
 
-Add a non-interrupting boundary timer on the task *Validate request*.
-The timer duration is set to **5 seconds**. 
+Agrega un evento límite de tiempo no interruptor en la tarea *Validar solicitud*.
+La duración del temporizador es de **5 segundos**.
 
-Add a service task named  *Send validation reminder* and an end event named *End - Reminder sent*.
+Agrega una tarea de servicio llamada *Enviar recordatorio de validación* y un evento de fin llamado *Fin - Recordatorio enviado*.
 
-Add an email connector on the *Send validation reminder* service task. It will send a reminder email to the validator.
+Añade un conector de correo electrónico en la tarea de servicio *Enviar recordatorio de validación*. Enviará un correo electrónico de recordatorio al validador.
 
-## Step by step instructions
 
-1. Add a non-interruptive boundary timer to the task *Validate request*:
-   - Click on the task *Validate request*
-   - In the tool box, add a boundary event  
-   ![boundary event toolbox](images/ex07/ex7_01.png)
-   - Select the **non-interrupting timer event** in the list. It will be automatically added to the task.
-   ![non-interrupting timer event](images/ex07/ex7_02.png)
+## Instrucciones paso a paso
 
-1. Create a service task named *Send validation reminder* after the boundary event by dragging and dropping the task from the event to the lane.
-1. Add an end event named *End - reminder sent* next to the newly added service task.
+1. Agrega un evento límite de tiempo no interruptor a la tarea *Validar solicitud*:
+   - Haz clic en la tarea *Validar solicitud*.
+   - En la caja de herramientas, agrega un evento límite  
+  ![Caja de herramientas de eventos límite](images/ex07/ex7_01.png)
+   - Selecciona el **evento de tiempo no interruptor** en la lista. Se agregara automáticamente a la tarea.
+  ![evento de temporizador que no interrumpe](images/ex07/ex7_02.png)
+
+1. Crea una tarea de servicio llamada *Enviar recordatorio de validación* después del evento de límite arrastrando y soltando la tarea del evento al carril.
+1. Agrega un evento de fin llamado *Fin - recordatorio enviado* junto a la tarea de servicio recién añadida.
    
-1. Configure the timer event:
-   - Select the boundary timer event
-   - Navigate to the **General / General** tab 
-   - Add the name of the timer *Send reminder after 5s*
-   - Set the timer condition by clicking on **Edit**
-   - In the editor, select **Duration** to set the timer condition and put *5* in the field **Seconds** (A)
-   - Click on **Generate duration expression** (B)
-   - Click on **Finish**
-   ![timer condition](images/ex07/ex7_03.png)
-     The timer condition is automatically generated and must appear in the tab **General** 
+1. Configura el evento de tiempo:
+   - Selecciona el evento de tiempo de límite
+   - Vete a la pestaña **General / General**.
+   - Agrega el nombre del evento de tiempo *Enviar recordatorio después de 5s*.
+   - Establezca la condición del evento haciendo clic en **Editar**.
+   - En el editor, selecciona **Duración** para establecer la condición del temporizador y pon *5* en el campo **Segundos** (A)
+   - Haz clic en **Generar expresión de duración** (B)
+   - Haz clic en **Finalizar**
+     ![condición del temporizador](images/ex07/ex7_03.png)
+     La condición del temporizador se genera automáticamente y debe aparecer en la pestaña **General**
 
-1. Add an email connector on the *Send validation reminder* task:
-   - Select the task *Notify request approved*
-   - Navigate to the **Execution / Connectors in** tab
-   - Select the existing email connector *sendRequestApprovedEmail*
-   - Click on **Move/Copy...**
-   - In the editor, select the action to perform **Copy** and the service task *Send Validation Reminder* 
-   - Click on **Finish**  
-     ![Copy connector](images/ex07/ex7_04.png)
-1.Configure the email connector on the *Send validation reminder* task:
-   - Select the task *Send validation reminder*
-   - Navigate to the **Execution / Connectors in** tab
-   - Select the email connector and click on **Edit**
-   - Update the name to *sendReminderEmail*
-   - Click on **Next**
-   - Do not change the parameters
-   - Move to the *Email addressee* configuration page
-   - Keep *hr@acme.com* in the **From** field
-   - Use the **pencil** icon to edit the expression of the **To** field
-   - Name the script *getValidatorEmail*
-   - In the script editor, enter the following script:
+1. Agrega un conector de correo electrónico en la tarea *Enviar recordatorio de validación*:
+   - Selecciona la tarea *Notificar solicitud aprobada*.
+   - Vete a la pestaña **Ejecución / Conectores entrada**.
+   - Selecciona el conector de correo electrónico existente *enviarRequestApprovedEmail*.
+   - Haz clic en **Mover/Copiar...**
+   - En el editor, selecciona la acción a realizar **Copiar** y la tarea de servicio *Enviar Recordatorio de Validación*
+   - Haz clic en **Finalizar**.  
+      ![Conector de copia](images/ex07/ex7_04.png)
+     
+1. Configura el conector de correo electrónico en la tarea *Enviar recordatorio de validación*:
+   - Selecciona la tarea *Enviar recordatorio de validación*.
+   - Vete a la pestaña **Ejecución / Conectores entrada**.
+   - Selecciona el conector de correo electrónico y haz clic en **Editar**.
+   - Actualiza el nombre a *enviarRecordatorioEmail*.
+   - Haz clic en **Siguiente**.
+   - No hay que cambiar los parámetros
+   - Pasa a la página de configuración de *Destinatario del correo electrónico*.
+   - Mantene *hr@acme.com* en el campo **De**.
+   - Utiliza el icono del **lápiz** para editar la expresión del campo **Para**.
+   - Nombre el script *getValidatorEmail*.
+   - En el editor de scripts, introduce el siguiente script:
+   
    <pre>
    def processApi = apiAccessor.getProcessAPI();
    def identityApi = apiAccessor.getIdentityAPI();
@@ -85,13 +88,13 @@ Add an email connector on the *Send validation reminder* service task. It will s
    
    return reviewRequestAssignedEmail;</pre>
 
-   - Move to the next page
-   - Set *A pending request is waiting for approval* as the subject
-   - Click on **Finish**
+   - Pasa a la página siguiente
+   - Pon como asunto *Una solicitud pendiente de aprobación*.
+   - Haz clic en **Finalizar**.
 
-1. Run the process to test it:
-   - Make sure FakeSMTP server is still running.
-   - Click on **Run** and instantiate a new case
-   - After 5 seconds, check FakeSMTP box. An email has been sent.
+1. Ejecuta el proceso para probarlo:
+   - Asegúrate de que el servidor FakeSMTP sigue funcionando.
+   - Haz clic en **Run** y crea un nuevo caso
+   - Después de 5 segundos, verifica FakeSMTP. Se ha enviado un correo electrónico.
 
-[Next exercise: adding constraints to a contract](08-data-contract-constraints.md)
+[Siguiente ejercicio: agregar restricciones a un contrato](08-data-contract-constraints.md)

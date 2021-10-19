@@ -1,52 +1,41 @@
 ---
-title: Exercise 9 - Configuring actor filters
+title: Ejercicio 9 - Agregar un filtro de actor
 ---
 
-## Goal
+## Objetivo
 
-The goal of this exercise is to add collaboration to the existing process by dispatching the tasks between two actors: a requestor and a validator.
+El objetivo de este ejercicio es mejorar la colaboración entre actores añadiendo un filtro de actores al carril del validador.
 
-## Instructions overview
+## Resumen de las instrucciones
 
 Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *9.0.0*.
 
-Replace the current **validator** actor with an actor filter of type **Initiator manager** on the *Validator* lane.
+Sustituye el actor **validador** actual por un filtro de actores de tipo **gestor de iniciadores** en el carril *Validador*.
 
-## Step by step instructions
+## Instrucciones paso a paso
 
-1. Duplicate the process diagram from the previous exercise to create a *5.0.0* version
-
-1. Add an **Initiator manager** actor filter on the *Validator* lane:
-   - Select the *Validator* lane
-   - Navigate to the **General / Actors** tab
-   - Select the *Employee actor* from the drop-down menu to replace *validator* actor
-   - Click on the **Set...** button of the actor filter  
-     A message will inform you that an actor filter needs to be installed first. Click **OK**. The Bonita MarketPlace will automatically open
-   ![actor filter marketplace](images/ex09/ex9_01.png)   
-   - Select the *Initiator manager* filter
-   - Click on **Install**
-   - Select the *Initiator manager* definition and click on **Next**
-   - Name the filter *requestorManager*
-   - Click on **Finish**
+1. Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *9.0.0*.
 
 1. Configura un filtro de actor del tipo **Gestor iniciador** en la senda *Validador*:
     - Selecciona la senda *Validador*
     - Navega en la pestaña **General / Actores**
-    - Selecciona el actor *Empleado actor* del menú desplegable
-    - Haz clic en el botón **Definir ...** asociado con el filtro de actor
-    - Selecciona un tipo de filtro **Gestor iniciador**
+    - Selecciona el actor *Empleado actor* del menú desplegable para reemplazar el actor *validador*
+      Un mensaje te informará de que es necesario instalar primero un filtro de actores. Haz clic en **Aceptar**. El Bonita MarketPlace se abrirá automáticamente
+      ![mercado de filtros de actores](images/ex09/ex9_01.png)
+    - Selecciona el filtro *Administrador de iniciadores*.
+    - Haz clic en **Instalar**.
+    - Selecciona la definición del filtro **Gestor iniciador**
     - Haz clic en **Siguiente**
     - Nombra el filtro *responsableIniciador*
     - Haz clic en **Finalizar**
-    
-    ![gerente_iniciador](images/ex04/ex4_10.png)   
 
+1. Ejecuta el proceso con los dos actores:
+   - Inicia el proceso desde Studio (se usará el usuario Walter Bates)
+   - Envía el *Formulario de solicitud de vacaciones*. Si los actores están configurados correctamente, no se debe proponer la tarea *Validar solicitud de vacaciones*
+   - Cierra sesión en el portal haciendo clic en el nombre de usuario en la esquina superior derecha y luego **Cerrar sesión**:
+   ![cierre de sesión del portal](images/ex04/ex4_08.png)
+   - Conéctate con el usuario *helen.kelly* y la contraseña *bpm*
 
+   Si el filtro de actor se ejecutó correctamente, la tarea *Validar solicitud de vacaciones* debería estar disponible en la lista de tareas
 
-   ![Process diagram with two lanes](images/ex04/ex4_02.png)
-
-   - Run the process from the Studio to test it. Initiate a new case with the use Walter Bates.
-   - Connect as user *helen.kelly* with *bpm* as password
-   - If the actor filter ran correctly, the *Validate request* tasks should now be available in the inbox
-
-[Last exercise: enrich an application with a fragment](10-fragment.md)
+[Último ejercicio: enriquecer una aplicación con un fragmento](10-fragment.md)

@@ -1,151 +1,140 @@
 ---
-title: Exercise 6 - Build a leave request application
+title: Ejercicio 6 - Crear una aplicación de gestión de vacaciones
 ---
 
-## Goal
+## Objetivo
 
-The goal of this exercise is to build an application for users to create and manage their leave requests.
+El objetivo de este ejercicio es proporcionar a los usuarios una aplicación que permita rastrear y crear solicitudes de vacaciones.
 
-## Instructions overview
+## Resumen de las instrucciones
 
-Open the UI Designer and create a new **Application page** named *LeaveRequestStatus* to follow the progress of the connected user leave request.
+Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *6.O.0*.
 
-This page will contain one "multiple container" that list the on-going leave requests. For each request, the start date, number of days and approval status will be displayed.
+Abre el UI Designer y crea una nueva **Página de aplicación** llamada *SeguimientoDeSolicitud* que permite el seguimiento de las solicitudes de vacaciones iniciadas por el usuario conectado.
 
-Add a link to the instantiation form to start a new leave request.
+Esta página contiene un contenedor múltiple que enumera las solicitudes de vacaciones abiertas. Para cada solicitud, se muestran la fecha de inicio, el número de días y el estado de aprobación.
 
-Create a new application. Then add the *LeaveRequestStatus* page in the application.
+Agrega un enlace al formulario de instanciación para iniciar una nueva solicitud de vacaciones.
 
-Deploy the application page using the **Deploy** button from the Studio.
+Cree una nueva aplicación y agregue la página *SeguimientoDeSolicitud*.
 
-Access the application using the generated URL.
+Acceda a la aplicación recién creada utilizando la URL única generada.
 
+## Instrucciones paso a paso
 
-## Step by step instructions
+1. Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *5.O.0*.
 
-1. Create a new page:
-   - In the Studio, click on the **UI Designer** button
-   - Click on the **Create** button
-   - Select **Application page**
-   - Set the name to: *LeaveRequestStatus*
-   - Click on **Create**
+1. Crea una página de aplicación:
+    - En el Studio, haz clic en el botón **UI Designer**
+    - Haz clic en el botón **Crear**
+    - Selecciona **Página de aplicación**
+    - Ingresa el nombre *SeguimientoDeSolicitudes*
+    - Haz clic en **Crear**
    
-   ![Application page creation](images/ex06/ex6_01.png)
+   ![crear una página de aplicación](images/ex06/ex6_01.png)
    
-   - You should now be on the designer page
+    - La vista del diseñador ahora debería mostrarse  
 
-1. Add a title to your page:
-   - Drag the widget **Title** (A) from the palette to the top of the page (B)
-   - Select the widget
-   - On the right panel, enter *Leave request application* in the **Text** field (C)
-   - Select **center** for **Alignment**
+1. Agrega un título a tu página:
+    - Arrastra el widget **Título** (A) desde la paleta y colócalo en la parte superior de la página (B)
+    - Selecciona el widget
+    - En el panel derecho, ingresa *Aplicación de gestión de solicitudes de vacaciones* en el campo **Texto**
+    - Selecciona la opción **centrado** para el parámetro **Alineación**  
    
-   ![Widget title addition](images/ex06/ex6_02.png)
+   ![agregar widget título](images/ex06/ex6_02.png)
 
-1. Create a variable to list the leave request:
-   - Click on **Data model** icon ![icone-datamodel](images/ex06/ex6_00.png)
-   - Drag and drop *LeaveRequest* onto the page just below the main title (a dotted line should appear)
-   - Keep the name by default *leaveRequest*
-   - Select the **"Find** query
-   - Click on **Save** button
+1. Crea una variable para listar las solicitudes de vacaciones:
+    - Haz clic en el ícono **Modelo de datos** ![icone-datamodel](images/ex06/ex6_00.png)
+    - Arrastra y suelta *SolicitudVacaciones* en la página
+    - Mantenga el nombre predeterminado: *solicitudVacaciones*
+    - En la sección **Consultas de "Buscar (Find)" en un atributo**, selecciona *solicitanteId*
+    - Haz clic en el botón **Guardar**
     
-   A multiple container is automatically generated with a table showing the attributes of the LeaveRequest object.
-   ![container leaveRequest](images/ex06/ex6_14.png)
+    Se genera automáticamente un contenedor múltiple con una tabla que contiene los atributos del objeto SolicitudVacaciones.
 
-1. Modify the container title like follows:
+    ![contenedor multiple](images/ex06/ex6_13.png)
+
+1. Sustituir el subtítulo *SolicitudVacaciones* del contenedor y las etiquetas : 
+   - Nómbralo *Seguimientio de solicitudes*
+   - Selecciona la opción **Nivel 4** para el parámetro **Nivel del título**.
+   - Selecciona la opción **centrado** para el parámetro **alineación**. 
+   - Selecciona el widget Tabla
+   - En el panel de la derecha, en el campo **Cabeceras**, borra *Solicitante Id*.
+   - Sustituye *Fecha Inicio* por *Fecha de inicio* y *Número Dias* por *Número de días*.
    
-     Property | Value
-     -------- | -----
-     Title | *Leave request status*
-     Title level | **Level 4**
-     Alignment | **left**
+1. Muestra la información en las columnas de la tabla de una manera más clara:
+    - En el panel de la derecha, en el campo **Claves de columna**, elimina *solicitanteId*
+    - Borra el widget Input *SolicitanteId* en el contenedor de detalles porque esta información no es útil.
 
-1. Modify the labels of the widget **Table**:
-    - Select the widget **Table**
-    - In the right panel, in the **Headers** field, delete *RequestorId*.
-    - Replace *Leave Start* with *Start date*, *Day Count* with *Number of days*.
+1. Selecciona el widget *Fecha Inicio* y cambia las siguientes propiedades:
+   
+      Propiedad | Valor
+      --------- | ------
+      Etiqueta | Fecha de inicio
+      Formato técnico de la fecha | dd/MM/yyyy
+      Placeholder | dd/mm/aaaa
+      Mostrar el botón de hoy | no
+      
+1. Selecciona el widget *Número de días* y cambia las siguientes propiedades :
 
-1. Display the information in the columns of the table more clearly :
-    - In the right panel, in the field **Column keys**, delete *requestorId*.
-    - Delete the Input widget *RequestorId* in the details container because this information is not useful
+      Propiedad | Valor
+      --------- | ------
+      Etiqueta | Número de días
+      Placeholder | Número de días de vacaciones
+      Valor mínimo | 1
+
+   - Guarda la página
+   - La página debería verse así:
+   
+   ![página de aplicación en el UI Designer](images/ex06/ex6_04.png)
+   
+   - Puedes obtener una vista previa de la página en cualquier momento haciendo clic en **Vista previa**
+   
+   > Consejo: si está conectado al portal en el mismo navegador, se mostrarán las solicitudes de vacaciones reales.
+
+1. Agrega un nuevo widget de tipo **Link**:
+   - Arrastra un widget de tipo **Link** desde la paleta y colócalo entre los dos títulos
+   - En el campo **Texto** introduce *Crear una nueva solicitud*.
+   - En el campo **Tipo**, selecciona **Formulario de instanciación del proceso**
+   - En el campo **Nombre del proceso** agrega *SolicitudVacaciones*.
+   - En el campo **Versión del proceso** agrega el número de la versión *6.0.0*
+   - En el campo **Alineación** selecciona **centrado**
+   - En el campo **Estilo** selecciona **Primario**
+   - Guarda la página
     
-1. Select the **Date picker** widget called *Leave Start* and edit the following properties:
-   
-     Property | Value
-     -------- | -----
-     Read-Only | **Yes**
-     Label | *Start date*
-     Show Today button | **No**
+   Ahora vamos a desplegar la aplicación en el portal desde Bonita Studio.
 
-1. Select the **Input** widget called *Day Count* and edit the following properties:
-   
-     Property | Value
-     -------- | -----
-     Read-Only | **Yes**
-     Label | *Number of days*
-
-   - Save the page
-   - The page should look like this:
-   
-   ![Application page in UI Designer](images/ex06/ex6_04.png)
-   
-   - You can preview the page at anytime by clicking on **Preview** button
-   
-   > Tip: if you are logged in the Portal in the same browser, the current leave request will be displayed.
-
-1. Add a new **Link** widget:
-   - Drag a **link** widget from the palette and place it between the two titles
-   - In the field **Text** enter *Create a new request*
-   - In the field **Type**, select **Process instanciation form**
-   - In the field **Process name** add *LeaveRequest*
-   - In the field **Alignment** select center
-   - In the field **Style** select **Primary**
-   - Save the page
-   
-We will now deploy the application in the portal from the Studio.
-
-1. Add an application descriptor :
-   - In the Studio, in the **Development/Application Descriptor** menu select **New**. An .xml file is automatically initialized.
-   - Click *Add an Application Descriptor*.
-   - Enter *leave-request* in the field **Application URL token**.
-   - Enter *Leave requests application* in the field **Displayed name**.
-   - Click on the button **Add**.
-   
-   ![creation of an application](images/ex06/ex6_15.png)
-
-1. Create a new application :
-   - In the Navigation menu, click *Add one-page menu* (A)
-   - Enter *Requests follow-up* in the field **Menu**.
-   - Select the *custompage_LeaveRequestStatus* page in the field **Application Page** (B)
-   - Enter *leave-request* in the **Token** field (C)  
-   
-   ![creation of an application](images/ex06/ex6_07.png)
-   
-1. Define the *Requests follow-up* page as the application home page :
-   - Select the *leave-request* token from the Menu **HomePage**.
-   ![home page](images/ex06/ex6_16.png)
-   - Save
-   - Check that the configuration page looks like this :
-   
-   ![configuration page](images/ex06/ex6_17.png)
-
-1. Deploy the application in the Portal:
-   - Click on the link *http://localhost:8080/bonita/apps/leave-request* to access the application. (A)
-   - A deployment window opens. Click on *Deploy* (B) 
-   
-   ![Deploy the application](images/ex06/ex6_09.png)
-   
-   - To open the application, select *Leave requests application as User*.
-   - Click on *Open*.
-   
-    ![opening window](images/ex06/ex6_18.png)
+1. Agrega un nuevo descriptor de aplicación:
+    - En Bonita Studio, en el **Explorador de proyectos** a la izquierda de la ventana, despliega **Páginas/Formularios/Layouts** para verificar la presencia de todas las páginas y formularios
+    - En el menú ![Nuevo](images/ex06/ex6_16.png) selecciona **Descriptor de aplicación**, haz clic en **Nueva**. Un fichero .xml se crea automaticamente.
+    - Haz clic en ![Añadir descriptor app](images/ex06/ex6_14.png)
+    - Ingresa *solicitud-vacaciones* en el campo **Token de la aplicación**
+    - Ingresa *Aplicación de solicitudes de vacaciones* en el campo **Título dinámico**
+    - Haz clic en **Añadir**
     
- The application should look like this once deployed :
- 
+    ![titulo aplicacion](images/ex06/ex6_15.png)
+    
+1. Crea una nueva aplicación
+    - En el menú de navegación, haz clic en **Añadir menú de una página** (A)
+    - Ingresa *Seguimiento de las solicitudes de vacaciones* en el campo **Menú**
+    - Selecciona la página *custompage_SeguimientoDeSolicitud* en el campo **Página de aplicación** (B)
+    - Ingresa *solicitud-vacaciones* en el campo **Token** (C).
+    
+      ![creación de una aplicación](images/ex06/ex6_07.png) 
+    
+1. Define la página *Aplicación de solicitudes de vacaciones* como página de inicio de la aplicación: 
+    - Selecciona el token *solicitud-vacaciones* en el menú **Página de inicio**
+    - Haz clic en el enlace para probar la aplicación (A)
+    - Una ventana se abre para confirmar el despliegue. Haz clic en el botón **Desplegar**
    
-   ![application rendering](images/ex06/ex6_08.png)   
+ Vas a poder acceder a la aplicación en el navegador directamente
 
-And that's it!
+   
+   ![vista previa de la aplicación](images/ex06/ex6_08.png)
 
-You want to go further? Follow the next iteration of the project.
-Next exercise: [add a timer to the process](07-timer.md)
+
+**¡Ya esta!**
+
+¿Quieres ir más allá? Sigue la siguiente iteración del proyecto.
+Próximo ejercicio: [agregar un temporizador al proceso](07-timer.md)
+
