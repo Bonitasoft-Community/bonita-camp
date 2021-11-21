@@ -16,9 +16,9 @@ If you need assistance you can:
 - [Get in touch with Bonitasoft](https://www.bonitasoft.com/contact-us) to get more information about [support offering](https://www.bonitasoft.com/support) and additional features of Enterprise Edition
 
 Content is currently available in:
-- English (Bonita Camp 2021.1)
-- Français (Bonita Camp 2021.1)
-- Español (Bonita BPM 2021.1)
+- English (Bonita Camp 2021.2)
+- Français (Bonita Camp 2021.2)
+- Español (Bonita BPM 2021.2)
 
 
 ## For Bonita Camp contributors
