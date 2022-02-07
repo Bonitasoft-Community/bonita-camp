@@ -109,7 +109,7 @@ Accéder à l'application nouvellement créer en utilisant l'URL unique génér�
       --------- | ------
       Texte | Nouvelle demande
       Type | Formulaire d'instanciation de processus
-      Nom du processus | demandeConges
+      Nom du processus | DemandeConges
       Version du processus | 4.0.0
       Alignement | Au centre
       Style | primary
