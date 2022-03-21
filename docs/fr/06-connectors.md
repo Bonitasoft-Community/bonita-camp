@@ -1,5 +1,5 @@
 ---
-title: Exercice 5 - Notification par le biais d'un connecteur
+title: Exercice 6 - Notification par le biais d'un connecteur
 ---
 
 ## Objectif
@@ -84,4 +84,4 @@ BonitaUsers.getProcessInstanceInitiatorProfessionalContactInfo(apiAccessor,proce
 1. Tester le processus :
    - Exécuter deux fois le processus pour tester les différents chemins et s'assurer que les emails sont bien envoyés et interceptés par FakeSMTP
 
-[Exercice suivant : création d'une application](06-applications.md)
+   [Exercice suivant : création d'une application](07-applications.md)

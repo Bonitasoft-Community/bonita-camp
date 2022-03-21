@@ -94,4 +94,4 @@ Le pool du processus devra contenir les éléments BPMN suivants :
    ![s'affecter une tâche](images/ex01/ex1_09.png)
    - Soumettre le formulaire de l'étape *Valider demande* en cliquant sur le bouton **Exécuter** pour terminer le cas
 
-[Exercice suivant : création de données et définition de contrats](02-data-contract.md)
+[Exercice suivant : ajout d'un timer](02-timers.md)
