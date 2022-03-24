@@ -1,5 +1,5 @@
 ---
-title: Exercice 3 - Création de formulaires
+title: Exercice 4 - Création de formulaires
 ---
 
 ## Objectif
@@ -131,4 +131,4 @@ Créer les formulaires suivants :
    - Lancer l'exécution du processus par le biais du Studio
    - Valider à partir de l'historique des cas que le bon chemin a bien été emprunté jusqu'à la fin du processus
 
-[Exercice suivant : définition des acteurs](04-actors.md)
+[Exercice suivant : définition des acteurs](05-actors.md)
