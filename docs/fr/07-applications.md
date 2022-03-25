@@ -224,3 +224,5 @@ Nous allons maintenant déployer l'application dans le portail depuis le Studio.
    
    ![rendu de l'application](images/ex06/ex6_08.png)
 
+[Exercice suivant : création d'un fragment](08-fragment.md)
+
