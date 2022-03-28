@@ -12,11 +12,10 @@ Dupliquer le diagramme de processus de l'exercice précédent pour créer une ve
 
 Créer les formulaires suivants :
 - Un formulaire d'instanciation de processus au niveau du pool permettant d'initialiser les attributs *dateDebut* et *nombreJours* de la variable métier *demande*
-- Un formulaire d'étape permettant d'afficher les informations du demandeur et les données *dateDebut* et *nombreJours* en lecture seule puis d'alimenter la donnée *estApprouvee*
+- Un formulaire d'exécution de tâche permettant d'afficher les informations du demandeur et les données *dateDebut* et *nombreJours* en lecture seule puis d'alimenter la donnée *estApprouvee*
 
 ## Instructions pas-à-pas
 1. Dupliquer le diagramme de processus de l'exercice précédent (2.0.0) pour créer une version *"2.1.0"* du diagramme ET du pool
-1. Fermer l'onglet du diagramme 2.0.0
 1. Créer un formulaire d'instanciation :
    - Sélectionner le pool
    - Dans la zone de propriétés, cliquer sur l'onglet **Exécution** puis le sous-onglet **Formulaire d'instanciation**
