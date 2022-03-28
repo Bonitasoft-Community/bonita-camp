@@ -1,81 +1,78 @@
 ---
-title: Exercice 7 - Créer une application de gestion de congés
+title: Exercice 7 - Création d'une application
 ---
 
 ## Objectif
 
 L'objectif de cet exercice est de fournir aux utilisateurs une application qui permette le suivi et la création de demandes de congés.
 
-## Instructions résumées
+## Instructions simples
 
-Ouvrir l'UI Designer et créer une nouvelle **Page d'application** nommée *SuiviDesDemandes* qui permet le suivi des demandes de congés initiés par l'utilisateur connecté.
+Créer une page d'application nommée *"SuiviDesDemandes"* qui permet le suivi des demandes de congés initiées par l'utilisateur connecté.
 
 Cette page contient un container multiple qui liste les demandes de congés ouvertes. Pour chaque demande, la date de début, le nombre de jours et le statut sont affichés.
-*Optionnel : Ajouter un widget date et un widget input pour collecter les informations nécessaires à la création d'une nouvelle demande de congés. Puis ajouter et configurer un bouton pour soumettre la nouvelle demande.*
+*Optionnel* : Ajouter un widget *Date* et un widget *Input* pour collecter les informations nécessaires à la création d'une nouvelle demande de congés. Puis ajouter et configurer un bouton pour soumettre la nouvelle demande.
 
-Créer une nouvelle application et y ajouter la page *SuiviDesDemandes*.
+Créer un descripteur d'application et y ajouter la page *SuiviDesDemandes*.
 
-Déployer l'application en utilisant le bouton **Déployer** du Studio.
+Déployer l'application.
 
-Accéder à l'application nouvellement créer en utilisant l'URL unique générée.
+Accéder à l'application nouvellement créée en utilisant l'URL unique générée.
 
 
-## Instructions pas à pas
+## Instructions pas-à-pas
 
 1. Créer une page d'application :
-   - Dans le Studio, cliquer sur le bouton **UI Designer**
+   - Dans la Cool Bar du studio, cliquer sur le bouton **UI Designer**, et dans la fenêtre d'information, cliquer **OK**
    - Cliquer sur le bouton **Créer**
-   - Sélectionner **Page d'application**
-   - Saisir le nom *SuiviDesDemandes*
+   - Dans *Type*, garder la sélection **Page d'application**
+   - Dans *Nom*, qui est un nom technique, saisir *"SuiviDesDemandes"*
    - Cliquer sur **Créer**
    
    ![création d'une page d'application](images/ex06/ex6_01.png)
    
-   - La vue de conception devrait maintenant être affichée
+   - L'éditeur de page s'affiche
 
 1. Ajouter un titre à votre page :
-   - Glisser le widget **Title** (A) depuis la palette et placer le en haut de la page (B)
-   - Sélectionner le widget
-   - Dans le panneau de droite entrer *Application de gestion des demandes de congés* dans le champ **Texte**
-   - Sélectionner l'option **au centre** pour le paramètre **Alignement**
+   - Depuis la palette à gauche, cliquer sur le widget **Title** (A) et le glisser-déposer en haut de la page (B)
+   - Dans le panneau de propriétés à droite, dans le champ *Texte*, entrer *"Application de gestion des demandes de congés"*
+   - Pour *Alignement*, sélectionner l'option **au centre**
    
    ![ajout widget titre](images/ex06/ex6_02.png)
 
 1. Créer une variable pour stocker les informations de session :
-   - Cliquer sur **Créer un nouvelle variable**
-   - Nommer la *sessionInfo*
+   - En bas, dans le panneau de variables, cliquer sur **Créer un nouvelle variable**
+   - La nommer *"sessionInfo"*
    - Choisir le type **External API**
-   - Entrer dans le champ **API URL** : `../API/system/session/unusedId`
+   - Dans le champ **API URL**, entrer `../API/system/session/unusedId`
+   - Cliquer sur **Enregistrer**
    
    ![ajout variable session info](images/ex06/ex6_03.png)
 
 1. Créer une variable pour lister les demandes de congés :
-   - Cliquer sur l'icône **Data model** ![icone-datamodel](images/ex06/ex6_00.png)
-   - Glisser-déposser *DemandeConges* sur la page sous le titre
-   - Conserver le nom par défaut : *demandeConges*
-   - Dans la section **"Find By" queries on an attribute**, sélectionner *idDemandeur*
-   - Dans la section **"Filtrer la requête finByIdDemandeur"** saisir la variable suivante :
+   - Tout à gauche de la palette, cliquer sur l'icon **Modèle de données** ![icone-datamodel](images/ex06/ex6_00.png)
+   - Glisser-déposer **DemandeConges** dans la page, sous le titre
+   - Conserver le nom par défaut : *"demandeConges"*
+   - Dans la section *Requêtes "Find By" sur un attribut**, sélectionner *idDemandeur*
+   - Dans la section *Filtrer la requête finByIdDemandeur* saisir la variable suivante : `{{sessionInfo.user_id}}`
    
    ![sessionInfo](images/ex06/ex6_13.png)
    
    - Cliquer sur le bouton **Enregistrer**.  
    
-   Un container multiple est automatiquement généré avec un tableau présentant les attributs de l'objet DemandeConges.
+   Un container multiple est automatiquement généré avec un tableau présentant les attributs de l'objet *DemandeConges*.
 
    ![container suivi des demandes](images/ex06/ex6_14.png)
 
-1. Remplacer le sous-titre *"DemandeConges"* du container et les libellés : 
-   - Le nommer *Suivi des demandes*
-   - Sélectionner l'option **Niveau 4** pour le paramètre **Niveau du titre**
-   - Sélectionner l'option **au centre** pour le paramètre **Alignement** 
-   - Sélectionner le widget Table
-   - Dans le panneau de droite, dans le champ **En-têtes**, supprimer *IdDemandeur*
-   - Remplacer *Date Debut* par *Date de début*, *Nombre Jours* par *Nombre de jours* et *EstApprouvée* par *Statut*
-
+1. Modifier les propriétés des widgets du container :
+   - Pour le widget *Title*, changer le *Texte* "DemandeConges" en *"Suivi des demandes"*
+   - Pour l'*Alignement*, sélectionner l'option **au centre** 
+   - Pour le widget *Table*, pour *En-têtes*, supprimer "IdDemandeur"
+   - Remplacer "Date Debut" par *"Date de début"*, "Nombre Jours" par *"Nombre de jours"* et "EstApprouvée" par *"Statut"*
 
 1. Déclarer une nouvelle expression JavaScript pour mettre en forme la colonne "Statut" de la liste :
    - Cliquer sur **Créer un nouvelle variable**
-   - Nommer la *ajoutLibelleStatutDemandeConges*
+   - La nommer *"ajoutLibelleStatutDemandeConges"*
    - Choisir le type **JavaScript expression**
    - Remplacer la valeur existante par le script suivant :
    ```javascript
@@ -145,12 +142,14 @@ Accéder à l'application nouvellement créer en utilisant l'URL unique génér�
    };
    return demande;
    ```
+   - Cliquer sur **Enregistrer**
 
-1. Créer une nouvelle variable pour stocker les informations liés au processus :
+1. Créer une nouvelle variable pour stocker les informations liées au processus :
    - Cliquer sur **Créer une nouvelle variable**
-   - Nommer la variable *informationDefinitionProcessus*
+   - Nommer la variable *"informationDefinitionProcessus"*
    - Choisir le type **External API**
-   - Dans le champ **URL d'API**, taper : `../API/bpm/process?p=0&c=100&o=version%20DESC&f=name=DemandeConges`
+   - Dans le champ *URL d'API*, taper : `../API/bpm/process?p=0&c=100&o=version%20DESC&f=name=DemandeConges`
+   - Cliquer sur **Enregistrer**
 
 1. Ajouter deux widgets dans le form container :
    - Un widget **Date picker** avec les options :
