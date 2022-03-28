@@ -12,7 +12,9 @@ Dupliquer le diagramme de processus de l'exercice précédent pour créer une ve
 
 Ajouter une lane *Approbateur* au diagramme et y déplacer la tâche *Valider demande*.
 
-Définir un rôle *Approbateur* dans l'organisation et l'associer à l'acteur de la lane *Approbateur*.
+Définir un rôle *Approbateur* dans l'organisation, y associer Helen Kelly, manager de Walter Bates.
+
+Associer le rôle *Approbateur* à l'acteur de la lane *Approbateur*.
 
 ## Instructions pas-à-pas
 
@@ -58,6 +60,13 @@ Définir un rôle *Approbateur* dans l'organisation et l'associer à l'acteur de
      ![ajouter une adhésion](images/ex04/ex4_09.png)
    - En haut de l'éditeur de l'organisation, cliquer sur l'icon **Déployer** pour propager les changements dans le moteur BPM de Bonita
    - Dans les différentes fenêtres modales, cliquer sur le bouton **Enregistrer et déployer**, puis **Déployer** et enfin sur **OK**.
+
+1. Associer le rôle *Approbateur* à l'acteur de la lane *Approbateur*.
+   - Dans la Cool Bar, cliquer sur l'icon *Configurer* ![configurer](images/ex04/ex4_06.png) qui va permettre d'associer les acteurs aux entités de l'organisation
+   - Dans la fenêtre modale, section **Association acteurs/utilisateurs**, *Employee actor* est déjà associé à un groupe (*/acme*).
+   - Cliquer sur l'acteur **Approbateur** (A) puis sur le bouton **Rôles ...** (B)
+   - Dans la fenêtre, sélectionner le rôle **Approbateur** (C), cliquer sur le bouton **Terminer**, puis sur **Terminer** dans la modale principale.
+     ![mapping acteur](images/ex04/ex4_07.png)
    
    >**Note** Pour aller plus loin, il est aussi possible de définir un *filtre d'acteur*. Cette méthode est décrite dans un prochain exercice.
 
