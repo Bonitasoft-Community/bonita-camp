@@ -1,75 +1,77 @@
 ---
-title: Exercise 8 - Créez un fragment
+title: Exercise 8 - Création d'un fragment
 ---
 
 ## Objectif
 
-L'objectif de cet exercice est de créer un fragment avec l'information d'une demande de congés pour être réutilisé dans différentes pages d'une façon simple.
+L'objectif de cet exercice est de créer un fragment contenant l'information d'une demande de congés. L'intérêt du fragment est d'être réutilisable dans différentes pages d'une façon simple.
 
-## Instructions résumées
+## Instructions simples
 
+Dans le formulaire *remplirDemandeConges*, créer un fragment avec les widgets *Date picker* et *Input* qui collectent les informations de nouvelle demande de congés. 
 
-Ouvrez l'UI Designer et allez sur la page *SuiviDesDemandes*.
+Utiliser ce fragment dans la page *SuiviDesDemandes* et bien associer ses données.
 
-Cette page contient déjà un "conteneur répétable" qui liste les demandes de congés en cours. Nous allons configurer ce conteneur pour l'enrichir. Pour chaque demande, un statut clair sera affiché.
+Redéployer la page de l'application à l'aide du bouton **Déployer** du descripteur de l'application dans Bonita Studio et accéder à l'application à l'aide de l'URL générée.
 
-Créez un fragment contenant un widget de date et un widget d'entrée pour collecter de nouvelles informations de demande de congé dans la page. Utilisez ce fragment dans la page et liez ses données.
-Ajoutez ensuite un bouton Soumettre pour lancer une nouvelle demande de congé.
-
-Redéployez la page de l'application à l'aide du bouton **Déployer** du descripteur de l'application dans Bonita Studio.
-
-Accédez à l'application à l'aide de l'URL générée.
-
-
-## Instructions pas à pas
-
-1. Allez sur la page *SuiviDesDemandes*:
-   - Dans le Studio, cliquez sur le bouton **UI Designer**.
-   - Sélectionnez la page *SuiviDesDemandes* dans l'onglet **Pages**.
-   - Vous devriez maintenant être sur la page du designer.
+## Instructions pas-à-pas
    
-2. Créez un fragment à partir du formulaire *remplirDemandeConges*  qui sera réutilisé dans la page :
-    - Dans le form *remplirDemandeConges*, sélectionnez le conteneur avec les 2 widgets *Date Debut* et *Nombre Jours*.
-    - Dans le panneau de droite, cliquez sur **...** et sélectionnez **Enregistrer en tant que fragment**.  
+### Dans le formulaire *remplirDemandeConges*, créer un fragment
+
+1. Ouvrir le formulaire
+- Dans le UI Designer, en haut à gauche, cliquer sur l'icon du UI Designer pour revenir à la page d'accueil
+- Cliquer sur l'onglet **Formulaires**
+- Cliquer sur le formulaire **remplirDemandeConges**
+
+1. Créer un fragment à partir du formulaire *remplirDemandeConges* :
+- Sélectionner le container sous le titre
+- Dans le panneau de propriétés à droite, à côté de *Container* en haut, cliquer sur **...** puis sélectionner **Enregistrer en tant que fragment ...**.  
  ![fragment selection in UI Designer](images/ex08/ex08_03.png)
-    - Nommez-le *nouvelleDemandeFragment*.
-    - Cliquez sur **Enregistrer**. Un nouvel onglet de menu apparaît sur le côté gauche de UI Designer.  
-   ![menu fragment in UI Designer](images/ex08/ex08_04.png)
-    - Enregistrez le formulaire et revenez à la page d'accueil de l'UI Designer.  
+- Dans *Nom*, saisir *"nouvelleDemandeFragment"*.
+- Cliquer sur **Enregistrer**. 
+  Tout à gauche de la palette, un nouvel onglet *fragments* apparaît.  
+  ![menu fragment in UI Designer](images/ex08/ex08_04.png)
+- **Enregistrer** le formulaire puis revenir à la page d'accueil du UI Designer.  
    
-3. Ajoutez le fragment dans le conteneur de formulaire et configurez-le:
-    - Faites glisser et déposez le *nouvelleDemandeFragment* du menu de gauche vers le conteneur de formulaire.
-    - Sélectionnez le fragment et cliquez sur **Modifier...** pour configurer les variables du fragment.  
-      ![menu fragment in UI Designer](images/ex08/ex08_05.png)
-    - Cliquez sur **Créer une nouvelle variable**.
-    - Nommez-le *dataExt*.
-    - Cliquez sur **Oui** pour exposer les données du fragment à la page et **Enregistrer** la variable. 
-    - Sélectionnez le widget *DatePicker*.
-    - Dans le champ *Value* remplacer *formInput* par *dataExt*. 
-    - Sélectionnez le widget *Input* et remplacez formInput par *dataExt* dans le champ *Value*. 
-    - Cliquez sur **Enregistrer**.
+1. Configurer le fragment :
+- Sélectionner le fragment et cliquer sur **Modifier...** pour configurer les variables du fragment.  
+  ![menu fragment in UI Designer](images/ex08/ex08_05.png)
+- Cliquer sur **Créer une nouvelle variable**.
+- La nommer *dataExt*.
+- A la question de l'exposition de la variable au niveau de la page, choisir **Oui**
+- **Enregistrer** la variable. 
+- Sélectionner le widget **Date Picker**
+- Dans le champ *Valeur*, remplacer "formInput"(...) par *"dataExt"*. 
+- Sélectionner le widget **Input**
+- Dans le champ *Valeur*, remplacer "formInput" (...) par *"dataExt"* 
+- Cliquer sur **Enregistrer**.
 
-4. Bindez les données du fragment aux données de la page.
-5. Retournez à la page *SuiviDesDemandes*.
-6. Dans le panneau de configuration, dans *Bindable fragment data* ajouter la variable *nouvelleDemandeConges*.
-   - Enregistrer la page.
-   - Cliquez sur **Overview**.
-   - La page devrait ressembler à ça :
+### Utiliser ce fragment dans la page *SuiviDesDemandes* et bien associer ses données
+
+1. Ajouter le fragment à la page :
+- Retourner à la page *SuiviDesDemandes*
+- Supprimer les champs *Date Picker* et *Input*
+- Depuis l'onglet "fragment", glisser-déposer le fragment dans la page à la place des widgets supprimés
+- Dans le panneau de configuration, dans *Bindable fragment data* ajouter la variable *nouvelleDemandeConges*.
+- **Enregistrer** la page.
+- Cliquez sur **Aperçu**.
+  La page devrait ressembler à ça :
    
    ![Application page in UI Designer including a form](images/ex08/ex08_06.png)
-7. Déployez à nouveau l'application depuis le Bonita Studio :
-   - Cliquez sur le bouton **Déployer**.
-   - Une fenêtre de déploiement s'ouvre. Cliquez sur *Déployer*. 
+   
+### Redéployer la page de l'application et accéder à l'application à l'aide de l'URL générée.   
+
+- De retour dans le studio, cliquer sur le bouton **Déployer**.
+- Une fenêtre de déploiement s'ouvre. Sélectionner le descripteur d'application, la page et le formulaire, et cliquer sur **Déployer**. 
    
    ![Deploy the application](images/ex08/ex08_07.png)
    
-   - Pour ouvrir l'application, sélectionnez *Application de demande de congés en tant qu'utilisateur*.
-   - Cliquez sur *Ouvrir*.
+   - *Application de demande de congés en tant que User* est l'application sélectionnée par défaut. C'est celle qui nous convient.
+   - Cliquer sur **Ouvrir**.
    
     ![opening window](images/ex08/ex08_08.png)
 
 L'application devrait ressembler à ceci une fois déployée :
- 
    
    ![application rendering](images/ex06/ex6_08.png)   
 
