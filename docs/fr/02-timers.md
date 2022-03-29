@@ -1,45 +1,48 @@
 ---
-title: Exercice 2 - Ajout de timer
+title: Exercice 2 - Ajout de timer (minuterie)
 ---
 
 ## Objectif
 
-L'objectif de cet exercice est d'enrichir la modélisation du processus de demande de congés en ajoutant un événement de type "timer" dans le processus.
+L'objectif de cet exercice est d'enrichir la modélisation du processus de demande de congés en créant une notification pour le valideur s'il n'a pas réalisé sa tâche à temps, sans pour autant interrompre le processus.
 
-Le timer va automatiquement envoyer une notification au validateur si la tâche n'est pas réaliser à temps, sans interrompre le processus.
+Cela est réalisé en ajoutant un événement de type "timer" dans le processus.
 
 > ⚠ Il est important de respecter strictement la casse et la syntaxe des noms techniques fournis dans les instructions.
 
-## Instructions résumées
+## Instructions simples
 
 Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 1.1.0.
 
-AJouter une minuterie (timer) non-interruptive sur la tâche *Valider demander*. La durée de la minuterie est de **5 secondes**.
+AJouter une minuterie (timer) non-interruptive sur la tâche *Valider demande*. La durée de la minuterie est de **5 secondes** (pour les besoins de l'exercice).
 
 Ajouter une tâche de service nommée *Envoyer rappel validation* et un événement de fin nommé *Fin - rappel envoyé*.
 
 
-## Instructions pas à pas
+## Instructions pas-à-pas
 
 1. Dupliquer le diagramme de processus existant pour créer une version *1.1.0*
 
-1.Ajouter une minuterie non-interruptive à la tâche *Valider la demande*
-   - Cliquer sur la tâche *Validate request*
-   - Ajouter un boundary event et sélectionner **l'événement de minuterie non-interruptive** dans la liste. Il va être automatiquement ajouté à la tâche. 
+1. Ajouter une minuterie non-interruptive à la tâche *Valider demande*
+   - Cliquer sur la tâche *Valider demande*
+   - En bas au milieu de la tâche, cliquer sur l'icon **Ajouter un événement en bordure..."
+   - Cliquer sur **Minuterie non-interruptive**. 
    ![non-interrupting timer event](images/ex07/ex7_02.png)
 
-1.Créer une tâche de service après le timer en glissant la tâche depuis l'événement dans la lane, et la nommer *Envoyer rappel validation* 
-1.Ajouter un événement de fin après la tâche de service et le nommer *Fin - rappel envoyé*.
+1. Dans la boîte à outils contextuelle, cliquer sur la tâche puis glisser-déposer dans la lane
+1. Cliquer sur le nom de la tâche puis renommer en *Envoyer rappel validation* 
+1. Ajouter un événement de fin après la tâche de service et le nommer *Fin - rappel envoyé*.
 
 1.Configurer l'événement de minuterie :
    - Sélectionner l'événement de minuterie
-   - Aller dans l'onglet **Général/Général**
-   - Ajouter le nom de la minuterie *Envoyer rappel après 5s*
-   - Ajouter la condition de la minuterie en cliquant sur **Editer**
-   - Dans le panneau de configuration, sélectionner **Durée** pour ajouter la condition et indiquer *5* dans le champ **Secondes**
-   - Cliquer sur **Générer l'expression de durée** 
+   - Dans la zone de propriétés, l'onglet *Général* et sous-onglet *Général* sont déjà sélectionnés
+   - Dans *Nom*, modifier le nom par défaut en *"Envoyer rappel après 5 sec"*
+   - Au bout du champ *Condition de la minuterie*, cliquer sur **Modifier ...**
+   - Dans la fenêtre modale, pour le champ *Condition de minuterie basée sur une*, sélectionner **Durée**
+   - Dans le cham *Secondes*, indiquer *"5"*
+   - Cliquer sur **Générer l'expression d'une durée** 
    - Cliquer sur **Terminer**
-   - La condition de la minuterie va être automatiquement générée et apparaît dans le menu *Général*
+   - La condition de la minuterie va être automatiquement générée et apparaît dans l'onglet *Général*
 
 Le connecteur pour l'envoi de mail sera configuré plus tard.
 
