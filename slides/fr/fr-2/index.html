@@ -44,8 +44,8 @@
             <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" />
           </div>
           <div>
-            <h4>JOUR 2</h4>
-            <h4>Delphine Coille</h4>
+            <h4>Partie 2</h4>
+            <h4>Alejandro Rondon</h4>
           </div>
 
           <aside class="notes">
@@ -68,34 +68,35 @@
 
         <section>
             <section>
-              <h2>Rappel du programme</h2>
-               <p><b>Jour 1 - Tout pour créer une première application</b></p>
+              <h2>Programme - Rappel</h2>
+               <p>Partie 1 - Tout pour créer une première application</p>
                <ul class="agenda">
-                  <li>La solution Bonita et les composants de Bonita</li>
-                  <li>Démarrer un projet Bonita</li>
+                  <li>Projets DPA</li>
+                  <li>Bonita Platform et ses composants</li>
+                  <li>Phases d'un projet DPA avec Bonita</li>
                   <li>Modélisation de processus</li>
                   <li>Gestion des données</li>
-                  <li>Les formulaires de processus</li>
-                  <li>Gestion des utilisateurs</li>
-                  <li>Connecteurs</li>
-                  <li>Applications</li>
+                  <li>Formulaires de processus</li>
+                  <li>Gestion des acteurs (qui fait quoi)</li>
+                  <li>Pages et applications</li>
                </ul>
             </section>
             <section>
-              <h2>Rappel du programme</h2>
-              <p><b>Jour 2 - Pour aller plus loin dans le développement</b></p>
+              <h2>Programme</h2>
+                <p>Partie 2 - Pour aller plus loin dans le développement</p>
                 <ul class=agenda">
-                  <li>L'architecture de la solution Bonita</li>
+                  <li>L'architecture de Bonita Platform</li>
+		  <li>Maven, Git et la composition de projet</li>
                   <li>Modélisation et automatisation</li>
-                  <li>Les données - utilisation avancée</li>
-                  <li>Les extensions</li>
-                  <li>L'interface utilisateur</li>
+                  <li>Données - utilisation avancée</li>
+                  <li>Extensions</li>
+                  <li>Fragments</li>
                   <li>Déploiement</li>
                 </ul>
 
               <aside class="notes">
             1<br /><br />
-            4:00h of time découpé en 2 fois 2 heures pour vous laisser le temps de pratiquer - Session 1 pour tous - Session 2 dédiée aux personnes qui vont faire du développement plus avancé
+            (En ligne seulement : 4:00h découpé en 2 fois 2 heures pour vous laisser le temps de pratiquer - Les 2 parties peuvent être suivies par toutes et tous.)
               </aside>
             </section>
         </section>
@@ -269,63 +270,6 @@
           </section>
         </section>
 
-        <!--Process design et automatisation-->
-        <section>
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Automatiser les processus : les événements</h2><img src="images/diagram-icon.png" /></div>
-            <p>Interviennent tout au long des processus</p>
-            <p>Asynchrones
-            <img src="images/events-overview.png" alt="Bonita events overview" />
-            <p>Boundary event : déclenche un chemin alternatif</p>
-
-            <aside class="notes">
-            1.30<br />
-              Asynchrones
-              BPMN events - call activities
-              <br>
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les activités appelantes et sous-processus</h2><img src="images/diagram-icon.png" /></div>
-            <p>Déclenche un sous-processus</p>
-            <p>Met le processus parent en attente</p>
-            <img class="stretch" src="images/callActivity.png" alt="call activity" />
-
-            <aside class="notes">
-            1.30<br />
-              BPMN events - call activities<br>
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les activités appelantes et sous-processus</h2><img src="images/diagram-icon.png" /></div>
-            <p>Mapping des données</p>
-            <img class="stretch" src="images/call_activity_data_mapping.png" alt="call activity data mapping" />
-
-            <aside class="notes">
-            1.30<br />
-              BPMN events - call activities<br>
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les itérations</h2><img src="images/diagram-icon.png" /></div>
-            <p>3 types d'itérations : </p>
-            <ul>
-              <li>Boucle standard</li>
-              <li>Multi-instanciation en parallèle</li>
-              <li>Multi-instanciation en séquence</li>
-            </ul>
-
-            <aside class="notes">
-            1.30<br />
-              BPMN events - call activities<br>
-            </aside>
-          </section>
-
-        </section>
-
         <!--La gestion des données-->
         <section>
           <section>
@@ -404,51 +348,36 @@
               Contract variables can then be used in various place such as a business variable default value (this will create a new row in business database), operation on a task to change the attribute value of a businnes variable (this will perform an UPDATE SQL request on the business database)...
             </aside>
           </section>
-
-          <section>
-            <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 7</h2>
-            </div>
-            <h4>Ajout de contraintes aux contrats</h4>
             
             <aside class="notes">
               6<br /><br />
               Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
               [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
               <br/>
-              15 - WAIT / ANSWER QUESTIONS<br />
 ￼             </aside>
           </section>
         </section>
 
         <!--Gestion des extensions-->
-        <section>
+                <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les extensions dans Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
-            <p>Permet d'adapter le projet à vos besoins en intégrant, entre autres : </p>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <p>Permettent d'adapter le projet à vos besoins en intégrant, entre autres : </p>
             <ul>
               <li>les connecteurs <img src="images/connector-icon.png" alt="connector" /></li>
               <li>les filtres d'acteur <img src="images/filter-icon.png" alt="actor filter" /></li>
               <li>les thèmes personnalisés <img width="40px" src="images/theme-icon.png" alt="theme" /></li>
               <li>les extensions d'API REST <img width="40px" src="images/rest_api-icon.png" alt="extensions" /></li>
-
-            <aside class="notes">
-              5<br /><br />
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les extensions dans Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
-            <p>Le gestionnaire d'extensions de Bonita Studio pour les centraliser et les utiliser</p>
+	    <p>Centralisées dans le gestionnaire d'extensions (Bonita Studio)</p>
             <img class="stretch" src="images/extensions-manager.png" alt="extensions manager"/>
 
             <aside class="notes">
               5<br /><br />
             </aside>
           </section>
-
+            
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les extensions dans Bonita</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Extensions</h2><img src="images/extensions-icon.png" alt="extensions" /></div>
             <p>Les extensions se récupèrent de 2 manières :</p>
             <table>
               <tr>
@@ -463,6 +392,64 @@
 
             <aside class="notes">
               5<br /><br />
+            </aside>
+          </section>
+
+				
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Filtres d'acteurs</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
+            <p>Remplacent complètement les acteurs</p>
+            <p>Produisent une liste d'utilisateurs en fonction d'informations en entrée et d'une logique interne</p>
+            <p>Exécutés quand l'exécution du processus atteint l'étape associée au filtre d'acteur</p>
+            <p>Peuvent si nécessaire être actualisés en utilisant les API</p>
+            <aside class="notes">
+              [Studio - changer l'acteur par un filtre d'acteur. Lancer le processus]<br />
+            </aside>
+          </section>
+
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Acteurs vs filtres d'acteurs</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
+
+            <table class="compare">
+            <tr>
+              <th></th>
+              <th>Avantages</th>
+              <th>Limitations</th>
+            </tr>
+            <tr>
+              <td>Acteur</td>
+              <td>Toujours à jour par rapport à l'organisation</td>
+              <td>Association qui ne peut pas se baser sur des données métier</td>
+            </tr>
+            <tr>
+              <td>Filtre d'acteur</td>
+              <td>Association qui peut inclure des données métier</td>
+              <td>Calculé à l'instanciation d'une étape</td>
+            </tr>
+            </table>
+
+            <aside class="notes">
+              8<br /><br />
+            </aside>
+          </section>
+                                
+          <section>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Connecteurs</h2><img src="images/connector-icon.png" alt="integration" /></div>
+            <p>Permet à un processus d'interagir avec le Système d'Information</p>
+            <p>Un catalogue de connecteurs standard est fourni dans le Marketplace de Bonita Studio.</p>
+            <p>Des connecteurs personnalisés peuvent être :</p>
+            <ul>
+              <li>Développés depuis un IDE Java et mis à disposition</li>
+              <li>Importés depuis notre site communautaire</li>
+            </ul>
+
+            <aside class="notes">
+              5<br /><br />
+              Les connecteurs peuvent être placés au début ou à la fin d'un processus ou d'une tâche.<br/>
+              Tout type de données, ou un script groovy peuvent être utilisés en entrée ou sortie.<br/>
+              Quand cela est possible, préférer les connecteurs aux scripts pour une meilleure performance et pour pouvoir gérer les erreurs (Enterprise Edition).<br />
+              [Studio - montrer comment ajouter un connecteur et comment rentrer ses entrées et ses sorties]<br />
+              Les dépendances de connecteur éventuelles sont utilisées en priorité pour éviter les conflits avec celles de Bonita Engine : des classloaders specifiques classloaders sont utilisés à ces fins
             </aside>
           </section>
 
@@ -494,66 +481,15 @@
             <aside class="notes">
             </aside>
           </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Filtre d'acteurs - fonctionnement</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
-            <p>Remplace complètement l'acteur</p>
-            <p>Produit une liste d'utilisateurs en fonction d'informations en entrée et d'une logique interne</p>
-            <p>Exécuté quand l'exécution du processus atteint l'étape associée au filtre d'acteur</p>
-            <p>Peut être actualisé en utilisant les API</p>
-            <aside class="notes">
-              Filters are executed only once when task starts. They can be run again with API call.<br />
-              [Studio &amp; Portal - change task actor to actor filter, run it]<br />
-            </aside>
-          </section>
-
-          <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Rappel : acteurs vs filtres d'acteur</h2><img src="images/organization-icon-dark.png" alt="organisation" /></div>
-
-            <table class="compare">
-            <tr>
-              <th></th>
-              <th>Avantages</th>
-              <th>Limitations</th>
-            </tr>
-            <tr>
-              <td>Acteur</td>
-              <td>Toujours à jour par rapport à l'organisation</td>
-              <td>Association qui ne peut pas se baser sur des données métier</td>
-            </tr>
-            <tr>
-              <td>Filtre d'acteur</td>
-              <td>Association qui peut inclure des données métier</td>
-              <td>Calculé à l'instanciation d'une étape</td>
-            </tr>
-            </table>
-
-            <aside class="notes">
-              8<br /><br />
-              Explain what is a candidate and assignee<br />
-              Actor can be related to process instantiation, single human task or lane<br />
-              [Studio - actors list and reference to process, initiator]<br />
-              Actors allow to automatically update task visibility when organization changes.<br/>
-              Actor can be mapped to a subset of the organization using actor mapping: lists of users, groups, roles and memberships<br />
-              [Studio and Portal - edit process configuration actor mappings, run it]<br />
-              Actors cannot use any live data (business variables, external system information...) whereas filters can.<br/>
-              Filters are executed only once when task starts. They can be run again with API call..<br />
-              [Studio and Portal - change task actor to actor filter, run it]<br />
-              If you already have information about your organization stored in an LDAP/Active Directory server Enterprise Edition provide a tool that will save you time by dealing with the synchronization between LDAP/AD and Bonita user database.<br />
-              On the authentication purpose, Bonita provides features to use SSO (SAML V2, CAS, Kerberos-Windows SSO) and LDAP.
-            </aside>
-          </section>
-
+				
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 6</h2>
             </div>
-            <h4>Ajout d'un filtre d'acteur</h4>
+            <h4>Ajout d'un filtre d'acteur et d'un connecteur</h4>
 
             <aside class="notes">
               6<br /><br />
-              Define data model in the process we started, add business variable, edit the condition based on the related contract input<br/>
-              [Studio - BDM definition, BO with attributes, deploy in test environment, add business variable in process, create contract from this reference and the initialization script, add contract input manually, condition expression editor with business data access, operation to update BDM attribute on a task, start a case, show generated form with the contract info]<br/>
               <br/>
               15 - WAIT / ANSWER QUESTIONS<br />
 ￼             </aside>
@@ -640,7 +576,7 @@
 --->
           <section>
             <div>
-              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 9</h2>
+              <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 8</h2>
             </div>
             <h4>Enrichir l'application</h4>
 
