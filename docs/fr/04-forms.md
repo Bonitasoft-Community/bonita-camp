@@ -102,7 +102,7 @@ Créer les formulaires suivants :
    --------- | ------
    Nom | demandeur
    Type | External API
-   URL d'API | ../API/Identity/user//{{demande.idDemandeur}}
+   URL d'API | ../API/Identity/user/{{demande.idDemandeur}}
 
    ![propriétés variable demandeur](images/ex03/ex3_03.png)
    > **Note :** vous pouvez utiliser les exemples qui vous permettent de récupérer automatiquement des modèles d'appels API. Ici on va récupérer `identity API` car on cherche les informations liées à un utilisateur.
