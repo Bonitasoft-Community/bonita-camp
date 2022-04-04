@@ -1,5 +1,5 @@
 ---
-title: Exercice 5 - Définition des acteurs
+title: Exercice 5 - Gestion des acteurs
 ---
 
 ## Objectif
