@@ -1,5 +1,5 @@
 ---
-title: Exercice 3 - Ajout de données et spécification de contrats
+title: Exercice 3 - Création de données et spécification de contrats
 ---
 
 ## Objectif
