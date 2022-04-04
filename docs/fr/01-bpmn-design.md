@@ -1,5 +1,5 @@
 ---
-title: Exercice 1 - Modélisation de processus BPMN
+title: Exercice 1 - Modélisation d'un processus simple
 ---
 
 ## Objectif

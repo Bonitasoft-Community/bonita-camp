@@ -1,5 +1,5 @@
 ---
-title: Exercice 6 - Extensions: filtre d'acteur et connecteur email
+title: Exercice 6 - Ajout d'un filtre d'acteur et d'un connecteur
 ---
 
 ## Objectif
