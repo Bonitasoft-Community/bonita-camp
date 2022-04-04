@@ -1,5 +1,5 @@
 ---
-title: Exercice 7 - Création d'une application
+title: Exercice 7 - Création d'une page d'application puis de son descripteur
 ---
 
 ## Objectif
