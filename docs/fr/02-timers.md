@@ -1,6 +1,5 @@
 ---
-title: Exercice 2 - Ajout de timer (minuterie)
----
+title: Exercice 2 - Ajout d'une minuterie à la tâche de validation
 
 ## Objectif
 
