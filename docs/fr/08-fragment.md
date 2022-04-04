@@ -1,5 +1,5 @@
 ---
-title: Exercise 8 - Création d'un fragment
+title: Exercise 8 - Ajout d'un fragment
 ---
 
 ## Objectif
