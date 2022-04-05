@@ -11,26 +11,32 @@ Cela est réalisé en ajoutant un événement de type "timer" dans le processus.
 
 ## Instructions simples
 
-Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 1.1.0.
-
-AJouter une minuterie (timer) non-interruptive sur la tâche *Valider demande*. La durée de la minuterie est de **5 secondes** (pour les besoins de l'exercice).
-
-Ajouter une tâche de service nommée *Envoyer rappel validation* et un événement de fin nommé *Fin - rappel envoyé*.
-
+1. Dupliquer le diagramme de processus de l'exercice précédent pour créer une version 1.1.0.
+1. Ajouter une minuterie (timer) non-interruptive sur la tâche *Valider demande*. 
+   La durée de la minuterie est de **5 secondes** (pour les besoins de l'exercice).
+1. Ajouter une tâche de service nommée *Envoyer rappel validation* et un événement de fin nommé *Fin - rappel envoyé*.
 
 ## Instructions pas-à-pas
 
-1. Dupliquer le diagramme de processus existant pour créer une version *1.1.0*
+### Dupliquer le diagramme de processus existant pour créer une version *1.1.0*
+1. Dans l'explorateur du projet, faire un clic droit sur le diagramme et cliquer sur **Dupliquer ...**
+1. Mettre à jour les numéros de version du diagramme ET du processus (pool) avec *"1.1.0"*
+1. Cliquer sur **OK**
 
-1. Ajouter une minuterie non-interruptive à la tâche *Valider demande*
-   - Cliquer sur la tâche *Valider demande*
-   - En bas au milieu de la tâche, cliquer sur l'icon **Ajouter un événement en bordure..."
-   - Cliquer sur **Minuterie non-interruptive**. 
+### Ajouter une minuterie non-interruptive sur la tâche *Valider demande*
+1. Cliquer sur la tâche *Valider demande*
+
+1. En bas au milieu de la tâche, cliquer sur l'icon **Ajouter un événement en bordure..."
+
+1. Cliquer sur **Minuterie non-interruptive**. 
    ![non-interrupting timer event](images/ex07/ex7_02.png)
 
-1. Dans la boîte à outils contextuelle, cliquer sur la tâche puis glisser-déposer dans la lane
+1. Dans la boîte à outils contextuelle, cliquer sur la tâche puis glisser-déposer dans la lane. 
+   Le type de tâche par défaut est automatique, et c'est ce que nous souhaitons.
+
 1. Cliquer sur le nom de la tâche puis renommer en *Envoyer rappel validation* 
-1. Ajouter un événement de fin après la tâche de service et le nommer *Fin - rappel envoyé*.
+
+1. Ajouter un événement de fin après la tâche automatique et le nommer *Fin - rappel envoyé*.
 
 1.Configurer l'événement de minuterie :
    - Sélectionner l'événement de minuterie
@@ -43,6 +49,6 @@ Ajouter une tâche de service nommée *Envoyer rappel validation* et un événem
    - Cliquer sur **Terminer**
    - La condition de la minuterie va être automatiquement générée et apparaît dans l'onglet *Général*
 
-Le connecteur pour l'envoi de mail sera configuré plus tard.
+Le connecteur pour l'envoi du mail une fois la minuterie écoulée sera configuré plus tard.
 
 [Exercice suivant : création de données et définition de contrats](03-data-contract.md)
