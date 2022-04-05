@@ -138,4 +138,4 @@ L'objectif de cet exercice est d'ajouter des points d'extensions au projet Bonit
  
  1. Exécuter deux fois le processus pour tester les différents chemins et s'assurer que les emails sont bien envoyés et interceptés par FakeSMTP
 
-   [Exercice suivant : création d'une application](07-applications.md)
+   [Exercice suivant : création d'une page application puis de son descripteur](07-applications.md)
