@@ -90,4 +90,4 @@ Vous êtes maintenant au point sur le mode opératoire. Créez la version *"3.0.
    >**Note** Pour aller plus loin, il est aussi possible de définir un *filtre d'acteur*. Cette méthode est décrite dans un prochain exercice.
 
 
-[Exercice suivant : extensions](06-extensions.md)
+[Exercice suivant : Ajout d'un filtre d'acteur et d'un connecteur](06-extensions.md)
