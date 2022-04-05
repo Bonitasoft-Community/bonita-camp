@@ -241,4 +241,4 @@ L'objectif de cet exercice est de fournir aux utilisateurs une application qui p
    ![rendu de l'application](images/ex06/ex6_08.png)
    
 
-[Exercice suivant : création d'un fragment](08-fragment.md)
+[Exercice suivant : ajout d'un fragment](08-fragment.md)
