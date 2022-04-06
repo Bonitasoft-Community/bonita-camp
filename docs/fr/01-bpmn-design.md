@@ -121,4 +121,4 @@ Note : la validation des diagrammes dans Bonita Studio doit être déclenchée m
    ![s'affecter une tâche](images/ex01/ex1_09.png)
    - Soumettre le formulaire de l'étape *Valider demande* en cliquant sur le bouton **Exécuter**. Cette action termine le cas
 
-[Exercice suivant : ajout d'un timer](02-timers.md)
+[Exercice suivant : ajout d'une minuterie à la tâche de validation](02-timers.md)
