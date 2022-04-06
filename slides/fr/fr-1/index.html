@@ -406,8 +406,7 @@
           <section>
             <section>
               <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Modélisation de processus : le BPMN</h2><img src="images/diagram-icon.png" /></div>
-              <p>Notation standard pour la modélisation des processus</p>
-              <p>Les éléments essentiels :</p>
+              <p>Notation standardisée. Les éléments essentiels :</p>
               <table class="no-margin no-border">
                 <tr><td><img class="no-margin" src="images/bpmn_pool.png" alt="pool"/></td><td>Pool : les pools définissent les processus</td></tr>
                 <tr><td><img class="no-margin" src="images/bpmn_lane.png" alt="lane"/></td><td>Pool : les lanes, clarifiant les acteurs</td></tr>
@@ -501,13 +500,20 @@
 
               <section>
                 <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les itérations</h2><img src="images/diagram-icon.png" /></div>
-                <p>3 types d'itérations : </p>
-                <ul>
-                  <li>Boucle standard</li>
-                  <li>Multi-instanciation en parallèle</li>
-                  <li>Multi-instanciation en séquence</li>
-                </ul>
-               <img class="stretch" src="images/iteration.png" alt="différents types d'itération" />
+                <table class="no-border">
+                   <tr>
+                      <td>Trois types d'itérations :</td><td rowspan="0"><img class="stretch no-margin" src="images/iteration.png" alt="différents types d'itération"/></td>
+                   </tr>
+                   <tr>
+                      <td>Boucle standard</td>
+                   </tr>
+                   <tr>
+                     <td>Multi-instanciation en parallèle</td>
+                   </tr>
+                   <tr>
+                     <td>Multi-instanciation en séquence</td>
+                   </tr>
+                </table>
 
               <aside class="notes">
               1.30<br />
@@ -548,7 +554,7 @@
         
         <section>
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Gestion des données : Les différents types</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Gestion des données : <br /> Les différents types</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <p>Données de processus</p>
             <ul>
               <li>Paramètres</li>
@@ -562,7 +568,7 @@
           </section>
 
           <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Modéliser les données : le Modèle de Données métier (BDM)</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Modéliser les données : <br /> le Modèle de Données métier (BDM)</h2><img src="images/bdm-icon.png" alt="model data" /></div>
             <ul>
               <li>Stocke les données métier en lien avec les processus et/ou les applications</li>
               <li>Définit des objets composé d'attributs</li>
@@ -599,7 +605,7 @@
             </section>
 
             <section>
-              <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Autre type de données : les documents</h2><img src="images/bdm-icon.png" alt="model data" /></div>
+              <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Autre type de données : <br /> les documents</h2><img src="images/bdm-icon.png" alt="model data" /></div>
               <ul>
                 <li>Les références aux documents font partie de la définition de processus</li>
                 <li>Lors de l'exécution, les documents peuvent être initialisés, mis à jour et supprimés</li>
@@ -635,7 +641,7 @@
 
             <section>
               <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les contrats</h2><img src="images/bdm-icon.png" alt="model data" /></div>
-              <p>Ensemble de paramètres d'entrée requis et leurs règles de validation</p>
+              <p>Ensemble de paramètres d'entrée requis et leurs règles de validation.</p>
               <p>Les données envoyées par les formulaires doivent remplir le contrat pour :</p>
               <ul>
                 <li>Instancier un processus</li>
@@ -670,7 +676,7 @@
               <div>
                 <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 3</h2>
               </div>
-              <h4>Création de données et spécification de contrats</h4>
+              <h4>Création de données et définition de contrats</h4>
             
               <aside class="notes">
                 6<br /><br />
@@ -683,7 +689,7 @@
 
           <section>
             <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Premiers éléments d'IHM : les formulaires de processus</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Premiers éléments d'IHM : <br /> les formulaires de processus</h2><img src="images/page-icon.png" alt="create ui" /></div>
               <ul>
                 <li>Associés aux tâches ou à l'instanciation de processus</li>
                 <li>Pré-construits automatiquement dans UI Designer à partir du contrat</li>
@@ -691,7 +697,7 @@
             </section>
 
             <section>
-            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les IHM : structure</h2><img src="images/page-icon.png" alt="create ui" /></div>
+            <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les IHM Bonita</h2><img src="images/page-icon.png" alt="create ui" /></div>
               <ul>
                 <li>Formulaires, pages et fragments : la structure</li>
                 <li>Containers et widgets : le contenant</li>
@@ -701,15 +707,16 @@
                               
             <section>
               <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Containers et widgets </h2><img src="images/page-icon.png" alt="create ui" /></div>
-              <p>Un ensemble de widgets et containers par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
-              <p>Containers utilisés pour grouper des widgets</p>
-              <p>Widgets par défaut peuvent être dupliqués pour les personnaliser</p>
-              <p>Des widgets personnalisés peuvent être créés avec l'UI Designer</p>
-              <p>Utiliser et personnaliser les contributions partagées par la communauté</p>
+              <p>Palette : un ensemble de widgets et containers par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
+              <p>Containers utiles pour grouper des widgets</p>
+              <p>Création de widgets personnalisés avec le UI Designer</p>
+              <p>Duplication des widgets par défaut pour les personnaliser</p>
+              <p>Utilisation des contributions partagées par la Communauté pour les personnaliser</p>
 
               <aside class="notes">
                 4<br /><br />
-             </aside>
+                Parler un peu plus des contributions à la Communauté<br />
+              </aside>
             </section>
             
             <section>
@@ -739,19 +746,7 @@
             </section>
 
             <section>
-              <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Les IHM : containers et widgets </h2><img src="images/page-icon.png" alt="create ui" /></div>
-              <p>Palette : Containers et widgets fournis par défaut (champ texte, menu déroulant, sélecteur de date...)</p>
-              <p>Création de widgets personnalisés dans le UI Designer</p>
-              <p>Réutilisation des contributions partagées par la Communauté</p>
-
-              <aside class="notes">
-                4<br /><br />
-                Parler un peu plus des contributions à la Communauté<br />
-              </aside>
-            </section>
-
-            <section>
-              <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">L'IHM : cycle de la donnée</h2><img src="images/icon-model-data.png" alt="model data" /></div>
+              <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Cycle de la donnée dans les IHM</h2></div>
               <ul>
                   <li>Gère les données affichées et mises à jour dans les pages et formulaires</li>
                   <li>Accessible depuis le navigateur web</li>
@@ -834,8 +829,8 @@
                 <li>Déclarer un ou plusieurs acteurs dans la définition du processus ou à partir de la lane</li>
                 <li>Les configurer pour associer l'acteur avec des entités de l'organisation :
                   <ul>
-                    <li>Directement à un ensemble d'utilisateurs individuels (déconseillé)</li>
                     <li>Indirectement via des groupes et des rôles</li>
+                    <li>Directement à un ensemble d'utilisateurs individuels (déconseillé)</li>
                   </ul>
                 </li>
                 <li>Associer les acteurs directement aux tâches ou via une lane</li>
@@ -852,7 +847,7 @@
               <div>
                 <img width="30%" src="images/think.png" alt="exercise"/><h2>Exercice 5</h2>
               </div>
-              <h4>Gestion des acteurs</h4>
+              <h4>Définition des acteurs</h4>
 
               <aside class="notes">
                 Configurer les acteurs du processus<br />
