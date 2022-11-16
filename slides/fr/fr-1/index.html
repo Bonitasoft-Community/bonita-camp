@@ -2,19 +2,18 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Bonita Camp</title>
 
-    <meta name="description" content="Présentation de Bonita permettant de rapidement réaliser une première application et de comprendre tous les concepts de la plateforme DPA">
-    <meta name="author" content="Delphine Coille">
+    <meta name="description" content="Day 1: Présentation de Bonita permettant de rapidement réaliser une première application et de comprendre tous les concepts de la plateforme DPA">
+    <meta name="author" content="Delphine Coille, Thalía Cruz">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/bonita.css" id="theme">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/bonita_new.css" id="theme">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -44,18 +43,20 @@
             <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo" />
           </div>
           <div>
-            <h4>Nathalie Cotté</h4>
+            <h4>JOUR 1</h4>
+            <h4>Thalía Cruz</h4>
           </div>
 
           <aside class="notes">
             1<br /><br />
-            Bienvenue<br />
-            Je me présente<br />
-            But de cette session : créer une application Bonita, donc basée sur des processus qui s'exécutent en couche de base. Utilisation de Bonita Community Edition uniquement<br />
-            Comment : Mix de présentation théorique et d'exercices pratiques (*on-line seulement* : and help through Discord dedicated channel #during and after the session)<br />
-            (on-line seulement: Interactivité à travers des quizz réguliers, nous aurons des pauses pendant lesquelles nous pouvons discuter dans le channel "coffee", et si certains et certaines d'entre vous peuvent rester connectés en fin de session, nous pouvons même y partager un verre)<br />
-            (présentiel seulement : La session est interactive : posez vos questions, aidez-nous à clarifier ce qui doit l'être pour vous. Nous pouvons discuter aux pauses cafés et déjeuner et même après, lors du Bonita Day)<br />
-            Quelques mots sur le forum de la Communauté<br />
+            Welcome<br />
+            Introduction of myself<br />
+            Goal of the session : creation of 1st process and application using Community Edition only<br />
+            How : Mix of theoretical presentation and practical exercises<br />
+            Community forum<br />
+            Quick Presentation of Bonita<br />
+            Community vs Enterprise editions (Support, access to professional services &amp; additional features)<br />
+            Contact form bonitasoft.com if you need more information about Enterprise Edition<br />
             Make sure that you are watching the latest version of Bonita Camp either from Bonitasoft website or from YouTube and that you are using the latest version of Bonita.<br />
             If you've already watched a previous edition of Bonita Camp you should probably watch video dedicated to what's new in latest release instead of watching this video.<br />
           </aside>
@@ -865,7 +866,7 @@
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
-
+<!--
     <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
@@ -886,10 +887,29 @@
           { src: 'plugin/notes/notes.js', async: true }
         ]
       });
+    </script> -->
+    <script src="lib/js/head.min.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      // Update 
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
 
   </body>
 </html>
+<!--
 
                                         
                                         téléchargez la réponse depuis GitHub : <a href="https://github.com/Bonitasoft-Community/bonita-camp/releases">https://github.com/Bonitasoft-Community/bonita-camp/releases</a>
+  -->
