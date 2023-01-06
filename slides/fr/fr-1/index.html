@@ -16,15 +16,12 @@
     <link rel="stylesheet" href="../../../dist/reveal.css">
     <link rel="stylesheet" href="../../../dist/theme/bonita_new.css" id="theme">
 
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="../../../lib/css/zenburn.css" />
-
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.scss';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
@@ -369,8 +366,8 @@
                                   
             <section>
               <div class="flex justify-spacebetween alignitems-center"><h2 class="no-margin">Maven, Git et composition de projet</h2><img src="images/project-icon.png" /></div>
-                  <p>Les projets peuvent être partagés avec Git <img width="40px" src="images/github.png" /> depuis Bonita Studio</p>
-                 <img class="stretch" src="images/git.png" alt="Git" />
+                  <p>Les projets peuvent être partagés avec Git <img width="40px" src="images/GitHub-Mark-Light-64px.png" /> depuis Bonita Studio</p>
+                 <img class="stretch" src="images/coolbar-menu-fr.png" alt="Git" />
 
               <aside class="notes">
                1.30<br />
@@ -866,7 +863,7 @@
     </div>
 
     <!-- Declaring this path will allow to copy the slides folder entirely to use with reveal-->
-    <script src="../../../lib/js/head.min.js"></script>
+    <!-- <script src="../../../lib/js/head.min.js"></script> -->
     <script src="../../../dist/reveal.js"></script>
     <script src="../../../plugin/notes/notes.js"></script>
     <script src="../../../plugin/markdown/markdown.js"></script>
