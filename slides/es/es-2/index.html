@@ -2,22 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>Bonita Camp</title>
 
-    <meta name="description" content="Introduction to Bonita and how to create a first process based application" />
-    <meta name="author" content="Delphine Coille" />
+    <meta name="description" content="Día 2: Introduction to Bonita and how to create a first process based application" />
+    <meta name="author" content="Delphine Coille, Thalía Cruz" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/bonita.css" id="theme" />
+    <!-- Declaring this path will allow to copy the slides folder entirely to use with reveal-->
+    <link rel="stylesheet" href="../../../dist/reveal.css">
+    <link rel="stylesheet" href="../../../dist/theme/bonita_new.css" id="theme">
 
     <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css" />
+    <link rel="stylesheet" href="../../../lib/css/zenburn.css" />
 
     <!-- Printing and PDF exports -->
     <script>
@@ -46,7 +46,7 @@
           </div>
           <div>
             <h4>Día #2</h4>
-            <h4>Delphine Coille</h4>
+            <h4>Thalía Cruz</h4>
           </div>
 
           <aside class="notes">
@@ -83,7 +83,7 @@
           <section>
            <h2>Programa</h2>
             <p><b>Día #2 - Para ir más allá en el desarrollo con Bonita</b></p>
-            <ul class=agenda">
+            <ul class="agenda">
               <li>Arquitectura de la plataforma Bonita</li>
               <li>Diseño y automatización de procesos</li>
               <li>Gestión de datos</li>
@@ -797,28 +797,22 @@
 
     </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <!-- Declaring this path will allow to copy the slides folder entirely to use with reveal-->
+    <script src="../../../lib/js/head.min.js"></script>
+    <script src="../../../dist/reveal.js"></script>
+    <script src="../../../plugin/notes/notes.js"></script>
+    <script src="../../../plugin/markdown/markdown.js"></script>
+    <script src="../../../plugin/highlight/highlight.js"></script>
 
     <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
+      // Update 
       Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        hash: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
 

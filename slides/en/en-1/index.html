@@ -2,35 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>Bonita Camp</title>
 
-    <meta name="description" content="Introduction to Bonita and how to create a first process based application and understand all concepts of the DPA platform" />
-    <meta name="author" content="Delphine Coille" />
+    <meta name="description" content="Day 1: Introduction to Bonita and how to create a first process based application and understand all concepts of the DPA platform" />
+    <meta name="author" content="Delphine Coille, Thalía Cruz" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Declaring this path will allow to copy the slides folder entirely to use with reveal-->
+    <link rel="stylesheet" href="../../../dist/reveal.css">
+    <link rel="stylesheet" href="../../../dist/theme/bonita_new.css" id="theme">
 
-    <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/bonita.css" id="theme" />
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -44,7 +29,8 @@
             <img src="images/bonita_camp_logo.png" alt="Bonita Camp logo"/>
           </div>
           <div>
-            <h4>Delphine Coille</h4>
+            <h4>DAY 1</h4>
+            <h4>Thalía Cruz</h4>
           </div>
 
           <aside class="notes">
@@ -52,8 +38,7 @@
             Welcome<br />
             Introduction of myself<br />
             Goal of the session : creation of 1st process and application using Community Edition only<br />
-            How : Mix of theoretical presentation and practical exercises and help through Discord dedicated channel #during and after the session<br />
-            Interactivity through regular polls, we can have breaks and interact in the "coffee" channel, and if some of you want to stay for some time after the camp, we can have a drink together<br />
+            How : Mix of theoretical presentation and practical exercises<br />
             Community forum<br />
             Quick Presentation of Bonita<br />
             Community vs Enterprise editions (Support, access to professional services &amp; additional features)<br />
@@ -803,7 +788,7 @@
               <h3>Any questions?</h3>
             </div>
             <p>Tomorrow - To go further in the development with Bonita</p>
-            <ul class=agenda">
+            <ul class="agenda">
               <li>Architecture of Bonita platform</li>
               <li>Process design and automation</li>
               <li>Advanced data management
@@ -818,29 +803,24 @@
       </div>
 
     </div>
+    
+    <!-- Declaring this path will allow to copy the slides folder entirely to use with reveal-->
+    <script src="../../../lib/js/head.min.js"></script>
+    <script src="../../../dist/reveal.js"></script>
+    <script src="../../../plugin/notes/notes.js"></script>
+    <script src="../../../plugin/markdown/markdown.js"></script>
+    <script src="../../../plugin/highlight/highlight.js"></script>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
 
     <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
+      // Update
       Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        hash: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
 
