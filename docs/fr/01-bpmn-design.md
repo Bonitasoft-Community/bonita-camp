@@ -9,7 +9,7 @@ L'objectif de cet exercice est de créer une première version, simple, de la d�
 A ce stade, le processus sera exécutable mais ne présentera pas encore "d'intérêt métier", car il ne disposera pas de données ni d'interfaces utilisateurs.
 Nous le compléterons dans les exercices suivants.
 
-Note : la validation des diagrammes dans Bonita Studio doit être déclenchée manuellement : après avoir corrigé une erreur ou un avertissement, allez dans la zone de propriétés en bas du studio, puis dans l'onglet *Statut de validation* et cliquez sur le bouton **Rafraîchir**, ou allez dans le menu *Fichier* en haut du  studio et cliquez sur l'option **Valider**.
+> Note : la validation des diagrammes dans Bonita Studio doit être déclenchée manuellement : après avoir corrigé une erreur ou un avertissement, allez dans la zone de propriétés en bas du studio, puis dans l'onglet *Statut de validation* et cliquez sur le bouton **Rafraîchir**, ou allez dans le menu *Fichier* en haut du  studio et cliquez sur l'option **Valider**.
 
 ## Instructions simples
 
@@ -62,9 +62,9 @@ Note : la validation des diagrammes dans Bonita Studio doit être déclenchée m
 
 1. Ajouter une porte exclusive *Demande approuvée ?* à la suite de la tâche *Valider demande* :
    - Depuis la tâche *Valider demande* sélectionnée, cliquer sur l'icon contextuel de porte logique, puis effectuer un glisser-déposer vers la droite. Une porte logique parallèle a été créée  
-   ![création de porte logique depuis une tâche](images/ex01/ex1_02.png)
+      ![création de porte logique depuis une tâche](images/ex01/ex1_02.png)
    - Cliquer sur l'icon contextuel *Modifier le type de l'élément ...* (1) puis sélectionner *Porte logique exclusive* (2)  
-   ![Modification du type de porte logique](images/ex01/ex1_03.png)
+      ![Modification du type de porte logique](images/ex01/ex1_03.png)
    - Renommer la porte exclusive ainsi créée en *Demande approuvée ?*
 
 1. Créer une tâche automatique "Notifier approbation" à partir de la porte logique :

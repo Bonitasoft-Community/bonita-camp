@@ -58,11 +58,11 @@ L'objectif de cet exercice est d'ajouter des points d'extensions au projet Bonit
    - Lancer FakeSMTP en double cliquant sur le fichier JAR ou en lançant la commande suivante : `java -jar fakeSMTP-2.0.jar`
    - Une fois l'interface graphique de FakeSMTP affichée, configurer le port d'écoute sur *2525* et cliquer sur le bouton **Démarrer le serveur**
 
- 1. Dupliquer le diagramme de processus de l'exercice précédent pour créer une version *3.1.0*
+ 1. Ouvrez le diagramme de processus version *3.1.0*
  
  1. Sélectionner la tâche *Notifier approbation*
  
- 1.Dans la zone de propriétés, cliquer sur l'onglet **Exécution**. Le sous-onglet **Connecteurs en entrée** est sélectionné.
+ 1. Dans la zone de propriétés, cliquer sur l'onglet **Exécution**. Le sous-onglet **Connecteurs en entrée** est sélectionné.
  
  1. Cliquer sur **Ajouter...**
     Une fenêtre modale propose d'installer un connecteur à partir de la Bonita Marketplace
@@ -126,7 +126,7 @@ L'objectif de cet exercice est d'ajouter des points d'extensions au projet Bonit
 
  1. Lancer le processus à partir du studio (l'utilisateur *Walter Bates* sera utilisé)
  
- 1 Soumettre le formulaire de *Saisie demande congés*. Les acteurs étant correctement configurés, la tâche *Valider demande de congés* n'est pas proposée à Walter Bates.
+ 1. Soumettre le formulaire de *Saisie demande congés*. Les acteurs étant correctement configurés, la tâche *Valider demande de congés* n'est pas proposée à Walter Bates.
  
  1. Dans la barre de menu en haut à gauche, cliquer sur **Walter Bates**, puis sur **Déconnexion** :
 

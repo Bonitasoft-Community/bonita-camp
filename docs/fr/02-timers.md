@@ -1,11 +1,12 @@
 ---
 title: Exercice 2 - Ajout d'une minuterie à la tâche de validation
+---
 
 ## Objectif
 
-L'objectif de cet exercice est d'enrichir la modélisation du processus de demande de congés en créant une notification pour le valideur s'il n'a pas réalisé sa tâche à temps, sans pour autant interrompre le processus.
+   L'objectif de cet exercice est d'enrichir la modélisation du processus de demande de congés en créant une notification pour le valideur s'il n'a pas réalisé sa tâche à temps, sans pour autant interrompre le processus.
 
-Cela est réalisé en ajoutant un événement de type "timer" dans le processus.
+   Cela est réalisé en ajoutant un événement de type "timer" dans le processus.
 
 > ⚠ Il est important de respecter strictement la casse et la syntaxe des noms techniques fournis dans les instructions.
 
@@ -38,7 +39,7 @@ Cela est réalisé en ajoutant un événement de type "timer" dans le processus.
 
 1. Ajouter un événement de fin après la tâche automatique et le nommer *Fin - rappel envoyé*.
 
-1.Configurer l'événement de minuterie :
+1. Configurer l'événement de minuterie :
    - Sélectionner l'événement de minuterie
    - Dans la zone de propriétés, l'onglet *Général* et sous-onglet *Général* sont déjà sélectionnés
    - Dans *Nom*, modifier le nom par défaut en *"Envoyer rappel après 5 sec"*
@@ -47,6 +48,7 @@ Cela est réalisé en ajoutant un événement de type "timer" dans le processus.
    - Dans le cham *Secondes*, indiquer *"5"*
    - Cliquer sur **Générer l'expression d'une durée** 
    - Cliquer sur **Terminer**
+   ![condition de la minuterie](images/ex07/ex7_03.png)
    - La condition de la minuterie va être automatiquement générée et apparaît dans l'onglet *Général*
 
 Le connecteur pour l'envoi du mail une fois la minuterie écoulée sera configuré plus tard.
