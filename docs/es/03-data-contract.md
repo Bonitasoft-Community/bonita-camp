@@ -93,39 +93,59 @@ Una vez completado, el proceso será ejecutable y gracias a los formularios gene
 
    > No olvides desplegar tu modelo de datos de negocio después de cada modifciación. Esto hace que los objetos y atributos estén disponibles al generar los contratos y los scripts Groovy, y también permite al motor de ejecución BPM de tomar en cuenta los cambios al momento de probar el proceso.
  
-1. Declara una variable de negocio de tipo *solicitudVacaciones* en el proceso:
-   - En el diagrama, selecciona la *pool* del proceso
-   - Navega a la pestaña **Datos / Variables de proceso**
-   - Haz clic en **Agregar ...** en la sección **Variables de negocio**
-   - Asigna el nombre *solicitud* a la variable y selecciona el tipo de objeto de negocio *com.company.model.SolicitudVacaciones*
-   - Haz clic en **Finalizar**
+### Declara una variable de negocio *solicitud* de tipo *SolicitudVacaciones* en la *pool*
+1. Vuelve al diagrama *DiagramaSolicitudVacaciones (2.0.0)*
+
+1. En el diagrama, selecciona la *pool* del proceso
+
+1. Navega a la pestaña **Datos / Variables de proceso**
+
+1. Haz clic en **Agregar ...** en la sección **Variables de negocio**
+
+1. Asigna el nombre *solicitud* a la variable y selecciona el tipo de objeto de negocio **com.company.model.SolicitudVacaciones**
+
+1. Haz clic en **Finalizar**
    
    ![déclaración de una variable de negocio](images/ex02/ex2_02.png)
    
-1. Configura el contrato de instanciación:
-   - En el diagrama, selecciona la *pool* del proceso
-   - Navega a la pestaña **Ejecución / Contrato / Entradas**
-   - Haz clic en el botón **Añadir desde datos ...**
-   - Selecciona la variable de negocio *solicitud*
-   - Deja el nombre de entrada predeterminado *solicitudInput*
-   - Haz clic en **Siguiente**
-   - Desmarca los atributos *solicitanteId* y *estaAprobado*
+### Genera un contrato de instanciación de proceso
+1. En el diagrama, selecciona la *pool* del proceso
+
+1. Navega a la pestaña **Ejecución / Contrato / Entradas**
+
+1. Haz clic en el botón **Añadir desde datos ...**
+
+1. Las opciones **Variable de negocio** e **Instanciar** ya aparecen seleccionadas.
+
+1. Selecciona la variable de negocio *solicitud*
+
+1. Deja el nombre de entrada predeterminado *solicitudInput*
+
+1. Haz clic en **Siguiente**
+
+1. Desmarca los atributos *solicitanteId* y *estaAprobado*. El primero será recuperado automáticamente. El segundo no es necesario para inicializarlo.
    
    ![asistente de definición de contrato](images/ex02/ex2_03.png)
    
-   - Haz clic en **Finalizar** (no en **Finalizar y Añadir**). Ignora por el momento los mensajes de advertencia sobre la inicialización parcial de la variable de negocio.
+1. Haz clic en **Finalizar** (no en **Finalizar y Añadir**). Ignora por el momento los mensajes de advertencia sobre la inicialización parcial de la variable de negocio.
     ![contrato definido para iniciar el proceso](images/ex02/ex2_04.png)
 
    > Al crear un contrato se genera un script de inicalización de la variable en cuestión, que será ejecutado al momento de validar el contrato después de la captura de los datos via el formulario.
    
-1. Modifica la inicialización de la variable de negocio *solicitud* para recuperar automáticamente *solicitanteId*
-   - Selecciona la *pool* del proceso y navega a la pestaña **Datos / Variables de proceso**
-   - Selecciona la variable *solicitud*
-   - Haz clic en **Editar ...**
-   - Haz clic en el icono de **lápiz** asociado al campo **Valor predeterminado**. 
-   - El editor de expresiones se abre y muestra el script que ha sido inicializado cuando se ha creado el contrato con la opción "Instanciar".
+### Modifica la inicialización de la variable de negocio *solicitud* para recuperar automáticamente *solicitanteId*
+      *solicitanteId* es el username del usuario que ha iniciado la solicitud
    
-   - En el menú de la izquierda, selecciona **Plantillas de código/Usuarios de Bonita** (A).
+1. Selecciona la *pool* del proceso y navega a la pestaña **Datos / Variables de proceso**
+
+1. Selecciona la variable *solicitud*
+
+1. Haz clic en **Editar ...**
+
+1. Haz clic en el icono de **lápiz** asociado al campo **Valor predeterminado**. 
+
+1. El editor de expresiones se abre y muestra el script que ha sido inicializado cuando se ha creado el contrato con la opción "Instanciar".
+   
+1. En el menú de la izquierda, selecciona **Plantillas de código/Usuarios de Bonita** (A).
    - Selecciona la plantilla *processInitiatorUser* y arrástrala para colocarla antes de la última línea del script (que commienza por `return`). El script permite recuperar la instancia del proceso y el iniciador se crea automáticamente.
    - Antes del `}catch`, ingresa `solicitudVacacionesVar.solicitanteId = processInitiator.id` para recuperar el identificador del iniciador de la instancia en el atributo *solicitanteId* (B)
 
@@ -138,11 +158,14 @@ Una vez completado, el proceso será ejecutable y gracias a los formularios gene
    - Haz clic en el botón **Aceptar** para cerrar el editor de expresiones.
    - Haz clic otra vez en el botón **Aceptar** para validar la modificación de la variable de negocio. 
    
-1. Agrega un contrato a la etapa *Validar solicitud*:
-    - En la *pool*, selecciona la tarea *Validar solicitud*
-    - En la zona de propiedades, navega a la pestaña **Ejecución / Contrato / Entradas**
-    - Haz clic en el botón **Añadir desde datos ...**
-    - Las opciones *Variable de negocio* y *Editar* aparecen seleccionadas. 
+### Agrega un contrato a la etapa *Validar solicitud*:
+1. En la *pool*, selecciona la tarea *Validar solicitud*
+
+1. En la zona de propiedades, navega a la pestaña **Ejecución / Contrato / Entradas**
+
+1. Haz clic en el botón **Añadir desde datos ...**
+
+1. Las opciones *Variable de negocio* y *Editar* aparecen seleccionadas. 
     - La variable de negocio *solicitud* aparece seleccionada.
     - Deja el valor predeterminado *solicitudInput* como nombre de la entrada 
     - Haz clic en **Siguiente**
@@ -152,9 +175,9 @@ Una vez completado, el proceso será ejecutable y gracias a los formularios gene
       Nota: Ten en cuenta que se ha generado automáticamente una operación (**Ejecución / Operaciones**) en la tarea *Validar solicitud* para actualizar la solicitud
     ![operación generada automáticamente](images/ex02/ex2_06.png)
    
-1. Configura como condición de la transición *Sí* el atributo *estaAprobado* de la variable de negocio *solicitud*:
-    - Selecciona la transición *Sí*
-    - En la zona de propiedades, navega a la pestaña **General / General**
+### Configura como condición de la transición *Sí* el atributo *estaAprobado* de la variable de negocio *solicitud*:
+1. Selecciona la transición *Sí*
+1. En la zona de propiedades, navega a la pestaña **General / General**
     - Haz clic en el ícono de lápiz asociado al campo **Condición** para abrir el editor de expresiones
     - En el editor de expresiones, selecciona **Variables de negocio / solicitud**. 
     - Selecciona **estaAprobado** y arrástrarlo a la pizarra para sustituir el `true`.

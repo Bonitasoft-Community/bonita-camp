@@ -62,9 +62,9 @@ Nous le compléterons dans les exercices suivants.
 
 1. Ajouter une porte exclusive *Demande approuvée ?* à la suite de la tâche *Valider demande* :
    - Depuis la tâche *Valider demande* sélectionnée, cliquer sur l'icon contextuel de porte logique, puis effectuer un glisser-déposer vers la droite. Une porte logique parallèle a été créée  
-   ![création de porte logique depuis une tâche](images/ex01/ex1_02.png)
+      ![création de porte logique depuis une tâche](images/ex01/ex1_02.png)
    - Cliquer sur l'icon contextuel *Modifier le type de l'élément ...* (1) puis sélectionner *Porte logique exclusive* (2)  
-   ![Modification du type de porte logique](images/ex01/ex1_03.png)
+      ![Modification du type de porte logique](images/ex01/ex1_03.png)
    - Renommer la porte exclusive ainsi créée en *Demande approuvée ?*
 
 1. Créer une tâche automatique "Notifier approbation" à partir de la porte logique :
