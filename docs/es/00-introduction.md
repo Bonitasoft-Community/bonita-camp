@@ -5,7 +5,7 @@ title: Introducción
 El objetivo de los ejercicios es lograr producir un proceso básico de solicitud de vacaciones.
 
 El proceso será el siguiente:
-1. Un empleado presenta una solicitud de vaciones
+1. Un empleado presenta una solicitud de vacaciones
 1. El responsable directo del empleado decide si aprueba o no la solicitud.
 
 Para ello, tomaremos un enfoque iterativo alternando contenido teórico y ejercicios prácticos.

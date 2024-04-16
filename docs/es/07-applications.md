@@ -1,39 +1,41 @@
 ---
-title: Ejercicio 6 - Crear una aplicación de gestión de vacaciones
+title: Ejercicio 7 - Crear una aplicación de gestión de vacaciones
 ---
 
 ## Objetivo
 
 El objetivo de este ejercicio es proporcionar a los usuarios una aplicación que permita rastrear y crear solicitudes de vacaciones.
 
-## Resumen de las instrucciones
+## Instrucciones resumidas
 
-Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *6.O.0*.
+1. Crea una nueva página en la aplicación y nómbrala *SeguimientoDeSolicitud*, que permitirá rastrear kas solicitudes creadas por el usuario conectado.
+    Esta página contiene un contenedor múltiple que enumera las solicitudes de vacaciones abiertas. Para cada solicitud, se muestran la fecha de inicio, el número de días y el estado de aprobación.
 
-Abre el UI Designer y crea una nueva **Página de aplicación** llamada *SeguimientoDeSolicitud* que permite el seguimiento de las solicitudes de vacaciones iniciadas por el usuario conectado.
+1. Agrega un nuevo contenedor *form container* para crear una nueva solicitud.
+    Este formulario contiene un widget *Fecha* y un widget *Input* para recolectar la información necesaria para la nueva solicitud.
 
-Esta página contiene un contenedor múltiple que enumera las solicitudes de vacaciones abiertas. Para cada solicitud, se muestran la fecha de inicio, el número de días y el estado de aprobación.
+1. Crea un descriptor de aplicación y agrega la nueva **Página de aplicación** llamada *SeguimientoDeSolicitud*
 
-Agrega un enlace al formulario de instanciación para iniciar una nueva solicitud de vacaciones.
-
-Cree una nueva aplicación y agregue la página *SeguimientoDeSolicitud*.
-
-Acceda a la aplicación recién creada utilizando la URL única generada.
+1. Despliega la aplicación y accede a ella utilizando la URL única generada.
 
 ## Instrucciones paso a paso
 
-1. Dupliqua el diagrama de proceso del ejercicio anterior para crear una versión *5.O.0*.
+### Crea una nueva página en la aplicación y nómbrala *SeguimientoDeSolicitud*
 
-1. Crea una página de aplicación:
-    - En el Studio, haz clic en el botón **UI Designer**
-    - Haz clic en el botón **Crear**
-    - Selecciona **Página de aplicación**
-    - Ingresa el nombre *SeguimientoDeSolicitudes*
-    - Haz clic en **Crear**
+1. En tu navegador, vuelev al UI Designer
+    Si la ventana ha sido cerrada, vuele al Studio y haz clic en el botón **UI Designer**
+
+1. Haz clic en el botón **Crear**
+
+1. Selecciona **Página de aplicación** como tipo
+
+1. Ingresa el nombre *SeguimientoDeSolicitudes*
+
+1. Haz clic en **Crear**
    
    ![crear una página de aplicación](images/ex06/ex6_01.png)
    
-    - La vista del diseñador ahora debería mostrarse  
+    La vista de diseñador ahora debería mostrarse  
 
 1. Agrega un título a tu página:
     - Arrastra el widget **Título** (A) desde la paleta y colócalo en la parte superior de la página (B)
@@ -43,27 +45,58 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
    
    ![agregar widget título](images/ex06/ex6_02.png)
 
+ 1. Crea una variable para guardar la información de la sesión:
+   - Abajo en donde se listan las variables, haz clic en **Crear una nueva variable**
+   - Nómbrala *"sessionInfo"*
+   - Elige como tipo **External API**
+   - En el campo **API URL**, introduce `../API/system/session/unusedId`
+   - Haz clic en **Guardar**
+   
 1. Crea una variable para listar las solicitudes de vacaciones:
-    - Haz clic en el ícono **Modelo de datos** ![icone-datamodel](images/ex06/ex6_00.png)
-    - Arrastra y suelta *SolicitudVacaciones* en la página
-    - Mantenga el nombre predeterminado: *solicitudVacaciones*
+    - Haz clic en el ícono **Modelo de datos**
+    ![icone-datamodel](images/ex06/ex6_00.png)
+    - Arrastra y suelta *SolicitudVacaciones* en la página, debajo del título
+    - Deja el nombre predeterminado: *solicitudVacaciones*
     - En la sección **Consultas de "Buscar (Find)" en un atributo**, selecciona *solicitanteId*
+    - En la sección *Filtrar la búsqueda finByIdDemandeur* utiliza la variable: `{{sessionInfo.user_id}}`
     - Haz clic en el botón **Guardar**
     
     Se genera automáticamente un contenedor múltiple con una tabla que contiene los atributos del objeto SolicitudVacaciones.
-
+    
     ![contenedor multiple](images/ex06/ex6_13.png)
 
-1. Sustituir el subtítulo *SolicitudVacaciones* del contenedor y las etiquetas : 
-   - Nómbralo *Seguimientio de solicitudes*
+1. Modifica las propiedades de los widgets en el contenedor:
+    - Selecciona el widget subtítulo *SolicitudVacaciones* y nómbralo *Seguimientio de solicitudes*
    - Selecciona la opción **Nivel 4** para el parámetro **Nivel del título**.
    - Selecciona la opción **centrado** para el parámetro **alineación**. 
-   - Selecciona el widget Tabla
-   - En el panel de la derecha, en el campo **Cabeceras**, borra *Solicitante Id*.
+   - Selecciona el widget Tabla, en el panel de la derecha, en el campo **Cabeceras**, borra *Solicitante Id*
    - Sustituye *Fecha Inicio* por *Fecha de inicio* y *Número Dias* por *Número de días*.
+
+
+ 1. Declara una nueva expresión JavaScript para formatear la columna "Estátus" de la lista:
+   - Haz clic en **Crear una nueva variable**
+   - Nómbrala *"agregarEstatusSolicitudVacaciones"*
+   - Elige como tipo **JavaScript expression**
+   - Reemplaza el valor existente por el siguiente script:
+   ```javascript
+   if($data.hasOwnProperty('solicitudVacaciones') && $data.solicitudVacaciones) {
+     for (let solicitud of $data.solicitudVacaciones) {
+       if(solicitud.esAprobada)  {
+         demande.esAprobadaEtiqueta = "Aprobada";
+       } else if(solicitud.esAprobada === false) {
+         demande.esAprobadaEtiqueta = "Rechazada";
+       } else {
+         demande.esAprobadaEtiqueta = "En curso";
+       }
+     }
+   }
+
+   return $data.solicitudVacaciones;
+   ```
    
 1. Muestra la información en las columnas de la tabla de una manera más clara:
     - En el panel de la derecha, en el campo **Claves de columna**, elimina *solicitanteId*
+    - En el mismo campo, reemplaza *esAprobada* por *esAprobadaEtiqueta*, creada en la variable JavaScript
     - Borra el widget Input *SolicitanteId* en el contenedor de detalles porque esta información no es útil.
 
 1. Selecciona el widget *Fecha Inicio* y cambia las siguientes propiedades:
@@ -90,7 +123,7 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
    
    - Puedes obtener una vista previa de la página en cualquier momento haciendo clic en **Vista previa**
    
-   > Consejo: si está conectado al portal en el mismo navegador, se mostrarán las solicitudes de vacaciones reales.
+   > Consejo: si estás conectado al portal en el mismo navegador, se mostrarán las solicitudes de vacaciones reales.
 
 1. Agrega un nuevo widget de tipo **Link**:
    - Arrastra un widget de tipo **Link** desde la paleta y colócalo entre los dos títulos
@@ -132,9 +165,5 @@ Acceda a la aplicación recién creada utilizando la URL única generada.
    
    ![vista previa de la aplicación](images/ex06/ex6_08.png)
 
-
-**¡Ya esta!**
-
-¿Quieres ir más allá? Sigue la siguiente iteración del proyecto.
-Próximo ejercicio: [agregar un temporizador al proceso](07-timer.md)
+Próximo ejercicio: [Agregar un fragmento](08-fragment.md)
 

@@ -1,23 +1,22 @@
 ---
-title: Ejercicio 2 - Agregar datos y especificar contratos
+title: Ejercicio 3 - Agregación de datos y especificación de contratos
 ---
 
 ## Objetivo
 
 El objetivo de este ejercicio es continuar la implementación del proceso de solicitud de vacaciones mediante:
 
-1. La creación de un modelo de datos de negocio comúnmente llamado BDM (Business Data Model)
-1. La especificación de variables de negocio que unan al modelo de datos de negocio y al proceso
-1. La especificación de contratos entre el proceso y el formulario para crear instancias del proceso y para ejecutar tareas humanas
+- La creación de un modelo de datos de negocio comúnmente llamado BDM (Business Data Model)
+- La especificación de variables de negocio que unan al modelo de datos de negocio y al proceso
+- La especificación de contratos entre el proceso y el formulario para crear instancias del proceso y para ejecutar tareas humanas
 
 Una vez completado, el proceso será ejecutable y gracias a los formularios generados automáticamente se podrán capturar datos.
 
-> ⚠ Es importante respetar estrictamente la sintaxis de los nombres técnicos (incluyendo mayúsculas, minúsculas y signos)proporcionados en las instrucciones.
+> ⚠ Es importante respetar estrictamente la sintaxis de los nombres técnicos (incluyendo mayúsculas, minúsculas y signos) proporcionados en las instrucciones.
 
 ## Instrucciones resumidas
 
 1. Duplica el diagrama de proceso del ejercicio anterior para crear una versión 2.0.0.
-
 1. Crea un objeto de negocio *SolicitudVacaciones* (al ser un nombre técnico, debes omitir espacios, acentos y otros caracteres especiales) con los siguientes atributos (sin seleccionar la opción **Múltiple**):
 
    Nombre | Tipo | Múltiple | Requerido
@@ -31,57 +30,66 @@ Una vez completado, el proceso será ejecutable y gracias a los formularios gene
 
 1. Genera un contrato de instanciación de proceso que incluya los siguientes elementos:
 
-        fechaInicio
-        numeroDias
+         - fechaInicio
+         - numeroDias
 
    Para esto, utiliza el asistente de Bonita Studio seleccionando **Añadir desde datos ...**
-
-1. Inicializa la variable de negocio *solicitud* utilizando la generación automática del contrato.
 
 1. Modifica la inicialización de la variable de negocio *solicitud* para recuperar automáticamente *solicitanteId*
 
 1. Agrega un contrato en la etapa *Validar solicitud* utilizando el asistente con el siguiente elemento:
 
-        estaAprobado
+        - estaAprobado
 1. Configura como condición de la transición *Sí* el atributo *estaAprobado* de la variable de negocio *solicitud*
 
 ## Instrucciones paso a paso
 
+### Duplica el diagrama de proceso existente para crear una versión *2.0.0*
+
+1. Vuelve al Studio
 1. Duplica el diagrama de proceso existente para crear una versión *2.0.0*:
-   - En el explorador del proyecto, haz clic derecha en el diagrama y selecciona **Duplicar...**
-   - Actualiza los números de versión de ambos: del proceso y de la *pool* (el diagrama)
-1. Crea un objeto de negocio *SolicitudVacaciones*:
-   - Haz clic en el ícono **Vista global** ![overview](images/ex02/ex2_13.png). 
-   - Haz clic en **+ Crear** en la sección *Modelo de datos de negocio*. El editor del modelo de datos de negocio aparece.   
-   - Cambia el nombre del objeto creado por defecto **BusinessObject** a *SolicitudVacaciones* (A). Al ser un nombre técnico, se deben omitir espacios, acentos y otros caracteres especiales. Como es un objeto, su nombre debe empezar con mayúscula.
-   - Con el objeto *SolicitudVacaciones* seleccionado, en la sección *Atributos*, selecciona el atributo inicializado por defecto **atributo** y cambia el nombre a *solicitanteId*. Como es un atributo, su nombre debe empezar con minúscula.
-   - Como *Tipo* selecciona **Long**, deja libre la casilla *Múltiple* y marca la casilla *Requerido*
+   - En el explorador del proyecto, haz clic derecho en el diagrama y selecciona **Duplicar...**
+   - Actualiza los números de versión de ambos: del proceso y de la *pool* (el diagrama) a *2.0.0*
+   - Da clic en **OK**
+
+### Crea un objeto de negocio *SolicitudVacaciones*:
+1. Haz clic en el ícono **Vista global** ![overview](images/ex02/ex2_13.png). Haz clic en **+ Crear** en la sección *Modelo de datos de negocio*.
+   El editor del modelo de datos de negocio aparece.
+
+1. Cambia el nombre del objeto creado por defecto **BusinessObject** a *SolicitudVacaciones* (A). 
+   Al ser un nombre técnico, se deben omitir espacios, acentos y otros caracteres especiales. Como es un objeto, su nombre debe empezar con mayúscula.
+
+1. Con el objeto *SolicitudVacaciones* seleccionado, en la sección *Atributos*, selecciona el atributo inicializado por defecto **atributo** y cambia el nombre a *solicitanteId*. 
+   Como es un atributo, su nombre debe empezar con minúscula.
+
+1. Como *Tipo* selecciona **LONG**, deja libre la casilla *Múltiple* y marca la casilla *Requerido*
 
       Nombre | Tipo | Múltiple | Requerido
       --- | ---- | -------- | -----------
-      *solicitanteId* | `Long` | ◻ | ☑
+      *solicitanteId* | `LONG` | ◻ | ☑
 
-   - Haz clic en **Añadir** para agregar igualmente los siguientes atributos (B):
+1. Haz clic en **Añadir** para agregar igualmente los siguientes atributos (B):
 
       Nombre | Tipo | Múltiple | Requerido
       --- | ---- | -------- | -----------
-      *fechaInicio* | `Date only` | ◻ | ☑
-      *numeroDias* | `Integer` | ◻ | ☑
-      *estaAprobado* | `Boolean` | ◻ | ◻
+      *fechaInicio* | `DATE ONLY` | ◻ | ☑
+      *numeroDias* | `INTEGER` | ◻ | ☑
+      *estaAprobado* | `BOOLEAN` | ◻ | ◻
 
     ![definición_del_modelo_de_datos_de_negocio](images/ex02/ex2_01.png)
     
-   - Guarda los cambios. El siguiente mensaje se muestra para indicar que el modelo de datos de negocio debe ser desplegado:
+1. Guarda los cambios. El siguiente mensaje se muestra para indicar que el modelo de datos de negocio debe ser desplegado:
    
    ![mensaje de información despliegue BDM](images/ex02/ex2_09.png)
    
-   - Haz clic en el botón ![icono despliegue](images/ex02/ex2_11.png) en el editor de BDM.
+1. Haz clic en el botón ![icono despliegue](images/ex02/ex2_11.png) en el editor de BDM.
    - El siguiente mensaje aparece para confirmar el despliegue del modelo de datos de negocio:
     
     ![Mensaje de información de despliegue de BDM](images/ex02/ex2_10.png)
     
-   - Marca la opción **No volver a mostrar este mensaje**
-   - Haz clic en **Ok**
+1. Marca la opción **No volver a mostrar este mensaje**
+
+1. Haz clic en **Ok**
 
    > No olvides desplegar tu modelo de datos de negocio después de cada modifciación. Esto hace que los objetos y atributos estén disponibles al generar los contratos y los scripts Groovy, y también permite al motor de ejecución BPM de tomar en cuenta los cambios al momento de probar el proceso.
  
