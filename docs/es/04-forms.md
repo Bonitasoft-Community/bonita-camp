@@ -162,4 +162,4 @@ El formulario se vera así:
    - Inicia la ejecución del proceso a través de Bonita Studio
    - Valida, a partir del historial de casos, que se ha seguido el camino correcto hasta el final del proceso
 
-[Ejercicio siguiente: configuración de los actores](04-actors.md)
+[Ejercicio siguiente: configuración de los actores](05-actors.md)
