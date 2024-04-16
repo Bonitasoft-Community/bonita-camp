@@ -121,4 +121,4 @@ Los completaremos en los siguientes ejercicios.
     ![asignar una tarea](images/ex01/ex1_09.png)
     - Envía el formulario para el paso *Validar solicitud* haciendo clic en el botón **Ejecutar** para completar el caso
 
-[Ejercicio siguiente: creación de datos y definición de contratos](02-data-contract.md)
+[Ejercicio siguiente: creación de datos y definición de contratos](02-timers.md)

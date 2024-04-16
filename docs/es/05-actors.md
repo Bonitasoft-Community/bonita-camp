@@ -78,4 +78,4 @@ Define un rol **Validador** en la organización y asignalo al carril *Validador*
  
     - Si los actores se han definido correctamente, la tarea *Validar solicitud de vacaciones* debería estar disponible en la lista de tareas
    
-   [Ejercicio siguiente: configuración de un conector](05-connectors.md)
+   [Ejercicio siguiente: agregar un filtro de actor y un conector](06-extensions.md)
