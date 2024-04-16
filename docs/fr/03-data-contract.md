@@ -19,19 +19,19 @@ Une fois complété, le processus sera exécutable, toujours en utilisant les fo
 1. Dupliquer le diagramme de processus et le processus de l'exercice précédent, pour créer des versions 2.0.0.
 1. Créer un objet métier *"DemandeConges"* puis les attributs suivants :
 
-Nom | Type | Multiple | Obligatoire
---- | ---- | -------- | -----------
-*idDemandeur* | `Long` | ◻ | ☑
-*dateDebut* | `Date only` | ◻ | ☑
-*nombreJours* | `Entier` | ◻ | ☑
-*estApprouvee* | `Booléen` | ◻ | ◻
+   Nom | Type | Multiple | Obligatoire
+   --- | ---- | -------- | -----------
+   *idDemandeur* | `Long` | ◻ | ☑
+   *dateDebut* | `Date only` | ◻ | ☑
+   *nombreJours* | `Entier` | ◻ | ☑
+   *estApprouvee* | `Booléen` | ◻ | ◻
 
 1. Déclarer une variable métier *demande* de type *DemandeConges* sur le pool.
 
 1. Générer un contrat à l'instanciation du processus, en incluant les éléments suivants :
 
-- dateDebut
-- nombreJours
+         -  dateDebut
+         -  nombreJours
 
 Utiliser pour ce faire l'assistant *Ajouter à partir de données...*.
 
@@ -39,7 +39,7 @@ Utiliser pour ce faire l'assistant *Ajouter à partir de données...*.
 
 1. Ajouter un contrat sur l'étape *Valider demande* en utilisant l'assistant avec l'élément suivant :
 
--   estApprouvee
+         -  estApprouvee
 
 1. Configurer la condition sur la transition *Oui* pour en faire l'attribut *estApprouvee* de l'objet *demande*
 
@@ -64,26 +64,30 @@ Utiliser pour ce faire l'assistant *Ajouter à partir de données...*.
      Il s'agit d'un attribut, il débute par une minuscule.
   
   1. Pour le *Type*, sélectionner **LONG**, pour *Multiple*, ne rien faire et pour *Obligatoire*, cocher la case.
+
+      Nom | Type | Multiple | Obligatoire
+      --- | ---- | -------- | -----------
+      *idDemandeur* | `LONG` | ◻ | ☑
   
   1. En haut du tableau, cliquer sur **Ajouter** puis ajouter les attributs suivants (B) :
     
-    Nom | Type | Multiple | Obligatoire
-    --- | ---- | -------- | -----------
-    *dateDebut* | `DATE ONLY` | ◻ | ☑
-    *nombreJours* | `INTEGER` | ◻ | ☑
-    *estApprouvee* | `BOOLEAN` | ◻ | ◻
+      Nom | Type | Multiple | Obligatoire
+      --- | ---- | -------- | -----------
+      *dateDebut* | `DATE ONLY` | ◻ | ☑
+      *nombreJours* | `INTEGER` | ◻ | ☑
+      *estApprouvee* | `BOOLEAN` | ◻ | ◻
 
-    ![définition du modèle de données métier](images/ex02/ex2_01.png)
+   ![définition du modèle de données métier](images/ex02/ex2_01.png)
     
   1. Dans l'explorateur du projet, à gauche de l'écran, le message suivant s'est affiché pour indiquer qu'il faut déployer le Modèle de Données Métier :
     
-    ![message d'information déploiement du BDM](images/ex02/ex2_09.png)
+   ![message d'information déploiement du BDM](images/ex02/ex2_09.png)
     
   1. Dans la toolbar de l'éditeur, cliquer sur le bouton ![icon déploiement](images/ex02/ex2_11.png).
     La fenêtre modale *Enregistrer la ressource* propose d'enregistrer les modifications avant de déployer. Cliquer sur **Enregistrer et déployer**.
     Le message suivant indique qu'il a été déployé avec succès. 
     
-    ![message déploiement réussi du BDM](images/ex02/ex2_10.png)
+   ![message déploiement réussi du BDM](images/ex02/ex2_10.png)
     
   1. Cocher l'option **Ne plus me montrer ce message**
    
@@ -126,7 +130,7 @@ Utiliser pour ce faire l'assistant *Ajouter à partir de données...*.
  1. Cliquer sur **Terminer** (pas sur **Terminer & Ajouter**). Sur la fenêtre *Génération de contrat*, cliquer **OK**.
    
    ![contrat défini pour le démarrage du processus](images/ex02/ex2_04.png)
-   La création du contrat crée également le script d'initialisation de la variable *demande*, exécuté lorsque le contrat est validé après remplissage du formulaire. 
+   > La création du contrat crée également le script d'initialisation de la variable *demande*, exécuté lorsque le contrat est validé après remplissage du formulaire. 
    
 ### Modifier l'initialisation de la variable métier *demande* pour récupérer automatiquement *idDemandeur*
     *iDemandeur* est le username de l'utilisateur initiateur de la nouvelle demande.

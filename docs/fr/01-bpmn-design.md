@@ -9,7 +9,7 @@ L'objectif de cet exercice est de créer une première version, simple, de la d�
 A ce stade, le processus sera exécutable mais ne présentera pas encore "d'intérêt métier", car il ne disposera pas de données ni d'interfaces utilisateurs.
 Nous le compléterons dans les exercices suivants.
 
-Note : la validation des diagrammes dans Bonita Studio doit être déclenchée manuellement : après avoir corrigé une erreur ou un avertissement, allez dans la zone de propriétés en bas du studio, puis dans l'onglet *Statut de validation* et cliquez sur le bouton **Rafraîchir**, ou allez dans le menu *Fichier* en haut du  studio et cliquez sur l'option **Valider**.
+> Note : la validation des diagrammes dans Bonita Studio doit être déclenchée manuellement : après avoir corrigé une erreur ou un avertissement, allez dans la zone de propriétés en bas du studio, puis dans l'onglet *Statut de validation* et cliquez sur le bouton **Rafraîchir**, ou allez dans le menu *Fichier* en haut du  studio et cliquez sur l'option **Valider**.
 
 ## Instructions simples
 
